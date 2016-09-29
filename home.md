@@ -50,7 +50,7 @@ Coding Style and Conventions
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
-1. Language Standards {#LanguageStandards}
+1. Language Standards 
 ---------------------
 
 -   C99
@@ -58,10 +58,10 @@ Coding Style and Conventions
 
 * * * * *
 
-2. Naming Conventions {#NamingConventions}
+2. Naming Conventions
 ---------------------
 
-### 2.1. General notes {#Generalnotes}
+### 2.1. General notes 
 
 -   Use descriptive names.
 -   Use compound name.
@@ -69,7 +69,7 @@ Coding Style and Conventions
 -   Use short names where it makes sense, for example counters (`i`,
     `j`, `k` etc).
 
-### 2.2. Class Names {#ClassNames}
+### 2.2. Class Names 
 
 -   Name the class after what it is.
 -   Use compound names with up to three words.
@@ -84,7 +84,7 @@ Examples
 
 * * * * *
 
-### 2.3. File Names {#FileNames}
+### 2.3. File Names 
 
 -   Use one file per class definition.
 -   The file name is the same as the class name.
@@ -95,7 +95,7 @@ Example
 
 * * * * *
 
-### 2.4. Class Library Names {#ClassLibraryNames}
+### 2.4. Class Library Names 
 
 -   Use name spaces - so you don't have the problem
 -   When not using name spaces, it's common to prevent class name
@@ -106,7 +106,7 @@ Examples
 
 * * * * *
 
-### 2.5. Method Names {#MethodNames}
+### 2.5. Method Names 
 
 -   Use camelCase (first character is lower case).
 -   No underscores ('\_')
@@ -121,7 +121,7 @@ Example
 
 * * * * *
 
-### 2.6. C Function Names {#CFunctionNames}
+### 2.6. C Function Names
 
 -   All lower case with underscore as separators.
 
@@ -130,7 +130,7 @@ Example
 
 * * * * *
 
-### 2.7. Class Member Variable Names {#ClassMemberVariableNames}
+### 2.7. Class Member Variable Names 
 
 -   Use descriptive names.
 -   Use camelCase\_m: like method names but append `_m`.
@@ -165,7 +165,7 @@ Example
 
 * * * * *
 
-### 2.11. Global Constants, Enums and Macro Names {#GlobalConstantsEnumsandMacroNames}
+### 2.11. Global Constants, Enums and Macro Names 
 
 -   All caps with underscore as separators.
 -   Consts and Enums without class scoping should have a reasonable
@@ -176,7 +176,7 @@ Example
 
 * * * * *
 
-### 2.12. Type Names {#TypeNames}
+### 2.12. Type Names 
 
 -   Make a typedef for types based on native types.
 -   Use the `_t` suffix for typedefs: `typedef UniformMesh Mesh_t`
@@ -194,7 +194,7 @@ Example
 
 \#\#\# Name Spaces
 
-### 2.13. C++ File Extensions {#CFileExtensions}
+### 2.13. C++ File Extensions 
 
 -   header files: `.h`
 -   source files: `.cpp`
@@ -204,7 +204,7 @@ Example
 3. Documentation {#Documentation}
 ----------------
 
-### 3.1. File Header for include files (.h only) {#FileHeaderforincludefiles.honly}
+### 3.1. File Header for include files (.h only) 
 
 -   Link to copyright and license
 -   Short description what is implemented in here (in Doxygen notation)
@@ -220,7 +220,7 @@ Example
      */
     ```
 
-### 3.2. File Header for source files (.cpp and .c only) {#FileHeaderforsourcefiles.cppand.conly}
+### 3.2. File Header for source files (.cpp and .c only) {
 
 -   Link to copyright and license
 
@@ -233,11 +233,11 @@ Example
 
 * * * * *
 
-### 3.3. API Documentation {#APIDocumentation}
+### 3.3. API Documentation
 
 -   All public methods and functions must be documented using Doxygen
 
-### 3.4. Code Documentation {#CodeDocumentation}
+### 3.4. Code Documentation 
 
 -   Comment what the code does not how.
 -   Write comments as you code.
@@ -284,7 +284,7 @@ public:
 
 * * * * *
 
-### 3.5. Doxygen {#Doxygen}
+### 3.5. Doxygen 
 
 ``` {.wiki}
 // $Id$
@@ -327,10 +327,10 @@ Example of detailed code description in Latex
    */
 ```
 
-4. Methods and Functions {#MethodsandFunctions}
+4. Methods and Functions
 ------------------------
 
-### 4.1. Complexity {#Complexity}
+### 4.1. Complexity 
 
 -   Do \*one\* thing per method.
 -   Break down complex methods.
@@ -368,7 +368,7 @@ to understand what you did 2 weeks from now.
 
 * * * * *
 
-### 4.2. Centralized exiting and early returns {#Centralizedexitingandearlyreturns}
+### 4.2. Centralized exiting and early returns 
 
 -   If a function exists from multiple location and some common work has
     to be done (like cleanup), the `goto` statement becomes handy.
@@ -407,7 +407,7 @@ Example
 
 * * * * *
 
-5. Formatting {#Formatting}
+5. Formatting 
 -------------
 
 ### 5.1. Indentation {#Indentation}
@@ -447,7 +447,7 @@ Heed that warning.
 
 * * * * *
 
-### 5.2. Breaking long lines and strings {#Breakinglonglinesandstrings}
+### 5.2. Breaking long lines and strings
 
 -   Avoid long lines.
 -   If a line is longer than 80 characters, think about breaking it into
@@ -463,7 +463,7 @@ are definitely far to long.
 
 * * * * *
 
-### 5.3. Placing Spaces {#PlacingSpaces}
+### 5.3. Placing Spaces 
 
 -   use a space before an opening paranthese `(` and opening curly
     bracket `{`.
@@ -483,7 +483,7 @@ Examples
 
 * * * * *
 
-### 5.4. Pointer and Reference Variables {#PointerandReferenceVariables}
+### 5.4. Pointer and Reference Variables
 
 -   If you define a pointer or reference type, place `*` resp. `&` close
     to the type not the variable name.
@@ -600,7 +600,7 @@ Examples
 
 * * * * *
 
-6. Memory Allocation {#MemoryAllocation}
+6. Memory Allocation
 --------------------
 
 -   Use std::vector for dynamic arrays
@@ -608,7 +608,7 @@ Examples
 
 * * * * *
 
-7. Error Handling {#ErrorHandling}
+7. Error Handling 
 -----------------
 
 -   Always check error conditions and handle them!
@@ -622,7 +622,7 @@ Examples
 
 * * * * *
 
-8. References {#References}
+8. References 
 -------------
 
 [ http://www.possibility.com/Cpp/CppCodingStandard.html](http://www.possibility.com/Cpp/CppCodingStandard.html)
