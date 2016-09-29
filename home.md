@@ -1,6 +1,6 @@
 [![](https://amas.web.psi.ch/images/logo.png)](/OPAL/wiki/TracIni#header_logo-section)
 
-Coding Style and Conventions {#CodingStyleandConventions}
+Coding Style and Conventions 
 ============================
 
 1.  [1. Language Standards](#LanguageStandards)
