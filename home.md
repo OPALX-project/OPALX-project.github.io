@@ -3,24 +3,24 @@
 Coding Style and Conventions 
 ============================
 
-1.  [1. Language Standards](#LanguageStandards)
-2.  [2. Naming Conventions](#NamingConventions)
-    1.  [2.1. General notes](#Generalnotes)
-    2.  [2.2. Class Names](#ClassNames)
-    3.  [2.3. File Names](#FileNames)
-    4.  [2.4. Class Library Names](#ClassLibraryNames)
-    5.  [2.5. Method Names](#MethodNames)
-    6.  [2.6. C Function Names](#CFunctionNames)
-    7.  [2.7. Class Member Variable Names](#ClassMemberVariableNames)
-    8.  [2.8. Method Argument and local Variable
+1.  [Language Standards](#LanguageStandards)
+2.  [Naming Conventions](#NamingConventions)
+    1.  [General notes](#Generalnotes)
+    2.  [Class Names](#ClassNames)
+    3.  [File Names](#FileNames)
+    4.  [Class Library Names](#ClassLibraryNames)
+    5.  [Method Names](#MethodNames)
+    6.  [C Function Names](#CFunctionNames)
+    7.  [Class Member Variable Names](#ClassMemberVariableNames)
+    8.  [Method Argument and local Variable
         Names](#MethodArgumentandlocalVariableNames)
-    9.  [2.9. Pointer and Reference Variables
+    9.  [Pointer and Reference Variables
         Names](#PointerandReferenceVariablesNames)
-    10. [2.10. Global and Static Variables](#GlobalandStaticVariables)
-    11. [2.11. Global Constants, Enums and Macro
+    10. [Global and Static Variables](#GlobalandStaticVariables)
+    11. [Global Constants, Enums and Macro
         Names](#GlobalConstantsEnumsandMacroNames)
-    12. [2.12. Type Names](#TypeNames)
-    13. [2.13. C++ File Extensions](#CFileExtensions)
+    12. [Type Names](#TypeNames)
+    13. [ C++ File Extensions](#CFileExtensions)
 
 3.  [3. Documentation](#Documentation)
     1.  [3.1. File Header for include files (.h
