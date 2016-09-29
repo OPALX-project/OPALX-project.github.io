@@ -1,18 +1,5 @@
 [![](https://amas.web.psi.ch/images/logo.png)](/OPAL/wiki/TracIni#header_logo-section)
 
-Search:
-
--   [Login](/OPAL/login)
--   [Preferences](/OPAL/prefs)
--   [Help/Guide](/OPAL/wiki/TracGuide)
--   [About Trac](/OPAL/about)
-
--   [Wiki](/OPAL/wiki)
--   [Timeline](/OPAL/timeline)
--   [Roadmap](/OPAL/roadmap)
--   [View Tickets](/OPAL/report)
--   [Search](/OPAL/search)
-
 [wiki:](/OPAL/wiki "View WikiStart")[CodingStyle](/OPAL/wiki/CodingStyle "View CodingStyle")
 
 Context Navigation
