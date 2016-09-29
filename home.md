@@ -1,22 +1,5 @@
 [![](https://amas.web.psi.ch/images/logo.png)](/OPAL/wiki/TracIni#header_logo-section)
 
-[wiki:](/OPAL/wiki "View WikiStart")[CodingStyle](/OPAL/wiki/CodingStyle "View CodingStyle")
-
-Context Navigation
-------------------
-
--   [Start Page](/OPAL/wiki/WikiStart)
--   [Index](/OPAL/wiki/TitleIndex)
--   [History](/OPAL/wiki/CodingStyle?action=history)
-
-* * * * *
-
-[Last
-modified](/OPAL/wiki/CodingStyle?action=diff&version=55 "Version 55 by adelmann")
-[2
-years](/OPAL/timeline?from=2014-06-11T09%3A42%3A09%2B02%3A00&precision=second "2014-06-11T09:42:09+02:00 in Timeline")
-ago
-
 Coding Style and Conventions {#CodingStyleandConventions}
 ============================
 
