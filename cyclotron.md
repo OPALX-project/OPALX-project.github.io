@@ -28,5 +28,4 @@ The results can be plotted with `gnuplot` by exectting
 
 The resulting `cyclotron.pdf` is shown below.
 
-[cyclotron1.pdf](/uploads/b0abbfd4ff5636cd05503382f3d4f2f0/cyclotron1.pdf)
 
