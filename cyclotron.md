@@ -9,7 +9,7 @@ If you do not have already access to OPAL, you can visit the download page (http
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalmerlin). 
 
 # Needed Input Files
-For this project we need 4 types of input files:
+For this project we need input files, that you obtain by clicking on links below:
 
 1. [cyclotron1.in]( https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.in) (cyclotron2.in, cyclotron3.in) the OPAL input file(s)
 2. [bfieldmap.dat]( https://amas.web.psi.ch/wiki/cyclotron/bfieldmap.dat) (magnetic field map)
@@ -18,7 +18,7 @@ For this project we need 4 types of input files:
 5. [ic.dat]( https://amas.web.psi.ch/wiki/cyclotron/ic.dat) (initial conditions for the tune calculation)
 6. [refsol.dat]( https://amas.web.psi.ch/wiki/cyclotron/refsol.dat) (the reference solution for the tune calculation)
 
-# Tune Calculation
+# Tune Calculation using cyclotron1.in
 For the tune calculation we need the initial condition:  energy, radius and radial momenta given to us by an other program.
 These data are in ic.dat. The Bash [cyclotron1.bash](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.bash) will not run the tune calculation for all energies specified in ic.dat.
 
