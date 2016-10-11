@@ -9,7 +9,7 @@ OPAL Documentation
 
 OPAL Examples
 =============
-1.  [Cyclotron](#Cyclotron)
+1.  [Cyclotron](#cyclotron)
 2. [FFAG](#FFAG)
 3. [RF Photo Injector](#RFPhotoInjector)
 4. [Post Processing](#PostProcessing)
