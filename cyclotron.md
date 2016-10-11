@@ -26,6 +26,6 @@ The results can be plotted with `gnuplot` by exectting
 
 `gnuplot cyclotron1.gpl`
 
-The resulting `cyclotron.pdf` is shown below.
+The result (cyclotron1.pdf) is shown below:
 
-
+[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.pdf)](/OPAL/wiki/TracIni#ctclotron1)
