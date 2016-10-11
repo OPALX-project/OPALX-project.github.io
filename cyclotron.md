@@ -24,8 +24,8 @@ These data are in ic.dat. The Bash [cyclotron1.bash](https://amas.web.psi.ch/wik
 
 The results can be plotted with `gnuplot` by executing
 
-`gnuplot [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl)`
+`gnuplot cyclotron1.gpl`
 
-The result (cyclotron1.pdf) is shown below:
+The result (cyclotron1.pdf) is shown below and was obtained with [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl).
 
 <center>[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.png)](/OPAL/wiki/TracIni#ctclotron1)</center>
