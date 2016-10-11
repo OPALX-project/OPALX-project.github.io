@@ -15,8 +15,8 @@ OPAL Examples
 
 
 
-Coding Style and Conventions 
-============================
+OPAL for Developers: Coding Style and Conventions 
+===========================================
 
 1.  [Language Standards](#LanguageStandards)
 2.  [Naming Conventions](#NamingConventions)
