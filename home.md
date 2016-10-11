@@ -2,13 +2,20 @@
 
 OPAL Introduction
 ================
+OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes is possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the comissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
 
-OPAL Documentation
-==================
+OPAL Documentation & Help
+========================
+
+OPAL Manual:  http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf
+
+Please use the OPAL mailing list [opal@…] (opal AT lists.psi.ch) to discuss problems and issues.
+
+Add yourself to the mailing list by visiting  http://lists.web.psi.ch/mailman/listinfo/opal
 
 
-OPAL Examples
-=============
+OPAL Start with Examples
+=====================
 1.  [Cyclotron](Cyclotron)
 2. [FFAG](#FFAG)
 3. [RF Photo Injector](#RFPhotoInjector)
