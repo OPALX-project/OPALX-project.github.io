@@ -28,4 +28,4 @@ The results can be plotted with `gnuplot` by exectting
 
 The result (cyclotron1.pdf) is shown below:
 
-[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.png)](/OPAL/wiki/TracIni#ctclotron1)
+<center<[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.png)](/OPAL/wiki/TracIni#ctclotron1)</center>
