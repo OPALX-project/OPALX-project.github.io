@@ -12,19 +12,19 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 For this project we need 4 types of input files:
 
 1. [cyclotron1.in]( https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.in) (cyclotron2.in, cyclotron3.in) the OPAL input file(s)
-2. bfieldmap.dat (magnetic field map)
-3. rffieldmap1.dat and rffieldmap2.dat (rf field maps)
-4. dist1.dat (the input distribution)
-5. ic.dat (initial conditions for the tune calculation)
-6. refsol.dat (the reference solution for the tune calculation)
+2. [bfieldmap.dat]( https://amas.web.psi.ch/wiki/cyclotron/bfieldmap.dat) (magnetic field map)
+3. [rffieldmap1.dat]( https://amas.web.psi.ch/wiki/cyclotron/rffieldmap1.dat) and rffieldmap2.dat (rf field maps)
+4. [dist1.dat]( https://amas.web.psi.ch/wiki/cyclotron/dist1.dat) (the input distribution)
+5. [ic.dat]( https://amas.web.psi.ch/wiki/cyclotron/ic.dat) (initial conditions for the tune calculation)
+6. [refsol.dat]( https://amas.web.psi.ch/wiki/cyclotron/refsol.dat) (the reference solution for the tune calculation)
 
 # Tune Calculation
 For the tune calculation we need the initial condition:  energy, radius and radial momenta given to us by an other program.
-These data are in ic.dat. The Bash cyclotron1.bash will not run the tune calculation for all energies specified in ic.dat.
+These data are in ic.dat. The Bash [cyclotron1.bash](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.bash) will not run the tune calculation for all energies specified in ic.dat.
 
-The results can be plotted with `gnuplot` by exectting
+The results can be plotted with `gnuplot` by executing
 
-`gnuplot cyclotron1.gpl`
+`gnuplot [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl)`
 
 The result (cyclotron1.pdf) is shown below:
 
