@@ -22,7 +22,7 @@ For this project we need 4 types of input files:
 For the tune calculation we need the initial condition:  energy, radius and radial momenta given to us by an other program.
 These data are in ic.dat. The Bash [cyclotron1.bash](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.bash) will not run the tune calculation for all energies specified in ic.dat.
 
-The results can be plotted with `gnuplot` by executing
+The results can be plotted with [gnuplot](http://www.gnuplotting.org) by executing
 
 `gnuplot cyclotron1.gpl`
 
