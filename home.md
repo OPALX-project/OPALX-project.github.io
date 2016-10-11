@@ -6,8 +6,10 @@ OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framew
 
 # OPAL Regression Test results for
 
-## the master branch  http://amas.web.psi.ch/opal/regressionTests/master/
-## branch OPAL-1.4  http://amas.web.psi.ch/opal/regressionTests/1.4/
+1. the master branch  
+       * http://amas.web.psi.ch/opal/regressionTests/master/
+1.  branch OPAL-1.4.x  
+       * http://amas.web.psi.ch/opal/regressionTests/1.4/
 
 OPAL Documentation & Help
 ========================
