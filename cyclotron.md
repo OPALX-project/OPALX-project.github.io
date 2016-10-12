@@ -20,10 +20,10 @@ For this project we need input files, that you obtain by clicking on links below
 
 # Tune Calculation using cyclotron1.in
 For the tune calculation we need the initial condition (ic):  energy, radius and radial momenta given to us by an other program in the file  ic.dat. The Bash [cyclotron1.bash](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.bash) will run the tune calculation for all energies specified in ic.dat and store the 
-radial and vertical tune values together with reference data.  A comparison  can the be plotted with [gnuplot](http://www.gnuplotting.org), by executing
+radial and vertical tune values together with reference data.  A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by executing
 
 `gnuplot cyclotron1.gpl`
 
-The result (cyclotron1.pdf) is shown below and was obtained with [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl).
+The result is shown below and was obtained with [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl).
 
 <center>[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.png)](/OPAL/wiki/TracIni#ctclotron1)</center>
