@@ -43,4 +43,4 @@ As in the previous example, the result shown below where obtained with [cyclotro
 `gnuplot cyclotron2.gpl`
 
 
-
+<center>[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron2.png)](/OPAL/wiki/TracIni#ctclotron2)</center>
