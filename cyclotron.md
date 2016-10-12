@@ -11,7 +11,7 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
 
-1. [cyclotron1.in]( https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.in) (cyclotron2.in, cyclotron3.in) the OPAL input file(s)
+1. [cyclotron1.in]( https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.in) ( [cyclotron2.in]( https://amas.web.psi.ch/wiki/cyclotron/cyclotron2.in), cyclotron3.in) the OPAL input file(s)
 2. [bfield.dat]( https://amas.web.psi.ch/wiki/cyclotron/bfield.dat) (magnetic field map)
 3. [rffield1.dat]( https://amas.web.psi.ch/wiki/cyclotron/rffield1.dat) and [rffield2.dat](https://amas.web.psi.ch/wiki/cyclotron/rffield2.dat) (rf field maps)
 4. [dist1.dat]( https://amas.web.psi.ch/wiki/cyclotron/dist1.dat) (the input distribution)
