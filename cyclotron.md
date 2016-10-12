@@ -29,3 +29,12 @@ radial and vertical tune values together with reference data.  Make sure the scr
 The result is shown below and was obtained with [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl).
 
 <center>[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.png)](/OPAL/wiki/TracIni#ctclotron1)</center>
+
+# Acceleratrd Orbit Calculation using cyclotron2.in
+## Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
+
+
+
+
+
+
