@@ -27,7 +27,7 @@ OPAL Start with Examples
 2. [FFAG](#FFAG)
 3. [RF Photo Injector](#RFPhotoInjector)
 4. [Post Processing](#PostProcessing)
-
+5. Old (maybe outdated) [stuff](https://amas.psi.ch/OPAL/wiki/OPAL)
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
