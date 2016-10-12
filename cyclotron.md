@@ -36,7 +36,7 @@ For this calculation the initial conditions are set in the input file. Run OPAL 
 
 `opal  cyclotron2.in | tee cyclotron2.out`
 
-where you also save the output in cyclotron.out. It is always a good idea to check the standard output of OPAL in order to reveal problems. 
+where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems. 
 
 As in the previous example, 
 
