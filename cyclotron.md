@@ -38,7 +38,7 @@ For this calculation the initial conditions are set in the input file. Run OPAL 
 
 where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems. 
 
-As in the previous example, 
+As in the previous example, the result shown below where obtained with [cyclotron2.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron2.gpl)
 
 `gnuplot cyclotron2.gpl`
 
