@@ -19,7 +19,7 @@ For this project we need input files, that you obtain by clicking on links below
 6. [refsol.dat]( https://amas.web.psi.ch/wiki/cyclotron/refsol.dat) (the reference solution for the tune calculation)
 
 # Tune Calculation using cyclotron1.in
-## Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
+### Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
 
 For the tune calculation we need initial conditions (ic):  energy, radius and radial momenta given to us by an other program in the file  ic.dat. The Bash script [cyclotron1.bash](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.bash) will run the tune calculation for all energies specified in ic.dat and store the 
 radial and vertical tune values together with reference data.  Make sure the script has execute permission (`chmod +x cyclotron1.bash`) A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by executing
