@@ -32,9 +32,15 @@ The result is shown below and was obtained with [cyclotron1.gpl](https://amas.we
 
 # Acceleratrd Orbit Calculation using cyclotron2.in
 ## Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
+For this calculation the initial conditions are set in the input file. Run OPAL with
 
+`opal  cyclotron2.in | tee cyclotron2.out`
 
+where you also save the output in cyclotron.out. It is always a good idea to check the standard output of OPAL in order to reveal problems. 
 
+As in the previous example, 
 
+`gnuplot cyclotron2.gpl`
 
+will visualise the results.
 
