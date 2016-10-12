@@ -30,8 +30,8 @@ The result is shown below and was obtained with [cyclotron1.gpl](https://amas.we
 
 <center>[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.png)](/OPAL/wiki/TracIni#ctclotron1)</center>
 
-# Acceleratrd Orbit Calculation using cyclotron2.in
-## Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
+# Accelerated Orbit Calculation using cyclotron2.in
+### Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
 For this calculation the initial conditions are set in the input file. Run OPAL with
 
 `opal  cyclotron2.in | tee cyclotron2.out`
