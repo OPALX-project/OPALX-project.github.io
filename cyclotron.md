@@ -48,7 +48,8 @@ As in the previous example, the result shown below where obtained with [cyclotro
 
 In cyclotron2.in, the distribution and the field solver needs to be changed.
 
-Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS
+Dist1 as defined here
+`Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS
 
 sigmax=3E-3, sigmapx=1E-5, 
 
@@ -56,7 +57,9 @@ sigmay=3E-3, sigmapy=1E-5,
 
 sigmat=3E-3, sigmapt=1E-5, 
 
-CORRX = 0,  CORRY =0,  CORRT = 0;
+CORRX = 0,  CORRY =0,  CORRT = 0;`
+
+represents a beam with 3 mm rms
 
 Fs1:FIELDSOLVER, FSTYPE=FFT, MX=64, MY=64, MT=64, PARFFTX=true, PARFFTY=true, PARFFTT=false, 
 BCFFTX=open, BCFFTY=open, BCFFTT=open;
