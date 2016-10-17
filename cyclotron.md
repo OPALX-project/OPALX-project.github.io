@@ -2,7 +2,7 @@
 Here we will run the Cyclotron flavour of OPAL (OPAL_cyc) in three distinct modes
 1. tune calculation
 2. accelerated orbit mode
-3. 3D space charge
+3. 3D space charge calculation
 
 # Preparation
 If you do not have already access to OPAL, you can visit the download page (https://amas.psi.ch/OPAL/wiki/Downloads) . In
@@ -42,5 +42,22 @@ As in the previous example, the result shown below where obtained with [cyclotro
 
 `gnuplot cyclotron2.gpl`
 
-
 <center>[![](https://amas.web.psi.ch/wiki/cyclotron/cyclotron2.png)](/OPAL/wiki/TracIni#ctclotron2)</center>
+
+# 3D space charge calculation
+
+In cyclotron2.in, the distribution and the field solver needs to be changed.
+
+Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS
+sigmax=3E-3, sigmapx=1E-5, 
+sigmay=3E-3, sigmapy=1E-5, 
+sigmat=3E-3, sigmapt=1E-5, 
+CORRX = 0,  CORRY =0,  CORRT = 0;
+
+Fs1:FIELDSOLVER, FSTYPE=FFT, MX=64, MY=64, MT=64, PARFFTX=true, PARFFTY=true, PARFFTT=false,
+		 BCFFTX=open, BCFFTY=open, BCFFTT=open;
+
+Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;
+
+
+
