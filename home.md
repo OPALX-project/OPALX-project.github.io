@@ -18,7 +18,7 @@ OPAL Documentation & Help
 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues.
 
-* Add yourself to the mailing list by visiting  http://lists.web.psi.ch/mailman/listinfo/opal
+** Add yourself to the mailing list by visiting  https://psilists.ethz.ch/sympa/subscribe/opal
 
 
 OPAL Start with Examples
