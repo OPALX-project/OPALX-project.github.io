@@ -45,7 +45,7 @@
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
-<a name="#LanguageStandards)"></a>Standards 1. Language Standards 
+<a name="#LanguageStandards"></a> Standards 1. Language Standards 
 ---------------------
 
 -   C99
