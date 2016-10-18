@@ -45,9 +45,7 @@
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
-# 1. Language Standards 
----------------------
-
+# Language Standards 
 -   C99
 -   C++11 (minimum versions gcc 4.6 ~~and Intel 12~~)
 
