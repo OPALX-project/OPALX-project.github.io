@@ -23,10 +23,8 @@ OPAL Start with Examples
 
 # OPAL Regression Test results for
 
-1. the master branch  
-       * http://amas.web.psi.ch/opal/regressionTests/master/
-1.  branch OPAL-1.4.x  
-       * http://amas.web.psi.ch/opal/regressionTests/1.4/
+1. the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
+1.  branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
