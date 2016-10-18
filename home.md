@@ -7,7 +7,8 @@ OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framew
 OPAL Documentation & Help
 ========================
 
-* OPAL Dowlnload
+* For OPAL downlnload  visit the download page (https://amas.psi.ch/OPAL/wiki/Downloads) . 
+
 * OPAL Manual:  http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf
 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the mailing list by visiting  https://psilists.ethz.ch/sympa/subscribe/opal
