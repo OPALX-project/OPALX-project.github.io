@@ -1,7 +1,4 @@
-[Foo](#foo)
-
-# Foo
-
+[Language Standards](#language-standards)
 
 1.  [Language Standards](#LanguageStandards)
 2.  [Naming Conventions](#NamingConventions)
@@ -50,7 +47,7 @@
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
- Standards 1. Language Standards <a name="#LanguageStandards"></a>
+# Language Standards 
 ---------------------
 
 -   C99
