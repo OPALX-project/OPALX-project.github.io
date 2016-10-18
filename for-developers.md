@@ -1,4 +1,3 @@
-
 1. [Language Standards](#language-standards)
 2.  [Naming Conventions](#NamingConventions)
     1.  [General notes](#Generalnotes)
@@ -46,7 +45,7 @@
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
-# Language Standards 
+1. Language Standards 
 ---------------------
 
 -   C99
