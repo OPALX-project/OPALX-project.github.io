@@ -1,4 +1,4 @@
-1.  [Language Standards](LanguageStandards)
+1.  [Language Standards](#LanguageStandards)
 2.  [Naming Conventions](#NamingConventions)
     1.  [General notes](#Generalnotes)
     2.  [Class Names](#ClassNames)
@@ -45,7 +45,7 @@
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
- Standards 1. Language Standards <a name="LanguageStandards"></a>
+ Standards 1. Language Standards <a name="#LanguageStandards"></a>
 ---------------------
 
 -   C99
