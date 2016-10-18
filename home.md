@@ -29,6 +29,6 @@ OPAL Start with Examples
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
-1.  [for-developers](for-developers)
+1.  [Coding Style and Conventions](for-developers)
 
 
