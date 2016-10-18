@@ -1,6 +1,5 @@
-[Language Standards](#language-standards)
 
-1.  [Language Standards](#LanguageStandards)
+1. [Language Standards](#language-standards)
 2.  [Naming Conventions](#NamingConventions)
     1.  [General notes](#Generalnotes)
     2.  [Class Names](#ClassNames)
