@@ -617,7 +617,7 @@ Examples
 
 * * * * *
 
-8. References 
+8. References <a name="#References"></a>
 -------------
 
 [ http://www.possibility.com/Cpp/CppCodingStandard.html](http://www.possibility.com/Cpp/CppCodingStandard.html)
