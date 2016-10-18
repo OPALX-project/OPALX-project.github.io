@@ -1,3 +1,8 @@
+[Foo](#foo)
+
+# Foo
+
+
 1.  [Language Standards](#LanguageStandards)
 2.  [Naming Conventions](#NamingConventions)
     1.  [General notes](#Generalnotes)
