@@ -19,3 +19,8 @@ For this calculation the initial conditions are all set in the input file. Run O
 
 `opal  RFphotoinjector.in | tee RFphotoinjector.out`
 
+For postprocessing visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing) and compare to the [paper](http://vrws.de/napac2016/papers/thpoa46.pdf).
+
+
+
+
