@@ -7,7 +7,7 @@ OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framew
 OPAL Documentation & Help
 ========================
 
-* [OPAL Presentations]( OPALPresentations) and papers, ideal for an overview
+* [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
 
 * For the  download of OPAL binaries [visit] (https://amas.psi.ch/OPAL/wiki/Downloads)
 
@@ -23,10 +23,10 @@ OPAL Start with Examples
 4. [Post Processing](PostProcessing)
 5. Old (maybe outdated) [stuff](https://amas.psi.ch/OPAL/wiki/OPAL)
 
-# OPAL Regression Test results for
+# OPAL Regression Test results for:
 
 1. the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
-1.  branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
+2. branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
