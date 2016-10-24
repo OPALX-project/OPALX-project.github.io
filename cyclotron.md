@@ -52,12 +52,9 @@ Dist1 as defined here
 
 **Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS**
 **sigmax=3E-3, sigmapx=1E-5, **
-
-sigmay=3E-3, sigmapy=1E-5, 
-
-sigmat=3E-3, sigmapt=1E-5, 
-
-CORRX = 0,  CORRY =0,  CORRT = 0;**
+** sigmay=3E-3, sigmapy=1E-5,**
+** sigmat=3E-3, sigmapt=1E-5,**
+**CORRX = 0,  CORRY =0,  CORRT = 0;**
 
 represents a beam with 3 mm rms
 
