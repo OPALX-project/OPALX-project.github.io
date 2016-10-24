@@ -21,6 +21,8 @@ For this calculation the initial conditions are all set in the input file. Run O
 
 For postprocessing visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing) and compare to the [paper](http://vrws.de/napac2016/papers/thpoa46.pdf).
 
+The result is shown below and was obtained with [cyclotron1.gpl](https://amas.web.psi.ch/wiki/cyclotron/cyclotron1.gpl).
 
+<center>[![](https://amas.web.psi.ch/wiki/RFphotoinjector/figures/wikitest5mNoMinStep.png)](/OPAL/wiki/TracIni#Rfphotoinjector)</center>
 
 
