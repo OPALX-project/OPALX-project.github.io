@@ -62,5 +62,5 @@ export OPAL_EXE_PATH=$OPAL_DIR/build/src/
 
 3. mkdir $OPAL_EXE_PATH=$OPAL_DIR/build && cd OPAL_EXE_PATH=$OPAL_DIR/build
 4. cmake ../src/
-
+5. make
 Now you should have OPAL in $OPAL_EXE_PATH and are ready to go
