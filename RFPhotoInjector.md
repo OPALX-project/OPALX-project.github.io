@@ -13,3 +13,9 @@ For this project we need input files, that you obtain by clicking on links below
 1. Inputfile [RFphotoinjector.in](https://amas.web.psi.ch/wiki/RFphotoinjector/RFphotoinjector.in) 
 2. Two solenoid field maps: [M_440.T7](https://amas.web.psi.ch/wiki/RFphotoinjector/M_440.T7) and [BF_550.T7 ](https://amas.web.psi.ch/wiki/RFphotoinjector/BF_550.T7) 
 3. RF gun field map [DriveGun.T7](https://amas.web.psi.ch/wiki/RFphotoinjector/DriveGun.T7)
+
+# Run the Photo Injector Simulation
+For this calculation the initial conditions are all set in the input file. Run OPAL with
+
+`opal  RFphotoinjector.in | tee RFphotoinjector.in`
+
