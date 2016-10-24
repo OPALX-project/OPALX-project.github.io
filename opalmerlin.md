@@ -28,10 +28,11 @@ Use again the `module` command to load the desired OPAL version:
 A environment variable OPAL_EXE_PATH will point to the directory where the selected version of OPAL will reside. 
 
 # How to compile OPAL on Merlin
-Go to the directory where you want to install, for example in '$HOME/git/opal'
+Go to the directory where you want to clone the source code and build the executable:
 
+0. mkdir -p $HOME/git/opal && cd $HOME/git/opal
 1. git clone git@gitlab.psi.ch:OPAL/src.git
-2. load the correct modules:
+2. load the correct modules (put them into the .bashrc or equivalent login-cfg file) :
 
 module purge
 
