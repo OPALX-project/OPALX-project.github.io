@@ -60,9 +60,11 @@ Dist1 as defined here
 
 **CORRX = 0,  CORRY =0,  CORRT = 0;**
 
-represents a beam with 3 mm rms
+represents a beam with 3 mm rms. The field solver **Fs1** is the standard open domain FFT solver:
 
 **Fs1:FIELDSOLVER, FSTYPE=FFT, MX=64, MY=64, MT=64, PARFFTX=true, PARFFTY=true, PARFFTT=false,  BCFFTX=open, BCFFTY=open, BCFFTT=open;**
+
+and the beam is represented by **1E5** macro particles
 
 **Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;**
 
