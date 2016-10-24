@@ -13,7 +13,7 @@ OPAL Documentation & Help
 
 * OPAL [Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 
-* Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)  by visiting  
+* Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 
 OPAL Start with Examples
 =====================
