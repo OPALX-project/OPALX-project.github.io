@@ -17,7 +17,7 @@ OPAL Start with Examples
 =====================
 1.  [Cyclotron](Cyclotron)
 2. [FFAG](#FFAG)
-3. [RF Photo Injector](#RFPhotoInjector)
+3. [RF Photo Injector](RFPhotoInjector)
 4. [Post Processing](PostProcessing)
 5. Old (maybe outdated) [stuff](https://amas.psi.ch/OPAL/wiki/OPAL)
 
