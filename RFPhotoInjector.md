@@ -10,5 +10,6 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
 
-1. [RFphotoinjector.in.in]( https://amas.web.psi.ch/wiki/RFphotoinjector/RFphotoinjector.in) 
-
+1. Inputfile [RFphotoinjector.in](https://amas.web.psi.ch/wiki/RFphotoinjector/RFphotoinjector.in) 
+2. Two solenoid field maps: [M_440.T7](https://amas.web.psi.ch/wiki/RFphotoinjector/M_440.T7) and [BF_550.T7 ](https://amas.web.psi.ch/wiki/RFphotoinjector/BF_550.T7) 
+3. RF gun field map [DriveGun.T7](https://amas.web.psi.ch/wiki/RFphotoinjector/DriveGun.T7)
