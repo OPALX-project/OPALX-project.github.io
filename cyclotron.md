@@ -46,7 +46,7 @@ As in the previous example, the result shown below where obtained with [cyclotro
 
 # 3D space charge calculation
 
-In cyclotron2.in, the distribution and the field solver needs to be changed.
+In cyclotron2.in, only the distribution and beam command, together with the field solver needs to be adapted.
 
 Dist1 as defined here
 
