@@ -18,4 +18,4 @@
 5. [A Fast and Scalable Low Dimensional Solver for Charged Particle Dynamics in large Particle Accelerators]( http://dx.doi.org/10.1007/s00450-012-0216-2)
 6. [A Parallel General Purpose Multi-Objective Optimization Framework, with Application to Beam Dynamics](http://arxiv.org/abs/1302.2889)
 7. [A novel adaptive time stepping variant of the Boris-Buneman integrator for the simulation of particle accelerators with space charge] (http://arxiv.org/abs/1211.3664)
-8. Dark Current and Multipacting Capabilities in OPAL: Model Benchmarks and Applications  http://arxiv.org/abs/1208.6577
+8. [Dark Current and Multipacting Capabilities in OPAL: Model Benchmarks and Applications](http://arxiv.org/abs/1208.6577)
