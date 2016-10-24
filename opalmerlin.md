@@ -61,6 +61,6 @@ export OPAL_DIR=$HOME/git/opal
 export OPAL_EXE_PATH=$OPAL_DIR/build/src/
 
 3. mkdir $OPAL_EXE_PATH=$OPAL_DIR/build && cd OPAL_EXE_PATH=$OPAL_DIR/build
-4. cmake ..
+4. cmake ../src/
 
 Now you should have OPAL in $OPAL_EXE_PATH and are ready to go
