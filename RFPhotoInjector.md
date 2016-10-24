@@ -17,5 +17,5 @@ For this project we need input files, that you obtain by clicking on links below
 # Run the Photo Injector Simulation
 For this calculation the initial conditions are all set in the input file. Run OPAL with
 
-`opal  RFphotoinjector.in | tee RFphotoinjector.in`
+`opal  RFphotoinjector.in | tee RFphotoinjector.out`
 
