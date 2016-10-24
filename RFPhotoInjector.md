@@ -1,4 +1,4 @@
-This example describes a rf-photo injector, as part of the Argonne Wakefield Accelerator (AWA). The model based on the [paper](http://vrws.de/napac2016/papers/thpoa46.pdf) by N.R. Neveu and benchmarks three cores: GPT, ASTRA and OPAL.
+This example describes a rf-photo injector, as part of the Argonne Wakefield Accelerator (AWA). The model based on the [paper](http://vrws.de/napac2016/papers/thpoa46.pdf) by N.R. Neveu et al.,  and benchmarks three codes: GPT, ASTRA and OPAL.
 
 # Goal
 Here we will run the rf-photo injector (OPAL_t) 
