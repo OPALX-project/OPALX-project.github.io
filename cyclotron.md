@@ -49,6 +49,7 @@ As in the previous example, the result shown below where obtained with [cyclotro
 In cyclotron2.in, the distribution and the field solver needs to be changed.
 
 Dist1 as defined here
+
 `Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS
 
 sigmax=3E-3, sigmapx=1E-5, 
