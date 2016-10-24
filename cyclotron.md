@@ -50,9 +50,8 @@ In cyclotron2.in, the distribution and the field solver needs to be changed.
 
 Dist1 as defined here
 
-**Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS
-
-sigmax=3E-3, sigmapx=1E-5, 
+**Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS**
+**sigmax=3E-3, sigmapx=1E-5, **
 
 sigmay=3E-3, sigmapy=1E-5, 
 
