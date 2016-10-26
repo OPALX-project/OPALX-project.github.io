@@ -67,4 +67,4 @@ export OPAL_EXE_PATH=$OPAL_DIR/build/src/
 Now you should have OPAL in $OPAL_EXE_PATH and are ready to go
 
 # Enable IPPL Tests
-' -DENABLE_IPPLTESTS=TRUE'
+Add `-DENABLE_IPPLTESTS=TRUE` to the cmake command.
