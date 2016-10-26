@@ -65,3 +65,6 @@ export OPAL_EXE_PATH=$OPAL_DIR/build/src/
 5. make
 
 Now you should have OPAL in $OPAL_EXE_PATH and are ready to go
+
+# Enable IPPL Tests
+' -DENABLE_IPPLTESTS=TRUE'
