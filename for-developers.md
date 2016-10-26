@@ -45,6 +45,14 @@
 7.  [7. Error Handling](#ErrorHandling)
 8.  [8. References](#References)
 
+
+# Astyle 
+(Artistic Style)[http://astyle.sourceforge.net/] is a source code indenter, formatter, and beautifier for the C, C++, C# and Java programming languages.
+# Uncrustify 
+[Uncrustify](http://uncrustify.sourceforge.net/) a highly configurable, easily modifiable source code beautifier.
+# UniversalIndentGUI 
+"[UniversalIndentGUI](http://universalindent.sourceforge.net/) offers a live preview for setting the parameters of nearly any indenter. You change the value of a parameter and directly see how your reformatted code will look like. Save your beauty looking code or create an anywhere usable batch/shell script to reformat whole directories or just one file even out of the editor of your choice that supports external tool calls"
+
 # Language Standards 
 -   C99
 -   C++11 (minimum versions gcc 4.6 ~~and Intel 12~~)
