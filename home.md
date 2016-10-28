@@ -15,6 +15,8 @@ OPAL Documentation & Help
 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 
+* Report bugs [here](https://gitlab.psi.ch/OPAL/src/issues)
+
 OPAL Start with Examples
 =====================
 1.  [Cyclotron](Cyclotron)
