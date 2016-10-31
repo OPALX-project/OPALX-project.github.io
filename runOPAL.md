@@ -1,4 +1,4 @@
-= Obtain {{{runOpal.py}}} =
+# Obtain runOpal.py
 
 Clone  {{{runOpal.py}}}  from git@gitorious.psi.ch:opal/runopal.git
 
