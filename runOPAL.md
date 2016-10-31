@@ -139,7 +139,7 @@ dude:foo adelmann$ ls foo
 
 dude:foo adelmann$ ls
 
-**fieldmaps           foo.data        foo_EDES=0.05:0.25:0.05      setup.sh       tmpl**
+fieldmaps           foo.data        **foo_EDES=0.05:0.25:0.05**      setup.sh       tmpl
 
 dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05    
 
