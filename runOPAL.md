@@ -85,7 +85,8 @@ Simulation directory is foo using OPAL at  /gpfs/home/adelmann/build/opal-1.2.0/
 Using templatefile at /Users/adelmann/foo/tmpl/ using fieldmaps at /Users/adelmann/foo/fieldmaps/ 
 
 Parameter set in foo.in are:
- :::: NPART= 1000
+
+* :::: NPART= 1000
  :::: K3= -17.18
  :::: K2= 15.13
  :::: K1= -15.34
@@ -115,21 +116,21 @@ Parameter set in foo.in are:
  :::: SIGPY= 0.0
  :::: DPOS2= 2.32
  :::: DPOS1= 0.02
- :::: EDES= 0.250
+ :::: EDES= 0.250*
+
 Done with setup of the OPAL simulation but not submitting the job (--test) 
-*
 After that you will have a directory foo with this content:
-*
+
 dude:foo adelmann$ ls
 fieldmaps   foo     foo.data    setup.sh    tmpl
 
 dude:foo adelmann$ ls foo
 foo.in run.sge
-*
+
 
 '''Note''': is setup.sh is available and executable you do not have to source it.
 
-# Example 2: 1D Parmeter Scan ==
+# Example 2: 1D Parmeter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050`
 ...
@@ -140,7 +141,7 @@ dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05
 fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25
 
 
-# Example 3: 2D Parmeter Scan ==
+# Example 3: 2D Parmeter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01`
 
