@@ -118,9 +118,8 @@ Parameter set in foo.in are:
  :::: SIGPY= 0.0
  :::: DPOS2= 2.32
  :::: DPOS1= 0.02
- :::: EDES= 0.250
-
-Done with setup of the OPAL simulation but not submitting the job (--test) `
+ :::: EDES= 0.250`
+`Done with setup of the OPAL simulation but not submitting the job (--test) `
 
 After that you will have a directory foo with this content:
 
