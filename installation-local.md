@@ -1,6 +1,6 @@
 # Pre-build Binaries and Modules
 
-You need OpenAFS [from]( http://www.openafs.org)
+You need OpenAFS from [here]( http://www.openafs.org).
 
 Get the modules and binaries:
 
