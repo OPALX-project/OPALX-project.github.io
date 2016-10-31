@@ -66,7 +66,7 @@ where also all results are stored. The general syntax of runOPAL.py is
 
 
 `runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--test] [--block] [--keep] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
-*ATTR* refers to a name in the data file. 
+ 
 
   * *--test* exercises everything except for the submission of the job.
   * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOpal* will use the nearest position stored in the restart file as restart position. 
@@ -74,7 +74,8 @@ where also all results are stored. The general syntax of runOPAL.py is
   * *--block* runs opal local not using the batch system and waits until the job is done.
   * *--keep* if same simulation has been run before, keep old data and abort.
   * *--nobatch* uses plain mpirun on the local machine.
-  * *SCANVALUE*=start\:end\:step scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
+  * *ATTR* refers to a name in the data file
+  * *SCANVALUE* \=start\:end\:step scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
 === Cautions ===
 
