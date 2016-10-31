@@ -21,9 +21,9 @@ There are 5 environment variables recognized by the *runOPAL.py*:
 
 In Bash parlance:
 
-`export TEMPLATES=`pwd`/tmpl/`
+`export TEMPLATES=$PWD/tmpl/`
 
-`export FIELDMAPS=`pwd`/fieldmaps/`
+`export FIELDMAPS=$PWD/fieldmaps/`
  
 `export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/`
 
@@ -32,19 +32,20 @@ In Bash parlance:
  `export SGE_RAM=8`
 
 
+Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise 
+you need to set it accordingly. 
+
 From the TEMPLATES directory the *foo.tmpl* file is taken and the values are replaced. 
 
 The field maps from the *FIELDMAPS* directory are linked to the directory where the simulation is executed. 
 
-*OPAL_EXE_PATH* maybe depends on the loaded opal module. If a *setup.sh* script is available and executable, runOPAL.py will source it.
 
 *SGE_QUEUE* is the queue used for the simulation. Different queues may have different numbers of nodes and CPU's available as well as different run-time limitations.
 
-*SGE_RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not 
-be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
+*SGE_RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
 
 
-== Here a snippet of a data and tmpl file (*foo.data*)
+* Here a snippet of a data and tmpl file (*foo.data*)
 
 *
   # This is a comment
