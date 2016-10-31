@@ -25,7 +25,12 @@ OPAL Start with Examples
 4. [Post Processing](PostProcessing)
 5. Old (maybe outdated) [stuff](https://amas.psi.ch/OPAL/wiki/OPAL)
 
-# OPAL Regression Test results for:
+The runOPAL.py Script
+=====================
+The Python scripts allows you to run, automated, several OPAL jobs and obtain the
+data in a conceived way. Scans of multiple dimensions are easy possible. The user guid
+is found [here](runOPAL)
+
 
 1. the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
 2. branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
