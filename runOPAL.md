@@ -119,6 +119,7 @@ Parameter set in foo.in are:
  :::: DPOS2= 2.32
  :::: DPOS1= 0.02
  :::: EDES= 0.250`
+
 `Done with setup of the OPAL simulation but not submitting the job (--test) `
 
 After that you will have a directory foo with this content:
@@ -129,10 +130,7 @@ dude:foo adelmann$ ls
 
 dude:foo adelmann$ ls foo
 
-** foo.in run.sge**
-
-
-'''Note''': is setup.sh is available and executable you do not have to source it.
+**foo.in run.sge**
 
 # Example 2: 1D Parmeter Scan
 
