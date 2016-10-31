@@ -12,6 +12,8 @@ For Linux (SL6) use:
 
 `sudo rsync --verbose --progress --archive --delete /afs/psi.ch/sys/psi.x86_64_slp6/ /opt/psi.local/"`
 
+Make sure the needed environment variables are set correctly:
+
 `source /opt/psi/config/profile.bash`
 
 Now all modules should be ready.
