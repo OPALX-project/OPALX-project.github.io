@@ -1,6 +1,6 @@
 # Obtain runOpal.py
 
-Clone runOpal.py  from [here]{https://gitlab.psi.ch/OPAL/runOPAL}
+Clone runOpal.py  from [here](https://gitlab.psi.ch/OPAL/runOPAL)
 
 # HowTo Use runOpal.py
 In order to use *runOpal.py* you have to provide two
