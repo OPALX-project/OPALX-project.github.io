@@ -152,7 +152,7 @@ dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05
 
 dude:foo adelmann$ ls
 
-fieldmaps       foo.data          ** foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01**      setup.sh  tmpl
+fieldmaps       foo.data          **foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01**      setup.sh  tmpl
 
 
 dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01
@@ -164,25 +164,19 @@ fooEDES=0.05POS1=0.43   fooEDES=0.05POS1=0.48   fooEDES=0.15POS1=0.43   fooEDES=
 fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=0.15POS1=0.49   fooEDES=0.1POS1=0.44    fooEDES=0.1POS1=0.49    fooEDES=0.25POS1=0.44   fooEDES=0.25POS1=0.49   fooEDES=0.2POS1=0.44    fooEDES=0.2POS1=0.49**
 
 
-== Run a Restart ==
+#Run a Restart (needs to be updated)
 
 In this particular example we assume that a simulation called  ''Phase3'' has successfully been executed. The output of the simulation is located
+
 at */gpfs/homefelsim/adelmann/Phase3/FinPhase3/*.
 
 A restart simulation starting from ''step=10'' until ''ZSTOP=13.1'' m would then look like:
 
-*
-  runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1
-*
-
+`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1`
 
 In this example instead of a restart step, a restart position is specified.
 
-*
-  runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1
-*
+`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1`
+
 
 If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
-
-
-== CAVE: At the moment restart is only possible from the last step dumped in the .h5 file. Also, be careful to use the number of dumps with --restart-step, not the actual number of steps (i.e. if in the original run you used PSDUMPFREQU = 10, you will get 10 dumps per 100 steps. to restart from STEP 100 you will write --restart-step=10).
