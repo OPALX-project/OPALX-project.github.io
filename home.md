@@ -31,9 +31,10 @@ The Python scripts allows you to run, automated, several OPAL jobs and obtain th
 data in a conceived way. Scans of multiple dimensions are easy possible. The user guid
 is found [here](runOPAL)
 
-
-1. the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
-2. branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
+Regression Tests
+===============
+1. on the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
+2. on the branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
