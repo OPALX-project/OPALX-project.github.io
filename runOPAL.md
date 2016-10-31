@@ -62,12 +62,10 @@ The corresponding part of the template (*foo.tmpl*) file would look like:
 # Running runOPAL.py
 You can run the *runOPAL.py* script without arguments, if the two files (*foo.tmpl* and *foo.data*) are present, a directory *foo* will be
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
-where also all results are stored.
-
-* The general syntax of runOPAL.py
+where also all results are stored. The general syntax of runOPAL.py is
 
 
-`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--test] [--block] [--keep] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
+`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--test] [--block] [--keep] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
 
 
   * *--test* exercises everything except for the submission of the job.
