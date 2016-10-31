@@ -74,7 +74,7 @@ where also all results are stored. The general syntax of runOPAL.py is
   * *--block* runs opal local not using the batch system and waits until the job is done.
   * *--keep* if same simulation has been run before, keep old data and abort.
   * *--nobatch* uses plain mpirun on the local machine.
-  * *SCANVALUE=start:end:step* scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
+  * *SCANVALUE*=start:end:step scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
 === Cautions ===
 
