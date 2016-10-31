@@ -47,18 +47,16 @@ The field maps from the *FIELDMAPS* directory are linked to the directory where 
 
 # This is a snippet of a data and tmpl file (*foo.data*)
 
-\# This is a comment
+`Q         -1                   # the charge`
 
-`Q         -1                   \ # the charge`
-
-`NPART 100000     \ # the number of simulation particles `
+`NPART 100000     # the number of simulation particles `
  
- `CORES   2               \# how many cores are used by OPAL `
+ `CORES   2               # how many cores are used by OPAL `
 
 
 The corresponding part of the template (*foo.tmpl*) file would look like:
 
-`beam1: BEAM, PARTICLE=ELECTRON, pc=P0, NPART=\_NPART\_, BFREQ=BFREQ, BCURRENT=BCURRENT, CHARGE=\_Q\_;`
+`beam1: BEAM, PARTICLE=ELECTRON, pc=P0, NPART=_NPART_, BFREQ=BFREQ, BCURRENT=BCURRENT, CHARGE=_Q_;`
 
 
 You can run the *runOPAL.py* script without arguments, if the two files (*foo.tmpl* and *foo.data*) are present, a directory *foo* will be
