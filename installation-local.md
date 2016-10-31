@@ -1,3 +1,5 @@
+# Pre-build Binaries and Modules
+
 You need OpenAFS [from]( http://www.openafs.org)
 
 Get the modules and binaries:
@@ -6,5 +8,4 @@ Get the modules and binaries:
 
 `source /opt/psi/config/profile.bash`
 
-Now all modules should be ready. In the .bashrc (or similar) put
-
+Now all modules should be ready.
