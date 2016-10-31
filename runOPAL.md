@@ -22,11 +22,15 @@ There are 5 environment variables recognized by the *runOPAL.py*:
 In Bash parlance:
 
 `export TEMPLATES=`pwd`/tmpl/`
+
 `export FIELDMAPS=`pwd`/fieldmaps/`
-   `export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/`
-   `export SGE_QUEUE=all.q`
-   `export SGE_RAM=8`
-*
+ 
+`export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/`
+
+`export SGE_QUEUE=all.q`
+
+ `export SGE_RAM=8`
+
 
 From the TEMPLATES directory the *foo.tmpl* file is taken and the values are replaced. 
 
