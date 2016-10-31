@@ -10,10 +10,9 @@ In the data file, symbols and values will be defined, which will be
 replaced in the template file by the *runOPAL.py* script. A symbol in the data file maybe looks like **CHARGE**, the corresponding 
 symbol in the template file will look like **\_CHARGE\_**. 
 
-# Recognized Environment Variables by the Scripts
+# Recognized Environment Variables by  *runOPAL.py*
 
 There are 5 environment variables recognized by the *runOPAL.py*:
-
    1. *TEMPLATES*
    2. *FIELDMAPS*
    3. *OPAL_EXE_PATH*
