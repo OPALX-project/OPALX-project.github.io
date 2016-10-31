@@ -85,8 +85,8 @@ Simulation directory is foo using OPAL at  /gpfs/home/adelmann/build/opal-1.2.0/
 Using templatefile at /Users/adelmann/foo/tmpl/ using fieldmaps at /Users/adelmann/foo/fieldmaps/ 
 
 Parameter set in foo.in are:
-
-* :::: NPART= 1000
+`
+ :::: NPART= 1000
  :::: K3= -17.18
  :::: K2= 15.13
  :::: K1= -15.34
@@ -116,7 +116,7 @@ Parameter set in foo.in are:
  :::: SIGPY= 0.0
  :::: DPOS2= 2.32
  :::: DPOS1= 0.02
- :::: EDES= 0.250*
+ :::: EDES= 0.250`
 
 Done with setup of the OPAL simulation but not submitting the job (--test) 
 After that you will have a directory foo with this content:
