@@ -45,10 +45,9 @@ The field maps from the *FIELDMAPS* directory are linked to the directory where 
 *SGE_RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
 
 
-* Here a snippet of a data and tmpl file (*foo.data*)
+# Here a snippet of a data and tmpl file (*foo.data*)
 
-*
-  # This is a comment
+\# This is a comment
   Q         -1           # the charge
   NPART 100000   # the number of simulation particles
   ...
