@@ -1,11 +1,10 @@
 # Obtain runOpal.py
 
-Clone  {{{runOpal.py}}}  from git@gitorious.psi.ch:opal/runopal.git
+Clone runOpal.py  from [here]{https://gitlab.psi.ch/OPAL/runOPAL}
 
-= !HowTo Use {{{runOpal.py}}} =
-
-There is a general purpose run script {{{runOPAL.py}}} available at {{{~adelmann/amas/bin}}}. In order to use the generic script you have to provide two
-files, a template file ({{{foo.tmpl}}}, put it into a dedicated directory) and a data file ({{{foo.data}}}).
+# HowTo Use runOpal.py
+In order to use *runOpal.py* you have to provide two
+files, a template file *foo.tmpl*, put it into a dedicated directory and a data file *foo.data*.
 
 In the data file, symbols and values will be defined, which will be
 replaced in the template file by the {{{runOPAL.py}}} script. A symbol in the data file maybe looks like {{{CHARGE}}}, the corresponding 
