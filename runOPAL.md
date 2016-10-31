@@ -80,6 +80,7 @@ where also all results are stored. The general syntax of runOPAL.py is
 # Example 1: Regular Run
 
 `dude:foo adelmann$ source setup.sh`
+
 `dude:foo adelmann$ runOPAL.py --test`
 
 Simulation directory is foo using OPAL at  /gpfs/home/adelmann/build/opal-1.2.0/src/
