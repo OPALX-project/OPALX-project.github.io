@@ -4,13 +4,13 @@ Clone runOpal.py  from [here]{https://gitlab.psi.ch/OPAL/runOPAL}
 
 # HowTo Use runOpal.py
 In order to use *runOpal.py* you have to provide two
-files, a template file *foo.tmpl*, put it into a dedicated directory and a data file *foo.data*.
-
+files, a template file *foo.tmpl*,  and a data file *foo.data*.
+The template file will be stored in the directory *tmpl*.
 In the data file, symbols and values will be defined, which will be
-replaced in the template file by the {{{runOPAL.py}}} script. A symbol in the data file maybe looks like {{{CHARGE}}}, the corresponding 
-symbol in the template file will look lile {{{_CHARGE_}}}. 
+replaced in the template file by the *runOPAL.py* script. A symbol in the data file maybe looks like **CHARGE**, the corresponding 
+symbol in the template file will look like _CHARGE_**. 
 
-== Recognized Environment Variables by the Scripts ==
+# Recognized Environment Variables by the Scripts
 
 There are 5 environment variables recognized by the {{{runOPAL.py}}}:
 
