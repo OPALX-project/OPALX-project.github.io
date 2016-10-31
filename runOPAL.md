@@ -53,6 +53,7 @@ The field maps from the *FIELDMAPS* directory are linked to the directory where 
  
  `CORES   2               # how many cores are used by OPAL `
 
+# This is a snippet of a data and tmpl file (*foo.tmpl*)
 
 The corresponding part of the template (*foo.tmpl*) file would look like:
 
