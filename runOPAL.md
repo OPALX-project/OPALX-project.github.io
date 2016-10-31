@@ -53,6 +53,7 @@ The field maps from the *FIELDMAPS* directory are linked to the directory where 
  
  `CORES   2               # how many cores are used by OPAL `
 
+Caution, in the data file, no blank lines are allowed. If you specify negative values, do not put a space between the 
 # This is a snippet of a data and tmpl file (*foo.tmpl*)
 
 The corresponding part of the template (*foo.tmpl*) file would look like:
@@ -75,14 +76,9 @@ where also all results are stored. The general syntax of runOPAL.py is
   * *ATTR* refers to a name in the data file
   * *SCANVALUE* start\:end\:step, scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
-=== Cautions ===
 
-   * in the data file, no blank lines are allowed
-   * in the data file - 12 in not allowed, write -12 instead
+# Example 1: Regular Run
 
-
-== Example 1: Regular Run ==
-*
 dude:foo adelmann$ source setup.sh
 dude:foo adelmann$ runOPAL.py --test
 Simulation directory is foo using OPAL at  /gpfs/home/adelmann/build/opal-1.2.0/src/
@@ -133,10 +129,9 @@ foo.in run.sge
 
 '''Note''': is setup.sh is available and executable you do not have to source it.
 
-== Example 2: 1D Parmeter Scan ==
+# Example 2: 1D Parmeter Scan ==
 
-*
-runOPAL.py --test EDES=0.050:0.250:0.050
+`runOPAL.py --test EDES=0.050:0.250:0.050`
 ...
 dude:foo adelmann$ ls
 fieldmaps           foo.data        foo_EDES=0.05:0.25:0.05      setup.sh       tmpl
@@ -144,12 +139,10 @@ fieldmaps           foo.data        foo_EDES=0.05:0.25:0.05      setup.sh       
 dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05    
 fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25
 
-*
 
-== Example 3: 2D Parmeter Scan ==
-*
+# Example 3: 2D Parmeter Scan ==
 
-runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01
+`runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01`
 
 dude:foo adelmann$ ls
 fieldmaps       foo.data           foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01      setup.sh  tmpl
