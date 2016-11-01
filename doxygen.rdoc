@@ -18,9 +18,8 @@
 /// Defines several Poisson problems and solves them on \f$ [0, 1]\times [0, 1]\times [0, 1]\f$
 
 
-class PoissonProblems {
-    
-public:
+ class PoissonProblems {
+ public:
     /*!
      * @param nr is the number of grid cells in x, y, and z of the coarsest level
      * @param maxGridSize is the max. size of a grid
