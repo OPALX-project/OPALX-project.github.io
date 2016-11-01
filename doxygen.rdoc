@@ -1,9 +1,8 @@
-
 /*!
- * @file PoissonProblems.h
- * @author Matthias Frey
- * @date 25. - 26. October 2016
- * @details Solve \f$ \Delta\phi = \rho \f$ on \f$ [0, 1]\times [0, 1]\times [0, 1]\f$ for different \f$\rho\f$.\n
+* @file PoissonProblems.h
+* @author Matthias Frey
+* @date 25. - 26. October 2016
+* @details Solve \f$ \Delta\phi = \rho \f$ on \f$ [0, 1]\times [0, 1]\times [0, 1]\f$ for different \f$\rho\f$.\n
  * Every function returns the \f$L_{2}\f$-error compared to the solution of a single-level problem.
  * 
  * - doSolveNoParticles:          \f$\rho = -1\f$ everywhere on the domain (no particles)\n
