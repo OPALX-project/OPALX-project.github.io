@@ -1,5 +1,8 @@
-`
-/*!
+
+
+
+
+`/*!
  * @file PoissonProblems.h
  * @author Matthias Frey
  * @date 25. - 26. October 2016
@@ -13,8 +16,9 @@
  * - doSolveParticlesGaussian:    \f$\rho\f$ is a Gaussian distribution initialized by particles\n
  * - doSolveParticlesReal:        Read in a H5 cyclotron file and use its particle distribution for \f$\rho\f$\n
  * @brief Several ways of Poisson problems, i.e. different \f$\rho\f$
- */
-`
+ */`
+
+
 /// Defines several Poisson problems and solves them on \f$ [0, 1]\times [0, 1]\times [0, 1]\f$
 class PoissonProblems {
     
