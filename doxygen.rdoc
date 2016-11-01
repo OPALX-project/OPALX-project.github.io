@@ -15,9 +15,7 @@
  */
 
 
-/// Defines several Poisson problems and solves them on \f$ [0, 1]\times [0, 1]\times [0, 1]\f$
-
-
+ /// Defines several Poisson problems and solves them on \f$ [0, 1]\times [0, 1]\times [0, 1]\f$
  class PoissonProblems {
  public:
     /*!
