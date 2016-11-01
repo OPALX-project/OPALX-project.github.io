@@ -1,4 +1,4 @@
- **Oxygen Example to be used for ALL OPAL Development**
+ ** Doxygen Example to be used for ALL OPAL Development **
 
 
 
