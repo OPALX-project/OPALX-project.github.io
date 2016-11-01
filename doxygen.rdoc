@@ -65,11 +65,10 @@
      */
     double doSolveParticlesReal(int step, std::string h5file);
     
-private:
+ private:
     void refineWholeDomain_m();     ///< Create refined levels (DistributionMapping and BoxArray)
     void initMultiFabs_m();         ///< Initialize the MultiFab's for solving Poisson with MultiGrid solver
     
-private:
     RealBox domain_m;                       ///< Physical domain [0, 1] x [0, 1] x [0, 1]
     int nr_m[3];                            ///< Number of grid cells in each dimension (x, y, z)
     int maxGridSize_m;                      ///< Max. grid size of each level
@@ -84,4 +83,4 @@ private:
     PArray<MultiFab> efield_m;              ///< Electric field
     PArray<MultiFab> phi_single_m;          ///< Potential for single-level solve
     
-};
+ };
