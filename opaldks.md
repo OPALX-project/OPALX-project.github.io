@@ -21,7 +21,7 @@ switch to the latest release branch
 
 configure installation in build directory 
 
-`CXX=<c++ compiler> CC=<c compiler> -DCMAKE_INSTALL_PREFIX=<DKS install dir> <path to DKS source>`
+`CXX=mpicxx CC=mpicc -DCMAKE_INSTALL_PREFIX=<DKS install dir> <path to DKS source>`
 
 install DKS
 
