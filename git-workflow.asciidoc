@@ -1,1 +1,33 @@
 = Git Workflow
+
+== OPAL versions
+=== Major version number
+ * no incompatible changes in the input file
+ * no incompatible changes in the output files 
+
+=== Minor version number
+ * stable versions have an even minor version number (like 1.4.0)
+ * development version have an odd minor version number (like 1.5.0)
+
+=== The third number in a version number
+ * identify bugfixes and small feature changes (like 1.4.1)
+
+=== Stable versions
+ * only bugfixes and small feature changes are done in a stable version
+ * development for a stable version is done in a branch named OPAL-$MAJOR_VERSION.$MINOR_VERSION
+ 
+=== Development versions
+ * development is done in the 'master' branch.
+  * increase the third number in the version frequently to reflect changes (either bugfixes or new features)
+
+== Issues
+ * file all changes (bugfixes and feature changes) in the issue tracker of Gitlab
+ * all issues have to be assigned to an OPAL version number (a certain feature will be implemented in  this version)
+ * create a branches for all issues, merge these branches to the desired upstream  stable and development branches.
+
+== Forking
+ * Huge changes like OPAL3d should be done in a fork. 
+ * Forks should be in the namespace 'OPAL' (the same where the upstream sources are)
+ * regularly merge changes from the upstream repository (git@gitlab.psi.ch:OPAL/src.git)
+ * create a merge request from your fork to the upstream repository , when the work is done or something usable is available
+
