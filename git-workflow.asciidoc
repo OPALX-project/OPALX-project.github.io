@@ -10,7 +10,7 @@
  * development version have an odd minor version number (like 1.5.0)
 
 === The third number in a version number
- * identify bugfixes and small feature changes (like 1.4.1)
+ * identify bugfixes and feature changes (like 1.4.1)
 
 === Stable versions
  * only bugfixes and small feature changes are done in a stable version
