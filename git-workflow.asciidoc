@@ -5,7 +5,7 @@
  * no incompatible changes in the input file
  * no incompatible changes in the output files 
 
-----
+---
 
 === Minor version number
  * stable versions have an even minor version number (like 1.4.0)
