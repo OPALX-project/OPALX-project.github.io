@@ -40,6 +40,7 @@ OPAL/1.5.1-20170217  unstable   MPI          gcc/5.4.0 openmpi/1.10.4
 
 
 Use again the `module` command to load the desired OPAL version:
+
 `module purge`
 
 `module load OPAL/1.5.1-20170217 `
