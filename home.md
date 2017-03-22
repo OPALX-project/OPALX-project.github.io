@@ -2,7 +2,7 @@
 
 OPAL Introduction
 ================
-OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes is possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the comissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
+OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes is possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
 
 OPAL Documentation & Help
 ========================
@@ -28,7 +28,7 @@ OPAL Start with Examples
 The runOPAL.py Script
 =====================
 The Python scripts allows you to run, automated, several OPAL jobs and obtain the
-data in a conceived way. Scans of multiple dimensions are easy possible. The user guid
+data in a conceived way. Scans of multiple dimensions are easy possible. The user guide
 is found [here](runOPAL)
 
 Regression Tests
@@ -39,7 +39,7 @@ Regression Tests
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
 1.  [Coding Style and Conventions](for-developers)
-2. Download sources [here](https://gitlab.psi.ch/OPAL/src) use `ssh` when having git access or `htm`l for anonymous clone.
+2. Download sources [here](https://gitlab.psi.ch/OPAL/src) use `ssh` when having git access or `html` for anonymous clone.
 3. For PSI user go [here](Opalmerlin) to find out how to use OPAL on Merlin and how to compile.
 4. Install Modules [local](installation-local) on MAC and Linux
 5. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
