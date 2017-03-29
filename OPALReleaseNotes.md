@@ -20,7 +20,7 @@ indicating version 1.5.x
 
  `REAL Edes=.072; 
  REAL gamma=(Edes+PMASS)/PMASS;`
-Only **REAL** is supported
+Only **REAL,STRING,BOOL** and ARRAY is supported
 
 * The old behaviour to replace unknown elements with *markers* is now turned in to an error.
 
