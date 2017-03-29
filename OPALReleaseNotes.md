@@ -5,7 +5,13 @@ Solved issues by 1.5.2
 
 * Issue #33
 * Issue #35
-* Issue #71
+* Issue #52 (check for 1.6)
+* Issue #55
+* Issue #57
+* Issue #58
+* Issue #64
+* Issue #71 
+* Regression test are all fixed (various issues)
 * Input files must have a version tag, for example 
 `OPTION, VERSION=10500`
 indicating version 1.5.x
@@ -16,3 +22,5 @@ REAL gamma=(Edes+PMASS)/PMASS;`
 Only **REAL** is supported
 
 * The old behaviour to replace unknown elements with *markers* is now turned in to an error.
+
+* Auto phasing 
