@@ -5,6 +5,7 @@ Solved issues in 1.5.2 are
 
 * Issue #33
 * Issue #35
+* Issue #41
 * Issue #52 (check for 1.6)
 * Issue #55
 * Issue #57
