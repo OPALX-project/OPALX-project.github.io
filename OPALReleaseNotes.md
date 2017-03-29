@@ -12,7 +12,7 @@ Solved issues in 1.5.2 are
 * Issue #58
 * Issue #64
 * Issue #71 
-* Regression test are all fixed (various issues)
+* Regression test are all fixed (issue #35 et al.)
 * Input files must have a version tag, for example 
 `OPTION, VERSION=10500`
 indicating version 1.5.x
