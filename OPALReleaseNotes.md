@@ -23,4 +23,4 @@ Only **REAL** is supported
 
 * The old behaviour to replace unknown elements with *markers* is now turned in to an error.
 
-* Auto phasing 
+* Auto phasing reported by John Power <JP@anl.gov>
