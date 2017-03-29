@@ -19,7 +19,7 @@ indicating version 1.5.x
 * OPAL is now fully typed. Each variable has to have a type for example
 
  `REAL Edes=.072; 
-REAL gamma=(Edes+PMASS)/PMASS;`
+ REAL gamma=(Edes+PMASS)/PMASS;`
 Only **REAL** is supported
 
 * The old behaviour to replace unknown elements with *markers* is now turned in to an error.
