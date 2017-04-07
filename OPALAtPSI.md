@@ -2,13 +2,12 @@
 
 Setup your environment, this you should add to your .bashrc
 
-`module use unstable
-
+```
+module use unstable
 module use /afs/psi.ch/project/amas/modulefiles/
-
 module load opal-toolschain/1.6 
-
-module list`
+module list
+```
 
 Clone OPAL repository and build:
 ```
