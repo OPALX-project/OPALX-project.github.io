@@ -1,51 +1,51 @@
 
 [Doxygen](doxygen)
-1. [Language Standards](#language-standards)
-2.  [Naming Conventions](#naming-conventions)
-    1.  [General notes](#general-notes)
-    2.  [Class Names](#class-names)
-    3.  [File Names](#file-names)
-    4.  [Class Library Names](#class-library-names)
-    5.  [Method Names](#method-names)
-    6.  [C Function Names](#c-function-names)
-    7.  [Class Member Variable Names](#class-member-variable-names)
+1. [Language Standards](#1-language-standards)
+2.  [Naming Conventions](#2-naming-conventions)
+    1.  [General notes](#21-general-notes)
+    2.  [Class Names](#22-class-names)
+    3.  [File Names](#23-file-names)
+    4.  [Class Library Names](#24-class-library-names)
+    5.  [Method Names](#25-method-names)
+    6.  [C Function Names](#26-c-function-names)
+    7.  [Class Member Variable Names](#27-class-member-variable-names)
     8.  [Method Argument and local Variable
-        Names](#method-argument-and-local-variable-names)
+        Names](#28-method-argument-and-local-variable-names)
     9.  [Pointer and Reference Variables
-        Names](#pointer-and-reference-variables-names)
-    10. [Global and Static Variables](#global-and-static-variables)
+        Names](#29-pointer-and-reference-variables-names)
+    10. [Global and Static Variables](#210-global-and-static-variables)
     11. [Global Constants, Enums and Macro
-        Names](#global-constants,-enums-and-macro-names)
-    12. [Type Names](#type-names)
-    13. [C++ File Extensions](#c++-file-extensions)
+        Names](#211-global-constants-enums-and-macro-names)
+    12. [Type Names](#212-type-names)
+    13. [C++ File Extensions](#213-c-file-extensions)
 
-3.  [Documentation](#documentation)
+3.  [Documentation](#3-documentation)
     1.  [File Header for include files (.h
-        only)](#FileHeaderforincludefiles.honly)
+        only)](#31-file-header-for-include-files-h-only)
     2.  [File Header for source files (.cpp and .c
-        only)](#FileHeaderforsourcefiles.cppand.conly)
-    3.  [API Documentation](#api-documentation)
-    4.  [Code Documentation](#code-documentation)
-    5.  [Doxygen](#doxygen)
+        only)](#32-file-header-for-source-files-cpp-and-c-only)
+    3.  [API Documentation](#33-api-documentation)
+    4.  [Code Documentation](#34-code-documentation)
+    5.  [Doxygen](#35-doxygen)
 
-4.  [Methods and Functions](#MethodsandFunctions)
-    1.  [Complexity](#complexity)
+4.  [Methods and Functions](#4-methods-and-functions)
+    1.  [Complexity](#41-complexity)
     2.  [Centralized exiting and early
-        returns](#centralized-exiting-and-early-returns)
+        returns](#42-centralized-exiting-and-early-returns)
 
-5.  [Formatting](#formatting)
-    1.  [Indentation](#indentation)
+5.  [Formatting](#5-formatting)
+    1.  [Indentation](#51-indentation)
     2.  [Breaking long lines and
-        strings](#breaking-long-lines-and-strings)
-    3.  [Placing Spaces](#placing-spaces)
+        strings](#52-breaking-long-lines-and-strings)
+    3.  [Placing Spaces](#53-placing-spaces)
     4.  [Pointer and Reference
-        Variables](#pointer-and-reference-variables)
-    5.  [Placing Braces](#placing-braces)
-    6.  [C++ Templates](#c-templates)
+        Variables](#54-pointer-and-reference-variables)
+    5.  [Placing Braces](#55-placing-braces)
+    6.  [C++ Templates](#56-c-templates)
 
-6.  [Memory Allocation](#memory-allocation)
-7.  [Error Handling](#error-handling)
-8.  [References](#references)
+6.  [Memory Allocation](#6-memory-allocation)
+7.  [Error Handling](#7-error-handling)
+8.  [References](#8-references)
 
 
 # Astyle 
@@ -147,21 +147,21 @@ Example
 
 * * * * *
 
-### 2.8. Method Argument and local Variable Names {#MethodArgumentandlocalVariableNames}
+### 2.8. Method Argument and local Variable Names
 
 -   Use descriptive names.
 -   camelCase
 
 * * * * *
 
-### 2.9. Pointer and Reference Variables Names {#PointerandReferenceVariablesNames}
+### 2.9. Pointer and Reference Variables Names
 
 -   You may append `_r` to reference variable names.
 -   Same for pointer variable names with `_p`.
 
 * * * * *
 
-### 2.10. Global and Static Variables {#GlobalandStaticVariables}
+### 2.10. Global and Static Variables
 
 -   Use global and static variables only if really required.
 -   You should append `_g` to global variable names to make the scope
@@ -207,7 +207,7 @@ Example
 
 * * * * *
 
-3. Documentation {#Documentation}
+3. Documentation
 ----------------
 
 ### 3.1. File Header for include files (.h only) 
@@ -416,7 +416,7 @@ Example
 5. Formatting 
 -------------
 
-### 5.1. Indentation {#Indentation}
+### 5.1. Indentation
 
 Quote from Linux Kernel coding style:
 
@@ -471,7 +471,7 @@ are definitely far to long.
 
 ### 5.3. Placing Spaces 
 
--   use a space before an opening paranthese `(` and opening curly
+-   use a space before an opening parenthesis `(` and opening curly
     bracket `{`.
 -   do not use a space before an opening square bracket.
 -   use spaces around binary operators
@@ -499,7 +499,7 @@ Example
 
 * * * * *
 
-### 5.5. Placing Braces {#PlacingBraces}
+### 5.5. Placing Braces
 
 **classes**
 
@@ -589,7 +589,7 @@ Example
 
 * * * * *
 
-### 5.6. C++ Templates {#CTemplates}
+### 5.6. C++ Templates
 
 -   Naming conventions for template classes/functions are the same as
     for the non template ones.
