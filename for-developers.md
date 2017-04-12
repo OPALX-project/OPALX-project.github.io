@@ -23,7 +23,7 @@
     1.  [File Header for include files (.h
         only)](#31-file-header-for-include-files-h-only)
     2.  [File Header for source files (.cpp and .c
-        only)](#32-file-header-for-source-files-cpp-and-c-only-)
+        only)](#32-file-header-for-source-files-cpp-and-c-only)
     3.  [API Documentation](#33-api-documentation)
     4.  [Code Documentation](#34-code-documentation)
     5.  [Doxygen](#35-doxygen)
@@ -226,7 +226,7 @@ Example
      */
     ```
 
-### 3.2. File Header for source files (.cpp and .c only) {
+### 3.2. File Header for source files (.cpp and .c only)
 
 -   Link to copyright and license
 
@@ -614,7 +614,7 @@ Examples
 
 * * * * *
 
-7. Error Handling 
+7. Error Handling
 -----------------
 
 -   Always check error conditions and handle them!
@@ -628,7 +628,7 @@ Examples
 
 * * * * *
 
-8. References <a name="#References"></a>
+8. References
 -------------
 
 [ http://www.possibility.com/Cpp/CppCodingStandard.html](http://www.possibility.com/Cpp/CppCodingStandard.html)
