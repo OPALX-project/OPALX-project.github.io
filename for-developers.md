@@ -1,52 +1,51 @@
 
-
-0. [Doxygen](doxygen)
+[Doxygen](doxygen)
 1. [Language Standards](#language-standards)
-2.  [Naming Conventions](#NamingConventions)
-    1.  [General notes](#Generalnotes)
-    2.  [Class Names](#ClassNames)
-    3.  [File Names](#FileNames)
-    4.  [Class Library Names](#ClassLibraryNames)
-    5.  [Method Names](#MethodNames)
-    6.  [C Function Names](#CFunctionNames)
-    7.  [Class Member Variable Names](#ClassMemberVariableNames)
+2.  [Naming Conventions](#naming-conventions)
+    1.  [General notes](#general-notes)
+    2.  [Class Names](#class-names)
+    3.  [File Names](#file-names)
+    4.  [Class Library Names](#class-library-names)
+    5.  [Method Names](#method-names)
+    6.  [C Function Names](#c-function-names)
+    7.  [Class Member Variable Names](#class-member-variable-names)
     8.  [Method Argument and local Variable
-        Names](#MethodArgumentandlocalVariableNames)
+        Names](#method-argument-and-local-variable-names)
     9.  [Pointer and Reference Variables
-        Names](#PointerandReferenceVariablesNames)
-    10. [Global and Static Variables](#GlobalandStaticVariables)
+        Names](#pointer-and-reference-variables-names)
+    10. [Global and Static Variables](#global-and-static-variables)
     11. [Global Constants, Enums and Macro
-        Names](#GlobalConstantsEnumsandMacroNames)
-    12. [Type Names](#TypeNames)
-    13. [ C++ File Extensions](#CFileExtensions)
+        Names](#global-constants,-enums-and-macro-names)
+    12. [Type Names](#type-names)
+    13. [C++ File Extensions](#c++-file-extensions)
 
-3.  [3. Documentation](#Documentation)
-    1.  [3.1. File Header for include files (.h
+3.  [Documentation](#documentation)
+    1.  [File Header for include files (.h
         only)](#FileHeaderforincludefiles.honly)
-    2.  [3.2. File Header for source files (.cpp and .c
+    2.  [File Header for source files (.cpp and .c
         only)](#FileHeaderforsourcefiles.cppand.conly)
-    3.  [3.3. API Documentation](#APIDocumentation)
-    4.  [3.4. Code Documentation](#CodeDocumentation)
-    5.  [3.5. Doxygen](#Doxygen)
+    3.  [API Documentation](#api-documentation)
+    4.  [Code Documentation](#code-documentation)
+    5.  [Doxygen](#doxygen)
 
-4.  [4. Methods and Functions](#MethodsandFunctions)
-    1.  [4.1. Complexity](#Complexity)
-    2.  [4.2. Centralized exiting and early
-        returns](#Centralizedexitingandearlyreturns)
+4.  [Methods and Functions](#MethodsandFunctions)
+    1.  [Complexity](#complexity)
+    2.  [Centralized exiting and early
+        returns](#centralized-exiting-and-early-returns)
 
-5.  [5. Formatting](#Formatting)
-    1.  [5.1. Indentation](#Indentation)
-    2.  [5.2. Breaking long lines and
-        strings](#Breakinglonglinesandstrings)
-    3.  [5.3. Placing Spaces](#PlacingSpaces)
-    4.  [5.4. Pointer and Reference
-        Variables](#PointerandReferenceVariables)
-    5.  [5.5. Placing Braces](#PlacingBraces)
-    6.  [5.6. C++ Templates](#CTemplates)
+5.  [Formatting](#formatting)
+    1.  [Indentation](#indentation)
+    2.  [Breaking long lines and
+        strings](#breaking-long-lines-and-strings)
+    3.  [Placing Spaces](#placing-spaces)
+    4.  [Pointer and Reference
+        Variables](#pointer-and-reference-variables)
+    5.  [Placing Braces](#placing-braces)
+    6.  [C++ Templates](#c-templates)
 
-6.  [6. Memory Allocation](#MemoryAllocation)
-7.  [7. Error Handling](#ErrorHandling)
-8.  [8. References](#References)
+6.  [Memory Allocation](#memory-allocation)
+7.  [Error Handling](#error-handling)
+8.  [References](#references)
 
 
 # Astyle 
@@ -56,7 +55,10 @@
 # UniversalIndentGUI 
 [UniversalIndentGUI](http://universalindent.sourceforge.net/) offers a live preview for setting the parameters of nearly any indenter. You change the value of a parameter and directly see how your reformatted code will look like. Save your beauty looking code or create an anywhere usable batch/shell script to reformat whole directories or just one file even out of the editor of your choice that supports external tool calls"
 
-# Language Standards 
+* * * * *
+
+1. Language Standards
+----
 -   C99
 -   C++11 (minimum versions gcc 4.6 ~~and Intel 12~~)
 
