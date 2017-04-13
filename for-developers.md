@@ -1,5 +1,4 @@
 
-[Doxygen](doxygen)
 1. [Language Standards](#1-language-standards)
 2.  [Naming Conventions](#2-naming-conventions)
     1.  [General notes](#21-general-notes)
@@ -42,20 +41,12 @@
         Variables](#54-pointer-and-reference-variables)
     5.  [Placing Braces](#55-placing-braces)
     6.  [C++ Templates](#56-c-templates)
+    7.  [Tools](#57-tools)
 
 6.  [Memory Allocation](#6-memory-allocation)
 7.  [Error Handling](#7-error-handling)
 8.  [References](#8-references)
 
-
-# Astyle 
-[Artistic Style](http://astyle.sourceforge.net) is a source code indenter, formatter, and beautifier for the C, C++, C# and Java programming languages.
-# Uncrustify 
-[Uncrustify](http://uncrustify.sourceforge.net/) a highly configurable, easily modifiable source code beautifier.
-# UniversalIndentGUI 
-[UniversalIndentGUI](http://universalindent.sourceforge.net/) offers a live preview for setting the parameters of nearly any indenter. You change the value of a parameter and directly see how your reformatted code will look like. Save your beauty looking code or create an anywhere usable batch/shell script to reformat whole directories or just one file even out of the editor of your choice that supports external tool calls"
-
-* * * * *
 
 1. Language Standards
 ----
@@ -74,6 +65,8 @@
 -   Compound names shouldn't be to long (up to three words).
 -   Use short names where it makes sense, for example counters (`i`,
     `j`, `k` etc).
+
+* * * * *
 
 ### 2.2. Class Names 
 
@@ -291,6 +284,8 @@ public:
 * * * * *
 
 ### 3.5. Doxygen 
+
+See [Doxygen](doxygen)
 
 ``` {.wiki}
 // $Id$
@@ -603,6 +598,14 @@ Examples
             double,
             std::map<std::string, std::vector<char> >
         > my_really_complicated_variable;
+
+* * * * *
+
+### 5.7 Tools
+
+- [Artistic Style](http://astyle.sourceforge.net) is a source code indenter, formatter, and beautifier for the C, C++, C# and Java programming languages.
+- [Uncrustify](http://uncrustify.sourceforge.net/) a highly configurable, easily modifiable source code beautifier.
+- [UniversalIndentGUI](http://universalindent.sourceforge.net/) offers a live preview for setting the parameters of nearly any indenter. You change the value of a parameter and directly see how your reformatted code will look like. Save your beauty looking code or create an anywhere usable batch/shell script to reformat whole directories or just one file even out of the editor of your choice that supports external tool calls"
 
 * * * * *
 
