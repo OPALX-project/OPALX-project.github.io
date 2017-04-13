@@ -51,7 +51,7 @@
 1. Language Standards
 ----
 -   C99
--   C++11 (minimum versions gcc 4.6 ~~and Intel 12~~)
+-   C++11 (minimum versions gcc 4.7.3 ~~and Intel 12~~)
 
 * * * * *
 
