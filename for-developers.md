@@ -191,8 +191,6 @@ Example
 
 * * * * *
 
-\#\#\# Name Spaces
-
 ### 2.13. C++ File Extensions 
 
 -   header files: `.h`
