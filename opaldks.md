@@ -10,23 +10,9 @@ To compile DKS cuda-7.5 or higher is required, information on how to obtain cuda
 
 **DKS installation**
 
-clone DKS
+To install OPAL-1.6 with DKS, version 1.0.X is required. Installation instructions for this version can be found here [DKS 1.0.X](https://gitlab.psi.ch/uldis_l/DKS/wikis/dks-1.0.2)
 
-`git clone git@gitlab.psi.ch:uldis_l/DKS.git DKS`
-
-switch to the latest release branch
-
-`git checkout dks-1.0.0-branch`
-
-configure installation in build directory 
-
-`CXX=mpicxx CC=mpicc cmake -DCMAKE_INSTALL_PREFIX=<DKS install dir> <path to DKS source>`
-
-install DKS
-
-`make`
-
-`make install`
+To install OPAL-2.0 with DKS, version 1.1.X is required. Installation instructions for this version can be found here [DKS 1.1.X](https://gitlab.psi.ch/uldis_l/DKS/wikis/dks-1.1.0)
 
 **Install OPAL with DKS**
 
