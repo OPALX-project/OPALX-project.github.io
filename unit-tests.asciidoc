@@ -13,6 +13,7 @@ In general:
 
 Quick Start
 -----------------
+
 * Run tests/tools/install_gtests.bash to install gtest framework
 * From the root opal source directory run cmake -DBUILD_OPAL_UNIT_TESTS=1
 * Run tests/opal_unit_tests to run the unit tests
