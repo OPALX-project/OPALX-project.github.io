@@ -42,8 +42,8 @@ Regression Tests
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
-1.  [Coding Style and Conventions](for-developers)
-2. Download sources [here](https://gitlab.psi.ch/OPAL/src) use `ssh` when having git access or `html` for anonymous clone.
-3. For PSI user go [here](Opalmerlin) to find out how to use OPAL on Merlin and how to compile.
-4. Install Modules [local](installation-local) on MAC and Linux
-5. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
+.  [Coding Style and Conventions](for-developers)
+. Download sources [here](https://gitlab.psi.ch/OPAL/src) use `ssh` when having git access or `html` for anonymous clone.
+. For PSI user go [here](Opalmerlin) to find out how to use OPAL on Merlin and how to compile.
+. Install Modules [local](installation-local) on MAC and Linux
+. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
