@@ -14,7 +14,7 @@ $
 ```
 
 
-## 2. Install Pmodules if not available
+## 2. If not already done, install Pmodules
 
 If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
 
