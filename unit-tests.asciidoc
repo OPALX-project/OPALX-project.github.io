@@ -12,7 +12,7 @@ In general:
 * Other code should have tests in tests/opal_src
 
 Quick Start
-~~~~~~~~~~
+------------------
 
 * Run tests/tools/install_gtests.bash to install gtest framework (does not work on macs)
 * From the root opal source directory run cmake -DBUILD_OPAL_UNIT_TESTS=1
