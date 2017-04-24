@@ -12,14 +12,14 @@ In general:
 * Other code should have tests in tests/opal_src
 
 Quick Start
-------------------
+============
 
 * Run tests/tools/install_gtests.bash to install gtest framework (does not work on macs)
 * From the root opal source directory run cmake -DBUILD_OPAL_UNIT_TESTS=1
 * Run tests/opal_unit_tests to run the unit tests
 
 Setting up the tests
-================
+=================
 
 In OPAL we use the google testing framework which has some convenience functions for e.g. equality testing in the presence of floating point errors, setting up common test data, etc. There is a script for installing gtest in tests/tools/install_gtest.bash. At the moment it doesn't work on macs - sorry about that.
 
@@ -32,7 +32,8 @@ Go ahead and edit the tests if you need to. We should have one source file for e
 To run the tests, either run the full regression testing suite, or run just the cpp tests by running executable test/opal_unit_tests (after building). If you are just interested in a specific test, you can do e.g. <pre>test/opal_unit_tests --gtest_filter=SBend3DTest.*</pre> to run all tests from SBend3DTest. There are some other useful command line options; do test/opal_unit_tests --help to list them all.
 
 More on the unit test concept
------------------------------------------------
+=========================
+
 The idea behind unit tests is to test at the level of the smallest unit that the code does what we think. We test at the smallest unit so that:
 
 * test coverage is high
