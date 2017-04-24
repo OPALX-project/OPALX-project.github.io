@@ -41,7 +41,7 @@ module use /afs/psi.ch/project/amas/modulefiles
 module load opal-toolschain/2.0
 ```
 
-**Note**: For your convenience you might add the `module use ...` to your `.bashrc` or `.bash_profile`.
+**Note**: For your convenience you might add the line `module use ...` to your `.bashrc` or `.bash_profile`.
 
 ## 4. Get a clone of the OPAL repository
 
@@ -54,7 +54,7 @@ git clone git@gitlab.psi.ch:OPAL/src.git
 ```
 
 ## 5. Select the OPAL branch you want to compile
-Example
+Example:
 ```
 cd $HOME/opal/src
 git checkout OPAL-1.6
@@ -64,6 +64,12 @@ or
 cd $HOME/opal/src
 git checkout master
 ```
+
+To get a list of all available branches, you can run the command
+```
+git branch -a
+```
+from inside your clone.
 
 ## 6. Compile OPAL
 ```
