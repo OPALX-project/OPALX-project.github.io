@@ -12,14 +12,15 @@ In general:
 * Other code should have tests in tests/opal_src
 
 Quick Start
------------------
+=========
 
-* Run tests/tools/install_gtests.bash to install gtest framework
+* Run tests/tools/install_gtests.bash to install gtest framework (does not work on macs)
 * From the root opal source directory run cmake -DBUILD_OPAL_UNIT_TESTS=1
 * Run tests/opal_unit_tests to run the unit tests
 
 Setting up the tests
---------------------------------
+================
+
 In OPAL we use the google testing framework which has some convenience functions for e.g. equality testing in the presence of floating point errors, setting up common test data, etc. There is a script for installing gtest in tests/tools/install_gtest.bash. At the moment it doesn't work on macs - sorry about that.
 
 Documentation for gtest can be found at:
