@@ -1,10 +1,11 @@
-h1. Unit Tests
+**Unit Tests**
 
 The idea behind unit tests is "does this function do what I think it's doing". We want to check that, when we write a function, we haven't put any subtle (or not so subtle) errors in the code. Also we want to check that when we change some other function, it doesn't break existing code. So for each function (or maybe pair of functions) we write a test function. These are known as "unit tests".
 
 Unit testing is an essential part of the QA process for OPAL. Also note that tests are code that we need to edit, etc, so tests should obey any relevant style guides.
 
 In general:
+
 * Unit tests are in the directory tests
 * Code which is in src/Classic should have tests in tests/classic_src
 * Other code should have tests in tests/opal_src
