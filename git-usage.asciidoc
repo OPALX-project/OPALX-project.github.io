@@ -5,6 +5,21 @@ To develop a new feature
 * Click your name
 * "Forking in progress" appears
 * When it is done do git clone <new repository>
+* git remote add upstream git@gitlab.psi.ch:OPAL/src.git
 
 Write some code. When you are ready to do a commit...
 
+* check that everything builds and tests pass
+* check against style guide
+* git add
+* git commit
+* merge changes from upstream "git merge upstream/master"
+* check that everything builds and tests pass
+* check against style guide
+* IF conflicts
+** git add
+** git commit
+* git push
+* do a merge request
+* okay or not okay
+* Merger accepts merge request; watch the nightly builds...
