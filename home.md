@@ -7,7 +7,7 @@ OPAL (Object Oriented Particle Accelerator Library) is an open source C++ framew
 OPAL Documentation & Help
 ========================
 
-* [OPAL at PSI]( OPALAtPSI) Now to use and install 
+* [OPAL at PSI]( OPALAtPSI) How to use and install 
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
 
