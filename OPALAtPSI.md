@@ -43,7 +43,7 @@ module use /afs/psi.ch/project/amas/modulefiles
 module load opal-toolschain/2.0
 ```
 
-**Note**: For your convenience you might add the `module use ...` to your `.bashrc`  `.bash_profile`.
+**Note**: For your convenience you might add the `module use ...` to your `.bashrc` or `.bash_profile`.
 
 ## 4. Get a clone of the OPAL repository
 
