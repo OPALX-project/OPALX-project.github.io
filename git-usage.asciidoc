@@ -1,3 +1,5 @@
+In OPAL, each developer works against a personal fork of the main code repository; when the developer is ready, they can then merge code back into the main upstream repository.
+
 To develop a new feature for a given OPAL project
 
 * From the gitlab webpage, select the project in the drop down box (e.g. ```OPAL/src```)
@@ -8,7 +10,7 @@ To develop a new feature for a given OPAL project
 * If the fork is built successfully, a URI to the new fork should be shown. On your development machine, copy the url to the clip board and do ```git clone <new repository>```
 * Add the central repository as a _remote_ ```git remote add upstream <original repository>``` (e.g. for OPAL, <original repository> might be ```git@gitlab.psi.ch:OPAL/src.git```
 
-Write some code. When you are ready to put the code back into the upstream repository
+Write some code. It's a good idea to frequently commit code, and to merge from the upstream repository often. When you are ready to put the code back into the upstream repository:
 
 * Check that everything builds and tests pass
 * Check changes against style guide
