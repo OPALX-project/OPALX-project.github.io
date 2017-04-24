@@ -9,8 +9,6 @@ $ module --version
 
 Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
 Copyright GNU GPL v2
-
-$
 ```
 
 
