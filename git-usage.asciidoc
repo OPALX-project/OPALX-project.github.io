@@ -14,13 +14,10 @@ Write some code. When you are ready to put the code back into the upstream repos
 * Check changes against style guide
 * Tell git which files you would like to commit ```git add <filename1> <filename2>```
 * Commit the files locally on your development machine ```git commit -m "Description of changes"```
-* Merge changes from upstream "git merge upstream/master"
-* check that everything builds and tests pass
-* check against style guide
-* IF conflicts
-** git add
-** git commit
-* git push
-* do a merge request
-* okay or not okay
-* Merger accepts merge request; watch the nightly builds...
+* Merge changes from upstream ```git merge upstream```
+* Check that everything still builds and tests pass
+* If there are conflicts, you may need to modify the codel then go back through the ```git add``` and ```git commit``` process. 
+* When you are ready, push your code back to gitlab by doing ```git push```
+* In your branch, click on the ```merge request``` link and select a reviewer from the list.
+* The reviewer will determine if the code is okay to merge. 
+* The merger clicks ```accept merge request``` and the code is merged back to the upstream repository; now watch the nightly builds...
