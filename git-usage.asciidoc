@@ -1,12 +1,12 @@
 To develop a new feature for a given OPAL project
 
-* From the gitlab webpage, select the project in the drop down box (e.g. _OPAL/src_)
-* Click on the "project" link in the top menu bar. This will take you to a page showing the uri for cloning the repository and a few other options. 
-* Next to the uri there is a button marked "fork"; click on it.
+* From the gitlab webpage, select the project in the drop down box (e.g. ```OPAL/src```)
+* Click on the ```project``` link in the top menu bar. This will take you to a page showing the uri for cloning the repository and a few other options. 
+* Next to the uri there is a button marked ```fork```; click on it.
 * You can build a fork against different groups of which you are a member, or against your username. Click on one of these to build a fork.
-* "Forking in progress" appears. Now wait (this can take a few minutes).
+* ```Forking in progress``` appears. Now wait (this can take a few minutes).
 * If the fork is built successfully, a URI to the new fork should be shown. On your development machine, copy the url to the clip board and do ```git clone <new repository>```
-* git remote add upstream git@gitlab.psi.ch:OPAL/src.git
+* Add the central repository as a _remote_ ```git remote add upstream <original repository>``` (e.g. for OPAL, <original repository> might be ```git@gitlab.psi.ch:OPAL/src.git```
 
 Write some code. When you are ready to do a commit...
 
