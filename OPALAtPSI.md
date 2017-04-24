@@ -1,24 +1,51 @@
-**Build On PSI Linux Boxes** 
+# Build On PSI Linux Boxes
 
-Setup your environment, this you should add to your .bashrc
+## 1. Check whether Pmodules are available
+
+To check whether Pmodules are available on your system, run `module --version`. The output should look like:
 
 ```
-source /afs/psi.ch/sys/psi.x86_64_slp6/config/profile.bash
+$ module --version
 
-module use unstable
-module load psi-python27/1.0.0
-module load cmake/3.6.3
-module load gcc/5.4.0
-module load boost/1.62.0
-module load gsl/2.2.1
-module load openmpi/1.10.4
-module load trilinos/12.10.1
-module load hdf5/1.8.18
-module load H5hut/2.0.0rc3
-module load cmake
-module load gnuplot
-module list
+Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
+Copyright GNU GPL v2
+
+$
 ```
+
+
+## 2. Install Pmodules if not available
+
+If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
+
+```
+sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
+```
+
+Add the following line to your `.bashrc` or `.bash_profile`:
+```
+source /opt/psi/config/profile.bash
+```
+
+**Note**: For the time being Pmodules supports only bash but **not** tcsh.
+
+## 3. Load the OPAL tool-chain
+
+Load the OPAL tool-chain for OPAL 1.{5,6}.x
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/1.6
+```
+
+and for OPAL 2.x
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/2.0
+```
+
+**Note**: For your convenience you might add the `module use ...` to your `.bashrc`  `.bash_profile`.
+
+## 4. Get a clone of the OPAL repository
 
 Clone OPAL repository and build OPAL-1.6:
 ```
