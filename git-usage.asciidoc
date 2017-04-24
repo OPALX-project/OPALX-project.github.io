@@ -1,0 +1,10 @@
+To develop a new feature
+
+* Go to project
+* Click "fork"
+* Click your name
+* "Forking in progress" appears
+* When it is done do git clone <new repository>
+
+Write some code. When you are ready to do a commit...
+
