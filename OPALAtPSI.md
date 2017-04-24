@@ -47,12 +47,29 @@ module load opal-toolschain/2.0
 
 ## 4. Get a clone of the OPAL repository
 
-Clone OPAL repository and build OPAL-1.6:
+Choose a directory where you want to store the OPAL sources. Here we use `$HOME/opal`:
+
 ```
 mkdir $HOME/opal
 cd $HOME/opal
 git clone git@gitlab.psi.ch:OPAL/src.git
+```
+
+## 5. Select the OPAL branch you want to compile
+Example
+```
+cd $HOME/opal/src
 git checkout OPAL-1.6
+```
+or 
+```
+cd $HOME/opal/src
+git checkout master
+```
+
+## 6. Compile OPAL
+```
+cd $HOME/opal/src
 mkdir build
 cd build
 cmake ..
