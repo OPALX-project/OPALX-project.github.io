@@ -23,9 +23,9 @@ Documentation for gtest can be found at:
 
 https://github.com/google/googletest/blob/master/googletest/docs/Primer.md
 
-Go ahead and edit the tests if you need to. We should have one source file for each header file in the main body of the code. The directory structure is supposed to reflect the directory structure of the main OPAL source (add a directory if you need to). If you want to add an extra test, you need to make sure that it includes gtest <pre>#include "gtest/gtest.h"</pre> It should be automatically added to the test executable by cmake.
+Go ahead and edit the tests if you need to. We should have one source file for each header file in the main body of the code. The directory structure is supposed to reflect the directory structure of the main OPAL source (add a directory if you need to). If you want to add an extra test, you need to make sure that it includes gtest `#include "gtest/gtest.h"` It should be automatically added to the test executable by cmake.
 
-To run the tests, either run the full regression testing suite, or run just the cpp tests by running executable test/opal_unit_tests (after building). If you are just interested in a specific test, you can do e.g. <pre>test/opal_unit_tests --gtest_filter=SBend3DTest.*</pre> to run all tests from SBend3DTest. There are some other useful command line options; do test/opal_unit_tests --help to list them all.
+To run the tests, either run the full regression testing suite, or run just the cpp tests by running executable test/opal_unit_tests (after building). If you are just interested in a specific test, you can do e.g. `test/opal_unit_tests --gtest_filter=SBend3DTest.*` to run all tests from SBend3DTest. There are some other useful command line options; do test/opal_unit_tests --help to list them all.
 
 In general:
 
