@@ -79,3 +79,4 @@ cd build
 cmake ..
 make -j 5
 ```
+To compile OPAL with DKS, follow the instruction [here](Opaldks)
