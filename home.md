@@ -47,7 +47,6 @@ OPAL for Developers: Coding Style and Conventions
 
 1.  [Coding Style and Conventions](for-developers)
 2. [Make a fork of the upstream repository and develop code](git-usage)
-3. For PSI user go [here](Opalmerlin) to find out how to use OPAL on Merlin and how to compile.
-4. Install Modules [local](installation-local) on MAC and Linux
-5. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
-6. [Building, executing and writing unit tests](unit-tests)
+3. Install Modules [local](installation-local) on MAC and Linux
+4. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
+5. [Building, executing and writing unit tests](unit-tests)
