@@ -5,7 +5,7 @@ Achim Gsell
 :toc:
 
 == Check whether the software requirements are fulfilled on your system
-=== 1.1 Requirements
+=== Requirements
 
 The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next to sections. If you do not want to use Pmodules you must install the following software packages:
 
@@ -25,7 +25,7 @@ gtest >= 1.7.0
 parmetis >= 4.0.3
 trilinos >= 12.10.1
 
-=== 1.2. Check whether Pmodules are available
+=== Check whether Pmodules are available
 
 To check whether Pmodules are available on your system, run `module --version`. The output should look like:
 
@@ -36,7 +36,7 @@ Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
 Copyright GNU GPL v2
 ```
 
-=== 1.2. If not already done, install Pmodules
+=== If not already done, install Pmodules
 
 If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
 
