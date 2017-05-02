@@ -71,12 +71,21 @@ git branch -a
 ```
 from inside your clone.
 
-## 6. Compile OPAL
+
+## 6. Configure the Build Process
+
+OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake ..` in the build directory **after** calling `cmake ..`:
 ```
-cd $HOME/opal/src
+cd "$HOME/opal/src"
 mkdir build
 cd build
-cmake ..
-make -j 5
+cmake ..    # see available arguments below
+ccmake ..  # optional
 ```
-To compile OPAL with DKS, follow the instruction [here](Opaldks)
+
+## 7. Compile OPAL
+```
+cd "$HOME/opal/src/build"
+make -j 5        # number depends on the number of core on your system
+```
+
