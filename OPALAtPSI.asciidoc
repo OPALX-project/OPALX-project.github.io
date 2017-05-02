@@ -27,7 +27,7 @@ gtest >= 1.7.0
 
 {nbsp}
 
-** If you want to compile OPAL with the  SAAMG solver:** +
+**If you want to compile OPAL with the  SAAMG solver:** +
 parmetis >= 4.0.3 *
 trilinos >= 12.10.1
 
