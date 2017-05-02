@@ -10,9 +10,8 @@ Achim Gsell
 
 The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next to sections. If you do not want to use Pmodules you must install the following software packages:
 
-
-cmake >= 3.0.0
-gcc >= 5.4.0
+cmake >= 3.0.0 +
+gcc >= 5.4.0 +
 openmpi/1.10.4
 boost/1.62.0
 hdf5/1.8.18
