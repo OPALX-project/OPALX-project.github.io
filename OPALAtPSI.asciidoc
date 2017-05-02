@@ -131,6 +131,7 @@ cmake ..    # see available arguments below
 ccmake ..  # optional
 ```
 
+In the following table shows the most important options:
 [width="80%"]
 |=======
 | `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
