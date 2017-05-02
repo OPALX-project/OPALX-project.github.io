@@ -37,6 +37,7 @@ If you *do not* want to use Pmodules you must install the following software pac
 {nbsp}
 
 **If you want to compile OPAL with the  SAAMG solver:**
+
 * parmetis >= 4.0.3 +
 * trilinos >= 12.10.1
 
