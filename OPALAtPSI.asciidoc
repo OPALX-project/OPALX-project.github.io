@@ -135,8 +135,7 @@ ccmake ..  # optional
 | `ENABLE_AMR_SOLVER` | enable AMR solver | requires BoxLib)
 | `ENABLE_DKS | enable DKS`| requires Cuda >= 8.0.x and DKS >= 1.1.1
 | `ENABLE_SAAMG_SOLVER` | enable SAAMG solver | requires trilions >= 12.x and parmetis >= 4.0.3
-
-
+|=======
 
 '''
 == Compile OPAL
