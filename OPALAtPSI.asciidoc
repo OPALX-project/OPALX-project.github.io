@@ -1,6 +1,7 @@
 = Build OPAL on Linux Systems
 Achim Gsell
 :doctype: article
+:numbered:
 :toc:
 
 == Check whether the software requirements are fulfilled on your system
@@ -24,7 +25,7 @@ gtest >= 1.7.0
 parmetis >= 4.0.3
 trilinos >= 12.10.1
 
-### 1.2. Check whether Pmodules are available
+=== 1.2. Check whether Pmodules are available
 
 To check whether Pmodules are available on your system, run `module --version`. The output should look like:
 
@@ -35,8 +36,7 @@ Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
 Copyright GNU GPL v2
 ```
 
-
-### 1.2. If not already done, install Pmodules
+=== 1.2. If not already done, install Pmodules
 
 If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
 
@@ -51,8 +51,7 @@ source /opt/psi/config/profile.bash
 
 **Note**: For the time being Pmodules supports only bash but **not** tcsh.
 
-2. Load the OPAL tool-chain
----------------
+== Load the OPAL tool-chain
 
 Load the OPAL tool-chain for OPAL 1.{5,6}.x
 ```
@@ -68,8 +67,7 @@ module load opal-toolschain/2.0
 
 **Note**: For your convenience you might add the line `module use ...` to your `.bashrc` or `.bash_profile`.
 
-3. Get a clone of the OPAL repository
----------------
+== Get a clone of the OPAL repository
 
 Choose a directory where you want to store the OPAL sources. Here we use `$HOME/opal`:
 
@@ -79,8 +77,7 @@ cd $HOME/opal
 git clone git@gitlab.psi.ch:OPAL/src.git
 ```
 
-4. Select the OPAL branch you want to compile
----------------
+== Select the OPAL branch you want to compile
 
 Example:
 ```
@@ -100,8 +97,7 @@ git branch -a
 from inside your clone.
 
 
-5. Configure the Build Process
----------------
+== Configure the Build Process
 
 OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake ..` in the build directory **after** calling `cmake ..`:
 ```
@@ -112,10 +108,8 @@ cmake ..    # see available arguments below
 ccmake ..  # optional
 ```
 
-6. Compile OPAL
----------------
+== Compile OPAL
 ```
 cd "$HOME/opal/src/build"
 make -j 5        # number depends on the number of core on your system
 ```
-
