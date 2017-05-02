@@ -128,6 +128,16 @@ cmake ..    # see available arguments below
 ccmake ..  # optional
 ```
 
+[width="80%"]
+|=======
+| `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
+| `CMAKE_INSTALL_PREFIX` | prefix for installation |
+| `ENABLE_AMR_SOLVER` | enable AMR solver | requires BoxLib)
+| `ENABLE_DKS | enable DKS`| requires Cuda >= 8.0.x and DKS >= 1.1.1
+| `ENABLE_SAAMG_SOLVER` | enable SAAMG solver | requires trilions >= 12.x and parmetis >= 4.0.3
+
+
+
 '''
 == Compile OPAL
 ```
