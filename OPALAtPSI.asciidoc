@@ -8,7 +8,13 @@ Achim Gsell
 == Check whether the software requirements are fulfilled on your system
 === Requirements
 
-The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next to sections. If you do not want to use Pmodules you must install the following software packages:
+The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next two sections. The Pmodules are running on 
+
+* Redhat Enterprise Linux 6 and 7 and Clones like Scientific Linux and Centor
+* Ubuntu 14 LTS and 16 LTS
+* OpenSUSE should work but is not tested
+
+ If you **do not** want to use Pmodules you must install the following software packages:
 
 {nbsp}
 
