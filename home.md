@@ -11,7 +11,7 @@ OPAL Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
 
-* [OPAL  Release Notes ]( OPALReleaseNotes) Latest 1.5.2
+* [OPAL  Release Notes ]( OPALReleaseNotes) Latest 1.6.0
 
 * For the  download of OPAL binaries [visit] (https://amas.psi.ch/OPAL/wiki/Downloads)
 
