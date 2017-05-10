@@ -1,18 +1,28 @@
-**OPAL 1.5.2**
+**OPAL 1.6.0**
 This is a special developer release with binaries, because 1.6.0 will the last public release before starting the 2.0.0 with many new features.
 
-Solved issues in 1.5.2 are
+Solved issues concerned by the user in 1.6.0 are
 
+* Issue #7 
+* Issue #14 
+* Issue #12
+* Issue #15
+* Issue #25
 * Issue #33
 * Issue #35
 * Issue #41
-* Issue #52 (check for 1.6)
+* Issue #42
+* Issue #52
 * Issue #55
 * Issue #57
 * Issue #58
 * Issue #64
 * Issue #71 
+* Issue #77
 * Regression test are all fixed (issue #35 et al.)
+
+**Input file related changes in OPAL-1.6.0**
+
 * Input files must have a version tag, for example 
 `OPTION, VERSION=10500`
 indicating version 1.5.x
