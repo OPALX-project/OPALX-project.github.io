@@ -21,10 +21,10 @@ Solved issues concerned by users 1.6.0 are
 * Issue #77
 * Regression test are all fixed (issue #35 et al.)
 
+* The old behaviour to replace unknown elements with *markers* is now turned in to an error.
+
+* Auto phasing reported by John Power <JP@anl.gov>
 A full list of solved issues can be found in the issue tracker on gitlab.psi.ch.
-
-
-
 
 **Input file related changes in OPAL-1.6.0**
 
@@ -36,7 +36,3 @@ indicating version 1.5.x
  `REAL Edes=.072; 
  REAL gamma=(Edes+PMASS)/PMASS;`
 Only **REAL,STRING,BOOL** and **ARRAY** are supported
-
-* The old behaviour to replace unknown elements with *markers* is now turned in to an error.
-
-* Auto phasing reported by John Power <JP@anl.gov>
