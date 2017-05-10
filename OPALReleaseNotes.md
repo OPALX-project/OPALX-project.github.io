@@ -24,6 +24,7 @@ Solved issues concerned by users 1.6.0 are
 * The old behaviour to replace unknown elements with *markers* is now turned in to an error.
 
 * Auto phasing reported by John Power <JP@anl.gov>
+
 A full list of solved issues can be found in the issue tracker on gitlab.psi.ch.
 
 **Input file related changes in OPAL-1.6.0**
