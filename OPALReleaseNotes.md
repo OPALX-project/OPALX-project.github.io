@@ -1,7 +1,7 @@
 **OPAL 1.6.0**
 This is a special developer release with binaries, because 1.6.0 will the last public release before starting the 2.0.0 with many new features.
 
-Solved issues concerned by the user in 1.6.0 are
+Solved issues concerned by users 1.6.0 are
 
 * Issue #7 
 * Issue #14 
@@ -20,6 +20,11 @@ Solved issues concerned by the user in 1.6.0 are
 * Issue #71 
 * Issue #77
 * Regression test are all fixed (issue #35 et al.)
+
+A full list of solved issues can be found in the issue tracker on gitlab.psi.ch.
+
+
+
 
 **Input file related changes in OPAL-1.6.0**
 
