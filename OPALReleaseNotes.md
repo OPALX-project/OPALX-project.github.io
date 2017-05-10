@@ -33,7 +33,8 @@ A full list of solved issues can be found in the issue tracker on gitlab.psi.ch.
 `OPTION, VERSION=10500`
 indicating version 1.5.x
 * OPAL is now fully typed. Each variable has to have a type for example
-
- `REAL Edes=.072; 
+`
+ REAL Edes=.072; 
  REAL gamma=(Edes+PMASS)/PMASS;`
+
 Only **REAL,STRING,BOOL** and **ARRAY** are supported
