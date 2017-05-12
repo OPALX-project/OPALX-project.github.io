@@ -38,3 +38,10 @@ indicating version 1.5.x
  REAL gamma=(Edes+PMASS)/PMASS;`
 
 Only **REAL,STRING,BOOL** and **ARRAY** are supported
+
+
+**Known Issues**
+
+
+1.  Degrader with DKS enabled: #106
+
