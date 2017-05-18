@@ -181,3 +181,16 @@ In this example instead of a restart step, a restart position is specified.
 
 
 If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
+
+
+# Optimiser run (optPilot)
+Additional parameters that can be set in the *foo.data* file are:  
+
+`SIMTMPDIR` (default $PWD\tmp)
+
+`MAXGENERATIONS`   (default: 100)
+
+`INITIALPOPULATION` (default: 62)
+
+`INDEPENDENTGENS` (default: 62)
+
