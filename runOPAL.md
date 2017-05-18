@@ -73,7 +73,7 @@ where also all results are stored. The general syntax of runOPAL.py is
   * *--block* runs opal local not using the batch system and waits until the job is done.
   * *--keep* if same simulation has been run before, keep old data and abort.
   * *--nobatch* uses plain mpirun on the local machine.
-  * *--optPilot will submit a optPilot job (check additional parameters that can be set in the *foo.data* file
+  * *--optPilot will submit a optPilot job on Merlin (check additional parameters that can be set in the *foo.data* file)
   * *ATTR* refers to a name in the data file
   * *SCANVALUE* start\:end\:step, scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
