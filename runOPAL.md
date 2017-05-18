@@ -65,7 +65,7 @@ You can run the *runOPAL.py* script without arguments, if the two files (*foo.tm
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
 where also all results are stored. The general syntax of runOPAL.py is
 
-`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--test] [--block] [--keep] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
+`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--test] [--block] [--keep] [--nobatch] [--optPilot ][ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description
   * *--test* exercises everything except for the submission of the job.
   * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOpal* will use the nearest position stored in the restart file as restart position. 
@@ -183,7 +183,7 @@ In this example instead of a restart step, a restart position is specified.
 If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
 
 
-# Optimiser run (optPilot)
+# Optimiser run (--optPilot)
 Additional parameters that can be set in the *foo.data* file are:  
 
 `SIMTMPDIR` (default $PWD\tmp)
