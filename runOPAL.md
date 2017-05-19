@@ -12,12 +12,14 @@ symbol in the template file will look like **\_CHARGE\_**.
 
 # Recognized Environment Variables by  *runOPAL.py*
 
-There are 5 environment variables recognized by the *runOPAL.py*:
-   1. *TEMPLATES*
-   2. *FIELDMAPS*
-   3. *OPAL_EXE_PATH*
-   4. *SGE_QUEUE*
-   5. *SGE_RAM*
+The following environment variables recognized by the *runOPAL.py*:
+   1. *DISTRIBUTIONS*
+   2. *TEMPLATES*
+   3. *FIELDMAPS*
+   4. *OPAL_EXE_PATH*
+   5. *SGE_QUEUE*
+   6. *SGE_RAM*
+   7. *SGE_TIME*
 
 In Bash parlance:
 
@@ -29,7 +31,7 @@ In Bash parlance:
 
 `export SGE_QUEUE=all.q`
 
- `export SGE_RAM=8`
+`export SGE_RAM=8`
 
 
 Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise 
@@ -37,8 +39,7 @@ you need to set it accordingly.
 
 From the TEMPLATES directory the *foo.tmpl* file is taken and the values are replaced. 
 
-The field maps from the *FIELDMAPS* directory are linked to the directory where the simulation is executed. 
-
+The field maps from the *FIELDMAPS* directory and the distributions from the *DISTRIBUTIONS* directory are linked to the directory where the simulation is executed. 
 
 *SGE_QUEUE* is the queue used for the simulation. Different queues may have different numbers of nodes and CPU's available as well as different run-time limitations.
 
