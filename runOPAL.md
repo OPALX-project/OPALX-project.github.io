@@ -48,9 +48,9 @@ The field maps from the *FIELDMAPS* directory and the distributions from the *DI
 
 # This is a snippet of a data and tmpl file (*foo.data*)
 
-`Q         -1                   # the charge`
+`Q         -1                   \t # the charge`
 
-`NPART 100000     # the number of simulation particles `
+`NPART 100000       # the number of simulation particles `
  
  `CORES   2               # how many cores are used by OPAL `
 
