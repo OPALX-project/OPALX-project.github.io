@@ -48,7 +48,7 @@ The field maps from the *FIELDMAPS* directory and the distributions from the *DI
 
 # This is a snippet of a data and tmpl file (*foo.data*)
 
-`Q         -1                   \t # the charge`
+`Q         -1                  # the charge`
 
 `NPART 100000       # the number of simulation particles `
  
@@ -59,7 +59,7 @@ Caution, in the data file, no blank lines are allowed. If you specify negative v
 
 The corresponding part of the template (*foo.tmpl*) file would look like:
 
-`beam1: BEAM, PARTICLE=ELECTRON, pc=P0, NPART=_NPART_, BFREQ=BFREQ, BCURRENT=BCURRENT, CHARGE=_Q_;`
+`beam1: BEAM, PARTICLE=ELECTRON, pc=P0, NPART=_NPART_, CHARGE=_Q_ ... ;`
 
 # Running runOPAL.py
 You can run the *runOPAL.py* script without arguments, if the two files (*foo.tmpl* and *foo.data*) are present, a directory *foo* will be
