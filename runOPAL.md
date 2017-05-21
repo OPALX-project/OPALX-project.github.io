@@ -185,7 +185,7 @@ If there exists no phase space dump at the specified position (10.0 meters here)
 
 
 # Optimiser run (--optPilot)
-Additional parameters that can be set in the *foo.data* file are:  
+Additional parameters that are recognised:  
 
 `SIMTMPDIR` (default $PWD\tmp)
 
@@ -195,3 +195,12 @@ Additional parameters that can be set in the *foo.data* file are:
 
 `INDEPENDENTGENS` (default: 62)
 
+`NUMCOWORKERS` (default: 1)
+
+`NUMMASTERS` (default: 1)
+
+`DUMPDAT` (default: 1)
+
+`SOLSYNCH` (default: 1)
+
+`MUTATIONPROB` (default: 0.5)
