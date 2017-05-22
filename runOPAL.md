@@ -10,7 +10,7 @@ In the data file, symbols and values will be defined, which will be
 replaced in the template file by the *runOPAL.py* script. A symbol in the data file maybe looks like **CHARGE**, the corresponding 
 symbol in the template file will look like **\_CHARGE\_**. 
 
-![runopal-1](/uploads/65201f411b24ff56fab3384e1368b73e/runopal-1.png){height="36px" width="36px"}
+![runopal-1](/uploads/65201f411b24ff56fab3384e1368b73e/runopal-1.png)
 
 # Recognized Environment Variables by  *runOPAL.py*
 
@@ -187,6 +187,9 @@ If there exists no phase space dump at the specified position (10.0 meters here)
 
 
 # Optimiser run (--optPilot)
+
+![runopal-2](/uploads/b0d10ff49fd4af298de99a872311af48/runopal-2.png)
+
 Additional parameters that are recognised:  
 
 `SIMTMPDIR` (default $PWD\tmp)
