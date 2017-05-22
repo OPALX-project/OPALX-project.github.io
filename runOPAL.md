@@ -10,7 +10,7 @@ In the data file, symbols and values will be defined, which will be
 replaced in the template file by the *runOPAL.py* script. A symbol in the data file maybe looks like **CHARGE**, the corresponding 
 symbol in the template file will look like **\_CHARGE\_**. 
 
-![runopal-1](/uploads/65201f411b24ff56fab3384e1368b73e/runopal-1.png)
+![runopal-1](/uploads/65201f411b24ff56fab3384e1368b73e/runopal-1.png){:height="36px" width="36px"}
 
 
 
