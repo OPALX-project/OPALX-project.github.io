@@ -188,7 +188,7 @@ If there exists no phase space dump at the specified position (10.0 meters here)
 
 # Optimiser run (--optPilot)
 
-![runopal-2](/uploads/b0d10ff49fd4af298de99a872311af48/runopal-2.png)
+![runopal-2](/uploads/d4a85587896a5e9ece6dd7f2a3ea36ac/runopal-2.png)
 
 Additional parameters that are recognised:  
 
