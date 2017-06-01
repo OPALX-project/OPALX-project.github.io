@@ -19,7 +19,7 @@ Solved issues concerned by users 1.6.0 are
 * Issue #64
 * Issue #71 
 * Issue #77
-* Regression test are all fixed (issue #35 et al.)
+* [Regression tests](http://amas.web.psi.ch/opal/regressionTests/1.6/) are all fixed (issue #35 et al.)
 
 * The old behaviour to replace unknown elements with *markers* is now turned in to an error.
 
