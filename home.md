@@ -25,7 +25,7 @@ OPAL Documentation & Help
 
 OPAL Start with Examples
 =====================
-1.  [Cyclotron](Cyclotron)
+1. [Cyclotron](Cyclotron)
 2. [FFAG](#FFAG)
 3. [RF Photo Injector](RFPhotoInjector)
 4. [Post Processing](PostProcessing)
@@ -40,12 +40,12 @@ is found [here](runOPAL)
 Regression Tests
 ===============
 1. on the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
-2. on the branch [OPAL-1.4.x](http://amas.web.psi.ch/opal/regressionTests/1.4/)
+2. on the branch [OPAL-1.6.x](http://amas.web.psi.ch/opal/regressionTests/1.6/)
 
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
 
-1.  [Coding Style and Conventions](for-developers)
+1. [Coding Style and Conventions](for-developers)
 2. [Make a fork of the upstream repository and develop code](git-usage)
 3. Install Modules [local](installation-local) on MAC and Linux
 4. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
