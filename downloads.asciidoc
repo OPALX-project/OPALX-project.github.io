@@ -1,4 +1,4 @@
-# Downloads
+= Downloads
 
 The current OPAL version is 1.4.0.
 
@@ -9,29 +9,29 @@ The current binary distribution package version for
 
 ----
 
-## Package changes
-### 1.4.0-1
+== Package changes
+=== 1.4.0-1
  * update to OPAL version 1.4.0
 
-### 1.3.2-3
+=== 1.3.2-3
  * in Linux package only: add missing H5root
 
-### 1.3.2-2
+=== 1.3.2-2
  * Fix in `vtk2h5grid`.
 
-### 1.3.2-1
+=== 1.3.2-1
  * update to OPAL version 1.3.2
 
 ----
 
-## Tool-Chain
+== Tool-Chain
 * `gcc/4.8.3`
 * `openmpi/1.8.2`
 * `hdf5/1.8.12`
 
 ----
 
-## Linux
+== Linux
 
 || '''OPAL''' || '''Compiled on''' || '''Architecture''' || '''Compiler''' || '''MPI''' || '''HDF5''' || '''MD5''' || '''Notes''' ||
 || [raw-attachment:OPAL-1.4.x-1-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.1-1] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `--' || [wiki:ReleaseNotes-OPAL-1.4.1 Release notes] ||
@@ -44,7 +44,7 @@ The current binary distribution package version for
 
 ----
 
-## Mac OS X
+== Mac OS X
 
 || '''OPAL''' || '''Compiled on''' || '''Architecture''' || '''Compiler''' || '''MPI''' || '''HDF5''' || '''MD5''' || '''Notes''' ||
 || [raw-attachment:OPAL-1.4.x-1-x86_64-apple-darwin.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.x-1] || Mac OS X 10.9 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `--` || [wiki:ReleaseNotes-OPAL-1.4.x Release notes] ||
