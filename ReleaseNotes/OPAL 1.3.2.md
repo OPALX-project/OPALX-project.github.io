@@ -2,6 +2,7 @@
 
 ## News
 ### Changes from 1.3.1 to 1.3.2
+
 1. bug (introduced in 1.3.1) that prevented most distributions from being mirrored fixed
 1. Linux version only: missing libraries for Infiniband support added
 
@@ -12,7 +13,6 @@
 1. p!=0 message is now translated to a meaningful message
 1. Lot of internal restructuring and cleanup
 1. The Manual describes Autophasing, Envelope Tracker and the FFT field solver in some detail. 
-1. The package now includes a tool-chain and libraries to [#ID-Recompile-OPAL recompile OPAL]!
 
 ----
 
@@ -21,10 +21,14 @@
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
 1. Un-tar the package
-    `tar xf OPAL-1.3.2-1-XXX.tar.bz2`
+    ```
+    tar xf OPAL-1.3.2-1-XXX.tar.bz2
+    ```
 1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
-    `source $PREFIX/etc/profile.d/opal.sh`
-1. Now you are ready to run opal, opal converter tools and the visualization tool [http://amas.web.psi.ch/tools/H5root/index.html H5root].
+    ```
+    source $PREFIX/etc/profile.d/opal.sh
+    ```
+1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](http://amas.web.psi.ch/tools/H5root/index.html H5root).
 
 >
 MPI is included in the OPAL package. If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
