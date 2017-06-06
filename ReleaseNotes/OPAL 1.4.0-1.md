@@ -5,7 +5,7 @@
 * fixing combination of OFFSET[XYZ] and CZERO,
 * output the reference particle trajectory of every dipole,
 * adding general multipole field,
-* !BoundaryGeometry: Bugfix in computing triangle normals,
+* BoundaryGeometry: Bugfix in computing triangle normals,
 * fixing calculation of external fields for output,
 * prevent access to memory that isn't allocated,
 * properly freeing memory,
@@ -26,17 +26,17 @@
 * fixing thermal energy for emission model 'None'
 * remove delay of emission process (OPAL-T)
 * build process adapted to Intel compiler
-* allow simulations with multiple !SurfacePhysics processes (OPAL-T)
+* allow simulations with multiple SurfacePhysics processes (OPAL-T)
 * kickers implemented in OPAL-T,
 * restart from any step and any H5Part file,
 * fine-grained control over amount of output in OPAL-T,
-* array-type !TrackRun attributes MAXSTEPS, DT and ZSTOP (currently OPAL-T only),
+* array-type TrackRun attributes MAXSTEPS, DT and ZSTOP (currently OPAL-T only),
 * statistics file now compliant to SDDS format,
 * rewrite of autophase algorithm,
 * added stand-alone autophase tracker,
 * better exception handling,
 * follow-up track now working correctly,
-* adding !MatchedGauss distribution,
+* adding MatchedGauss distribution,
 * return type of ElementBase::getType changed to enum which is faster to compare than strings.
 
 ----
@@ -45,11 +45,15 @@
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
-1. Un-tar the package \\
- {{{tar xf OPAL-1.4.0-1-XXX.tar.bz2}}}
-1. Source the OPAL shell profile. For the time being only sh-like shells are supported. \\
- {{{source $PREFIX/OPAL-1.4.0-1/etc/profile.d/opal.sh}}}
-1. Now you are ready to run opal, opal converter tools and the visualization tool [http://amas.web.psi.ch/tools/H5root/index.html H5root].
+1. Un-tar the package
+    ```
+    tar xf OPAL-1.4.0-1-XXX.tar.bz2
+    ```
+1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
+ ```
+ source $PREFIX/OPAL-1.4.0-1/etc/profile.d/opal.sh
+ ```
+1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](http://amas.web.psi.ch/tools/H5root/index.html).
 
 >
 MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
@@ -60,9 +64,9 @@ MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure 
 
 ### Linux
 
-The OPAL package for Linux has been compiled on !ScientificLinux 6. It should run on almost all current Linux distribution and has been successfully tested on:
-* Redhat Enterprise Linux 6, !ScientificLinux 6, CentOS 6
-* Redhat Enterprise Linux 7, !ScientificLinux 7, CentOS 7
+The OPAL package for Linux has been compiled on ScientificLinux 6. It should run on almost all current Linux distribution and has been successfully tested on:
+* Redhat Enterprise Linux 6, ScientificLinux 6, CentOS 6
+* Redhat Enterprise Linux 7, ScientificLinux 7, CentOS 7
 * Ubuntu 12
 * Ubuntu 14
 * OpenSUSE 12
