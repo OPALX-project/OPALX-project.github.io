@@ -33,9 +33,9 @@ The current binary distribution package version for
 
 == Linux
 
-====
+===
 | OPAL | MD5 | Release Notes
-====
+===
 
 || '''OPAL''' || '''Compiled on''' || '''Architecture''' || '''Compiler''' || '''MPI''' || '''HDF5''' || '''MD5''' || '''Notes''' ||
 || [raw-attachment:OPAL-1.4.x-1-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.1-1] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `--' || [wiki:ReleaseNotes-OPAL-1.4.1 Release notes] ||
