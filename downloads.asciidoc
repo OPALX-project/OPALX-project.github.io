@@ -15,8 +15,8 @@ Changes::
 * update to OPAL version 1.4.0
 
 Download::
-* http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2[OPAL-1.4.0-1 for Linux]
-* http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[OPAL-1.4.0-1 for MacOS]
+* http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2[OPAL-1.4.0-1 for Linux], http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2.md5[md5 sum] 
+* http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.4.0-1 for MacOS], http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 
 
 
