@@ -26,11 +26,19 @@ Download::
 {blank}
 
 === OPAL 1.3.2-3
+>
+This release fixes an issue in the Linux package only! The MacOS X package is not affected.
+
 Changes::
-* in Linux package only: add missing H5root
-* Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.3.2
+    1.3.2-3,,
+        * add missing H5root
+    1.3.2-2,,
+        * Bugfix in `vtk2h5grid`
+    1.3.2-1,,
+        * OPAL 1.3.2
+        * Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.3.2
 Download::
-* http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-3-x86_64-linux.tar.bz2[OPAL-1.3.2 for Linux], http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-3-x86_64-linux.tar.bz2.md5[md5 sum] 
+* http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-3-x86_64-linux.tar.bz2[OPAL-1.3.2-3 for Linux], http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-3-x86_64-linux.tar.bz2.md5[md5 sum] 
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-3-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.2-3 for MacOS], http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-3-x86_64-apple-darwin.tar.bz2[md5 sum]
 
 
@@ -43,35 +51,9 @@ OPAL 1.3.2-1::
 '''
 
 == Toolchain
-* `gcc/4.8.3`
-* `openmpi/1.8.2`
-* `hdf5/1.8.12`
+OPAL 1.3.x, 1.4.x::
+    * `gcc/4.8.3`
+    * `openmpi/1.8.2`
+    * `hdf5/1.8.12`
 
 '''
-
-== Linux
-
-===
-| OPAL | MD5 | Release Notes
-===
-
-|| '''OPAL''' || '''Compiled on''' || '''Architecture''' || '''Compiler''' || '''MPI''' || '''HDF5''' || '''MD5''' || '''Notes''' ||
-|| [raw-attachment:OPAL-1.4.x-1-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.1-1] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `--' || [wiki:ReleaseNotes-OPAL-1.4.1 Release notes] ||
-|| [raw-attachment:OPAL-1.4.0-1-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.0-1] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `2d4e5ce9f6638ec960b5b3a182eda559` || [wiki:ReleaseNotes-OPAL-1.4.0 Release notes] ||
-|| [raw-attachment:OPAL-1.3.2-3-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.2-3] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `aa154bf5e76abbb2c85bb34704f0028f` || [wiki:ReleaseNotes-OPAL-1.3.2 Release notes] ||
-|| [raw-attachment:OPAL-1.3.2-2-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.2-2] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `880af1a7229c75c8fd23529cada3cf9e` || [wiki:ReleaseNotes-OPAL-1.3.2 Release notes] ||
-|| [raw-attachment:OPAL-1.3.1-1-x86_64-linux.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.1-1] || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `9c1e3b85139d17379d7ca76d8e2f65f3` || [wiki:ReleaseNotes-OPAL-1.3.1 Release notes] ||
-|| [raw-attachment:OPAL-1.3.0-x86_64-linux-1.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.0]   || !ScientificLinux 6 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `c1d589ba4a6393a0e8eceabf96a3e595` || [wiki:ReleaseNotes-OPAL-1.3.0 Release notes] ||
-|| [raw-attachment:OPAL-1.2.0-x86_64-linux-1.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.2.0]   || !ScientificLinux 6 || x86_64 || gcc 4.7.3 || OpenMPI 1.6.6 || HDF5 1.8.12 || `e858a2848f52e9de5888297a1420bbe2` || [wiki:ReleaseNotes-OPAL-1.2.0 Release notes] ||
-
-----
-
-== Mac OS X
-
-|| '''OPAL''' || '''Compiled on''' || '''Architecture''' || '''Compiler''' || '''MPI''' || '''HDF5''' || '''MD5''' || '''Notes''' ||
-|| [raw-attachment:OPAL-1.4.x-1-x86_64-apple-darwin.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.x-1] || Mac OS X 10.9 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `--` || [wiki:ReleaseNotes-OPAL-1.4.x Release notes] ||
-|| [raw-attachment:OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.4.0-1] || Mac OS X 10.9 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `039d1dc9ee49ad3d279cc29e09d93081` || [wiki:ReleaseNotes-OPAL-1.4.0 Release notes] ||
-|| [raw-attachment:OPAL-1.3.2-2-x86_64-apple-darwin.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.2-2] || Mac OS X 10.9 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `919da307b5ccabd6cf47b96e202fd000` || [wiki:ReleaseNotes-OPAL-1.3.2 Release notes] ||
-|| [raw-attachment:OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.1-1] || Mac OS X 10.9 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `de5d3c73d609650b3a9020f42d869385` || [wiki:ReleaseNotes-OPAL-1.3.1 Release notes] ||
-|| [raw-attachment:OPAL-1.3.0-x86_64-apple-darwin-1.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.3.0]   || Mac OS X 10.9 || x86_64 || gcc 4.8.3 || OpenMPI 1.8.2 || HDF5 1.8.12 || `d7ea706722d2d9677071ed389f78229d` || [wiki:ReleaseNotes-OPAL-1.3.0 Release notes] ||
-|| [raw-attachment:OPAL-1.2.0-x86_64-apple-darwin-1.tar.bz2:wiki:DownloadsToolsAndLibs OPAL 1.2.0]   || Mac OS X 10.8 || x86_64 || gcc 4.7.3 || OpenMPI 1.6.5 || HDF5 1.8.12 || `db0c086b64aa157cc601e91d843f34cf` || [wiki:ReleaseNotes-OPAL-1.2.0 Release notes] ||
