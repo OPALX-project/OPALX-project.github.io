@@ -1,11 +1,12 @@
 = Downloads
+:TOC:
+:numbered:
+:blank: pass:[ +]
 
+== Overview 
 The current OPAL version is 1.4.0.
 
-The current binary distribution package version for 
-
-* Mac OS X 10.9 and newer is 1.4.0-1.
-* Linux is 1.4.0-1.
+The version of the newest binary distribution package is 1.4.0-1.
 
 '''
 
@@ -18,7 +19,7 @@ Download::
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2[OPAL-1.4.0-1 for Linux], http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2.md5[md5 sum] 
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.4.0-1 for MacOS], http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 
-
+{blank}
 
 OPAL 1.3.2-3::
 * in Linux package only: add missing H5root
