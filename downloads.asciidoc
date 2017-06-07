@@ -28,20 +28,9 @@ Download::
 === OPAL 1.3.2-3
 
 [NOTE]
-.A NOTE admonition block
 =====================================================================
-Qui in magna commodo, est labitur dolorum an. Est ne magna primis
-adolescens.
-
-. Fusce euismod commodo velit.
-. Vivamus fringilla mi eu lacus.
-  .. Fusce euismod commodo velit.
-  .. Vivamus fringilla mi eu lacus.
-. Donec eget arcu bibendum
-  nunc consequat lobortis.
-=====================================================================
-
 This release fixes an issue in the Linux package only! The MacOS X package is not affected.
+=====================================================================
 
 Changes::
     1.3.2-3;;
