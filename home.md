@@ -11,7 +11,7 @@ OPAL Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
 
-* [OPAL  Release Notes ]( OPALReleaseNotes) Latest 1.6.0
+* [OPAL  Release Notes]( OPALReleaseNotes) Latest 1.6.0
 
 * For the  download of OPAL binaries [visit] (https://amas.psi.ch/OPAL/wiki/Downloads)
 
@@ -21,7 +21,7 @@ OPAL Documentation & Help
 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 
-* Report bugs [here](https://gitlab.psi.ch/OPAL/src/issues)
+* Report bugs to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
 
 OPAL Start with Examples
 =====================
