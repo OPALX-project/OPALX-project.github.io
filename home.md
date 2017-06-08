@@ -13,7 +13,7 @@ OPAL Documentation & Help
 
 * [OPAL  Release Notes]( OPALReleaseNotes) Latest 1.6.0
 
-* For the  download of OPAL binaries [visit] (https://amas.psi.ch/OPAL/wiki/Downloads)
+* [Download page](downloads) with OPAL binaries.
 
 * OPAL [Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 
