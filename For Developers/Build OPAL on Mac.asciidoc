@@ -24,18 +24,19 @@ If you *do not* want to use Pmodules you must install the following software pac
 * hdf5 1.8.18
 * H5hut >= 2.0.0rc3
 * gsl >= 2.2 from Macports
+* Python >= 2.7 from Macports
 
 {nbsp}
 
 **If you want to run the unit tests, you need `google-test`:** 
 
-* gtest >= 1.7.0
+* gtest >= 1.7.0 from Macports
 
 {nbsp}
 
 **If you want to compile OPAL with the  SAAMG solver:**
 
-* parmetis >= 4.0.3 +
+* parmetis >= 4.0.3 from Macports +gcc5 +openmpi
 * OpenBLAS >= 0.2.19
 * trilinos >= 12.10.1
 
@@ -49,75 +50,165 @@ If you *do not* want to use Pmodules you must install the following software pac
 
 **If you want to compile H5hut with the VTK mesh to H5hut mesh converter, you need:**
 
-* VTK >= 8
-
-=== Check whether Pmodules are available
-
-To check whether Pmodules are available on your system, run `module --version`. The output should look like:
-
-```
-$ module --version
-
-Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
-Copyright GNU GPL v2
-```
-
-{nbsp}
-
-=== If not already done, install Pmodules
-
-If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
-
-```
-sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
-```
-
-Add the following line to your `.bashrc` or `.bash_profile`:
-```
-source /opt/psi/config/profile.bash
-```
-
-**Note**: For the time being Pmodules supports only bash but **not** tcsh.
+* VTK >= 7.1 from Macports
 
 '''
-== Load the OPAL tool-chain
+== Compile and install required software
 
-Load the OPAL tool-chain for OPAL 1.{5,6}.x
+To simplify thinks, we set and use a couple of environment variables.
+
+Set `DOWNLOADS_DIR` to the directory where you want to store downloaded files. Here we use `${HOME}/Downloads`.
+
+Set `PREFIX` to the common installation prefix for all software you have to compile and install. In the following instructions we use `${HOME}/software`. But this can be any location you have write access to.
+
+Set `SRC_DIR` to the directory where you want to unpack and compile software. Here we use `${HOME}/src`.
+
 ```
-module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/1.6
+DOWNLOADS_DIR="${HOME}/Downloads"
+PREFIX="${HOME}/software"
+SRC_DIR="${HOME}/src"
+```
+Create required directories:
+```
+mkdir -p "${PREFIX}"
+mkdir -p "${DOWNLOADS_DIR}"
+mkdir -p "${SRC_DIR}"
 ```
 
-and for OPAL 2.x
-```
-module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/2.0
-```
+=== Compile HDF5
 
-**Note**: For your convenience you might add the line `module use ...` to your `.bashrc` or `.bash_profile`.
+Download HDF5:
+```
+curl -L \
+        --output "${DOWNLOADS_DIR}/hdf5-1.8.19.tar.bz2" \
+        https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.19.tar.bz2
+```
+Unpack HDF5:
+```
+cd "${SRC_DIR}"
+tar xvf "${DOWNLOADS_DIR}/hdf5-1.8.19.tar.bz2"
+```
+Configure HDF5:
+```
+mkdir -p "${SRC_DIR}/hdf5-build"
+cd "${SRC_DIR}/hdf5-build"
+CC=mpicc CXX=mpicxx "${SRC_DIR}/hdf5-1.8.19/configure" \
+        --prefix="${PREFIX}" \
+        --enable-shared \
+        --enable-parallel \
+        --enable-cxx \
+        --enable-unsupported \
+        --with-pic
+```
+Compile and install:
+```
+cd "${SRC_DIR}/hdf5-build"
+make -j4
+make install
+``
+
+=== Compile H5hut
+
+Download H5hut:
+```
+curl -L \
+        --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
+        http://amas.web.psi.ch/Downloads/H5hut/H5hut-2.0.0rc3.tar.gz
+```
+Unpack H5hut:
+```
+cd "${SRC_DIR}"
+tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
+```
+Configure H5hut:
+```
+mkdir -p "${SRC_DIR}/H5hut-build"
+cd "${SRC_DIR}/H5hut-build"
+CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
+        --prefix="${PREFIX}" \
+        --enable-shared \
+        --enable-parallel \
+        --with-hdf5="${PREFIX}" \
+        --with-pic
+```
+Compile and install:
+```
+cd "${SRC_DIR}/H5hut-build"
+make -j4
+make install
+``
+
+=== Compile and install boost
+
+Boost from Macports cannot be used for several reasons. You have to compile your own version.
+
+Download boost:
+```
+curl -L \
+        --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
+        https://netcologne.dl.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz
+        http://amas.web.psi.ch/Downloads/boost_1_62_0.tar.gz
+```
+Unpack H5hut:
+```
+cd "${SRC_DIR}"
+tar xvf "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz"
+```
+Configure and compile boost:
+```
+mkdir -p "${SRC_DIR}/boost-build"
+cd "${SRC_DIR}/boost_1_62_0"
+./bootstrap.sh \
+        --prefix="${PREFIX}" \
+        --with-libraries=all \
+        --with-python-root=/opt/local/
+```
+Compile and install
+```
+cd "${SRC_DIR}/boost_1_62_0"
+./b2 \
+        --build-type=minimal \
+        --build-dir="${SRC_DIR}/boost-build" \
+        --layout=system \
+        --without-mpi \
+        variant=release \
+        link=shared,static \
+        threading=single \
+        stage
+./b2 \
+        --build-type=minimal \
+        --build-dir="${SRC_DIR}/boost-build" \
+        --layout=system \
+        --without-mpi \
+        variant=release \
+        link=shared,static \
+        threading=single \
+        install
+```
 
 '''
-== Get a clone of the OPAL repository
+== Compile OPAL
 
-Choose a directory where you want to store the OPAL sources. Here we use `$HOME/opal`:
+=== Get the sources:
 
 ```
-mkdir $HOME/opal
-cd $HOME/opal
-git clone git@gitlab.psi.ch:OPAL/src.git
+cd "${SRC_DIR}"
+git clone git@gitlab.psi.ch:OPAL/src.git OPAL
 ```
 
 '''
-== Select the OPAL branch you want to compile
+=== Select the OPAL branch you want to compile
 
 Example:
+
+Checkout the newest stable version, which is OPAL 1.6:
 ```
-cd $HOME/opal/src
+cd "${SRC_DIR}/OPAL"
 git checkout OPAL-1.6
 ```
-or 
+or to checkout unstable development version:
 ```
-cd $HOME/opal/src
+cd "${SRC_DIR}/OPAL"
 git checkout master
 ```
 
@@ -128,15 +219,18 @@ git branch -a
 from inside your clone.
 
 '''
-== Configure the Build Process
+=== Configure the Build Process
 
-OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake ..` in the build directory **after** calling `cmake ..`:
+OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`:
 ```
-cd "$HOME/opal/src"
-mkdir build
-cd build
-cmake ..    # see available arguments below
-ccmake ..  # optional
+export C_INCLUDE_PATH="${PREFIX}/include"
+export CPLUS_INCLUDE_PATH="${PREFIX}/include"
+export LIBRARY_PATH="${PREFIX}/lib"
+export BOOST_ROOT="${PREFIX}"
+mkdir -p "${SRC_DIR}/OPAL-build"
+cd "${SRC_DIR}/OPAL-build"
+cmake  "${SRC_DIR}/OPAL"    # see available arguments below
+ccmake "${SRC_DIR}/OPAL"    # optional
 ```
 
 The following table shows the most important options:
