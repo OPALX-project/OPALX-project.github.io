@@ -94,42 +94,7 @@ mkdir -p "${PREFIX}"
 mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 ```
-
 '''
-=== Compile HDF5
-
-Obsolete: use hdf5-18 from Macports!
-
-**Download HDF5:**
-```
-curl -L \
-        --output "${DOWNLOADS_DIR}/hdf5-1.8.19.tar.bz2" \
-        https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.19.tar.bz2
-```
-**Unpack HDF5:**
-```
-cd "${SRC_DIR}"
-tar xvf "${DOWNLOADS_DIR}/hdf5-1.8.19.tar.bz2"
-```
-**Configure HDF5:**
-```
-mkdir -p "${SRC_DIR}/hdf5-build"
-cd "${SRC_DIR}/hdf5-build"
-CC=mpicc CXX=mpicxx "${SRC_DIR}/hdf5-1.8.19/configure" \
-        --prefix="${PREFIX}" \
-        --enable-shared \
-        --enable-parallel \
-        --enable-cxx \
-        --enable-unsupported \
-        --with-pic
-```
-**Compile and install HDF5:**
-```
-cd "${SRC_DIR}/hdf5-build"
-make -j4
-make install
-```
-
 === Compile H5hut
 
 **Download H5hut:**
