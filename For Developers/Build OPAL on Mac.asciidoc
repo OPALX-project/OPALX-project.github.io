@@ -95,7 +95,7 @@ mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 ```
 '''
-=== Compile H5hut
+=== Compile and install H5hut
 
 **Download H5hut:**
 ```
