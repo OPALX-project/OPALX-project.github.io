@@ -1,4 +1,4 @@
-= Build OPAL on Linux Systems
+= Build OPAL on macOS
 Achim Gsell
 :doctype: article
 :numbered:
@@ -8,25 +8,22 @@ Achim Gsell
 == Check whether the software requirements are fulfilled on your system
 === Requirements
 
-The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next two sections. The Pmodules are running on 
-
-* Redhat Enterprise Linux 6 and 7 and Clones like Scientific Linux and Centor
-* Ubuntu 14 LTS and 16 LTS
-* OpenSUSE should work but is not tested
+* macOS 10.12 or Mac OS X > 10.10 
+* Xcode 8
+* Command line utilities for Xcode
+* Macports
 
 {nbsp}
 
 If you *do not* want to use Pmodules you must install the following software packages: 
 
-* cmake >= 3.0.0
-* gcc >= 5.4.0
-* openmpi/1.10.4
-* boost/1.62.0
-* hdf5/1.8.18
-* H5hut/2.0.0rc3
-* gsl/2.2.1
-* root/6.08.02
-* OpenBLAS/0.2.19
+* cmake >= 3.0.0 from Macports
+* gcc >= 5.4.0 from Macports
+* openmpi >= 1.10.3 from Macports
+* boost >= 1.59 from Macports
+* hdf5 1.8.18
+* H5hut >= 2.0.0rc3
+* gsl >= 2.2 from Macports
 
 {nbsp}
 
@@ -39,9 +36,20 @@ If you *do not* want to use Pmodules you must install the following software pac
 **If you want to compile OPAL with the  SAAMG solver:**
 
 * parmetis >= 4.0.3 +
+* OpenBLAS >= 0.2.19
 * trilinos >= 12.10.1
 
 {nbsp}
+
+**If you want to compile H5root, you need:**
+
+* H5root >= 1.3.3
+* root >= 6
+* H5hut >= 2.0.0rc3 (serial)
+
+**If you want to compile H5hut with the VTK mesh to H5hut mesh converter, you need:**
+
+* VTK >= 8
 
 === Check whether Pmodules are available
 
