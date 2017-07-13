@@ -5,20 +5,19 @@ Achim Gsell
 :toc:
 
 '''
-== Check whether the software requirements are fulfilled on your system
-=== Requirements
+== Requirements
 
-**System requirements:**
+=== System requirements
 
 * macOS 10.12 or Mac OS X > 10.10 
-* Xcode 8
+* Xcode 8 
 * Command line utilities for Xcode
 * Macports
 
 {nbsp}
 
-**The following ports must be installed:**
-
+=== Required ports
+The following ports must be installed:
 * cmake
 * gcc5
 * openmpi-gcc5
@@ -28,14 +27,16 @@ Achim Gsell
 
 {nbsp}
 
-**The following libraries must be compiled and installed**
+=== Software not available as port
+The following libraries must be compiled and installed
 
 * H5hut >= 2.0.0rc3
 * boost >= 1.59
 
 {nbsp}
 
-**If you want to run the unit tests, you need `google-test`:** 
+=== Optional requirements
+If you want to run the unit tests, you need `google-test`:
 
 * gtest >= 1.7.0
 
@@ -43,7 +44,7 @@ Achim Gsell
 
 **If you want to compile OPAL with the  SAAMG solver:**
 
-* parmetis >= 4.0.3 from Macports +gcc5 +openmpi
+* parmetis from Macports +gcc5 +openmpi
 * OpenBLAS >= 0.2.19
 * trilinos >= 12.10.1
 
