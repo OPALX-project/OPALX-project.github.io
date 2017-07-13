@@ -62,15 +62,19 @@ To keep thinks simple, we set and use a couple of environment variables.
 
 {nbsp}
 
-`DOWNLOADS_DIR`+ 
+`DOWNLOADS_DIR`
+
 is the directory where we store downloaded files. In this instruction we use `${HOME}/Downloads`.
 
 {nbsp}
 
-`PREFIX`+ 
+`PREFIX`
+
 is the common installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/software`.
 
-`SRC_DIR` is the directory where we unpack and compile software. Here we use `${HOME}/src`.
+`SRC_DIR`
+
+is the directory where we unpack and compile software. Here we use `${HOME}/src`.
 
 ```
 DOWNLOADS_DIR="${HOME}/Downloads"
