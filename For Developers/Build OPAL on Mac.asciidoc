@@ -18,6 +18,7 @@ Achim Gsell
 
 === Required ports
 The following ports must be installed:
+
 * cmake
 * gcc5
 * openmpi-gcc5
@@ -28,7 +29,7 @@ The following ports must be installed:
 {nbsp}
 
 === Software not available as port
-The following libraries must be compiled and installed
+The following libraries must be compiled and installed:
 
 * H5hut >= 2.0.0rc3
 * boost >= 1.59
