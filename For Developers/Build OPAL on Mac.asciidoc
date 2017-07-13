@@ -75,20 +75,21 @@ mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 ```
 
+'''
 === Compile HDF5
 
-Download HDF5:
+**Download HDF5:**
 ```
 curl -L \
         --output "${DOWNLOADS_DIR}/hdf5-1.8.19.tar.bz2" \
         https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.19.tar.bz2
 ```
-Unpack HDF5:
+**Unpack HDF5:**
 ```
 cd "${SRC_DIR}"
 tar xvf "${DOWNLOADS_DIR}/hdf5-1.8.19.tar.bz2"
 ```
-Configure HDF5:
+**Configure HDF5:**
 ```
 mkdir -p "${SRC_DIR}/hdf5-build"
 cd "${SRC_DIR}/hdf5-build"
@@ -100,27 +101,27 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/hdf5-1.8.19/configure" \
         --enable-unsupported \
         --with-pic
 ```
-Compile and install:
+**Compile and install HDF5:**
 ```
 cd "${SRC_DIR}/hdf5-build"
 make -j4
 make install
-``
+```
 
 === Compile H5hut
 
-Download H5hut:
+**Download H5hut:**
 ```
 curl -L \
         --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
         http://amas.web.psi.ch/Downloads/H5hut/H5hut-2.0.0rc3.tar.gz
 ```
-Unpack H5hut:
+**Unpack H5hut:**
 ```
 cd "${SRC_DIR}"
 tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
 ```
-Configure H5hut:
+**Configure H5hut:**
 ```
 mkdir -p "${SRC_DIR}/H5hut-build"
 cd "${SRC_DIR}/H5hut-build"
@@ -131,7 +132,7 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
         --with-hdf5="${PREFIX}" \
         --with-pic
 ```
-Compile and install:
+**Compile and install H5hut:**
 ```
 cd "${SRC_DIR}/H5hut-build"
 make -j4
@@ -140,21 +141,22 @@ make install
 
 === Compile and install boost
 
+**NOTE:**
 Boost from Macports cannot be used for several reasons. You have to compile your own version.
 
-Download boost:
+**Download boost:**
 ```
 curl -L \
         --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
         https://netcologne.dl.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz
         http://amas.web.psi.ch/Downloads/boost_1_62_0.tar.gz
 ```
-Unpack H5hut:
+**Unpack boost:**
 ```
 cd "${SRC_DIR}"
 tar xvf "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz"
 ```
-Configure and compile boost:
+**Configure and compile boost:**
 ```
 mkdir -p "${SRC_DIR}/boost-build"
 cd "${SRC_DIR}/boost_1_62_0"
@@ -162,10 +164,6 @@ cd "${SRC_DIR}/boost_1_62_0"
         --prefix="${PREFIX}" \
         --with-libraries=all \
         --with-python-root=/opt/local/
-```
-Compile and install
-```
-cd "${SRC_DIR}/boost_1_62_0"
 ./b2 \
         --build-type=minimal \
         --build-dir="${SRC_DIR}/boost-build" \
@@ -175,6 +173,9 @@ cd "${SRC_DIR}/boost_1_62_0"
         link=shared,static \
         threading=single \
         stage
+```
+**Install boost:**
+```
 ./b2 \
         --build-type=minimal \
         --build-dir="${SRC_DIR}/boost-build" \
