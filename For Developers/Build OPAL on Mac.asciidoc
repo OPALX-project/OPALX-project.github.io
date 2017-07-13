@@ -137,7 +137,7 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
 cd "${SRC_DIR}/H5hut-build"
 make -j4
 make install
-``
+```
 
 === Compile and install boost
 
