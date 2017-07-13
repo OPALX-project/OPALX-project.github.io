@@ -9,6 +9,7 @@ Achim Gsell
 === Requirements
 
 **System requirements:**
+
 * macOS 10.12 or Mac OS X > 10.10 
 * Xcode 8
 * Command line utilities for Xcode
@@ -16,7 +17,8 @@ Achim Gsell
 
 {nbsp}
 
-**The following ports must be installed:*
+**The following ports must be installed:**
+
 * cmake
 * gcc5
 * openmpi-gcc5
@@ -27,6 +29,7 @@ Achim Gsell
 {nbsp}
 
 **The following libraries must be compiled and installed**
+
 * H5hut >= 2.0.0rc3
 * boost >= 1.59
 
