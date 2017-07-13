@@ -1,0 +1,154 @@
+= Build OPAL on Linux Systems
+Achim Gsell
+:doctype: article
+:numbered:
+:toc:
+
+'''
+== Check whether the software requirements are fulfilled on your system
+=== Requirements
+
+The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next two sections. The Pmodules are running on 
+
+* Redhat Enterprise Linux 6 and 7 and Clones like Scientific Linux and Centor
+* Ubuntu 14 LTS and 16 LTS
+* OpenSUSE should work but is not tested
+
+{nbsp}
+
+If you *do not* want to use Pmodules you must install the following software packages: 
+
+* cmake >= 3.0.0
+* gcc >= 5.4.0
+* openmpi/1.10.4
+* boost/1.62.0
+* hdf5/1.8.18
+* H5hut/2.0.0rc3
+* gsl/2.2.1
+* root/6.08.02
+* OpenBLAS/0.2.19
+
+{nbsp}
+
+**If you want to run the unit tests, you need `google-test`:** 
+
+* gtest >= 1.7.0
+
+{nbsp}
+
+**If you want to compile OPAL with the  SAAMG solver:**
+
+* parmetis >= 4.0.3 +
+* trilinos >= 12.10.1
+
+{nbsp}
+
+=== Check whether Pmodules are available
+
+To check whether Pmodules are available on your system, run `module --version`. The output should look like:
+
+```
+$ module --version
+
+Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
+Copyright GNU GPL v2
+```
+
+{nbsp}
+
+=== If not already done, install Pmodules
+
+If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
+
+```
+sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
+```
+
+Add the following line to your `.bashrc` or `.bash_profile`:
+```
+source /opt/psi/config/profile.bash
+```
+
+**Note**: For the time being Pmodules supports only bash but **not** tcsh.
+
+'''
+== Load the OPAL tool-chain
+
+Load the OPAL tool-chain for OPAL 1.{5,6}.x
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/1.6
+```
+
+and for OPAL 2.x
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/2.0
+```
+
+**Note**: For your convenience you might add the line `module use ...` to your `.bashrc` or `.bash_profile`.
+
+'''
+== Get a clone of the OPAL repository
+
+Choose a directory where you want to store the OPAL sources. Here we use `$HOME/opal`:
+
+```
+mkdir $HOME/opal
+cd $HOME/opal
+git clone git@gitlab.psi.ch:OPAL/src.git
+```
+
+'''
+== Select the OPAL branch you want to compile
+
+Example:
+```
+cd $HOME/opal/src
+git checkout OPAL-1.6
+```
+or 
+```
+cd $HOME/opal/src
+git checkout master
+```
+
+To get a list of all available branches, you can run the command
+```
+git branch -a
+```
+from inside your clone.
+
+'''
+== Configure the Build Process
+
+OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake ..` in the build directory **after** calling `cmake ..`:
+```
+cd "$HOME/opal/src"
+mkdir build
+cd build
+cmake ..    # see available arguments below
+ccmake ..  # optional
+```
+
+The following table shows the most important options:
+[width="80%"]
+|=======
+| `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
+| `CMAKE_INSTALL_PREFIX` | prefix for installation |
+| `ENABLE_AMR_SOLVER` | enable AMR solver | requires BoxLib
+| `ENABLE_DKS` | enable DKS | requires Cuda >= 8.0.x and DKS >= 1.1.1
+| `ENABLE_SAAMG_SOLVER` | enable SAAMG solver | requires trilinos >= 12.x and parmetis >= 4.0.3
+|=======
+
+*Example:*
+```
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_DKS=TRUE ..
+```
+
+'''
+== Compile OPAL
+```
+cd "$HOME/opal/src/build"
+make -j 5        # number depends on the number of cores on your system
+```
