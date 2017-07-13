@@ -72,9 +72,13 @@ is the directory where we store downloaded files. In this instruction we use `${
 
 is the common installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/software`.
 
+{nbsp}
+
 `SRC_DIR`
 
 is the directory where we unpack and compile software. Here we use `${HOME}/src`.
+
+{nbsp}
 
 ```
 DOWNLOADS_DIR="${HOME}/Downloads"
