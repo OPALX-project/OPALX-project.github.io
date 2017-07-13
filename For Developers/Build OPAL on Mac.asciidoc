@@ -260,7 +260,7 @@ export LIBRARY_PATH="${PREFIX}/lib:${HDF5_ROOT}/lib"
 
 mkdir -p "${SRC_DIR}/OPAL-build"
 cd "${SRC_DIR}/OPAL-build"
-cmake  "${SRC_DIR}/OPAL"    # see available arguments below
+cmake  "${SRC_DIR}/OPAL"
 ```
 
 The following table shows the most important options:
@@ -274,5 +274,5 @@ The following table shows the most important options:
 === Compile OPAL
 ```
 cd "${SRC_DIR}/OPAL-build"
-make -j 5        # number depends on the number of cores on your system
+make -j 5
 ```
