@@ -162,7 +162,7 @@ cd "${SRC_DIR}/boost_1_62_0"
         --without-mpi \
         variant=release \
         link=shared,static \
-        threading=single \
+        threading=multi \
         stage
 ```
 '''
@@ -175,7 +175,7 @@ cd "${SRC_DIR}/boost_1_62_0"
         --without-mpi \
         variant=release \
         link=shared,static \
-        threading=single \
+        threading=multi \
         install
 ```
 '''
