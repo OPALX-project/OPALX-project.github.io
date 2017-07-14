@@ -154,6 +154,7 @@ tar xvf "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz"
 ```
 +
 1. **Configure and compile boost:**
++
 ```
 mkdir -p "${SRC_DIR}/boost-build"
 cd "${SRC_DIR}/boost_1_62_0"
