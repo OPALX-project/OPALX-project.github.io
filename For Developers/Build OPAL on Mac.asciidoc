@@ -98,11 +98,11 @@ mkdir -p "${SRC_DIR}"
 
 1. **Download H5hut**
 +
--------------------------------------
- curl -L \
+```
+curl -L \
          --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
          http://amas.web.psi.ch/Downloads/H5hut/H5hut-2.0.0rc3.tar.gz
---------------------------------------
+```
 +
 1. **Unpack H5hut**
 +
