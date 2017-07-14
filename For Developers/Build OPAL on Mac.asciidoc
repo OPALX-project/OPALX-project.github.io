@@ -95,16 +95,17 @@ curl -L \
 1. **Unpack H5hut**
 +
 ```
- cd "${SRC_DIR}"
- tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
+mkdir -p "${SRC_DIR}/H5hut"
+cd "${SRC_DIR}/H5hut"
+tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
 ```
 +
 1. **Configure H5hut**
 +
 ```
-mkdir -p "${SRC_DIR}/H5hut-build"
-cd "${SRC_DIR}/H5hut-build"
-CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
+mkdir -p "${SRC_DIR}/H5hut/build"
+cd "${SRC_DIR}/H5hut/build"
+CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut/H5hut-2.0.0rc3/configure" \
         --prefix="${PREFIX}" \
         --enable-shared \
         --enable-parallel \
@@ -115,7 +116,7 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
 1. **Compile and install H5hut**
 +
 ```
-cd "${SRC_DIR}/H5hut-build"
+cd "${SRC_DIR}/H5hut/build"
 make -j4
 make install
 ```
@@ -140,22 +141,23 @@ curl -L \
 1. **Unpack boost**
 +
 ```
-cd "${SRC_DIR}"
+mkdir -p "${SRC_DIR}/boost"
+cd "${SRC_DIR}/boost"
 tar xvf "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz"
 ```
 +
 1. **Configure and compile boost:**
 +
 ```
-mkdir -p "${SRC_DIR}/boost-build"
-cd "${SRC_DIR}/boost_1_62_0"
+mkdir -p "${SRC_DIR}/boost/build"
+cd "${SRC_DIR}/boost/boost_1_62_0"
 ./bootstrap.sh \
         --prefix="${PREFIX}" \
         --with-libraries=all \
         --with-python-root=/opt/local/
 ./b2 \
         --build-type=minimal \
-        --build-dir="${SRC_DIR}/boost-build" \
+        --build-dir="${SRC_DIR}/boost/build" \
         --layout=system \
         --without-mpi \
         variant=release \
@@ -186,21 +188,22 @@ cd "${SRC_DIR}/boost_1_62_0"
 Clone the OPAL Git repository
 +
 ```
-cd "${SRC_DIR}"
-git clone git@gitlab.psi.ch:OPAL/src.git OPAL
-```
-+
-Select the OPAL branch you want to compile. For the current stable branch is `OPAL-1.6`:
-+
-```
+mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
+git clone git@gitlab.psi.ch:OPAL/src.git
+```
++
+Select the OPAL branch you want to compile. The current stable branch is `OPAL-1.6`:
++
+```
+cd "${SRC_DIR}/OPAL/src"
 git checkout OPAL-1.6
 ```
 +
 To checkout the (unstable) development branch run:
 +
 ```
-cd "${SRC_DIR}/OPAL"
+cd "${SRC_DIR}/OPAL/src"
 git checkout master
 ```
 +
@@ -225,9 +228,11 @@ export C_INCLUDE_PATH="${PREFIX}/include:${HDF5_ROOT}/include"
 export CPLUS_INCLUDE_PATH="${C_INCLUDE_PATH}"
 export LIBRARY_PATH="${PREFIX}/lib:${HDF5_ROOT}/lib"
 
-mkdir -p "${SRC_DIR}/OPAL-build"
-cd "${SRC_DIR}/OPAL-build"
-cmake  "${SRC_DIR}/OPAL"
+mkdir -p "${SRC_DIR}/OPAL/build"
+cd "${SRC_DIR}/OPAL/build"
+CC=mpicc CXX=mpicxx cmake \
+        --prefix="${PREFIX}" \
+        "${SRC_DIR}/OPAL/src"
 ```
 +
 The following table shows the most important options:
@@ -238,9 +243,10 @@ The following table shows the most important options:
 | `CMAKE_INSTALL_PREFIX` | prefix for installation |
 |=======
 
-'''
-=== Compile OPAL
+1. **Compile and install OPAL**
++
 ```
-cd "${SRC_DIR}/OPAL-build"
+cd "${SRC_DIR}/OPAL/build"
 make -j 5
+make install
 ```
