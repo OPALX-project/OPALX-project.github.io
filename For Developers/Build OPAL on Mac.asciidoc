@@ -103,12 +103,16 @@ mkdir -p "${SRC_DIR}"
          --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
          http://amas.web.psi.ch/Downloads/H5hut/H5hut-2.0.0rc3.tar.gz
 --------------------------------------
++
 1. **Unpack H5hut**
- ```
++
+```
  cd "${SRC_DIR}"
  tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
- ```
-**Configure H5hut:**
+```
++
+1. **Configure H5hut:**
++
 ```
 mkdir -p "${SRC_DIR}/H5hut-build"
 cd "${SRC_DIR}/H5hut-build"
@@ -119,13 +123,15 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
         --with-hdf5=/opt/local/lib/hdf5-18 \
         --with-pic
 ```
-'''
-**Compile and install H5hut:**
++
+1. **Compile and install H5hut:**
++
 ```
 cd "${SRC_DIR}/H5hut-build"
 make -j4
 make install
 ```
+
 '''
 === Compile and install boost
 
