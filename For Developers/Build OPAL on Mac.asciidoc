@@ -190,14 +190,14 @@ cd "${SRC_DIR}"
 git clone git@gitlab.psi.ch:OPAL/src.git OPAL
 ```
 +
-Select the OPAL branch you want to compile
+Select the OPAL branch you want to compile. For the current stable branch is `OPAL-1.6`:
 +
 ```
 cd "${SRC_DIR}/OPAL"
 git checkout OPAL-1.6
 ```
 +
-or to checkout the (unstable) development version:
+To checkout the (unstable) development branch run:
 +
 ```
 cd "${SRC_DIR}/OPAL"
@@ -211,11 +211,10 @@ git branch -a
 ```
 +
 from inside your clone.
-
-'''
-=== Configure the Build Process
-
+1. **Configure the Build Process**
++
 OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`:
++
 ```
 export HDF5_ROOT="/opt/local/lib/hdf5-18"
 export BOOST_ROOT="${PREFIX}"
@@ -228,8 +227,9 @@ mkdir -p "${SRC_DIR}/OPAL-build"
 cd "${SRC_DIR}/OPAL-build"
 cmake  "${SRC_DIR}/OPAL"
 ```
-
++
 The following table shows the most important options:
++
 [width="80%"]
 |=======
 | `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
