@@ -211,6 +211,7 @@ git branch -a
 ```
 +
 from inside your clone.
++
 
 1. **Configure the Build Process**
 +
