@@ -256,3 +256,77 @@ cd "${SRC_DIR}/OPAL/build"
 make -j 5
 make install
 ```
+
+== Compile OPAL with the SAAMG solver
+=== Install ParMETIS
+ParMETIS from Macports can be used:
+--------------------------------------
+sudo port install parmetis +gcc5+openmpi
+--------------------------------------
+
+=== Install Trilinos
+1. **Download Trilinos**
++
+```
+curl -L \
+         --output "${DOWNLOADS_DIR}/trilinos-12.10.1-Source.tar.bz2" \
+         http://trilinos.csbsju.edu/download/files/trilinos-12.10.1-Source.tar.bz2
+```
++
+1. **Unpack Trilinos**
++
+```
+mkdir -p "${SRC_DIR}/Trilinos"
+cd "${SRC_DIR}/Trilinos"
+tar xvf "${DOWNLOADS_DIR}/trilinos-12.10.1-Source.tar.bz2"
+```
++
+1. **Configure Trilinos**
++
+```
+mkdir -p "${SRC_DIR}/Trilinos/build"
+cd "${SRC_DIR}/Trilinos/build"
+CC=mpicc CXX=mpicxx cmake \
+        -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+        -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
+        -D CMAKE_C_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
+        -D CMAKE_CXX_STANDARD:STRING="11" \
+        -D CMAKE_Fortran_FLAGS:STRING="-fPIC" \
+        -D CMAKE_BUILD_TYPE:STRING=Release \
+        -D Trilinos_ENABLE_Amesos:BOOL=ON \
+        -D Trilinos_ENABLE_Amesos2:BOOL=ON \
+        -D Trilinos_ENABLE_AztecOO:BOOL=ON \
+        -D Trilinos_ENABLE_Belos:BOOL=ON \
+        -D Trilinos_ENABLE_Epetra:BOOL=ON \
+        -D Trilinos_ENABLE_EpetraExt:BOOL=ON \
+        -D Trilinos_ENABLE_Galeri:BOOL=ON \
+        -D Trilinos_ENABLE_Ifpack:BOOL=ON \
+        -D Trilinos_ENABLE_Isorropia:BOOL=ON \
+        -D Trilinos_ENABLE_ML:BOOL=ON \
+        -D Trilinos_ENABLE_NOX:BOOL=ON \
+        -D Trilinos_ENABLE_Optika:BOOL=OFF \
+        -D Trilinos_ENABLE_Teuchos:BOOL=ON \
+        -D Trilinos_ENABLE_Tpetra:BOOL=ON \
+        -D Trilinos_ENABLE_TESTS:BOOL=OFF \
+        "${SRC_DIR}/Trilinos/trilinos-12.10.1-Source"
+```
++
+1. **Compile and install Trilinos**
++
+```
+cd "${SRC_DIR}/Trilinos/build"
+make -j4
+make install
+```
+
+=== Compile OPAL with the SAAMG solver
+To compile OPAL with the SAAMG follow the steps in the section "Compile OPAL", but replace the configuration step with:
+--------------------------------------
+mkdir -p "${SRC_DIR}/OPAL/build"
+cd "${SRC_DIR}/OPAL/build"
+CC=mpicc CXX=mpicxx cmake \
+        --prefix="${PREFIX}" \
+        -D ENABLE_SAAMG_SOLVER=TRUE
+        "${SRC_DIR}/OPAL/src"
+--------------------------------------
+'''
