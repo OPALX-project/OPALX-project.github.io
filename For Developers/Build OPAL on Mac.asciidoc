@@ -62,9 +62,7 @@ To keep thinks simple, we set and use a couple of environment variables.
 {nbsp}
 
 `DOWNLOADS_DIR`::
-is the directory where we store downloaded files. In this instruction we use `${HOME}/Downloads`.
-
-{nbsp}
+ is the directory where we store downloaded files. In this instruction we use `${HOME}/Downloads`.
 
 `PREFIX`::
 is the common installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/software`.
