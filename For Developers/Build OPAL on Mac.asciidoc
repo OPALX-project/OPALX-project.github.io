@@ -138,20 +138,22 @@ make install
 **NOTE:**
 Boost from Macports cannot be used for several reasons. You have to compile your own version.
 
-**Download boost:**
+1. **Download boost:**
++
 ```
 curl -L \
         --output "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz" \
         https://netcologne.dl.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz
 ```
-'''
-**Unpack boost:**
++
+1. **Unpack boost:**
++
 ```
 cd "${SRC_DIR}"
 tar xvf "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz"
 ```
-'''
-**Configure and compile boost:**
++
+1. **Configure and compile boost:**
 ```
 mkdir -p "${SRC_DIR}/boost-build"
 cd "${SRC_DIR}/boost_1_62_0"
@@ -169,8 +171,9 @@ cd "${SRC_DIR}/boost_1_62_0"
         threading=multi \
         stage
 ```
-'''
-**Install boost:**
++
+1. **Install boost:**
++
 ```
 ./b2 \
         --build-type=minimal \
@@ -182,6 +185,7 @@ cd "${SRC_DIR}/boost_1_62_0"
         threading=multi \
         install
 ```
+
 '''
 == Compile OPAL
 
