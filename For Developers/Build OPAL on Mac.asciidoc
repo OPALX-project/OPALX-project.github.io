@@ -293,6 +293,13 @@ CC=mpicc CXX=mpicxx cmake \
         -D CMAKE_CXX_STANDARD:STRING="11" \
         -D CMAKE_Fortran_FLAGS:STRING="-fPIC" \
         -D CMAKE_BUILD_TYPE:STRING=Release \
+        -D TPL_ENABLE_DLlib:BOOL=OFF \
+        -D TPL_ENABLE_QT:BOOL=OFF \
+        -D TPL_ENABLE_MPI:BOOL=ON \
+        -D TPL_ENABLE_BLAS:BOOL=ON \
+        -D TPL_ENABLE_LAPACK:BOOL=ON \
+        -D TPL_ENABLE_METIS:BOOL=ON \
+        -D TPL_ENABLE_ParMETIS:BOOL=ON \
         -D Trilinos_ENABLE_Amesos:BOOL=ON \
         -D Trilinos_ENABLE_Amesos2:BOOL=ON \
         -D Trilinos_ENABLE_AztecOO:BOOL=ON \
