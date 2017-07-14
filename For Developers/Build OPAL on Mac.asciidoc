@@ -24,7 +24,7 @@ The following ports must be installed:
 * openmpi-gcc5
 * hdf5-18 +gcc5 +cxx +openmpi +threadsafe 
 * gsl
-* python27
+* python27 or newer
 
 {nbsp}
 
@@ -46,12 +46,11 @@ If you want to run the unit tests, you need `google-test`:
 **If you want to compile OPAL with the  SAAMG solver:**
 
 * parmetis from Macports +gcc5 +openmpi
-* OpenBLAS >= 0.2.19
 * trilinos >= 12.10.1
 
 {nbsp}
 
-**If you want to compile H5hut with the VTK mesh to H5hut mesh converter, you need:**
+**If you want to compile H5hut with the VTK to H5hut mesh converter, you need:**
 
 * VTK >= 7.1 from Macports
 
