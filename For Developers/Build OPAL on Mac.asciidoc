@@ -70,11 +70,12 @@ is the common installation prefix for all software we have to compile and instal
 `SRC_DIR`::
 is the directory where we unpack and compile software. Here we use `${HOME}/src`.
 {nbsp}
-```
+[listing]
+--
 DOWNLOADS_DIR="${HOME}/Downloads"
 PREFIX="${HOME}/software"
 SRC_DIR="${HOME}/src"
-```
+--
 
 {nbsp}
 
