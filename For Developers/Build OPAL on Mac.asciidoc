@@ -71,7 +71,6 @@ is the common installation prefix for all software we have to compile and instal
 is the directory where we unpack and compile software. Here we use `${HOME}/src`.
 
 {nbsp}
-
 ```
 DOWNLOADS_DIR="${HOME}/Downloads"
 PREFIX="${HOME}/software"
