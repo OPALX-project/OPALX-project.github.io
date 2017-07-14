@@ -182,7 +182,6 @@ cd "${SRC_DIR}/boost_1_62_0"
 == Compile OPAL
 
 1. **Get the sources**
-+
 [Listing]
 .Clone the OPAL Git repository
 --
