@@ -111,7 +111,7 @@ curl -L \
  tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
 ```
 +
-1. **Configure H5hut:**
+1. **Configure H5hut**
 +
 ```
 mkdir -p "${SRC_DIR}/H5hut-build"
@@ -124,7 +124,7 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut-2.0.0rc3/configure" \
         --with-pic
 ```
 +
-1. **Compile and install H5hut:**
+1. **Compile and install H5hut**
 +
 ```
 cd "${SRC_DIR}/H5hut-build"
@@ -135,10 +135,10 @@ make install
 '''
 === Compile and install boost
 
-**NOTE:**
+[NOTE]
 Boost from Macports cannot be used for several reasons. You have to compile your own version.
 
-1. **Download boost:**
+1. **Download boost**
 +
 ```
 curl -L \
@@ -146,7 +146,7 @@ curl -L \
         https://netcologne.dl.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz
 ```
 +
-1. **Unpack boost:**
+1. **Unpack boost**
 +
 ```
 cd "${SRC_DIR}"
@@ -173,7 +173,7 @@ cd "${SRC_DIR}/boost_1_62_0"
         stage
 ```
 +
-1. **Install boost:**
+1. **Install boost**
 +
 ```
 ./b2 \
