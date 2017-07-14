@@ -211,6 +211,7 @@ git branch -a
 ```
 +
 from inside your clone.
+
 1. **Configure the Build Process**
 +
 OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`:
