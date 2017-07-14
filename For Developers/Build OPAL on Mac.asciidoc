@@ -181,23 +181,23 @@ cd "${SRC_DIR}/boost_1_62_0"
 '''
 == Compile OPAL
 
-=== Get the sources:
-
-```
+1. **Get the sources**
++
+[Listing]
+.Clone the OPAL Git repository
+--
 cd "${SRC_DIR}"
 git clone git@gitlab.psi.ch:OPAL/src.git OPAL
-```
-
-'''
-=== Select the OPAL branch you want to compile
-
-Example:
-
-Checkout the newest stable version, which is OPAL 1.6:
-```
+--
++
+[Listing]
+.Select the OPAL branch you want to compile
+--
 cd "${SRC_DIR}/OPAL"
 git checkout OPAL-1.6
-```
+--
+
+
 or to checkout unstable development version:
 ```
 cd "${SRC_DIR}/OPAL"
