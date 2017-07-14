@@ -218,7 +218,9 @@ from inside your clone.
 
 1. **Configure the Build Process**
 +
-OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`:
+OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`.
++
+Before we can call CMake, we have to setup the environment:
 +
 --------------------------------------
 export HDF5_ROOT="/opt/local/lib/hdf5-18"
@@ -227,7 +229,11 @@ export BOOST_ROOT="${PREFIX}"
 export C_INCLUDE_PATH="${PREFIX}/include:${HDF5_ROOT}/include"
 export CPLUS_INCLUDE_PATH="${C_INCLUDE_PATH}"
 export LIBRARY_PATH="${PREFIX}/lib:${HDF5_ROOT}/lib"
-
+--------------------------------------
++
+Run CMake:
++
+--------------------------------------
 mkdir -p "${SRC_DIR}/OPAL/build"
 cd "${SRC_DIR}/OPAL/build"
 CC=mpicc CXX=mpicxx cmake \
