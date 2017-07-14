@@ -220,7 +220,8 @@ from inside your clone.
 +
 OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`:
 +
-```
+[Listing]
+--
 export HDF5_ROOT="/opt/local/lib/hdf5-18"
 export BOOST_ROOT="${PREFIX}"
 
@@ -233,7 +234,7 @@ cd "${SRC_DIR}/OPAL/build"
 CC=mpicc CXX=mpicxx cmake \
         --prefix="${PREFIX}" \
         "${SRC_DIR}/OPAL/src"
-```
+--
 +
 The following table shows the most important options:
 +
