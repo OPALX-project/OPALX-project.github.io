@@ -326,7 +326,7 @@ mkdir -p "${SRC_DIR}/OPAL/build"
 cd "${SRC_DIR}/OPAL/build"
 CC=mpicc CXX=mpicxx cmake \
         --prefix="${PREFIX}" \
-        -D ENABLE_SAAMG_SOLVER=TRUE
+        -D ENABLE_SAAMG_SOLVER=TRUE \
         "${SRC_DIR}/OPAL/src"
 --------------------------------------
 '''
