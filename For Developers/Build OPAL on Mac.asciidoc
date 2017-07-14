@@ -137,7 +137,9 @@ make install
 
 [NOTE]
 .A NOTE
+=====================================================================
 Boost from Macports cannot be used for several reasons. You have to compile your own version.
+=====================================================================
 
 1. **Download boost**
 +
