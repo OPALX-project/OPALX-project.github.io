@@ -61,8 +61,7 @@ To keep thinks simple, we set and use a couple of environment variables.
 
 {nbsp}
 
-`DOWNLOADS_DIR`
-
+`DOWNLOADS_DIR`::
 is the directory where we store downloaded files. In this instruction we use `${HOME}/Downloads`.
 
 {nbsp}
