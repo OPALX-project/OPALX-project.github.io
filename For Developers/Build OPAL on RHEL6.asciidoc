@@ -1,4 +1,4 @@
-= Build OPAL on macOS
+= Build OPAL on RHEL6
 Achim Gsell
 :doctype: article
 :numbered:
@@ -9,28 +9,21 @@ Achim Gsell
 
 === System requirements
 
-* macOS 10.12 or Mac OS X > 10.10 
-* Xcode 8 
-* Command line utilities for Xcode
-* Macports
+* Redhat Enterprise Linux 6 or clones like CentOS, ScientificLinux
+* C-compiler, autotools, make etc.
+* Python 2.7
 
 {nbsp}
 
-=== Required ports
-The following ports must be installed:
+=== Required software
+
+Unfortunately most of the software to build OPAL is not available as RPM from the standard repositories including EPEL. The following packages must be build and installed:
 
 * cmake
-* gcc5
-* openmpi-gcc5
-* hdf5-18 +gcc5 +cxx +openmpi +threadsafe 
-* gsl
-* python27 or newer
-
-{nbsp}
-
-=== Software not available as port
-The following libraries must be compiled and installed:
-
+* gcc 5.4
+* openmpi 1.10.4
+* hdf5 1.8.18
+* gsl 2.x
 * H5hut >= 2.0.0rc3
 * boost >= 1.59
 
@@ -45,14 +38,14 @@ The following libraries must be compiled and installed:
 
 **If you want to compile OPAL with the  SAAMG solver:**
 
-* parmetis from Macports +gcc5 +openmpi
+* ParMETIS
 * trilinos >= 12.10.1
 
 {nbsp}
 
 **If you want to compile H5hut with the VTK to H5hut mesh converter, you need:**
 
-* VTK >= 7.1 from Macports
+* VTK >= 7.1
 
 '''
 == Compile and install required software
@@ -81,6 +74,21 @@ mkdir -p "${PREFIX}"
 mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 --
+'''
+=== Compile and isntall CMake
+
+'''
+== Compile and install GCC 5.4
+
+'''
+=== Compile and install openmpi
+
+'''
+=== Compile and install hdf5
+
+'''
+=== Compile and install gsl
+
 '''
 === Compile and install H5hut
 
@@ -123,12 +131,6 @@ make install
 
 '''
 === Compile and install boost
-
-[NOTE]
-.**Remark**
-=====================================================================
-Boost from Macports cannot be used for several reasons. You have to compile your own version.
-=====================================================================
 
 1. **Download boost**
 +
@@ -259,11 +261,8 @@ make install
 
 == Compile OPAL with the SAAMG solver
 === Install ParMETIS
-ParMETIS from Macports can be used:
---------------------------------------
-sudo port install parmetis +gcc5+openmpi
---------------------------------------
 
+'''
 === Install Trilinos
 1. **Download Trilinos**
 +
