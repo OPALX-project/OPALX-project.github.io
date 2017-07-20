@@ -78,7 +78,7 @@ mkdir -p "${SRC_DIR}"
 === Compile and isntall CMake
 
 '''
-== Compile and install GCC 5.4
+=== Compile and install GCC 5.4
 
 '''
 === Compile and install openmpi
