@@ -1,0 +1,33 @@
+----------------------------------------
+#!/bin/bash
+
+# recipe for:
+P=openmpi
+V=1.10.4
+
+# download
+curl -L \
+	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
+	"http://www.open-mpi.org/software/ompi/v${V%.*}/downloads/$P-$V.tar.bz2"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+"${SRC_DIR}/$P/$P-$V/configure" \
+		--prefix="${PREFIX}" \
+		--enable-mpi-cxx \
+		--enable-mpi-cxx-seek \
+		--enable-mpi-profile \
+		--enable-orterun-prefix-by-default \
+		--enable-shared \
+		--enable-smp-locks \
+		--with-sge=yes \
+		--with-slurm=yes
+
+# compile & install
+make -j
+make install
+----------------------------------------

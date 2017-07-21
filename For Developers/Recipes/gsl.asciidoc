@@ -1,0 +1,26 @@
+-------------------------------------
+#!/bin/bash
+
+# recipe for:
+P=gsl
+V=2.4
+
+# download
+curl -L \
+	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+	"ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+"${SRC_DIR}/$P/$P-$V/configure" \
+		--prefix="${PREFIX}" \
+		--disable-shared
+
+# compile & install
+make -j4
+make install
+-------------------------------------
