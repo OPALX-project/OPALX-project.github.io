@@ -1,0 +1,33 @@
+--------------------------------------------
+#!/bin/bash
+
+# recipe for:
+P=gcc
+V=5.4.0
+
+# download
+curl -L \
+	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
+	"https://ftp.gnu.org/gnu/$P/$P-$V/$P-$V.tar.bz2"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+"${SRC_DIR}/gcc/gcc-$V/configure" \
+			--prefix="${PREFIX}" \
+			--with-gmp="${PREFIX}" \
+			--with-mpfr="${PREFIX}" \
+			--with-mpc="${PREFIX}" \
+			--enable-languages=c,c++,objc,obj-c++,lto,fortran \
+			--enable-lto \
+			--disable-multilib \
+			--with-build-config=bootstrap-debug
+
+# compile & install
+make -j4
+make install
+--------------------------------------------
+
