@@ -1,31 +1,26 @@
 ---------------------------------------------------
 #!/bin/bash
-#
 
-# version to compile and install
-P=gcc
-V=5.4.0
+# recipe for:
+P=cmake
+V=3.6.3
 
 # download
 curl -L \
-        --output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-        "https://ftp.gnu.org/gnu/$P/$P-$V/$P-$V.tar.bz2"
+         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+        "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/gcc/gcc-$V/configure" \
-                        --prefix="${PREFIX}" \
-                        --with-gmp="${PREFIX}" \
-                        --with-mpfr="${PREFIX}" \
-                        --with-mpc="${PREFIX}" \
-                        --enable-languages=c,c++,objc,obj-c++,lto,fortran \
-                        --enable-lto \
-                        --disable-multilib \
-                        --with-build-config=bootstrap-debug
+
+# you might have to add the option --system-curl
+"${SRC_DIR}/cmake/cmake-$V/bootstrap" \
+        --prefix="${PREFIX}" \
+        --verbose
 
 # compile & install
 make -j4
