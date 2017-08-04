@@ -376,10 +376,10 @@ to understand what you did 2 weeks from now.
 -   If there is no common work to be done, return from a function as
     soon as possible.
 
-Rationale
-:   -   unconditional statements are easier to understand and follow
-    -   nesting is reduced
-    -   errors by not updating individual exit points when making
+Rationale:
+-   unconditional statements are easier to understand and follow
+-   nesting is reduced
+-   errors by not updating individual exit points when making
         modifications are prevented
 
 Example:   (from Linux coding style)
