@@ -62,7 +62,7 @@
 
 -   Use descriptive names.
 -   Use compound name.
--   Compound names shouldn't be to long (up to three words).
+-   Compound names shouldn't be too long (up to three words).
 -   Use short names where it makes sense, for example counters (`i`,
     `j`, `k` etc).
 
@@ -265,7 +265,7 @@ it.
 
 This is over-commenting:
 
-``` {.wiki}
+```c++
 class Distribution: public Definition {
 
     //===============
@@ -374,15 +374,14 @@ to understand what you did 2 weeks from now.
 -   If there is no common work to be done, return from a function as
     soon as possible.
 
-Rational
+Rationale
 :   -   unconditional statements are easier to understand and follow
     -   nesting is reduced
     -   errors by not updating individual exit points when making
         modifications are prevented
 
-Example
-:   (from Linux coding style)
-
+Example:   (from Linux coding style)
+```c++
         int fun (int a)
         {
                 int result = 0;
@@ -403,10 +402,10 @@ Example
                 kfree(buffer);
                 return result;
         }
-
+```
 * * * * *
 
-5. Formatting 
+5. Formatting
 -------------
 
 ### 5.1. Indentation
@@ -449,15 +448,9 @@ Heed that warning.
 ### 5.2. Breaking long lines and strings
 
 -   Avoid long lines.
--   If a line is longer than 80 characters, think about breaking it into
-
-reasonable chunks.
-
--   applies also strings
--   Without defining a hard limit, line with more than 160 characters
-
-are definitely far to long.
-
+-   If a line is longer than 80 characters, think about breaking it into reasonable chunks.
+-   This applies also to strings.
+-   Without defining a hard limit, line with more than 160 characters are definitely far too long.
 -   Comments should fit within 80 characters per line
 
 * * * * *
@@ -473,12 +466,12 @@ are definitely far to long.
 -   no space before postfix increment- and decrement operator
 -   no space around `.` and `->`
 
-Examples
-:   -   `if (i == 42) return i;`
-    -   `i = j + 2;`
-    -   `i += 42;`
-    -   `i++;`
-    -   `mesh->fname = argv[1];`
+Examples:
+-   `if (i == 42) return i;`
+-   `i = j + 2;`
+-   `i += 42;`
+-   `i++;`
+-   `mesh->fname = argv[1];`
 
 * * * * *
 
@@ -487,8 +480,7 @@ Examples
 -   If you define a pointer or reference type, place `*` resp. `&` close
     to the type not the variable name.
 
-Example
-:   `h5t_mesh_t* const mesh;`
+Example:   `h5t_mesh_t* const mesh;`
 
 * * * * *
 
@@ -496,7 +488,7 @@ Example
 
 **classes**
 
-``` {.wiki}
+```c++
 class Distribution: public Definition {
 
 public:
@@ -510,7 +502,7 @@ private:
 
 **methods and functions**
 
-``` {.wiki}
+```c++
 int method (int x) {
     ...
 }
@@ -518,7 +510,7 @@ int method (int x) {
 
 **`if`-statement**
 
-``` {.wiki}
+```c++
 if (i == 42) {
     ...
 } else {
@@ -528,14 +520,14 @@ if (i == 42) {
 
 Do not unnecessarily use braces where a single statement will do:
 
-``` {.wiki}
+```c++
 if (i == 42)
     return SUCCESS;
 ```
 
 **`for`-loop**
 
-``` {.wiki}
+```c++
 for (i = 0; i < 42; i++) {
     ...
 }
@@ -543,7 +535,7 @@ for (i = 0; i < 42; i++) {
 
 **`do-while`-loop**
 
-``` {.wiki}
+```c++
 do {
     ...
 } while (i < 42);
@@ -551,7 +543,7 @@ do {
 
 **`switch`-statement**
 
-``` {.wiki}
+```c++
 switch (i) {
 case: 0 {
     ...
@@ -566,19 +558,21 @@ default:
 
 It is good practice to keep the cases small.
 
-Example
-:   switch (entity_type) {
-        case H5T_TYPE_VERTEX:
-            return get_adjacencies_to_vertex (m, entity_id, dim, list);
-        case H5T_TYPE_EDGE:
-            return get_adjacencies_to_edge (m, entity_id, dim, list);
-        case H5T_TYPE_TRIANGLE:
-            return get_adjacencies_to_triangle (m, entity_id, dim, list);
-        case H5T_TYPE_TET:
-            return get_adjacencies_to_tet (m, entity_id, dim, list);
-        default:
-            break;
-        }
+Example:
+```c++
+switch (entity_type) {
+    case H5T_TYPE_VERTEX:
+        return get_adjacencies_to_vertex (m, entity_id, dim, list);
+    case H5T_TYPE_EDGE:
+        return get_adjacencies_to_edge (m, entity_id, dim, list);
+    case H5T_TYPE_TRIANGLE:
+        return get_adjacencies_to_triangle (m, entity_id, dim, list);
+    case H5T_TYPE_TET:
+        return get_adjacencies_to_tet (m, entity_id, dim, list);
+    default:
+        break;
+}
+```
 
 * * * * *
 
@@ -590,12 +584,14 @@ Example
 -   Break long template parameter lists into multiple lines and use
     identation
 
-Examples
-:   std::tuple<
-            std::vector<int>,
-            double,
-            std::map<std::string, std::vector<char> >
-        > my_really_complicated_variable;
+Examples :
+```c++
+std::tuple<
+        std::vector<int>,
+        double,
+        std::map<std::string, std::vector<char> >
+> my_really_complicated_variable;
+```
 
 * * * * *
 
