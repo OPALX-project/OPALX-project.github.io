@@ -180,14 +180,16 @@ Example
 -   Make a typedef for types based on native types.
 -   Use the `_t` suffix for typedefs: `typedef UniformMesh Mesh_t`
 
-Example
-:   #if defined(USE_LARGE_INDICES)
+Example:
+```c++
+   #if defined(USE_LARGE_INDICES)
         typedef int64_t                 h5_loc_idx_t;   // type for a local index
         typedef int64_t                 h5_loc_id_t;    // type for a local ID
         #else
         typedef int32_t                 h5_loc_idx_t;   // type for a local index
         typedef int32_t                 h5_loc_id_t;    // type for a local ID
         #endif
+```
 
 * * * * *
 
@@ -206,27 +208,27 @@ Example
 -   Link to copyright and license
 -   Short description what is implemented in here (in Doxygen notation)
 
-Example
-:   ``` {.wiki}
-    //
-    //  Copyright & License: See Copyright.readme in src directory
-    //
+Example:
+```
+//
+//  Copyright & License: See Copyright.readme in src directory
+//
 
-    /*!
-      Class documentation
-     */
-    ```
+/*!
+  Class documentation
+ */
+```
 
 ### 3.2. File Header for source files (.cpp and .c only)
 
 -   Link to copyright and license
 
-Example
-:   ``` {.wiki}
-    //
-    //  Copyright & License: See Copyright.readme in src directory
-    //
-    ```
+Example:
+```
+//
+//  Copyright & License: See Copyright.readme in src directory
+//
+```
 
 * * * * *
 
@@ -293,8 +295,8 @@ See [Doxygen](doxygen)
  *
  * @brief Can use "brief" tag to explicitly generate comments for file documentation.
  *
- * @author Me        [Note: depricated practice as CM systems like Subversion git?? will maintain author info and blame logs.]
- * @version 1.69    [Note: depricated practice as CM systems like Subversion git?? will maintain file history and revision numbers.]
+ * @author Me        [Note: deprecated practice as CM systems like git will maintain author info and blame logs.]
+ * @version 1.69    [Note: deprecated practice as CM systems like git will maintain file history and revision numbers.]
  */
 // $Log$
  
@@ -582,7 +584,7 @@ switch (entity_type) {
     for the non template ones.
 -   In nested template instantiations put spaces between consecutive `>`
 -   Break long template parameter lists into multiple lines and use
-    identation
+    indentation
 
 Examples :
 ```c++
@@ -606,8 +608,8 @@ std::tuple<
 6. Memory Allocation
 --------------------
 
--   Use std::vector for dynamic arrays
--   Use std::unique\_ptr/std::shared\_ptr where ever possible.
+-   Use `std::vector` for dynamic arrays
+-   Use `std::unique_ptr`/`std::shared_ptr` where ever possible.
 
 * * * * *
 
@@ -619,9 +621,9 @@ std::tuple<
 -   Otherwise print an error message and return with an error code. Do
     ***not*** proceed!
 -   Use asserts to handle pre/pst condition errors
--   Use exceptions to handle runtime conditions/erros
+-   Use exceptions to handle runtime conditions/errors
 
-:TODO: be more elaborated.
+[comment]: # (TODO: be more elaborated.)
 
 * * * * *
 
