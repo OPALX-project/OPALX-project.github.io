@@ -83,7 +83,7 @@ P=cmake
 V=3.6.3
 ```
 +
-1. **Download $P**
+1. **Download CMake**
 +
 ```
 curl -L \
@@ -109,11 +109,89 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
         --verbose
 ```
 +
-1. **Compile and install $P**
+1. **Compile and install CMake**
 +
 ```
 make -j4
 make install
+```
+
+'''
+=== Compile and install GMP
+1. **Set package and version**
++
+```
+```
++
+1. **Download GMP**
++
+```
+```
++
+1. **Unpack GMP**
++
+```
+```
++
+1. **Configure GMP**
++
+```
+```
++
+1. **Compile and install GMP**
+```
+```
+
+'''
+=== Compile and install MPC
+1. **Set package and version**
++
+```
+```
++
+1. **Download MPC**
++
+```
+```
++
+1. **Unpack MPC**
++
+```
+```
++
+1. **Configure MPC**
++
+```
+```
++
+1. **Compile and install MPC**
+```
+```
+
+'''
+=== Compile and install MPFR
+1. **Set package and version**
++
+```
+```
++
+1. **Download MPFR**
++
+```
+```
++
+1. **Unpack MPFR**
++
+```
+```
++
+1. **Configure MPFR**
++
+```
+```
++
+1. **Compile and install MPFR**
+```
 ```
 
 '''
@@ -122,22 +200,23 @@ make install
 +
 ```
 ```
-1. **Download $P**
++
+1. **Download GCC**
 +
 ```
 ```
 +
-1. **Unpack $P**
+1. **Unpack GCC**
 +
 ```
 ```
 +
-1. **Configure $P**
+1. **Configure GCC**
 +
 ```
 ```
 +
-1. **Compile and install $P**
+1. **Compile and install GCC**
 ```
 ```
 
@@ -147,22 +226,23 @@ make install
 +
 ```
 ```
-1. **Download $P**
++
+1. **Download openmpi**
 +
 ```
 ```
 +
-1. **Unpack $P**
+1. **Unpack openmpi**
 +
 ```
 ```
 +
-1. **Configure $P**
+1. **Configure openmpi**
 +
 ```
 ```
 +
-1. **Compile and install $P**
+1. **Compile and install openmpi**
 ```
 ```
 
@@ -172,47 +252,49 @@ make install
 +
 ```
 ```
-1. **Download $P**
++
+1. **Download hdf5**
 +
 ```
 ```
 +
-1. **Unpack $P**
+1. **Unpack hdf5**
 +
 ```
 ```
 +
-1. **Configure $P**
+1. **Configure hdf5**
 +
 ```
 ```
 +
-1. **Compile and install $P**
+1. **Compile and install hdf5**
 ```
 ```
 
 '''
-=== Compile and install gsl
+=== Compile and install GSL
 1. **Set package and version**
 +
 ```
 ```
-1. **Download $P**
++
+1. **Download GSL**
 +
 ```
 ```
 +
-1. **Unpack $P**
+1. **Unpack GSL**
 +
 ```
 ```
 +
-1. **Configure $P**
+1. **Configure GSL**
 +
 ```
 ```
 +
-1. **Compile and install $P**
+1. **Compile and install GSL**
 ```
 ```
 
