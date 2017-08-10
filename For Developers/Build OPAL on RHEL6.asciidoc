@@ -101,6 +101,7 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 1. **Configure CMake**
 +
 You might have to add the option --system-curl
++
 ```
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 "${SRC_DIR}/cmake/cmake-$V/bootstrap" \
@@ -109,6 +110,7 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 ```
 +
 1. **Compile and install $P**
++
 ```
 make -j4
 make install
