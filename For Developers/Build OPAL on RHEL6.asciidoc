@@ -75,19 +75,144 @@ mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 --
 '''
-=== Compile and isntall CMake
+=== Compile and install CMake
+1. **Set package and version**
++
+```
+P=cmake
+V=3.6.3
+```
++
+1. **Download $P**
++
+```
+curl -L \
+         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+        "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
+```
++
+1. **Unpack CMake**
++
+```
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+```
++
+1. **Configure CMake**
++
+You might have to add the option --system-curl
+```
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+"${SRC_DIR}/cmake/cmake-$V/bootstrap" \
+        --prefix="${PREFIX}" \
+        --verbose
+```
++
+1. **Compile and install $P**
+```
+make -j4
+make install
+```
 
 '''
 === Compile and install GCC 5.4
+1. **Set package and version**
++
+```
+```
+1. **Download $P**
++
+```
+```
++
+1. **Unpack $P**
++
+```
+```
++
+1. **Configure $P**
++
+```
+```
++
+1. **Compile and install $P**
+```
+```
 
 '''
 === Compile and install openmpi
+1. **Set package and version**
++
+```
+```
+1. **Download $P**
++
+```
+```
++
+1. **Unpack $P**
++
+```
+```
++
+1. **Configure $P**
++
+```
+```
++
+1. **Compile and install $P**
+```
+```
 
 '''
 === Compile and install hdf5
+1. **Set package and version**
++
+```
+```
+1. **Download $P**
++
+```
+```
++
+1. **Unpack $P**
++
+```
+```
++
+1. **Configure $P**
++
+```
+```
++
+1. **Compile and install $P**
+```
+```
 
 '''
 === Compile and install gsl
+1. **Set package and version**
++
+```
+```
+1. **Download $P**
++
+```
+```
++
+1. **Unpack $P**
++
+```
+```
++
+1. **Configure $P**
++
+```
+```
++
+1. **Compile and install $P**
+```
+```
 
 '''
 === Compile and install H5hut
