@@ -344,25 +344,42 @@ make install
 1. **Set package and version**
 +
 ```
+P=hdf5
+V=1.8.18
 ```
 +
 1. **Download hdf5**
 +
 ```
+curl -L \
+	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
+	"https://support.hdfgroup.org/ftp/HDF5/current${V_MAJOR}${V_MINOR}/src/hdf5-$V.tar.bz2"
 ```
 +
 1. **Unpack hdf5**
 +
 ```
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
 ```
 +
 1. **Configure hdf5**
 +
 ```
+"${SRC_DIR}/$P/$P-$V/configure" \
+        --prefix="${PREFIX}" \
+        --enable-shared \
+        --enable-parallel \
+        --enable-cxx \
+        --enable-fortran \
+        --enable-unsupported \
+        --with-pic
 ```
 +
 1. **Compile and install hdf5**
 ```
+make -j ${NJOBS}
+make install
 ```
 
 '''
@@ -440,7 +457,7 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut/H5hut-2.0.0rc3/configure" \
 +
 ```
 cd "${SRC_DIR}/H5hut/build"
-make -j4
+make -j ${NJOBS}
 make install
 ```
 
@@ -510,20 +527,26 @@ V=4.0.3
 1. **Download ParMETIS**
 +
 ```
-
+curl -L \
+        --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+        "http://glaros.dtc.umn.edu/gkhome/fetch/sw/$P/$P-$V.tar.gz"
 ```
 +
 1. **Unpack ParMETIS**
 +
 ```
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 ```
 +
 1. **Configure ParMETIS**
 +
 ```
-
+CC=mpicc CXX=mpicxx cmake \
+	 -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+	 -D METIS_PATH="${SRC_DIR}/$P/$P-$V/metis" \
+	 -D GKLIB_PATH="${SRC_DIR}/$P/$P-$V/metis/GKlib" \
+	 "${SRC_DIR}/$P/$P-$V"
 ```
 +
 1. **Compile and install ParMetis**
@@ -531,6 +554,8 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
 ```
 make -j ${NJOBS}
 make install
+install --mode 0644 libmetis/libmetis.a "${PREFIX}/lib"
+install --mode 0644 "${SRC_DIR}/$P/$P-$V/metis/include/metis.h" "${PREFIX}/include"
 ```
 
 '''
@@ -546,7 +571,9 @@ V=0.2.20
 1. **Download OpenBLAS**
 +
 ```
-
+curl -L \
+        --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+        "http://github.com/xianyi/$P/archive/v$V.tar.gz"
 ```
 +
 1. **Unpack OpenBLAS**
@@ -565,6 +592,7 @@ but seems to be still broken.
 +
 We compile with target `CORE2`. There might be issues with other targets like `HASWELL`.
 Anyway you can try with other targets. For autodetection just run `make`.
++
 ```
 make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
@@ -597,8 +625,7 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2"
 1. **Configure Trilinos**
 +
 ```
-mkdir -p "${SRC_DIR}/Trilinos/build"
-cd "${SRC_DIR}/Trilinos/build"
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
         -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
         -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
@@ -613,6 +640,16 @@ CC=mpicc CXX=mpicxx cmake \
         -D TPL_ENABLE_LAPACK:BOOL=ON \
         -D TPL_ENABLE_METIS:BOOL=ON \
         -D TPL_ENABLE_ParMETIS:BOOL=ON \
+        -D BLAS_LIBRARY_DIRS:PATH="${PREFIX}/lib" \
+        -D BLAS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D BLAS_LIBRARY_NAMES:STRING="openblas" \
+        -D LAPACK_LIBRARY_DIRS:PATH="${PREFIX}/lib" \
+        -D LAPACK_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D LAPACK_LIBRARY_NAMES:STRING="openblas" \
+        -D TPL_METIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D TPL_METIS_LIBRARIES:PATH="${PREFIX}/lib" \
+        -D TPL_ParMETIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D TPL_ParMETIS_LIBRARIES:PATH="${PREFIX}/lib" \
         -D Trilinos_ENABLE_Amesos:BOOL=ON \
         -D Trilinos_ENABLE_Amesos2:BOOL=ON \
         -D Trilinos_ENABLE_AztecOO:BOOL=ON \
@@ -711,7 +748,7 @@ The following table shows the most important options:
 +
 ```
 cd "${SRC_DIR}/OPAL/build"
-make -j 5
+make -j ${NJOBS}
 make install
 ```
 
