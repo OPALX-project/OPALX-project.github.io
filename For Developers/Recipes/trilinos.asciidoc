@@ -3,7 +3,7 @@
 
 # recipe for:
 P=trilinos
-V=12.10.2
+V=12.10.1
 
 # download
 curl -L \
@@ -15,8 +15,7 @@ mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2"
 
 # configure
-mkdir -p "${SRC_DIR}/Trilinos/build"
-cd "${SRC_DIR}/Trilinos/build"
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
         -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
         -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
