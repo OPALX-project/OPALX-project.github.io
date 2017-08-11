@@ -377,6 +377,7 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
 ```
 +
 1. **Compile and install hdf5**
++
 ```
 make -j ${NJOBS}
 make install
