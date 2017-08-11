@@ -27,7 +27,7 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 			--with-build-config=bootstrap-debug
 
 # compile & install
-make -j4
+make -j ${NJOBS}
 make install
 --------------------------------------------
 
