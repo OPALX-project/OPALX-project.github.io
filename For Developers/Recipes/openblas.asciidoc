@@ -15,11 +15,9 @@ mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 
 # configure
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-CC=gcc CXX=g++ FC=gfortran cmake \
-        -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}"
+# nothing to configure
 
 # compile & install
-make -j ${NJOBS}
-make install
+make TARGET=CORE2
+make TARGET=CORE2 PREFIX="${PREFIX}" install
 -----------------------------------
