@@ -353,7 +353,7 @@ V=1.8.18
 ```
 curl -L \
 	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"https://support.hdfgroup.org/ftp/HDF5/current${V_MAJOR}${V_MINOR}/src/hdf5-$V.tar.bz2"
+	"https://support.hdfgroup.org/ftp/HDF5/current${V_MAJOR}${V_MINOR}/src/$P-$V.tar.bz2"
 ```
 +
 1. **Unpack hdf5**
