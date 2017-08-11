@@ -28,6 +28,6 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 		--with-slurm=yes
 
 # compile & install
-make -j
+make -j ${NJOBS}
 make install
 ----------------------------------------
