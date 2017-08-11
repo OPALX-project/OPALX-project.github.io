@@ -1,0 +1,54 @@
+-----------------------------------
+#!/bin/bash
+
+# recipe for:
+P=trilinos
+V=12.10.2
+
+# download
+curl -L \
+         --output "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" \
+         http://trilinos.csbsju.edu/download/files/$P-$V-Source.tar.bz2
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2"
+
+# configure
+mkdir -p "${SRC_DIR}/Trilinos/build"
+cd "${SRC_DIR}/Trilinos/build"
+CC=mpicc CXX=mpicxx cmake \
+        -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+        -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
+        -D CMAKE_C_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
+        -D CMAKE_CXX_STANDARD:STRING="11" \
+        -D CMAKE_Fortran_FLAGS:STRING="-fPIC" \
+        -D CMAKE_BUILD_TYPE:STRING=Release \
+        -D TPL_ENABLE_DLlib:BOOL=OFF \
+        -D TPL_ENABLE_QT:BOOL=OFF \
+        -D TPL_ENABLE_MPI:BOOL=ON \
+        -D TPL_ENABLE_BLAS:BOOL=ON \
+        -D TPL_ENABLE_LAPACK:BOOL=ON \
+        -D TPL_ENABLE_METIS:BOOL=ON \
+        -D TPL_ENABLE_ParMETIS:BOOL=ON \
+        -D Trilinos_ENABLE_Amesos:BOOL=ON \
+        -D Trilinos_ENABLE_Amesos2:BOOL=ON \
+        -D Trilinos_ENABLE_AztecOO:BOOL=ON \
+        -D Trilinos_ENABLE_Belos:BOOL=ON \
+        -D Trilinos_ENABLE_Epetra:BOOL=ON \
+        -D Trilinos_ENABLE_EpetraExt:BOOL=ON \
+        -D Trilinos_ENABLE_Galeri:BOOL=ON \
+        -D Trilinos_ENABLE_Ifpack:BOOL=ON \
+        -D Trilinos_ENABLE_Isorropia:BOOL=ON \
+        -D Trilinos_ENABLE_ML:BOOL=ON \
+        -D Trilinos_ENABLE_NOX:BOOL=ON \
+        -D Trilinos_ENABLE_Optika:BOOL=OFF \
+        -D Trilinos_ENABLE_Teuchos:BOOL=ON \
+        -D Trilinos_ENABLE_Tpetra:BOOL=ON \
+        -D Trilinos_ENABLE_TESTS:BOOL=OFF \
+        "${SRC_DIR}/$P/$P-$V-Source"
+
+# compile & install
+make -j ${NJOBS}
+make install
+-----------------------------------
