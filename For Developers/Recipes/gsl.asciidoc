@@ -21,6 +21,6 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 		--disable-shared
 
 # compile & install
-make -j4
+make -j ${NJOBS}
 make install
 -------------------------------------
