@@ -71,6 +71,14 @@ number of parallel `make` jobs. The number should be less or equal the number of
 DOWNLOADS_DIR="${HOME}/Downloads"
 PREFIX="${HOME}/software"
 SRC_DIR="${HOME}/src"
+
+PATH="${PREFIX}/bin:${PATH}"
+
+export C_INCLUDE_PATH="${PREFIX}/include:${C_INCLUDE_PATH}"
+export CPLUS_INCLUDE_PATH="${PREFIX}/include:${CPLUS_INCLUDE_PATH}"
+export LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LIBRARY_PATH}"
+export LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}"
+
 NJOBS=4
 
 mkdir -p "${PREFIX}"
@@ -490,6 +498,147 @@ cd "${SRC_DIR}/boost/boost_1_62_0"
 ```
 
 '''
+=== Install ParMETIS
+
+1. **Set package and version**
++
+```
+P=parmetis
+V=4.0.3
+```
++
+1. **Download ParMETIS**
++
+```
+
+```
++
+1. **Unpack ParMETIS**
++
+```
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+```
++
+1. **Configure ParMETIS**
++
+```
+
+```
++
+1. **Compile and install ParMetis**
++
+```
+make -j ${NJOBS}
+make install
+```
+
+'''
+=== Install OpenBLAS
+
+1. **Set package and version**
++
+```
+P=OpenBLAS
+V=0.2.20
+```
++
+1. **Download OpenBLAS**
++
+```
+
+```
++
+1. **Unpack OpenBLAS**
++
+```
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+```
++
+1. **Configure OpenBLAS**
++
+No need to configure something. There is experimental CMake support,
+but seems to be still broken.
++
+1. **Compile and install OpenBLAS**
++
+We compile with target `CORE2`. There might be issues with other targets like `HASWELL`.
+Anyway you can try with other targets. For autodetection just run `make`.
+```
+make TARGET=CORE2
+make TARGET=CORE2 PREFIX="${PREFIX}" install
+```
+
+'''
+=== Install Trilinos
+1. **Set package and version**
++
+```
+P=trilinos
+V=12.10.1
+```
++
+1. **Download Trilinos**
++
+```
+curl -L \
+         --output "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" \
+         http://trilinos.csbsju.edu/download/files/$P-$V-Source.tar.bz2
+```
++
+1. **Unpack Trilinos**
++
+```
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2"
+```
++
+1. **Configure Trilinos**
++
+```
+mkdir -p "${SRC_DIR}/Trilinos/build"
+cd "${SRC_DIR}/Trilinos/build"
+CC=mpicc CXX=mpicxx cmake \
+        -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+        -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
+        -D CMAKE_C_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
+        -D CMAKE_CXX_STANDARD:STRING="11" \
+        -D CMAKE_Fortran_FLAGS:STRING="-fPIC" \
+        -D CMAKE_BUILD_TYPE:STRING=Release \
+        -D TPL_ENABLE_DLlib:BOOL=OFF \
+        -D TPL_ENABLE_QT:BOOL=OFF \
+        -D TPL_ENABLE_MPI:BOOL=ON \
+        -D TPL_ENABLE_BLAS:BOOL=ON \
+        -D TPL_ENABLE_LAPACK:BOOL=ON \
+        -D TPL_ENABLE_METIS:BOOL=ON \
+        -D TPL_ENABLE_ParMETIS:BOOL=ON \
+        -D Trilinos_ENABLE_Amesos:BOOL=ON \
+        -D Trilinos_ENABLE_Amesos2:BOOL=ON \
+        -D Trilinos_ENABLE_AztecOO:BOOL=ON \
+        -D Trilinos_ENABLE_Belos:BOOL=ON \
+        -D Trilinos_ENABLE_Epetra:BOOL=ON \
+        -D Trilinos_ENABLE_EpetraExt:BOOL=ON \
+        -D Trilinos_ENABLE_Galeri:BOOL=ON \
+        -D Trilinos_ENABLE_Ifpack:BOOL=ON \
+        -D Trilinos_ENABLE_Isorropia:BOOL=ON \
+        -D Trilinos_ENABLE_ML:BOOL=ON \
+        -D Trilinos_ENABLE_NOX:BOOL=ON \
+        -D Trilinos_ENABLE_Optika:BOOL=OFF \
+        -D Trilinos_ENABLE_Teuchos:BOOL=ON \
+        -D Trilinos_ENABLE_Tpetra:BOOL=ON \
+        -D Trilinos_ENABLE_TESTS:BOOL=OFF \
+        "${SRC_DIR}/$P/$P-$V-Source"
+```
++
+1. **Compile and install Trilinos**
++
+```
+make -j ${NJOBS}
+make install
+```
+
+'''
 == Compile OPAL
 
 1. **Get the OPAL sources**
@@ -567,77 +716,7 @@ make install
 ```
 
 == Compile OPAL with the SAAMG solver
-=== Install ParMETIS
 
-'''
-=== Install Trilinos
-1. **Set package and version**
-+
-```
-P=trilinos
-V=12.10.2
-```
-+
-1. **Download Trilinos**
-+
-```
-curl -L \
-         --output "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" \
-         http://trilinos.csbsju.edu/download/files/$P-$V-Source.tar.bz2
-```
-+
-1. **Unpack Trilinos**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2"
-```
-+
-1. **Configure Trilinos**
-+
-```
-mkdir -p "${SRC_DIR}/Trilinos/build"
-cd "${SRC_DIR}/Trilinos/build"
-CC=mpicc CXX=mpicxx cmake \
-        -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
-        -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
-        -D CMAKE_C_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
-        -D CMAKE_CXX_STANDARD:STRING="11" \
-        -D CMAKE_Fortran_FLAGS:STRING="-fPIC" \
-        -D CMAKE_BUILD_TYPE:STRING=Release \
-        -D TPL_ENABLE_DLlib:BOOL=OFF \
-        -D TPL_ENABLE_QT:BOOL=OFF \
-        -D TPL_ENABLE_MPI:BOOL=ON \
-        -D TPL_ENABLE_BLAS:BOOL=ON \
-        -D TPL_ENABLE_LAPACK:BOOL=ON \
-        -D TPL_ENABLE_METIS:BOOL=ON \
-        -D TPL_ENABLE_ParMETIS:BOOL=ON \
-        -D Trilinos_ENABLE_Amesos:BOOL=ON \
-        -D Trilinos_ENABLE_Amesos2:BOOL=ON \
-        -D Trilinos_ENABLE_AztecOO:BOOL=ON \
-        -D Trilinos_ENABLE_Belos:BOOL=ON \
-        -D Trilinos_ENABLE_Epetra:BOOL=ON \
-        -D Trilinos_ENABLE_EpetraExt:BOOL=ON \
-        -D Trilinos_ENABLE_Galeri:BOOL=ON \
-        -D Trilinos_ENABLE_Ifpack:BOOL=ON \
-        -D Trilinos_ENABLE_Isorropia:BOOL=ON \
-        -D Trilinos_ENABLE_ML:BOOL=ON \
-        -D Trilinos_ENABLE_NOX:BOOL=ON \
-        -D Trilinos_ENABLE_Optika:BOOL=OFF \
-        -D Trilinos_ENABLE_Teuchos:BOOL=ON \
-        -D Trilinos_ENABLE_Tpetra:BOOL=ON \
-        -D Trilinos_ENABLE_TESTS:BOOL=OFF \
-        "${SRC_DIR}/$P/$P-$V-Source"
-```
-+
-1. **Compile and install Trilinos**
-+
-```
-make -j ${NJOBS}
-make install
-```
-
-=== Compile OPAL with the SAAMG solver
 To compile OPAL with the SAAMG follow the steps in the section "Compile OPAL", but replace the configuration step with:
 --------------------------------------
 mkdir -p "${SRC_DIR}/OPAL/build"
