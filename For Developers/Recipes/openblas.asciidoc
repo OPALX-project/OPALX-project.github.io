@@ -1,0 +1,25 @@
+-----------------------------------
+#!/bin/bash
+
+# recipe for:
+P=OpenBLAS
+V=0.2.20
+
+# download
+curl -L \
+	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+	"http://github.com/xianyi/$P/archive/v$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CC=gcc CXX=g++ FC=gfortran cmake \
+        -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}"
+
+# compile & install
+make -j ${NJOBS}
+make install
+-----------------------------------
