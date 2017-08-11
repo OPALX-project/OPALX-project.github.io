@@ -353,7 +353,7 @@ V=1.8.18
 ```
 curl -L \
 	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"https://support.hdfgroup.org/ftp/HDF5/current${V_MAJOR}${V_MINOR}/src/$P-$V.tar.bz2"
+	"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/$P-$V/src/$P-$V.tar.bz2"
 ```
 +
 1. **Unpack hdf5**
@@ -366,7 +366,8 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
 1. **Configure hdf5**
 +
 ```
-"${SRC_DIR}/$P/$P-$V/configure" \
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CC=mpicc CXX=mpicxx FC=mpifort "${SRC_DIR}/$P/$P-$V/configure" \
         --prefix="${PREFIX}" \
         --enable-shared \
         --enable-parallel \
@@ -518,6 +519,9 @@ cd "${SRC_DIR}/boost/boost_1_62_0"
 '''
 === Install ParMETIS
 
+ParMETIS is required only, if you want to compile OPAL with the SAAMG solver.
+It is a dependency of Trilinos.
+
 1. **Set package and version**
 +
 ```
@@ -562,6 +566,9 @@ install --mode 0644 "${SRC_DIR}/$P/$P-$V/metis/include/metis.h" "${PREFIX}/inclu
 '''
 === Install OpenBLAS
 
+OpenBLAS is required only, if you want to compile OPAL with the SAAMG solver.
+It is a dependency of Trilinos.
+
 1. **Set package and version**
 +
 ```
@@ -601,6 +608,9 @@ make TARGET=CORE2 PREFIX="${PREFIX}" install
 
 '''
 === Install Trilinos
+
+Trilinos is required only, if you want to compile OPAL with the SAAMG solver.
+
 1. **Set package and version**
 +
 ```
