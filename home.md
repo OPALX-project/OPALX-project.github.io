@@ -45,7 +45,7 @@ Regression Tests
 OPAL for Developers: Coding Style and Conventions 
 ===========================================
 
-1. [Coding Style and Conventions](for-developers)
+1. [Coding Style and Conventions](For Developers/Codingstyle)
 2. [Make a fork of the upstream repository and develop code](git-usage)
 3. Install Modules [local](installation-local) on MAC and Linux
 4. [Doxygen](http://amas.web.psi.ch/docs/opal/html/)
