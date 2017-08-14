@@ -451,7 +451,6 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut/H5hut-2.0.0rc3/configure" \
         --prefix="${PREFIX}" \
         --enable-shared \
         --enable-parallel \
-        --with-hdf5=/opt/local/lib/hdf5-18 \
         --with-pic
 ```
 +
