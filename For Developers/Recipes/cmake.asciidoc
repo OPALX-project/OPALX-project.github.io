@@ -23,7 +23,7 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
         --verbose
 
 # compile & install
-make -j4
+make -j ${NJOBS}
 make install
 ---------------------------------------------------
 
