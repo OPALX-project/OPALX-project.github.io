@@ -86,7 +86,7 @@ mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 --
 '''
-=== Compile and install CMake
+=== Building CMake
 1. **Set package and version**
 +
 ```
@@ -128,7 +128,7 @@ make install
 ```
 
 '''
-=== Compile and install GMP
+=== Building GMP
 1. **Set package and version**
 +
 ```
@@ -167,7 +167,7 @@ make install
 ```
 
 '''
-=== Compile and install MPFR
+=== Building MPFR
 1. **Set package and version**
 +
 ```
