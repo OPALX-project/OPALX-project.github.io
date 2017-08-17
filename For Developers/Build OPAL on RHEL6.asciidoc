@@ -249,7 +249,7 @@ make install
 ```
 
 '''
-=== Compile and install GCC 5.4
+=== Building GCC 5.4
 1. **Set package and version**
 +
 ```
@@ -276,7 +276,7 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
 +
 ```
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/gcc/gcc-$V/configure" \
+"${SRC_DIR}/$P/$P-$V/configure" \
 			--prefix="${PREFIX}" \
 			--with-gmp="${PREFIX}" \
 			--with-mpfr="${PREFIX}" \
