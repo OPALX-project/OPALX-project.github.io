@@ -207,7 +207,7 @@ make install
 ```
 
 '''
-=== Compile and install MPC
+=== Building MPC
 1. **Set package and version**
 +
 ```
