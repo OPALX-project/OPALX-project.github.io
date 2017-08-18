@@ -49,5 +49,5 @@ OPAL for Developers: Coding Style and Conventions
 2. [Make a fork of the upstream repository and develop code](git-usage)
 3. Install Modules [local](installation-local) on MAC and Linux
 4. [Doxygen 1.5.x](http://amas.web.psi.ch/docs/opal/html/)
-4. [Doxygen master](http://amas.web.psi.ch/docs/opal/master-doxygen/html/)
+4. [Doxygen master](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 5. [Building, executing and writing unit tests](unit-tests)
