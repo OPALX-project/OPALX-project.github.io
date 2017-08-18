@@ -17,15 +17,15 @@ Achim Gsell
 
 === Required software
 
-Unfortunately most of the software to build OPAL is not available as RPM from the standard repositories including EPEL. The following packages must be build and installed:
+Unfortunately most of the software to build OPAL is not available as RPM from the standard repositories including EPEL. The following packages must be build and installed, in parenthesis the recommended version we are using in our tool-chain:
 
-* cmake
-* gcc 5.4
-* openmpi 1.10.4
-* hdf5 1.8.18
-* gsl 2.x
-* H5hut >= 2.0.0rc3
-* boost >= 1.59
+* cmake >= 3 (3.6.3)
+* GNU Compiler Collection 5.4.0
+* Open MPI >= 1.10.2 (1.10.4)
+* hdf5 >= 1.8.18 (1.8.18) 
+* GNU Scientific Library >= 2.4 (2.4)
+* H5hut >= 2.0.0rc3 (2.0.0rc4)
+* boost >= 1.59 (1.62)
 
 {nbsp}
 
@@ -74,10 +74,34 @@ SRC_DIR="${HOME}/src"
 
 PATH="${PREFIX}/bin:${PATH}"
 
-export C_INCLUDE_PATH="${PREFIX}/include:${C_INCLUDE_PATH}"
-export CPLUS_INCLUDE_PATH="${PREFIX}/include:${CPLUS_INCLUDE_PATH}"
-export LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LIBRARY_PATH}"
-export LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}"
+if [[ -z "${C_INCLUDE_PATH}" ]]; then
+      C_INCLUDE_PATH="${PREFIX}/include"
+else
+      C_INCLUDE_PATH="${PREFIX}/include:${C_INCLUDE_PATH}"
+fi
+
+if [[ -z "${CPLUS_INCLUDE_PATH}" ]]; then
+      CPLUS_INCLUDE_PATH="${PREFIX}/include"
+else
+      CPLUS_INCLUDE_PATH="${PREFIX}/include:${CPLUS_INCLUDE_PATH}"
+fi
+
+if [[ -z "${LIBRARY_PATH}" ]]; then
+      LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64"
+else
+      LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LIBRARY_PATH}"
+fi
+
+if [[ -z "${LD_LIBRARY_PATH}" ]]; then
+      LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64"
+else
+      LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}"
+fi
+
+export C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH
+export LIBRARY_PATH
+export LD_LIBRARY_PATH
 
 NJOBS=4
 
@@ -294,7 +318,7 @@ make install
 ```
 
 '''
-=== Compile and install openmpi
+=== Building Open MPI
 1. **Set package and version**
 +
 ```
@@ -340,7 +364,7 @@ make install
 ```
 
 '''
-=== Compile and install hdf5
+=== Building hdf5
 1. **Set package and version**
 +
 ```
@@ -385,7 +409,7 @@ make install
 ```
 
 '''
-=== Compile and install GSL
+=== Building the GNU Scientific Library
 1. **Set package and version**
 +
 ```
@@ -424,30 +448,34 @@ make install
 ```
 
 '''
-=== Compile and install H5hut
-
+=== Building H5hut
+1. **Set package and version**
++
+```
+P=H5hut
+V=2.0.0rc3
+```
++
 1. **Download H5hut**
 +
 ```
 curl -L \
-         --output "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz" \
-         http://amas.web.psi.ch/Downloads/H5hut/H5hut-2.0.0rc3.tar.gz
+         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+         http://amas.web.psi.ch/Downloads/$P/$P-$V.tar.gz
 ```
 +
 1. **Unpack H5hut**
 +
 ```
-mkdir -p "${SRC_DIR}/H5hut"
-cd "${SRC_DIR}/H5hut"
-tar xvf "${DOWNLOADS_DIR}/H5hut-2.0.0rc3.tar.gz"
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 ```
 +
 1. **Configure H5hut**
 +
 ```
-mkdir -p "${SRC_DIR}/H5hut/build"
-cd "${SRC_DIR}/H5hut/build"
-CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut/H5hut-2.0.0rc3/configure" \
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CC=mpicc CXX=mpicxx "${SRC_DIR}/$P/$P-$V/configure" \
         --prefix="${PREFIX}" \
         --enable-shared \
         --enable-parallel \
@@ -457,66 +485,69 @@ CC=mpicc CXX=mpicxx "${SRC_DIR}/H5hut/H5hut-2.0.0rc3/configure" \
 1. **Compile and install H5hut**
 +
 ```
-cd "${SRC_DIR}/H5hut/build"
 make -j ${NJOBS}
 make install
 ```
 
 '''
-=== Compile and install boost
-
+=== Building Boost
+1. **Set package and version**
++
+```
+P=boost
+V=1_62_0
+```
++
 1. **Download boost**
 +
 ```
 curl -L \
-        --output "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz" \
-        https://netcologne.dl.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz
+        --output "${DOWNLOADS_DIR}/$P_$V.tar.gz" \
+        "https://netcologne.dl.sourceforge.net/project/$P/$P/${V//_/.}/${P}_$V.tar.gz"
 ```
 +
 1. **Unpack boost**
 +
 ```
-mkdir -p "${SRC_DIR}/boost"
-cd "${SRC_DIR}/boost"
-tar xvf "${DOWNLOADS_DIR}/boost_1_62_0.tar.gz"
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"tar.gz"
 ```
 +
-1. **Configure and compile boost:**
+1. **Configure boost**
 +
 ```
-mkdir -p "${SRC_DIR}/boost/build"
-cd "${SRC_DIR}/boost/boost_1_62_0"
+mkdir -p "${SRC_DIR}/$P/build"
+cd "${SRC_DIR}/$P/${P}_$V"
 ./bootstrap.sh \
-        --prefix="${PREFIX}" \
-        --with-libraries=all \
-        --with-python-root=/opt/local/
-./b2 \
-        --build-type=minimal \
-        --build-dir="${SRC_DIR}/boost/build" \
-        --layout=system \
-        --without-mpi \
-        variant=release \
-        link=shared,static \
-        threading=multi \
-        stage
+		--prefix="${PREFIX}" \
+		--with-libraries=all
 ```
 +
-1. **Install boost**
+1. **Compile & install boost**
 +
 ```
 ./b2 \
-        --build-type=minimal \
-        --build-dir="${SRC_DIR}/boost-build" \
-        --layout=system \
-        --without-mpi \
-        variant=release \
-        link=shared,static \
-        threading=multi \
-        install
+	--build-type=minimal \
+	--build-dir=""${SRC_DIR}/$P/build"" \
+	--layout=system \
+	--without-mpi \
+	variant=release \
+	link=shared,static \
+	threading=multi \
+	stage
+./b2 \
+	--build-type=minimal \
+	--build-dir=""${SRC_DIR}/$P/build"" \
+	--layout=system \
+	--without-mpi \
+	variant=release \
+	link=shared,static \
+	threading=multi \
+	install
 ```
 
 '''
-=== Install ParMETIS
+=== Building ParMETIS
 
 ParMETIS is required only, if you want to compile OPAL with the SAAMG solver.
 It is a dependency of Trilinos.
@@ -563,7 +594,7 @@ install --mode 0644 "${SRC_DIR}/$P/$P-$V/metis/include/metis.h" "${PREFIX}/inclu
 ```
 
 '''
-=== Install OpenBLAS
+=== Building OpenBLAS
 
 OpenBLAS is required only, if you want to compile OPAL with the SAAMG solver.
 It is a dependency of Trilinos.
@@ -606,7 +637,7 @@ make TARGET=CORE2 PREFIX="${PREFIX}" install
 ```
 
 '''
-=== Install Trilinos
+=== Building Trilinos
 
 Trilinos is required only, if you want to compile OPAL with the SAAMG solver.
 
@@ -686,7 +717,7 @@ make install
 ```
 
 '''
-== Compile OPAL
+== Building OPAL
 
 1. **Get the OPAL sources**
 +
