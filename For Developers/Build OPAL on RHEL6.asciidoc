@@ -3,7 +3,8 @@ Achim Gsell
 :doctype: article
 :numbered:
 :toc:
-
+:toc-placement: preamble
+:toclevels: 2
 '''
 == Requirements
 
