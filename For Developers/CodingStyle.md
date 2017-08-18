@@ -520,11 +520,17 @@ if (i == 42) {
 }
 ```
 
-Do not unnecessarily use braces where a single statement will do:
+Use braces even for single line blocks, otherwise wrong indentation will confuse you:
 
 ```c++
-if (i == 42)
+if (i == 42) {
     return SUCCESS;
+}
+
+or write them on then same line:
+
+```c++
+if (i == 42) return SUCCESS;
 ```
 
 **`for`-loop**
