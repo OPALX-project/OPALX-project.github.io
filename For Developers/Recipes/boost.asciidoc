@@ -7,12 +7,12 @@ V=1_64_0
 
 # download
 curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+	--output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
 	"https://netcologne.dl.sourceforge.net/project/$P/$P/${V//_/.}/${P}_$V.tar.gz"
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build"
