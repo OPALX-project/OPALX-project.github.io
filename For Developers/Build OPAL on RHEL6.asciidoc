@@ -520,7 +520,7 @@ curl -L \
 +
 ```
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
 ```
 +
 1. **Configure boost**
