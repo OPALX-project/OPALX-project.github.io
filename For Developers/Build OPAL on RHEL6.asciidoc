@@ -512,7 +512,7 @@ V=1_62_0
 +
 ```
 curl -L \
-        --output "${DOWNLOADS_DIR}/$P_$V.tar.gz" \
+        --output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
         "https://netcologne.dl.sourceforge.net/project/$P/$P/${V//_/.}/${P}_$V.tar.gz"
 ```
 +
