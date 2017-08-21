@@ -529,31 +529,31 @@ tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
 mkdir -p "${SRC_DIR}/$P/build"
 cd "${SRC_DIR}/$P/${P}_$V"
 ./bootstrap.sh \
-		--prefix="${PREFIX}" \
-		--with-libraries=all
+                --prefix="${PREFIX}" \
+                --with-libraries=all
 ```
 +
 1. **Compile & install boost**
 +
 ```
 ./b2 \
-	--build-type=minimal \
-	--build-dir=""${SRC_DIR}/$P/build"" \
-	--layout=system \
-	--without-mpi \
-	variant=release \
-	link=shared,static \
-	threading=multi \
-	stage
+        --build-type=minimal \
+        --build-dir=""${SRC_DIR}/$P/build"" \
+        --layout=system \
+        --without-mpi \
+        variant=release \
+        link=shared,static \
+        threading=multi \
+        stage
 ./b2 \
-	--build-type=minimal \
-	--build-dir=""${SRC_DIR}/$P/build"" \
-	--layout=system \
-	--without-mpi \
-	variant=release \
-	link=shared,static \
-	threading=multi \
-	install
+        --build-type=minimal \
+        --build-dir=""${SRC_DIR}/$P/build"" \
+        --layout=system \
+        --without-mpi \
+        variant=release \
+        link=shared,static \
+        threading=multi \
+        install
 ```
 
 '''
