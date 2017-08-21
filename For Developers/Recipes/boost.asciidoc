@@ -3,7 +3,7 @@
 
 # recipe for:
 P=boost
-V=1_64_0
+V=1_62_0
 
 # download
 curl -L \
