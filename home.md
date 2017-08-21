@@ -51,4 +51,4 @@ OPAL for Developers: Coding Style and Conventions
 4. [Doxygen 1.5.x](http://amas.web.psi.ch/docs/opal/html/)
 4. [Doxygen master](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 5. [Building, executing and writing unit tests](unit-tests)
-6. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS)
+6. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
