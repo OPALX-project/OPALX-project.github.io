@@ -587,6 +587,7 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 1. **Configure ParMETIS**
 +
 ```
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
 	 -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
 	 -D METIS_PATH="${SRC_DIR}/$P/$P-$V/metis" \
@@ -628,7 +629,7 @@ curl -L \
 +
 ```
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 ```
 +
 1. **Configure OpenBLAS**
@@ -639,9 +640,10 @@ but seems to be still broken.
 1. **Compile and install OpenBLAS**
 +
 We compile with target `CORE2`. There might be issues with other targets like `HASWELL`.
-Anyway you can try with other targets. For autodetection just run `make`.
+Anyway you can try with other targets. For auto-detection just run `make`. Note: We run `make` in the source directory.
 +
 ```
+mkdir -p "${SRC_DIR}/$P/$P-$V" && cd "$_"
 make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
 ```
