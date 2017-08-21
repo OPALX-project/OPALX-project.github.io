@@ -766,24 +766,14 @@ from inside your clone.
 
 1. **Setup OPAL build environment**
 +
-Before we can configure the build process, we have to setup the environment:
+The environment must be set up as described above for building the dependencies.
 +
---------------------------------------
-export HDF5_ROOT="/opt/local/lib/hdf5-18"
-export BOOST_ROOT="${PREFIX}"
-
-export C_INCLUDE_PATH="${PREFIX}/include:${HDF5_ROOT}/include"
-export CPLUS_INCLUDE_PATH="${C_INCLUDE_PATH}"
-export LIBRARY_PATH="${PREFIX}/lib:${HDF5_ROOT}/lib"
---------------------------------------
-
 1. **Configure OPAL**
 +
 OPAL uses CMake to configure the build process. You can either pass options to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`.
 +
 --------------------------------------
-mkdir -p "${SRC_DIR}/OPAL/build"
-cd "${SRC_DIR}/OPAL/build"
+mkdir -p "${SRC_DIR}/OPAL/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
         --prefix="${PREFIX}" \
         "${SRC_DIR}/OPAL/src"
