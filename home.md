@@ -52,3 +52,10 @@ OPAL for Developers: Coding Style and Conventions
 4. [Doxygen master](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 5. [Building, executing and writing unit tests](unit-tests)
 6. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
+
+
+OPAL Physics Resources
+======================
+
+1. Trim coil report (PSI Ring):  [PSI Ring](https://gitlab.psi.ch/OPAL/src/uploads/b9b3e4254af29470e2a81bf6e2feb20c/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
+
