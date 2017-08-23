@@ -700,9 +700,9 @@ CC=mpicc CXX=mpicxx cmake \
         -D LAPACK_INCLUDE_DIRS:PATH="${PREFIX}/include" \
         -D LAPACK_LIBRARY_NAMES:STRING="openblas" \
         -D TPL_METIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
-        -D TPL_METIS_LIBRARIES:PATH="${PREFIX}/lib" \
+        -D TPL_METIS_LIBRARIES:STRING="${PREFIX}/lib/libmetis.a" \
         -D TPL_ParMETIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
-        -D TPL_ParMETIS_LIBRARIES:PATH="${PREFIX}/lib" \
+        -D TPL_ParMETIS_LIBRARIES:STRING="${PREFIX}/lib/libparmetis.a" \
         -D Trilinos_ENABLE_Amesos:BOOL=ON \
         -D Trilinos_ENABLE_Amesos2:BOOL=ON \
         -D Trilinos_ENABLE_AztecOO:BOOL=ON \
