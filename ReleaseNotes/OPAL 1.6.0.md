@@ -23,11 +23,23 @@
 * Issue #64
 * Issue #71 
 * Issue #77
+* Issue #90
+* Issue #94
+* Issue #125
+* Issue #128
+* Issue #129
+* Issue #138
+* Issue #140
 * [Regression tests](http://amas.web.psi.ch/opal/regressionTests/1.6/) are all fixed (issue #35 et al.)
 * The old behaviour to replace unknown elements with *markers* is now turned into an error.
 * Auto phasing reported by John Power.
 
 A full list of (solved) issues can be found in the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues).
+
+To date the following issues are not solved and scheduled for OPAL-1.6.1
+
+* Issue #135
+* Issue #149
 
 ## Input file related changes in OPAL-1.6.0
 
