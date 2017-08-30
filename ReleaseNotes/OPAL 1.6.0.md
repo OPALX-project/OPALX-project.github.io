@@ -33,6 +33,7 @@
 * [Regression tests](http://amas.web.psi.ch/opal/regressionTests/1.6/) are all fixed (issue #35 et al.)
 * The old behaviour to replace unknown elements with *markers* is now turned into an error.
 * Auto phasing reported by John Power.
+* Restart with h5 files from OPAL <= 1.4.0 will give *Error{0}> H5 rc= -2 in ...*. This can be ignored.
 
 A full list of (solved) issues can be found in the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues).
 
@@ -60,4 +61,3 @@ To date the following issues are not solved and scheduled for OPAL-1.6.1
 
 
 1.  Degrader with DKS enabled: #106
-
