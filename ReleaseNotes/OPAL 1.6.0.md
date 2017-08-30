@@ -46,7 +46,7 @@ To date the following issues are not solved and scheduled for OPAL-1.6.1
 
 * Input files must have a version tag, for example 
     ```
-    OPTION, VERSION=10600
+    OPTION, VERSION=10600;
     ```
     indicating version 1.6.x
 * OPAL is now fully typed. Each variable has to have a type for example
