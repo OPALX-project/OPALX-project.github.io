@@ -17,8 +17,8 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 
 If you *do not* want to use Pmodules, please follow the instruction for [building OPAL from scratch](For Developers/Compile OPAL on RHEL6).
 
-{nbsp}
 '''
+
 === Check whether Pmodules are available
 
 To check whether Pmodules are available on your system, run `module --version`. The output should look like:
