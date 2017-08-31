@@ -1,4 +1,4 @@
-In OPAL, each developer works against a personal fork of the main code repository; when the developer is ready, they can then merge code back into the main upstream repository.
+In OPAL, each developer works against a personal fork of the main code repository inside the OPAL project; when the developer is ready, they can then merge code back into the main upstream repository.
 
 To develop a new feature for a given OPAL project
 
