@@ -60,10 +60,12 @@ source /opt/psi/config/profile.bash
 /afs/psi.ch/sys/psi.x86_64_slp6/Tools/Pmodules/default/bin/modmanage  init "${DSTDIR}"
 ```
 1. Next we have to setup the symbolic link:
++
 ```
 sudo ln -s "${DSTDIR}" /opt/psi
 ```
 1. Source the configuration file
++
 ```
 source /opt/psi/config/profile.bash
 ```
