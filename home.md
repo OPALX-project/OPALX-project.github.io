@@ -47,7 +47,9 @@ OPAL for Developers: Coding Style and Conventions
 
 1. [Coding Style and Conventions](For Developers/Codingstyle)
 1. [Git workflow](git-usage)
-1. [Compiling OPAL](For Developers/Compiling)
+1. [Compile OPAL at PSI](For Developers/Compile OPAL at PSI)
+1. [Compile OPAL on Mac](For Developers/Compile OPAL on Mac)
+1. [Compile OPAL on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
 1. Install Modules [local](installation-local) on MAC and Linux
 1. [OPAL 1.6.x source code documentation](http://amas.web.psi.ch/docs/opal/html/)
 1. [OPAL 2.x source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)

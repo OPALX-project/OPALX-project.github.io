@@ -1,5 +1,0 @@
-= Compiling OPAL
-
-1. Compile OPAL at PSI
-1. Compile OPAL on Mac
-1. Compile OPAL on RHEL 6/7 (will most likely also work on other Linux distributions)
