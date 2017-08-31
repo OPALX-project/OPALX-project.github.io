@@ -1,11 +1,11 @@
-# Release Notes for OPAL 1.6.0rc1
+# Release Notes for OPAL 1.6.0
 
 >
 **Note:** This are the release note for the first release candidate of OPAL 1.6.0!
 >
 **Note:** OPAL 1.6 will be the last minor release of OPAL 1.  New features will be *not* implemented in this major version. Bugs will still be fixed. We are working on OPAL 2 with many new features.
 
-## Solved issues concerned by users 1.6.0rc1
+## Solved issues concerned by users 1.6.0
 
 * Issue #7 
 * Issue #12
