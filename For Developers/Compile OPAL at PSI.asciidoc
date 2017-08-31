@@ -34,7 +34,13 @@ Copyright GNU GPL v2
 
 === If not already done, install Pmodules
 
-If Pmodules are not installed on your system, you (or your system administrator) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
+If Pmodules are not installed on your system, you can either use modules available on AFS or you can install the required modules on your local disk. 
+
+**Note**: For the time being Pmodules supports only bash but **not** tcsh.
+
+==== Use the modules on AFS
+
+You (or your system administrator if you don't have `root` access) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
 
 ```
 sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
@@ -45,7 +51,23 @@ Add the following line to your `.bashrc` or `.bash_profile`:
 source /opt/psi/config/profile.bash
 ```
 
-**Note**: For the time being Pmodules supports only bash but **not** tcsh.
+==== Install the required modules on your local disk
+
+1. First you have to choose an installation directory. The modules can be installed anywhere. Around x GB are required for the installation. The following `$DSTDIR` represents the installation directory.
+1. In the second step the Pmodules software must be installed with the command:
++
+```
+/afs/psi.ch/sys/psi.x86_64_slp6/Tools/Pmodules/default/bin/modmanage  init "${DSTDIR}"
+```
+1. Next we have to setup the symbolic link:
+```
+sudo ln -s "${DSTDIR}" /opt/psi
+```
+1. Source the configuration file
+```
+source /opt/psi/config/profile.bash
+```
+Remember to add this line to your `.bashrc` or `.bash_profile`
 
 '''
 == Load the OPAL tool-chain
