@@ -74,14 +74,9 @@ Remember to add the same line to your `.bashrc` or `.bash_profile`
 +
 ```
 modmanage install cmake/3.6.3
-modmanage install boost/1.62.0 --with=gcc/5.4.0
-modmanage install gsl/2.2.1 --with=gcc/5.4.0
-modmanage install gtest/1.7.0 --with=gcc/5.4.0
-modmanage install OpenBLAS/0.2.19 --with=gcc/5.4.0
-modmanage install root/6.08.02 --with=gcc/5.4.0
+modmanage install boost/1.62.0 gsl/2.2.1 gtest/1.7.0 OpenBLAS/0.2.19 root/6.08.02 --with=gcc/5.4.0
 modmanage install parmetis/4.0.3 --with=gcc/5.4.0 --with=openmpi/1.10.4
-modmanage install trilinos/12.10.1-1 --with=gcc/5.4.0 --with=openmpi/1.10.4 --with=hdf5/1.8.18
-modmanage install H5hut/2.0.0rc3 --with=gcc/5.4.0 --with=openmpi/1.10.4 --with=hdf5/1.8.18
+modmanage install H5hut/2.0.0rc3 trilinos/12.10.1-1 --with=gcc/5.4.0 --with=openmpi/1.10.4 --with=hdf5/1.8.18
 ```
 1. Optional: if you want to compile with DKS (CUDA), you have to install the following modules in addition:
 +
