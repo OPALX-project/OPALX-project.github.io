@@ -69,7 +69,26 @@ sudo ln -s "${DSTDIR}" /opt/psi
 ```
 source /opt/psi/config/profile.bash
 ```
-Remember to add this line to your `.bashrc` or `.bash_profile`
+Remember to add the same line to your `.bashrc` or `.bash_profile`
+1. Now you can install the required modules:
++
+```
+modmanage install cmake/3.6.3
+modmanage install boost/1.62.0 --with=gcc/5.4.0
+modmanage install gsl/2.2.1 --with=gcc/5.4.0
+modmanage install gtest/1.7.0 --with=gcc/5.4.0
+modmanage install OpenBLAS/0.2.19 --with=gcc/5.4.0
+modmanage install root/6.08.02 --with=gcc/5.4.0
+modmanage install parmetis/4.0.3 --with=gcc/5.4.0 --with=openmpi/1.10.4
+modmanage install trilinos/12.10.1-1 --with=gcc/5.4.0 --with=openmpi/1.10.4 --with=hdf5/1.8.18
+modmanage install H5hut/2.0.0rc3 --with=gcc/5.4.0 --with=openmpi/1.10.4 --with=hdf5/1.8.18
+```
+1. Optional: if you want to compile with DKS (CUDA), you have to install the following modules in addition:
++
+```
+modmanage install cuda/8.0.44
+modmanage install dks/1.1.2 --with=gcc/5.4.0 --with=openmpi/1.10.4
+```
 
 '''
 == Load the OPAL tool-chain
@@ -87,6 +106,25 @@ module load opal-toolschain/2.0
 ```
 
 **Note**: For your convenience you might add the line `module use ...` to your `.bashrc` or `.bash_profile`.
+
+If you do not want/can use the meta-module, you have to load the modules one by one:
+```
+module load gcc/5.4.0
+module load openmpi/1.10.4
+module load hdf5/1.8.18
+module load boost/1.62.0
+module load cmake/3.6.3
+module load gsl/2.2.1
+module load gtest/1.7.0
+module load H5hut/2.0.0rc3
+module load root/6.08.02
+module load trilinos/12.10.1-1
+```
+Optional:
+```
+module load cuda/8.0.44
+module load dks/1.1.2
+```
 
 '''
 == Get a clone of the OPAL repository
