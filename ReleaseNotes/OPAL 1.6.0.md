@@ -37,6 +37,8 @@
 
 A full list of (solved) issues can be found in the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues).
 
+## Known Issues 
+
 To date the following issues are not solved and scheduled for OPAL-1.6.1
 
 * Issue #135 **Restart in OPAL-cycl**
@@ -58,7 +60,3 @@ To date the following issues are not solved and scheduled for OPAL-1.6.1
     Only **REAL, STRING, BOOL** and **ARRAY** are supported
 
 
-## Known Issues
-
-
-1.  Degrader with DKS enabled: #106
