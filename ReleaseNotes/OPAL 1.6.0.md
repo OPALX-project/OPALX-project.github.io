@@ -39,8 +39,9 @@ A full list of (solved) issues can be found in the [issue tracker](https://gitla
 
 To date the following issues are not solved and scheduled for OPAL-1.6.1
 
-* Issue #135
-* Issue #149
+* Issue #135 **Restart in OPAL-cycl**
+* Issue #149 **Degrader related**
+* Issue #162 **RBend related **
 
 ## Input file related changes in OPAL-1.6.0
 
