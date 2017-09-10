@@ -30,6 +30,7 @@ Unfortunately most of the software to build OPAL is not available as RPM from th
 * GNU MPC Library >= 1 (1.0.3)
 * GNU Compiler Collection 5.4.0
 * Open MPI >= 1.10.2 (1.10.4)
+* zlib >= 1.2.11
 * hdf5 >= 1.8.18 (1.8.18) 
 * GNU Scientific Library >= 2.4 (2.4)
 * H5hut >= 2.0.0rc3 (2.0.0rc3)
