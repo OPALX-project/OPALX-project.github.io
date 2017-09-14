@@ -4,17 +4,20 @@
 
 == Develop a new OPAL Feature
 
-In OPAL, each developer works in a personal fork of the main code repository inside the OPAL project. When the development is done, the code is merged back into the central repository.
+In OPAL, each developer works in a personal fork of the main code repository inside your personal namespace. When the development is done, the code is merged back into the central repository.
 
 To develop a new feature for a given OPAL project
 
-* From the https://gitlab.psi.ch/OPAL[OPAL namespace] on PSI's Gitlab, select the project (e.g. https://gitlab.psi.ch/OPAL/src[`src`])
-* Click on the ```project``` link in the top menu bar. This will take you to a page showing the uri for cloning the repository and a few other options. 
-* Next to the uri there is a button marked ```fork```; click on it.
-* You can build a fork against different groups of which you are a member, or against your username. Click on one of these to build a fork.
-* ```Forking in progress``` appears. Now wait (this can take a few minutes).
-* If the fork is built successfully, a URI to the new fork should be shown. On your development machine, copy the url to the clip board and do ```git clone <new repository>```
-* Add the central repository as a _remote_ ```git remote add upstream <original repository>``` (e.g. for OPAL, <original repository> might be ```git@gitlab.psi.ch:OPAL/src.git```
+1. From the https://gitlab.psi.ch/OPAL[OPAL group] on PSI's Gitlab, select the project (e.g. https://gitlab.psi.ch/OPAL/src[`src`])
+1. This will take you to a page showing the URI for cloning the repository and a few other options. 
+1. Next to the URI there is a button marked `fork`; click on it.
+1. You can build a fork in groups of which you are a member, or in your personal group, which is named after your username. Create the fork in your personal group. `Forking in progress` appears. Now wait (this can take a few minutes).
+1. If the fork has been created successfully, a URI to the new fork should be shown. On your development machine, copy the URI to the clip board and do 
++
+```
+git clone <new repository>
+```
+1. Add the central repository as a _remote_ ```git remote add upstream <original repository>``` (e.g. for OPAL, <original repository> might be ```git@gitlab.psi.ch:OPAL/src.git```
 
 Write some code. It's a good idea to frequently commit code, and to merge from the upstream repository often. When you are ready to put the code back into the upstream repository:
 
