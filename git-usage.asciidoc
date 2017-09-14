@@ -8,7 +8,7 @@ In OPAL, each developer works in a personal fork of the main code repository ins
 
 To develop a new feature for a given OPAL project
 
-* From the https://gitlab.psi.ch/OPAL[Gitlab webpage], select the project in the drop down box (e.g. ```OPAL/src```)
+* From the https://gitlab.psi.ch/OPAL[OPAL namespace] on PSI's Gitlab, select the project (e.g. `src`)
 * Click on the ```project``` link in the top menu bar. This will take you to a page showing the uri for cloning the repository and a few other options. 
 * Next to the uri there is a button marked ```fork```; click on it.
 * You can build a fork against different groups of which you are a member, or against your username. Click on one of these to build a fork.
