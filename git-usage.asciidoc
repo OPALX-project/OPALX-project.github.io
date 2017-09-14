@@ -1,4 +1,10 @@
-In OPAL, each developer works against a personal fork of the main code repository inside the OPAL project; when the developer is ready, they can then merge code back into the main upstream repository.
+= OPAL Development Workflow
+:TOC:
+:numbered:
+
+== Develop a new OPAL Feature
+
+In OPAL, each developer works in a personal fork of the main code repository inside the OPAL project. When the development is done, the code is merged back into the central repository.
 
 To develop a new feature for a given OPAL project
 
