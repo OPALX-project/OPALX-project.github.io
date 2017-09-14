@@ -4,9 +4,19 @@
 
 == Develop a new OPAL Feature
 
-In OPAL, each developer works in a personal fork of the main code repository inside your personal namespace. When the development is done, the code is merged back into the central repository.
+In OPAL, each developer works in a fork of the central repository inside your personal group or the OPAL group. When the development is done, the code is merged back into the central repository.
 
-To develop a new feature for a given OPAL project
+To develop a new feature for a given OPAL project, you have to
+
+1. Create a fork
+2. Implement feature
+3. Merge feature into central repository
+
+In the next sections these steps are explained in more detail.
+
+== Create a fork
+
+
 
 1. From the https://gitlab.psi.ch/OPAL[OPAL group] on PSI's Gitlab, select the project (e.g. https://gitlab.psi.ch/OPAL/src[`src`])
 1. This will take you to a page showing the URI for cloning the repository and a few other options. 
@@ -17,7 +27,20 @@ To develop a new feature for a given OPAL project
 ```
 git clone <new repository>
 ```
-1. Add the central repository as a _remote_ ```git remote add upstream <original repository>``` (e.g. for OPAL, <original repository> might be ```git@gitlab.psi.ch:OPAL/src.git```
+1. Add the central repository as a _remote_ 
++
+```
+git remote add upstream <original repository>
+```
++
+*Example:*
+for OPAL the source repository the command is
++
+```
+git remote add upstream git@gitlab.psi.ch:OPAL/src.git
+```
+
+== Workflow while implementing the new feature
 
 Write some code. It's a good idea to frequently commit code, and to merge from the upstream repository often. When you are ready to put the code back into the upstream repository:
 
