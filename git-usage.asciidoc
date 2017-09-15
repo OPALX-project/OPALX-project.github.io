@@ -24,7 +24,7 @@ In the next sections these steps are explained in more detail.
 
 == Clone your fork and setup clone
 
-On your development machine, copy the URI of your fork to the clip board and clone it:
+1. On your development machine, copy the URI of your fork to the clip board and clone it:
 +
 ```
 git clone <new repository>
