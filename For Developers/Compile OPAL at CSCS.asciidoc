@@ -206,3 +206,8 @@ load_opal_gcc530() {
     export PATH=$OPAL_EXE_PATH:$PATH
 }
 ```
+
+At the next login (or by just doing `source ~/.bashrc`) you can load everything by executing
+```
+> load_opal_gcc530
+```
