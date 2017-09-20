@@ -34,3 +34,7 @@ new _C++_ classes. It comes in the following flavours:
 It should be noted that not all features of _OPAL_ are available in all
 flavours. The icon `DOPAL-t` means that a feature is not yet available
 in _OPAL-t_. Similar icons are used for the other flavours.
+
+== Table of Contents
+
+. Manual/Introduction[Introduction]
