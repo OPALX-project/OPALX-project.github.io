@@ -1,0 +1,1510 @@
+:toc:
+[[chp:opalcycl]]
+
+:stem: latexmath
+:sectnums:
+
+[[opal-t-field-maps]]
+_OPAL-t_ Field Maps
+-------------------
+
+[[chp:app_fieldmaps]]
+Introduction
+~~~~~~~~~~~~
+
+In this chapter details of the different types of field maps in _OPAL-t_
+are presented. _OPAL-t_ can use many different types of field maps input
+in several different file formats. What types of maps are supported and
+in what format has tended to be a function mostly of what developers
+have needed, and to a lesser extent what users have asked for. The list
+below shows all field maps that are currently supported and also field
+maps that are not yet supported, but on the list of things to do when we
+get a chance.
+
+[[comments-in-field-maps]]
+Comments in Field Maps
+~~~~~~~~~~~~~~~~~~~~~~
+
+The possibility to add comments (almost) everywhere in field map files
+is common to all field maps. Comments are initiated by a # and contain
+the rest of a line. Comments are accepted at the beginning of the file,
+between the lines and at the end of a line. If in the following sections
+two values are shown on one line then they have to be on the same line.
+They should not be separated by a comment and, consequently, be on
+different lines. Three examples of valid comments:
+
+....
+# This is valid a comment
+1DMagnetoStatic 40 # This is another valid comment
+-60.0 60.0 9999
+  # and this is also a valid comment
+0.0 2.0 199
+....
+
+The following examples will break the parsing of the field maps:
+
+....
+1DMagnetoStatic # This is an invalid comment
+40
+-60.0 60.0 # This is another invalid comment # 9999
+0.0 2.0 199
+....
+
+[[normalization]]
+Normalization
+~~~~~~~~~~~~~
+
+All field maps that are in ASCII are normalized with the maximum
+absolute value of the longitudinal field on the axis. The only
+exceptions is the type 1DProfile1. This behavior can be disabled by
+adding `FALSE` at the end of the first line of the field map.
+
+[[field-map-warnings-and-errors]]
+Field Map Warnings and Errors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If _OPAL-t_ encounters an error while parsing a field map it disables
+the corresponding element, outputs a warning message and continues the
+simulation. The following messages may be output:
+
+....
+************ W A R N I N G ***********************************
+THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELD MAP file.t7.
+There are only 10003 lines in the file, expecting more.
+Please check the section about field maps in the user manual.
+**************************************************************
+....
+
+In this example there is something wrong with the number of grid
+spacings provided in the header of the file. Make sure that you provide
+the number of grid *spacings* and not the number of grid *points*! The
+two numbers always differ by 1.
+
+....
+************ W A R N I N G ***********************************
+THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELD MAP file.t7.
+There are too many lines in the file, expecting only 10003 lines.
+Please check the section about field maps in the user manual.
+**************************************************************
+....
+
+Again there seems to be something wrong with the number of grid spacings
+provided in the header. In this example _OPAL-t_ found more lines than
+it expected. Note that comments and empty lines at the end of a file are
+ignored such that *they don’t cause* this warning.
+
+....
+************ W A R N I N G ***********************************
+THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELD MAP file.t7.
+_error_msg_
+expecting: '_expecting_' on line 3,
+found instead: '_found_'.
+**************************************************************
+....
+
+Where `"`_error_msg_`"` is either
+
+[cols="<,<",]
+|=======================================================================
+|`Didn’t find enough values!` |If _OPAL-t_ expects more values on this
+line.
+
+|`Found more values than expected!` |If _OPAL-t_ expects less values on
+this line.
+
+|`Found wrong type of values!` |If _OPAL-t_ found e.g. characters
+instead of an integer number.
+|=======================================================================
+
+`"`_expecting_`"` is replaced by the types of values _OPAL-t_ expects on the
+line. E.g. it could be replaced by `double double int`. Finally
+`"`_found_`"` is replaced by the actual content of the line without any
+comment possibly following the values. If line 3 of a file consists of
+`-60.0 60.0 # This is an other invalid comment # 9999` _OPAL-t_ will
+output `-60.0 60.0`.
+
+....
+************** W A R N I N G *********************************
+DISABLING FIELD MAP file.t7 SINCE FILE COULDN'T BE FOUND!
+**************************************************************
+....
+
+This warning could be issued if the file name is mistyped or otherwise
+if the file couldn’t be read.
+
+....
+************ W A R N I N G **********************************
+THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELDMAP file.t7.
+Could not determine the file type.
+Please check the section about field maps in the user manual.
+*************************************************************
+....
+
+In this case _OPAL-t_ didn’t recognize the string of characters which
+identify the type of field map stored in the file.
+
+For one-dimensional field maps an other warning may be issued:
+
+....
+* ************ W A R N I N G ***************************************************
+* IT SEEMS THAT YOU USE TOO FEW FOURIER COMPONENTS TO SUFFICIENTLY WELL        *
+* RESOLVE THE FIELD MAP 'file.T7'.                                             *
+* PLEASE INCREASE THE NUMBER OF FOURIER COMPONENTS!                            *
+* The ratio (f_i - F_i)^2 / F_i^2 is 0.019685 and                              *
+* the ratio (max_i(|f_i - F_i|) / max_i(|F_i|) is 0.019023.                    *
+* Here F_i is the field as in the field map and f_i is the reconstructed       *
+* field.                                                                       *
+* The lower limit for the two ratios is 1e-2                                   *
+* ******************************************************************************
+....
+
+This warning is issued when the low pass filter that is applied to the
+field sampling uses too few Fourier coefficients. In this case increase
+the number of Fourier coefficients, see the next section for details.
+The relevant criteria are that
+
+[latexmath]
+++++
+\frac{\sum_{i=1}^N (F_{z,i} - \tilde{F}_{z,i})^2}{\sum_{i=1}^N F_{z,i}^2} \le 0.01,
+++++
+
+and
+
+[latexmath]
+++++
+\frac{\max_i |F_{z,i} - \tilde{F}_{z,i}|}{\max_i |F_{z,i}|} \le 0.01,
+++++
+
+where latexmath:[F_{z_i}] is the field sampling as in the file and
+latexmath:[\tilde{F}_{z,i}] is the one-dimensional field reconstructed
+from the result received after applying the low pass filter.
+
+[[sec:fieldmaps]]
+Types and Format
+~~~~~~~~~~~~~~~~
+
+Field maps in _OPAL-t_ come in three basic types:
+
+1.  2D or 3D field map. For this type of map, a field is specified on a
+grid and linear interpolation is used to find field values at
+intermediate points.
+2.  1D on axis field map. For this type of map, one on-axis field
+profile is specified. _OPAL-t_ calculates a Fourier series from this
+profile and then uses the first, second and third derivatives of the
+series to compute the off-axis field values. (This type of field is very
+smooth numerically, but can be inaccurate far from the field axis.) Only
+a few (user specified) terms from the Fourier series are used.
+3.  Enge function [enge] field map. This type of field map uses Enge
+functions to describe the fringe fields of a magnet. Currently, this is
+only used for `RBEND` and `SBEND` elements see Section [RBend,SBend].
+
+It is important to note that in all cases, the input field map will be
+normalized so that the peak field magnitude value on axis is equal to
+either 1 MV/m in the case of electric field maps (static or dynamic), or
+1 T in the case of magnetic field maps. (The sign of the values from the
+field map are preserved.) Therefore, the field multiplier for the map in
+your simulation will be the peak field value on axis in those respective
+units.
+
+Depending on the field map type, _OPAL-t_ uses different length units
+(either cm or meters). This is due to the origin programs of the field
+maps used (e.g. Poisson/Superfish [superfish] uses cm). So be careful.
+
+There are no required field extensions for any _OPAL-t_ field map (e.g.
+.T7, .dat etc.). _OPAL-t_ determines the type of field map by a string
+descriptor which is the first element on the first line of the file.
+Below we list the possible descriptors. (Note that we list all of the
+descriptors/field map types that we plan to eventually implement. Not
+all of them are, which is indicated in the description.)
+
+1DElectroStatic::
+  1D electrostatic field map. 1D field maps are described by the on-axis
+  field. +
+  *_Not implemented yet_*. A work around is to use a 1DDynamic field map
+  with a very low frequency.
+1DMagnetoStatic::
+  1D magnetostatic field map. See Section [1DMagnetoStatic].
+AstraMagnetoStatic::
+  1D magnetostatic field map with possibly non-equidistant sampling.
+  This file type is compatible with ASTRA field maps with small changes.
+  See Section [ AstraMagnetostatic].
+1DDynamic::
+  1D dynamic electromagnetic field map. See Section [1DDynamic].
+AstraDynamic::
+  1D dynamic electromagnetic field map with possibly non-equidistant
+  sampling. This file type is compatible with ASTRA field maps with
+  small changes. See Section [AstraDynamic].
+1DProfile1::
+  This type of field map specifies the Enge functions (see [enge]) for
+  the entrance and exit fringe fields of a magnet. Currently this type
+  of field map is only used by `RBEND` and `SBEND` elements
+  see Section [RBend,SBend]. See Section [1DProfile1].
+2DElectroStatic::
+  2D electrostatic field map. 2D field maps are described by the
+  electromagnetic field in one half-plane. See
+  Section [2DElectroStatic].
+2DMagnetoStatic::
+  2D magnetostatic field map. Other than this descriptor at the head of
+  the file, the format for this field map type is identical to the T7
+  file format as produced by Poisson [superfish]. See
+  Section [2DMagnetoStatic].
+2DDynamic::
+  2D dynamic electromagnetic field map. Other than this descriptor at
+  the head of the file, the format for this field map type is identical
+  to the T7 field format as produced by Superfish [superfish]. See
+  Section [2DDynamic].
+3DElectroStatic::
+  3D electrostatic field map. +
+  *_Not implemented yet_*.
+3DMagnetoStatic::
+  3D magnetostatic field map, see Section [3DMagnetoStatic].
+3DMagnetoStatic_Extended::
+  2D magnetostatic field map of field on mid-plane that _OPAL_ extends
+  to 3D.
+3DDynamic::
+  3D dynamic electromagnetic field map. See Section [3DDynamic].
+
+We will give examples and descriptions of each of the implemented field
+map types in the sections below.
+
+[[sec:fieldorientation]]
+Field Map Orientation
+~~~~~~~~~~~~~~~~~~~~~
+
+In the case of 2D and 3D field maps an additional string has to be
+provided describing the orientation of the field map.
+
+For 2D field maps this can either be
+
+XZ::
+  if the primary direction is in z direction and the secondary in r
+  direction.
+ZX::
+  if the primary direction is in r direction and the secondary in z
+  direction.
+
+For 3D field maps this can be
+
+XYZ::
+  if the primary direction is in z direction, the secondary in y
+  direction and the tertiary in x direction
+
+Each line after the header corresponds to a grid point of the field map.
+This point can be referred to by two indices in the case of a 2D field
+map and three indices in the case of a 3D field map, respectively. Each
+column describes either
+latexmath:[E_z,\; E_r,\; B_z,\; B_r\; \text{or}\;H_{\phi}] in the 2D
+case and latexmath:[E_x\;, E_y\;, E_z,\; B_x,\; B_y,\;B_z] in the 3D
+case.
+
+By primary, secondary and tertiary direction is meant the following (see
+also Figure 1):
+
+* The index of the primary direction increases the fastest, the index of
+the tertiary direction the slowest.
+* The order of the columns is accordingly: if the z direction in an 2D
+electrostatic field map is the primary direction then latexmath:[E_z]
+is on the first column, latexmath:[E_r] on the second. For all other
+cases it’s analogous.
+* For the 2D dynamic case in XZ orientation there are four columns:
+latexmath:[E_z], latexmath:[E_r], latexmath:[|E|] (unused) and
+latexmath:[H_{\phi}] in that order. In the other orientations the
+first and the second columns are interchanged ,but the third and fourth
+columns are unchanged.
+
+.Figure 1: Ordering of points for 2D field maps in T7 files (left XZ orientation, right ZX orientation)
+image:./figures/Fieldmaps/order-1.png[width=375]
+image:./figures/Fieldmaps/order-2.png[width=375]
+
+[[sec:fastattribute]]
+FAST Attribute for 1D Field Maps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For some 1D field maps, there exists a Boolean attribute, `FAST`, which
+can be used to speed up the calculation. When set to true
+(`FAST = TRUE`), _OPAL-t_ will generate a 2D internal field map and then
+use bi-linear interpolation to calculate field values during the
+simulation, rather than the generally slower Fourier coefficient
+technique. The caution here is that this can introduce unwanted
+numerical noise if you set the grid spacing too coarse for the 2D map.
+
+As a general warning: be wise when you choose the type of field map to
+be used! Figure [fieldnoiseexample] shows three pictures of the
+longitudinal phase space after three gun simulations using different
+types of field maps. In the first picture we
+used a 1DDynamic field map see Section [1DDynamic] resulting in a smooth
+longitudinal distribution. In the middle picture we set the
+`FAST` attribute to true, resulting in some fine structure in the phase
+space due to the bi-linear interpolation of the internally generated 2D
+field map. Finally, in the last figure, we
+generated directly a 2D field map from Superfish [superfish]. Here we
+could observe two different structures: first the fine structure,
+stemming from the bi-linear interpolation, and secondly a much stronger
+structure of unknown origin, but presumably due to errors in the
+Superfish [superfish] interpolation algorithm.
+
+.Figure 2: The longitudinal phase space after a gun simulation using a 1D field map (on-axis field) of the gun, a 1D field map (on-axis field) of the gun in combination with the `FAST` switch, and a 2D field map of the gun generated by Superfish [superfish].
+image:./figures/Fieldmaps/1DDynamic_step82.png[width=250]
+image:./figures/Fieldmaps/1DDynamic_fast_step82.png[width=250]
+image:./figures/Fieldmaps/2DDynamic_step82.png[width=250]
+
+[[sec:1DMagnetoStatic]]
+1DMagnetoStatic
+~~~~~~~~~~~~~~~
+
+....
+1DMagnetoStatic 40
+-60.0 60.0 9999
+  0.0  2.0 199
+  0.00000e+00
+  4.36222e-06
+  8.83270e-06
+  + 9'994 lines
+  1.32490e-05
+  1.73710e-05
+  2.18598e-05
+....
+
+A 1D field map describing a magnetostatic field using 10000 grid points
+(9999 grid spacings) in the longitudinal direction. The field is
+non-negligible from -60.0cm to +60.0cm relative to `ELEMEDGE` in the
+longitudinal direction. From the 10000 field values, 5000 complex
+Fourier coefficients are calculated. However, only 40 are kept when
+calculating field values during a simulation. _OPAL-t_ normalizes the
+field values internally such that
+latexmath:[\max(|B_{\text{on axis}}|) = {1.0}{T}]. If the `FAST`
+attribute is set to true in the input deck, a 2D field map is generated
+internally with 200 values in the radial direction, from 0cm to 2cm, for
+each longitudinal grid point.
+
+.Layout of a `1DMagnetoStatic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|=======================================================================
+|1DMagnetoStatic |latexmath:[N_{Fourier}] |TRUE \| FALSE (optional)
+
+|latexmath:[z_{start}] (in cm) |latexmath:[z_{end}] (in cm)
+|latexmath:[N_{z}]
+
+|latexmath:[r_{start}] (in cm) |latexmath:[r_{end}] (in cm)
+|latexmath:[N_{r}]
+
+|latexmath:[B_{z,\,1}] (T) | |
+
+|latexmath:[B_{z,\,2}] (T) | |
+
+|. | |
+
+|. | |
+
+|. | |
+
+|latexmath:[B_{z,\,N_{z} + 1}] (T) | |
+|=======================================================================
+
+A `1DMagnetoStatic` field map has the general form shown in
+Table [1DMagnetoStatic]. The first three lines form the file header and
+tell _OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`1DMagnetoStatic`)
+  and how many Fourier coefficients to keep (latexmath:[N_{Fourier}])
+  when doing field calculations.
+Line 2::
+  This tells gives the extent of the field map (from
+  latexmath:[z_{start}] to latexmath:[z_{end}]) relative to the
+  `ELEMEDGE` of the field map, and how many grid spacings there are in
+  the field map.
+Line 3::
+  If one sets `FAST = TRUE` for the field map, this tells _OPAL-t_ the
+  radial extent of the internally generated 2D field map. Otherwise this
+  line is ignored. (Although it must always be present.)
+
+The lines following the header give the 1D field map grid values from
+latexmath:[1] to latexmath:[N_{z} + 1]. From these,
+latexmath:[N_{z}/2] complex Fourier coefficients are calculated, of
+which only latexmath:[N_{Fourier}] are used when finding field values
+during the simulation.
+
+Figure [1DMagnetoStatic] gives an example of a `1DMagnetoStatic` field
+file.
+
+[[sec:AstraMagnetostatic]]
+AstraMagnetostatic
+~~~~~~~~~~~~~~~~~~
+
+....
+AstraMagnetostatic 40
+  -3.0000000e-01   0.0000000e+00
+  -2.9800000e-01   2.9075045e-05
+  -2.9600000e-01   5.9367702e-05
+  -2.9400000e-01   9.0866460e-05
+  -2.9200000e-01   1.2374798e-04
+  -2.9000000e-01   1.5799850e-04
+...
+   2.9000000e-01   1.5799850e-04
+   2.9200000e-01   1.2374798e-04
+   2.9400000e-01   9.0866460e-05
+   2.9600000e-01   5.9367702e-05
+   2.9800000e-01   2.9075045e-05
+   3.0000000e-01   0.0000000e+00
+....
+
+A 1D field map describing a magnetostatic field using latexmath:[N]
+non-equidistant grid points in the longitudinal direction. From these
+values latexmath:[N] equidistant field values are computed from which
+in turn latexmath:[N/2] complex Fourier coefficients are calculated.
+In this example only 40 Fourier coefficients are kept when calculating
+field values during a simulation. The z-position of each field sampling
+is in the first column (in meters), the corresponding longitudinal
+on-axis magnetic field amplitude is in the second column. As with the
+1DMagnetoStatic see Section [1DMagnetoStatic] field maps, _OPAL-t_
+normalizes the field values to
+latexmath:[\max(|B_{\text{on axis}}|) = {1.0}{T}]. In the header only
+the first line is needed since the information on the longitudinal
+dimension is contained in the first column of the data. (_OPAL-t_ does
+not provide a `FAST` version of this map type.)
+
+.Layout of an `AstraMagnetoStatic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|======================================================================
+|AstraMagnetoStatic |latexmath:[N_{Fourier}] |TRUE \| FALSE (optional)
+|latexmath:[z_{1}] (in meters) |latexmath:[B_{z,\,1}] (T) |
+|latexmath:[z_{2}] (in meters) |latexmath:[B_{z,\,s}] (T) |
+|. | |
+|. | |
+|. | |
+|latexmath:[z_{N}] (in meters) |latexmath:[B_{z,\,N}] (T) |
+|======================================================================
+
+An `AstraMagnetoStatic` field map has the general form shown in
+Table [AstraMagnetoStatic]. The first line forms the file header and
+tells _OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is
+  (`AstraMagnetoStatic`) and how many Fourier coefficients to keep
+  (latexmath:[N_{Fourier}]) when doing field calculations.
+
+The lines following the header gives latexmath:[N] non-equidistant
+field values and their corresponding latexmath:[z] positions (relative
+to `ELEMEDGE`). From these, _OPAL-t_ will use cubic spline interpolation
+to find latexmath:[N] equidistant field values within the range
+defined by the latexmath:[z] positions. From these equidistant field
+values, latexmath:[N/2] complex Fourier coefficients are calculated,
+of which only latexmath:[N_{Fourier}] are used when finding field
+values during the simulation.
+
+Figure [AstraMagnetoStatic] gives an example of an `AstraMagnetoStatic`
+field file.
+
+[[sec:1DDynamic]]
+1DDynamic
+~~~~~~~~~
+
+....
+1DDynamic 40
+-3.0 57.0 4999
+1498.953425154
+0.0 2.0 199
+  0.00000e+00
+  4.36222e-06
+  8.83270e-06
+  + 4'994 lines
+  1.32490e-05
+  1.73710e-05
+  2.18598e-05
+....
+
+A 1D field map describing a dynamic field using 5000 grid points (4999
+grid spacings) in the longitudinal direction. The field is
+non-negligible from -3.0cm to 57.0cm relative to `ELEMEDGE` in the
+longitudinal direction. The field frequency is 1498.953425154MHz. From
+the 5000 field values, 2500 complex Fourier coefficients are calculated.
+However, only 40 are kept when calculating field values during the
+simulation. _OPAL-t_ normalizes the field values internally such that
+latexmath:[max(|E_{on axis}|) = {1}{MV/m}]. If the `FAST` switch is
+set to true in the input deck, a 2D field map is generated internally
+with 200 values in the radial direction, from 0.0cm to 2.0cm, for each
+longitudinal grid point.
+
+.Layout of a `1DDynamic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|=======================================================================
+|1DDynamic |latexmath:[N_{Fourier}] |TRUE \| FALSE (optional)
+
+|latexmath:[z_{start}] (in cm) |latexmath:[z_{end}] (in cm)
+|latexmath:[N_{z}]
+
+|latexmath:[Frequency] (in MHz) | |
+
+|latexmath:[r_{start}] (in cm) |latexmath:[r_{end}] (in cm)
+|latexmath:[N_{r}]
+
+|latexmath:[E_{z,\,1}] (MV/m) | |
+
+|latexmath:[E_{z,\,2}] (MV/m) | |
+
+|. | |
+
+|. | |
+
+|. | |
+
+|latexmath:[E_{z,\,N_{z} + 1}] (MV/m) | |
+|=======================================================================
+
+A `1DDynamic` field map has the general form shown in Table [1DDynamic].
+The first four lines form the file header and tell _OPAL-t_ how the
+field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`1DDynamic`) and
+  how many Fourier coefficients to keep (latexmath:[N_{Fourier}]) when
+  doing field calculations.
+Line 2::
+  This tells gives the extent of the field map (from
+  latexmath:[z_{start}] to latexmath:[z_{end}]) relative to the
+  `ELEMEDGE` of the field map, and how many grid spacings there are in
+  the field map.
+Line 3::
+  Field frequency.
+Line 4::
+  If one sets `FAST = TRUE` for the field map, this tells _OPAL-t_ the
+  radial extent of the internally generated 2D field map. Otherwise this
+  line is ignored. (Although it must always be present.)
+
+The lines following the header give the 1D field map grid values from
+latexmath:[1] to latexmath:[N_{z} + 1]. From these,
+latexmath:[N_{z}/2] complex Fourier coefficients are calculated, of
+which only latexmath:[N_{Fourier}] are used when finding field values
+during the simulation.
+
+Figure [1DDynamic] gives an example of a `1DDynamic` field file.
+
+[[sec:AstraDynamic]]
+AstraDynamic
+~~~~~~~~~~~~
+
+....
+AstraDynamic 40
+2997.924
+   0.0000000e+00   0.0000000e+00
+   5.0007941e-04   2.8090000e-04
+   9.9991114e-04   5.6553000e-04
+   1.4996762e-03   8.4103000e-04
+   ...
+   1.9741957e-01   1.4295000e-03
+   1.9792448e-01   1.1306000e-03
+   1.9841987e-01   8.4103000e-04
+   1.9891525e-01   5.6553000e-04
+   1.9942016e-01   2.8090000e-04
+   1.9991554e-01   0.0000000e+00
+....
+
+A 1D field map describing a dynamic field using latexmath:[N]
+non-equidistant grid points in longitudinal direction. From these
+latexmath:[N] non-equidistant field values latexmath:[N] equidistant
+field values are computed from which in turn latexmath:[N/2] complex
+Fourier coefficients are calculated. In this example only 40 Fourier
+coefficients are kept when calculating field values during the
+simulation. The z-position of each sampling is in the first column (in
+meters), the corresponding longitudinal on-axis electric field amplitude
+is in the second column. _OPAL-t_ normalizes the field values such that
+latexmath:[\max(|E_{\text{on axis}}|) = {1}{MV/m}]. The frequency of
+this field is 2997.924MHz. (_OPAL-t_ does not provide a `FAST` version
+of this map type.)
+
+.Layout of an `AstraDynamic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|======================================================================
+|AstraMagnetoStatic |latexmath:[N_{Fourier}] |TRUE \| FALSE (optional)
+|latexmath:[Frequency] (in MHz) | |
+|latexmath:[z_{1}] (in meters) |latexmath:[E_{z,\,1}] (MV/m) |
+|latexmath:[z_{2}] (in meters) |latexmath:[E_{z,\,s}] (MV/m) |
+|. | |
+|. | |
+|. | |
+|latexmath:[z_{N}] (in meters) |latexmath:[E_{z,\,N}] (MV/m) |
+|======================================================================
+
+An `AstraDynamic` field map has the general form shown in
+Table [AstraDynamic]. The first line forms the file header and tells
+_OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`AstraDynamic`) and
+  how many Fourier coefficients to keep (latexmath:[N_{Fourier}]) when
+  doing field calculations.
+Line 2::
+  Field frequency.
+
+The lines following the header gives latexmath:[N] non-equidistant
+field values and their corresponding latexmath:[z] positions (relative
+to `ELEMEDGE`). From these, _OPAL-t_ will use cubic spline interpolation
+to find latexmath:[N] equidistant field values within the range
+defined by the latexmath:[z] positions. From these equidistant field
+values, latexmath:[N/2] complex Fourier coefficients are calculated,
+of which only latexmath:[N_{Fourier}] are used when finding field
+values during the simulation.
+
+Figure [AstraDynamic] gives an example of an `AstraDynamic` field file.
+
+[[sec:1DProfile1]]
+1DProfile1
+~~~~~~~~~~
+
+A `1DProfile1` field map is used to define Enge functions [enge] that
+describe the fringe fields for the entrance and exit of a magnet:
+
+
+[latexmath]
+++++
+F(z) = \frac{1}{1 + e^{\sum\limits_{n=0}^{N_{order}} c_{n} (z/D)^{n}}}
+++++
+
+
+where latexmath:[D] is the full gap of the magnet,
+latexmath:[N_{order}] is the Enge function order and latexmath:[z]
+is the distance from the Enge function origin perpendicular to the edge
+of the magnet. The constants, latexmath:[c_n], and the Enge function
+origin are fitted parameters chosen to best represent the fringe field
+of the magnet being modeled.
+
+A `1DProfile1` field map describes two Enge functions: one for the
+magnet entrance and one for the magnet exit. An illustration of this is
+shown in Figure 3. In the top part of the figure we
+see a plot of the relative magnet field strength along the mid-plane for
+a rectangular dipole magnet. To describe this field with a `1DProfile1`
+field map, an Enge function is fit to the entrance fringe field between
+_zbegin_entry_ and _zend_entry_ in the figure, using the indicated
+entrance origin. Likewise, an Enge function is fit to the exit fringe
+field between _zbegin_exit_ and _zend_exit_ using the indicated exit
+origin. The parameters for these two Enge functions are subsequently
+entered into a `1DProfile1` field map, as described below.
+
+Currently, `1DProfile1` field maps are only implemented for `RBEND` and
+`SBEND` elements see Section [RBend,SBend,opaltrbendsbendfields].
+
+.Figure 3: Example of Enge functions describing the entrance and exit fringe fields of a rectangular bend magnet. The top part of the figure shows the relative field strength on the mid-plane. The bottom part of the figure shows an example of a particle trajectory through the magnet. Note that the magnet field is naturally divided into three regions: entrance fringe field, central field, and exit fringe field.
+image:./figures/Fieldmaps/profile-1.png[width=700]
+
+A `1DProfile1` field map has the general form shown in
+Table [1DProfile1]. The first three lines form the file header and tell
+_OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`1DProfile1`), the
+  Enge coefficient order for the entrance fringe fields
+  (latexmath:[N_{Enge\,Entrance}]), the Enge coefficient order for the
+  exit fringe fields (latexmath:[N_{Enge\,Exit}]), and the gap of the
+  magnet.
+Line 2::
+  The first three values on the second line are used to define the
+  extent of the fringe fields for the entrance region of the magnet.
+  This can be done two different ways as will be described below
+  see Section [1DProfile1Type1,1DProfile1Type2]. The fourth value on
+  line 2 is not currently used (but must still be present).
+Line 3::
+  The first three values on the third line are used to define the extent
+  of the fringe fields for the exit region of the magnet. This can be
+  done two different ways as will be described below
+  see Section [1DProfile1Type1,1DProfile1Type2]. The fourth value on
+  line 3 is not currently used (but must still be present).
+
+The lines following the three header lines give the entrance region Enge
+coefficients from latexmath:[c_0] to
+latexmath:[c_{N_{Enge\,Entrance}}], followed by the exit region Enge
+coefficients from latexmath:[c_0] to latexmath:[c_{N_{Enge\,Exit}}].
+
+There are two types of `1DProfile1` field map files: `1DProfile Type 1`
+and `1DProfile1 Type 2`. The difference between the two is a small
+change in how the entrance and exit fringe field regions are described.
+This will be explained in Section [1DProfile1Type1] and
+Section [1DProfile1Type2].
+
+.Layout of a `1DProfile1` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<,<",]
+|=======================================================================
+|1DProfile1 |latexmath:[N_{Enge\,Entrance}]
+|latexmath:[N_{Enge\,Exit}] |latexmath:[Gap] (in cm)
+
+|Entrance Parameter 1 (in cm) |Entrance Parameter 2 (in cm) |Entrance
+Parameter 3 |Place Holder
+
+|Exit Parameter 1 (in cm) |Exit Parameter 2 (in cm) |Exit Parameter 3
+|Place Holder
+
+|latexmath:[c_{0\, Entrance}] | | |
+
+|latexmath:[c_{1\, Entrance}] | | |
+
+|. | | |
+
+|. | | |
+
+|. | | |
+
+|latexmath:[c_{N_{Enge\,Entrance}}] | | |
+
+|latexmath:[c_{0\,Exit}] | | |
+
+|latexmath:[c_{1\,Exit}] | | |
+
+|. | | |
+
+|. | | |
+
+|. | | |
+
+|latexmath:[c_{N_{Enge\,Exit}}] | | |
+|=======================================================================
+
+.Figure 4: Illustration of a rectangular bend (`RBEND`, see Section [RBend]) showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}] 
+image:./figures/Fieldmaps/RBendType1.png[]
+
+.Figure 5: Illustration of a sector bend (`SBEND`, see Section [SBend]) showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}].
+image:./figures/Fieldmaps/SBendType1.png[]
+
+[[ssec:1DProfile1Type1]]
+1DProfile1 Type 1 for Bend Magnet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A `1DProfile1 Type 1` field map is the same `1DProfile1` field map found
+in versions of _OPAL_ previous to _OPAL_ __OPAL__version1.2.0 .
+Figure [rbendengetype1,sbendengetype1] illustrate the fringe field
+regions for an `RBEND` and an `SBEND` element. Referring to the general
+field map file shown in Table [1DProfile1], the values on lines 2 and 3
+are given by:
+
+
+[latexmath]
+++++
+\begin{aligned}
+  Entrance\,Parameter\,1 &= Entrance\,Parameter\,2 - \Delta_{1} \\
+  Entrance\,Parameter\,3 &= Entrance\,Parameter\,2 + \Delta_{2} \\
+  Exit\,Parameter\,2 &= L - Entrance\,Parameter\,2 \\
+  Exit\,Parameter\,1 &= Exit\,Parameter\,2 - \Delta_{3} \\
+  Exit\,Parameter\,3 &= Exit\,Parameter\,2 + \Delta_{4}\end{aligned}
+++++
+
+
+The value of latexmath:[Entrance\,Parameter\,2] can be any value.
+_OPAL_ only cares about the relative differences between parameters.
+Also note that, internally, the origins of the entrance and exit Enge
+functions correspond to the reference trajectory entrance and exit
+points see Figure [rbendengetype1,sbendengetype1].
+
+Internally, _OPAL_ reads in a `1DProfile Type 1` map and uses the
+provided parameters to calculate the values of:
+
+
+[latexmath]
+++++
+\begin{aligned}
+L &= Exit\,Parameter\,2 - Entrance\,Parameter\,2 \\
+\Delta_{1} &= Entrance\,Parameter\,2 - Entrance\,Parameter\,1 \\
+\Delta_{2} &= Entrance\,Parameter\,3 - Entrance\,Parameter\,2 \\
+\Delta_{3} &= Exit\,Parameter\,2 - Exit\,Parameter\,1 \\
+\Delta_{4} &= Exit\,Parameter\,3 - Exit\,Parameter\,2\end{aligned}
+++++
+
+
+These values, combined with the entrance fringe field Enge coefficients
+latexmath:[c_0] through latexmath:[c_{N_{Enge_Entrance}}] and exit
+fringe field Enge coefficients latexmath:[c_0] through
+latexmath:[c_{N_{Enge_Exit}}], allow _OPAL_ to find field values
+anywhere within the magnet. (Again, note that a `1DProfile Type 1` map
+always places the entrance Enge function origin at the entrance point of
+the reference trajectory and the exit Enge function origin at the exit
+point of the reference trajectory.)
+
+Figure [1DProfile1Type1] shows an example of a `1DProfile1 Type 1` field
+map file.
+
+....
+1DProfile1 6 7 3.0
+-6.0 -2.0 2.0  1000
+24.0 28.0 32.0 0
+  0.00000e+00
+  4.36222e-06
+  8.83270e-06
+  + 9 lines
+  1.32490e-05
+  1.73710e-05
+  2.18598e-05
+....
+
+A 1D field map describing the fringe field of an element using 7 Enge
+coefficients for the entrance fringe field and 8 Enge coefficients for
+the exit fringe field (polynomial order 6 and 7 respectively). The
+element has a gap height of 3.0cm, and a length of 30.0cm. The entrance
+fringe field is non-negligible from 4.0cm in front of the magnet’s
+entrance edge and reaches the core strength at 4.0cm behind the entrance
+edge of the magnet. (The entrance edge position is given by the
+element’s `ELEMEDGE` attribute.) The exit fringe field region begins
+4.0cm in front of the exit edge of the magnet and is non-negligible
+4.0cm after the exit edge of the magnet. The value 1000 at the end of
+line 2 and 0 at the end of line 3 do not have any meaning.
+
+[[ssec:1DProfile1Type2]]
+1DProfile1 Type 2 for Bend Magnet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `1DProfile1 Type 2` field map file format was introduced in _OPAL_
+__OPAL__version1.2.0 to allow for more flexibility when defining the
+Enge functions for the entrance and exit fringe fields. Specifically, a
+`1DProfile1 Type 2` map does not contain any information about the
+length of the magnet. Instead, that value is set using the element’s `L`
+attribute. In turn, this allows us the freedom to make slight changes to
+how the parameters on lines 2 and 3 of the field map file shown in
+Table [1DProfile1] are defined. Now
+
+
+[latexmath]
+++++
+\begin{aligned}
+  Entrance\,Parameter\,2 &= \perp \text{distance of entrance Enge function origin from magnet entrance edge} \\
+  Exit\,Parameter\,2 &= \perp \text{distance of exit Enge function origin from magnet exit edge}\end{aligned}
+++++
+
+
+The other parameters are defined the same as before:
+
+
+[latexmath]
+++++
+\begin{aligned}
+  Entrance\,Parameter\,1 &= Entrance\,Parameter\,2 - \Delta_{1} \\
+  Entrance\,Parameter\,3 &= Entrance\,Parameter\,2 + \Delta_{2} \\
+  Exit\,Parameter\,1 &= Exit\,Parameter\,2 - \Delta_{3} \\
+  Exit\,Parameter\,3 &= Exit\,Parameter\,2 + \Delta_{4}\end{aligned}
+++++
+
+
+As before, internally, _OPAL_ reads in a `1DProfile Type 2` map and uses
+the provided parameters to calculate the values of:
+
+[latexmath]
+++++
+\begin{aligned}
+\Delta_{1} &= Entrance\,Parameter\,2 - Entrance\,Parameter\,1 \\
+\Delta_{2} &= Entrance\,Parameter\,3 - Entrance\,Parameter\,2 \\
+\Delta_{3} &= Exit\,Parameter\,2 - Exit\,Parameter\,1 \\
+\Delta_{4} &= Exit\,Parameter\,3 - Exit\,Parameter\,2\end{aligned}
+++++
+
+These values, combined with the length of the magnet, `L` ( set by the
+element attribute) and the entrance fringe field Enge coefficients
+latexmath:[c_0] through latexmath:[c_{N_{Enge_Entrance}}] and exit
+fringe field Enge coefficients latexmath:[c_0] through
+latexmath:[c_{N_{Enge_Exit}}], allow _OPAL_ to find field values
+anywhere within the magnet.
+
+The `1DProfile1 Type 2` field map file format has two main advantages:
+
+1.  The Enge function origins can be adjusted to more accurately model a
+magnet’s fringe fields as they are no longer fixed to the entrance and
+exit points of the reference trajectory.
+2.  Two magnets with the same fringe fields, but different lengths, can
+be modeled with a single `1DProfile Type 2` field map file rather than
+two separate files.
+
+Figure [1DProfile1Type2] shows an example of a `1DProfile1 Type 2` field
+map file.
+
+....
+1DProfile1 6 7 3.0
+-6.0 -2.0 2.0 0
+-2.0  2.0 6.0 0
+  0.00000e+00
+  4.36222e-06
+  8.83270e-06
+  + 9 lines
+  1.32490e-05
+  1.73710e-05
+  2.18598e-05
+....
+
+A 1D field map describing the fringe field of an element using 7 Enge
+coefficients for the entrance fringe field and 8 Enge coefficients for
+the exit fringe field (polynomial order 6 and 7 respectively). The
+element has a gap height of 3.0cm. The entrance fringe field is
+non-negligible from 4.0cm in front of the magnet’s entrance edge and
+reaches the core strength at 4.0cm behind the entrance edge of the
+magnet. The exit fringe field region begins 4.0cm in front of the exit
+edge of the magnet and is non-negligible 4.0cm after the exit edge of
+the magnet. The value 0 at the end of line 2 and 0 at the end of line 3
+do not have any meaning. The entrance Enge function origin is 2.0cm in
+front (upstream) of the magnet’s entrance edge. The exit Enge function
+origin is 2.0cm behind (downstream of) the exit edge of the magnet.
+
+[[sec:2DElectroStatic]]
+2DElectroStatic
+~~~~~~~~~~~~~~~
+
+....
+2DElectroStatic XZ
+-3.0 51.0 4999
+0.0 2.0 199
+  0.00000e+00  0.00000e+00
+  4.36222e-06  0.00000e+00
+  8.83270e-06  0.00000e+00
+  + 999994 lines
+  1.32490e-05  0.00000e+00
+  1.73710e-05  0.00000e+00
+  2.18598e-05  0.00000e+00
+....
+
+A 2D field map describing an electrostatic field using 5000 grid points
+in the longitudinal direction times 200 grid points in the radial
+direction. The field between the grid points is calculated using
+bi-linear interpolation. The field is non-negligible from -3.0cm to
+51.0cm relative to `ELEMEDGE` and the 200 grid points in the radial
+direction span the distance from 0.0cm to 2.0cm. The field values are
+ordered in XZ orientation, so the index in the longitudinal direction
+changes fastest and therefore latexmath:[E_z] values are stored in the
+first column and latexmath:[E_r] values in the second
+see Section [fieldorientation]. _OPAL-t_ normalizes the field so that
+latexmath:[max(|E_{z, \text{ on axis}}|) = {1}{MVm^{-1}}].
+
+.Layout of a `2DElectroStatic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|=======================================================================
+|2DElectroStatic |Orientation (XZ or ZX) |TRUE \| FALSE (optional)
+
+|latexmath:[z_{start}] (or latexmath:[r_{start}]) (in cm)
+|latexmath:[z_{end}] (or latexmath:[r_{end}]) (in cm)
+|latexmath:[N_{z}] (or latexmath:[N_{r}])
+
+|latexmath:[r_{start}] (or latexmath:[z_{start}]) (in cm)
+|latexmath:[r_{end}] (or latexmath:[z_{end}]) (in cm)
+|latexmath:[N_{r}] (or latexmath:[N_{z}])
+
+|latexmath:[E_{z,\,1}] (or latexmath:[E_{r,\,1}]) (MV/m)
+|latexmath:[E_{r,\,1}] (or latexmath:[E_{z,\,1}]) (MV/m) |
+
+|latexmath:[E_{z,\,2}] (or latexmath:[E_{r,\,2}]) (MV/m)
+|latexmath:[E_{r,\,2}] (or latexmath:[E_{z,\,2}]) (MV/m) |
+
+|. | |
+
+|. | |
+
+|. | |
+
+|latexmath:[E_{z,\,N}] (or latexmath:[E_{r,\,N}]) (MV/m)
+|latexmath:[E_{r,\,N}] (or latexmath:[E_{z,\,N}]) (MV/m) |
+|=======================================================================
+
+A `2DElectroStatic` field map has the general form shown in
+Table [2DElectroStatic]. The first three lines form the file header and
+tell _OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`2DElectroStatic`)
+  and the field orientation see Section [fieldorientation].
+Line 2::
+  This gives the extent of the field map and how many grid spacings
+  there are in the fastest changing index direction
+  see Section [fieldorientation].
+Line 3::
+  This gives the extent of the field map and how many grid spacings
+  there are in the slowest changing index direction (see
+  Section [fieldorientation].
+
+The lines following the header give the 2D field map grid values from
+latexmath:[1] to latexmath:[N = (N_{z} + 1) \times (N_{r} + 1)]. The
+order of these depend on the field orientation
+see Section [fieldorientation] and can be one of two formats:
+
+If Orientation = XZ:::
+  latexmath:[E_{z}] (MV/m) latexmath:[E_{r}] (MV/m)
+If Orientation = ZX:::
+  latexmath:[E_{r}] (MV/m) latexmath:[E_{z}] (MV/m)
+
+Figure [2DElectroStatic] gives an example of a `2DElectroStatic` field
+file.
+
+[[sec:2DMagnetoStatic]]
+2DMagnetoStatic
+~~~~~~~~~~~~~~~
+
+....
+2DMagnetoStatic ZX
+0.0 2.0 199
+-3.0 51.0 4999
+  0.00000e+00  0.00000e+00
+  0.00000e+00  4.36222e-06
+  0.00000e+00  8.83270e-06
+  + 999994 lines
+  0.00000e+00  1.32490e-05
+  0.00000e+00  1.73710e-05
+  0.00000e+00  2.18598e-05
+....
+
+A 2D field map describing a magnetostatic field using 5000 grid points
+in the longitudinal direction times 200 grid points in the radial
+direction. The field between the grid points is calculated using
+bi-linear interpolation. The field is non-negligible from -3.0cm to
+51.0cm relative to `ELEMEDGE` and the 200 grid points in the radial
+direction span the distance from 0.0cm to 2.0cm. The field values are
+ordered in the ZX orientation, so the index in the radial direction
+changes fastest and therefore latexmath:[B_r] values are stored in the
+first column and latexmath:[B_z] values in the second
+see Section [fieldorientation]. _OPAL-t_ normalizes the field so that
+latexmath:[max(|B_{z,\text{ on axis}}|) = {1}{T}].
+
+.Layout of a `2DMagnetoStatic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|=======================================================================
+|2DMagnetoStatic |Orientation (XZ or ZX) |TRUE \| FALSE (optional)
+
+|latexmath:[z_{start}] (or latexmath:[r_{start}]) (in cm)
+|latexmath:[z_{end}] (or latexmath:[r_{end}]) (in cm)
+|latexmath:[N_{z}] (or latexmath:[N_{r}])
+
+|latexmath:[r_{start}] (or latexmath:[z_{start}]) (in cm)
+|latexmath:[r_{end}] (or latexmath:[z_{end}]) (in cm)
+|latexmath:[N_{r}] (or latexmath:[N_{z}])
+
+|latexmath:[B_{z,\,1}] (or latexmath:[B_{r,\,1}]) (T)
+|latexmath:[B_{r,\,1}] (or latexmath:[B_{z,\,1}]) (T) |
+
+|latexmath:[B_{z,\,2}] (or latexmath:[B_{r,\,2}]) (T)
+|latexmath:[B_{r,\,2}] (or latexmath:[B_{z,\,2}]) (T) |
+
+|. | |
+
+|. | |
+
+|. | |
+
+|latexmath:[B_{z,\,N}] (or latexmath:[B_{r,\,N}]) (T)
+|latexmath:[B_{r,\,N}] (or latexmath:[B_{z,\,N}]) (T) |
+|=======================================================================
+
+A `2MagnetoStatic` field map has the general form shown in
+Table [2DMagnetoStatic]. The first three lines form the file header and
+tell _OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`2DMagnetoStatic`)
+  and the field orientation see Section [fieldorientation].
+Line 2::
+  This gives the extent of the field map and how many grid spacings
+  there are in the fastest changing index direction
+  see Section [fieldorientation].
+Line 3::
+  This gives the extent of the field map and how many grid spacings
+  there are in the slowest changing index direction (see
+  Section [fieldorientation].
+
+The lines following the header give the 2D field map grid values from
+latexmath:[1] to latexmath:[N = (N_{z} + 1) \times (N_{r} + 1)]. The
+order of these depend on the field orientation
+see Section [fieldorientation] and can be one of two formats:
+
+If Orientation = XZ:::
+  latexmath:[B_{z}] (T) latexmath:[B_{r}] (T)
+If Orientation = ZX:::
+  latexmath:[B_{r}] (T) latexmath:[B_{z}] (T)
+
+Figure [2DMagnetoStatic] gives an example of a `2DMagnetoStatic` field
+file.
+
+[[sec:2DDynamic]]
+2DDynamic
+~~~~~~~~~
+
+....
+2DDynamic XZ
+-3.0 51.0 4121
+1498.953425154
+0.0 1.0 75
+  0.00000e+00  0.00000e+00  0.00000e+00  0.00000e+00
+  4.36222e-06  0.00000e+00  0.00000e+00  4.36222e-06
+  8.83270e-06  0.00000e+00  0.00000e+00  8.83270e-06
+  + 313266 lines
+  1.32490e-05  0.00000e+00  0.00000e+00  1.32490e-05
+  1.73710e-05  0.00000e+00  0.00000e+00  1.73710e-05
+  2.18598e-05  0.00000e+00  0.00000e+00  2.18598e-05
+....
+
+A 2D field map describing a dynamic field oscillating with a frequency
+of 1498.953425154MHz. The field map provides 4122 grid points in the
+longitudinal direction times 76 grid points in radial direction. The
+field between the grid points is calculated with a bi-linear
+interpolation. The field is non-negligible between -3.0cm and 51.0cm
+relative to `ELEMEDGE` and the 76 grid points in radial direction span
+the distance from 0.0cm to 1.0cm. The field values are ordered in the XZ
+orientation, so the index in the longitudinal direction changes fastest
+and therefore latexmath:[E_z] values are stored in the first column
+and latexmath:[E_r] values in the second. The third column contains
+the electric field magnitude, latexmath:[|E|], and is not used (but
+must still be included). The fourth column is latexmath:[H_{\phi}] in
+A/m. The third and fourth columns are always the same and do not depend
+on the field orientation see Section [fieldorientation]. _OPAL-t_
+normalizes the field so that
+latexmath:[max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
+
+.Layout of a `2DDynamic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<,<",]
+|=======================================================================
+|2DDynamic |Orientation (XZ or ZX) |TRUE \| FALSE (optional) |
+
+|latexmath:[z_{start}] (or latexmath:[r_{start}]) (in cm)
+|latexmath:[z_{end}] (or latexmath:[r_{end}]) (in cm)
+|latexmath:[N_{z}] (or latexmath:[N_{r}]) |
+
+|latexmath:[Frequency] (in MHz) | | |
+
+|latexmath:[r_{start}] (or latexmath:[z_{start}]) (in cm)
+|latexmath:[r_{end}] (or latexmath:[z_{end}]) (in cm)
+|latexmath:[N_{r}] (or latexmath:[N_{z}]) |
+
+|latexmath:[E_{z,\,1}] (or latexmath:[E_{r,\,1}]) (MV/m))
+|latexmath:[E_{r,\,1}] (or latexmath:[E_{z,\,1}]) (MV/m)
+|latexmath:[\|E_1\|] (MV/m) |latexmath:[H_{\phi,\,1}] (A/m)
+
+|latexmath:[E_{z,\,2}] (or latexmath:[E_{r,\,2}]) (MV/m))
+|latexmath:[E_{r,\,2}] (or latexmath:[E_{z,\,2}]) (MV/m)
+|latexmath:[\|E_2\|] (MV/m) |latexmath:[H_{\phi,\,2}] (A/m)
+
+|. | | |
+
+|. | | |
+
+|. | | |
+
+|latexmath:[E_{z,\,N}] (or latexmath:[E_{r,\,N}]) (MV/m))
+|latexmath:[E_{r,\,N}] (or latexmath:[E_{z,\,N}]) (MV/m)
+|latexmath:[|E_N|] (MV/m) |latexmath:[H_{\phi,\,N}] (A/m)
+|=======================================================================
+
+A `2DDynamic` field map has the general form shown in Table [2DDynamic].
+The first four lines form the file header and tell _OPAL-t_ how the
+field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`2DDynamic`) and
+  the field orientation see Section [fieldorientation].
+Line 2::
+  This gives the extent of the field map and how many grid spacings
+  there are in the fastest changing index direction
+  see Section [fieldorientation].
+Line 3::
+  Field frequency.
+Line 4::
+  This gives the extent of the field map and how many grid spacings
+  there are in the slowest changing index direction
+  see Section [fieldorientation].
+
+The lines following the header give the 2D field map grid values from
+latexmath:[1] to latexmath:[N= (N_{z} + 1) \times (N_{r} + 1)]. The
+order of these depend on the field orientation
+see Section [fieldorientation] and can be one of two formats:
+
+If Orientation = XZ:::
+  latexmath:[E_{z}] (MV/m) latexmath:[E_{r}] (MV/m)
+  latexmath:[|E|] (MV/m) latexmath:[H_{\phi}] (A/m)
+If Orientation = ZX:::
+  latexmath:[E_{r}] (MV/m) latexmath:[E_{z}] (MV/m)
+  latexmath:[|E|] (MV/m) latexmath:[H_{\phi}] (A/m)
+
+The third item (the field magnitude) on each data line is not used by
+_OPAL-t_, but must be there.
+
+Figure [2DDynamic] gives an example of a `2DDynamic` field file.
+
+[[sec:3DMagnetoStatic]]
+3DMagnetoStatic
+~~~~~~~~~~~~~~~
+
+....
+3DMagnetoStatic
+-1.5 1.5 227
+-1.0 1.0 151
+-3.0 51.0 4121
+0.00e+00 0.00e+00 0.00e+00
+0.00e+00 4.36e-06 0.00e+00
+0.00e+00 8.83e-06 0.00e+00
++ 142'852'026 lines
+0.00e+00 1.32e-05 0.00e+00
+0.00e+00 1.73e-05 0.00e+00
+0.00e+00 2.18e-05 0.00e+00
+....
+
+A 3D field map describing a magnetostatic field. The field map provides
+4122 grid points in z-direction times 228 grid points in x-direction and
+152 grid points in y-direction. The field between the grid points is
+calculated with a tri-linear interpolation. The field is non-negligible
+between -3.0cm to 51.0cm relative to `ELEMEDGE`, the 228 grid points in
+x-direction range from -1.5cm to 1.5cm and the 152 grid points in
+y-direction range from -1.0cm to 1.0cm relative to the design path. The
+field values are ordered such that the index in z-direction changes
+fastest, then the index in y-direction while the index in x-direction
+changes slowest. The columns correspond to latexmath:[B_x],
+latexmath:[B_y] and latexmath:[B_z].
+
+.Layout of a `3DMagnetoStatic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|=======================================================================
+|3DMagnetoStatic |TRUE \| FALSE (optional) |
+
+|latexmath:[x_{start}] (in cm) |latexmath:[x_{end}] (in cm)
+|latexmath:[N_{x}]
+
+|latexmath:[y_{start}] (in cm) |latexmath:[y_{end}] (in cm)
+|latexmath:[N_{y}]
+
+|latexmath:[z_{start}] (in cm) |latexmath:[z_{end}] (in cm)
+|latexmath:[N_{z}]
+
+|latexmath:[B_{x,\,1}] (A/m) |latexmath:[B_{y,\,1}] (A/m)
+|latexmath:[B_{z,\,1}] (A/m)
+
+|latexmath:[B_{x,\,2}] (A/m) |latexmath:[B_{y,\,2}] (A/m)
+|latexmath:[B_{z,\,2}] (A/m)
+
+|. | |
+
+|. | |
+
+|. | |
+
+|latexmath:[B_{x,\,N}] (A/m) |latexmath:[B_{y,\,N}] (A/m)
+|latexmath:[B_{z,\,N}] (A/m)
+|=======================================================================
+
+A `3DMagnetoStatic` field map has the general form shown in
+Table [3DMagnetoStatic]. The first five lines form the file header and
+tell _OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`3DMagnetoStatic`).
+Line 3::
+  This gives the extent of the field map and how many grid spacings
+  there are in the slowest changing index direction.
+Line 4::
+  This gives the extent of the field map and how many grid spacings
+  there are in the next fastest changing index direction.
+Line 5::
+  This gives the extent of the field map and how many grid spacings
+  there are in the fastest changing index direction.
+
+The lines following the header give the 3D field map grid values from
+latexmath:[1] to
+latexmath:[N= (N_{z} + 1) \times (N_{y} + 1) \times (N_{x} + 1)].
+Figure [3DMagnetoStatic] gives an example of a `3DMagnetoStatic` field
+file.
+
+[[sec:3DMagnetoStatic_Extended]]
+3DMagnetoStatic_Extended
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+....
+3DMagnetoStatic_Extended
+-9.9254 9.9254 133
+-2.0 1.0 15
+-22.425 47.425 465
+ -8.10970000e-05
+ -8.38540000e-05
+ -8.64960000e-05
++ 62'438 lines
+ -8.64960000e-05
+ -8.38540000e-05
+ -8.10970000e-05
+....
+
+A 3D field map describing a magnetostatic field on the mid-plane. The
+field map provides 466 grid points in z-direction times 134 grid points
+in x-direction. The field is non-negligible between -22.425cm to
+47.425cm relative to `ELEMEDGE`, the 134 grid points in x-direction
+range from -9.9254cm to 9.9254cm. The field should be integrated using
+Maxwell’s equations from the mid-plane to 2.0cm using 16 grid points.
+The mid-plane is regarded as a perfect magnetic conductor (PMC) i.e. the
+magnetic field on the mid-plane has no tangential component. This leads
+to a symmetry where the perpendicular component is mirrored whereas the
+tangential component is anti-parallel. Instead of integrating the field
+from the mid-plane to -2.0cm and 1.0cm we only integrate it to +2.0cm
+and store only the upper half of the field map. For positions
+latexmath:[R(x,\;-y,\;z)] with latexmath:[y > 0.0] the correct field
+can then be derived from the latexmath:[R(x,\;y,\;z)].
+
+.Layout of a `3DMagnetoStatic_Extended` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<",]
+|=======================================================================
+| |TRUE \| FALSE (optional) |
+
+|latexmath:[x_{start}] (in cm) |latexmath:[x_{end}] (in cm)
+|latexmath:[N_{x}]
+
+|latexmath:[y_{start}] (in cm) |latexmath:[y_{end}] (in cm)
+|latexmath:[N_{y}]
+
+|latexmath:[z_{start}] (in cm) |latexmath:[z_{end}] (in cm)
+|latexmath:[N_{z}]
+
+|latexmath:[B_{y,\,1}] (T) | |
+
+|latexmath:[B_{y,\,2}] (T) | |
+
+|. | |
+
+|. | |
+
+|. | |
+
+|latexmath:[B_{y,\,N}] (T) | |
+|=======================================================================
+
+A `3DMagnetoStatic_Extended` field map has the general form shown in
+Table [3DMagnetoStatic_Extended]. The first four lines form the file
+header and tell _OPAL-t_ how the field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is
+  (`3DMagnetoStatic_Extended`).
+Line 2::
+  This gives the extent of the field map and how many grid spacings
+  there are in the slowest changing direction.
+Line 3::
+  This gives the extent of the field map and how many grid spacings
+  there are in the next fastest changing direction.
+Line 4::
+  This gives the extent of the field map and how many grid spacings
+  there are in the fastest changing direction.
+
+The lines following the header give the 3D field map grid values from
+latexmath:[1] to latexmath:[N= (N_{z} + 1) \times (N_{x} + 1)]. The
+order of these depend on the field orientation
+see Section [fieldorientation] and can currently only be the format
+shown in Table [3DMagnetoStatic_Extended].
+
+Figure [3DMagnetoStatic_Extended] gives an example of a
+`3DMagnetoStatic_Extended` field file.
+
+[[sec:3DDynamic]]
+3DDynamic
+~~~~~~~~~
+
+....
+3DDynamic
+1498.9534
+-1.5 1.5 227
+-1.0 1.0 151
+-3.0 51.0 4121
+0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+4.36e-06 0.00e+00 4.36e-06 0.00e+00 4.36e-06 0.00e+00
+8.83e-06 0.00e+00 8.83e-06 0.00e+00 8.83e-06 0.00e+00
++ 142'852'026 lines
+1.32e-05 0.00e+00 1.32e-05 0.00e+00 1.32e-05 0.00e+00
+1.73e-05 0.00e+00 1.73e-05 0.00e+00 1.73e-05 0.00e+00
+2.18e-05 0.00e+00 2.18e-05 0.00e+00 2.18e-05 0.00e+00
+....
+
+A 3D field map describing a dynamic field oscillating with 1.4989534.
+The field map provides 4122 grid points in z-direction times 228 grid
+points in x-direction and 152 grid points in y-direction. The field
+between the grid points is calculated with a tri-linear interpolation.
+The field is non-negligible between -3.0cm to 51.0cm relative to
+`ELEMEDGE`, the 228 grid points in x-direction range from -1.5cm to
+1.5cm and the 152 grid points in y-direction range from -1.0cm to 1.0cm
+relative to the design path. The field values are ordered such that the
+index in z-direction changes fastest, then the index in y-direction
+while the index in x-direction changes slowest. The columns correspond
+to latexmath:[E_x], latexmath:[E_y], latexmath:[E_z],
+latexmath:[H_x], latexmath:[H_y] and latexmath:[H_z]. _OPAL-t_
+normalizes the field so that
+latexmath:[max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
+
+.Layout of a `3DDynamic` field map file.
+[grid=none]
+[frame=topbot]
+[options=noheader]
+[cols="<,<,<,<,<,<",]
+|=======================================================================
+|3DDynamic |TRUE \| FALSE (optional) | | | |
+
+|latexmath:[Frequency] (in MHz) | | | | |
+
+|latexmath:[x_{start}] (in cm) |latexmath:[x_{end}] (in cm)
+|latexmath:[N_{x}] | | |
+
+|latexmath:[y_{start}] (in cm) |latexmath:[y_{end}] (in cm)
+|latexmath:[N_{y}] | | |
+
+|latexmath:[z_{start}] (in cm) |latexmath:[z_{end}] (in cm)
+|latexmath:[N_{z}] | | |
+
+|latexmath:[E_{x,\,1}] (MV/m)) |latexmath:[E_{y,\,1}] (MV/m)
+|latexmath:[E_{z,\,1}] (MV/m) |latexmath:[H_{x,\,1}] (A/m)
+|latexmath:[H_{y,\,1}] (A/m) |latexmath:[H_{z,\,1}] (A/m)
+
+|latexmath:[E_{x,\,2}] (MV/m)) |latexmath:[E_{y,\,2}] (MV/m)
+|latexmath:[E_{z,\,2}] (MV/m) |latexmath:[H_{x,\,2}] (A/m)
+|latexmath:[H_{y,\,2}] (A/m) |latexmath:[H_{z,\,2}] (A/m)
+
+|. | | | | |
+
+|. | | | | |
+
+|. | | | | |
+
+|latexmath:[E_{x,\,N}] (MV/m)) |latexmath:[E_{y,\,N}] (MV/m)
+|latexmath:[E_{z,\,N}] (MV/m) |latexmath:[H_{x,\,N}] (A/m)
+|latexmath:[H_{y,\,N}] (A/m) |latexmath:[H_{z,\,N}] (A/m)
+|=======================================================================
+
+A `3DDynamic` field map has the general form shown in Table [3DDynamic].
+The first five lines form the file header and tell _OPAL-t_ how the
+field map data is being presented:
+
+Line 1::
+  This tells _OPAL-t_ what type of field file it is (`3DDynamic`).
+Line 2::
+  Field frequency.
+Line 3::
+  This gives the extent of the field map and how many grid spacings
+  there are in the slowest changing index direction.
+Line 4::
+  This gives the extent of the field map and how many grid spacings
+  there are in the next fastest changing index direction.
+Line 5::
+  This gives the extent of the field map and how many grid spacings
+  there are in the fastest changing index direction.
+
+The lines following the header give the 3D field map grid values from
+latexmath:[1] to
+latexmath:[N= (N_{z} + 1) \times (N_{y} + 1) \times (N_{x} + 1)].
+Figure [3DDynamic] gives an example of a `3DDynamic` field file.

@@ -1,0 +1,371 @@
+:toc:
+[[chp:opalcycl]]
+
+:stem: latexmath
+:sectnums:
+
+[[chp:wakefields]]
+Wakefields
+----------
+
+_OPAL-t_ provides methods to compute CSR and short-range geometric
+wakefields.
+
+[[sec:wakefields:shortrange]]
+Geometric Wakefields
+~~~~~~~~~~~~~~~~~~~~
+
+Basically there are two different kind of wakefields that can be used.
+The first one is the wakefield of a round, metallic beam pipe that can
+be calculated numerically (see Sections [sec:wakefield] - [sec:TAU]).
+Since this also limits the applications of wakefields we also provide a
+way to import a discretized wakefield from a file The wakefield of a
+round, metallic beam pipe with radius latexmath:[a] can be calculated
+by inverse FFT of the beam pipe impedance. There are known models for
+beam pipes with `DC` and `AC` conductivity. The `DC` conductivity of a
+metal is given by
+
+[[eq:dc_cond]]
+[latexmath]
+++++
+\sigma_{DC} = \frac{ne^2\tau}{m}
+++++
+
+with
+latexmath:[n] the density of conduction electrons with charge
+latexmath:[e], latexmath:[\tau] the relaxation time, and
+latexmath:[m] the electron mass. The `AC` conductivity, a response to
+applied oscillation fields, is given by
+
+[[eq:ac_cond]]
+[latexmath]
+++++
+\sigma_{AC} = \frac{\sigma_{DC}}{1-i\omega\tau}
+++++
+
+with latexmath:[\omega] denoting the frequency of the fields.
+
+The longitudinal impedance with `DC` conductivity is given by
+
+[[eq:Z2]]
+[latexmath]
+++++
+ Z_{Ldc}(k) = \dfrac{1}{ca} \dfrac{2}{\frac{\lambda}{k}-\frac{ika}{2}}
+++++
+
+where
+
+[latexmath]
+++++
+\lambda=\sqrt{\dfrac{2\pi\sigma \vert k\vert}{c}}(i+sign(k))
+++++
+
+with latexmath:[c] denoting the speed of light and latexmath:[k] the
+wave number.
+
+The longitudinal wake can be obtained by an inverse Fourier
+transformation of the impedance. Since latexmath:[Re(Z_L(k))] drops at
+high frequencies faster than latexmath:[Im(Z_L(k))] the cosine
+transformation can be used to calculate the wake. The following equation
+holds in both, the `DC` and `AC`, case 
+
+[[eq:Calc_Wl]]
+[latexmath]
+++++
+W_L(s)=10^{-12} \dfrac{2c}{\pi}Re\left(\int_0^\infty Re(Z_L(k))\cos (ks)dk\right)
+++++
+
+with latexmath:[Z_L(k)] either representing
+latexmath:[Z_{L_{DC}}(k)] or latexmath:[Z_{L_{AC}}(k)] depending on
+the conductivity. With help of the Panofsky-Wenzel theorem
+
+[latexmath]
+++++
+Z_L(k) = \frac{k}{c}Z_T(k).
+++++
+
+we can deduce the transverse
+wakefield from Equation [Calc_Wl]: 
+
+[[eq:Calc_Wt]]
+[latexmath]
+++++
+W_T(s)= 10^{-12} \dfrac{2c}{\pi}Re\left(\int_0^\infty Re( \frac{c}{k}Z_L(k))\cos (ks)dk\right).
+++++
+
+
+To calculate the integrals in Equation [Calc_Wl,Calc_Wt] numerically the
+Simpson integration schema with equidistant mesh spacing is applied.
+This leads to an integration with small latexmath:[\Delta k] with a
+big latexmath:[N] which is computational not optimal with respect to
+efficiency. Since we calculate the wakefield usually just once in the
+initialization phase the overall performance will not be affected from
+this.
+
+[[csr-wakefields]]
+CSR Wakefields
+~~~~~~~~~~~~~~
+
+The electromagnetic field due to a particle moving on a circle in free
+space can be calculated exactly with the Liénard-Wiechert potentials.
+The field has been calculated for all points on the same circle
+[bib:schott,bib:schwinger1949]. For high particle energies the radiated
+power is almost exclusively emitted in forward direction, whereas for
+low energies a fraction is also emitted in transverse and backward
+direction. For the case of high-energetic particles an impedance in
+forward direction can be calculated [bib:murphy1997]. The procedure is
+then the same as for a regular wakefield with the important difference
+that wakes exert forces on trailing particles only. The electromagnetic
+fields of a particle propagating on the mid-plane between two parallel
+metallic plates that stretch to infinity [bib:schwinger1949] and for
+finite plates [bib:nodvick1954] can also be calculated. For the infinite
+plates an impedance can be calculated [bib:murphy1997].
+
+All of these approaches for CSR neglect any transient effects due to the
+finite length of the bend. Instead they describe the steady state case
+of a bunch circling infinitely long in the field of a dipole magnet. In
+[bib:saldin1997] the four different stages of a bunch passing a bending
+magnet are treated separately and for each a corresponding wake function
+is derived. This model is used in _OPAL-t_ for `1D-CSR`.
+
+The 1-dimensional approach also neglects any influence of the transverse
+dimensions and of changes in current density between retarded and
+current time. On the other hand it gives a good approximation of effects
+due to CSR in short time.
+
+In addition to the `1D-CSR` model also one that makes use of an
+integrated Green function [bib:mitchell2013], `1D-CSR-IGF`.
+
+[[sec:wakecmd]]
+The `WAKE` Command
+~~~~~~~~~~~~~~~~~~
+
+The general input format is
+
+....
+label:WAKE, TYPE=string, NBIN=real, CONST_LENGTH=bool,
+      CONDUCT=string, Z0=real, FORM=string, RADIUS=real,
+      SIGMA=real, TAU=real, FILTERS=string-array;
+....
+
+The format for a CSR wake is
+
+....
+label:WAKE, TYPE=string, NBIN=real, FILTERS=string-array;
+....
+
+.Wakefield command summary
+[cols="<1,<4",options="header",]
+|=======================================================================
+|Command |Purpose
+|`WAKE` |Specify a wakefield
+
+|`TYPE` |Specify the wake function [`1D-CSR`, `1D-CSR-IGF`,
+`LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`, `LONG-TRANSV-SHORT-RANGE`]
+
+|`NBIN` |Number of bins used in the calculation of the line density
+
+|`CONST_LENGTH` |`TRUE` if the length of the bunch is considered to be
+constant
+
+|`CONDUCT` |Conductivity [`AC`, `DC`]
+
+|`Z0` |Impedance of the beam pipe in [latexmath:[\Omega]]
+
+|`FORM` |The form of the beam pipe [`ROUND`]
+
+|`RADIUS` |The radius of the beam pipe in [m]
+
+|`SIGMA` |Material constant dependent on the beam pipe material in
+[latexmath:[\Omega^{-1} m]]
+
+|`TAU` |Material constant dependent on the beam pipe material in
+[latexmath:[s]]
+
+|`FNAME` |Specify a file that provides a wake function
+
+|`FILTER` |The names of the filters that should be applied
+|=======================================================================
+
+[[sec:wakefield]]
+Define the Wakefield to be used
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `WAKE` command defines data for a wake function on an element
+see Section [Element:common].
+
+[[sec:WTYPE]]
+Define the wakefield type
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A string value see Section [astring] to specify the wake function,
+either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`
+or `LONG-TRANSV-SHORT-RANGE`.
+
+[[sec:NBIN]]
+Define the number of bins
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The number of bins used in the calculation of the line density.
+
+[[sec:CONSTLEN]]
+Define the bunch length to be constant
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With the `CONST_LENGTH` flag the bunch length can be set to be constant.
+This has no effect on CSR wakefunctions.
+
+[[sec:CONDUCT]]
+Define the conductivity
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The conductivity of the bunch which can be set to either `AC` or `DC`.
+This has no effect on CSR wakefunctions.
+
+[[sec:Z]]
+Define the impedance
+~~~~~~~~~~~~~~~~~~~~
+
+The impedance latexmath:[Z_0] of the beam pipe in
+[latexmath:[\Omega]]. This has no effect on CSR wakefunctions.
+
+[[sec:FORM]]
+Define the form of the beam pipe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The form of the beam pipe can be set to `ROUND`. This has no effect on
+CSR wakefunctions.
+
+[[sec:RADIUS]]
+Define the radius of the beam pipe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The radius of the beam pipe in [m]. This has no effect on CSR
+wakefunctions.
+
+[[sec:SIGMA]]
+Define the sigma of the beam pipe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The latexmath:[\sigma] of the beam pipe (material constant), see
+Equation [dc_cond]. This has no effect on CSR wakefunctions.
+
+[[sec:TAU]]
+Define the relaxation time (tau) of the beam pipe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The latexmath:[\tau] defines the relaxation time and is needed to
+calculate the impedance of the beam pipe see Equation [dc_cond]. This
+has no effect on CSR wakefunctions.
+
+[[sec:WFNAME]]
+Import a wakefield from a file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since we only need values of the wake function at several discreet
+points to calculate the force on the particle it is also possible to
+specify these in a file.To get required data points of the wakefield not
+provide in the file we linearly interpolate the available function
+values. The files are specified in the SDDS format
+[bib:borland1995,bib:borland1998].
+
+Whenever a file is specified _OPAL_ will use the wakefield found in the
+file and ignore all other commands related to round beam pipes.
+
+[[sec:FILTER]]
+List of Filters
+~~~~~~~~~~~~~~~
+
+Array of names of filters to be applied to the longitudinal histogram of
+the bunch to get rid of the noise and to calculate derivatives. All the
+filters are applied to the line density in the order they appear in the
+array. The last filter is also used for calculating the derivatives. The
+actual filters have to be defined elsewhere.
+
+[[the-filter-command]]
+The `FILTER` Command
+~~~~~~~~~~~~~~~~~~~~
+
+Filters can be defined which then are applied to the line density of the
+bunch. The following smoothing filters are implemented:
+`Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`, `RelativFFTLowPass`. The
+input format for them is
+
+....
+label:FILTER, TYPE=string, NFREQ=real, THRESHOLD=real,
+      NPOINTS=real, NLEFT=real, NRIGHT=real,
+      POLYORDER=real
+....
+
+TYPE::
+  The type of filter: `Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`,
+  `RelativFFTLowPass`
+NFREQ::
+  Only used in `FixedFFTLowPass`: the number of frequencies to keep
+THRESHOLD::
+  Only used in `RelativeFFTLowPass`: the minimal strength of frequency
+  compared to the strongest to consider.
+NPOINTS::
+  Only used in `Savitzky-Golay`: width of moving window in number of
+  points
+NLEFT::
+  Only used in `Savitzky-Golay`: number of points to the left
+NRIGHT::
+  Only used in `Savitzky-Golay`: number of points to the right
+POLYORDER::
+  Only used in `Savitzky-Golay`: polynomial order to be used in least
+  square approximation
+
+The `Savitzky-Golay` filter and the ones based on the FFT routine
+provide a derivative on a natural way. For the `Stencil` filter a second
+order stencil is used to calculate the derivative.
+
+An implementation of the `Savitzky-Golay` filter can be found in the
+Numerical Recipes. The `Stencil` filter uses the following two stencil
+consecutively to smooth the line density:
+
+[latexmath]
+++++
+f_i = \frac{7\cdot f_{i-4} + 24\cdot f_{i-2} + 34\cdot f_{i} + 24\cdot f_{i+2} + 7\cdot f_{i+4}}{96}
+++++
+
+and
+
+[latexmath]
+++++
+f_i = \frac{7\cdot f_{i-2} + 24\cdot f_{i-1} + 34\cdot f_{i} + 24\cdot f_{i+1} + 7\cdot f_{i+2}}{96}.
+++++
+
+For the derivative a standard second order stencil is used:
+
+[latexmath]
+++++
+f'_i = \frac{f_{i-2} - 8\cdot f_{i-1} + 8\cdot f_{i+1} - f_{i+2}}{h}
+++++
+
+This filter was designed by Ilya Pogorelov for the ImpactT
+implementation of the CSR 1D model.
+
+The FFT based smoothers calculate the Fourier coefficients of the line
+density. Then they set all coefficients corresponding to frequencies
+above a certain threshold to zero. Finally the back-transformation is
+calculate using this coefficients. The two filters differ in the way
+they identify coefficients which should be set to zero.
+`FixedFFTLowPass` uses the n lowest frequencies whereas
+`RelativeFFTLowPass` searches for the coefficient which has the biggest
+absolute value. All coefficients which, compared to this value, are
+below a threshold (measure in percents) are set to zero. For the
+derivative the coefficients are multiplied with the following function
+(this is equivalent to a convolution): 
+[latexmath]
+++++
+g_{i} =
+\begin{cases}
+i \frac{2\pi \imath}{N\cdot L} & i < N/2 \\
+-i \frac{2\pi \imath}{N\cdot L} & i > N/2
+\end{cases}
+++++
+
+where latexmath:[N] is the total number of
+coefficients/sampling points and latexmath:[L] is the length of the
+bunch.

@@ -1,0 +1,181 @@
+:xrefstyle: short
+:stem: latexmath
+:sectnums:
+:figure-caption:
+
+:toc:
+[[chp:opalcycl]]
+
+[[chp:Introduction]]
+Introduction
+------------
+
+[[aim-of-opal-and-history]]
+Aim of _OPAL_ and History
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_OPAL_ is a tool for charged-particle optics in accelerator structures
+and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
+derived from _MAD9P_ and is based on the _CLASSIC_ class library, which
+was started in 1995 by an international collaboration. IPPL (Independent
+Parallel Particle Layer) is the framework which provides parallel
+particles and fields using data parallel approach. _OPAL_ is built from
+the ground up as a parallel application exemplifying the fact that HPC
+(High Performance Computing) is the third leg of science, complementing
+theory and the experiment. HPC is made possible now through the
+increasingly sophisticated mathematical models and evolving computer
+power available on the desktop and in super computer centers. _OPAL_
+runs on your laptop as well as on the largest HPC clusters available
+today.
+
+The _OPAL_ framework makes it easy to add new features in the form of
+new _C++_ classes.
+
+_OPAL_ comes in the following flavors:
+
+* _OPAL-cycl_
+* _OPAL-t_
+
+_OPAL-cycl_ tracks particles with 3D space charge including neighboring
+turns in cyclotrons with time as the independent variable.
+
+_OPAL-t_ is a super-set of _Impact-t_ and can be used to model guns,
+injectors, ERLs and complete XFELs excluding the undulator.
+
+It should be noted that not all features of _OPAL_ are available in both
+flavors. +
+The following icon `DOPAL-t` means that a feature is not yet available
+in _OPAL-t_. A similar icon is used for _OPAL-cycl_.
+
+[[parallel-processing-capabilities]]
+Parallel Processing Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_OPAL_ is built to harness the power of parallel processing for an
+improved quantitative understanding of particle accelerators. This goal
+can only be achieved with detailed 3D modelling capabilities and a
+sufficient number of simulation particles to obtain meaningful
+statistics on various quantities of the particle ensemble such as
+emittance, slice emittance, halo extension etc.
+
+The following example is exemplifying this fact:
+
+.Table Parameters Parallel Performance Example
+[#pex1]
+|===
+|Distribution | Particles | Mesh | Greens Function | Time steps
+
+|Gauss 3D | latexmath:[10^8] | latexmath:[1024^3] | Integrated | 10
+|===
+
+Figure <<walldrift,1>> shows the parallel efficiency time as a function of
+used cores for a test example with parameters given in Table <<pex1,1>>. The
+data were obtained on a Cray XT5 at the Swiss Center for Scientific
+Computing.
+
+++++
+<a id="walldrift"></a>
+++++
+.Figure 1 : Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
+image:figures/drift2c1.png[scaledwidth=75.0%]
+
+[[quality-management]]
+Quality Management
+~~~~~~~~~~~~~~~~~~
+
+Documentation and quality assurance are given our highest attention
+since we are convinced that adequate documentation is a key factor in
+the usefulness of a code like _OPAL_ to study present and future
+particle accelerators. Using tools such as a source code version control
+system (https://git-scm.com[git]), source code documentation using
+Doxygen (found http://amas.web.psi.ch/docs/opal/html/[here]) and the
+extensive user manual you are now enjoying, we are committed to
+providing users as well as co-developers with state-of-the-art
+documentation to _OPAL_.
+
+One example of an non trivial test-example is the PSI DC GUN. In
+Figure <<guncomp1,2>> the comparison between _Impact-t_ and _OPAL-t_ is
+shown. This example is part of the regression test suite that is run
+every night. The input file is found in Section <<examplesbeamlines>>.
+
+Misprints and obscurity are almost inevitable in a document of this
+size. Comments and _active contributions_ from readers are therefore
+most welcome. They may be sent to `andreas.adelmann@psi.ch`.
+
+[#guncomp1]
+.Figure 2 : Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
+image:figures/Gun/GunCompEn.png[width=375]
+image:figures/Gun/GunCompEx.png[width=375]
+
+[[output]]
+Output
+~~~~~~
+
+The phase space is stored in the H5hut file-format and can be analyzed
+using e.g. H5root . The frequency of the data output (phase space and
+some statistical quantities) can be controlled using the `OPTION`
+statement see Section <<option>>, with the flag `PSDUMPFREQ`. The file is
+named like in input file but with the extension .h5.
+
+A SDDS compatible ASCII file with statistical beam parameters is written
+to a file with extension .stat. The frequency with which this data is
+written can be controlled with the `OPTION` statement
+see Section <<option>> with the flag `STATDUMPFREQ`.
+
+.Figure 3 : H5root enables a variety of data analysis and post processing task on _OPAL_ data
+image:figures/H5rootPicture1.png[width=250]
+image:figures/H5rootPicture2.png[width=250]
+image:figures/H5rootPicture3.png[width=250]
+
+[[change-history]]
+Change History
+~~~~~~~~~~~~~~
+
+See Appendix <<changelog>> for a detailed list of changes in _OPAL_.
+
+[[known-issues-and-limitations]]
+Known Issues and Limitations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[[opal-cycl]]
+_OPAL-cycl_
+^^^^^^^^^^^
+
+* Restart with the option `PSDUMPLOCALFRAME` does not work yet,
+* In complicated geometries such as spiral inflectors, proper particle
+deletion at the boundary sometimes fails.
+
+[[acknowledgments]]
+Acknowledgments
+~~~~~~~~~~~~~~~
+
+The contributions of various individuals and groups are acknowledged in
+the relevant chapters, however a few individuals have or had
+considerable influence on the development of _OPAL_, namely Chris
+Iselin, John Jowett, Julian Cummings, Ji Qiang, Robert Ryne and Stefan
+Adam. For the `H5root`  visualization tool credits go to Thomas
+Schietinger.
+
+The following individuals are acknowledged for past contributions:
+Yuanjie Bi, Jianjun Yang, Colwyn Gulliford, Hao Zha, Christopher Mayes
+and Tulin Kaman.
+
+[[citation]]
+Citation
+~~~~~~~~
+
+Please cite _OPAL_ in the following way:
+
+....
+@techreport{opal:1,
+title = {The OPAL (Object Oriented Parallel Accelerator Library) Framework},
+author = {Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, 
+Jochem Snuverink (PSI) and Christof Metzger-Kraus and Yves Ineichen and 
+Steve Russell (LANL) and Chuan Wang (CIAE) and 
+Suzanne Sheehy and Chris Rogers (RAL) and
+Daniel Winklehner (MIT)},
+institution = {Paul Scherrer Institut},
+number = {PSI-PR-08-02},
+year = {(2008-2017)}
+}
+....

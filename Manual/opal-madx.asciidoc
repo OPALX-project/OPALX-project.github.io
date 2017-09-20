@@ -1,0 +1,122 @@
+:toc:
+[[chp:opalcycl]]
+
+:stem: latexmath
+:sectnums:
+
+[[opal---madx-conversion-guide]]
+_OPAL_ - MADX Conversion Guide
+------------------------------
+
+We note with latexmath:[\alpha],latexmath:[\beta] and
+latexmath:[\gamma] the Twiss parameters. 
+
+[latexmath]
+++++
+\begin{aligned}
+\sigma_{beam} &=& \begin{pmatrix}\sigma_{x} & \sigma_{x p_{x}}\\\sigma_{x p_{x}} &  \sigma_{ p_{x}}\end{pmatrix}
+= \begin{pmatrix} \sigma_{x} & \delta\cdot\sqrt{\sigma_{x}\sigma_{ p_{x}}}\\\delta\cdot\sqrt{\sigma_{x}\sigma_{ p_{x}}} & \sigma_{ p_{x}}\end{pmatrix}
+= \begin{pmatrix} <x^{2}> & <x p_{x}>\\<x p_{x}> & < p_{x}^{2}> \end{pmatrix} \\
+&=& \begin{pmatrix}
+  \frac{1}{N}\sum_{i=1}^{N}x_{i}^{2} & \frac{1}{N}\sum_{i=1}^{N}x_{i} p_{x_{i}}\\
+  \frac{1}{N}\sum_{i=1}^{N}x_{i} p_{x_{i}} & \frac{1}{N}\sum_{i=1}^{N} p_{x_{i}}^{2}
+ \end{pmatrix}
+= \epsilon\cdot\begin{pmatrix} \beta & -\alpha\\ -\alpha & \gamma\end{pmatrix}
+\end{aligned}
+++++
+
+[latexmath]
+++++
+\begin{aligned}
+\bar{p}_{x} & = & \sqrt{\frac{1}{N}\sum_{i=1}^{N} p_{x_{i}}^{2}} & = & \sqrt{\sigma_{ p_{x}}} & & \bar{x} & = & \sqrt{\frac{1}{N}\sum_{i=1}^{N}x_{i}^{2}} \\
+\bar{p}_{y} & = & \sqrt{\frac{1}{N}\sum_{i=1}^{N}p_{y_{i}}^{2}} & = & \sqrt{\sigma_{p_{y}}} & & \bar{y} & = & \sqrt{\frac{1}{N}\sum_{i=1}^{N}y_{i}^{2}} \\
+\\
+\\
+\gamma & = & \frac{E_{kin}+m_{p}}{m_{p}} & & & & \beta & = & \sqrt{1-\frac{1}{\gamma^{2}}} = \frac{v}{c} \\
+(\beta\gamma) & = & \frac{E_{kin}+m_{p}}{m_{p}}\cdot\sqrt{1-\frac{1}{\gamma^{2}}}& = & \frac{\beta}{\sqrt{1-\beta^{2}}} & & \text{B}\rho & = & \frac{\left(\beta\gamma\right)\cdot m_{p}\cdot 10^{9}}{c}~\left[\text{T m}\right] \\
+m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
+\end{aligned}
+++++
+
+[cols="<,^,>,<,^,<,^,>",options="header",]
+|=======================================================================
+|Quantity 2+^|`MADX`  3+^|Conversion  2+^|_OPAL-Output_
+|Momenta |latexmath:[\bar{p}_{x}] |[rad]
+|latexmath:[\bar{p}_{x}][latexmath:[\beta\gamma]] |=
+|latexmath:[\left(\bar{p}_{x}\left[\text{rad}\right\]\right)\cdot\left(\beta\gamma\right)]
+|latexmath:[\bar{p}_{x}] |[latexmath:[\beta\gamma]]
+
+|Correlation of latexmath:[\bar{x}],latexmath:[\bar{p}_{x}]
+|latexmath:[\delta] |[1] |latexmath:[\delta] |=
+|latexmath:[\left(\sigma_{x p_{x}}\left[\text{m }\text{rad}\right\]\right)/\left(\left(\bar{p}_{x}\left[\text{rad}\right\]\right)\cdot\left(
+\bar{x}\left[\text{m}\right\]\right)\right)] |latexmath:[\delta] |[1]
+
+| | | | |=
+|latexmath:[\left(\sigma_{x p_{x}}\left[\text{m }\text{rad}\right\]\right)/\sqrt{\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)\cdot\left(\sigma_{ p_{x}}\left[\text{rad}^{2}\right\]\right)}]
+| |
+
+|Emittance |latexmath:[\epsilon_{x}] |[m rad]
+|latexmath:[\epsilon_{x}][m latexmath:[\beta\gamma]] |=
+|latexmath:[\sqrt{\left( \bar{p}_{x}\left[ \beta\gamma \right\] \right) ^{2} \cdot \left(\bar{x}\left[\text{m}\right\]\right)^{2} - \left(\delta \cdot \left(\bar{x}\left[\text{m}\right\]\right) \cdot \left(\bar{p}_{x}\left[\beta\gamma\right\]\right)\right)^{2}} ]
+|latexmath:[\epsilon_{x}] |[m latexmath:[\beta\gamma]]
+
+| | | | |=
+|latexmath:[\sqrt{\left( \sigma_{{p}_{x}}\left[ \left(\beta\gamma\right)^{2} \right\] \right)\cdot
+ \left(\sigma_{x}\left[\text{m}^{2}\right\]\right) - \left(\delta \cdot
+ \sqrt{\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)\cdot\left(\sigma_{p_{x}}
+ \left[\left(\beta\gamma\right)^{2}\right\]\right)}\right)^{2}} ] | |
+
+| | | | |=
+|latexmath:[\sqrt{\left( \sigma_{{p}_{x}}\left[ \left(\beta\gamma\right)^{2} \right\] \right)\cdot
+ \left(\sigma_{x}\left[\text{m}^{2}\right\]\right) - \left(\sigma_{x p_{x}}\left[\text{m} ~\beta\gamma\right\]\right)^{2}} ]
+| |
+
+|Twiss Parameter latexmath:[\alpha] |latexmath:[\alpha] |[1]
+|latexmath:[\alpha\left[1\right\]] |=
+|latexmath:[-\delta\cdot\left(\bar{x}\left[\text{m}\right\]\right)\cdot\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
+|latexmath:[\alpha_{T}] |[1]
+
+| | | | |=
+|latexmath:[-\delta\cdot\sqrt{\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)\cdot\left(\sigma_{ p_{x}}\left[\left(\beta\gamma\right)^{2}\right\]\right)}/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
+| |
+
+|Twiss Parameter latexmath:[\beta_{T}] |latexmath:[\beta_{T}]
+|[m/rad] |latexmath:[\beta_{T}\left[\text{m}/\beta\gamma\right\]] |=
+|latexmath:[\left(\bar{x}\left[\text{m}\right\]\right)^{2}/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]
+\right)] |latexmath:[\beta_{T}] |[m/latexmath:[\beta\gamma]]
+
+| | | | |=
+|latexmath:[\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]
+\right)] | |
+
+|Twiss Parameter latexmath:[\gamma_{T}] |latexmath:[\gamma_{T}]
+|[rad/m] |latexmath:[\gamma_{T}\left[\beta\gamma/\text{m}\right\]] |=
+|latexmath:[\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)^{2}/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
+|latexmath:[\gamma_{T}] |[latexmath:[\beta\gamma]/m]
+
+| | | | |=
+|latexmath:[\left(\sigma_{p_{x}}\left[\left(\beta\gamma\right)^{2}\right\]\right)/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
+| |
+
+|Focusing strength |latexmath:[k_{1}]
+|latexmath:[\left[\text{m}^{-2}\right\]]
+|latexmath:[k_{1}\left[\text{T}/\text{m}\right\]] |=
+|latexmath:[\left(k_{1}\left[\text{m}^{-2}\right\]\right)\cdot\left(\text{B}\rho\left[\text{T m}\right\]\right)]
+|latexmath:[k_{1}] |latexmath:[\left[\text{T}/\text{m}\right\]]
+
+|Quantity 2+^|`MADX` 3+^|Conversion 2+^|`OPAL-Input`
+
+|Element Position |`at :=` |latexmath:[\left[\text{m}\right\]]
+|`ELEMEDGE` |= |(Center of the element) - (Length of the element)/2
+|`ELEMEDGE =` |latexmath:[\left[\text{m}\right\]]
+
+| |Center of the element | | | | |Begin of the element |
+
+|Quantity 2+^|`OPAL-Output` 3+^|Conversion 2+^|`OPAL-Input`
+
+|Momenta |latexmath:[\bar{p}_{x}]
+|latexmath:[\left[\beta\gamma\right\]]
+|latexmath:[p_{x}\left[\text{eV}\right\]] |=
+|latexmath:[m_{p}\cdot10^{9}\cdot\left(\sqrt{\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)^{2} +1}-1\right)]
+|latexmath:[\bar{p}_{x}] |[eV]
+|=======================================================================

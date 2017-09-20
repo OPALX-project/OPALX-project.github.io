@@ -1,0 +1,342 @@
+:toc:
+[[chp:opalcycl]]
+
+:stem: latexmath
+:sectnums:
+
+[[chp:track]]
+Tracking
+--------
+
+.Commands accepted in Tracking Mode
+[cols="<1,<3",options="header",]
+|=======================================================================
+|Command |Purpose
+|`TRACK` |Enter tracking mode
+
+|`LINE` |Label of `LINE` or `SEQUENCE`
+
+|`BEAM` |Label of `BEAM`
+
+|`T0` |Initial time
+
+|`DT` |Array of time step sizes for tracking
+
+|`MAXSTEPS` |Array of maximal number of time steps
+
+|`ZSTART` |z-location [m], from where to run simulation
+
+|`ZSTOP` |Array of z-location [m], after which the simulation switches
+to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
+
+|`STEPSPERTURN` |Number of time steps per revolution period
+
+|`TIMEINTEGRATOR` |Defines the time integrator used in _OPAL-cycl_
+
+|`name=expression` |Parameter relation
+
+|`RUN` |Run particles for specified number of turns or steps
+
+|`ENDTRACK` |Leave tracking mode
+|=======================================================================
+
+[[sec:trackmode]]
+Track Mode
+~~~~~~~~~~
+
+Before starting to track, a beam line see Section [line] and a beam
+see Chapter [beam] must be selected. The time step (`DT`) and the
+maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
+command causes _OPAL_ to enter "tracking mode", in which it accepts
+only the track commands see Table [trackcmd]. In order to preform
+several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
+`ZSTOP`. This can be used to change the time step manually.
+
+The attributes of the command are:
+
+LINE::
+  The label of a preceding `LINE` see Section [line] (no default).
+BEAM::
+  The named `BEAM` command defines the particle mass, charge and
+  reference momentum (default: `UNNAMED_BEAM`).
+T0::
+  The initial time [s] of the simulation, its default value is 0.
+DT::
+  Array of time step sizes for tracking, default length of the array is
+  1 and its only value is 1ps.
+MAXSTEPS::
+  Array of maximal number of time steps, default length of the array is
+  1 and its only value is 10.
+ZSTART::
+  Initial position of the reference particle along the reference
+  trajectory, default position is 0.0m.
+ZSTOP::
+  Array of z-locations [m], default length of the array is 1 and its
+  only value is latexmath:[1E6] [m]. The simulation switches to the
+  next set, latexmath:[i+1], of `DT`, `MAXSTEPS` and `ZSTOP` if either
+  it has been tracking with the current set for more than
+  latexmath:[\mathrm{MAXSTEPS}_i] steps or the mean position
+  has reached a z-position larger than
+  latexmath:[\mathrm{ZSTOP}_i]. If set latexmath:[i] is the
+  last set of the array then the simulation stops.
+TIMEINTEGRATOR::
+  Define the time integrator. Currently only available in _OPAL-cycl_.
+  The valid options are `RK-4`, `LF-2` and `MTS`:
++
+  RK-4;;
+    the fourth-order Runge-Kutta integrator. This is the default
+    integrator for _OPAL-cycl_.
+  LF-2;;
+    the second-order Boris-Buneman (leapfrog-like) integrator.
+    Currently, `LF-2` is only available for multi-particles with/without
+    space charge. For single particle tracking and tune calculations,
+    use the `RK-4` for the time being.
+  MTS;;
+    the multiple-time-stepping integrator. Considering that the space
+    charge fields change much slower than the external fields in
+    cyclotrons, the space charge can be calculated less frequently than
+    the external field interpolation, so as to reduce time to solution.
+    The outer step (determined by `STEPSPERTURN`) is used to integrate
+    space charge effects. A constant number of sub-steps per outer step
+    is used to query external fields and to move the particles. The
+    number of sub-steps can be set with the option `MTSSUBSTEPS` and its
+    default value is 1. When using this integrator, the input file has
+    to be rewritten in the units of the outer step. For example,
+    extracts of the input file suited for `LF-2` or `RK-4` read
++
+....
+Option, PSDUMPFREQ=100;
+Option, REPARTFREQ=20;
+Option, SPTDUMPFREQ=50;
+Option, VERSION=10600;
+REAL turns=5;
+REAL nstep=3000;
+TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,
+TIMEINTEGRATOR="LF-2";
+    RUN, METHOD = "CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
+ENDTRACK;
+....
++
+and should be transformed to
++
+....
+Option, MTSSUBSTEPS=10;
+Option, PSDUMPFREQ=10;
+Option, REPARTFREQ=2;
+Option, SPTDUMPFREQ=5;
+Option, VERSION=10600;
+REAL turns=5;
+REAL nstep=300;
+TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,
+TIMEINTEGRATOR="MTS";
+    RUN, METHOD = "CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
+ENDTRACK;
+....
++
+In general all step quantities should be divided by MTSSUBSTEPS.
++
+In our first experiments on PSI injector II cyclotron, simulations
+with reduced space charge solving frequency by a factor of 10 lie
+still very close to the original solution. How large `MTSSUBSTEPS`
+can be chosen of course depends on the importance of space charge
+effects.
+STEPSPERTURN::
+  Number of time steps per revolution period. Only available for
+  _OPAL-cycl_, default value is 720.
+
+In _OPAL-cycl_, instead of setting time step, the time steps per-turn
+should be set. The command format is:
+
+....
+TRACK, LINE=name, BEAM=name, MAXSTEPS=value,  STEPSPERTURN=value;
+....
+
+Particles are tracked in parallel i.e. the coordinates of all particles
+are transformed at each beam element as it is reached.
+
+_OPAL_ leaves *track mode* when it sees the command
+
+....
+  ENDTRACK;
+....
+
+[[sec:randmach]]
+Track a Random Machine
+^^^^^^^^^^^^^^^^^^^^^^
+
+This example shows how to track a _random_ machine i.e. some parameters
+are random variables. At the moment (Version 1.1.4) there seams to be a
+problem when having random variables in the Distribution command.
+
+....
+Option, SCAN=TRUE;
+......
+
+REAL I=0;
+WHILE (I < 3) {
+
+   REAL rv1:= (RANF()*4.7);
+   REAL rv2:=0.0;
+   REAL rv3:=0.0;
+   REAL rv4:=0.0;
+   REAL rv5:=0.0;
+
+   Ppo: PepperPot, L=200.0E-6, ELEMEDGE=6.0E-3,
+        R=1.0E-4, PITCH=0.5E-4, NHOLX=20, NHOLY=20,
+        XSIZE=5.0E-3, YSIZE=5.0E-3, OUTFN="ppo.h5";
+
+   Col: ECollimator, L=3.0E-3, ELEMEDGE=7.0E-3,
+        XSIZE=7.5E-4, YSIZE=7.5E-4, OUTFN="Coll.h5";
+   SP1: Solenoid, L=1.20, ELEMEDGE=-0.5315,
+        FMAPFN="1T2.T7", KS=8.246e-05 + rv2;
+   SP2: Solenoid, L=1.20, ELEMEDGE=-0.397,
+        FMAPFN="1T3.T7", KS=1.615e-05 + rv3;
+   SP3: Solenoid, L=1.20, ELEMEDGE=-0.267,
+        FMAPFN="1T3.T7", KS=1.016e-05 + rv4;
+   SP4: Solenoid, L=1.20, ELEMEDGE=-0.157,
+        FMAPFN="1T3.T7", KS=4.750e-05 + rv5;
+   SP5: Solenoid, L=1.20, ELEMEDGE=-0.047,
+        FMAPFN="1T3.T7", KS=0.0;
+
+   gun: RFCavity, L=0.013, VOLT=(-47.51437343 + rv1),
+        FMAPFN="1T1.T7", ELEMEDGE=0.00,
+        TYPE="STANDING", FREQ=1.0e-6;
+
+   value,{I, rv1, rv2, rv3, rv4, rv5};
+
+   l1: Line=(gun, Ppo, sp1, sp2, sp3, sp4, sp5);
+
+   SELECT, Line=l1;
+   TRACK, line=l1, beam=beam1, MAXSTEPS=500, DT=2.0e-13;
+    RUN, method="PARALLEL-T", beam=beam1,
+    fieldsolver=Fs1, distribution:=Dist1;
+   ENDTRACK;
+
+   SYSTEM,"mkdir -p scan0-" & STRING(I);
+   SYSTEM,"mv scan-0.h5 scan-0.stat scan-0.lbal scan0-"
+          & STRING(I);
+   I=EVAL(I+1.0);
+}
+....
+
+[[sec:trackrun]]
+Track Particles
+~~~~~~~~~~~~~~~
+
+This command starts or continues the actual tracking:
+
+....
+RUN, METHOD=string, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
+FILE=string, TURNS=integer, MBMODE=string, PARAMB=float,
+BOUNDARYGEOMETRY=string, MULTIPACTING=logical, OBJECTIVES=string-vector;
+....
+
+The `RUN` command initialises tracking and uses the most recent particle
+bunch for initial conditions. The particle positions may be the result
+of previous tracking.
+
+Its attributes are:
+
+METHOD::
+  The name (a string, see Section [astring]) of the tracking method to
+  be used. For the time being the following methods are known:
++
+  PARALLEL-T;;
+    This method puts _OPAL_ in _OPAL-t_ mode see Chapter [opalt].
+  CYCLOTRON-T;;
+    This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter [opalcycl].
+  STATISTICAL-ERRORS;;
+    This is a method to let _OPAL_ run multiple times in parallel while
+    adding imperfections to alignment and other physical quantities.
+FIELDSOLVER::
+  The field solver to be used see Chapter [fieldsolver].
+DISTRIBUTION::
+  The particle distribution to be used see Chapter [distribution].
+BEAM::
+  The particle beam see Chapter [beam] to be used is specified.
+FILE::
+  The name of the file to be written (default="`track`").
+TURNS::
+  The number of turns (integer) to be tracked (default: 1, namely single
+  bunch).
++
+In _OPAL-cycl_, this parameter represents the number of bunches those
+will be injected into the cyclotron. In restart mode, the code firstly
+read an attribute latexmath:[NumBunch] from latexmath:[.h5] file
+which records how many bunches have already been injected. If
+latexmath:[NumBunch] latexmath:[<] latexmath:[TURNS], the last
+latexmath:[TURNS]latexmath:[ -] latexmath:[NumBunch] bunches
+will be injected in sequence by reading the initial distribution from
+latexmath:[.h5] file.
+MBMODE::
+  This defines which mode of multi-bunch runs. There are two options for
+  it, namely, `AUTO` and `FORCE`. See Section [opalcycl:MultiBunch] for
+  their explanations in detail.
++
+For restarting run with `TURNS` larger than one, if the existing
+bunches of the read-in step is large than one, the mode is forcedly
+set to `FORCE`. Otherwise, it is forcedly set to `AUTO`.
++
+This argument is available for _OPAL-cycl_.
+PARAMB::
+  This is a control parameter to define when to start to transfer from
+  single bunch to multi-bunches for `AUTO` mode (default: 5.0).
++
+This argument is only available for `AUTO` mode multi-bunch run in
+_OPAL-cycl_.
+MULTIPACTING::
+  see Chapter [multpact]
+OBJECTIVES::
+  An array of column names from the _.stat_ file used in
+  `STATISTICAL-ERRORS` to compute mean value and standard deviation
+  across all runs.
+
+Example:
+
+....
+run, file="table", turns=5, mbmode="AUTO", paramb=10.0,
+     method="CYCLOTRON-T", beam=beam1, fieldsolver=Fs1,
+     distribution=Dist1;
+....
+
+This command tracks 5 bunches in cyclotron and writes the results on
+file `table`.
+
+[[ssec:statistical-errors]]
+`STATISTICAL-ERRORS`
+^^^^^^^^^^^^^^^^^^^^
+
+This method can be used to quantify the effects of imperfections to
+alignment or other physical quantities such as e.g. the phase or the
+amplitude. It doesn’t propagate the particles directly. Instead it scans
+through the input file and replaces all occurrences of and with randomly
+generated values of appropriate distribution. Then one of the other
+methods, e.g. `PARALLEL-T` is called. These two steps are then repeated
+many times.
+
+To use this method one has to specify the `METHOD` using the following
+form:
+
+`STATISTICAL-ERRORS(<trackmethod>, <ncores>, <nruns>)`,
+
+where `<trackmethod>` is the method that should track the particles,
+`<ncores>` is the number of cores used for a run and `<nruns>` is the
+number of individual runs that should be performed. *It should be noted
+that the total number of cores available has to be greater or equal to
+`ncores` + 1.* One core is needed to manage the distribution of tasks
+and to collect the results. The other cores are used to perform the
+simulations. If in total latexmath:[N \times \mathrm{ncores} + 1]
+cores are available then latexmath:[N] individual runs are processed
+in parallel each using `ncores`.
+
+For each run of the method `STATISTICAL-ERRORS` a unique base name is
+generated of the form _foo_. Each individual run is then performed in a
+directory _foo_run_ddddd_. The files that are produced by the
+`<trackmethod>` are kept. *This can lead to a large amount of data
+especially when snapshots of the phase space are stored frequently. The
+user should make sure that the file system can handle the amount of data
+or set the option `PSDUMPFREQ` to a big number.*
+
+In the end the method `STATISTICAL-ERRORS` computes the mean and the
+standard deviation for each variable in the array `OBJECTIVES` along the
+machine and stores this information in to the _.stat_ file.

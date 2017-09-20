@@ -1,0 +1,137 @@
+:toc:
+[[chp:opalcycl]]
+
+:stem: latexmath
+:sectnums:
+
+[[chp:conventions]]
+Conventions
+-----------
+
+[[sec:units]]
+Physical Units
+~~~~~~~~~~~~~~
+
+Throughout the computations _OPAL_ uses international units, as defined by SI (Système International).
+
+.Physical Units
+[cols="<,<",options="header",]
+|=======================================================================
+|Quantity |Dimension
+|Length |latexmath:[\mathrm{m}] (meters)
+
+|Angle |latexmath:[\mathrm{rad}] (radians)
+
+|Quadrupole coefficient |latexmath:[\mathrm{Tm^{-1}}]
+
+|Multipole coefficient, 2n poles |latexmath:[\mathrm{Tm^{-n + 1}}]
+
+|Electric voltage |latexmath:[\mathrm{MV}] (Megavolts)
+
+|Electric field strength |latexmath:[\mathrm{MV m^{-1}}]
+
+|Frequency |latexmath:[\mathrm{MHz}] (Megahertz)
+
+|Particle energy |latexmath:[\mathrm{MeV}] or
+latexmath:[\mathrm{eV}]
+
+|Particle mass |latexmath:[\mathrm{MeV c^{-2}}]
+
+|Particle momentum |latexmath:[\mathrm{\beta\gamma}] or
+latexmath:[\mathrm{eV}]
+
+|Beam current |latexmath:[\mathrm{A}] (Amperes)
+
+|Particle charge |latexmath:[\mathrm{e}] (elementary charges)
+
+|Impedances |latexmath:[\mathrm{M \Omega}] (Megaohms)
+
+|Emittances (normalized and geometric |latexmath:[\mathrm{mrad}]
+
+|RF power |latexmath:[\mathrm{MW}] (Megawatts)
+|=======================================================================
+
+[[opal-cycl]]
+_OPAL_-cycl
+^^^^^^^^^^^
+
+The _OPAL_-cycl flavor see Section <<cyclotron>> is using the so called
+Cyclotron units. Lengths are define in (mm) frequencies in (MHz) momenta
+in (latexmath:[\beta\gamma]) and angles in (deg), except `RFPHI` which
+is in (rad).
+
+[[symbols-used]]
+Symbols used
+~~~~~~~~~~~~
+
+.List of Symbols used and their definition.
+[cols="<,<",options="header",]
+|=======================================================================
+|Symbol |Definition
+|latexmath:[X] |Ellipse axis along the latexmath:[x] dimension [m].
+latexmath:[X=R] for circular beams.
+
+|latexmath:[Y] |Ellipse axis along the latexmath:[y] dimension [m].
+latexmath:[Y=R] for circular beams.
+
+|latexmath:[R] |Beam radius for circular beam [m].
+
+|latexmath:[R^*] |Effective beam radius for elliptical beam:
+latexmath:[R^* = (X+Y)/2] [m].
+
+|latexmath:[\sigma_x] |Rms beam size in latexmath:[x]:
+latexmath:[\sigma_x = \langle x^2\rangle^{1/2}] [m].
+latexmath:[\sigma_x = X/2] for elliptical or circular beams (X=Y=R).
+
+|latexmath:[\sigma_y] |Rms beam size in latexmath:[y]:
+latexmath:[\sigma_y = \langle y^2\rangle^{1/2}] [m].
+latexmath:[\sigma_y = Y/2] for elliptical or circular beams (X=Y=R).
+
+|latexmath:[\sigma_i] |Rms beam size in latexmath:[x] (i=1) or
+latexmath:[y] (i=2): latexmath:[\sigma=\langle x^2\rangle^{1/2}] or
+latexmath:[\langle y^2\rangle^{1/2}] [m].
+
+|latexmath:[\sigma_L] |Rms beam size in the Larmor frame for
+cylindrical symmetric beam and external fields [m]:
+latexmath:[\sigma_L = \sigma_x = \sigma_y].
+
+|latexmath:[\sigma_r] |Rms beam size in latexmath:[r] for a circular
+beam: latexmath:[\sigma_r =\langle r^2\rangle^{1/2} = R/\sqrt{2}] [m].
+
+|latexmath:[\sigma^*] |Average rms size for elliptical beam:
+latexmath:[\sigma^* = (\sigma_x+\sigma_y)/2] [m].
+
+|latexmath:[\theta_r] |Larmor angle [rad]
+
+|latexmath:[\dot\theta_r] |Time derivative of Larmor angle:
+latexmath:[\dot\theta_r = -eB_z/2m\gamma] [rad/sec].
+
+|latexmath:[z_s] |Longitudinal position of a particular beam slice
+[m].
+
+|latexmath:[z_h,z_t] |Position of the head & tail of a beam bunch [m].
+
+|latexmath:[\zeta] |Used to label the position of a beam slice in the
+beam [m]. For bunched beams: latexmath:[\zeta = z_s-z_t].
+
+|latexmath:[\xi] |Used to label the position of a slice image charge
+[m]. For bunched beams: latexmath:[\xi = z_h + z_t].
+
+|latexmath:[K] |Focusing function of cylindrical symmetric external
+fields: latexmath:[K = -\frac{\partial F_r}{\partial r}] [N/m].
+
+|latexmath:[K_i] |Focusing function in latexmath:[x_i] direction:
+latexmath:[K_i = -\frac{\partial F_{x_i}}{\partial x_i}] [N/m].
+
+|latexmath:[I_0] |Alfven current:
+latexmath:[I_0= e/4\pi\epsilon_0mc^3] [A].
+
+|latexmath:[I] |Beam current [A].
+
+|latexmath:[I(\zeta)] |Slice beam current [A].
+
+|latexmath:[k_p] |Beam perveance: latexmath:[k_p = I(\zeta)/2I_0]
+
+|latexmath:[g(\zeta)] |Form factor used in slice analysis of bunched
+beams.
+|=======================================================================

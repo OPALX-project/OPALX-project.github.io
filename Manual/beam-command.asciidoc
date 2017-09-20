@@ -1,0 +1,72 @@
+:toc:
+[[chp:opalcycl]]
+
+:stem: latexmath
+:sectnums:
+
+[[chp:beam]]
+Beam Command
+------------
+
+All _OPAL_ commands working on a beam require the setting of various
+quantities related to this beam. These are entered by a `BEAM` command:
+
+....
+label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
+      ENERGY=real, PC=real, GAMMA=real, BCURRENT=real,
+       NPART=real, BUNCHED=logical, BFREQ=real;
+....
+
+The `label` is optional, it defaults to `UNNAMED_BEAM`. . The particle
+mass and charge are defined by:
+
+PARTICLE::
+  The name of particles in the machine.
+
+_OPAL_ knows the mass and the charge for the following particles:
+
+POSITRON::
+  The particles are positrons (`MASS`=latexmath:[m_e], `CHARGE`=1),
+ELECTRON::
+  The particles are electrons (`MASS`=latexmath:[m_e], `CHARGE`=-1),
+PROTON::
+  The particles are protons (default, `MASS`=latexmath:[m_p],
+  `CHARGE`=1),
+ANTIPROTON::
+  The particles are anti-protons (`MASS`=latexmath:[m_p],
+  `CHARGE`=-1).
+HMINUS::
+  The particles are h- protons (`MASS`=latexmath:[m_{h^{-}}],
+  `CHARGE`=-1).
+CARBON::
+  The particles are carbons (`MASS`=latexmath:[m_c], `CHARGE`=12).
+URANIUM::
+  The particles are of type uranium (`MASS`=latexmath:[m_u],
+  `CHARGE`=35).
+MUON::
+  The particles are of type muon (`MASS`=latexmath:[m_\mu],
+  `CHARGE`=-1).
+DEUTERON::
+  The particles are of type deuteron (`MASS`=latexmath:[m_d],
+  `CHARGE`=1).
+XENON::
+  The particles are of type xenon (`MASS`=latexmath:[m_{xe}],
+  `CHARGE`=20).
+
+For other particle names one may enter:
+
+MASS::
+  The particle mass in GeV.
+CHARGE::
+  The particle charge expressed in elementary charges.
+
+The other attributes are:
+
+BFREQ::
+  The bunch frequency in MHz.
+BCURRENT::
+  The bunch current in A.
+  latexmath:[\mathrm{BCURRENT} = Q \times \mathrm{BFREQ}]
+  with latexmath:[Q] the total charge.
+NPART::
+  The number of macro particles for the simulations
