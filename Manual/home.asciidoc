@@ -55,6 +55,7 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/partmatter[Physics Models Used in the Particle Matter Interaction Model]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[Multi Objective Optimisation]
 
+.Appendices
 [upperalpha]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/syntax[OPAL Language Syntax]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/fieldmaps[OPAL-T Field Maps]
