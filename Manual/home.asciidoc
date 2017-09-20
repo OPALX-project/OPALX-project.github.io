@@ -37,4 +37,4 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 
 == Table of Contents
 
-. Manual/Introduction[Introduction]
+. https://gitlab.psi.ch/OPAL/src/wikis/Manual/introduction[Introduction]
