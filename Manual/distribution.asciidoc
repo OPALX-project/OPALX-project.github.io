@@ -40,7 +40,7 @@ see Section [astraflattopthdisttype].
 |=======================================================================
 
 The distribution command is used to introduce particles into an _OPAL_
-simulation. Like other _OPAL_ commands see Chapter [format], the
+simulation. Like other _OPAL_ commands see Chapter link:format[Command Format], the
 distribution command is of the form:
 
 ....
@@ -330,7 +330,7 @@ of `NONE` for the `EMISSIONMODEL` (which is the default) can be defined
 so as not to affect the distribution coordinates at all.
 
 To maintain consistency latexmath:[N] and `NPART` from the `BEAM`
-command in Chapter [beam] must be equal.
+command in Chapter link:beam[Beam Command] must be equal.
 
 [[sec:gaussdisttype]]
 `GAUSS` Distribution Type
@@ -966,7 +966,7 @@ Distribution List
 
 It is possible to use multiple distributions in the same simulation. We
 do this be using a distribution list in the `RUN` command
-see Chapter [track]. Assume we have defined several distributions:
+see Chapter link:track[Tracking]. Assume we have defined several distributions:
 `DIST1`, `DIST2` and `DIST3`. If we want to use just one of these
 distributions in a simulation, we would use the following `RUN` command
 to start the simulation:
@@ -996,7 +996,7 @@ will be forced to this same condition. If `DIST1` is to be _injected_,
 then all other distribution is the list will also be _injected_.
 
 The number of particles in the simulation is defined in the `BEAM`
-command see Chapter [beam]. The number of particles in each distribution
+command see Chapter link:beam[Beam Command]. The number of particles in each distribution
 in a distribution list is determined by this number and the `WEIGHT`
 attribute of each distribution (Table [distattruniversal]). If all
 distributions have the same `WEIGHT` value, then the number of particles
