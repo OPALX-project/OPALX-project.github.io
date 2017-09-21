@@ -131,7 +131,7 @@ image:figures/H5rootPicture3.png[width=250]
 Change History
 ~~~~~~~~~~~~~~
 
-See Appendix <<changelog>> for a detailed list of changes in _OPAL_.
+See link:../ReleaseNotes/ReleaseNotes[Release Notes] for a detailed list of changes in _OPAL_.
 
 [[known-issues-and-limitations]]
 Known Issues and Limitations
