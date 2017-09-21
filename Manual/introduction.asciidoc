@@ -4,8 +4,6 @@
 :figure-caption:
 
 :toc:
-:toc-title: https://gitlab.psi.ch/OPAL/src/wikis/Manual/home[Table of Contents]
-
 [[chp:opalcycl]]
 
 [[chp:Introduction]]
