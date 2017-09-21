@@ -655,7 +655,7 @@ Multiple Species
 ~~~~~~~~~~~~~~~~
 
 In the present version only one particle species can be defined
-see Chapter [beam], however due to the underlying general structure, the
+see Chapter link:beam[Beam Command], however due to the underlying general structure, the
 implementation of a true multi species version of _OPAL_ should be
 simple to accomplish.
 

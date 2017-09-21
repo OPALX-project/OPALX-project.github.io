@@ -45,7 +45,7 @@ Track Mode
 ~~~~~~~~~~
 
 Before starting to track, a beam line see Section [line] and a beam
-see Chapter [beam] must be selected. The time step (`DT`) and the
+see Chapter link:beam[Beam Command] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
 only the track commands see Table [trackcmd]. In order to preform
@@ -242,18 +242,18 @@ METHOD::
   be used. For the time being the following methods are known:
 +
   PARALLEL-T;;
-    This method puts _OPAL_ in _OPAL-t_ mode see Chapter [opalt].
+    This method puts _OPAL_ in _OPAL-t_ mode see Chapter link:opalt[_OPAL-t_].
   CYCLOTRON-T;;
-    This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter [opalcycl].
+    This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter link:opalcycl[_OPAL-cycl_].
   STATISTICAL-ERRORS;;
     This is a method to let _OPAL_ run multiple times in parallel while
     adding imperfections to alignment and other physical quantities.
 FIELDSOLVER::
-  The field solver to be used see Chapter [fieldsolver].
+  The field solver to be used see Chapter link:fieldsolvers[Field Solver].
 DISTRIBUTION::
-  The particle distribution to be used see Chapter [distribution].
+  The particle distribution to be used see Chapter link:distribution[Distribution].
 BEAM::
-  The particle beam see Chapter [beam] to be used is specified.
+  The particle beam see Chapter link:beam[Beam Command] to be used is specified.
 FILE::
   The name of the file to be written (default="`track`").
 TURNS::

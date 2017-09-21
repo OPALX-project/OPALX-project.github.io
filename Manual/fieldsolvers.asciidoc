@@ -10,7 +10,7 @@ Field Solver
 
 Space charge effects are included in the simulation by specifying a
 field solver described in this chapter and attaching it to the track
-command as described in Chapter [track]. By default, the code does not
+command as described in Chapter link:track[Tracking]. By default, the code does not
 assume any symmetry i.e. full 3D. In the near future it is planed to
 implement also a slice (2D) model. This will allow the use of less
 numbers of macro-particles in the simulation which reduces the
@@ -428,7 +428,7 @@ Define Geometry
 ~~~~~~~~~~~~~~~
 
 The list of geometries defining the beam line boundary. For further
-details see Chapter [geometry].
+details see Chapter link:geometry[Geometry].
 
 [[sec:ITSOLVER]]
 Define Iterative Solver

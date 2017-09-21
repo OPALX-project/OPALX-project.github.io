@@ -269,7 +269,7 @@ Injector II.
 Translate Old to New Distribution Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As of _OPAL_ 1.2, the distribution command see Chapter <<distribution>>
+As of _OPAL_ 1.2, the distribution command see Chapter link:distribution[Distribution]
 was changed significantly. Many of the changes were internal to the
 code, allowing us to more easily add new distribution command options.
 However, other changes were made to make creating a distribution easier,
