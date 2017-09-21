@@ -17,7 +17,7 @@ Geometric Wakefields
 
 Basically there are two different kind of wakefields that can be used.
 The first one is the wakefield of a round, metallic beam pipe that can
-be calculated numerically (see Sections [sec:wakefield] - [sec:TAU]).
+be calculated numerically (see Sections <<sec:wakefield>> - <<sec:TAU>>).
 Since this also limits the applications of wakefields we also provide a
 way to import a discretized wakefield from a file The wakefield of a
 round, metallic beam pipe with radius latexmath:[a] can be calculated
@@ -192,13 +192,13 @@ Define the Wakefield to be used
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `WAKE` command defines data for a wake function on an element
-see Section [Element:common].
+see Section link:elements#sec:Element:common[Common Attributes for all Elements].
 
 [[sec:WTYPE]]
 Define the wakefield type
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A string value see Section [astring] to specify the wake function,
+A string value see Section link:format#sec:astring[String Attributes] to specify the wake function,
 either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`
 or `LONG-TRANSV-SHORT-RANGE`.
 

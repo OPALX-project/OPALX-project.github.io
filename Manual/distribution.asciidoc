@@ -145,7 +145,7 @@ list see Section <<sec:distlist>>.
 
 |`NBIN` |0 |None |The distribution (beam) will be broken up into `NBIN`
 energy bins. This has consequences for the space charge solver
-see Section [FSENBINS].
+see Section link:fieldsolvers#sec:FSENBINS[Energy Bins].
 
 |`XMULT` |1.0 |None |Value used to scale the latexmath:[x] positions
 of the distribution particles. Applied after the distribution is
@@ -175,25 +175,25 @@ average latexmath:[x] position, latexmath:[\bar{x}].
 amount after the distribution is generated (or read in). Same as the
 average latexmath:[y] position, latexmath:[\bar{y}].
 
-|`OFFSETPX` |0.0 |Section [unitsdistattributes] |Distribution is shifted
+|`OFFSETPX` |0.0 |Section <<sec:unitsdistattributes>> |Distribution is shifted
 in latexmath:[p_{x}] by this amount after the distribution is
 generated (or read in). Same as the average latexmath:[p_{x}] value,
 latexmath:[\bar{p}_{x}].
 
-|`OFFSETPY` |0.0 |Section [unitsdistattributes] |Distribution is shifted
+|`OFFSETPY` |0.0 |Section <<sec:unitsdistattributes>> |Distribution is shifted
 in latexmath:[p_{y}] by this amount after the distribution is
 generated (or read in). Same as the average latexmath:[p_{y}] value,
 latexmath:[\bar{p}_{y}].
 
-|`OFFSETPZ` |0.0 |Section [unitsdistattributes] |Distribution is shifted
+|`OFFSETPZ` |0.0 |Section <<sec:unitsdistattributes>> |Distribution is shifted
 in latexmath:[p_{z}] by this amount after the distribution is
 generated (or read in). Same as the average latexmath:[p_{z}] value,
 latexmath:[\bar{p}_{z}].
 
-|`ID1` |0.0 |Section [unitsdistattributes] |Tracer particle which is
+|`ID1` |0.0 |Section <<sec:unitsdistattributes>> |Tracer particle which is
 written also into _data/track_orbit.dat_
 
-|`ID2` |0.0 |Section [unitsdistattributes] |Tracer particle which is
+|`ID2` |0.0 |Section <<sec:unitsdistattributes>> |Tracer particle which is
 written also into _data/track_orbit.dat_
 |=======================================================================
 
@@ -234,7 +234,7 @@ The simulation time step will be adjusted during emission to ensure that
 this many time steps will be required to emit the entire distribution.
 
 |`EMISSIONMODEL` |None |None |Emission model to use when emitting
-particles from cathode see Section [emissionmodel].
+particles from cathode see Section <<sec:emissionmodel>>.
 |=======================================================================
 
 [[sec:fromfiledisttype]]
@@ -278,7 +278,7 @@ be _injected_ or _emitted_. The _injected_ file format is defined in
 Table [fromfileinjfileformat]. The _emitted_ file format is defined in
 Table [fromfileemitfileformat].
 
-.File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Section [variablesopalt,variablesopalcycl].
+.File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec:variablesopalcycl[_OPAL-cycl_ variables].
 [cols="<,<,<,<,<,<",]
 |=======================================================================
 |N | | | | |
@@ -297,7 +297,7 @@ Table [fromfileemitfileformat].
 |latexmath:[p_{yN}] |latexmath:[z_{N}] |latexmath:[p_{zN}]
 |=======================================================================
 
-.File format for _emitted_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Section [variablesopalt] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
+.File format for _emitted_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Section link:opalt#sec:variablesopalt[_OPAL-t_ variables] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
 [cols="<,<,<,<,<,<",]
 |=======================================================================
 |N | | | | |
@@ -323,7 +323,7 @@ then start at latexmath:[t = 0] and distribution particles will be
 emitted into the simulation as the simulation progresses. Also note
 that, as the particles are emitted, they will be modified according to
 the type of emission model used. This is defined by the attribute
-`EMISSIONMODEL`, which is described in Section [emissionmodel]. A choice
+`EMISSIONMODEL`, which is described in Section <<sec:emissionmodel>>. A choice
 of `NONE` for the `EMISSIONMODEL` (which is the default) can be defined
 so as not to affect the distribution coordinates at all.
 
@@ -375,13 +375,13 @@ direction. If nonzero `SIGMAR` overrides `SIGMAX` and `SIGMAY`.
 |`SIGMAT` |0.0 |s |RMS width, latexmath:[\sigma_{t}], in time (t).
 `SIGMAT` is used for an _emitted_ distribution.
 
-|`SIGMAPX` |0.0 |Section [unitsdistattributes] |Parameter
+|`SIGMAPX` |0.0 |Section <<sec:unitsdistattributes>> |Parameter
 latexmath:[\sigma_{px}] for defining distribution.
 
-|`SIGMAPY` |0.0 |Section [unitsdistattributes] |Parameter
+|`SIGMAPY` |0.0 |Section <<sec:unitsdistattributes>> |Parameter
 latexmath:[\sigma_{py}] for defining distribution.
 
-|`SIGMAPZ` |0.0 |Section [unitsdistattributes] |Parameter
+|`SIGMAPZ` |0.0 |Section <<sec:unitsdistattributes>> |Parameter
 latexmath:[\sigma_{pz}] for defining distribution.
 
 |`CUTOFFX` |3.0 |None |Defines transverse distribution cutoff in the
@@ -547,31 +547,31 @@ Correlations for `GAUSS` Distribution (Experimental)
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
-|`CORRX` |0.0 |Section [unitsdistattributes] |latexmath:[x],
+|`CORRX` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[x],
 latexmath:[p_x] correlation. (latexmath:[R_{12}] in transport
 notation.)
 
-|`CORRY` |0.0 |Section [unitsdistattributes] |latexmath:[y],
+|`CORRY` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[y],
 latexmath:[p_y] correlation. (latexmath:[R_{34}] in transport
 notation.)
 
-|`CORRZ` |0.0 |Section [unitsdistattributes] |latexmath:[z],
+|`CORRZ` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[z],
 latexmath:[p_z] correlation. (latexmath:[R_{56}] in transport
 notation.)
 
-|`R51` |0.0 |Section [unitsdistattributes] |latexmath:[x],
+|`R51` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[x],
 latexmath:[z] correlation. (latexmath:[R_{51}] in transport
 notation.)
 
-|`R52` |0.0 |Section [unitsdistattributes] |latexmath:[p_x],
+|`R52` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[p_x],
 latexmath:[z] correlation. (latexmath:[R_{52}] in transport
 notation.)
 
-|`R61` |0.0 |Section [unitsdistattributes] |latexmath:[x],
+|`R61` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[x],
 latexmath:[p_z] correlation. (latexmath:[R_{61}] in transport
 notation.)
 
-|`R62` |0.0 |Section [unitsdistattributes] |latexmath:[p_x],
+|`R62` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[p_x],
 latexmath:[p_z] correlation. (latexmath:[R_{62}] in transport
 notation.)
 |=======================================================================
@@ -742,7 +742,7 @@ distribution was really intended for this mode of operation in order to
 mimic common laser pulses in photoinjectors. The basic characteristic of
 a `FLATTOP` is a uniform, elliptical transverse distribution and a
 longitudinal (time) distribution with a Gaussian rise and fall time as
-described in Section [gaussdisttypephotoinjector]. Below we show an
+described in Section <<sec:gaussdisttypephotoinjector>>. Below we show an
 example of a `FLATTOP` distribution command with an elliptical cross
 section of 1mm by 2mm and a flat top, in time, 10ps long with a 0.5ps
 rise and fall time as defined in Figure [flattop].
@@ -1005,4 +1005,4 @@ exception here is any `FROMFILE` distribution type. In this case, the
 `WEIGHT` attribute and the number of particles in the `BEAM` command are
 ignored. The number of particles in any `FROMFILE` distribution type is
 defined by the text file containing the distribution particle
-coordinates. (Section [fromfiledisttype]).
+coordinates. (Section <<sec:fromfiledisttype>>).

@@ -26,7 +26,7 @@ HELP,NAME=label;      // List funct. and attr. types of
 HELP,label;           // Shortcut for the second format
 ....
 
-`label` is an identifier see Section [label]. If it is non-blank, _OPAL_
+`label` is an identifier see Section link:format#sec:label[Identifiers or Labels]. If it is non-blank, _OPAL_
 prints the function of the object `label` and lists its attribute types.
 Entering `HELP` alone displays help on the `HELP` command.
 
@@ -51,7 +51,7 @@ SHOW,NAME=pattern;    // Show names matching of "pattern"
 SHOW,pattern;         // Shortcut for the second format
 ....
 
-`pattern` is an regular expression see Section [wildcard]. If it is
+`pattern` is an regular expression see Section link:format#sec:wildcard[Regular Expressions]. If it is
 non-blank, _OPAL_ displays all object names matching the `pattern`.
 Entering `SHOW` alone displays help on the `SHOW` command.
 
@@ -76,7 +76,7 @@ WHAT,NAME=label;        // Show definition of "label"
 WHAT,label;             // Shortcut for the second format
 ....
 
-`label` is an identifier see Section [label]. If it is non-blank, _OPAL_
+`label` is an identifier see Section link:format#sec:label[Identifiers or Labels]. If it is non-blank, _OPAL_
 displays the object `label` in a format similar to the input statement
 that created the object. Entering `WHAT` alone displays help on the
 `WHAT` command. Examples:
@@ -98,7 +98,7 @@ STOP or QUIT;
 ....
 
 terminates execution of the _OPAL_ program, or, when the statement
-occurs in a `CALL` file see Section [call], returns to the calling file.
+occurs in a `CALL` file see Section_<<sec:call>>, returns to the calling file.
 Any statement following the `STOP` or `QUIT` statement is ignored.
 
 [[sec:option]]
@@ -146,7 +146,7 @@ SEED::
   integer in the range [0...999999999] (default: 123456789). SEED can be
   an expression. If SEED latexmath:[=] -1, the time is used as seed
   and the generator is not portable anymore. See also: random values
-  see Section [adefer].
+  see Section link:format#sec:adefer[Deferred Expressions and Random Values].
 PSDUMPFREQ::
   Defines after how many time steps the phase space is dumped into the
   H5hut file. Default value is 10.
@@ -217,12 +217,12 @@ CSRDUMP::
 SCAN::
   If true one can simulate in a loop several machines where some
   variables can be random variables. Find an example in
-  Section [randmach].
+  Section link:track#sec:randmach[Track a Random Machine].
 CZERO::
   If true the distributions are generated such that the centroid is
   exactly zero and not statistically dependent.
 RNGTYPE::
-  The name see Section [astring] of a random number generator can be
+  The name see Section link:format#sec:astring[String Attributes] of a random number generator can be
   provided. The default random number generator (RANDOM) is a portable
   48-bit generator. Three quasi random generators are available:
 +
@@ -345,13 +345,13 @@ REAL variable-name:=real-expression;
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in real-expression see Section [areal]. Whenever an
+quantities occurring in real-expression see Section link:format#sec:areal[Real Expressions]. Whenever an
 operand changes in `real-expression`, a new value is calculated. The
 definition may be thought of as a mathematical equation. However, _OPAL_
 is not able to solve the equation for a quantity on the right-hand side.
 
 An assignment in the sense of the FORTRAN or C languages can be achieved
-by using the `EVAL` function see Section [eval].
+by using the `EVAL` function see Section <<sec:eval>>.
 
 A reserved variable is the value `P0` which is used as the global
 reference momentum for normalizing all magnetic field coefficients.
@@ -389,7 +389,7 @@ now it is mandatory!
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in vector-expression see Section [anarray] on the
+quantities occurring in vector-expression see Section link:format#sec:anarray[Arrays] on the
 right-hand side. Whenever an operand changes in `vector-expression`, a
 new value is calculated. The definition may be thought of as a
 mathematical equation. However, _OPAL_ is not able to solve the equation
@@ -415,7 +415,7 @@ BOOL variable-name=logical-expression;
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in logical-expression see Section [alogical].
+quantities occurring in logical-expression see Section link:format#sec:alogical[Logical Expressions].
 Whenever an operand changes in `logical-expression`, a new value is
 calculated. The definition may be thought of as a mathematical equation.
 However, _OPAL_ is not able to solve the equation for a quantity on the
@@ -467,7 +467,7 @@ REAL VECTOR vector-name=vector-expression;
 The keyword `REAL` is optional. It creates a new global vector
 `vector-name` and discards any old vector with the same name. Its value
 depends on all quantities occurring in vector-expression
-see Section [anarray]. Whenever an operand changes in
+see Section link:format#sec:anarray[Arrays]. Whenever an operand changes in
 `vector-expression`, a new value is calculated. The definition may be
 thought of as a mathematical equation. However, _OPAL_ is not able to
 solve the equation for a quantity on the right-hand side.
@@ -566,7 +566,7 @@ ECHO,MESSAGE=message;
 ECHO,message;           // shortcut
 ....
 
-`message` is a string value see Section [astring]. It is immediately
+`message` is a string value see Section link:format#sec:astring[String Attributes]. It is immediately
 transmitted to the `ECHO` stream.
 
 [[sec:system]]
@@ -584,7 +584,7 @@ SYSTEM,CMD=string;
 SYSTEM,string;         // shortcut
 ....
 
-The string see Section [astring] `string` must be a valid operating
+The string see Section link:format#sec:astring[String Attributes] `string` must be a valid operating
 system command.
 
 [[system-command-under-unix]]
@@ -613,7 +613,7 @@ TITLE,page-header;          // shortcut for first format
 TITLE,STRING="";            // clear page header
 ....
 
-`page-header` is a string value see Section [astring]. It defines the
+`page-header` is a string value see Section link:format#sec:astring[String Attributes]. It defines the
 page header which will be used as a title for subsequent output pages.
 Before the first `TITLE` statement is encountered, the page header is
 empty. It can be redefined at any time.
@@ -633,7 +633,7 @@ CALL,FILE=file-name;
 CALL,file-name;
 ....
 
-`file-name` is a string see Section [astring]. The statement causes the
+`file-name` is a string see Section link:format#sec:astring[String Attributes]. The statement causes the
 input to switch to the named file. Input continues on that file until a
 `STOP` or an end of file is encountered. Example:
 
@@ -652,7 +652,7 @@ The `SAVE` command has two formats:
 SAVE,FILE=file-name
 ....
 
-`file-name` is a string see Section [astring]. The command causes all
+`file-name` is a string see Section link:format#sec:astring[String Attributes]. The command causes all
 beam element, beam line, and parameter definitions to be written on the
 named file.
 

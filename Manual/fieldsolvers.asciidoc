@@ -487,7 +487,7 @@ bunch is to large, the electrostatic approximation is no longer valid.
 One solution to that problem is to introduce latexmath:[k] energy bins
 and perform latexmath:[k] separate field solves in which
 latexmath:[\mathrm{d} E] is again small and hence the electrostatic
-approximation valid. In case of a cyclotron see Section [cyclotron] the
+approximation valid. In case of a cyclotron see Section link:elements#sec:cyclotron[Cyclotron] the
 number of energy bins must be at minimum the number of neighboring
 bunches (`NNEIGHBB`) i.e.
 latexmath:[\mathrm{ENBINS} \le \mathrm{NNEIGHBB}].

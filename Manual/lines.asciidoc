@@ -18,7 +18,7 @@ Formally a beam line is defined by a `LINE` command:
 label:LINE=(member,...,member);
 ....
 
-label see Section [label] gives a name to the beam line for later
+label see Section link:format#sec:label[Identifiers or Labels] gives a name to the beam line for later
 reference.
 
 Each `member` may be one of the following:
@@ -29,7 +29,7 @@ Each `member` may be one of the following:
 
 Beam lines can be nested to any level.
 
-[[simple-beam-lines]]
+[[sec:simple-beam-lines]]
 Simple Beam Lines
 ~~~~~~~~~~~~~~~~~
 

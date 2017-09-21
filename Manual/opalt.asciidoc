@@ -82,7 +82,8 @@ Positioning of Elements
 
 Since _OPAL_ version 2.0 of _OPAL_ elements can be placed in space using
 3D coordinates `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI`, see
-Section [Element:common]. The old notation using `ELEMEDGE` is still
+Section link:element#sec:Element:common[Common Attributes for all Elements].
+The old notation using `ELEMEDGE` is still
 supported. _OPAL-t_ then computes the position in 3D using `ELEMDGE`,
 `ANGLE` and `DESIGNENERGY`. It assumes that the trajectory consists of
 straight lines and segments of circles. Fringe fields are ignored. For
@@ -98,8 +99,9 @@ Prior to _OPAL_ version 2.0 elements needed only a defined length. The
 transverse extent was not defined for elements except when combined with
 2D or 3D field maps. An aperture had to be designed to give elements a
 limited extent in transverse direction since elements now can be placed
-freely in three-dimensional space. See Section [Element:common] for how
-to define an aperture.
+freely in three-dimensional space.
+See Section link:element#sec:Element:common[Common Attributes for all Elements]
+for how to define an aperture.
 
 [[sec:CoordinateSystems]]
 Coordinate Systems
@@ -213,7 +215,7 @@ where
 latexmath:[\mathbf{v}_0] corresponds to the origin of the `LINE` and
 latexmath:[\mathcal{W}_0] to its orientation. In _OPAL-t_ they can be
 defined using either `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI` or `ORIGIN`
-and `ORIENTATION`, see Section <<line:simple>>.
+and `ORIENTATION`, see Section link:lines#sec:simple-beam-lines[Simple Beam Lines].
 
 [[space-charge-coordinate-system]]
 Space Charge Coordinate System

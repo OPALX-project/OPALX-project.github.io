@@ -44,7 +44,7 @@ to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
 Track Mode
 ~~~~~~~~~~
 
-Before starting to track, a beam line see Section [line] and a beam
+Before starting to track, a beam line see Chapter link:lines[Beam Lines] and a beam
 see Chapter link:beam[Beam Command] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
@@ -55,7 +55,7 @@ several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 The attributes of the command are:
 
 LINE::
-  The label of a preceding `LINE` see Section [line] (no default).
+  The label of a preceding `LINE` see Chapter link:lines[Beam Lines] (no default).
 BEAM::
   The named `BEAM` command defines the particle mass, charge and
   reference momentum (default: `UNNAMED_BEAM`).
@@ -238,7 +238,7 @@ of previous tracking.
 Its attributes are:
 
 METHOD::
-  The name (a string, see Section [astring]) of the tracking method to
+  The name (a string, see Section link:format#sec:astring[String Attributes]) of the tracking method to
   be used. For the time being the following methods are known:
 +
   PARALLEL-T;;
@@ -270,7 +270,7 @@ will be injected in sequence by reading the initial distribution from
 latexmath:[.h5] file.
 MBMODE::
   This defines which mode of multi-bunch runs. There are two options for
-  it, namely, `AUTO` and `FORCE`. See Section [opalcycl:MultiBunch] for
+  it, namely, `AUTO` and `FORCE`. See Section link:opalcycl#sec:opalcycl:MultiBunch[Multi-bunch Mode] for
   their explanations in detail.
 +
 For restarting run with `TURNS` larger than one, if the existing

@@ -196,7 +196,8 @@ smooth numerically, but can be inaccurate far from the field axis.) Only
 a few (user specified) terms from the Fourier series are used.
 3.  Enge function [enge] field map. This type of field map uses Enge
 functions to describe the fringe fields of a magnet. Currently, this is
-only used for `RBEND` and `SBEND` elements see Section [RBend,SBend].
+only used for `RBEND` and `SBEND` elements see Sections 
+link:elements#sec:RBend[RBend (_OPAL-t_)] and link:elements#sec:SBend[SBend (_OPAL-t_)].
 
 It is important to note that in all cases, the input field map will be
 normalized so that the peak field magnitude value on axis is equal to
@@ -223,46 +224,46 @@ all of them are, which is indicated in the description.)
   *_Not implemented yet_*. A work around is to use a 1DDynamic field map
   with a very low frequency.
 1DMagnetoStatic::
-  1D magnetostatic field map. See Section [1DMagnetoStatic].
+  1D magnetostatic field map. See Section <<sec:1DMagnetoStatic>>.
 AstraMagnetoStatic::
   1D magnetostatic field map with possibly non-equidistant sampling.
   This file type is compatible with ASTRA field maps with small changes.
-  See Section [ AstraMagnetostatic].
+  See Section <<sec:AstraMagnetostatic>>.
 1DDynamic::
-  1D dynamic electromagnetic field map. See Section [1DDynamic].
+  1D dynamic electromagnetic field map. See Section <<sec:1DDynamic>>.
 AstraDynamic::
   1D dynamic electromagnetic field map with possibly non-equidistant
   sampling. This file type is compatible with ASTRA field maps with
-  small changes. See Section [AstraDynamic].
+  small changes. See Section <<sec:AstraDynamic>>.
 1DProfile1::
   This type of field map specifies the Enge functions (see [enge]) for
   the entrance and exit fringe fields of a magnet. Currently this type
   of field map is only used by `RBEND` and `SBEND` elements
-  see Section [RBend,SBend]. See Section [1DProfile1].
+  see Sections link:elements#sec:RBend[RBend (_OPAL-t_)] and link:elements#sec:SBend[SBend (_OPAL-t_)]. See Section <<sec:1DProfile1>>.
 2DElectroStatic::
   2D electrostatic field map. 2D field maps are described by the
   electromagnetic field in one half-plane. See
-  Section [2DElectroStatic].
+  Section <<sec:2DElectroStatic>>.
 2DMagnetoStatic::
   2D magnetostatic field map. Other than this descriptor at the head of
   the file, the format for this field map type is identical to the T7
   file format as produced by Poisson [superfish]. See
-  Section [2DMagnetoStatic].
+  Section <<sec:2DMagnetoStatic>>.
 2DDynamic::
   2D dynamic electromagnetic field map. Other than this descriptor at
   the head of the file, the format for this field map type is identical
   to the T7 field format as produced by Superfish [superfish]. See
-  Section [2DDynamic].
+  Section <<sec:2DDynamic>>.
 3DElectroStatic::
   3D electrostatic field map. +
   *_Not implemented yet_*.
 3DMagnetoStatic::
-  3D magnetostatic field map, see Section [3DMagnetoStatic].
+  3D magnetostatic field map, see Section <<sec:3DMagnetoStatic>>.
 3DMagnetoStatic_Extended::
   2D magnetostatic field map of field on mid-plane that _OPAL_ extends
   to 3D.
 3DDynamic::
-  3D dynamic electromagnetic field map. See Section [3DDynamic].
+  3D dynamic electromagnetic field map. See Section <<sec:3DDynamic>>.
 
 We will give examples and descriptions of each of the implemented field
 map types in the sections below.
@@ -332,7 +333,7 @@ As a general warning: be wise when you choose the type of field map to
 be used! Figure [fieldnoiseexample] shows three pictures of the
 longitudinal phase space after three gun simulations using different
 types of field maps. In the first picture we
-used a 1DDynamic field map see Section [1DDynamic] resulting in a smooth
+used a 1DDynamic field map see Section <<sec:1DDynamic>> resulting in a smooth
 longitudinal distribution. In the middle picture we set the
 `FAST` attribute to true, resulting in some fine structure in the phase
 space due to the bi-linear interpolation of the internally generated 2D
@@ -460,7 +461,7 @@ In this example only 40 Fourier coefficients are kept when calculating
 field values during a simulation. The z-position of each field sampling
 is in the first column (in meters), the corresponding longitudinal
 on-axis magnetic field amplitude is in the second column. As with the
-1DMagnetoStatic see Section [1DMagnetoStatic] field maps, _OPAL-t_
+1DMagnetoStatic see Section <<sec:1DMagnetoStatic>> field maps, _OPAL-t_
 normalizes the field values to
 latexmath:[\max(|B_{\text{on axis}}|) = {1.0}{T}]. In the header only
 the first line is needed since the information on the longitudinal
@@ -695,7 +696,7 @@ origin. The parameters for these two Enge functions are subsequently
 entered into a `1DProfile1` field map, as described below.
 
 Currently, `1DProfile1` field maps are only implemented for `RBEND` and
-`SBEND` elements see Section [RBend,SBend,opaltrbendsbendfields].
+`SBEND` elements see Sections link:elements#sec:RBend[RBend (_OPAL-t_)], link:elements#sec:SBend[SBend (_OPAL-t_)] and link:elements#sec:opaltrbendsbendfields[Bend Fields from 1D Field Maps (_OPAL-t_)].
 
 .Figure 3: Example of Enge functions describing the entrance and exit fringe fields of a rectangular bend magnet. The top part of the figure shows the relative field strength on the mid-plane. The bottom part of the figure shows an example of a particle trajectory through the magnet. Note that the magnet field is naturally divided into three regions: entrance fringe field, central field, and exit fringe field.
 image:./figures/Fieldmaps/profile-1.png[width=700]
@@ -714,13 +715,13 @@ Line 2::
   The first three values on the second line are used to define the
   extent of the fringe fields for the entrance region of the magnet.
   This can be done two different ways as will be described below
-  see Section [1DProfile1Type1,1DProfile1Type2]. The fourth value on
+  see Sections <<sec:1DProfile1Type1>> and <<sec:1DProfile1Type2>>. The fourth value on
   line 2 is not currently used (but must still be present).
 Line 3::
   The first three values on the third line are used to define the extent
   of the fringe fields for the exit region of the magnet. This can be
   done two different ways as will be described below
-  see Section [1DProfile1Type1,1DProfile1Type2]. The fourth value on
+  see Sections_<<sec:1DProfile1Type1>> and <<sec:1DProfile1Type2>>. The fourth value on
   line 3 is not currently used (but must still be present).
 
 The lines following the three header lines give the entrance region Enge
@@ -731,8 +732,8 @@ coefficients from latexmath:[c_0] to latexmath:[c_{N_{Enge\,Exit}}].
 There are two types of `1DProfile1` field map files: `1DProfile Type 1`
 and `1DProfile1 Type 2`. The difference between the two is a small
 change in how the entrance and exit fringe field regions are described.
-This will be explained in Section [1DProfile1Type1] and
-Section [1DProfile1Type2].
+This will be explained in Sections <<sec:1DProfile1Type1>> and
+<<sec:1DProfile1Type2>>.
 
 .Layout of a `1DProfile1` field map file.
 [grid=none]
@@ -774,13 +775,13 @@ Parameter 3 |Place Holder
 |latexmath:[c_{N_{Enge\,Exit}}] | | |
 |=======================================================================
 
-.Figure 4: Illustration of a rectangular bend (`RBEND`, see Section [RBend]) showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}] 
+.Figure 4: Illustration of a rectangular bend (`RBEND`, see Section link:elements#sec:RBend[RBend (_OPAL-t_)] showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}] 
 image:./figures/Fieldmaps/RBendType1.png[]
 
-.Figure 5: Illustration of a sector bend (`SBEND`, see Section [SBend]) showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}].
+.Figure 5: Illustration of a sector bend (`SBEND`, see Section link:elements#sec:SBend[SBend (_OPAL-t_)]) showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}].
 image:./figures/Fieldmaps/SBendType1.png[]
 
-[[ssec:1DProfile1Type1]]
+[[sec:1DProfile1Type1]]
 1DProfile1 Type 1 for Bend Magnet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -861,7 +862,7 @@ element’s `ELEMEDGE` attribute.) The exit fringe field region begins
 4.0cm after the exit edge of the magnet. The value 1000 at the end of
 line 2 and 0 at the end of line 3 do not have any meaning.
 
-[[ssec:1DProfile1Type2]]
+[[sec:1DProfile1Type2]]
 1DProfile1 Type 2 for Bend Magnet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -979,7 +980,7 @@ direction span the distance from 0.0cm to 2.0cm. The field values are
 ordered in XZ orientation, so the index in the longitudinal direction
 changes fastest and therefore latexmath:[E_z] values are stored in the
 first column and latexmath:[E_r] values in the second
-see Section [fieldorientation]. _OPAL-t_ normalizes the field so that
+see Section <<sec:fieldorientation>>. _OPAL-t_ normalizes the field so that
 latexmath:[max(|E_{z, \text{ on axis}}|) = {1}{MVm^{-1}}].
 
 .Layout of a `2DElectroStatic` field map file.
@@ -1020,20 +1021,20 @@ tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
   This tells _OPAL-t_ what type of field file it is (`2DElectroStatic`)
-  and the field orientation see Section [fieldorientation].
+  and the field orientation see Section <<sec:fieldorientation>>.
 Line 2::
   This gives the extent of the field map and how many grid spacings
   there are in the fastest changing index direction
-  see Section [fieldorientation].
+  see Section <<sec:fieldorientation>>.
 Line 3::
   This gives the extent of the field map and how many grid spacings
   there are in the slowest changing index direction (see
-  Section [fieldorientation].
+  Section <<sec:fieldorientation>>.
 
 The lines following the header give the 2D field map grid values from
 latexmath:[1] to latexmath:[N = (N_{z} + 1) \times (N_{r} + 1)]. The
 order of these depend on the field orientation
-see Section [fieldorientation] and can be one of two formats:
+see Section <<sec:fieldorientation>> and can be one of two formats:
 
 If Orientation = XZ:::
   latexmath:[E_{z}] (MV/m) latexmath:[E_{r}] (MV/m)
@@ -1069,7 +1070,7 @@ direction span the distance from 0.0cm to 2.0cm. The field values are
 ordered in the ZX orientation, so the index in the radial direction
 changes fastest and therefore latexmath:[B_r] values are stored in the
 first column and latexmath:[B_z] values in the second
-see Section [fieldorientation]. _OPAL-t_ normalizes the field so that
+see Section <<sec:fieldorientation>>. _OPAL-t_ normalizes the field so that
 latexmath:[max(|B_{z,\text{ on axis}}|) = {1}{T}].
 
 .Layout of a `2DMagnetoStatic` field map file.
@@ -1110,20 +1111,20 @@ tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
   This tells _OPAL-t_ what type of field file it is (`2DMagnetoStatic`)
-  and the field orientation see Section [fieldorientation].
+  and the field orientation see Section <<sec:fieldorientation>>.
 Line 2::
   This gives the extent of the field map and how many grid spacings
   there are in the fastest changing index direction
-  see Section [fieldorientation].
+  see Section <<sec:fieldorientation>>.
 Line 3::
   This gives the extent of the field map and how many grid spacings
   there are in the slowest changing index direction (see
-  Section [fieldorientation].
+  Section <<sec:fieldorientation>>.
 
 The lines following the header give the 2D field map grid values from
 latexmath:[1] to latexmath:[N = (N_{z} + 1) \times (N_{r} + 1)]. The
 order of these depend on the field orientation
-see Section [fieldorientation] and can be one of two formats:
+see Section <<sec:fieldorientation>> and can be one of two formats:
 
 If Orientation = XZ:::
   latexmath:[B_{z}] (T) latexmath:[B_{r}] (T)
@@ -1164,7 +1165,7 @@ and latexmath:[E_r] values in the second. The third column contains
 the electric field magnitude, latexmath:[|E|], and is not used (but
 must still be included). The fourth column is latexmath:[H_{\phi}] in
 A/m. The third and fourth columns are always the same and do not depend
-on the field orientation see Section [fieldorientation]. _OPAL-t_
+on the field orientation see Section <<sec:fieldorientation>>. _OPAL-t_
 normalizes the field so that
 latexmath:[max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
 
@@ -1211,22 +1212,22 @@ field map data is being presented:
 
 Line 1::
   This tells _OPAL-t_ what type of field file it is (`2DDynamic`) and
-  the field orientation see Section [fieldorientation].
+  the field orientation see Section <<sec:fieldorientation>>.
 Line 2::
   This gives the extent of the field map and how many grid spacings
   there are in the fastest changing index direction
-  see Section [fieldorientation].
+  see Section <<sec:fieldorientation>>.
 Line 3::
   Field frequency.
 Line 4::
   This gives the extent of the field map and how many grid spacings
   there are in the slowest changing index direction
-  see Section [fieldorientation].
+  see Section <<sec:fieldorientation>>.
 
 The lines following the header give the 2D field map grid values from
 latexmath:[1] to latexmath:[N= (N_{z} + 1) \times (N_{r} + 1)]. The
 order of these depend on the field orientation
-see Section [fieldorientation] and can be one of two formats:
+see Section <<sec:fieldorientation>> and can be one of two formats:
 
 If Orientation = XZ:::
   latexmath:[E_{z}] (MV/m) latexmath:[E_{r}] (MV/m)
@@ -1408,7 +1409,7 @@ Line 4::
 The lines following the header give the 3D field map grid values from
 latexmath:[1] to latexmath:[N= (N_{z} + 1) \times (N_{x} + 1)]. The
 order of these depend on the field orientation
-see Section [fieldorientation] and can currently only be the format
+see Section <<sec:fieldorientation>> and can currently only be the format
 shown in Table [3DMagnetoStatic_Extended].
 
 Figure [3DMagnetoStatic_Extended] gives an example of a
