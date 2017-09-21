@@ -12,17 +12,15 @@ Distribution Command
 [cols="<1,<5",options="header",]
 |=======================================================================
 |Distribution Type |Description
-|`FROMFILE` |Initial distribution read in from text file provided by
-user see Section [fromfiledisttype].
+|<<sec:fromfiledisttype,`FROMFILE`>> |Initial distribution read in from text file provided by
+user.
 
-|`GAUSS` |Initial distribution generated using Gaussian distribution(s)
-see Section [gaussdisttype].
+|<<sec:gaussdisttype,`GAUSS`>> |Initial distribution generated using Gaussian distribution(s).
 
-|`FLATTOP` |Initial distribution generated using flattop distribution(s)
-see Section [flattopdisttype].
+|<<sec:flattopdisttype,`FLATTOP`>> |Initial distribution generated using flattop distribution(s).
 
-|`BINOMIAL` |Initial distribution generated using binomial
-distribution(s) see Section [binomialdisttype].
+|<<sec:binomialdisttype,`BINOMIAL`>> |Initial distribution generated using binomial
+distribution(s).
 
 |`SURFACEEMISSION` |For dark current and multipacting simulations. This
 type of distribution will not be covered in this chapter, see instead
@@ -32,11 +30,9 @@ Chapter [femiss].
 This type of distribution will not be covered in this chapter, see
 instead Chapter [femiss].
 
-|`GUNGAUSSFLATTOPTH` |Legacy. Special case of `FLATTOP` distribution
-see Section [gungaussflattopthdisttype].
+|<<sec:gungaussflattopthdisttype,`GUNGAUSSFLATTOPTH`>> |Legacy. Special case of `FLATTOP` distribution.
 
-|`ASTRAFLATTOPTH` |Legacy. Special case of `FLATTOP` distribution
-see Section [astraflattopthdisttype].
+|<<sec:astraflattopthdisttype,`ASTRAFLATTOPTH`>> |Legacy. Special case of `FLATTOP` distribution.
 |=======================================================================
 
 The distribution command is used to introduce particles into an _OPAL_
@@ -69,7 +65,8 @@ Units
 ~~~~~
 
 The internal units used by _OPAL-t_ and _OPAL-cycl_ are described in
-Section [variablesopalt,variablesopalcycl]. When defining a
+Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec:variablesopalcycl[_OPAL-cycl_ variables].
+When defining a
 distribution, both _OPAL-t_ and _OPAL-cycl_ use meters for length and
 seconds for time. However, there are different options for the units
 used to input the momentum. This is controlled with the `INPUTMOUNITS`
@@ -83,7 +80,7 @@ attribute, defined in Table [distattrinputmounits].
 input momentum (e.g. latexmath:[p_{x}], latexmath:[p_{y}],
 latexmath:[p_{z}]). Momentum is given as
 latexmath:[\beta_{x} \gamma], latexmath:[\beta_{y} \gamma] and
-latexmath:[\beta_{z} \gamma], as in Section [variablesopalt].
+latexmath:[\beta_{z} \gamma], as in Section link:opalt#sec:variablesopalt[_OPAL-t_ variables].
 
 |`INPUTMOUNITS` |`EV` (default for _OPAL-cycl_) |Use the units eV for
 the input momentum (e.g. latexmath:[p_{x}], latexmath:[p_{y}],
@@ -111,21 +108,22 @@ distribution.
 |`EMITTED` |`FALSE` (default) |The distribution is injected into the
 simulation in its entirety at the start of the simulation. The particle
 coordinates for an injected distribution are defined as in
-Section [variablesopalt,variablesopalcycl]. Note that in _OPAL-t_ the
+Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec:variablesopalcycl[_OPAL-cycl_ variables].
+Note that in _OPAL-t_ the
 entire distribution will automatically be shifted to ensure that the
 latexmath:[z] coordinate will be greater than zero for all particles.
 
 |`EMITTED` |`TRUE` |The distribution is emitted into the simulation over
 time as the simulation progresses. Currently only _OPAL-t_ supports this
 type of distribution. In this case, the longitudinal coordinate, as
-defined by Section [variablesopalt], is given in seconds instead of
+defined by Section link:opalt#sec:variablesopalt[_OPAL-t_ variables], is given in seconds instead of
 meters. Early times are emitted first.
 |=======================================================================
 
 Depending on the `EMITTED` attribute, we can specify several other
 attributes that do not depend on the distribution type. These are
 defined in
-Section [universaldistattributes,injecteddistattributes,emitteddistattributes]
+Sections <<sec:universaldistattributes, Universal Attributes>>, <<sec:injecteddistattributes, Injected Distribution Attributes>> and <<sec:emitteddistattributes, Emitted Distribution Attributes>>
 in Table [distattruniversal,distattrinjected,distattrsemitted].
 
 [[sec:universaldistattributes]]
@@ -143,7 +141,7 @@ _data/<basename >_ DIST.dat_.
 of number of particles. The result depends on the number of cores used.
 
 |`WEIGHT` |1.0 |None |Weight of distribution when used in a distribution
-list see Section [distlist].
+list see Section <<sec:distlist>>.
 
 |`NBIN` |0 |None |The distribution (beam) will be broken up into `NBIN`
 energy bins. This has consequences for the space charge solver
