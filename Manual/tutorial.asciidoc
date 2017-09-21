@@ -90,7 +90,7 @@ Auto-phase Example
 ~~~~~~~~~~~~~~~~~~
 
 This is a partial complete example. First we have to set _OPAL_ in
-`AUTOPHASE` mode, as described in Section <<option>> and for example set
+`AUTOPHASE` mode, as described in Section link:control#sec:option[Option Statement] and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
 computing the phases is explained in Appendix <<autophasing>>.
 
@@ -299,8 +299,9 @@ errors in the calculation. (Or at least we hope not.)
 `GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` Distribution Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` distribution types
-see Section <<gungaussflattopthdisttype,astraflattopthdisttype>> are two
+The link:distribution#sec:gungaussflattopthdisttype[`GUNGAUSSFLATTOPTH`] and
+link:distribution#sec:astraflattopthdisttype[`ASTRAFLATTOPTH`] 
+distribution types are two
 common types previously implemented to simulate electron beams emitted
 from photocathodes in an electron photoinjector. These are no longer
 explicitly supported and are instead now defined as specialized
@@ -323,14 +324,15 @@ simulation to behave the same as before.
 `FROMFILE`, `GAUSS` and `BINOMIAL` Distribution Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `FROMFILE` see Section <<fromfiledisttype>>, `GAUSS`
-see Section <<gaussdisttype>> and `BINOMIAL`
-see Section <<binomialdisttype>> distribution types have changed from
+The link:distribution#sec:fromfiledisttype[`FROMFILE`],
+link:distribution#sec:gaussdisttype[`GAUSS`] and
+link:distribution#sec:binomialdisttype[`BINOMIAL`]
+distribution types have changed from
 previous versions of _OPAL_. However, legacy distribution commands
 should work as before with one exception. If you are using _OPAL-cycl_
 then your old input files will work just fine. However, if you are using
 _OPAL-t_ then you will need to set the distribution attribute
-`INPUTMOUNITS` see Section <<unitsdistattributes>> to:
+link:distribution#sec:unitsdistattributes[`INPUTMOUNITS`] to:
 
 ....
 INPUTMOUNITS = EV
