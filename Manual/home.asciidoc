@@ -41,7 +41,7 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/conventions[Conventions]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/tutorial[Tutorial]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/opalt[OPAL-T]
-. https://gitlab.psi.ch/OPAL/src/wikis/Manual/opal-cycl[OPAL-CYCL]
+. https://gitlab.psi.ch/OPAL/src/wikis/Manual/opalcycl[OPAL-CYCL]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/format[Command Format]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/control[Control Statements]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/elements[Elements]
