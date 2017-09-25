@@ -8,7 +8,7 @@
 Distribution Command
 --------------------
 
-.Possible distribution types. Note that the `SURFACEEMISSION` and `SURFACERANDCREATE` distribution types will not be discussed in this chapter. Instead, refer to Chapter [femiss] on field emission for using these types.
+.Possible distribution types.
 [cols="<1,<5",options="header",]
 |=======================================================================
 |Distribution Type |Description
@@ -21,14 +21,6 @@ user.
 
 |<<sec:binomialdisttype,`BINOMIAL`>> |Initial distribution generated using binomial
 distribution(s).
-
-|`SURFACEEMISSION` |For dark current and multipacting simulations. This
-type of distribution will not be covered in this chapter, see instead
-Chapter [femiss].
-
-|`SURFACERANDCREATE` |For dark current and multipacting simulations.
-This type of distribution will not be covered in this chapter, see
-instead Chapter [femiss].
 
 |<<sec:gungaussflattopthdisttype,`GUNGAUSSFLATTOPTH`>> |Legacy. Special case of `FLATTOP` distribution.
 
