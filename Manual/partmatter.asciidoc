@@ -258,9 +258,7 @@ Available Materials in _OPAL_
 Example of an Input File
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-....
-include::examples/particlematterinteraction.in[]
-....
+link:examples/particlematterinteraction.in[]
 
 FX5 is a slit in x direction, the `APERTURE` is *POSITIVE*, the first
 value in `APERTURE` is the left part, the second value is the right

@@ -125,17 +125,13 @@ with the first entry defining the number of cavities in the simulation.
 Examples of Particle Accelerators and Beamlines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-....
-include::examples/OBLA-Gun/OBLA-Gun.in[]
-....
+link:examples/OBLA-Gun/OBLA-Gun.in[]
 
 [[sec:felinj]]
 PSI XFEL 250 MeV Injector
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-....
-include::examples/diagnostic.in[]
-....
+link:examples/diagnostic.in[]
 
 [[sec:inj2]]
 PSI Injector II Cyclotron
@@ -150,9 +146,7 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron.
 
-....
-include::examples/opal-cycl.in[]
-....
+link:examples/opal-cycl.in[]
 
 To run opal on a single node, just use this command:
 
@@ -201,9 +195,7 @@ the biggest amplitude is the betatron tune value at the given energy.
 Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
-....
-include::examples/opal-cycl-sc.in[]
-....
+link:examples/opal-cycl-sc.in[]
 
 To run opal on single node, just use this command:
 

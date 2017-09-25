@@ -645,9 +645,7 @@ mrad.
 A bash script _tuning.sh_ is shown on the next page, to execute
 _OPAL-cycl_ for tune calculations.
 
-....
-include::examples/tuning.sh[]
-....
+link:examples/tuning.sh[]
 
 To start execution, just run
 _tuning.sh_ which uses the input file _testcycl.in_ and the auxiliary
@@ -755,14 +753,10 @@ given in the output.
 Input file
 ++++++++++
 
-....
-include::examples/matchedDistribution.in[]
-....
+link:examples/matchedDistribution.in[]
 
 [[output-1]]
 Output
 ++++++
 
-....
-include::examples/matchedDistribution.output[]
-....
+link:examples/matchedDistribution.output[]
