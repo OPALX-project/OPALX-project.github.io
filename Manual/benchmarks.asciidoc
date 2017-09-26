@@ -1018,7 +1018,8 @@ image:figures/Benchmarks/opal-impact-1MHz-y.png[width=370]
 .Longitudinal beam size and emittance in `Impact-t` and __OPAL__
 image:figures/Benchmarks/opal-impact-1MHz-z.png[]
 
-[[bibliography]]
+[bibliography]
 References
 ~~~~~~~~~~
-- [[[bib:transport,1]]] K. L. Brown et al., TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
+
+* [[[bib:transport,1]]] K. L. Brown et al., TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
