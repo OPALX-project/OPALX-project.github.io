@@ -110,7 +110,7 @@ TRANSPORT
 
 TRANSPORT is a computer program for first-order and second-order matrix
 multiplication, intended for the design of beam transport system
-[bib:transport]. The TRANSPORT version for Windows provides a graphic
+<<bib:transport>>. The TRANSPORT version for Windows provides a graphic
 beam profile diagram, as well as a sigma matrix description of the
 simulated beam and line [Transport_GUI]. Differently from TRACE 3D, the
 ellipses are characterized by the sigma-matrix coefficients and the
@@ -144,7 +144,7 @@ from the assumed central trajectory.
 
 Even if TRANSPORT supports this standard set of units [cm, mrad and %];
 however using *card 15*, the users can redefine the units (see page 99
-on TRANSPORT documentation [bib:transport] for more details).
+on TRANSPORT documentation <<bib:transport>> for more details).
 
 [[sec:TRAN_input]]
 TRANSPORT Input beam
@@ -1017,3 +1017,8 @@ image:figures/Benchmarks/opal-impact-1MHz-y.png[width=370]
 
 .Longitudinal beam size and emittance in `Impact-t` and __OPAL__
 image:figures/Benchmarks/opal-impact-1MHz-z.png[]
+
+[[bibliography]]
+References
+~~~~~~~~~~
+- [[[bib:transport,1]]] K. L. Brown et al., TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
