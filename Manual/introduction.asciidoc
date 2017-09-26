@@ -100,7 +100,7 @@ every night. The input file is found in Section link:tutorial#sec:examplesbeamli
 
 Misprints and obscurity are almost inevitable in a document of this
 size. Comments and _active contributions_ from readers are therefore
-most welcome. They may be sent to `andreas.adelmann@psi.ch`.
+most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelmann].
 
 [#guncomp1]
 .Figure 2 : Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
