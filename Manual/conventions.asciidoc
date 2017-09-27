@@ -1,6 +1,5 @@
 :toc:
-[[chp:opalcycl]]
-
+:toclevels: 3
 :stem: latexmath
 :sectnums:
 

@@ -1,10 +1,7 @@
-:xrefstyle: short
+:toc:
+:toclevels: 3
 :stem: latexmath
 :sectnums:
-:figure-caption:
-
-:toc:
-[[chp:opalcycl]]
 
 [[chp:Introduction]]
 Introduction
