@@ -1,7 +1,11 @@
-:toc:
-:toclevels: 3
 :stem: latexmath
 :sectnums:
+:toc: macro
+:toclevels: 3
+
+link:home[Back to Main Page]
+
+toc::[]
 
 [[chp:opalt]]
 _OPAL-t_
