@@ -21,16 +21,14 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2[OPAL-1.6.0-2 for Linux] | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2.md5[md5 sum] 
 |========
 
-Changes 1.6.0-2::
+Changes in version 1.6.0-2::
 * OPAL binary replaced. In 1.6.0-1 it has been compiled with `Debug` and without any compiler optimization.
 * Please read the link:ReleaseNotes/OPAL%201.6.0[release notes] for changes in OPAL 1.6.0
 
-Changes 1.6.0-1::
+Changes in version  1.6.0-1::
 * This is a package for internal use only.
 * OPAL version 1.6.0
 * update tool-chain
-
-'''
 
 Toolchain for Version 1.6::
 [cols=3*]
@@ -61,7 +59,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-Changes version 1.4.0-1::
+Changes in version 1.4.0-1::
 * update to OPAL version 1.4.0
 * Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.4.0
 
@@ -95,18 +93,14 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-Changes version 1.3.2-3::
-[NOTE]
-=====================================================================
-This release fixes an issue in the Linux package only! The MacOS X package is not affected.
-=====================================================================
-* add missing H5root
+Changes in version 1.3.2-3::
+* add missing H5root (Linux package only!)
 * Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.3.2
 
-Changes version 1.3.2-2::
+Changes in version 1.3.2-2::
 * Fix in `vtk2h5grid`
 
-Changes bersion 1.3.1-1::
+Changes in version 1.3.1-1::
 * update to OPAL version 1.3.1
 
 Toolchain for Version 1.3::
