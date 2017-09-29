@@ -5,17 +5,28 @@
 
 '''
 
-{blank}
-
 == Overview 
-The current OPAL version is 1.4.0.
+The current OPAL version is 1.6.0.
 
-The version of the newest binary distribution package is 1.4.0-1.
+The version of the newest binary distribution package for Linux is 1.6.0-2. For the time being we do not provide an OPAL 1.6 package for macOS.
 
 '''
 
 == Packages
-=== OPAL 1.4.0-1
+=== OPAL Version 1.6
+==== OPAL 1.6.0-2
+Changes::
+* OPAL binary replaced. In 1.6.0-1 it has been compiled with `Debug` and without any compiler optimization.
+
+==== OPAL 1.6.0-1
+Changes::
+* OPAL version 1.6.0
+* update tool-chain
+
+''''
+
+=== OPAL Version 1.4
+==== Version 1.4.0-1
 Changes::
 * update to OPAL version 1.4.0
 * Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.4.0
@@ -23,9 +34,15 @@ Download::
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2[OPAL-1.4.0-1 for Linux], http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-linux.tar.bz2.md5[md5 sum] 
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.4.0-1 for MacOS], http://amas.web.psi.ch/opal/Downloads/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 
-{blank}
+''''
 
-=== OPAL 1.3.2-3
+==== Toolchain
+* gcc/4.8.3
+* openmpi/1.8.2
+* hdf5/1.8.12
+
+=== OPAL Version 1.3
+==== Version 1.3.2-3
 
 [NOTE]
 =====================================================================
@@ -42,7 +59,7 @@ Download::
 
 {blank}
 
-=== OPAL 1.3.2-2
+==== Version 1.3.2-2
 Changes::
 * Fix in `vtk2h5grid`
 
@@ -52,7 +69,7 @@ Download::
 
 {blank}
 
-=== OPAL 1.3.2-1
+==== Version 1.3.2-1
 Changes::
 * update to OPAL version 1.3.2
 
@@ -60,12 +77,9 @@ Download::
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-1-x86_64-linux.tar.bz2[OPAL-1.3.2-1 for Linux], http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-1-x86_64-linux.tar.bz2.md5[md5 sum] 
 * http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.2-1 for MacOS], http://amas.web.psi.ch/opal/Downloads/OPAL-1.3.2-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 
-'''
-
-== Toolchain
-OPAL 1.3.x, 1.4.x::
-    * `gcc/4.8.3`
-    * `openmpi/1.8.2`
-    * `hdf5/1.8.12`
+==== Toolchain
+* gcc/4.8.3
+* openmpi/1.8.2
+* hdf5/1.8.12
 
 '''
