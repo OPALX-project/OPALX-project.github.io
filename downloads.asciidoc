@@ -68,14 +68,22 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-Changes in version 1.4.0-1::
-* update to OPAL version 1.4.0
-* Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.4.0
+Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.4.0
+
+Changes::
+[cols="2*"]
+|===
+| 1.4.0-1
+| update to OPAL version 1.4.0
+|===
 
 Toolchain for Version 1.4::
-* gcc/4.8.3
-* openmpi/1.8.2
-* hdf5/1.8.12
+[cols=3*]
+|=======
+| gcc      | 4.8.3    | GNU Compiler Collection
+| hdf5     | 1.8.12   | Hierachical Data Format 5
+| openmpi  | 1.8.2    | open source MPI-2 implementation
+|=======
 
 '''
 
