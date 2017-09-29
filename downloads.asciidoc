@@ -32,9 +32,8 @@ Changes 1.6.0-1::
 
 '''
 
-==== Toolchain for Version 1.6
-
-[width="15%"]
+Toolchain for Version 1.6::
+[cols=3*]
 |=======
 | boost    | 1.62.0   | C++ libraries
 | CMake    | 3.6.3    | open-source build system
