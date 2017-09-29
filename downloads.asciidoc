@@ -98,13 +98,13 @@ Download::
 
 '''
 
-==== Version 1.3.2-1
+==== Version 1.3.1-1
 Changes::
-* update to OPAL version 1.3.2
+* update to OPAL version 1.3.1
 
 Download::
-* http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-1-x86_64-linux.tar.bz2[OPAL-1.3.2-1 for Linux], http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-1-x86_64-linux.tar.bz2.md5[md5 sum] 
-* http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.2-1 for MacOS], http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-1-x86_64-apple-darwin.tar.bz2[md5 sum]
+* http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.bz2[OPAL-1.3.1-1 for Linux], http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.bz2.md5[md5 sum] 
+* http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.1-1 for MacOS], http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 
 ==== Toolchain for Version 1.3
 * gcc/4.8.3
