@@ -39,17 +39,17 @@ Notes::
 [width="15%"]
 |=======
 | boost    | 1.62.0   | C++ libraries
-| cmake    | 3.6.3    | 
-| cuda     | 8.0.44   | 
-| dks      | 1.1.2    | Dynamic Kernel Scheduler
+| CMake    | 3.6.3    | open-source build system
+| cuda     | 8.0.44   | GPU programming
+| DKS      | 1.1.2    | Dynamic Kernel Scheduler
 | gcc      | 5.4.0    | GNU Compiler Collection
 | gsl      | 2.2.1    | GNU Scientific Library
 | gtest    | 1.7.0    | Google test
 | H5hut    | 2.0.0rc3 | HDF5 utility toolkit
-| hdf5     | 1.8.18   |
-| OpenBLAS | 0.2.19   |
-| openmpi  | 1.10.4   |
-| trilinos | 12.10.1  |
+| hdf5     | 1.8.18   | Hierachical Data Format 5
+| OpenBLAS | 0.2.19   | optimized BLAS and LAPACK library
+| openmpi  | 1.10.4   | open source MPI-2 implementation
+| trilinos | 12.10.1  | Object-Oriented Solver Framework
 |=======
 
 
