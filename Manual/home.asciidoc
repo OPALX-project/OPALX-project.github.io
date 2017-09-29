@@ -46,7 +46,7 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/control[Control Statements]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/elements[Elements]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/lines[Beam Lines]
-. https://gitlab.psi.ch/OPAL/src/wikis/Manual/physics[Beam Command]
+. https://gitlab.psi.ch/OPAL/src/wikis/Manual/beam-command[Beam Command]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/distribution[Distribution Command]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/fieldsolvers[Field Solver]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/track[Tracking]
