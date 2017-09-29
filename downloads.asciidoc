@@ -21,7 +21,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2[OPAL-1.6.0-2 for Linux] | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2.md5[md5 sum] 
 |========
 
-Please read the link:ReleaseNotes/OPAL%201.6.0[release notes] for changes in OPAL 1.6.0
+Please read the link:ReleaseNotes/OPAL%201.6.0[OPAL release notes] for changes in OPAL 1.6.0
 
 Changes::
 [cols="2*"]
@@ -68,7 +68,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.4.0
+Please read the link:ReleaseNotes/OPAL%201.4.0[OPAL release notes] for changes in OPAL 1.4.0
 
 Changes::
 [cols="2*"]
@@ -110,7 +110,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.3.2.
+Please read the link:ReleaseNotes/OPAL%201.4.0[OPAL release notes] for changes in OPAL 1.3.2.
 
 Changes::
 [cols="2*"]
