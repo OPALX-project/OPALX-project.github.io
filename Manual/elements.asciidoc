@@ -105,7 +105,7 @@ ELEMEDGE::
   again that in general the fields will extend past the physical end of
   the element.)
 PARTICLEMATTERINTERACTION::
-  Attach a handler for particle matter interaction, see [chp:partmatt].
+  Attach a handler for particle matter interaction, see Chapter link:partmatter[Particle Matter Interaction].
 X::
   X-component of the position of the element in the laboratory
   coordinate system.
@@ -1966,9 +1966,9 @@ Collimators
 Three types of collimators are defined:
 
 ECOLLIMATOR::
-  [sec:ecollimator] Elliptic aperture,
+  Elliptic aperture,
 RCOLLIMATOR::
-  [sec:rcollimator] Rectangular aperture.
+  Rectangular aperture.
 CCOLLIMATOR::
   Radial rectangular collimator in cyclotrons
 
@@ -2221,11 +2221,11 @@ Correctors (_OPAL-t_)
 Three types of correctors are available:
 
 HKICKER::
-  [sec:hkicker] A corrector for the horizontal plane.
+  A corrector for the horizontal plane.
 VKICKER::
-  [sec:vkicker] A corrector for the vertical plane.
+  A corrector for the vertical plane.
 KICKER::
-  [sec:kicker] A corrector for both planes.
+  A corrector for both planes.
 
 They act as
 
