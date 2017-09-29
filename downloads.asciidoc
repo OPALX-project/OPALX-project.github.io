@@ -14,15 +14,18 @@ The version of the newest binary distribution package for Linux is 1.6.0-2. For 
 
 == Packages
 === OPAL Version 1.6
-==== Version 1.6.0-2
-Changes::
-* OPAL binary replaced. In 1.6.0-1 it has been compiled with `Debug` and without any compiler optimization.
-* Please read the link:ReleaseNotes/OPAL%201.6.0[release notes] for changes in OPAL 1.6.0
 
 Download::
+[cols="2*"]
 |========
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2[OPAL-1.6.0-2 for Linux] | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2.md5[md5 sum] 
 |========
+
+==== Version 1.6.0-2
+
+Changes::
+* OPAL binary replaced. In 1.6.0-1 it has been compiled with `Debug` and without any compiler optimization.
+* Please read the link:ReleaseNotes/OPAL%201.6.0[release notes] for changes in OPAL 1.6.0
 
 '''
 
