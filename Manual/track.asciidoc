@@ -86,15 +86,15 @@ TIMEINTEGRATOR::
   Define the time integrator. Currently only available in _OPAL-cycl_.
   The valid options are `RK-4`, `LF-2` and `MTS`:
 +
-  RK-4;;
+  * RK-4
     the fourth-order Runge-Kutta integrator. This is the default
     integrator for _OPAL-cycl_.
-  LF-2;;
+  * LF-2
     the second-order Boris-Buneman (leapfrog-like) integrator.
     Currently, `LF-2` is only available for multi-particles with/without
     space charge. For single particle tracking and tune calculations,
     use the `RK-4` for the time being.
-  MTS;;
+  * MTS
     the multiple-time-stepping integrator. Considering that the space
     charge fields change much slower than the external fields in
     cyclotrons, the space charge can be calculated less frequently than
@@ -168,8 +168,7 @@ Track a Random Machine
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This example shows how to track a _random_ machine i.e. some parameters
-are random variables. At the moment (Version 1.1.4) there seams to be a
-problem when having random variables in the Distribution command.
+are random variables.
 
 ....
 Option, SCAN=TRUE;
@@ -244,11 +243,11 @@ METHOD::
   The name (a string, see Section link:format#sec:astring[String Attributes]) of the tracking method to
   be used. For the time being the following methods are known:
 +
-  PARALLEL-T;;
+  * `PARALLEL-T`
     This method puts _OPAL_ in _OPAL-t_ mode see Chapter link:opalt[_OPAL-t_].
-  CYCLOTRON-T;;
+  * `CYCLOTRON-T`
     This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter link:opalcycl[_OPAL-cycl_].
-  STATISTICAL-ERRORS;;
+  * `STATISTICAL-ERRORS`
     This is a method to let _OPAL_ run multiple times in parallel while
     adding imperfections to alignment and other physical quantities.
 FIELDSOLVER::
@@ -287,8 +286,6 @@ PARAMB::
 +
 This argument is only available for `AUTO` mode multi-bunch run in
 _OPAL-cycl_.
-MULTIPACTING::
-  see Chapter [multpact]
 OBJECTIVES::
   An array of column names from the _.stat_ file used in
   `STATISTICAL-ERRORS` to compute mean value and standard deviation
