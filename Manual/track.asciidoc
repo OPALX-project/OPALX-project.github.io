@@ -47,8 +47,8 @@ to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
 Track Mode
 ~~~~~~~~~~
 
-Before starting to track, a beam line see Chapter link:lines[Beam Lines] and a beam
-see Chapter link:beam[Beam Command] must be selected. The time step (`DT`) and the
+Before starting to track, a link:lines[beam line] and a 
+link:beam[beam] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
 only the track commands see Table [trackcmd]. In order to preform
@@ -58,7 +58,7 @@ several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 The attributes of the command are:
 
 LINE::
-  The label of a preceding `LINE` see Chapter link:lines[Beam Lines] (no default).
+  The label of a preceding link:lines[`LINE`] (no default).
 BEAM::
   The named `BEAM` command defines the particle mass, charge and
   reference momentum (default: `UNNAMED_BEAM`).
