@@ -61,7 +61,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-Changes version 1.4.0-1
+Changes version 1.4.0-1::
 * update to OPAL version 1.4.0
 * Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.4.0
 
@@ -95,30 +95,21 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2[md5 sum]
 |===
 
-==== Version 1.3.2-3
-
+Changes version 1.3.2-3::
 [NOTE]
 =====================================================================
 This release fixes an issue in the Linux package only! The MacOS X package is not affected.
 =====================================================================
-
-Changes::
 * add missing H5root
 * Please read the link:ReleaseNotes/OPAL%201.4.0[release notes] for changes in OPAL 1.3.2
 
-'''
-
-==== Version 1.3.2-2
-Changes::
+Changes version 1.3.2-2::
 * Fix in `vtk2h5grid`
 
-'''
-
-==== Version 1.3.1-1
-Changes::
+Changes bersion 1.3.1-1::
 * update to OPAL version 1.3.1
 
-==== Toolchain for Version 1.3
+Toolchain for Version 1.3::
 * gcc/4.8.3
 * openmpi/1.8.2
 * hdf5/1.8.12
