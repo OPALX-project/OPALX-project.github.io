@@ -15,7 +15,7 @@ OPAL Documentation & Help
 
 * [Download page](downloads) with OPAL binaries.
 
-* OPAL [Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+* OPAL [PDF Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 
 * OPAL [Wiki Manual]( Manual/home)
 
@@ -23,7 +23,7 @@ OPAL Documentation & Help
 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 
-* Report bugs to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
+* Report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
 
 OPAL Start with Examples
 =====================

@@ -1312,7 +1312,7 @@ component only to model a defective multipole.
 
 [[sec:multipoleT]]
 General Multipole (will replace Section <<multipole>> when implemented)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A `MULTIPOLET` is in _OPAL-t_ a general multipole with extended
 features. It can represent a straight or curved magnet. In the curved
