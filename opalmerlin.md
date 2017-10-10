@@ -36,3 +36,5 @@ Use again the `module` command to load the desired OPAL version:
 `module load OPAL/1.6.0rc6`
 
 An environment variable OPAL_EXE_PATH will point to the directory where the selected version of OPAL will reside.
+
+Some info on using [Merlin5](https://intranet.psi.ch/PSI_HPC/Merlin5)
