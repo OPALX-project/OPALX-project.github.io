@@ -138,13 +138,7 @@ See link:../ReleaseNotes/ReleaseNotes[Release Notes] for a detailed list of chan
 Known Issues and Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[[opal-cycl]]
-_OPAL-cycl_
-^^^^^^^^^^^
-
-* Restart with the option `PSDUMPFRAME` does not work yet,
-* In complicated geometries such as spiral inflectors, proper particle
-deletion at the boundary sometimes fails.
+See https://gitlab.psi.ch/OPAL/src/issues
 
 [[acknowledgments]]
 Acknowledgments
