@@ -142,7 +142,7 @@ Known Issues and Limitations
 _OPAL-cycl_
 ^^^^^^^^^^^
 
-* Restart with the option `PSDUMPLOCALFRAME` does not work yet,
+* Restart with the option `PSDUMPFRAME` does not work yet,
 * In complicated geometries such as spiral inflectors, proper particle
 deletion at the boundary sometimes fails.
 
