@@ -644,7 +644,7 @@ see Section link:fieldmaps#sec:1DProfile1[`1DProfile1`]:
 
 The first case describes how field maps were used in previous versions
 of _OPAL_ (and can still be used in the current version). The second
-option is new to _OPAL_ __OPAL__version1.2.00 and it has a couple of
+option is new to _OPAL_ __OPAL__version 1.2.00 and it has a couple of
 advantages:
 
 1.  Because only the fringe fields are described, the length of the
@@ -1473,7 +1473,8 @@ MAXR::
 
 During the tracking, the particle (latexmath:[r, z, \theta]) will be
 deleted if MINZ latexmath:[< z <] MAXZ or MINR latexmath:[< r <]
-MAXR, and it will be recorded in the ASCII file _<inputfilename>.loss_.
+MAXR, and it will be recorded in the HDF5 file _<inputfilename>.h5_
+(or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 Example:
 
 ....
@@ -2078,8 +2079,8 @@ cma2: CCollimator, XSTART=x3, XEND=x4,YSTART=y3, YEND=y4,
  ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
 ....
 
-The particles lost on the CCOLLIMATOR are recorded in the ASCII file
-_<inputfilename>.loss_
+The particles lost on the CCOLLIMATOR are recorded in the HDF5 file 
+_<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
 [[septum-opal-cycl]]
 Septum (_OPAL-cycl_)
@@ -2109,8 +2110,8 @@ eec2: Septum, xstart=4100.0, xend=4300.0,
 ystart=-1200.0, yend=-150.0, width=0.05;
 ....
 
-The particles lost on the SEPTUM are recorded in the ASCII file
-_<input_file_name >.loss_.
+The particles lost on the SEPTUM are recorded in the HDF5 file 
+_<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
 [[probe-opal-cycl]]
 Probe (_OPAL-cycl_)
@@ -2139,8 +2140,9 @@ prob1: Probe, xstart=4166.16, xend=4250.0,
 ystart=-1226.85, yend=-1241.3;
 ....
 
-The particles probed on the PROBE are recorded in the ASCII file
-_<inputfilename>.loss_. Please note that these particles are not deleted
+The particles probed on the PROBE are recorded in the HDF5 file 
+_<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
+Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
 [[stripper-opal-cycl]]
@@ -2188,7 +2190,8 @@ opcharge=1, opmass=PMASS, opyield=2, stop=false;
 ....
 
 No matter what the value of STOP is, the particles hitting on the
-STRIPPER are recorded in the ASCII file _<inputfilename>.loss_.
+STRIPPER are recorded in the HDF5 file 
+_<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
 [[degrader-opal-t]]
 Degrader (_OPAL-t_)

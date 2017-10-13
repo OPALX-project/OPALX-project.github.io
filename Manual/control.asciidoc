@@ -238,7 +238,7 @@ ENABLEHDF5::
   If true (default), HDF5 read and write is enabled.
 ASCIIDUMP::
   If true, instead of HDF5, ASCII output is generated for the following
-  elements: Probe, Collimator, Monitor, Stripper, Foil and global
+  elements: Probe, Collimator, Monitor, Stripper and global
   losses.
 NLHS::
   Number of stored old solutions for extrapolating the new starting
