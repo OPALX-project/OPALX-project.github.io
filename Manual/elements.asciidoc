@@ -1979,23 +1979,22 @@ label:RCOLLIMATOR,TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
 ....
 
-Either type has a length:
+Each type has the following attributes:
 
 L::
   The collimator length (default: 0 m).
+OUTFN::
+  The file name into which the monitor should write the collected data.
+  The file is an H5hut file.
 
 Optically a collimator behaves like a drift space, but
 during tracking, it also introduces an aperture limit. The aperture is
 checked at the entrance. If the length is not zero, the aperture is also
-checked at the exit.
+checked at the exit. Lost particles are saved in an H5hut file defined by
+`OUTFN`. The `ELEMEDGE` defines the location of the collimator and `L`
+the length.
 
-Example:
-
-....
-COLLIM:ECOLLIMATOR, L=0.5, XSIZE=0.01, YSIZE=0.005;
-....
-
-The reference system for a collimator is a Cartesian coordinate system
+The reference system for a collimator is a Cartesian coordinate system.
 
 [[opal-t-mode]]
 _OPAL-t_ mode
@@ -2007,17 +2006,11 @@ and `YSIZE`.
 For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
 respectively, for rectangular apertures they denote the half-width of
 the rectangle.
-Lost particles are saved in an H5hut file defined by
-`OUTFN`. The `ELEMEDGE` defines the location of the collimator and `L`
-the length.
 
 XSIZE::
   The horizontal half-aperture (default: unlimited).
 YSIZE::
   The vertical half-aperture (default: unlimited).
-OUTFN::
-  The file name into which the monitor should write the collected data.
-  The file is an H5hut file.
 
 Example:
 
