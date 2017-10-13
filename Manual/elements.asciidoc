@@ -1979,18 +1979,12 @@ label:RCOLLIMATOR,TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
 ....
 
-Either type has three real attributes:
+Either type has a length:
 
 L::
   The collimator length (default: 0 m).
-XSIZE::
-  The horizontal half-aperture (default: unlimited).
-YSIZE::
-  The vertical half-aperture (default: unlimited).
 
-For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
-respectively, for rectangular apertures they denote the half-width of
-the rectangle. Optically a collimator behaves like a drift space, but
+Optically a collimator behaves like a drift space, but
 during tracking, it also introduces an aperture limit. The aperture is
 checked at the entrance. If the length is not zero, the aperture is also
 checked at the exit.
@@ -2009,10 +2003,18 @@ _OPAL-t_ mode
 
 The `CCOLLIMATOR` isn’t supported. ``ECOLLIMATOR``s and ``RCOLLIMATOR``s
 detect all particles which are outside the aperture defined by `XSIZE`
-and `YSIZE`. Lost particles are saved in an H5hut file defined by
+and `YSIZE`. 
+For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
+respectively, for rectangular apertures they denote the half-width of
+the rectangle.
+Lost particles are saved in an H5hut file defined by
 `OUTFN`. The `ELEMEDGE` defines the location of the collimator and `L`
 the length.
 
+XSIZE::
+  The horizontal half-aperture (default: unlimited).
+YSIZE::
+  The vertical half-aperture (default: unlimited).
 OUTFN::
   The file name into which the monitor should write the collected data.
   The file is an H5hut file.
@@ -2030,10 +2032,10 @@ _OPAL-cycl_ mode
 
 Only `CCOLLIMATOR` is available for _OPAL-cycl_. This element is radial
 rectangular collimator which can be used to collimate the radial tail
-particles. So when a particle hit this collimator, it will be absorbed
-or scattered, the algorithm is based on the Monte Carlo method . Pleased
+particles. So when a particle hits this collimator, it will be absorbed
+or scattered, the algorithm is based on the Monte Carlo method. Please
 note when a particle is scattered, it will not be recorded as the lost
-particle. If this particle leave the bunch, it will be removed during
+particle. If this particle leaves the bunch, it will be removed during
 the integration afterwards, so as to maintain the accuracy of space
 charge solving.
 
