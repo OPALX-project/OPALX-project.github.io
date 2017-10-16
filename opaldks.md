@@ -1,10 +1,10 @@
 **OPAL with DKS enabled**
 
-OPAL compiled with DKS can be used in systems equiped with Nvidia GPU to offload FTPoissonSolver and CollimatorPhysics calculations from CPU to GPU.
+OPAL compiled with DKS can be used in systems equipped with Nvidia GPU to offload FTPoissonSolver and CollimatorPhysics calculations from CPU to GPU.
 
-To enable GPU usage in OPAL-DKS use --use-dks command line argument when running OPAL.
+To enable GPU usage in OPAL-DKS use `--use-dks` command line argument when running OPAL.
 
-DKS can be found [here](https://gitlab.psi.ch/uldis_l/DKS)
+DKS can be found [here](https://gitlab.psi.ch/uldis_l/DKS) and more information on its [Wiki](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
 
 To compile DKS cuda-7.5 or higher is required, information on how to obtain cuda can be found [here](https://developer.nvidia.com/cuda-toolkit)
 
@@ -20,4 +20,4 @@ Set DKS_PREFIX to DKS installation directory
 
 `export DKS_PREFIX=<DKS install dir>`
 
-Pass -DENABLE_DKS=ON flag to cmake when configuring OPAL installation
+Pass `-DENABLE_DKS=ON` flag to cmake when configuring OPAL installation.
