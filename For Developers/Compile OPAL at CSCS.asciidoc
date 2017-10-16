@@ -185,7 +185,7 @@ load_opal_gcc530() {
     export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
     export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
 
-    export BOOST_HOME=$HOME/boost_1_62_0/build/
+    export BOOST_HOME=$HOME/boost_1_65_1/build/
     export BOOST_DIR=$BOOST_HOME
     export BOOST_PREFIX=$BOOST_HOME
     export BOOST_INCLUDE_DIR=$BOOST_HOME/include
