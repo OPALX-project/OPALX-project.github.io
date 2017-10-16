@@ -45,8 +45,8 @@ The installation of OPAL fails with the currently provided Boost module (```Boos
 
 ```
 > cd $HOME
-> wget https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.gz
-> tar -xf boost_1_62_0.tar.gz
+> wget https://sourceforge.net/projects/boost/files/boost/1.65.1/boost_1_65_1.tar.gz
+> tar -xf boost_1_65_1.tar.gz
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
 > ./bootstrap.sh --prefix=$HOME/boost_1_62_0/build
@@ -55,7 +55,7 @@ The installation of OPAL fails with the currently provided Boost module (```Boos
 
 Finally, we set some evironment variables:
 ```
-> export BOOST_HOME=$HOME/boost_1_62_0/build/
+> export BOOST_HOME=$HOME/boost_1_65_1/build/
 > export BOOST_DIR=$BOOST_HOME
 > export BOOST_PREFIX=$BOOST_HOME
 > export BOOST_INCLUDE_DIR=$BOOST_HOME/include
@@ -127,7 +127,7 @@ Set up the environment:
 > export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
 > export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
 
-> export BOOST_HOME=$HOME/boost_1_62_0/build/
+> export BOOST_HOME=$HOME/boost_1_65_1/build/
 > export BOOST_DIR=$BOOST_HOME
 > export BOOST_PREFIX=$BOOST_HOME
 > export BOOST_INCLUDE_DIR=$BOOST_HOME/include
