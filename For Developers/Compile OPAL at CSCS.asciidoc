@@ -49,7 +49,7 @@ The installation of OPAL fails with the currently provided Boost module (```Boos
 > tar -xf boost_1_65_1.tar.gz
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> ./bootstrap.sh --prefix=$HOME/boost_1_62_0/build
+> ./bootstrap.sh --prefix=$HOME/boost_1_65_1/build
 > ./b2 install
 ```
 
