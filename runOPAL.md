@@ -1,6 +1,6 @@
 # Obtain runOpal.py
 
-Clone runOpal.py  from [here](https://gitlab.psi.ch/OPAL/runOPAL). On merlin add `~adelmann/amas/bin` to your path.
+Clone runOpal.py  from [here](https://gitlab.psi.ch/OPAL/runOPAL).
 
 # HowTo Use runOpal.py
 In order to use *runOpal.py* you have to provide two
@@ -25,16 +25,13 @@ The following environment variables recognized by the *runOPAL.py*:
 
 In Bash parlance:
 
-`export TEMPLATES=$PWD/tmpl/`
-
-`export FIELDMAPS=$PWD/fieldmaps/`
- 
-`export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/`
-
-`export SGE_QUEUE=all.q`
-
-`export SGE_RAM=8`
-
+```bash
+export TEMPLATES=$PWD/tmpl/
+export FIELDMAPS=$PWD/fieldmaps/
+export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/
+export SGE_QUEUE=all.q
+export SGE_RAM=8
+```
 
 Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise 
 you need to set it accordingly. 
@@ -49,15 +46,13 @@ The field maps from the *FIELDMAPS* directory and the distributions from the *DI
 
 
 # This is a snippet of a data and tmpl file (*foo.data*)
-
-`Q         -1                  # the charge`
-
-`NPART 100000       # the number of simulation particles `
- 
- `CORES   2               # how many cores are used by OPAL `
+```
+Q      -1       # the charge
+NPART  100000   # the number of simulation particles
+CORES  2        # how many cores are used by OPAL
+```
 
 Caution, in the data file, no blank lines are allowed. If you specify negative values, do not put a space between the 
-# This is a snippet of a data and tmpl file (*foo.tmpl*)
 
 The corresponding part of the template (*foo.tmpl*) file would look like:
 
@@ -70,22 +65,22 @@ where also all results are stored. The general syntax of runOPAL.py is
 
 `runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--test] [--block] [--keep] [--nobatch] [--optPilot ][ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description
-  * *--test* exercises everything except for the submission of the job.
-  * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOpal* will use the nearest position stored in the restart file as restart position. 
-  * *--restart-step* specifies the restart step of the simulation.
-  * *--block* runs opal local not using the batch system and waits until the job is done.
-  * *--keep* if same simulation has been run before, keep old data and abort.
-  * *--nobatch* uses plain mpirun on the local machine.
-  * *--optPilot will submit a optPilot job on Merlin (check additional parameters that can be set in the *foo.data* file)
-  * *ATTR* refers to a name in the data file
-  * *SCANVALUE* `start:end:step`, scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
-
+ * *--test* exercises everything except for the submission of the job.
+ * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOpal* will use the nearest position stored in the restart file as restart position. 
+ * *--restart-step* specifies the restart step of the simulation.
+ * *--block* runs opal local not using the batch system and waits until the job is done.
+ * *--keep* if same simulation has been run before, keep old data and abort.
+ * *--nobatch* uses plain mpirun on the local machine.
+ * *--optPilot will submit a optPilot job on Merlin (check additional parameters that can be set in the *foo.data* file)
+ * *ATTR* refers to a name in the data file
+ * *SCANVALUE* `start:end:step`, scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
 # Example 1: Regular Run
 
-`dude:foo adelmann$ source setup.sh`
-
-`dude:foo adelmann$ runOPAL.py --test`
+```
+dude:foo adelmann$ source setup.sh
+dude:foo adelmann$ runOPAL.py --test
+```
 
 Simulation directory is foo using OPAL at  /gpfs/home/adelmann/build/opal-1.2.0/src/
 Using templatefile at /Users/adelmann/foo/tmpl/ using fieldmaps at /Users/adelmann/foo/fieldmaps/ 
@@ -128,15 +123,15 @@ Parameter set in foo.in are:
 
 After that you will have a directory foo with this content:
 
-dude:foo adelmann$ ls
+`dude:foo adelmann$` ls
 
 **fieldmaps   foo     foo.data    setup.sh    tmpl**
 
-dude:foo adelmann$ ls foo
+`dude:foo adelmann$` ls foo
 
 **foo.in run.sge**
 
-# Example 2: 1D Parmeter Scan
+# Example 2: 1D Parameter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050`
 
@@ -145,28 +140,29 @@ dude:foo adelmann$ ls
 
 fieldmaps           foo.data        **foo_EDES=0.05:0.25:0.05**      setup.sh       tmpl
 
-dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05    
+`dude:foo adelmann$` ls foo_EDES=0.05:0.25:0.05    
 
 **fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25**
 
 
-# Example 3: 2D Parmeter Scan
+# Example 3: 2D Parameter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01`
 
-dude:foo adelmann$ ls
+`dude:foo adelmann$` ls
 
 fieldmaps       foo.data          **foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01**      setup.sh  tmpl
 
+`dude:foo adelmann$` ls foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01
 
-dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01
-
-**fooEDES=0.05POS1=0.4    fooEDES=0.05POS1=0.45   fooEDES=0.15POS1=0.4    fooEDES=0.15POS1=0.45   fooEDES=0.1POS1=0.4 fooEDES=0.1POS1=0.45    fooEDES=0.25POS1=0.4    fooEDES=0.25POS1=0.45   fooEDES=0.2POS1=0.4 fooEDES=0.2POS1=0.45
+```
+fooEDES=0.05POS1=0.4    fooEDES=0.05POS1=0.45   fooEDES=0.15POS1=0.4    fooEDES=0.15POS1=0.45   fooEDES=0.1POS1=0.4     fooEDES=0.1POS1=0.45    fooEDES=0.25POS1=0.4    fooEDES=0.25POS1=0.45   fooEDES=0.2POS1=0.4 
+fooEDES=0.2POS1=0.45
 fooEDES=0.05POS1=0.41   fooEDES=0.05POS1=0.46   fooEDES=0.15POS1=0.41   fooEDES=0.15POS1=0.46   fooEDES=0.1POS1=0.41    fooEDES=0.1POS1=0.46    fooEDES=0.25POS1=0.41   fooEDES=0.25POS1=0.46   fooEDES=0.2POS1=0.41    fooEDES=0.2POS1=0.46
 fooEDES=0.05POS1=0.42   fooEDES=0.05POS1=0.47   fooEDES=0.15POS1=0.42   fooEDES=0.15POS1=0.47   fooEDES=0.1POS1=0.42    fooEDES=0.1POS1=0.47    fooEDES=0.25POS1=0.42   fooEDES=0.25POS1=0.47   fooEDES=0.2POS1=0.42    fooEDES=0.2POS1=0.47
 fooEDES=0.05POS1=0.43   fooEDES=0.05POS1=0.48   fooEDES=0.15POS1=0.43   fooEDES=0.15POS1=0.48   fooEDES=0.1POS1=0.43    fooEDES=0.1POS1=0.48    fooEDES=0.25POS1=0.43   fooEDES=0.25POS1=0.48   fooEDES=0.2POS1=0.43    fooEDES=0.2POS1=0.48
-fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=0.15POS1=0.49   fooEDES=0.1POS1=0.44    fooEDES=0.1POS1=0.49    fooEDES=0.25POS1=0.44   fooEDES=0.25POS1=0.49   fooEDES=0.2POS1=0.44    fooEDES=0.2POS1=0.49**
-
+fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=0.15POS1=0.49   fooEDES=0.1POS1=0.44    fooEDES=0.1POS1=0.49    fooEDES=0.25POS1=0.44   fooEDES=0.25POS1=0.49   fooEDES=0.2POS1=0.44    fooEDES=0.2POS1=0.49
+```
 
 # Run a Restart (needs to be updated)
 
