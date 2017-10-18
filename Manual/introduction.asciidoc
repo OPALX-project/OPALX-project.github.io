@@ -17,7 +17,7 @@ Aim of _OPAL_ and History
 
 _OPAL_ is a tool for charged-particle optics in accelerator structures
 and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
-derived from _MAD9P_ and is based on the _CLASSIC_ class library, which
+derived from _MAD9P_ and is based on the _CLASSIC_ <<bib:classic>> class library, which
 was started in 1995 by an international collaboration. IPPL (Independent
 Parallel Particle Layer) is the framework which provides parallel
 particles and fields using data parallel approach. _OPAL_ is built from
@@ -40,7 +40,7 @@ _OPAL_ comes in the following flavors:
 _OPAL-cycl_ tracks particles with 3D space charge including neighboring
 turns in cyclotrons with time as the independent variable.
 
-_OPAL-t_ is a super-set of _Impact-t_ and can be used to model guns,
+_OPAL-t_ is a super-set of _Impact-t_ <<bib:qiang2005>> and can be used to model guns,
 injectors, ERLs and complete XFELs excluding the undulator.
 
 It should be noted that not all features of _OPAL_ are available in both
@@ -112,8 +112,8 @@ image:figures/Gun/GunCompEx.png[width=375]
 Output
 ~~~~~~
 
-The phase space is stored in the H5hut file-format and can be analyzed
-using e.g. H5root . The frequency of the data output (phase space and
+The phase space is stored in the H5hut file-format <<bib:howison2010>> and can be analyzed
+using e.g. H5root <<bib:schietinger>>. The frequency of the data output (phase space and
 some statistical quantities) can be controlled using the `OPTION`
 statement see Section link:control#sec:option[Option Statement], with the flag `PSDUMPFREQ`. The file is
 named like in input file but with the extension .h5.
@@ -174,3 +174,11 @@ number = {PSI-PR-08-02},
 year = {(2008-2017)}
 }
 ....
+
+[bibliography]
+References
+~~~~~~~~~~
+* [[[bib:classic]]] F. C. Iselin, _The classic project_, tech. rep. CERN/SL/96-061 (CERN, 1996), https://cds.cern.ch/record/311682/files/sl-96-061.pdf.
+* [[[bib:qiang2005]]] J. Qiang et al., _A three-dimensional quasi-static model for high brightness beam dynamics simulation_, tech. rep. LBNL-59098 (LBNL), http://repositories.cdlib.org/lbnl/LBNL-59098.
+* [[[bib:howison2010]]] M. Howison et al., _H5hut: A High-Performance I/O Library for Particle-based Simulations_, in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+* [[[bib:schietinger]]] T. Schietinger, _H5root_, 2006, http://amas.web.psi.ch/tools/H5root/index.html.
