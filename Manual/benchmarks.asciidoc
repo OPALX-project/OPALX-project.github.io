@@ -1029,4 +1029,4 @@ References
 * [[[bib:transport]]] K. L. Brown et al., _TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems_, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
 * [[[bib:TransportGUI]]] U. Rohrer, _PSI graphic transport framework based on a cern-slac-fermilab version by K.L. Brown et al_, tech. rep. (PSI).
 * [[[bib:Tran_ex]]] U. Rohrer, http://aea.web.psi.ch/Urs_Rohrer/MyWeb/moregifs/gantryb.gif.
-* [[[bib:elegant]]] M. Borland, _Elegant: a flexible SDDS-compliant code for accelerator simulation_, tech. rep. LS-287 (Advanced Photon Source, Sept. 2000).
+* [[[bib:elegant]]] M. Borland, https://www1.aps.anl.gov/icms_files/lsnotes/files/APS_1418218.pdf[_Elegant: a flexible SDDS-compliant code for accelerator simulation_], tech. rep. LS-287 (Advanced Photon Source, Sept. 2000).
