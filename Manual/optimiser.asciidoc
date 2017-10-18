@@ -24,6 +24,8 @@ In this chapter we introduce multi-objective optimization problems and
 discuss techniques for their solution with an emphasis on evolutionary
 algorithms.
 
+NOTE: For multi-objective optimization OPAL uses https://gitlab.psi.ch/OPAL/opt-pilot/[`opt-pilot`] developed by Y. Ineichen. `opt-pilot` has been fully integrated into OPAL. Instructions can be found on the https://gitlab.psi.ch/OPAL/opt-pilot/wikis/home[`opt-pilot` wiki page].
+
 [[definition]]
 Definition
 ~~~~~~~~~~
