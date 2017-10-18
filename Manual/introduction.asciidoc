@@ -178,7 +178,7 @@ year = {(2008-2017)}
 [bibliography]
 References
 ~~~~~~~~~~
-* [[[bib:classic]]] F. C. Iselin, _The classic project_, tech. rep. CERN/SL/96-061 (CERN, 1996), https://cds.cern.ch/record/311682/files/sl-96-061.pdf.
-* [[[bib:qiang2005]]] J. Qiang et al., _A three-dimensional quasi-static model for high brightness beam dynamics simulation_, tech. rep. LBNL-59098 (LBNL), http://repositories.cdlib.org/lbnl/LBNL-59098.
-* [[[bib:howison2010]]] M. Howison et al., _H5hut: A High-Performance I/O Library for Particle-based Simulations_, in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
-* [[[bib:schietinger]]] T. Schietinger, _H5root_, 2006, http://amas.web.psi.ch/tools/H5root/index.html.
+* [[[bib:classic]]] F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
+* [[[bib:qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+* [[[bib:howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+* [[[bib:schietinger]]] T. Schietinger, http://amas.web.psi.ch/tools/H5root/index.html.[_H5root_], 2006.
