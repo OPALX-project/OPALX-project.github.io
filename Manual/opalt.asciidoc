@@ -1157,6 +1157,6 @@ References
 * [[[bib:tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
 * [[[bib:borland1995]]] M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
 * [[[bib:borland2016]]] M. Borland et al., http://www.aps.anl.gov/Accelerator_Systems_Division/Accelerator_Operations_Physics/manuals/SDDStoolkit/SDDStoolkit.pdf[_User’s guide for SDDS toolkit version 2.8_].
-* [[[bib:paraview]]] A. Henderson, [_ParaView guide: a parallel visualization application_] (Kitware Inc, 2007).
+* [[[bib:paraview]]] A. Henderson, _ParaView guide: a parallel visualization application_ (Kitware Inc, 2007).
 * [[[bib:paraview2]]] http://www.paraview.org[_ParaView_].
 * [[[bib:visit]]] https://wci.llnl.gov/simulation/computer-codes/visit/[VisIt].
