@@ -112,22 +112,22 @@ CSR Wakefields
 The electromagnetic field due to a particle moving on a circle in free
 space can be calculated exactly with the Liénard-Wiechert potentials.
 The field has been calculated for all points on the same circle
-[bib:schott,bib:schwinger1949]. For high particle energies the radiated
+<<bib:schott>> ,<<bib:schwinger1949>>. For high particle energies the radiated
 power is almost exclusively emitted in forward direction, whereas for
 low energies a fraction is also emitted in transverse and backward
 direction. For the case of high-energetic particles an impedance in
-forward direction can be calculated [bib:murphy1997]. The procedure is
+forward direction can be calculated <<bib:murphy1997>>. The procedure is
 then the same as for a regular wakefield with the important difference
 that wakes exert forces on trailing particles only. The electromagnetic
 fields of a particle propagating on the mid-plane between two parallel
-metallic plates that stretch to infinity [bib:schwinger1949] and for
-finite plates [bib:nodvick1954] can also be calculated. For the infinite
-plates an impedance can be calculated [bib:murphy1997].
+metallic plates that stretch to infinity <<bib:schwinger1949>> and for
+finite plates <<bib:nodvick1954>> can also be calculated. For the infinite
+plates an impedance can be calculated <<bib:murphy1997>>.
 
 All of these approaches for CSR neglect any transient effects due to the
 finite length of the bend. Instead they describe the steady state case
 of a bunch circling infinitely long in the field of a dipole magnet. In
-[bib:saldin1997] the four different stages of a bunch passing a bending
+<<bib:saldin1997>> the four different stages of a bunch passing a bending
 magnet are treated separately and for each a corresponding wake function
 is derived. This model is used in _OPAL-t_ for `1D-CSR`.
 
@@ -137,7 +137,7 @@ current time. On the other hand it gives a good approximation of effects
 due to CSR in short time.
 
 In addition to the `1D-CSR` model also one that makes use of an
-integrated Green function [bib:mitchell2013], `1D-CSR-IGF`.
+integrated Green function <<bib:mitchell2013>>, `1D-CSR-IGF`.
 
 [[sec:wakecmd]]
 The `WAKE` Command
@@ -270,7 +270,7 @@ points to calculate the force on the particle it is also possible to
 specify these in a file.To get required data points of the wakefield not
 provide in the file we linearly interpolate the available function
 values. The files are specified in the SDDS format
-[bib:borland1995,bib:borland1998].
+<<bib:borland1995>>, <<bib:borland1998>>.
 
 Whenever a file is specified _OPAL_ will use the wakefield found in the
 file and ignore all other commands related to round beam pipes.
@@ -372,3 +372,16 @@ i \frac{2\pi \imath}{N\cdot L} & i < N/2 \\
 where latexmath:[N] is the total number of
 coefficients/sampling points and latexmath:[L] is the length of the
 bunch.
+
+[bibliography]
+References
+~~~~~~~~~~
+
+* [[[bib:schott]]] G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).
+* [[[bib:schwinger1949]]] J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912.
+* [[[bib:murphy1997]]] J. B. Murphy, S. Krinsky, and R. L. Gluckstern, _Longitudinal Wakefield for an Electron Moving on a Circular Orbit_, Particle Accelerators 57, 9–64 (1997).
+* [[[bib:nodvick1954]]] J. S. Nodvick and D. S. Saxon, http://dx.doi.org/10.1103/PhysRev.96.180[_Suppression of Coherent Radiation by Electrons in a Synchrotron_], Phys. Rev. 96, 180–184 (1954) 10.1103/PhysRev.96.180.
+* [[[bib:saldin1997]]] E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov, http://dx.doi.org/10.1016/S0168-9002(97)00822-X[_On the Coherent Radiation of an Electron Bunch Moving in an Arc of a Circle_], Nucl. Instrum. Methods Phys. Res. Sect. A 398, 373–394 (1997) 10.1016/S0168-9002(97)00822-X.
+* [[[bib:mitchell2013]]] C. E. Mitchell, J. Qiang, and R. D. Ryne, _A fast method for computing 1-d wakefields due to coherent synchrotron radiation_, Nucl. Instrum. Methods Phys. Res. Sect. A 715, 119–125 (2013).
+* [[[bib:borland1995]]] M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
+* [[[bib:borland1998]]] M. Borland, http://www.slac.stanford.edu/econf/C980914/papers/F-Tu10.pdf[_A universal postprocessing toolkit for accelerator simulation and data analysis_], in Proc. 1998 ICAP conference (1998), FTU10.

@@ -1148,10 +1148,8 @@ replaced in ([eq:40]) to obtain a more explicit equation.
 References
 ~~~~~~~~~~
 * [[[bib:qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
-* [[[bib:qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys.
-   Rev. ST Accel. Beams 9 (2006).
-* [[[bib:qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_,
-   Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+* [[[bib:qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
+* [[[bib:qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
 * [[[bib:fubiani2006]]] G. Fubaiani et al., _Space charge modeling of dense electron beams with large energy spreads_, Phys. Rev. ST Accel. Beams 9, 064402 (2006).
 * [[[bib:langdon]]] A. B. L. Ch. K. Birdsall, _Plasma physics via computer simulation_ (McGraw-Hill, New York, 1985).
 * [[[bib:tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].

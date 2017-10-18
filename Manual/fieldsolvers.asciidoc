@@ -33,7 +33,7 @@ FFT Based Particle-Mesh (PM) Solver
 
 The Particle-Mesh (PM) solver is one of the oldest improvements over the
 PP solver. Still one of the best references is the book by R.W. Hockney
-& J.W. Eastwood [hockney]. The PM solver introduces a discretization of
+& J.W. Eastwood <<bib:hockney>>. The PM solver introduces a discretization of
 space. The rectangular computation domain
 latexmath:[\Omega:=[-L_x,L_x\]\times[-L_y,L_y\]\times[-L_t,L_t\]], just
 big enough to include all particles, is segmented into a regular mesh of
@@ -45,7 +45,7 @@ self-consistent electrostatic beam dynamics code that models the
 transport of intense charged particle beams in accelerators. If the
 bunch is small compared to the transverse size of the beam pipe, the
 conducting walls are usually neglected. In such cases the Hockney method
-may be employed [hockney, eastwoodandbrownrigg,hockneyandeastwood]. In
+may be employed <<bib:hockney>>, <<bib:eastwoodandbrownrigg>> and <<bib:hockneyandeastwood>>. In
 that method, rather than computing latexmath:[N_p^2] point-to-point
 interactions (where latexmath:[N_p] is the number of macro-particles),
 the potential is instead calculated on a grid of size
@@ -61,7 +61,7 @@ transversely, or when the bunch length is long compared with the pipe
 transverse size, the conducting boundaries cannot be ignored. Poisson
 solvers have been developed previously to treat a bunch of charge in an
 open-ended pipe with various geometries
-[qiangandryne,qiangandgluckstern].
+<<bib:qiangandryne>> , <<bib:qiangandgluckstern>>.
 
 The solution of the Poisson equation,
 
@@ -240,8 +240,8 @@ the Green function is a symmetric function of its arguments, the value
 at the end of the Green function array (at grid point latexmath:[J-1])
 can be dropped, since it will be recovered implicitly through the
 symmetry of Equation [periodicgreenfunction]. In that case the approach
-is identical to the Hockney method [hockney,
-eastwoodandbrownrigg,hockneyandeastwood]. Lastly, note that the above
+is identical to the Hockney method <<bib:hockney>>, <<bib:eastwoodandbrownrigg>>
+and <<bib:hockneyandeastwood>>. Lastly, note that the above
 proof that the convolution, Equation [fftconvolution], is identical to
 Equation [bruteforceconvolution] in the unpadded region, works even when
 latexmath:[W^{-j k}] and latexmath:[W^{m k}] are replaced by
@@ -300,7 +300,7 @@ the resulting system of equations is symmetric or `mildly' non-symmetric
 positive definite. In all cases, the system is solved by the
 preconditioned conjugate gradient algorithm with smoothed aggregation
 (SA) based algebraic multigrid (AMG) preconditioning. More details are
-given in [Adelmann:2009p543].
+given in <<bib:Adelmann2009p543>>.
 
 [[energy-binning]]
 Energy Binning
@@ -415,8 +415,8 @@ Define Greens Function
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Two Greens functions can be selected: `INTEGRATED`, `STANDARD`. The
-integrated Green’s function is described in [qiang2005, qiang2006-1,
-qiang2006-2]. Default setting is `INTEGRATED`.
+integrated Green’s function is described in <<bib:qiang2005>>, <<bib:qiang2006-1>>,
+<<bib:qiang2006-2>>. Default setting is `INTEGRATED`.
 
 [[sec:FSBBOX]]
 Define Bounding Box Enlargement
@@ -544,3 +544,16 @@ refined. The bound is specified with `AMR_MIN_NUM_PART`
 |`MAX_NUM_PARTICLES` |Cells with equal or less particles are
 refined. The bound is specified with `AMR_MAX_NUM_PART`
 |=======================================================================
+
+[bibliography]
+References
+~~~~~~~~~~
+* [[[bib:hockney]]] R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136–210 (1970).
+* [[[bib:eastwoodandbrownrigg]]] J. W. Eastwood and D. R. K. Brownrigg, _Remarks on the solution of poisson’s equation for isolated systems_, J. Comput. Phys. 32, 24–38 (1979).
+* [[[bib:hockneyandeastwood]]] R. W. Hockney and J. W. Eastwood, _Computer simulation using particles_ (Taylor & Francis Group, 1988).
+* [[[bib:qiangandryne]]] J. Qiang and R. Ryne, _Parallel 3d poisson solver for a charged beam in a conducting pipe_, Comput. Phys. Commun. 138, 18–28 (2001).
+* [[[bib:qiangandgluckstern]]] J. Qiang and R. L. Gluckstern, _Three-dimensional poisson solver for a charged beam with large aspect ratio in a conducting pipe_, Comput. Phys. Commun. 160, 120–128 (2004).
+* [[[bib:Adelmann2009p543]]] A. Adelmann, P. Arbenz, and Y. Ineichen, https://arxiv.org/abs/0907.4863[_A fast parallel poisson solver on irregular domains applied to beam dynamic simulations_], arXiv (2009).
+* [[[bib:qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+* [[[bib:qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
+* [[[bib:qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).

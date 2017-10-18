@@ -791,7 +791,7 @@ the longitudinal time profile of the distribution is generated.
 `BINOMIAL` Distribution Type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `BINOMIAL` type of distribution is based on [JohoDist]. The shape of
+The `BINOMIAL` type of distribution is based on <<bib:JohoDist>>. The shape of
 the binomial distribution is governed by one parameter latexmath:[m].
 By varying this single parameter one obtains the most commonly used
 distributions for our type of simulations, as listed in
@@ -912,7 +912,7 @@ Emission Model: `NONEQUIL`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The `NONEQUIL` emission model is based on an actual physical model of
-particle emission as described in [flo:97, clen:2000, dowe:2009]. The
+particle emission as described in <<bib:flo97>>, <<bib:clen2000>>, <<bib:dowe2009>>. The
 attributes needed by this emission model are listed in
 Table [distattremitmodelnonequil].
 
@@ -1001,3 +1001,11 @@ exception here is any `FROMFILE` distribution type. In this case, the
 ignored. The number of particles in any `FROMFILE` distribution type is
 defined by the text file containing the distribution particle
 coordinates. (Section <<sec:fromfiledisttype>>).
+
+[bibliography]
+References
+~~~~~~~~~~
+* [[[bib:JohoDist]]] W. Joho, _Private communication_.
+* [[[bib:flo97]]] K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, tech. rep. TESLA FEL-Report (DESY, Jan. 1997).
+* [[[bib:clen2000]]] J. E. Clendenin et al., _Reduction of thermal emittance of rf guns_, Nucl. Instrum. Methods Phys. Res. Sect. A 455, 198–201 (2000).
+* [[[bib:dowe2009]]] D. H. Dowell and J. F. Schmerge, _Quantum efficiency and thermal emittance of metal photocathodes_, Phys. Rev. ST Accel. Beams 12, 074201 (2009).

@@ -132,7 +132,7 @@ ORIGIN::
   position the element. Can’t be combined with `THETA` and `PHI`. Use
   `ORIENTATION` instead.
 ORIENTATION::
-  Vector of Tait-Bryan angles [bib:tait-bryan]. An alternative to rotate
+  Vector of Tait-Bryan angles <<bib:tait-bryan>>. An alternative to rotate
   the element instead of using `THETA`, `PHI` and `PSI`. Can’t be
   combined with `X`, `Y` and `Z`, use `ORIGIN` instead.
 DX::
@@ -1042,7 +1042,7 @@ Default Field Map (_OPAL-t_)
 
 Rather than force users to calculate the field of a dipole and then fit
 that field to find Enge coefficients for the dipoles in their
-simulation, we have a default set of values we use from [enge] that are
+simulation, we have a default set of values we use from <<bib:enge>> that are
 set when the default field map, `1DPROFILE1-DEFAULT` is used:
 
 [latexmath]
@@ -2276,3 +2276,9 @@ KHV:KICKER, HKICK=0.001, VKICK=0.0005;
 
 The reference system for an orbit corrector is a Cartesian coordinate
 system.
+
+[bibliography]
+References
+~~~~~~~~~~
+* [[[bib:tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
+* [[[bib:enge]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
