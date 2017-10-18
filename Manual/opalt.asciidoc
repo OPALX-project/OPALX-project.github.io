@@ -26,10 +26,10 @@ comprehensive set of beamline elements, and furthermore allows arbitrary
 overlap of their fields, which gives _OPAL-t_ a capability to model both
 the standing wave structure and traveling wave structure. Beside
 IMPACT-T it is the only code making use of space charge solvers based on
-an integrated Green [qiang2005, qiang2006-1,qiang2006-2] function to
+an integrated Green <<bib:qiang2005>>, <<bib:qiang2006-1>>, <<bib:qiang2006-2>> function to
 efficiently and accurately treat beams with large aspect ratio, and a
 shifted Green function to efficiently treat image charge effects of a
-cathode [fubiani2006, qiang2005, qiang2006-1,qiang2006-2]. For
+cathode <<bib:fubiani2006>>, <<bib:qiang2005>>, <<bib:qiang2006-1>>,<<bib:qiang2006-2>>. For
 simulations of particles sources i.e. electron guns _OPAL-t_ uses the
 technique of energy binning in the electrostatic space charge
 calculation to model beams with large energy spread. In the very near
@@ -77,7 +77,7 @@ latexmath:[\mathbf{E}] and latexmath:[\mathbf{B}] are abbreviations
 for the electric field latexmath:[\mathbf{E}(\mathbf{x},t)] and
 magnetic field latexmath:[\mathbf{B}(\mathbf{x},t)]. To update the
 positions and momenta _OPAL-t_ uses the Boris-Buneman algorithm
-[langdon].
+<<bib:langdon>>.
 
 [[positioning-of-elements]]
 Positioning of Elements
@@ -161,7 +161,7 @@ global latexmath:[Y]-axis. Lastly, latexmath:[\Theta] is the yaw
 angle about the global latexmath:[X]-axis. All three angles form
 right-handed screws with their corresponding axes. The angles
 (latexmath:[\Theta,\Phi,\Psi]) are the Tait-Bryan angles
-[bib:tait-bryan].
+<<bib:tait-bryan>>.
 
 The displacement is described by a vector latexmath:[\mathbf{v}] and
 the orientation by a unitary matrix latexmath:[\mathcal{W}]. The
@@ -332,8 +332,8 @@ _<input_file_name >.stat_
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This file is used to log the statistical properties of the bunch in the
-ASCII variant of the SDDS format [bib:borland1995]. It can be viewed
-with the SDDS Tools [bib:borland2016] or GNUPLOT. The frequency with
+ASCII variant of the SDDS format <<bib:borland1995>>. It can be viewed
+with the SDDS Tools <<bib:borland2016>> or GNUPLOT. The frequency with
 which the statistics are computed and written to file can be controlled
 With the option `STATDUMPFREQ`. The information that is stored are found
 in the following table.
@@ -572,8 +572,8 @@ _data/<input_file_name >_ElementPositions.py_
 This Python script can be used to generate visualizations of the beam
 line in different formats. Beside an ASCII file that can be printed
 using GNUPLOT a VTK file and an HTML file can be generated. The VTK file
-can then be opened in e.g. ParaView [paraview,bib:paraview] or VisIt
-[bib:visit]. The HTML file can be opened in any modern web browser. Both
+can then be opened in e.g. ParaView <<bib:paraview>>, <<bib:paraview2>> or VisIt
+<<bib:visit>>. The HTML file can be opened in any modern web browser. Both
 the VTK and the HTML output are three-dimensional. For the ASCII format
 on the other hand you have provide the normal of a plane onto which the
 beam line is projected.
@@ -1143,3 +1143,20 @@ transverse field is a constant latexmath:[T_{dipole}(x) = B_0] and
 
 This expression can be
 replaced in ([eq:40]) to obtain a more explicit equation.
+
+[bibliography]
+References
+~~~~~~~~~~
+* [[[bib:qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+* [[[bib:qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys.
+   Rev. ST Accel. Beams 9 (2006).
+* [[[bib:qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_,
+   Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+* [[[bib:fubiani2006]]] G. Fubaiani et al., _Space charge modeling of dense electron beams with large energy spreads_, Phys. Rev. ST Accel. Beams 9, 064402 (2006).
+* [[[bib:langdon]]] A. B. L. Ch. K. Birdsall, _Plasma physics via computer simulation_ (McGraw-Hill, New York, 1985).
+* [[[bib:tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
+* [[[bib:borland1995]]] M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
+* [[[bib:borland2016]]] M. Borland et al., http://www.aps.anl.gov/Accelerator_Systems_Division/Accelerator_Operations_Physics/manuals/SDDStoolkit/SDDStoolkit.pdf[_User’s guide for SDDS toolkit version 2.8_].
+* [[[bib:paraview]]] A. Henderson, [_ParaView guide: a parallel visualization application_] (Kitware Inc, 2007).
+* [[[bib:paraview2]]] http://www.paraview.org[_ParaView_].
+* [[[bib:visit]]] https://wci.llnl.gov/simulation/computer-codes/visit/[VisIt].
