@@ -378,7 +378,7 @@ calculating field values during a simulation. _OPAL-t_ normalizes the
 field values internally such that
 latexmath:[\max(|B_{\text{on axis}}|) = 1.0 T]. If the `FAST`
 attribute is set to true in the input deck, a 2D field map is generated
-internally with 200 values in the radial direction, from 0 cm to 2cm, for
+internally with 200 values in the radial direction, from 0 cm to 2 cm, for
 each longitudinal grid point.
 
 .Layout of a `1DMagnetoStatic` field map file.
@@ -1450,7 +1450,7 @@ while the index in x-direction changes slowest. The columns correspond
 to latexmath:[E_x], latexmath:[E_y], latexmath:[E_z],
 latexmath:[H_x], latexmath:[H_y] and latexmath:[H_z]. _OPAL-t_
 normalizes the field so that
-latexmath:[\max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
+latexmath:[\max(|E_{z,\text{ on axis}}|) = 1\mathrm{MV/m}].
 
 .Layout of a `3DDynamic` field map file.
 [grid=none]
