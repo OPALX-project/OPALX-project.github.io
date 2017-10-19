@@ -376,7 +376,7 @@ longitudinal direction. From the 10000 field values, 5000 complex
 Fourier coefficients are calculated. However, only 40 are kept when
 calculating field values during a simulation. _OPAL-t_ normalizes the
 field values internally such that
-latexmath:[\max(|B_{\text{on axis}}|) = 1.0 T]. If the `FAST`
+latexmath:[\max(|B_{\text{on axis}}|) = 1.0\mathrm{T}]. If the `FAST`
 attribute is set to true in the input deck, a 2D field map is generated
 internally with 200 values in the radial direction, from 0 cm to 2 cm, for
 each longitudinal grid point.
@@ -466,7 +466,7 @@ is in the first column (in meters), the corresponding longitudinal
 on-axis magnetic field amplitude is in the second column. As with the
 1DMagnetoStatic see Section <<sec:1DMagnetoStatic>> field maps, _OPAL-t_
 normalizes the field values to
-latexmath:[\max(|B_{\text{on axis}}|) = {1.0}{T}]. In the header only
+latexmath:[\max(|B_{\text{on axis}}|) = 1.0\mathrm{T}]. In the header only
 the first line is needed since the information on the longitudinal
 dimension is contained in the first column of the data. (_OPAL-t_ does
 not provide a `FAST` version of this map type.)
@@ -532,7 +532,7 @@ longitudinal direction. The field frequency is 1498.953425154MHz. From
 the 5000 field values, 2500 complex Fourier coefficients are calculated.
 However, only 40 are kept when calculating field values during the
 simulation. _OPAL-t_ normalizes the field values internally such that
-latexmath:[\max(|E_{on axis}|) = {1}{MV/m}]. If the `FAST` switch is
+latexmath:[\max(|E_{on axis}|) = 1\mathrm{MV/m}]. If the `FAST` switch is
 set to true in the input deck, a 2D field map is generated internally
 with 200 values in the radial direction, from 0.0 cm to 2.0 cm, for each
 longitudinal grid point.
@@ -623,7 +623,7 @@ coefficients are kept when calculating field values during the
 simulation. The z-position of each sampling is in the first column (in
 meters), the corresponding longitudinal on-axis electric field amplitude
 is in the second column. _OPAL-t_ normalizes the field values such that
-latexmath:[\max(|E_{\text{on axis}}|) = {1}{MV/m}]. The frequency of
+latexmath:[\max(|E_{\text{on axis}}|) = 1\mathrm{MV/m}]. The frequency of
 this field is 2997.924MHz. (_OPAL-t_ does not provide a `FAST` version
 of this map type.)
 
@@ -984,7 +984,7 @@ ordered in XZ orientation, so the index in the longitudinal direction
 changes fastest and therefore latexmath:[E_z] values are stored in the
 first column and latexmath:[E_r] values in the second
 see Section <<sec:fieldorientation>>. _OPAL-t_ normalizes the field so that
-latexmath:[\max(|E_{z, \text{ on axis}}|) = {1}{MVm^{-1}}].
+latexmath:[\max(|E_{z, \text{ on axis}}|) = 1\mathrm{MV/m}].
 
 .Layout of a `2DElectroStatic` field map file.
 [grid=none]
@@ -1170,7 +1170,7 @@ must still be included). The fourth column is latexmath:[H_{\phi}] in
 A/m. The third and fourth columns are always the same and do not depend
 on the field orientation see Section <<sec:fieldorientation>>. _OPAL-t_
 normalizes the field so that
-latexmath:[\max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
+latexmath:[\max(|E_{z,\text{ on axis}}|) = 1\mathrm{MV/m}].
 
 .Layout of a `2DDynamic` field map file.
 [grid=none]
