@@ -371,7 +371,7 @@ image:./figures/Fieldmaps/2DDynamic_step82.png[width=250]
 
 A 1D field map describing a magnetostatic field using 10000 grid points
 (9999 grid spacings) in the longitudinal direction. The field is
-non-negligible from -60.0cm to +60.0cm relative to `ELEMEDGE` in the
+non-negligible from -60.0_cm to +60.0_cm relative to `ELEMEDGE` in the
 longitudinal direction. From the 10000 field values, 5000 complex
 Fourier coefficients are calculated. However, only 40 are kept when
 calculating field values during a simulation. _OPAL-t_ normalizes the
@@ -532,7 +532,7 @@ longitudinal direction. The field frequency is 1498.953425154MHz. From
 the 5000 field values, 2500 complex Fourier coefficients are calculated.
 However, only 40 are kept when calculating field values during the
 simulation. _OPAL-t_ normalizes the field values internally such that
-latexmath:[max(|E_{on axis}|) = {1}{MV/m}]. If the `FAST` switch is
+latexmath:[\max(|E_{on axis}|) = {1}{MV/m}]. If the `FAST` switch is
 set to true in the input deck, a 2D field map is generated internally
 with 200 values in the radial direction, from 0.0cm to 2.0cm, for each
 longitudinal grid point.
@@ -984,7 +984,7 @@ ordered in XZ orientation, so the index in the longitudinal direction
 changes fastest and therefore latexmath:[E_z] values are stored in the
 first column and latexmath:[E_r] values in the second
 see Section <<sec:fieldorientation>>. _OPAL-t_ normalizes the field so that
-latexmath:[max(|E_{z, \text{ on axis}}|) = {1}{MVm^{-1}}].
+latexmath:[\max(|E_{z, \text{ on axis}}|) = {1}{MVm^{-1}}].
 
 .Layout of a `2DElectroStatic` field map file.
 [grid=none]
@@ -1074,7 +1074,7 @@ ordered in the ZX orientation, so the index in the radial direction
 changes fastest and therefore latexmath:[B_r] values are stored in the
 first column and latexmath:[B_z] values in the second
 see Section <<sec:fieldorientation>>. _OPAL-t_ normalizes the field so that
-latexmath:[max(|B_{z,\text{ on axis}}|) = {1}{T}].
+latexmath:[\max(|B_{z,\text{ on axis}}|) = {1}{T}].
 
 .Layout of a `2DMagnetoStatic` field map file.
 [grid=none]
@@ -1170,7 +1170,7 @@ must still be included). The fourth column is latexmath:[H_{\phi}] in
 A/m. The third and fourth columns are always the same and do not depend
 on the field orientation see Section <<sec:fieldorientation>>. _OPAL-t_
 normalizes the field so that
-latexmath:[max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
+latexmath:[\max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
 
 .Layout of a `2DDynamic` field map file.
 [grid=none]
@@ -1450,7 +1450,7 @@ while the index in x-direction changes slowest. The columns correspond
 to latexmath:[E_x], latexmath:[E_y], latexmath:[E_z],
 latexmath:[H_x], latexmath:[H_y] and latexmath:[H_z]. _OPAL-t_
 normalizes the field so that
-latexmath:[max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
+latexmath:[\max(|E_{z,\text{ on axis}}|) = {1}{MVm^{-1}}].
 
 .Layout of a `3DDynamic` field map file.
 [grid=none]
