@@ -371,14 +371,14 @@ image:./figures/Fieldmaps/2DDynamic_step82.png[width=250]
 
 A 1D field map describing a magnetostatic field using 10000 grid points
 (9999 grid spacings) in the longitudinal direction. The field is
-non-negligible from -60.0_cm to +60.0_cm relative to `ELEMEDGE` in the
+non-negligible from -60.0 cm to +60.0 cm relative to `ELEMEDGE` in the
 longitudinal direction. From the 10000 field values, 5000 complex
 Fourier coefficients are calculated. However, only 40 are kept when
 calculating field values during a simulation. _OPAL-t_ normalizes the
 field values internally such that
-latexmath:[\max(|B_{\text{on axis}}|) = {1.0}{T}]. If the `FAST`
+latexmath:[\max(|B_{\text{on axis}}|) = 1.0 T]. If the `FAST`
 attribute is set to true in the input deck, a 2D field map is generated
-internally with 200 values in the radial direction, from 0cm to 2cm, for
+internally with 200 values in the radial direction, from 0 cm to 2cm, for
 each longitudinal grid point.
 
 .Layout of a `1DMagnetoStatic` field map file.
@@ -527,14 +527,14 @@ field file.
 
 A 1D field map describing a dynamic field using 5000 grid points (4999
 grid spacings) in the longitudinal direction. The field is
-non-negligible from -3.0cm to 57.0cm relative to `ELEMEDGE` in the
+non-negligible from -3.0 cm to 57.0 cm relative to `ELEMEDGE` in the
 longitudinal direction. The field frequency is 1498.953425154MHz. From
 the 5000 field values, 2500 complex Fourier coefficients are calculated.
 However, only 40 are kept when calculating field values during the
 simulation. _OPAL-t_ normalizes the field values internally such that
 latexmath:[\max(|E_{on axis}|) = {1}{MV/m}]. If the `FAST` switch is
 set to true in the input deck, a 2D field map is generated internally
-with 200 values in the radial direction, from 0.0cm to 2.0cm, for each
+with 200 values in the radial direction, from 0.0 cm to 2.0 cm, for each
 longitudinal grid point.
 
 .Layout of a `1DDynamic` field map file.
@@ -856,13 +856,13 @@ map file.
 A 1D field map describing the fringe field of an element using 7 Enge
 coefficients for the entrance fringe field and 8 Enge coefficients for
 the exit fringe field (polynomial order 6 and 7 respectively). The
-element has a gap height of 3.0cm, and a length of 30.0cm. The entrance
-fringe field is non-negligible from 4.0cm in front of the magnet’s
-entrance edge and reaches the core strength at 4.0cm behind the entrance
+element has a gap height of 3.0 cm, and a length of 30.0 cm. The entrance
+fringe field is non-negligible from 4.0 cm in front of the magnet’s
+entrance edge and reaches the core strength at 4.0 cm behind the entrance
 edge of the magnet. (The entrance edge position is given by the
 element’s `ELEMEDGE` attribute.) The exit fringe field region begins
-4.0cm in front of the exit edge of the magnet and is non-negligible
-4.0cm after the exit edge of the magnet. The value 1000 at the end of
+4.0 cm in front of the exit edge of the magnet and is non-negligible
+4.0 cm after the exit edge of the magnet. The value 1000 at the end of
 line 2 and 0 at the end of line 3 do not have any meaning.
 
 [[sec:1DProfile1Type2]]
@@ -947,15 +947,15 @@ map file.
 A 1D field map describing the fringe field of an element using 7 Enge
 coefficients for the entrance fringe field and 8 Enge coefficients for
 the exit fringe field (polynomial order 6 and 7 respectively). The
-element has a gap height of 3.0cm. The entrance fringe field is
-non-negligible from 4.0cm in front of the magnet’s entrance edge and
-reaches the core strength at 4.0cm behind the entrance edge of the
-magnet. The exit fringe field region begins 4.0cm in front of the exit
-edge of the magnet and is non-negligible 4.0cm after the exit edge of
+element has a gap height of 3.0 cm. The entrance fringe field is
+non-negligible from 4.0 cm in front of the magnet’s entrance edge and
+reaches the core strength at 4.0 cm behind the entrance edge of the
+magnet. The exit fringe field region begins 4.0 cm in front of the exit
+edge of the magnet and is non-negligible 4.0 cm after the exit edge of
 the magnet. The value 0 at the end of line 2 and 0 at the end of line 3
-do not have any meaning. The entrance Enge function origin is 2.0cm in
+do not have any meaning. The entrance Enge function origin is 2.0 cm in
 front (upstream) of the magnet’s entrance edge. The exit Enge function
-origin is 2.0cm behind (downstream of) the exit edge of the magnet.
+origin is 2.0 cm behind (downstream of) the exit edge of the magnet.
 
 [[sec:2DElectroStatic]]
 2DElectroStatic
@@ -977,9 +977,9 @@ origin is 2.0cm behind (downstream of) the exit edge of the magnet.
 A 2D field map describing an electrostatic field using 5000 grid points
 in the longitudinal direction times 200 grid points in the radial
 direction. The field between the grid points is calculated using
-bi-linear interpolation. The field is non-negligible from -3.0cm to
-51.0cm relative to `ELEMEDGE` and the 200 grid points in the radial
-direction span the distance from 0.0cm to 2.0cm. The field values are
+bi-linear interpolation. The field is non-negligible from -3.0 cm to
+51.0 cm relative to `ELEMEDGE` and the 200 grid points in the radial
+direction span the distance from 0.0 cm to 2.0 cm. The field values are
 ordered in XZ orientation, so the index in the longitudinal direction
 changes fastest and therefore latexmath:[E_z] values are stored in the
 first column and latexmath:[E_r] values in the second
@@ -1067,9 +1067,9 @@ file.
 A 2D field map describing a magnetostatic field using 5000 grid points
 in the longitudinal direction times 200 grid points in the radial
 direction. The field between the grid points is calculated using
-bi-linear interpolation. The field is non-negligible from -3.0cm to
-51.0cm relative to `ELEMEDGE` and the 200 grid points in the radial
-direction span the distance from 0.0cm to 2.0cm. The field values are
+bi-linear interpolation. The field is non-negligible from -3.0 cm to
+51.0 cm relative to `ELEMEDGE` and the 200 grid points in the radial
+direction span the distance from 0.0 cm to 2.0 cm. The field values are
 ordered in the ZX orientation, so the index in the radial direction
 changes fastest and therefore latexmath:[B_r] values are stored in the
 first column and latexmath:[B_z] values in the second
@@ -1159,9 +1159,9 @@ A 2D field map describing a dynamic field oscillating with a frequency
 of 1498.953425154MHz. The field map provides 4122 grid points in the
 longitudinal direction times 76 grid points in radial direction. The
 field between the grid points is calculated with a bi-linear
-interpolation. The field is non-negligible between -3.0cm and 51.0cm
+interpolation. The field is non-negligible between -3.0 cm and 51.0 cm
 relative to `ELEMEDGE` and the 76 grid points in radial direction span
-the distance from 0.0cm to 1.0cm. The field values are ordered in the XZ
+the distance from 0.0 cm to 1.0 cm. The field values are ordered in the XZ
 orientation, so the index in the longitudinal direction changes fastest
 and therefore latexmath:[E_z] values are stored in the first column
 and latexmath:[E_r] values in the second. The third column contains
@@ -1266,9 +1266,9 @@ A 3D field map describing a magnetostatic field. The field map provides
 4122 grid points in z-direction times 228 grid points in x-direction and
 152 grid points in y-direction. The field between the grid points is
 calculated with a tri-linear interpolation. The field is non-negligible
-between -3.0cm to 51.0cm relative to `ELEMEDGE`, the 228 grid points in
-x-direction range from -1.5cm to 1.5cm and the 152 grid points in
-y-direction range from -1.0cm to 1.0cm relative to the design path. The
+between -3.0 cm to 51.0 cm relative to `ELEMEDGE`, the 228 grid points in
+x-direction range from -1.5 cm to 1.5 cm and the 152 grid points in
+y-direction range from -1.0 cm to 1.0 cm relative to the design path. The
 field values are ordered such that the index in z-direction changes
 fastest, then the index in y-direction while the index in x-direction
 changes slowest. The columns correspond to latexmath:[B_x],
@@ -1349,15 +1349,15 @@ file.
 
 A 3D field map describing a magnetostatic field on the mid-plane. The
 field map provides 466 grid points in z-direction times 134 grid points
-in x-direction. The field is non-negligible between -22.425cm to
-47.425cm relative to `ELEMEDGE`, the 134 grid points in x-direction
+in x-direction. The field is non-negligible between -22.425 cm to
+47.425 cm relative to `ELEMEDGE`, the 134 grid points in x-direction
 range from -9.9254cm to 9.9254cm. The field should be integrated using
-Maxwell’s equations from the mid-plane to 2.0cm using 16 grid points.
+Maxwell’s equations from the mid-plane to 2.0 cm using 16 grid points.
 The mid-plane is regarded as a perfect magnetic conductor (PMC) i.e. the
 magnetic field on the mid-plane has no tangential component. This leads
 to a symmetry where the perpendicular component is mirrored whereas the
 tangential component is anti-parallel. Instead of integrating the field
-from the mid-plane to -2.0cm and 1.0cm we only integrate it to +2.0cm
+from the mid-plane to -2.0 cm and 1.0 cm we only integrate it to +2.0 cm
 and store only the upper half of the field map. For positions
 latexmath:[R(x,\;-y,\;z)] with latexmath:[y > 0.0] the correct field
 can then be derived from the latexmath:[R(x,\;y,\;z)].
@@ -1441,9 +1441,9 @@ A 3D field map describing a dynamic field oscillating with 1.4989534.
 The field map provides 4122 grid points in z-direction times 228 grid
 points in x-direction and 152 grid points in y-direction. The field
 between the grid points is calculated with a tri-linear interpolation.
-The field is non-negligible between -3.0cm to 51.0cm relative to
-`ELEMEDGE`, the 228 grid points in x-direction range from -1.5cm to
-1.5cm and the 152 grid points in y-direction range from -1.0cm to 1.0cm
+The field is non-negligible between -3.0 cm to 51.0 cm relative to
+`ELEMEDGE`, the 228 grid points in x-direction range from -1.5 cm to
+1.5 cm and the 152 grid points in y-direction range from -1.0 cm to 1.0 cm
 relative to the design path. The field values are ordered such that the
 index in z-direction changes fastest, then the index in y-direction
 while the index in x-direction changes slowest. The columns correspond
