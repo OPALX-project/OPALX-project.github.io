@@ -227,8 +227,12 @@ Available Materials in _OPAL_
 |Aluminum |13 |26.98 |2.7 |24.01 |4.739 |2766 |164.5 |2.023E-02
 |`Aluminum`
 
+|BoronCarbide |26 |55.25 |2.48 |50.14 |3.963 |6065 |1243 |7.782e-3
+|`BoronCarbide`
+
 |AluminaAl2O3 |50 |101.96 |3.97 |27.94 |7.227 |11210 |386.4 |4.474e-3
 |`AluminaAl2O3`
+
 
 |Copper |29 |63.54 |8.96 |12.86 |4.194 |4649 |81.13 |2.242E-02 |`Copper`
 
