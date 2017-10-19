@@ -1385,6 +1385,33 @@ geometry and a latexmath:[(x,s,z)] Frenet-Serret coordinate system for
 curved geometry. In the latter case, the axis latexmath:[\hat{s}] is
 the central axis of the magnet.
 
+The following example shows a combined function magnet with a dipole component
+of 2 Tesla and a quadrupole gradient of 0.1 Tesla/m.
+
+....
+M30:MULTIPOLET, L=1, RFRINGE=0.3, LFRINGE=0.2, ANGLE=PI/6, TP={2.0, 0.1}, VARRADIUS=TRUE;
+....
+
+The field expansion used in this model is based on the following scalar potential:
+[latexmath]
+++++
+ V = z f_0(x,s) + \frac{z^3}{3!} f_1(x,s) + \frac{z^5}{5!} f_2(x,s) + \dots 
+++++
+
+Mid-plane symmetry is assumed and the vertical component of the field on the mid-plane is given by the user under the form of the transverse profile latexmath:[T(x)]. The full expression for the vertical component is then 
+[latexmath]
+++++
+B_z = f_0 = T(x) \cdot S(s)
+++++
+where latexmath:[S(s)] is the fringe field. This element uses the Tanh model for the end fields, having only three parameters (the centre length latexmath:[s_0] and the fringe field lengths latexmath:[\lambda_{left}], latexmath:[\lambda_{right}]):
+[latexmath]
+++++
+ S(s) = \frac{1}{2} \left[ \tanh \left( \frac{s + s_0}{\lambda_{left}} \right) - 
+ \tanh \left( \frac{s - s_0}{\lambda_{right}} \right) \right]
+++++
+
+Starting from Maxwell's laws, the functions latexmath:[f_n] are computed recursively and finally each component of the magnetic field is obtained from latexmath:[V] using the corresponding geometries.
+
 [[sec:solenoid]]
 Solenoid
 ~~~~~~~~
@@ -1524,7 +1551,7 @@ locates in multiple field regions, all the field maps are superposed. if
 SUPERPOSE is set to false, then only one field map, which has highest
 priority, is used to do interpolation for the particle tracking. The
 priority ranking is decided by their sequence in the list of RFMAPFN
-argument, i.e., "e1.h5hart" has the highest priority and "e4.h5hart"
+argument, i.e., "e1.h5part" has the highest priority and "e4.h5part"
 has the lowest priority.
 
 Another method to model an RF cavity is to read the RF voltage profile
