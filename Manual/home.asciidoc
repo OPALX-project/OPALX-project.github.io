@@ -62,3 +62,4 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/opal-madx[OPAL-MADX Conversion Guide]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/autophase[Auto-phasing Algorithm]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/benchmarks[Benchmarks]
+. https://gitlab.psi.ch/OPAL/src/wikis/opaldks[Dynamic Kernel Scheduler (DKS)]
