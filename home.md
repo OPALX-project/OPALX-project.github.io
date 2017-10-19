@@ -28,16 +28,16 @@ OPAL Documentation & Help
 OPAL Start with Examples
 =====================
 1. [Cyclotron](Cyclotron)
-2. [FFAG](#FFAG)
-3. [RF Photo Injector](RFPhotoInjector)
-4. [Post Processing](PostProcessing)
-5. Old (maybe outdated) [stuff](https://amas.psi.ch/OPAL/wiki/OPAL)
+1. [FFAG - link missing](#FFAG)
+1. [RF Photo Injector](RFPhotoInjector)
+1. [Examples from regression tests](RegressionTestExamples)
+1. [Post Processing](PostProcessing)
+1. Old (maybe outdated) [stuff - link broken](https://amas.psi.ch/OPAL/wiki/OPAL)
 
 The runOPAL.py Script
 =====================
-The Python scripts allows you to run, automated, several OPAL jobs and obtain the
-data in a conceived way. Scans of multiple dimensions are easy possible. The user guide
-is found [here](runOPAL)
+The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
+data in a conceived way. Scans of multiple dimensions are easy to perform.
 
 Regression Tests
 ===============
