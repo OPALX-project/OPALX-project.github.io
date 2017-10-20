@@ -310,9 +310,9 @@ Having said this, however, old input files that use the
 work as before, with the following exception. Previously, _OPAL_ had a
 Boolean `OPTION` command `FINEEMISSION` (default value was `TRUE`). This
 `OPTION` is no longer supported. Instead you will need to set the
-distribution attribute `EMISSIONSTEPS` see Table <<distattremitted>> to a
+distribution attribute link:distribution#distattremitteddist[`EMISSIONSTEPS`] to a
 value that is 10 latexmath:[\times] the value of the distribution
-attribute `NBIN` see Table <<distattruniversal>> in order for your
+attribute link:distribution#distattruniversal[`NBIN`] in order for your
 simulation to behave the same as before.
 
 [[fromfile-gauss-and-binomial-distribution-types]]

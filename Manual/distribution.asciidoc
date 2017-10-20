@@ -11,6 +11,7 @@ toc::[]
 Distribution Command
 --------------------
 
+[#disttypes]
 .Possible distribution types.
 [cols="<1,<5",options="header",]
 |=======================================================================
@@ -47,7 +48,7 @@ Name:DISTRIBUTION, TYPE = DISTRIBUTION_TYPE,
 The distribution is given a name (which is used to reference the
 distribution in the _OPAL_ input file), a distribution type, and a list
 of attributes. The types of distributions that are supported are listed
-in Table [disttypes]. The attributes that follow the distribution type
+in Table <<disttypes,1>>. The attributes that follow the distribution type
 further define the particle distribution. Some attributes are universal,
 while others are specific to the distribution type. In the following
 sections we will define the distribution attributes, starting with the
@@ -64,9 +65,10 @@ Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec
 When defining a
 distribution, both _OPAL-t_ and _OPAL-cycl_ use meters for length and
 seconds for time. However, there are different options for the units
-used to input the momentum. This is controlled with the `INPUTMOUNITS`
-attribute, defined in Table [distattrinputmounits].
+used to input the momentum. This is controlled with the 
+<<distattrinputmounits,`INPUTMOUNITS`>> attribute.
 
+[#distattrinputmounits]
 .Definition of `INPUTMOUNITS` attribute.
 [cols="<1,^2,<4",options="header",]
 |=======================================================================
@@ -87,7 +89,7 @@ General Distribution Attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the distribution type is chosen, the next attribute to specify is
-the `EMITTED` attribute, which is defined in Table [distattremitted].
+the <<distattremitted,`EMITTED`>> attribute.
 The `EMITTED` attribute controls whether a distribution is _injected_ or
 _emitted_. An _injected_ distribution is placed in its entirety into the
 simulation space at the start of the simulation. An _emitted_ beam is
@@ -96,6 +98,7 @@ from a cathode in a photoinjector simulation). Currently, only _OPAL-t_
 supports _emitted_ distributions. The default is an _injected_
 distribution.
 
+[#distattremitted]
 .Definition of `EMITTED` attribute.
 [cols="<1,^1,<5",options="header",]
 |=======================================================================
@@ -118,13 +121,13 @@ meters. Early times are emitted first.
 Depending on the `EMITTED` attribute, we can specify several other
 attributes that do not depend on the distribution type. These are
 defined in
-Sections <<sec:universaldistattributes, Universal Attributes>>, <<sec:injecteddistattributes, Injected Distribution Attributes>> and <<sec:emitteddistattributes, Emitted Distribution Attributes>>
-in Table [distattruniversal,distattrinjected,distattrsemitted].
+Sections <<sec:universaldistattributes, Universal Attributes>>, <<sec:injecteddistattributes, Injected Distribution Attributes>> and <<sec:emitteddistattributes, Emitted Distribution Attributes>>.
 
 [[sec:universaldistattributes]]
 Universal Attributes
 ^^^^^^^^^^^^^^^^^^^^
 
+[#distattruniversal]
 .Definition of universal distribution attributes. Any distribution type can use these and they are the same whether the beam is _injected_ or _emitted_.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -213,6 +216,7 @@ latexmath:[z] position, latexmath:[\bar{z}].
 Emitted Distribution Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+[#distattremitteddist]
 .Definition of distribution attributes that only affect _emitted_ beams.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -240,9 +244,10 @@ The most versatile distribution type is to use a user generated text
 file as input to _OPAL_. This allows the user to generate their own
 distribution, if the built in options in _OPAL_ are insufficient, and
 have it either _injected_ or _emitted_ into the simulation. In
-Table [distattrfromfile] we list the single attribute specific to this
+Table <<distattrfromfile,7>> we list the single attribute specific to this
 type of distribution type.
 
+[#distattrfromfile]
 .Definition of distribution attributes for a `FROMFILE` distribution type.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -270,43 +275,35 @@ Name:DISTRIBUTION, TYPE = FROMFILE,
 The text input file for the `FROMFILE` distribution type has slightly a
 slightly different format, depending on whether the distribution is to
 be _injected_ or _emitted_. The _injected_ file format is defined in
-Table [fromfileinjfileformat]. The _emitted_ file format is defined in
-Table [fromfileemitfileformat].
+Table <<fromfileinjfileformat,8>>. The _emitted_ file format is defined in
+Table <<fromfileemitfileformat,9>>.
 
+[#fromfileinjfileformat]
 .File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec:variablesopalcycl[_OPAL-cycl_ variables].
 [cols="<,<,<,<,<,<",]
 |=======================================================================
 |N | | | | |
-
 |latexmath:[x_{1}] |latexmath:[p_{x1}] |latexmath:[y_{1}]
 |latexmath:[p_{y1}] |latexmath:[z_{1}] |latexmath:[p_{z1}]
-
 |latexmath:[x_{2}] |latexmath:[p_{x2}] |latexmath:[y_{2}]
 |latexmath:[p_{y2}] |latexmath:[z_{2}] |latexmath:[p_{z2}]
-
 |. | | | | |
-
 |. | | | | |
-
 |latexmath:[x_{N}] |latexmath:[p_{xN}] |latexmath:[y_{N}]
 |latexmath:[p_{yN}] |latexmath:[z_{N}] |latexmath:[p_{zN}]
 |=======================================================================
 
+[#fromfileemitfileformat]
 .File format for _emitted_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Section link:opalt#sec:variablesopalt[_OPAL-t_ variables] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
 [cols="<,<,<,<,<,<",]
 |=======================================================================
 |N | | | | |
-
 |latexmath:[x_{1}] |latexmath:[p_{x1}] |latexmath:[y_{1}]
 |latexmath:[p_{y1}] |latexmath:[t_{1}] |latexmath:[p_{z1}]
-
 |latexmath:[x_{2}] |latexmath:[p_{x2}] |latexmath:[y_{2}]
 |latexmath:[p_{y2}] |latexmath:[t_{2}] |latexmath:[p_{z2}]
-
 |. | | | | |
-
 |. | | | | |
-
 |latexmath:[x_{N}] |latexmath:[p_{xN}] |latexmath:[y_{N}]
 |latexmath:[p_{yN}] |latexmath:[t_{N}] |latexmath:[p_{zN}]
 |=======================================================================
@@ -351,6 +348,7 @@ We will begin by describing how to create a simple `GAUSS` distribution
 type. That is, a simple 6-dimensional distribution with a Gaussian
 distribution in all dimensions.
 
+[#distattrgauss]
 .Definition of the basic distribution attributes for a `GAUSS` distribution type.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -414,7 +412,7 @@ in units of latexmath:[\sigma_{pz}]. If `CUTOFFPZ` latexmath:[= 0]
 then actual cutoff is latexmath:[p_{z}] is set to infinity.
 |=======================================================================
 
-In Table [distattrgauss] we list the basic attributes available for a
+In Table <<distattrgauss,10>> we list the basic attributes available for a
 `GAUSS` distribution. We can use these to create a very simple `GAUSS`
 distribution:
 
@@ -457,39 +455,41 @@ latexmath:[(\bar{x},\bar{y},\bar{z})=({1.0}\mathrm{mm}, {-2.0}\mathrm{mm}, {10.0
 `GAUSS` Distribution for Photoinjector
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.Definition of additional distribution attributes for an _emitted_ `GAUSS` distribution type. These are used to generate a distribution with a time profile as illustrated in Figure [flattop].
+[#distattremittedgauss]
+.Definition of additional distribution attributes for an _emitted_ `GAUSS` distribution type. These are used to generate a distribution with a time profile as illustrated in Figure <<flattop,1>>.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
-|`TPULSEFWHM` |0.0 |s |Flat top time see Figure [flattop].
+|`TPULSEFWHM` |0.0 |s |Flat top time see Figure <<flattop,1>>.
 
-|`TRISE` |0.0 |s |Rise time see Figure [flattop]. If defined will
+|`TRISE` |0.0 |s |Rise time see Figure <<flattop,1>>. If defined will
 override `SIGMAT`.
 
-|`TFALL` |0.0 |s |Fall time see Figure [flattop]. If defined will
+|`TFALL` |0.0 |s |Fall time see Figure <<flattop,1>>. If defined will
 override `SIGMAT`.
 
 |`FTOSCAMPLITUDE` |0 |None |Sinusoidal oscillations can imposed on the
-flat top in Figure [flattop]. This defines the amplitude of those
+flat top in Figure <<flattop,1>>. This defines the amplitude of those
 oscillations in percent of the average flat top amplitude.
 
 |`FTOSCPERIODS` |0 |None |Defines the number of oscillation periods
 imposed on the flat top, latexmath:[t_\mathrm{flattop}], in
-Figure [flattop].
+Figure <<flattop,1>>.
 |=======================================================================
 
+[#flattop]
 .Figure 1: _OPAL_ emitted `GAUSS` distribution with flat top.
 image:./figures/flattop.png[width=700]
 
 A useful feature of the `GAUSS` distribution type is the ability to
 mimic the initial distribution from a photoinjector. For this purpose we
-have the distribution attributes listed in Table [distattremittedgauss].
+have the distribution attributes listed in Table <<distattremittedgauss,11>>.
 Using them, we can create a distribution with the time structure shown
-in Figure [flattop]. This is a half Gaussian rise plus a uniform
+in Figure <<flattop,1>>. This is a half Gaussian rise plus a uniform
 flat-top plus a half Gaussian fall. To make it more convenient to mimic
 measured laser profiles, `TRISE` and `TFALL` from
-Table [distattremittedgauss] do not define RMS quantities, but instead
-are given by (See also Figure [flattop]):
+Table <<distattremittedgauss,11>> do not define RMS quantities, but instead
+are given by (See also Figure <<flattop,1>>):
 
 [latexmath]
 ++++
@@ -502,7 +502,7 @@ are given by (See also Figure [flattop]):
 
 where latexmath:[\sigma_{R}] and latexmath:[\sigma_{F}] are the
 Gaussian, RMS rise and fall times respectively. The flat-top portion of
-the profile, `TPULSEFWHM`, is defined as (See also Figure [flattop]):
+the profile, `TPULSEFWHM`, is defined as (See also Figure <<flattop,1>>):
 
 [latexmath]
 ++++
@@ -511,7 +511,7 @@ the profile, `TPULSEFWHM`, is defined as (See also Figure [flattop]):
 
 Total emission time, latexmath:[t_{E}], of this distribution, is a
 function of the longitudinal cutoff, `CUTOFFLONG`
-see Table [distattrgauss], and is given by:
+see Table <<distattrgauss,10>>, and is given by:
 
 [latexmath]
 ++++
@@ -522,9 +522,9 @@ see Table [distattrgauss], and is given by:
 ++++
 
 Finally, we can also impose oscillations over the flat-top portion of
-the laser pulse in Figure [flattop], latexmath:[t_\mathrm{flattop}].
+the laser pulse in Figure <<flattop,1>>, latexmath:[t_\mathrm{flattop}].
 This is defined by the attributes `FTOSCAMPLITUDE` and `FTOSCPERIODS`
-from Table [distattremittedgauss]. `FTOSCPERIODS` defines how many
+from Table <<distattremittedgauss,11>>. `FTOSCPERIODS` defines how many
 oscillation periods will be present during the
 latexmath:[t_\mathrm{flattop}] portion of the pulse. `FTOSCAMPLITUDE`
 defines the amplitude of those oscillations in percentage of the average
@@ -654,13 +654,14 @@ Injected `FLATTOP`
 ^^^^^^^^^^^^^^^^^^
 
 The attributes for an _injected_ `FLATTOP` distribution are defined in
-Table [distattrflattopinj,distattruniversal]. At the moment, we cannot
+Tables <<distattrflattopinj,13>> and <<distattruniversal,4>>. At the moment, we cannot
 define a spread in the beam momentum, so an _injected_ `FLATTOP`
 distribution will currently have zero emittance. An _injected_ `FLATTOP`
 will be a uniformly filled ellipse transversely with a uniform
 distribution in latexmath:[z]. (Basically a cylinder with an
 elliptical cross section.)
 
+[#distattrflattopinj]
 .Definition of the basic distribution attributes for an _injected_ `FLATTOP` distribution type.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -679,6 +680,7 @@ elliptical cross section.)
 Emitted `FLATTOP`
 ^^^^^^^^^^^^^^^^^
 
+[#distattrflattopemit]
 .Definition of the basic distribution attributes for an _emitted_ `FLATTOP` distribution type.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -691,23 +693,23 @@ Emitted `FLATTOP`
 `SIGMAX` and `SIGMAY`.
 
 |`SIGMAT` |0.0 |s |RMS rise and fall of half Gaussian in flat top
-defined in in Figure [flattop].
+defined in in Figure <<flattop,1>>.
 
-|`TPULSEFWHM` |0.0 |s |Flat top time. See Figure [flattop].
+|`TPULSEFWHM` |0.0 |s |Flat top time. See Figure <<flattop,1>>.
 
-|`TRISE` |0.0 |s |Rise time. See Figure [flattop]. If defined will
+|`TRISE` |0.0 |s |Rise time. See Figure <<flattop,1>>. If defined will
 override `SIGMAT`.
 
-|`TFALL` |0.0 |s |Fall time. See Figure [flattop]. If defined will
+|`TFALL` |0.0 |s |Fall time. See Figure <<flattop,1>>. If defined will
 override `SIGMAT`.
 
 |`FTOSCAMPLITUDE` |0 |None |Sinusoidal oscillations can imposed on the
-flat top in Figure [flattop]. This defines the amplitude of those
+flat top in Figure <<flattop,1>>. This defines the amplitude of those
 oscillations in percent of the average flat top amplitude.
 
 |`FTOSCPERIODS` |0 |None |Defines the number of oscillation periods
 imposed on the flat top, latexmath:[t_\mathrm{flattop}], in
-Figure [flattop].
+Figure <<flattop,1>>.
 
 |`LASERPROFFN` | |None |File name containing measured laser image.
 
@@ -732,15 +734,15 @@ intensity.
 |=======================================================================
 
 The attributes of an _emitted_ `FLATTOP` distribution are defined in
-Table [distattrflattopemit,distattruniversal]. The `FLATTOP`
+Tables <<distattrflattopemit,14>> and <<distattruniversal,4>>. The `FLATTOP`
 distribution was really intended for this mode of operation in order to
 mimic common laser pulses in photoinjectors. The basic characteristic of
 a `FLATTOP` is a uniform, elliptical transverse distribution and a
 longitudinal (time) distribution with a Gaussian rise and fall time as
 described in Section <<sec:gaussdisttypephotoinjector>>. Below we show an
 example of a `FLATTOP` distribution command with an elliptical cross
-section of 1mm by 2mm and a flat top, in time, 10ps long with a 0.5ps
-rise and fall time as defined in Figure [flattop].
+section of 1 mm by 2 mm and a flat top, in time, 10 ps long with a 0.5 ps
+rise and fall time as defined in Figure <<flattop,1>>.
 
 ....
 Dist:DISTRIBUTION, TYPE = FLATTOP,
@@ -763,7 +765,7 @@ Transverse Distribution from Laser Profile (Under Development)
 
 An alternative to using a uniform, elliptical transverse profile is to
 define the `LASERPROFFN`, `IMAGENAME` and `INTENSITYCUT` attributes from
-Table [distattrflattopemit]. Then, _OPAL-t_ will use the laser image as
+Table <<distattrflattopemit,14>>. Then, _OPAL-t_ will use the laser image as
 the basis to sample the transverse distribution.
 
 *_This distribution option is not yet available._*
@@ -795,8 +797,9 @@ The `BINOMIAL` type of distribution is based on <<bib:JohoDist>>. The shape of
 the binomial distribution is governed by one parameter latexmath:[m].
 By varying this single parameter one obtains the most commonly used
 distributions for our type of simulations, as listed in
-Table [binomdist].
+Table <<binomdist,15>>.
 
+[#binomdist]
 .Different distributions specified by a single parameter latexmath:[m]
 [cols="<1,<1,<3,<3",options="header",]
 |=======================================================================
@@ -836,11 +839,12 @@ Emission Model: `NONE` (default)
 
 The emission model `NONE` is the default emission model used in
 _OPAL-t_. It has a single attribute, listed in
-Table [distattremitmodelnoneastra]. The `NONE` emission model is very
+Table <<distattremitmodelnoneastra,16>>. The `NONE` emission model is very
 simplistic. It merely adds the amount of energy defined by the attribute
 `EKIN` to the longitudinal momentum, latexmath:[p_{z}], for each
 particle in the distribution as it leaves the cathode.
 
+[#distattremitmodelnoneastra]
 .Attributes for the `NONE` and `ASTRA` emission models.
 [cols="<1,^1,^1,<4",options="header",]
 |==============================================================
@@ -882,7 +886,7 @@ Emission Model: `ASTRA`
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The `ASTRA` emittance model uses the same single parameter as the `NONE`
-option as listed in Table [distattremitmodelnoneastra]. However, in this
+option as listed in Table <<distattremitmodelnoneastra,16>>. However, in this
 case, the energy defined by the `EKIN` attribute is added to each
 emitted particle’s momentum in a random way:
 
@@ -914,8 +918,9 @@ Emission Model: `NONEQUIL`
 The `NONEQUIL` emission model is based on an actual physical model of
 particle emission as described in <<bib:flo97>>, <<bib:clen2000>>, <<bib:dowe2009>>. The
 attributes needed by this emission model are listed in
-Table [distattremitmodelnonequil].
+Table <<distattremitmodelnonequil,17>>.
 
+[#distattremitmodelnonequil]
 .Attributes for the `NONE` and `ASTRA` emission models.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
@@ -991,7 +996,7 @@ then all other distribution is the list will also be _injected_.
 The number of particles in the simulation is defined in the `BEAM`
 command see Chapter link:beam[Beam Command]. The number of particles in each distribution
 in a distribution list is determined by this number and the `WEIGHT`
-attribute of each distribution (Table [distattruniversal]). If all
+attribute of each distribution (Table <<distattruniversal,4>>). If all
 distributions have the same `WEIGHT` value, then the number of particles
 will be divided up evenly among them. If, however we have a distribution
 list consisting of two distributions, and one has twice the `WEIGHT` of

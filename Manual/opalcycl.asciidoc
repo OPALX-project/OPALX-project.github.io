@@ -276,8 +276,9 @@ CARBONCYCL type
 ^^^^^^^^^^^^^^^
 
 If `TYPE=CARBONCYCL`, the program requires the latexmath:[B_z] data
-which is stored in a sequence shown in Figure [CYCLField].
+which is stored in a sequence shown in Figure <<CYCLField,1>>.
 
+[#CYCLField]
 .Figure 1: 2D field map on the median plane with primary direction corresponding to the azimuthal direction, secondary direction to the radial direction
 image:./figures/cyclotron/CarbonFieldFormat.png[]
 
