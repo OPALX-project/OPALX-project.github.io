@@ -1,9 +1,14 @@
-# Release Notes for OPAL 1.6.0
+# Release Notes for OPAL 1.6.x
 
 >
 **Note:** This are the release note for the first release candidate of OPAL 1.6.0!
 >
 **Note:** OPAL 1.6 will be the last minor release of OPAL 1.  New features will be *not* implemented in this major version. Bugs will still be fixed. We are working on OPAL 2 with many new features.
+
+## Solved issues concerned by users 1.6.1
+
+* Issue #169 New Material: BoronCarbide
+* Correct manual: no particle matter interaction for OPAL-cyc in 1.6.x
 
 ## Solved issues concerned by users 1.6.0
 
@@ -58,5 +63,4 @@ To date the following issues are not solved and scheduled for OPAL-1.6.1
     REAL gamma=(Edes+PMASS)/PMASS;
     ```
     Only **REAL, STRING, BOOL** and **ARRAY** are supported
-
 
