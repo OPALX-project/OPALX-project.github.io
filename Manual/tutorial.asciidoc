@@ -95,7 +95,7 @@ Auto-phase Example
 This is a partial complete example. First we have to set _OPAL_ in
 `AUTOPHASE` mode, as described in Section link:control#sec:option[Option Statement] and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
-computing the phases is explained in Appendix <<autophasing>>.
+computing the phases is explained in Appendix link:autophase.
 
 ....
 Option, AUTOPHASE=4;
