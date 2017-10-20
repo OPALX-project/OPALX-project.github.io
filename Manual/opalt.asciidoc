@@ -242,10 +242,10 @@ the reference orbit. The two other axes are perpendicular to the
 reference orbit and are labelled latexmath:[x] (in the bend plane)
 and latexmath:[y] (perpendicular to the bend plane).
 
-.Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
+.Figure 2 : Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
 image:figures/opalt/curvcoords.png[]
 
-Both coordinate systems are described in Figure [KS2].
+Both coordinate systems are described in Figure <<KS2,2>>.
 
 [[design-or-reference-orbit]]
 Design or Reference Orbit
@@ -302,11 +302,11 @@ Flow Diagram of _OPAL-t_
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 [#OPALTSchemeSimple]
-.Figure 2 : Schematic workflow of _OPAL-t_’s execute method.
+.Figure 3 : Schematic workflow of _OPAL-t_’s execute method.
 image:figures/opalt/flowdiagram.png[]
 
 A regular time step in _OPAL-t_ is sketched in
-Figure <<OPALTSchemeSimple,2>>. In order to compute the coordinate system
+Figure <<OPALTSchemeSimple,3>>. In order to compute the coordinate system
 transformation from the reference coordinate system latexmath:[K_s] to
 the local coordinate systems latexmath:[K'_n] we join the
 transformation from floor coordinate system latexmath:[K] to
@@ -317,7 +317,7 @@ quaternions. The resulting quaternions are then converted to the
 appropriate matrix representation before applying the rotation operation
 onto the particle positions and momenta.
 
-As can be seen from Figure <<OPALTSchemeSimple,2>> the integration of the
+As can be seen from Figure <<OPALTSchemeSimple,3>> the integration of the
 trajectories of the particles are integrated and the computation of the
 statistics of the six-dimensional phase space are performed in the
 reference coordinate system.
