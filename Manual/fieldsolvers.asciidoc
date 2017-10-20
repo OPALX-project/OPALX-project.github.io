@@ -317,8 +317,9 @@ given in Version 2.0.0.
 The `FIELDSOLVER` Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See Table [fieldsolvercmd] for a summary of the Fieldsolver command.
+See Table <<fieldsolvercmd,1>> for a summary of the Fieldsolver command.
 
+[#fieldsolvercmd]
 .Fieldsolver command summary
 [cols="<1,<4",options="header",]
 |=======================================================================

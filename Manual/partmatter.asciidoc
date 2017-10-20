@@ -53,8 +53,9 @@ T_{max}=\frac{2m_ec^2\beta^2\gamma^2}{1+2\gamma m_e/M+(m_e/M)^2},
 where latexmath:[M] is the incident particle mass.
 
 The stopping power is compared with PSTAR program of NIST in
-Figure 1.
+Figure <<fig:PSTAR,1>>.
 
+[#fig:PSTAR]
 .Figure 1 : The comparison of stopping power with PSTAR.
 image:figures/partmatter/dEdx.png[width=500]
 

@@ -11,6 +11,7 @@ toc::[]
 Tracking
 --------
 
+[#trackcmd]
 .Commands accepted in Tracking Mode
 [cols="<1,<3",options="header",]
 |=======================================================================
@@ -51,7 +52,7 @@ Before starting to track, a link:lines[beam line] and a
 link:beam[beam] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
-only the track commands see Table [trackcmd]. In order to preform
+only the track commands see Table <<trackcmd,1>>. In order to preform
 several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 `ZSTOP`. This can be used to change the time step manually.
 

@@ -183,10 +183,11 @@ A string attribute makes alphanumeric information available, e.g. a
 title, file name, element class name, or an option. It can contain any
 characters, enclosed in single (`’`) or double (`"`) quotes. However, if
 it contains a quote, this character must be doubled. Strings can be
-concatenated using the `&` operator see Table [stroperator]. An operand
-in a string can also use the function `STRING` see Table [stringfun].
+concatenated using the `&` operator see Table <<stroperator,1>>. An operand
+in a string can also use the function `STRING` see Table <<stringfun,2>>.
 String values can occur in string arrays see Section <<sec:anarray>>.
 
+[#stroperator]
 .String Operator in __OPAL__
 [cols="<,<,<,<",options="header",]
 |=======================================================================
@@ -195,6 +196,7 @@ String values can occur in string arrays see Section <<sec:anarray>>.
 always evaluated immediately when read. |string |string,string
 |=======================================================================
 
+[#stringfun]
 .String Function in __OPAL__
 [cols="<,<,<,<",options="header",]
 |=======================================================================
@@ -227,7 +229,7 @@ logical expression can occur in logical arrays see Section <<sec:logarray>>.
 
 A logical expression has the same format and operator precedence as a
 logical expression in C. It is built from logical operators
-see Table [logoperator] and logical operands:
+see Table <<logoperator,3>> and logical operands:
 
 ....
 relation      ::= "TRUE" |
@@ -241,6 +243,7 @@ and-expr      ::= relation | and-expr "&&" relation
 logical-expr  ::= and-expr | logical-expr "||" and-expr
 ....
 
+[#logoperator]
 .Logical Operators in __OPAL__
 [cols="<,<,<,<",options="header",]
 |=======================================================================
@@ -295,7 +298,7 @@ any computation. At evaluation time all operands used must have values
 assigned. A real expression can occur in real arrays
 see Section <<sec:realarray>>.
 
-A real expression is built from operators see Table [operator] and
+A real expression is built from operators see Table <<operator,4>> and
 operands see Section <<sec:operand>>:
 
 ....
@@ -336,9 +339,10 @@ immediately, and the result is stored as a constant.
 Operators
 ~~~~~~~~~
 
-An expression can be formed using operators see Table [operator] and
-functions see Table [realfun] acting on operands see Section <<sec:operand>>.
+An expression can be formed using operators see Table <<operator,4>> and
+functions see Table <<realfun,5>> acting on operands see Section <<sec:operand>>.
 
+[#operator]
 .Real Operators in __OPAL__
 [cols="<,<,<,<",options="header",]
 |=======================================================================
@@ -363,6 +367,7 @@ functions see Table [realfun] acting on operands see Section <<sec:operand>>
 (latexmath:[\mathtt{Y} > 0]) |real |real,real
 |=======================================================================
 
+[#realfun]
 .Real Functions in __OPAL__
 [cols="<,<,<,<",options="header",]
 |=======================================================================
@@ -489,11 +494,12 @@ Symbolic constants
 ^^^^^^^^^^^^^^^^^^
 
 _OPAL_ recognizes a few built-in mathematical and physical constants
-see Table [constant]. Their names must not be used for user-defined
+see Table <<constant,7>>. Their names must not be used for user-defined
 labels. Additional symbolic constants may be defined
 see Section <<sec:constant>> to simplify their repeated use in statements and
 expressions.
 
+[#constant]
 .Predefined Symbolic Constants
 [cols="<,^,^,^",options="header",]
 |==========================================================

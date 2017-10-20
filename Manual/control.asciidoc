@@ -438,8 +438,8 @@ Symbolic Constants
 ^^^^^^^^^^^^^^^^^^
 
 _OPAL_ recognizes a few build-in built-in mathematical and physical
-constants see Table [constant]. Additional constants can be defined by
-the command
+constants see Table link:format#constant[Predefined Symbolic Constants].
+Additional constants can be defined by the command
 
 ....
 REAL CONST label:CONSTANT=<real-expression>;
