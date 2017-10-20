@@ -287,7 +287,7 @@ Orbit Threader and Autophasing
 The `OrbitThreader` integrates a design particle through the lattice and
 setups up a multi map structure (`IndexMap`). Furthermore when the
 reference particle hits an rf-structure for the first time then it
-auto-phases the rf-structure, see Appendix [autophasing]. The multi map
+auto-phases the rf-structure, see Appendix link:autophase[Auto-phasing Algorithm]. The multi map
 structure speeds up the search for elements that influence the particles
 at a given position in 3D space by minimizing the looping over elements
 when integrating an ensemble of particles. For each time step,

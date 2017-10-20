@@ -1680,7 +1680,7 @@ LAG::
   The phase lag [rad] (default: 0). In _OPAL-t_ this phase is in general
   relative to the phase at which the reference particle gains the most
   energy. This phase is determined using an auto-phasing algorithm
-  (see Appendix [autophasing]). This auto-phasing algorithm can be
+  (see Appendix link:autophase[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
 
 [[sec:cavity-t]]
@@ -1923,7 +1923,7 @@ LAG::
   The phase lag [rad] (default: 0). In _OPAL-t_ this phase is in general
   relative to the phase at which the reference particle gains the most
   energy. This phase is determined using an auto-phasing algorithm
-  (see Appendix [autophasing]). This auto-phasing algorithm can be
+  (see Appendix link:autophase[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
 FMAPFN::
   Field maps in the _T7_ format can be specified.
