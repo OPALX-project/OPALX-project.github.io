@@ -1401,7 +1401,7 @@ The lines following the header give the 3D field map grid values from
 latexmath:[1] to latexmath:[N= (N_{z} + 1) \times (N_{x} + 1)]. The
 order of these depend on the field orientation
 see Section <<sec:fieldorientation>> and can currently only be the format
-shown in Table [3DMagnetoStatic_Extended].
+shown in Table <<3DMagnetoStatic_Extended,10>>.
 
 [[sec:3DDynamic]]
 3DDynamic
