@@ -8,6 +8,9 @@
 ## Solved issues concerned by users in 1.6.1
 
 * Issue #169 New Material: BoronCarbide
+* Issue #106 Segfault in case of Material at beginning of beam line
+* Issue #102 PSDUMPFRAME report is wrong in OPTIOn TELL=TRUE
+* Issue #105 RectangularDomain::getBoundaryStencil typo
 * Correct manual: no particle matter interaction for OPAL-cyc in 1.6.x
 
 ## Solved issues concerned by users in 1.6.0
@@ -63,4 +66,3 @@ To date the following issues are not solved and scheduled for OPAL-1.6.1
     REAL gamma=(Edes+PMASS)/PMASS;
     ```
     Only **REAL, STRING, BOOL** and **ARRAY** are supported
-
