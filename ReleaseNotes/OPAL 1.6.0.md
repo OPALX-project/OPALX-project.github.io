@@ -5,12 +5,12 @@
 >
 **Note:** OPAL 1.6 will be the last minor release of OPAL 1.  New features will be *not* implemented in this major version. Bugs will still be fixed. We are working on OPAL 2 with many new features.
 
-## Solved issues concerned by users 1.6.1
+## Solved issues concerned by users in 1.6.1
 
 * Issue #169 New Material: BoronCarbide
 * Correct manual: no particle matter interaction for OPAL-cyc in 1.6.x
 
-## Solved issues concerned by users 1.6.0
+## Solved issues concerned by users in 1.6.0
 
 * Issue #7 
 * Issue #12
