@@ -1,3 +1,4 @@
+* [1.6.1](ReleaseNotes/OPAL-1.6.1)
 * [1.6.0](https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes/OPAL-1.6.0)
 * [1.4.0](https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes/OPAL-1.4.0)
 * [1.3.2](https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes/OPAL-1.3.2)
