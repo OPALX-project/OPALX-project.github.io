@@ -2,8 +2,7 @@
 
 Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell,
 Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves
-Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang, Jianjun Yang
-(CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
+Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
 
 === Abstract
 
