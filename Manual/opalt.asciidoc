@@ -592,8 +592,9 @@ The following arguments can be passed
 * `-h` or `--help` for a short help
 * `--export-vtk` to export to the VTK format
 * `--export-web` to export for the web
-* `--project-to-plane x y z` to project the beam line to the plane with
-the normal with the components `x`, `y` and `z`
+* `--background r g b` to specify background color of web canvas
+* `--project-to-plane` to project the beam line to the plane (default zx plane)
+* `--normal x y z` specify the normal for projection with the components `x`, `y` and `z`
 
 [[datainput_file_name-_elementpositions.stat]]
 _data/<input_file_name >_ElementPositions.stat_
