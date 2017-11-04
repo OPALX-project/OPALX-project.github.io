@@ -10,7 +10,7 @@
 
 # OPAL Conference Contributions
 
-1. [OPAL a Versatile Parallel Tool for Precise 3D Beam Dynamics Studies] (ICAO 2015)(http://amas.web.psi.ch/people/aadelmann/pub/icap-2015.pdf)
+1. [OPAL a Versatile Parallel Tool for Precise 3D Beam Dynamics Studies] (ICAO 2015)](http://amas.web.psi.ch/people/aadelmann/pub/icap-2015.pdf)
 
 
 2. [B. Kuske, M. Abo-Bakr, IPAC2017, Copenhagen, Denmark](accelconf.web.cern.ch/AccelConf/ipac2017/papers/mopab033.pdf)
