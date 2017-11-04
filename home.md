@@ -32,7 +32,6 @@ OPAL Start with Examples
 1. [RF Photo Injector](RFPhotoInjector)
 1. [Examples from regression tests](RegressionTestExamples)
 1. [Post Processing](PostProcessing)
-1. Old (maybe outdated) [stuff - link broken](https://amas.psi.ch/OPAL/wiki/OPAL)
 
 The runOPAL.py Script
 =====================
