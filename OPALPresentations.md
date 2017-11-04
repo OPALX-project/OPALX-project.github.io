@@ -1,3 +1,7 @@
+# Talks on OPAL
+1. [APS Seminar 2017](http://amas.web.psi.ch/people/aadelmann/pub/anl-2017.pdf)
+
+
 # OPAL lectures
 
 1.  [OPAL Lecture 1](http://amas.web.psi.ch/people/aadelmann/pub/ffag14/opal-lect-ffag2014-1.pdf)
