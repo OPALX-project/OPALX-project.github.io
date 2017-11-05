@@ -9,7 +9,8 @@
 1. change your working directory to `$PREFIX`
 1. Un-tar the package
     ```
-    tar xf OPAL-1.6.0-1-XXX.tar.bz2
+    tar xf OPAL-1.6.1-1-x86_64-linux.tar.bz2
+
     ```
 1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
  ```
