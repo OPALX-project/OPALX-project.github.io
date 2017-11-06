@@ -80,11 +80,11 @@ Download::
 |===
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.bz2[OPAL-1.4.0-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.bz2.md5[md5 sum] 
-| link:ReleaseNotes/OPAL%201.4.0[OPAL release notes] 
+| link:ReleaseNotes/OPAL%201.4.0[release notes] 
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.4.0-1 for MacOS]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
-link:ReleaseNotes/OPAL%201.4.0[OPAL release notes] 
+| link:ReleaseNotes/OPAL%201.4.0[release notes] 
 |===
 
 Changes::
@@ -118,7 +118,6 @@ Download::
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.bz2[OPAL-1.3.2-2 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.bz2.md5[md5 sum]
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
 | link:ReleaseNotes/OPAL%201.4.0[release notes] 
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.2-2 for MacOS]
