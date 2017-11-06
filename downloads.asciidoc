@@ -18,7 +18,10 @@ The version of the newest binary distribution package for Linux is 1.6.0-2. For 
 Download::
 [cols="2*"]
 |========
-http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-1-x86_64-linux.tar.bz2[OPAL-1.6.1-1 for Linux] | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-1-x86_64-linux.tar.bz2.md5[md5 sum] 
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-2-x86_64-linux.tar.bz2[OPAL-1.6.1-2 for Linux]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-2-x86_64-linux.tar.bz2.md5[md5 sum] 
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-1-x86_64-linux.tar.bz2[OPAL-1.6.1-1 for Linux]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-1-x86_64-linux.tar.bz2.md5[md5 sum] 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2[OPAL-1.6.0-2 for Linux] | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2.md5[md5 sum] 
 |========
 
@@ -27,6 +30,13 @@ Please read the link:ReleaseNotes/OPAL%201.6.0[OPAL release notes] for changes i
 Changes::
 [cols="2*"]
 |===
+| 1.6.1-2 
+| bug in H5root wrapper script fixed
+|
+| file modes fixed
+|
+| chowner/group set to `root:root`
+
 | 1.6.1-1 
 | OPAL updated to version 1.6.1
 
