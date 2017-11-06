@@ -6,9 +6,9 @@
 '''
 
 == Overview 
-The current OPAL version is 1.6.0.
+The current OPAL version is 1.6.1.
 
-The version of the newest binary distribution package for Linux is 1.6.0-2. For the time being we do not provide an OPAL 1.6 package for macOS.
+The version of the newest binary distribution package for Linux is 1.6.1-2. For the time being we do not provide an OPAL 1.6 package for macOS.
 
 '''
 
@@ -25,7 +25,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2[OPAL-1.6.0-2 for Linux] | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.bz2.md5[md5 sum] 
 |========
 
-Please read the link:ReleaseNotes/OPAL%201.6.0[OPAL release notes] for changes in OPAL 1.6.0
+Please read the link:ReleaseNotes/OPAL%201.6.0[OPAL release notes] for changes in OPAL 1.6.1
 
 Changes::
 [cols="2*"]
