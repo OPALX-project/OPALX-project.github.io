@@ -20,7 +20,7 @@ scales in the weak sense, hence for a higher concurrency one has to
 increase the problem size i.e. number of macro particles and the grid
 size, which is beyond this tutorial.
 
-![gen-str](/uploads/24f890e73b0b4456ed07d80db1661f9e/gen-str.png)
+image:figures/tutorial/gen-str.png[]
 
 [[starting-opal]]
 Starting OPAL
