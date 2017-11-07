@@ -526,6 +526,7 @@ Use braces even for single line blocks, otherwise wrong indentation will confuse
 if (i == 42) {
     return SUCCESS;
 }
+```
 
 or write them on then same line:
 
