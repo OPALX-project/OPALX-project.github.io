@@ -52,15 +52,12 @@ Changes::
 
 | 1.6.0-1
 | This is a package for internal use only
+
+  OPAL version 1.6.0
+
+  update tool-chain
+
 | never releases
-
-|
-| OPAL version 1.6.0
-|
-
-|
-| update tool-chain
-|
 |===
 
 Toolchain for Version 1.6::
