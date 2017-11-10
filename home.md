@@ -17,7 +17,7 @@ OPAL Documentation & Help
 
 * OPAL (<= 1.6.x) [PDF Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 
-* OPAL (>= 1.9.9) [Wiki Manual]( Manual/home)
+* OPAL (>= 1.9.x) [Wiki Manual]( Manual/home)
 
 * [OPAL conversion utilities](OPAL conversion utilities) 
 
