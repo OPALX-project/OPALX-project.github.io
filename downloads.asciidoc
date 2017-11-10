@@ -40,8 +40,10 @@ Changes::
 |
 | file modes fixed
 |
+
 |
 | chowner/group set to `root:root`
+|
 
 | 1.6.1-1 
 | OPAL updated to version 1.6.1
