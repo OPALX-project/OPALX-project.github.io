@@ -34,19 +34,13 @@ Changes::
 | 10. November 2017
 
 | 1.6.1-2 
-| 
- bug in H5root wrapper script fixed
+| bug in H5root wrapper script fixed
 
   file modes fixed
+
+  chowner/group set to `root:root`
+
 | 6. November 2017
-
-|
-| file modes fixed
-|
-
-|
-| chowner/group set to `root:root`
-|
 
 | 1.6.1-1 
 | OPAL updated to version 1.6.1
