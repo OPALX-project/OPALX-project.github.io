@@ -35,8 +35,9 @@ Changes::
 
 | 1.6.1-2 
 | 
- * bug in H5root wrapper script fixed
- * file modes fixed
+ bug in H5root wrapper script fixed
++
+  file modes fixed
 | 6. November 2017
 
 |
