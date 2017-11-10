@@ -34,7 +34,7 @@ Changes::
 | 10. November 2017
 
 | 1.6.1-2 
-| * bug in H5root wrapper script fixed
+| bug in H5root wrapper script fixed
 | 6. November 2017
 
 |
