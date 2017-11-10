@@ -30,7 +30,7 @@ Changes::
 [cols="2*"]
 |===
 | 1.6.1-3
-| shared libraries like `libpng12` and `libz` added to binary package. 
+| shared libraries like `libpng12`, `libz`, `libnuma` added to binary package. 
 | 1.6.1-2 
 | bug in H5root wrapper script fixed
 |
