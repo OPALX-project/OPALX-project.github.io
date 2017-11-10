@@ -35,7 +35,7 @@ Changes::
 
 | 1.6.1-2 
 | bug in H5root wrapper script fixed
-|
+| 6. November 2017
 
 |
 | file modes fixed
@@ -47,15 +47,15 @@ Changes::
 
 | 1.6.1-1 
 | OPAL updated to version 1.6.1
-|
+| 27. October 2017
 
 | 1.6.0-2 
 | OPAL binary replaced. In 1.6.0-1 OPAL has been compiled with `Debug` and without any compiler optimization.
-|
+| 29. September 2017
 
 | 1.6.0-1
 | This is a package for internal use only
-|
+| never releases
 
 |
 | OPAL version 1.6.0
