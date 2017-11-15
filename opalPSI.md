@@ -1,9 +1,9 @@
-How to use OPAL on Merlin
-======================
+How to use OPAL on PSI (and Merlin)
+===================================
 
 Make sure ```source /opt/psi/config/profile.bash ``` is in your ```.bashrc```
 
-Issue the following command to find the available  OPAL versions:
+Issue the following command to find the available OPAL versions:
 
 `module search OPAL`
 
@@ -27,14 +27,17 @@ OPAL/1.6.0rc3        unstable   MPI          gcc/5.4.0 openmpi/1.10.4
 OPAL/1.6.0rc4        unstable   MPI          gcc/5.4.0 openmpi/1.10.4
 OPAL/1.6.0rc5        unstable   MPI          gcc/5.4.0 openmpi/1.10.4
 OPAL/1.6.0rc6        unstable   MPI          gcc/5.4.0 openmpi/1.10.4
+OPAL/1.6.1           unstable   MPI          gcc/5.4.0 openmpi/1.10.4
 ```
 
 Use again the `module` command to load the desired OPAL version:
 
-`module purge`
+```
+module purge
+module use unstable
+module load gcc/5.4.0 openmpi/1.10.4 OPAL/1.6.1
+```
 
-`module load OPAL/1.6.0rc6`
-
-An environment variable OPAL_EXE_PATH will point to the directory where the selected version of OPAL will reside.
+An environment variable OPAL_EXE_PATH might point to the directory where the selected version of OPAL will reside.
 
 Some info on using [Merlin5](https://intranet.psi.ch/PSI_HPC/Merlin5)
