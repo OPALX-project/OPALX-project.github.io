@@ -1,3 +1,5 @@
+For compilation from source see [Compile OPAL at PSI](For Developers/Compile OPAL at PSI).
+
 How to use OPAL on PSI (and Merlin)
 ===================================
 
