@@ -85,9 +85,9 @@ where
 [latexmath]
 ++++
 \begin{aligned}
-  \Gamma_{11,i} &= \int_0^1 \sin(\omega(t_{i-1} + \tau \Delta t_{i})) d\tau = - \frac{\cos(\omega t_{i}) - \cos(\omega t_{i-1})}{\omega \Delta t_{i}}\\
-  \Gamma_{12,i} &= \int_0^1 \sin(\omega(t_{i-1} + \tau \Delta t_{i})) \tau d\tau = \frac{-\omega \Delta t_{i} \cos(\omega t_{i}) + \sin(\omega t_{i}) - \sin(\omega t_{i-1})}{\omega^2 (\Delta t_{i})^2}\\
-  \Gamma_{21,i} &= \int_0^1 \cos(\omega(t_{i-1} + \tau \Delta t_{i})) d\tau = \frac{\sin(\omega t_{i}) - \sin(\omega t_{i-1})}{\omega \Delta t_{i}}\\
+  \Gamma_{11,i} &= \int_0^1 \sin(\omega(t_{i-1} + \tau \Delta t_{i})) d\tau = - \frac{\cos(\omega t_{i}) - \cos(\omega t_{i-1})}{\omega \Delta t_{i}}\\ \\
+  \Gamma_{12,i} &= \int_0^1 \sin(\omega(t_{i-1} + \tau \Delta t_{i})) \tau d\tau = \frac{-\omega \Delta t_{i} \cos(\omega t_{i}) + \sin(\omega t_{i}) - \sin(\omega t_{i-1})}{\omega^2 (\Delta t_{i})^2}\\ \\
+  \Gamma_{21,i} &= \int_0^1 \cos(\omega(t_{i-1} + \tau \Delta t_{i})) d\tau = \frac{\sin(\omega t_{i}) - \sin(\omega t_{i-1})}{\omega \Delta t_{i}}\\ \\
   \Gamma_{22,i} &= \int_0^1 \cos(\omega(t_{i-1} + \tau \Delta t_{i})) \tau d\tau = \frac{\omega \Delta t_{i} \sin(\omega t_{i}) + \cos(\omega t_{i}) - \cos(\omega t_{i-1})}{\omega^2 (\Delta t_{i})^2}
 \end{aligned}
 ++++
@@ -132,9 +132,9 @@ Figure 1.
 [latexmath]
 ++++
 \begin{aligned}
-\Delta E(\varphi,r) &= q\, V_{0}\,\int_{z_\text{begin}}^{z_\text{beginCore}} \cos(\omega t(z,\varphi) + \varphi) E_z(z, r) dz \\
-&+ q\, V_\text{core}\,\int_{z_\text{beginCore}}^{z_\text{endCore}} \cos(\omega t(z,\varphi) + \varphi_\text{c1} + \varphi) E_z(z, r) dz \\
-&+ q\, V_\text{core}\,\int_{z_\text{beginCore}}^{z_\text{endCore}} \cos(\omega t(z,\varphi) + \varphi_\text{c2} + \varphi) E_z(z + s, r) dz \\
+\Delta E(\varphi,r) &= q\, V_{0}\,\int_{z_\text{begin}}^{z_\text{beginCore}} \cos(\omega t(z,\varphi) + \varphi) E_z(z, r) dz \\ \\
+&+ q\, V_\text{core}\,\int_{z_\text{beginCore}}^{z_\text{endCore}} \cos(\omega t(z,\varphi) + \varphi_\text{c1} + \varphi) E_z(z, r) dz \\ \\
+&+ q\, V_\text{core}\,\int_{z_\text{beginCore}}^{z_\text{endCore}} \cos(\omega t(z,\varphi) + \varphi_\text{c2} + \varphi) E_z(z + s, r) dz \\ \\
 &+ q\, V_{0}\,\int_{z_\text{endCore}}^{z_\text{end}} \cos(\omega t(z,\varphi) + \varphi_\text{ef} + \varphi) E_z(z, r) dz,\end{aligned}
 ++++
 
@@ -178,9 +178,9 @@ example from above the energy gain is approximately
 [latexmath]
 ++++
 \begin{aligned}
-\Delta E(\varphi,r) &= q\;V_0 \int_{0}^{1.5\cdot s} \cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z(z,r)\, dz\\
-&+ \frac{2 q\;V_{0}}{\sqrt{3}} \int_{1.5\cdot s}^{40.5\cdot s}\cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{\pi}{6} + \varphi \right) E_z(z\;\;\quad,r) dz\\
-&+ \frac{2 q\;V_{0}}{\sqrt{3}} \int_{1.5\cdot s}^{40.5\cdot s}\cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{\pi}{2} + \varphi \right) E_z(z+s,r) dz \\
+\Delta E(\varphi,r) &= q\;V_0 \int_{0}^{1.5\cdot s} \cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z(z,r)\, dz\\ \\
+&+ \frac{2 q\;V_{0}}{\sqrt{3}} \int_{1.5\cdot s}^{40.5\cdot s}\cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{\pi}{6} + \varphi \right) E_z(z\;\;\quad,r) dz\\ \\
+&+ \frac{2 q\;V_{0}}{\sqrt{3}} \int_{1.5\cdot s}^{40.5\cdot s}\cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{\pi}{2} + \varphi \right) E_z(z+s,r) dz \\ \\
 &+ q\;V_{0} \int_{40.5\cdot s}^{42\cdot s} \cos\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z(z,r)\, dz.
 \end{aligned}
 ++++
@@ -197,9 +197,9 @@ period of latexmath:[3\,s]. We thus find
 [latexmath]
 ++++
 \begin{aligned}
-0 \equiv & \int_{0}^{1.5\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z^{(2)}(z,r)\, dz \\
-                &+ \frac{2}{\sqrt{3}} \int_{0}^{39\cdot s}\sin\left(\omega \left(\frac{z + 1.5\,s}{\beta c} + t_{0}\right) + \frac{\pi}{6} + \varphi \right) E_z^{(1)}(z \text{ mod}(3\,s),r)\,dz \\
-                &+ \frac{2}{\sqrt{3}} \int_{0}^{39\cdot s}\sin\left(\omega \left(\frac{z + 1.5\,s}{\beta c} + t_{0}\right) + \frac{\pi}{2} + \varphi \right) E_z^{(1)}((z + s) \text{ mod} (3\,s),r)\, dz \\
+0 \equiv & \int_{0}^{1.5\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z^{(2)}(z,r)\, dz \\ \\
+                &+ \frac{2}{\sqrt{3}} \int_{0}^{39\cdot s}\sin\left(\omega \left(\frac{z + 1.5\,s}{\beta c} + t_{0}\right) + \frac{\pi}{6} + \varphi \right) E_z^{(1)}(z \text{ mod}(3\,s),r)\,dz \\ \\
+                &+ \frac{2}{\sqrt{3}} \int_{0}^{39\cdot s}\sin\left(\omega \left(\frac{z + 1.5\,s}{\beta c} + t_{0}\right) + \frac{\pi}{2} + \varphi \right) E_z^{(1)}((z + s) \text{ mod} (3\,s),r)\, dz \\ \\
                 &+ \int_{1.5\cdot s}^{3\cdot s} \sin\left(\omega\left(\frac{z + 39\,s}{\beta c} + t_{0}\right) + \varphi\right) E_z^{(2)}(z,r)\, dz
 \end{aligned}
 ++++
@@ -210,9 +210,9 @@ latexmath:[\omega / \beta c \approx 10\pi]. We then get
 [latexmath]
 ++++
 \begin{aligned}
-0 \equiv & \int_{0}^{3\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z^{(2)}(z)\, dz \\
+0 \equiv & \int_{0}^{3\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) E_z^{(2)}(z)\, dz \\ \\
                 + \frac{26}{\sqrt{3}} & \int_{0}^{3\cdot s}\left(\sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{7\pi}{6} + \varphi \right)
-                                                        + \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{5\pi}{6} + \varphi \right)\right) E_z^{(1)}(z)\, dz \\
+                                                        + \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{5\pi}{6} + \varphi \right)\right) E_z^{(1)}(z)\, dz \\ \\
        = & \int_{0}^{3\cdot s}\sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \varphi\right) \left(E_z^{(2)} - 26\cdot E_z^{(1)}\right)(z)\,dz\end{aligned}
 ++++
 
@@ -220,8 +220,8 @@ where we used latexmath:[(z' = z + s)]
 [latexmath]
 ++++
 \begin{aligned}
-&\int_{0}^{3\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{3\pi}{2} + \varphi\right) E_z^{(1)}((z + s) \text{ mod}(3\,s),r) dz \\
-= & \int_{s}^{4\cdot s} \sin\left(\omega \left(\frac{z'-s}{\beta c} + t_{0} \right) + \frac{3\pi}{2} + \varphi\right)E_z^{(1)}(z' \text{mod}(3\,s),r)dz' \\
+&\int_{0}^{3\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{3\pi}{2} + \varphi\right) E_z^{(1)}((z + s) \text{ mod}(3\,s),r) dz \\ \\
+= & \int_{s}^{4\cdot s} \sin\left(\omega \left(\frac{z'-s}{\beta c} + t_{0} \right) + \frac{3\pi}{2} + \varphi\right)E_z^{(1)}(z' \text{mod}(3\,s),r)dz' \\ \\
 = &\int_{0}^{3\cdot s} \sin\left(\omega \left(\frac{z}{\beta c} + t_{0}\right) + \frac{5\pi}{6} + \varphi\right) E_z^{(1)}(z,r)\,dz.
 \end{aligned}
 ++++
