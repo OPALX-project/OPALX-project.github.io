@@ -232,7 +232,6 @@ plane, at the point latexmath:[(r,\theta, z)] in cylindrical polar
 coordinates, the third order field can be written as
 
 [#Bfield]
-.Third order magnetic field equations
 [latexmath]
 ++++
 \begin{aligned}

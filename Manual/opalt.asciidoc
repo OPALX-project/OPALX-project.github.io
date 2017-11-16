@@ -701,7 +701,7 @@ component latexmath:[A_s] we get
 [latexmath]
 ++++
 \begin{aligned}
-        B_x & = - \frac{\partial V}{\partial x} = \frac{\partial A_s}{\partial y} \\
+        B_x & = - \frac{\partial V}{\partial x} = \frac{\partial A_s}{\partial y} \\ \\
         B_y & = - \frac{\partial V}{\partial y} = - \frac{\partial A_s}{\partial x} 
     \end{aligned}
 ++++
@@ -890,7 +890,7 @@ coordinates implies that
 [latexmath]
 ++++
 \begin{aligned}
-        \nabla \cdot \mathbf{B} & = \frac{1}{h_s} \left[ \frac{\partial (h_s B_x )}{\partial x} + \frac{\partial B_s}{\partial s} + \frac{\partial (h_s B_z )}{\partial z} \right] \\
+        \nabla \cdot \mathbf{B} & = \frac{1}{h_s} \left[ \frac{\partial (h_s B_x )}{\partial x} + \frac{\partial B_s}{\partial s} + \frac{\partial (h_s B_z )}{\partial z} \right] \\ \\
         \nabla \times \mathbf{B} & = \frac{1}{h_s} \left[ \frac{\partial B_z}{\partial s} -  \frac{\partial (h_s B_s )}{\partial z} \right] \hat{\mathbf{x}} + \left[ \frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x} \right] \hat{\mathbf{s}} + \frac{1}{h_s} \left[ \frac{\partial (h_s B_s)}{\partial x} - \frac{\partial B_x}{\partial s} \right] \hat{\mathbf{z}}
     \end{aligned}
 ++++
@@ -931,8 +931,8 @@ yield
 [latexmath]
 ++++
 \begin{aligned}
-            \frac{\partial B_z}{\partial s} & = (1+x/ \rho) \frac{\partial B_s}{\partial z}  \\
-            \frac{\partial B_x}{\partial z} & = \frac{\partial B_z}{\partial s}   \\
+            \frac{\partial B_z}{\partial s} & = (1+x/ \rho) \frac{\partial B_s}{\partial z}  \\ \\
+            \frac{\partial B_x}{\partial z} & = \frac{\partial B_z}{\partial s}   \\ \\
             \frac{\partial B_x}{\partial s} & = \frac{\partial}{\partial x} \left( (1+x/ \rho) B_s \right)
         \end{aligned}
 ++++
@@ -1091,7 +1091,7 @@ from the mid-plane field by
 [latexmath]
 ++++
 \begin{aligned}
-        f_n(x,s) & = (-1)^n \left( \partial_x^2 + \partial_s^2 \right)^n f_0(x,s) \\
+        f_n(x,s) & = (-1)^n \left( \partial_x^2 + \partial_s^2 \right)^n f_0(x,s) \\ \\
         f_n(x,s) & = (-1)^n \sum_{i=0}^n \binom{n}{i}T^{(2i)}(x) S^{(2n-2i)}(s)
     \end{aligned}
 ++++
@@ -1111,7 +1111,7 @@ recursion
 [latexmath]
 ++++
 \begin{aligned}
-        f_{n+1}(x,s) & = - \left[ \frac{1}{\rho + x} \partial_x + \partial_x^2 + \frac{\partial_s^2}{(1+x/ \rho)^2} \right] f_n(x,s) \\
+        f_{n+1}(x,s) & = - \left[ \frac{1}{\rho + x} \partial_x + \partial_x^2 + \frac{\partial_s^2}{(1+x/ \rho)^2} \right] f_n(x,s) \\ \\
         f_{n+1}(x,s) & = (-1)^n \left[ \frac{1}{\rho + x} \partial_x + \partial_x^2 + \frac{\partial_s^2}{(1+x/ \rho)^2} \right]^n f_0(x,s)
     \end{aligned}
 ++++
@@ -1130,7 +1130,7 @@ The last step is again the substitution to get
 [latexmath]
 ++++
 \begin{aligned}
-        f_{n+1}(x,s) & = - \left[ \frac{\partial_x}{\rho h_s} + \partial_x^2 + \partial_z^2 + \frac{1}{h_s^2}\partial_s^2 + \frac{x}{\rho^2 h_s^3} (\partial_s \rho) \partial_s \right] f_n(x,s) \\
+        f_{n+1}(x,s) & = - \left[ \frac{\partial_x}{\rho h_s} + \partial_x^2 + \partial_z^2 + \frac{1}{h_s^2}\partial_s^2 + \frac{x}{\rho^2 h_s^3} (\partial_s \rho) \partial_s \right] f_n(x,s) \\ \\
         f_{n}(x,s) & = (-1)^n \left[ \frac{\partial_x}{\rho h_s} + \partial_x^2 + \partial_z^2 + \frac{\partial_s^2}{h_s^2} + \frac{x}{\rho^2 h_s^3} (\partial_s \rho) \partial_s \right]^n f_0(x,s)
     \end{aligned}
 ++++
