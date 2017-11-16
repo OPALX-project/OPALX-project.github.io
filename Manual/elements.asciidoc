@@ -998,10 +998,10 @@ we can expand the field off axis, with the result:
 [latexmath]
 ++++
 \begin{aligned}
-B_x(\Delta_x, y, \Delta_z) &= -\frac{B_0 \frac{n}{R}}{\sqrt{\frac{n^2}{R^2} +  \frac{F''(\Delta_z)}{F(\Delta_z}}} e^{-\frac{n}{R} \Delta_x} \sin \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right] F(\Delta_z) \\
-B_y(\Delta_x, y, \Delta_z) &= B_0 e^{-\frac{n}{R} \Delta_x} \cos \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right] F(\Delta_z) \\
-B_z(\Delta_x, y, \Delta_z) &= B_0 e^{-\frac{n}{R} \Delta_x} \left\{\frac{F'(\Delta_z)}{\sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}}} \sin \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right] \right. \\
-&- \frac{1}{2 \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}}} \left(F'''(\Delta_z) - \frac{F'(\Delta_z) F''(\Delta_z)}{F(\Delta_z)} \right) \left[ \frac{\sin \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right]}{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right. \\
+B_x(\Delta_x, y, \Delta_z) &= -\frac{B_0 \frac{n}{R}}{\sqrt{\frac{n^2}{R^2} +  \frac{F''(\Delta_z)}{F(\Delta_z}}} e^{-\frac{n}{R} \Delta_x} \sin \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right] F(\Delta_z) \\ \\
+B_y(\Delta_x, y, \Delta_z) &= B_0 e^{-\frac{n}{R} \Delta_x} \cos \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right] F(\Delta_z) \\ \\
+B_z(\Delta_x, y, \Delta_z) &= B_0 e^{-\frac{n}{R} \Delta_x} \left\{\frac{F'(\Delta_z)}{\sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}}} \sin \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right] \right. \\ \\
+&- \frac{1}{2 \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}}} \left(F'''(\Delta_z) - \frac{F'(\Delta_z) F''(\Delta_z)}{F(\Delta_z)} \right) \left[ \frac{\sin \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right]}{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right. \\ \\
 &- \left. \left. y \frac{\cos \left[ \left( \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}} \right) y \right]}{\sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}}} \right] \right\}\end{aligned}
 ++++
 
@@ -1194,14 +1194,14 @@ A `QUADRUPOLE` has three real attributes:
 K1::
   The normal quadrupole component
   latexmath:[K_1=\frac{\partial B_y}{\partial x}]. The default is
-  latexmath:[0 Tm^{-1}]. The component is positive, if
+  latexmath:[0 \mathrm{Tm^{-1}}]. The component is positive, if
   latexmath:[B_y] is positive on the positive latexmath:[x]-axis.
   This implies horizontal focusing of positively charged particles which
   travel in positive latexmath:[s]-direction.
 K1S::
   The skew quadrupole component.
   latexmath:[K_{1s}=-\frac{\partial B_x}{\partial x}]. The default is
-  latexmath:[0 Tm^{-1}]. The component is negative, if
+  latexmath:[0 \mathrm{Tm^{-1}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
 
 Example:
