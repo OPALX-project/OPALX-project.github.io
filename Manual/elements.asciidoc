@@ -1200,8 +1200,8 @@ K1::
   travel in positive latexmath:[s]-direction.
 K1S::
   The skew quadrupole component.
-  latexmath:[K_{1s}=-\frac{\partial B_x}{\partial x}]. The default is
-  latexmath:[0 \mathrm{Tm^{-1}}]. The component is negative, if
+  latexmath:[K_{1s}=-\frac{\partial B_x}{\partial x}]. The default is 0
+  latexmath:[\mathrm{Tm^{-1}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
 
 Example:
@@ -1225,12 +1225,12 @@ A `SEXTUPOLE` has three real attributes:
 K2::
   The normal sextupole component
   latexmath:[K_2=\frac{\partial{^2} B_y}{\partial x^2}]. The default
-  is latexmath:[{0}{T m^{-2}}]. The component is positive, if
+  is 0 latexmath:[\mathrm{T m^{-2}}]. The component is positive, if
   latexmath:[B_y] is positive on the latexmath:[x]-axis.
 K2S::
   The skew sextupole component
   latexmath:[K_{2s}=-\frac{\partial{^2}B_x}{\partial x^{2}}]. The
-  default is latexmath:[{0}{T m^{-2}}]. The component is negative, if
+  default is 0 latexmath:[\mathrm{T m^{-2}}]. The component is negative, if
   latexmath:[B_x] is positive on the latexmath:[x]-axis.
 
 Example:
@@ -1255,12 +1255,12 @@ An `OCTUPOLE` has three real attributes:
 K3::
   The normal octupole component
   latexmath:[K_3=\frac{\partial{^3} B_y}{\partial x^3}]. The default
-  is latexmath:[0 \mathrm{Tm^{-3}}]. The component is positive, if
+  is 0 latexmath:[\mathrm{Tm^{-3}}]. The component is positive, if
   latexmath:[B_y] is positive on the positive latexmath:[x]-axis.
 K3S::
   The skew octupole component
   latexmath:[K_{3s}=-\frac{\partial{^3}B_x}{\partial x^{3}}]. The
-  default is latexmath:[0 \mathrm{Tm^{-3}}]. The component is negative, if
+  default is 0 latexmath:[\mathrm{Tm^{-3}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
 
 Example:
@@ -1285,13 +1285,13 @@ label:MULTIPOLE, TYPE=string, APERTURE=real-vector,
 KN::
   A real vector see Section link:format#sec:anarray[Arrays], containing the normal multipole
   coefficients, latexmath:[K_n=\frac{\partial{^n} B_y}{\partial x^n}].
-  (default is latexmath:[0 \mathrm{Tm^{-n}}]). A component is positive, if
+  (default is 0 latexmath:[\mathrm{Tm^{-n}}]). A component is positive, if
   latexmath:[B_y] is positive on the positive latexmath:[x]-axis.
 KS::
   A real vector see Section link:format#sec:anarray[Arrays], containing the skew multipole
   coefficients,
   latexmath:[K_{n~s}=-\frac{\partial{^n}B_x}{\partial x^{n}}].
-  (default is latexmath:[0 \mathrm{Tm^{-n}}]). A component is negative, if
+  (default is 0 latexmath:[\mathrm{Tm^{-n}}]). A component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
 
 The order latexmath:[n] is unlimited, but all components up to the
@@ -1427,8 +1427,8 @@ A `SOLENOID` has two real attributes:
 
 KS::
   The solenoid strength
-  latexmath:[K_s=\frac{\partial B_s}{\partial s}], default is
-  latexmath:[0 \mathrm{Tm^{-1}}]. For positive `KS` and positive particle
+  latexmath:[K_s=\frac{\partial B_s}{\partial s}], default is 0
+  latexmath:[\mathrm{Tm^{-1}}]. For positive `KS` and positive particle
   charge, the solenoid field points in the direction of increasing
   latexmath:[s].
 
