@@ -315,7 +315,7 @@ CYCIAE type
 ^^^^^^^^^^^
 
 If `TYPE=CYCIAE`, the program requires data format given by ANSYS10.0.
-This function is originally for the 100MeV cyclotron of CIAE, whose
+This function is originally for the 100 MeV cyclotron of CIAE, whose
 isochronous fields is numerically computed by by ANSYS. The median plane
 fields data is output by reading the APDL (ANSYS Parametric Design
 Language) script during the post-processing phase (you may need to do
@@ -587,16 +587,16 @@ charge effects are not the only contribution. Along with the increment
 of beam current, the mutual interaction of neighboring bunches in radial
 direction becomes more and more important, especially at large radius
 where the distances between neighboring bunches get increasingly small
-and even they can overlap each other. One good example is PSI 590MeV
-Ring cyclotron with a current of about 2mA in CW operation and the beam
-power amounts to 1.2MW. An upgrade project for Ring is in process with
-the goal of 1.8MW CW on target by replacing four old aluminum resonators
+and even they can overlap each other. One good example is PSI 590 MeV
+Ring cyclotron with a current of about 2 mA in CW operation and the beam
+power amounts to 1.2 MW. An upgrade project for Ring is in process with
+the goal of 1.8 MW CW on target by replacing four old aluminum resonators
 by four new copper cavities with peak voltage increasing from about
-0.7MW to above 0.9MW. After upgrade, the total turn number is reduced
+0.7 MW to above 0.9 MW. After upgrade, the total turn number is reduced
 from 200 turns to less than 170 turns. Turn separation is increased a
 little bit, but still are at the same order of magnitude as the radial
-size of the bunches. Hence once the beam current increases from 2mA to
-3mA, the mutual space charge effects between radially neighboring
+size of the bunches. Hence once the beam current increases from 2 mA to
+3 mA, the mutual space charge effects between radially neighboring
 bunches can have significant impact on beam dynamics. In consequence, it
 is important to cover neighboring bunch effects in the simulation to
 quantitatively study its impact on the beam dynamics.
@@ -742,7 +742,7 @@ Dist1:DISTRIBUTION, TYPE=GAUSSMATCHED, LINE=l1, FMAPFN=...,
 Example
 ^^^^^^^
 
-Simulation of the PSI Ring Cyclotron at 580MeV and current 2.2mA. The
+Simulation of the PSI Ring Cyclotron at 580 MeV and current 2.2 mA. The
 program finds a matched distribution followed by a bunch initialization
 according to the matched covariance matrix. +
 The matched distribution algorithm works with normalized emittances,
