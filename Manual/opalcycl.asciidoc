@@ -236,8 +236,8 @@ coordinates, the third order field can be written as
 [latexmath]
 ++++
 \begin{aligned}
-  B_r(r,\theta, z) & = & z\frac{\partial B_z}{\partial r}-\frac{1}{6}z^3 C_r, \\
-  B_\theta(r,\theta, z) & = & \frac{z}{r}\frac{\partial B_z}{\partial \theta}-\frac{1}{6}\frac{z^3}{r} C_{\theta}, \\
+  B_r(r,\theta, z) & = & z\frac{\partial B_z}{\partial r}-\frac{1}{6}z^3 C_r, \\ \\
+  B_\theta(r,\theta, z) & = & \frac{z}{r}\frac{\partial B_z}{\partial \theta}-\frac{1}{6}\frac{z^3}{r} C_{\theta}, \\ \\
   B_z(r,\theta, z) & = & B_z-\frac{1}{2}z^2 C_z,  \end{aligned}
 ++++
 
@@ -247,9 +247,9 @@ where latexmath:[B_z\equiv B_z(r, \theta, 0)] and
 ++++
 \begin{aligned}
   C_r & = & \frac{\partial^{3}{B_z}}{\partial r^{3}} + \frac{1}{r}\frac{\partial^{2}{B_z}}{\partial r^{2}} - \frac{1}{r^2}\frac{\partial{B_z}}{\partial r}
-        + \frac{1}{r^2}\frac{\partial^{3}{B_z}}{{\partial r}{\partial \theta^2}} - 2\frac{1}{r^3}\frac{\partial^{2}{B_z}}{\partial \theta^{2}},  \\
+        + \frac{1}{r^2}\frac{\partial^{3}{B_z}}{{\partial r}{\partial \theta^2}} - 2\frac{1}{r^3}\frac{\partial^{2}{B_z}}{\partial \theta^{2}},  \\ \\
   C_{\theta} & = & \frac{1}{r}\frac{\partial^{2}{B_z}}{{\partial r}{\partial \theta}} + \frac{\partial^{3}{B_z}}{{\partial r^2}{\partial \theta}}
-        + \frac{1}{r^2}\frac{\partial^{3}{B_z}}{\partial \theta^{3}},  \\
+        + \frac{1}{r^2}\frac{\partial^{3}{B_z}}{\partial \theta^{3}},  \\ \\
   C_z & = & \frac{1}{r}\frac{\partial{B_z}}{\partial r} + \frac{\partial^{2}{B_z}}{\partial r^{2}} + \frac{1}{r^2}\frac{\partial^{2}{B_z}}{\partial \theta^{2}}. 
 \end{aligned}
 ++++
@@ -547,7 +547,7 @@ magnetic field evaluation in each time step latexmath:[\tau]. During
 the field interpolation process, for an arbitrary given point the code
 first interpolates Formula latexmath:[B_z] for its counterpart on the
 median plane and then expands to this given point using
-Equation_<<Bfield,1>>.
+Equation <<Bfield,1>>.
 
 After each time step latexmath:[i], the code detects whether the
 particle crosses any one of the RF cavities during this step. If it
