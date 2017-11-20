@@ -173,7 +173,7 @@ or
 It's convenient to add a helper function to your `~/.bashrc` in order to make life easier:
 
 ```
-load_opal_gcc530() {
+load_opal_gcc710() {
     module load daint-mc
     module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4                                                          
     module load GSL/2.4-CrayGNU-17.08
@@ -212,5 +212,5 @@ load_opal_gcc530() {
 
 At the next login (or by just doing `source ~/.bashrc`) you can load everything by executing
 ```
-> load_opal_gcc530
+> load_opal_gcc710
 ```
