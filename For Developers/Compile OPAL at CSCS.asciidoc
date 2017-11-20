@@ -51,7 +51,8 @@ There's no H5hut module available on Piz Daint. You can install it using subsequ
 > cd src
 > ./autogen.sh
 > module load daint-mc 
-> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4 
+> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
+> module switch gcc/5.3.0 gcc/7.1.0
 > module load CMake/3.9.1 
 > module load cray-hdf5-parallel/1.10.0
 > module load GSL/2.4-CrayGNU-17.08
@@ -81,6 +82,29 @@ Finally, we set some evironment variables:
 > export H5HUT_DIR=$H5HUT_HOME
 > export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
 > export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
+```
+**Note**: For your convenience you might add above lines to your `.bashrc`.
+
+'''
+=== Building Boost
+```
+> cd $HOME
+> wget https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.gz
+> tar -xf boost_1_62_0.tar.gz
+> module load daint-mc
+> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
+> module switch gcc/5.3.0 gcc/7.1.0
+> module load CMake/3.9.1 
+> ./bootstrap.sh --prefix=$HOME/boost_1_62_0/build
+> ./b2 --build-type=minimal --layout=system --without-mpi variant=release link=shared,static threading=multi install
+```
+Finally, we set some evironment variables:
+```
+> export BOOST_HOME=$HOME/boost_1_62_0/build/
+> export BOOST_DIR=$BOOST_HOME
+> export BOOST_PREFIX=$BOOST_HOME
+> export BOOST_INCLUDE_DIR=$BOOST_HOME/include
+> export BOOST_LIBRARY_DIR=$BOOST_HOME/lib
 ```
 **Note**: For your convenience you might add above lines to your `.bashrc`.
 
