@@ -28,12 +28,12 @@ PARTICLE:: The name of particles in the machine.
 _OPAL_ knows the mass and the charge for the following particles
 +
 POSITRON;;
-    The particles are positrons (`MASS`=latexmath:[m_e], `CHARGE`=1),
+    The particles are positrons (`MASS`=latexmath:[m_e], `CHARGE`=1).
   ELECTRON;;
-    The particles are electrons (`MASS`=latexmath:[m_e], `CHARGE`=-1),
+    The particles are electrons (`MASS`=latexmath:[m_e], `CHARGE`=-1).
   PROTON;;
     The particles are protons (default, `MASS`=latexmath:[m_p],
-    `CHARGE`=1),
+    `CHARGE`=1).
   ANTIPROTON;;
     The particles are anti-protons (`MASS`=latexmath:[m_p],
     `CHARGE`=-1).
@@ -41,7 +41,7 @@ POSITRON;;
     The particles are h- protons (`MASS`=latexmath:[m_{h^{-}}],
     `CHARGE`=-1).
   CARBON;;
-    The particles are carbons (`MASS`=latexmath:[m_c], `CHARGE`=12),
+    The particles are carbons (`MASS`=latexmath:[m_c], `CHARGE`=12).
   URANIUM;;
     The particles are of type uranium (`MASS`=latexmath:[m_u],
   `CHARGE`=35).
