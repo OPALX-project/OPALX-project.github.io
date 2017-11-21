@@ -29,7 +29,7 @@ The name of particles in the machine.
 +
 _OPAL_ knows the mass and the charge for the following particles
 +
-POSITRON:::
+POSITRON;;
     The particles are positrons (`MASS`=latexmath:[m_e], `CHARGE`=1),
   ELECTRON:::
     The particles are electrons (`MASS`=latexmath:[m_e], `CHARGE`=-1),
