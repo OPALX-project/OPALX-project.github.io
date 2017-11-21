@@ -26,9 +26,9 @@ mass and charge are defined by:
 PARTICLE::
 +
 The name of particles in the machine.
-
-_OPAL_ knows the mass and the charge for the following particles:
 +
+_OPAL_ knows the mass and the charge for the following particles:
+
   POSITRON:::
     The particles are positrons (`MASS`=latexmath:[m_e], `CHARGE`=1),
   ELECTRON:::
