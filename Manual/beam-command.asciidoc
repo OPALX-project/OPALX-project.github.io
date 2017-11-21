@@ -41,7 +41,7 @@ POSITRON;;
     The particles are h- protons (`MASS`=latexmath:[m_{h^{-}}],
     `CHARGE`=-1).
   CARBON;;
-    The particles are carbons (`MASS`=latexmath:[m_c], `CHARGE`=12).
+    The particles are carbons (`MASS`=latexmath:[m_c], `CHARGE`=12),
   URANIUM;;
     The particles are of type uranium (`MASS`=latexmath:[m_u],
   `CHARGE`=35).
@@ -54,7 +54,8 @@ POSITRON;;
   XENON;;
     The particles are of type xenon (`MASS`=latexmath:[m_{xe}],
   `CHARGE`=20).
-
+  H2P;;
+    The particles are of type hydrogen+ (`MASS`=latexmath:[2*m_p], `CHARGE`=1).
 
 For other particle names one may enter:
 
