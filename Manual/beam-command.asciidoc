@@ -20,7 +20,7 @@ label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
        NPART=real, BUNCHED=logical, BFREQ=real;
 ....
 
-The `label` is optional, it defaults to `UNNAMED_BEAM`. . The particle
+The `label` is optional, it defaults to `UNNAMED_BEAM`. The particle
 mass and charge are defined by:
 
 PARTICLE::
@@ -29,7 +29,6 @@ PARTICLE::
 The name of particles in the machine.
 
 _OPAL_ knows the mass and the charge for the following particles:
-
   POSITRON:::
     The particles are positrons (`MASS`=latexmath:[m_e], `CHARGE`=1),
   ELECTRON:::
