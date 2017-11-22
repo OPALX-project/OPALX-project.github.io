@@ -68,6 +68,32 @@ MASS::
 CHARGE::
   The particle charge expressed in elementary charges.
 
+Beam Energy
+~~~~~~~~~~~
+
+To specify the energy there are three attributes (in order of priority):
+
+GAMMA::
+  The particle energy divided by its mass.
+ENERGY::
+  The particle energy in GeV.
+PC::
+  The particle momentum in GeV/c.
+
+Twiss Parameters
+~~~~~~~~~~~~~~~~
+
+The twiss parameters are only used in the twiss calculation.
+The beam shape and size is in general defined by the distribution command,
+see Chapter link:distribution[Distribution].
+
+EX::
+  Horizontal emittance
+EY::
+  Vertical emittance
+ET::
+  Longitudinal emittance
+
 Other Attributes
 ~~~~~~~~~~~~~~~~
 
