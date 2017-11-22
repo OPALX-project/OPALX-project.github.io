@@ -20,8 +20,12 @@ label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
        NPART=real, BUNCHED=logical, BFREQ=real;
 ....
 
-The `label` is optional, it defaults to `UNNAMED_BEAM`. The particle
-mass and charge are defined by:
+The `label` is optional, it defaults to `UNNAMED_BEAM`.
+
+Particle Definition
+~~~~~~~~~~~~~~~~~~~
+
+The particle mass and charge are defined by:
 
 PARTICLE:: The name of particles in the machine.
 +
@@ -63,6 +67,9 @@ MASS::
   The particle mass in GeV.
 CHARGE::
   The particle charge expressed in elementary charges.
+
+Other Attributes
+~~~~~~~~~~~~~~~~
 
 The other attributes are:
 
