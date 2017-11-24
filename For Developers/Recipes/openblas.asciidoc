@@ -22,3 +22,9 @@ cd "$P-$V"
 make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
 -----------------------------------
+
+No need to configure something. There is experimental CMake support,
+but seems to be still broken.
+
+We compile with target `CORE2`. There might be issues with other targets like `HASWELL`.
+Anyway you can try with other targets. For auto-detection just run `make`. Note: We run `make` in the source directory.
