@@ -1,0 +1,34 @@
+ParMETIS is required only, if you want to compile OPAL with the SAAMG solver.
+It is a dependency of Trilinos.
+
+-----------------------------------
+#!/bin/bash
+
+# recipe for:
+P=parmetis
+V=4.0.3
+
+# download
+curl -L \
+        --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+        "http://glaros.dtc.umn.edu/gkhome/fetch/sw/$P/$P-$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CC=mpicc CXX=mpicxx cmake \
+	 -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+	 -D METIS_PATH="${SRC_DIR}/$P/$P-$V/metis" \
+	 -D GKLIB_PATH="${SRC_DIR}/$P/$P-$V/metis/GKlib" \
+	 "${SRC_DIR}/$P/$P-$V"
+
+# compile and install
+make -j ${NJOBS}
+make install
+install --mode 0644 libmetis/libmetis.a "${PREFIX}/lib"
+install --mode 0644 "${SRC_DIR}/$P/$P-$V/metis/include/metis.h" "${PREFIX}/include"
+-----------------------------------
+
