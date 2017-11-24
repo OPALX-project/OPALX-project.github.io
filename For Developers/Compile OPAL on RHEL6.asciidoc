@@ -125,47 +125,8 @@ mkdir -p "${SRC_DIR}"
 
 Build the software in this order:
 
-1. link:Recipes/cmake[Building CMake]
-
-'''
-=== Building GMP
-1. **Set package and version**
-+
-```
-P=gmp
-V=6.1.2
-```
-+
-1. **Download GMP**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"https://gmplib.org/download/$P/$P-$V.tar.bz2"
-```
-+
-1. **Unpack GMP**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
-```
-+
-1. **Configure GMP**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--disable-shared
-```
-+
-1. **Compile and install GMP**
-```
-make -j ${NJOBS}
-make install
-```
-
+1. link:Recipes/cmake[CMake]
+1. link:Recipes/gmp[GMP]
 '''
 === Building MPFR
 1. **Set package and version**
