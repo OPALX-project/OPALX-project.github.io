@@ -58,7 +58,7 @@ Unfortunately most of the software to build OPAL is not available as RPM from th
 * VTK >= 7.1 (8.0.0)
 
 '''
-== Compile and install required software
+== Setting up the environment
 
 To keep thinks simple, we set and use a couple of environment variables.
 
@@ -128,141 +128,10 @@ Build the software in this order:
 1. link:Recipes/cmake[CMake]
 1. link:Recipes/gmp[GMP]
 1. link:Recipes/mpfr[MPFR]
+1. link:Recipes/mpc[MPC]
+1. link:Recipes/gcc[GCC5]
+1. link:Recipes/openmpi[open-mpi]
 
-
-
-'''
-=== Building MPC
-1. **Set package and version**
-+
-```
-P=mpc
-V=1.0.3
-```
-+
-1. **Download MPC**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-	"ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
-```
-+
-1. **Unpack MPC**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
-```
-+
-1. **Configure MPC**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--with-gmp="${PREFIX}" \
-		--with-mpfr="${PREFIX}" \
-		--disable-shared
-```
-+
-1. **Compile and install MPC**
-+
-```
-make -j ${NJOBS}
-make install
-```
-
-'''
-=== Building GCC 5.4
-1. **Set package and version**
-+
-```
-P=gcc
-V=5.4.0
-```
-+
-1. **Download GCC**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"https://ftp.gnu.org/gnu/$P/$P-$V/$P-$V.tar.bz2"
-```
-+
-1. **Unpack GCC**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
-```
-+
-1. **Configure GCC**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/$P/$P-$V/configure" \
-			--prefix="${PREFIX}" \
-			--with-gmp="${PREFIX}" \
-			--with-mpfr="${PREFIX}" \
-			--with-mpc="${PREFIX}" \
-			--enable-languages=c,c++,objc,obj-c++,lto,fortran \
-			--enable-lto \
-			--disable-multilib \
-			--with-build-config=bootstrap-debug
-```
-+
-1. **Compile and install GCC**
-```
-make -j ${NJOBS}
-make install
-```
-
-'''
-=== Building Open MPI
-1. **Set package and version**
-+
-```
-P=openmpi
-V=1.10.4
-```
-+
-1. **Download openmpi**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"http://www.open-mpi.org/software/ompi/v${V%.*}/downloads/$P-$V.tar.bz2"
-```
-+
-1. **Unpack openmpi**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
-```
-+
-1. **Configure openmpi**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--enable-mpi-cxx \
-		--enable-mpi-cxx-seek \
-		--enable-mpi-profile \
-		--enable-orterun-prefix-by-default \
-		--enable-shared \
-		--enable-smp-locks \
-		--with-sge=yes \
-		--with-slurm=yes
-```
-+
-1. **Compile and install openmpi**
-```
-make -j ${NJOBS}
-make install
-```
 
 '''
 === Building hdf5
