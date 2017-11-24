@@ -121,48 +121,10 @@ mkdir -p "${SRC_DIR}"
 --
 '''
 
-=== Building CMake
-link:Recipes/cmake[Building CMake]
+== Compile and install required software
 
-1. **Set package and version**
-+
-```
-P=cmake
-V=3.6.3
-```
-+
-1. **Download CMake**
-+
-```
-curl -L \
-         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-        "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
-```
-+
-1. **Unpack CMake**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
-```
-+
-1. **Configure CMake**
-+
-You might have to add the option --system-curl
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/cmake/cmake-$V/bootstrap" \
-        --prefix="${PREFIX}" \
-        --verbose
-```
-+
-1. **Compile and install CMake**
-+
-```
-make -j ${NJOBS}
-make install
-```
+Build the software in this order:
+1. link:Recipes/cmake[Building CMake]
 
 '''
 === Building GMP
