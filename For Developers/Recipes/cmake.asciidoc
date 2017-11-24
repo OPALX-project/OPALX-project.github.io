@@ -1,28 +1,34 @@
 ---------------------------------------------------
 #!/bin/bash
-
-# recipe for:
+#
+# **Set package and version**
+#
 P=cmake
 V=3.6.3
 
-# download
+#
+# **Download CMake**
+#
 curl -L \
          --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
         "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
-
-# unpack
+#
+# **Unpack CMake**
+#
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 
-# configure
+#
+# **Configure CMake**
+# You might have to add the option --system-curl
+#
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-
-# you might have to add the option --system-curl
 "${SRC_DIR}/cmake/cmake-$V/bootstrap" \
         --prefix="${PREFIX}" \
         --verbose
-
-# compile & install
+#
+# **Compile and install CMake**
+#
 make -j ${NJOBS}
 make install
 ---------------------------------------------------
