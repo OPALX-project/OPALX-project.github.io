@@ -30,6 +30,16 @@ CC=mpicc CXX=mpicxx cmake \
         -D TPL_ENABLE_LAPACK:BOOL=ON \
         -D TPL_ENABLE_METIS:BOOL=ON \
         -D TPL_ENABLE_ParMETIS:BOOL=ON \
+        -D BLAS_LIBRARY_DIRS:PATH="${PREFIX}/lib" \
+        -D BLAS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D BLAS_LIBRARY_NAMES:STRING="openblas" \
+        -D LAPACK_LIBRARY_DIRS:PATH="${PREFIX}/lib" \
+        -D LAPACK_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D LAPACK_LIBRARY_NAMES:STRING="openblas" \
+        -D TPL_METIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D TPL_METIS_LIBRARIES:STRING="${PREFIX}/lib/libmetis.a" \
+        -D TPL_ParMETIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
+        -D TPL_ParMETIS_LIBRARIES:STRING="${PREFIX}/lib/libparmetis.a" \
         -D Trilinos_ENABLE_Amesos:BOOL=ON \
         -D Trilinos_ENABLE_Amesos2:BOOL=ON \
         -D Trilinos_ENABLE_AztecOO:BOOL=ON \
