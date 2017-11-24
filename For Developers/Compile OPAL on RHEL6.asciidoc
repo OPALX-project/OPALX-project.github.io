@@ -122,7 +122,7 @@ mkdir -p "${SRC_DIR}"
 '''
 
 === Building CMake
-link:cmake[Building CMake]
+link:Recipes/cmake[Building CMake]
 
 1. **Set package and version**
 +
