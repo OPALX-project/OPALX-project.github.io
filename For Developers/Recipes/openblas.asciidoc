@@ -13,6 +13,7 @@ curl -L \
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+cd "$P-$V"
 
 # configure
 # nothing to configure
