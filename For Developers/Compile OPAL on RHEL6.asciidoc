@@ -120,8 +120,10 @@ mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 --
 '''
-[[user-content-building-cmake]]
+
 === Building CMake
+link:cmake[Building CMake]
+
 1. **Set package and version**
 +
 ```
