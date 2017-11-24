@@ -1,0 +1,29 @@
+-----------------------------------
+#!/bin/bash
+
+# recipe for:
+P=H5hut
+V=2.0.0rc3
+
+# download
+curl -L \
+         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+         http://amas.web.psi.ch/Downloads/$P/$P-$V.tar.gz
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CC=mpicc CXX=mpicxx "${SRC_DIR}/$P/$P-$V/configure" \
+        --prefix="${PREFIX}" \
+        --enable-shared \
+        --enable-parallel \
+        --with-pic
+
+# compile and install
+make -j ${NJOBS}
+make install
+-----------------------------------
+
