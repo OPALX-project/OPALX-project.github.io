@@ -124,6 +124,7 @@ mkdir -p "${SRC_DIR}"
 == Compile and install required software
 
 Build the software in this order:
+
 1. link:Recipes/cmake[Building CMake]
 
 '''
