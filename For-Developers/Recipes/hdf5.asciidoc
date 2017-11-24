@@ -1,0 +1,45 @@
+
+'''
+=== Building hdf5
+1. **Set package and version**
++
+```
+P=hdf5
+V=1.8.18
+```
++
+1. **Download hdf5**
++
+```
+curl -L \
+	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
+	"https://support.hdfgroup.org/ftp/HDF5/releases/$P-${V%.*}/$P-$V/src/$P-$V.tar.bz2"
+```
++
+1. **Unpack hdf5**
++
+```
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+```
++
+1. **Configure hdf5**
++
+```
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CC=mpicc CXX=mpicxx FC=mpifort "${SRC_DIR}/$P/$P-$V/configure" \
+        --prefix="${PREFIX}" \
+        --enable-shared \
+        --enable-parallel \
+        --enable-cxx \
+        --enable-fortran \
+        --enable-unsupported \
+        --with-pic
+```
++
+1. **Compile and install hdf5**
++
+```
+make -j ${NJOBS}
+make install
+```
