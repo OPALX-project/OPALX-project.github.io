@@ -134,64 +134,8 @@ Build the software in this order:
 1. link:Recipes/hdf5[HDF5]
 1. link:Recipes/gsl[GSL]
 1. link:Recipes/h5hut[H5hut]
+1. link:Recipes/boost[Boost]
 
-
-'''
-=== Building Boost
-1. **Set package and version**
-+
-```
-P=boost
-V=1_62_0
-```
-+
-1. **Download boost**
-+
-```
-curl -L \
-        --output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
-        "https://netcologne.dl.sourceforge.net/project/$P/$P/${V//_/.}/${P}_$V.tar.gz"
-```
-+
-1. **Unpack boost**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
-```
-+
-1. **Configure boost**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build"
-cd "${SRC_DIR}/$P/${P}_$V"
-./bootstrap.sh \
-                --prefix="${PREFIX}" \
-                --with-libraries=all
-```
-+
-1. **Compile & install boost**
-+
-```
-./b2 \
-        --build-type=minimal \
-        --build-dir=""${SRC_DIR}/$P/build"" \
-        --layout=system \
-        --without-mpi \
-        variant=release \
-        link=shared,static \
-        threading=multi \
-        stage
-./b2 \
-        --build-type=minimal \
-        --build-dir=""${SRC_DIR}/$P/build"" \
-        --layout=system \
-        --without-mpi \
-        variant=release \
-        link=shared,static \
-        threading=multi \
-        install
-```
 
 '''
 === Building ParMETIS
