@@ -132,91 +132,9 @@ Build the software in this order:
 1. link:Recipes/gcc[GCC5]
 1. link:Recipes/openmpi[open-mpi]
 1. link:Recipes/hdf5[HDF5]
+1. link:Recipes/gsl[GSL]
 
 
-'''
-=== Building hdf5
-1. **Set package and version**
-+
-```
-P=hdf5
-V=1.8.18
-```
-+
-1. **Download hdf5**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"https://support.hdfgroup.org/ftp/HDF5/releases/$P-${V%.*}/$P-$V/src/$P-$V.tar.bz2"
-```
-+
-1. **Unpack hdf5**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
-```
-+
-1. **Configure hdf5**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-CC=mpicc CXX=mpicxx FC=mpifort "${SRC_DIR}/$P/$P-$V/configure" \
-        --prefix="${PREFIX}" \
-        --enable-shared \
-        --enable-parallel \
-        --enable-cxx \
-        --enable-fortran \
-        --enable-unsupported \
-        --with-pic
-```
-+
-1. **Compile and install hdf5**
-+
-```
-make -j ${NJOBS}
-make install
-```
-
-'''
-=== Building the GNU Scientific Library
-1. **Set package and version**
-+
-```
-P=gsl
-V=2.4
-```
-+
-1. **Download GSL**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-	"ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
-```
-+
-1. **Unpack GSL**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
-```
-+
-1. **Configure GSL**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--disable-shared
-```
-+
-1. **Compile and install GSL**
-```
-make -j ${NJOBS}
-make install
-```
 
 '''
 === Building H5hut
