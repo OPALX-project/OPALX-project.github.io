@@ -1,31 +1,20 @@
+-----------------------------------
+#!/bin/bash
 
-'''
-=== Building hdf5
-1. **Set package and version**
-+
-```
+# recipe for:
 P=hdf5
 V=1.8.18
-```
-+
-1. **Download hdf5**
-+
-```
+
+# download
 curl -L \
 	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
 	"https://support.hdfgroup.org/ftp/HDF5/releases/$P-${V%.*}/$P-$V/src/$P-$V.tar.bz2"
-```
-+
-1. **Unpack hdf5**
-+
-```
+
+# unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
-```
-+
-1. **Configure hdf5**
-+
-```
+
+# configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 CC=mpicc CXX=mpicxx FC=mpifort "${SRC_DIR}/$P/$P-$V/configure" \
         --prefix="${PREFIX}" \
@@ -35,11 +24,9 @@ CC=mpicc CXX=mpicxx FC=mpifort "${SRC_DIR}/$P/$P-$V/configure" \
         --enable-fortran \
         --enable-unsupported \
         --with-pic
-```
-+
-1. **Compile and install hdf5**
-+
-```
+
+# compile and install
 make -j ${NJOBS}
 make install
-```
+-----------------------------------
+
