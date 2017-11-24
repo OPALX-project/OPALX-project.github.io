@@ -133,50 +133,8 @@ Build the software in this order:
 1. link:Recipes/openmpi[open-mpi]
 1. link:Recipes/hdf5[HDF5]
 1. link:Recipes/gsl[GSL]
+1. link:Recipes/h5hut[H5hut]
 
-
-
-'''
-=== Building H5hut
-1. **Set package and version**
-+
-```
-P=H5hut
-V=2.0.0rc3
-```
-+
-1. **Download H5hut**
-+
-```
-curl -L \
-         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-         http://amas.web.psi.ch/Downloads/$P/$P-$V.tar.gz
-```
-+
-1. **Unpack H5hut**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
-```
-+
-1. **Configure H5hut**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-CC=mpicc CXX=mpicxx "${SRC_DIR}/$P/$P-$V/configure" \
-        --prefix="${PREFIX}" \
-        --enable-shared \
-        --enable-parallel \
-        --with-pic
-```
-+
-1. **Compile and install H5hut**
-+
-```
-make -j ${NJOBS}
-make install
-```
 
 '''
 === Building Boost
