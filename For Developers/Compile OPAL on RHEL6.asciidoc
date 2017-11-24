@@ -127,45 +127,9 @@ Build the software in this order:
 
 1. link:Recipes/cmake[CMake]
 1. link:Recipes/gmp[GMP]
-'''
-=== Building MPFR
-1. **Set package and version**
-+
-```
-P=mpfr
-V=3.1.5
-```
-+
-1. **Download MPFR**
-+
-```
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-	"http://www.mpfr.org/$P-$V/$P-$V.tar.gz"
-```
-+
-1. **Unpack MPFR**
-+
-```
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
-```
-+
-1. **Configure MPFR**
-+
-```
-mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-"${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--with-gmp="${PREFIX}" \
-		--disable-shared
-```
-+
-1. **Compile and install MPFR**
-```
-make -j ${NJOBS}
-make install
-```
+1. link:Recipes/mpfr[MPFR]
+
+
 
 '''
 === Building MPC
