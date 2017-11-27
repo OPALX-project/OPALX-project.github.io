@@ -190,8 +190,9 @@ The following table shows the most important options:
 +
 [width="80%"]
 |=======
-| `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
-| `CMAKE_INSTALL_PREFIX` | prefix for installation
+| `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` 
+
+| `CMAKE_INSTALL_PREFIX` | prefix for installation |
 |=======
 
 1. **Compile and install OPAL**
