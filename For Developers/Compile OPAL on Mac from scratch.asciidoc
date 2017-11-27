@@ -22,11 +22,10 @@ Achim Gsell
 
 === Required software
 
-Unfortunately most of the software to build OPAL is not available as RPM from the standard repositories including EPEL. The following packages must be build and installed, in parenthesis the recommended version we are using in our tool-chain:
+The following packages must be build and installed, in parenthesis the recommended version we are using in our tool-chain:
 
 * cmake >= 3 (3.6.3)
 * Open MPI >= 1.10.2 (1.10.4)
-* zlib >= 1.2.11
 * hdf5 >= 1.8.18 (1.8.18) 
 * GNU Scientific Library >= 2.4 (2.4)
 * H5hut >= 2.0.0rc3 (2.0.0rc3)
@@ -93,15 +92,15 @@ else
 fi
 
 if [[ -z "${LIBRARY_PATH}" ]]; then
-      LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64"
+      LIBRARY_PATH="${PREFIX}/lib"
 else
-      LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LIBRARY_PATH}"
+      LIBRARY_PATH="${PREFIX}/lib:${LIBRARY_PATH}"
 fi
 
 if [[ -z "${LD_LIBRARY_PATH}" ]]; then
-      LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64"
+      LD_LIBRARY_PATH="${PREFIX}/lib"
 else
-      LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}"
+      LD_LIBRARY_PATH="${PREFIX}/lib:${LD_LIBRARY_PATH}"
 fi
 
 export C_INCLUDE_PATH
@@ -127,9 +126,14 @@ Build the software in this order:
 1. link:Recipes/gsl[GSL]
 1. link:Recipes/h5hut[H5hut]
 1. link:Recipes/boost[Boost]
-1. link:Recipes/parmetis[ParMETIS]
-1. link:Recipes/openblas[OpenBLAS]
-1. link:Recipes/trilinos[Trilinos]
+1. optional: link:Recipes/parmetis[ParMETIS] (required by Trilinos)
+1. optional: link:Recipes/openblas[OpenBLAS] (required by Trilinos)
+1. optional: link:Recipes/trilinos[Trilinos] (OPAL with SAAMG solver)
+
+image::images/note.png[]
+=====================================================================
+After setting up the environment the build instruction are the same for macOS and Linux!
+=====================================================================
 
 '''
 == Building OPAL
