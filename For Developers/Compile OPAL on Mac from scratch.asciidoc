@@ -24,7 +24,7 @@ Achim Gsell
 
 The following packages must be build and installed, in parenthesis the recommended version we are using in our tool-chain:
 
-* cmake >= 3 (3.6.3)
+* cmake >= 3.10.0 (maybe 3.9 will also wor
 * Open MPI >= 1.10.2 (1.10.4)
 * hdf5 >= 1.8.18 (1.8.18) 
 * GNU Scientific Library >= 2.4 (2.4)
@@ -111,6 +111,7 @@ export LD_LIBRARY_PATH
 NJOBS=4
 
 mkdir -p "${PREFIX}"
+mkdir -p "${PREFIX}/lib"
 mkdir -p "${DOWNLOADS_DIR}"
 mkdir -p "${SRC_DIR}"
 --
