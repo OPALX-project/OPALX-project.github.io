@@ -73,9 +73,9 @@ number of parallel `make` jobs. The number should be less or equal the number of
 [listing]
 .Set environment variables and create used directories:
 --
-DOWNLOADS_DIR="${HOME}/Downloads"
-PREFIX="${HOME}/software"
-SRC_DIR="${HOME}/src"
+PREFIX="${HOME}/OPAL"
+DOWNLOADS_DIR="${PREFIX}/Downloads"
+SRC_DIR="${PREFIX}/src"
 
 PATH="${PREFIX}/bin:${PATH}"
 
