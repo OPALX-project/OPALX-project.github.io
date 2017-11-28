@@ -107,3 +107,5 @@ BCURRENT::
   with latexmath:[Q] the total charge.
 NPART::
   The number of macro particles for the simulations
+NSLICE::
+  The number of slices per bunch
