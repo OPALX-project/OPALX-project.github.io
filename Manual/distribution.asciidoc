@@ -837,6 +837,7 @@ The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinom
 |`MY` |10001.0 | |Defines the binomial distribution in latexmath:[y]
 |`MZ` |10001.0 | |Defines the binomial distribution in latexmath:[z]
 |`MT` |10001.0 | |Defines the binomial distribution in latexmath:[t]
+|=======================================================================
 
 [[sec:matchedgausstype]]
 `MATCHEDGAUSS` Matched Gauss Distribution type
@@ -860,6 +861,7 @@ The attributes of a `MATCHEDGAUSS` distribution are defined in Table <<distattrm
 |`RESIDUUM`  |1E-8 |       | Residuum for the closed orbit finder and sigma matrix generator
 |`MAXSTEPSCO`|100  |       | Maximum steps used to find closed orbit
 |`MAXSTEPSSI`|2000 |       | Maximum steps used to find matched distribution
+|=======================================================================
 
 [[sec:emissionmodel]]
 Emission Models
