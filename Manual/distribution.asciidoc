@@ -147,6 +147,8 @@ list see Section <<sec:distlist>>.
 energy bins. This has consequences for the space charge solver
 see Section link:fieldsolvers#sec:FSENBINS[Energy Bins].
 
+|`SBIN` |100| None| Number of sample bins to use per energy bin.
+
 |`XMULT` |1.0 |None |Value used to scale the latexmath:[x] positions
 of the distribution particles. Applied after the distribution is
 generated (or read in).
