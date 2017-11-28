@@ -544,6 +544,8 @@ Correlations for `GAUSS` Distribution (Experimental)
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
+|`R`| | | All 15 correlations in a single array (latexmath:[R_{12}, R_{13}, .. , R_{56}]).
+
 |`CORRX` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[x],
 latexmath:[p_x] correlation. (latexmath:[R_{12}] in transport
 notation.)
@@ -555,6 +557,9 @@ notation.)
 |`CORRZ` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[z],
 latexmath:[p_z] correlation. (latexmath:[R_{56}] in transport
 notation.)
+
+|`CORRT` |0.0 |Section <<sec:unitsdistattributes>> |
+same as and overwritten by `CORRZ`.
 
 |`R51` |0.0 |Section <<sec:unitsdistattributes>> |latexmath:[x],
 latexmath:[z] correlation. (latexmath:[R_{51}] in transport
