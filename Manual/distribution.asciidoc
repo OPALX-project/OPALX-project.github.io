@@ -26,6 +26,8 @@ user.
 |<<sec:binomialdisttype,`BINOMIAL`>> |Initial distribution generated using binomial
 distribution(s).
 
+|<<sec::matchedgausstype,`MATCHEDGAUSS`>> | Initial distribution generated using matched Gaussian distribution(s).
+
 |<<sec:gungaussflattopthdisttype,`GUNGAUSSFLATTOPTH`>> |Legacy. Special case of `FLATTOP` distribution.
 
 |<<sec:astraflattopthdisttype,`ASTRAFLATTOPTH`>> |Legacy. Special case of `FLATTOP` distribution.
@@ -824,6 +826,41 @@ Table <<binomdist,15>>.
 |latexmath:[\frac{1}{\sqrt{2\pi}*\sigma_x}exp(-\frac{x^2}{2\sigma_x^2}) ]
 |=======================================================================
 
+The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinomial,16>>.
+
+[#distattrbinomial]
+.Definition of the basic distribution attributes for a `BINOMIAL` distribution type.
+[cols="<1,^1,^1,<4",options="header",]
+|=======================================================================
+|Attribute Name |Default Value |Units |Description
+|`MX` |10001.0 | |Defines the binomial distribution in latexmath:[x]
+|`MY` |10001.0 | |Defines the binomial distribution in latexmath:[y]
+|`MZ` |10001.0 | |Defines the binomial distribution in latexmath:[z]
+|`MT` |10001.0 | |Defines the binomial distribution in latexmath:[t]
+
+[[sec:matchedgausstype]]
+`MATCHEDGAUSS` Matched Gauss Distribution type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The attributes of a `MATCHEDGAUSS` distribution are defined in Table <<distattrmatchedgauss,17>>.
+
+[#distattrmatchedgauss]
+.Definition of the basic distribution attributes for a `MATCHEDGAUSS` distribution type.
+[cols="<1,^1,^1,<4",options="header",]
+|=======================================================================
+|Attribute Name |Default Value |Units |Description
+|`EX`        |1E-6 | m rad | Projected normalized emittance in latexmath:[x]
+|`EY`        |1E-6 | m rad | Projected normalized emittance in latexmath:[y]
+|`ET`        |1E-6 | m rad | Projected normalized emittance in latexmath:[t]
+|`MAGSYM`    |0    |       | Number of sector magnets
+|`FMAPFN`    |     |       | File for reading fieldmap used to create matched distribution
+|`FMTYPE`    |     |       | File format for reading fieldmap used to create matched distribution
+|`ORDERMAPS` |7    |       | Order used in the field expansion
+|`RGUESS`    |-1   |       | Guess value of radius (m) for closed orbit finder
+|`RESIDUUM`  |1E-8 |       | Residuum for the closed orbit finder and sigma matrix generator
+|`MAXSTEPSCO`|100  |       | Maximum steps used to find closed orbit
+|`MAXSTEPSSI`|2000 |       | Maximum steps used to find matched distribution
+
 [[sec:emissionmodel]]
 Emission Models
 ~~~~~~~~~~~~~~~
@@ -839,7 +876,7 @@ Emission Model: `NONE` (default)
 
 The emission model `NONE` is the default emission model used in
 _OPAL-t_. It has a single attribute, listed in
-Table <<distattremitmodelnoneastra,16>>. The `NONE` emission model is very
+Table <<distattremitmodelnoneastra,18>>. The `NONE` emission model is very
 simplistic. It merely adds the amount of energy defined by the attribute
 `EKIN` to the longitudinal momentum, latexmath:[p_{z}], for each
 particle in the distribution as it leaves the cathode.
@@ -886,7 +923,7 @@ Emission Model: `ASTRA`
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The `ASTRA` emittance model uses the same single parameter as the `NONE`
-option as listed in Table <<distattremitmodelnoneastra,16>>. However, in this
+option as listed in Table <<distattremitmodelnoneastra,18>>. However, in this
 case, the energy defined by the `EKIN` attribute is added to each
 emitted particle’s momentum in a random way:
 
@@ -918,7 +955,7 @@ Emission Model: `NONEQUIL`
 The `NONEQUIL` emission model is based on an actual physical model of
 particle emission as described in <<bib:flo97>>, <<bib:clen2000>>, <<bib:dowe2009>>. The
 attributes needed by this emission model are listed in
-Table <<distattremitmodelnonequil,17>>.
+Table <<distattremitmodelnonequil,19>>.
 
 [#distattremitmodelnonequil]
 .Attributes for the `NONE` and `ASTRA` emission models.
