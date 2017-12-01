@@ -9,9 +9,10 @@ V=3.10.0
 #
 # **Download CMake**
 #
-curl -L \
-         --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-        "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
+test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
+        curl -L \
+                --output "$_" \
+                "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
 #
 # **Unpack CMake**
 #
