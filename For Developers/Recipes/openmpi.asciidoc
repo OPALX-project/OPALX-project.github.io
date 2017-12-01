@@ -6,9 +6,10 @@ P=openmpi
 V=1.10.4
 
 # Download
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"http://www.open-mpi.org/software/ompi/v${V%.*}/downloads/$P-$V.tar.bz2"
+test -r "${DOWNLOADS_DIR}/$P-$V.tar.bz2" || \
+        curl -L \
+                --output "$_" \
+                "http://www.open-mpi.org/software/ompi/v${V%.*}/downloads/$P-$V.tar.bz2"
 
 # Unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
