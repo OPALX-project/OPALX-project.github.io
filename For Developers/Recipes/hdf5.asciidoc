@@ -22,7 +22,6 @@ CC=mpicc CXX=mpicxx FC=mpifort "${SRC_DIR}/$P/$P-$V/configure" \
         --enable-shared \
         --enable-parallel \
         --enable-cxx \
-        --enable-fortran \
         --enable-unsupported \
         --with-pic
 
