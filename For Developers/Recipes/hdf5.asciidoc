@@ -6,9 +6,10 @@ P=hdf5
 V=1.8.18
 
 # download
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.bz2" \
-	"https://support.hdfgroup.org/ftp/HDF5/releases/$P-${V%.*}/$P-$V/src/$P-$V.tar.bz2"
+test -r "${DOWNLOADS_DIR}/$P-$V.tar.bz2"  ||
+        curl -L \
+	       --output "$_" \
+	        "https://support.hdfgroup.org/ftp/HDF5/releases/$P-${V%.*}/$P-$V/src/$P-$V.tar.bz2"
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
