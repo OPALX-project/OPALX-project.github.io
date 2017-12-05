@@ -400,8 +400,8 @@ Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
 
 This is a definition of a simple `RBEND` that bends the beam in a
 positive direction 30 degrees (towards the negative x axis as if
-Figure <<fig:rbend,1>>). It has a design energy of 10MeV, a length of 0.5m, a
-vertical gap of 2cm and a 0latexmath:[^{\circ}] entrance edge angle.
+Figure <<fig:rbend,1>>). It has a design energy of 10 MeV, a length of 0.5 m, a
+vertical gap of 2 cm and a 0latexmath:[^{\circ}] entrance edge angle.
 (Therefore the exit edge angle is 30latexmath:[^{\circ}].) We are
 using the default, internal field map "1DPROFILE1-DEFAULT"
 see Section <<sec:benddefaultfieldmapopalt>> which describes the magnet fringe
@@ -437,7 +437,7 @@ RBend > Reference particle is bent: 0 rad (0 degrees) in y plane
 
 The first section of this output gives the properties of the reference
 trajectory like that described in Figure <<fig:rbend,1>>. From the value of
-`ANGLE` and the length, `L`, of the magnet, _OPAL_ calculates the 10MeV
+`ANGLE` and the length, `L`, of the magnet, _OPAL_ calculates the 10 MeV
 reference particle trajectory radius, `R`. From the bend geometry and
 the entrance angle (0latexmath:[^{\circ}] in this case), the exit
 angle is calculated.
@@ -592,38 +592,38 @@ definitions if one where implementing a four dipole chicane:
 ....
 Bend1: RBend, ANGLE = 20.0 * Pi / 180.0,
               E1 = 0.0,
-          FMAPFN = "1DPROFILE1-DEFAULT",
-          ELEMEDGE = 0.25,
-          DESIGNENERGY = 10.0E6,
-          L = 0.25,
-          GAP = 0.02,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 0.25,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
               ROTATION = Pi;
 
 Bend2: RBend, ANGLE = 20.0 * Pi / 180.0,
               E1 = 20.0 * Pi / 180.0,
-          FMAPFN = "1DPROFILE1-DEFAULT",
-          ELEMEDGE = 1.0,
-          DESIGNENERGY = 10.0E6,
-          L = 0.25,
-          GAP = 0.02,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 1.0,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
               ROTATION = 0.0;
 
 Bend3: RBend, ANGLE = 20.0 * Pi / 180.0,
               E1 = 0.0,
-          FMAPFN = "1DPROFILE1-DEFAULT",
-          ELEMEDGE = 1.5,
-          DESIGNENERGY = 10.0E6,
-          L = 0.25,
-          GAP = 0.02,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 1.5,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
               ROTATION = 0.0;
 
 Bend4: RBend, ANGLE = 20.0 * Pi / 180.0,
-              E1 = 20.0 * Pi / 180.0
-          FMAPFN = "1DPROFILE1-DEFAULT",
-          ELEMEDGE = 2.25,
-          DESIGNENERGY = 10.0E6,
-          L = 0.25,
-          GAP = 0.02,
+              E1 = 20.0 * Pi / 180.0,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 2.25,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
               ROTATION = Pi;
 ....
 
@@ -680,10 +680,10 @@ using the `SBEND` command):
 Bend: SBend, ANGLE = 60.0 * Pi / 180.0,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
-         FMAPFN = "TEST-MAP.T7",
-         ELEMEDGE = 0.25,
-         DESIGNENERGY = 10.0E6,
-         GAP = 0.02;
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             GAP = 0.02;
 ....
 
 *Notice that we do not set the magnet length using the `L` attribute.*
@@ -742,11 +742,11 @@ and change the bend input to:
 Bend: SBend, ANGLE = 60.0 * Pi / 180.0,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
-         FMAPFN = "TEST-MAP.T7",
-         ELEMEDGE = 0.25,
-         DESIGNENERGY = 10.0E6,
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
              L = 0.25,
-         GAP = 0.02;
+             GAP = 0.02;
 ....
 
 This results in the same output as the previous example, as we expect.
@@ -784,11 +784,11 @@ following input:
 Bend: SBend, K0 = -0.1400778,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
-         FMAPFN = "TEST-MAP.T7",
-         ELEMEDGE = 0.25,
-         DESIGNENERGY = 10.0E6,
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
              L = 0.25,
-         GAP = 0.02;
+             GAP = 0.02;
 ....
 
 Instead of setting the bend strength using `ANGLE`, we use `K0`. This
@@ -850,11 +850,11 @@ soft edge magnet longer. When we do this, the same input:
 Bend: SBend, K0 = -0.1400778,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
-         FMAPFN = "TEST-MAP.T7",
-         ELEMEDGE = 0.25,
-         DESIGNENERGY = 10.0E6,
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
              L = 0.25,
-         GAP = 0.02;
+             GAP = 0.02;
 ....
 
 produces
@@ -1086,7 +1086,7 @@ map format) map:
 ....
 
 As one can see, the default magnet gap for `1DPROFILE1-DEFAULT` is
-set to 2.0cm. This value can be overridden by the `GAP` attribute of the
+set to 2.0 cm. This value can be overridden by the `GAP` attribute of the
 magnet (see Sections <<sec:RBend>> and <<sec:SBend>>).
 
 [[sec:SBend3D]]
@@ -1975,8 +1975,8 @@ Monitor
 A `MONITOR` detects all particles passing it and writes the position,
 the momentum and the time when they hit it into an H5hut file.
 Furthermore the exact position of the monitor is stored. It has always a
-length of 1cm consisting of 0.5cm drift, the monitor of zero length and
-another 0.5cm drift. This is to prevent _OPAL-t_ from missing any
+length of 1 cm consisting of 0.5 cm drift, the monitor of zero length and
+another 0.5 cm drift. This is to prevent _OPAL-t_ from missing any
 particle. The positions of the particles on the monitor are interpolated
 from the current position and momentum one step before they would passe
 the monitor.
@@ -2235,7 +2235,7 @@ XSIZE::
 YSIZE::
   Minor axis of the transverse elliptical shape, default value is 1e6.
 
-Example: Graphite degrader of 15cm thickness.
+Example: Graphite degrader of 15 cm thickness.
 
 ....
 DEGPHYS: PARTICLEMATTERINTERACTION, TYPE="DEGRADER", MATERIAL="Graphite";
@@ -2273,13 +2273,13 @@ L::
   The length of the closed orbit corrector (default: 0 m).
 KICK::
   The kick angle in rad for either horizontal or vertical correctors
-  (default: 0rad).
+  (default: 0 rad).
 HKICK::
   The horizontal kick angle in rad for a corrector in both planes
-  (default: 0rad).
+  (default: 0 rad).
 VKICK::
   The vertical kick angle in rad for a corrector in both planes
-  (default: 0rad).
+  (default: 0 rad).
 DESIGNENERGY::
   Fix the magnitude of the magnetic field using the given `DESIGNENERGY`
   and the angle (`KICK`, `HKICK` or `VKICK`). If the designenergy isn’t
