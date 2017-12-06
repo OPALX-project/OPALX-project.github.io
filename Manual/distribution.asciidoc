@@ -438,9 +438,9 @@ Name:DISTRIBUTION, TYPE       = GAUSS,
 ....
 
 This creates a Gaussian shaped distribution with zero transverse
-emittance, zero energy spread, latexmath:[\sigma_{x} = {1.0}\mathrm{mm}],
-latexmath:[\sigma_{y} = {3.0}\mathrm{mm}],
-latexmath:[\sigma_{z} = {2.0}\mathrm{mm}] and an average energy of:
+emittance, zero energy spread, latexmath:[\sigma_{x} = {1.0} \mathrm{mm}],
+latexmath:[\sigma_{y} = {3.0} \mathrm{mm}],
+latexmath:[\sigma_{z} = {2.0} \mathrm{mm}] and an average energy of:
 
 [latexmath]
 ++++
@@ -448,11 +448,11 @@ W = {1.2}{MeV}
 ++++
 
 In the latexmath:[x] direction, the Gaussian distribution is cutoff at
-latexmath:[x = 2.0 \times \sigma_{x} = {2.0}\mathrm{mm}]. In the
+latexmath:[x = 2.0 \times \sigma_{x} = {2.0} \mathrm{mm}]. In the
 latexmath:[y] direction it is cutoff at
-latexmath:[y = 2.0 \times \sigma_{y} = {6.0}\mathrm{mm}]. This distribution
+latexmath:[y = 2.0 \times \sigma_{y} = {6.0} \mathrm{mm}]. This distribution
 is _injected_ into the simulation at an average position of
-latexmath:[(\bar{x},\bar{y},\bar{z})=({1.0}\mathrm{mm}, {-2.0}\mathrm{mm}, {10.0}\mathrm{mm})].
+latexmath:[(\bar{x},\bar{y},\bar{z})=({1.0} \mathrm{mm}, {-2.0} \mathrm{mm}, {10.0} \mathrm{mm})].
 
 [[sec:gaussdisttypephotoinjector]]
 `GAUSS` Distribution for Photoinjector
