@@ -1055,7 +1055,7 @@ coordinates. (Section <<sec:fromfiledisttype>>).
 [bibliography]
 References
 ~~~~~~~~~~
-* [[[bib:JohoDist]]] W. Joho, _Private communication_.
+* [[[bib:JohoDist]]] W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
 * [[[bib:flo97]]] K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, tech. rep. TESLA FEL-Report (DESY, Jan. 1997).
 * [[[bib:clen2000]]] J. E. Clendenin et al., _Reduction of thermal emittance of rf guns_, Nucl. Instrum. Methods Phys. Res. Sect. A 455, 198–201 (2000).
 * [[[bib:dowe2009]]] D. H. Dowell and J. F. Schmerge, _Quantum efficiency and thermal emittance of metal photocathodes_, Phys. Rev. ST Accel. Beams 12, 074201 (2009).
