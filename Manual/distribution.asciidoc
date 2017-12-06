@@ -421,21 +421,20 @@ In Table <<distattrgauss,10>> we list the basic attributes available for a
 distribution:
 
 ....
-Name:DISTRIBUTION, TYPE = GAUSS,
-                   SIGMAX = 0.001,
-                   SIGMAY = 0.003,
-                   SIGMAZ = 0.002,
-                   SIGMAPX = 0.0,
-                   SIGMAPY = 0.0,
-                   SIGMAPZ = 0.0,
-                   CUTOFFX = 2.0,
-                   CUTOFFY = 2.0,
+Name:DISTRIBUTION, TYPE       = GAUSS,
+                   SIGMAX     = 0.001,
+                   SIGMAY     = 0.003,
+                   SIGMAZ     = 0.002,
+                   SIGMAPX    = 0.0,
+                   SIGMAPY    = 0.0,
+                   SIGMAPZ    = 0.0,
+                   CUTOFFX    = 2.0,
+                   CUTOFFY    = 2.0,
                    CUTOFFLONG = 4.0,
-                   OFFSETX = 0.001,
-                   OFFSETY = -0.002,
-                   OFFSETZ = 0.01,
-                   OFFSETPZ = 1200.0
-                   USEEV = TRUE;
+                   OFFSETX    = 0.001,
+                   OFFSETY    = -0.002,
+                   OFFSETZ    = 0.01,
+                   OFFSETPZ   = 1200.0;
 ....
 
 This creates a Gaussian shaped distribution with zero transverse
