@@ -482,7 +482,7 @@ Figure <<flattop,1>>.
 
 [#flattop]
 .Figure 1: _OPAL_ emitted `GAUSS` distribution with flat top.
-image:./figures/flattop.png[width=700]
+image:./figures/distribution/flattop.png[width=700]
 
 A useful feature of the `GAUSS` distribution type is the ability to
 mimic the initial distribution from a photoinjector. For this purpose we
@@ -805,7 +805,7 @@ The `BINOMIAL` type of distribution is based on <<bib:JohoDist>>. The shape of
 the binomial distribution is governed by one parameter latexmath:[m].
 By varying this single parameter one obtains the most commonly used
 distributions for our type of simulations, as listed in
-Table <<binomdist,15>>.
+Table <<binomdist,15>> and shown in Figure_<<binomialproperties,2>>.
 
 [#binomdist]
 .Different distributions specified by a single parameter latexmath:[m]
@@ -813,7 +813,7 @@ Table <<binomdist,15>>.
 |=======================================================================
 |latexmath:[m] |Distribution |Density |Profile
 |0.0 |Hollow shell |latexmath:[\frac{1}{\pi}\delta(1-r^2)]
-|latexmath:[\frac{1}{\pi}(1-r^2)^{-0.5}]
+|latexmath:[\frac{1}{\pi}(1-x^2)^{-0.5}]
 
 |0.5 |Flat profile |latexmath:[\frac{1}{2\pi}(1-r^2)^{-0.5}]
 |latexmath:[\frac{1}{2}]
@@ -827,10 +827,14 @@ Table <<binomdist,15>>.
 |2.0 |Parabolic |latexmath:[\frac{2}{\pi}(1-r^2)]
 |latexmath:[\frac{3}{8\pi}(1-x^2)^{1.5}]
 
-|latexmath:[\rightarrow \infty] |Gaussian
+|latexmath:[\rightarrow \infty (> 10000)] |Gaussian
 |latexmath:[\frac{1}{2\pi\sigma_x\sigma_y}exp(-\frac{x^2}{2\sigma_x^2} -\frac{y^2}{2\sigma_y^2})]
-|latexmath:[\frac{1}{\sqrt{2\pi}*\sigma_x}exp(-\frac{x^2}{2\sigma_x^2}) ]
+|latexmath:[\frac{1}{\sqrt{2\pi} \sigma_x}exp(-\frac{x^2}{2\sigma_x^2}) ]
 |=======================================================================
+
+[#binomialproperties]
+.Figure 2: Properties of binomial Phase Space Distributions (taken from  <<bib:JohoDist>>).
+image:./figures/distribution/BinomialProperties.png
 
 The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinomial,16>>.
 
@@ -839,11 +843,29 @@ The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinom
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
-|`MX` |10001.0 | |Defines the binomial distribution in latexmath:[x]
-|`MY` |10001.0 | |Defines the binomial distribution in latexmath:[y]
-|`MZ` |10001.0 | |Defines the binomial distribution in latexmath:[z]
-|`MT` |10001.0 | |Defines the binomial distribution in latexmath:[t]
+|`MX` |10001 | |Defines parameter latexmath:[m] for the binomial distribution in latexmath:[x]
+|`MY` |10001 | |Defines parameter latexmath:[m] for the binomial distribution in latexmath:[y]
+|`MZ` |10001 | |Defines parameter latexmath:[m] for the binomial distribution in latexmath:[z]
+|`MT` |10001 | |Defines parameter latexmath:[m] for the binomial distribution in latexmath:[t]
 |=======================================================================
+
+Example:
+
+....
+Dist2:DISTRIBUTION, TYPE    = BINOMIAL,
+		    SIGMAX  = 2.15e-03,
+		    SIGMAPX = 1E-6,
+		    CORRX   = 0.0,
+		    MX      = 0.01,
+		    SIGMAY  = 0.50*23.e-03,
+		    SIGMAPY = 28.0,
+		    CORRY   = 0.5,
+		    MY      = 990.0,
+		    SIGMAT  = 1.0e-1,
+		    SIGMAPT = 11.96,
+		    CORRT   = -0.5,
+		    MT      = 2.0,
+....
 
 [[sec:matchedgausstype]]
 `MATCHEDGAUSS` Matched Gauss Distribution type
