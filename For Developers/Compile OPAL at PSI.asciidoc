@@ -97,6 +97,7 @@ module load opal-toolschain/1.6
 and for OPAL 2.x
 ```
 module use /afs/psi.ch/project/amas/modulefiles
+module use unstable
 module load opal-toolschain/2.0
 ```
 
