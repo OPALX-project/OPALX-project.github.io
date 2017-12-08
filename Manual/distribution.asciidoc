@@ -852,19 +852,19 @@ The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinom
 Example:
 
 ....
-Dist2:DISTRIBUTION, TYPE    = BINOMIAL,
-		    SIGMAX  = 2.15e-03,
-		    SIGMAPX = 1E-6,
-		    CORRX   = 0.0,
-		    MX      = 0.01,
-		    SIGMAY  = 0.50*23.e-03,
-		    SIGMAPY = 28.0,
-		    CORRY   = 0.5,
-		    MY      = 990.0,
-		    SIGMAT  = 1.0e-1,
-		    SIGMAPT = 11.96,
-		    CORRT   = -0.5,
-		    MT      = 2.0,
+Dist:DISTRIBUTION, TYPE    = BINOMIAL,
+                   SIGMAX  = 2.15e-03,
+                   SIGMAPX = 1E-6,
+                   CORRX   = 0.0,
+                   MX      = 0.01,
+                   SIGMAY  = 0.50*23.e-03,
+                   SIGMAPY = 28.0,
+                   CORRY   = 0.5,
+                   MY      = 990.0,
+                   SIGMAT  = 1.0e-1,
+                   SIGMAPT = 11.96,
+                   CORRT   = -0.5,
+                   MT      = 2.0,
 ....
 
 [[sec:matchedgausstype]]
