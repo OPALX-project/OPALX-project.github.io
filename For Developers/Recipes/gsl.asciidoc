@@ -8,7 +8,7 @@ V=2.4
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
         curl -L \
-	        --output "$_" \
+                --output "$_" \
                 "ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
 
 # unpack
@@ -18,8 +18,8 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 "${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--disable-shared
+                --prefix="${PREFIX}" \
+                --disable-shared
 
 # compile & install
 make -j ${NJOBS}
