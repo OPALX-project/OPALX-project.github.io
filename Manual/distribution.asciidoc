@@ -849,8 +849,8 @@ The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinom
 |`MZ` |10001 | |Same as and overwritten by `MT`.
 |=======================================================================
 
-The width and the (latexmath:[x,p_x]) phase space is given by the usual `SIGMAX` (latexmath:[sigma_x]),
-`SIGMAXP` (latexmath:[sigma_{xp}]) and `CORRX` (latexmath:[sigma_{12}])
+The width and the (latexmath:[x,p_x]) phase space is given by the usual `SIGMAX` (latexmath:[\sigma_x]),
+`SIGMAXP` (latexmath:[\sigma_{xp}]) and `CORRX` (latexmath:[\sigma_{12}])
 and defined as follows (similarly for the other dimensions):
 
 [latexmath]
