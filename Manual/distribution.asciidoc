@@ -834,7 +834,7 @@ Table <<binomdist,15>> and shown in Figure_<<binomialproperties,2>>.
 
 [#binomialproperties]
 .Figure 2: Properties of binomial Phase Space Distributions (taken from  <<bib:JohoDist>>).
-image:./figures/distribution/BinomialProperties.png
+image:./figures/distribution/BinomialProperties.png[width=700]
 
 The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinomial,16>>.
 
