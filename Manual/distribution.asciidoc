@@ -805,7 +805,7 @@ The `BINOMIAL` type of distribution is based on <<bib:JohoDist>>. The shape of
 the binomial distribution is governed by one parameter latexmath:[m].
 By varying this single parameter one obtains the most commonly used
 distributions for our type of simulations, as listed in
-Table <<binomdist,15>> and shown in Figure_<<binomialproperties,2>>.
+Table <<binomdist,15>> and shown in Figure <<binomialproperties,2>>.
 
 [#binomdist]
 .Different distributions specified by a single parameter latexmath:[m]
