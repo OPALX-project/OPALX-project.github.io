@@ -6,7 +6,7 @@ P=gsl
 V=2.4
 
 # download
-test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
         curl -L \
                 --output "$_" \
                 "ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
