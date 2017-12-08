@@ -859,6 +859,7 @@ and defined as follows (similarly for the other dimensions):
 ++++
 
 [latexmath]
+++++
 \begin{aligned}
 \beta_x  &=& \frac{\sigma_x^2}{\epsilon_x} \\
 \gamma_x &=& \frac{\sigma_{xp}^2}{\epsilon_x} \\
