@@ -444,7 +444,7 @@ latexmath:[\sigma_{z} = {2.0} \mathrm{mm}] and an average energy of:
 
 [latexmath]
 ++++
-W = {1.2}{MeV}
+W = {1.2}\mathrm{MeV}
 ++++
 
 In the latexmath:[x] direction, the Gaussian distribution is cutoff at
