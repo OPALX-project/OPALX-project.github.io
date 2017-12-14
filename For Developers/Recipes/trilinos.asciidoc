@@ -6,15 +6,27 @@ P=trilinos
 V=12.10.1
 
 # download
-curl -L \
-         --output "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" \
-         http://trilinos.csbsju.edu/download/files/$P-$V-Source.tar.bz2
+test -r "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" || \
+        curl -L \
+                --output "$_" \
+                http://trilinos.csbsju.edu/download/files/$P-$V-Source.tar.bz2
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2"
 
 # configure
+OS=$(uname -s)
+declare -a config_args=()
+if [[ "${OS}" == "Linux" ]]; then
+        config_args+=( "-D BLAS_LIBRARY_DIRS:PATH=${PREFIX}/lib" )
+        config_args+=( "-D BLAS_INCLUDE_DIRS:PATH=${PREFIX}/include" )
+        config_args+=( "-D BLAS_LIBRARY_NAMES:STRING=openblas" )
+        config_args+=( "-D LAPACK_LIBRARY_DIRS:PATH=${PREFIX}/lib" )
+        config_args+=( "-D LAPACK_INCLUDE_DIRS:PATH=${PREFIX}/include" )
+        config_args+=( "-D LAPACK_LIBRARY_NAMES:STRING=openblas" )
+fi
+
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
         -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
@@ -30,12 +42,6 @@ CC=mpicc CXX=mpicxx cmake \
         -D TPL_ENABLE_LAPACK:BOOL=ON \
         -D TPL_ENABLE_METIS:BOOL=ON \
         -D TPL_ENABLE_ParMETIS:BOOL=ON \
-        -D BLAS_LIBRARY_DIRS:PATH="${PREFIX}/lib" \
-        -D BLAS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
-        -D BLAS_LIBRARY_NAMES:STRING="openblas" \
-        -D LAPACK_LIBRARY_DIRS:PATH="${PREFIX}/lib" \
-        -D LAPACK_INCLUDE_DIRS:PATH="${PREFIX}/include" \
-        -D LAPACK_LIBRARY_NAMES:STRING="openblas" \
         -D TPL_METIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
         -D TPL_METIS_LIBRARIES:STRING="${PREFIX}/lib/libmetis.a" \
         -D TPL_ParMETIS_INCLUDE_DIRS:PATH="${PREFIX}/include" \
@@ -55,6 +61,7 @@ CC=mpicc CXX=mpicxx cmake \
         -D Trilinos_ENABLE_Teuchos:BOOL=ON \
         -D Trilinos_ENABLE_Tpetra:BOOL=ON \
         -D Trilinos_ENABLE_TESTS:BOOL=OFF \
+        "${config_args[@]}" \
         "${SRC_DIR}/$P/$P-$V-Source"
 
 # compile & install
