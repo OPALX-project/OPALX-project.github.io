@@ -25,6 +25,8 @@ if [[ "${OS}" == "Linux" ]]; then
         config_args+=( "-D LAPACK_LIBRARY_DIRS:PATH=${PREFIX}/lib" )
         config_args+=( "-D LAPACK_INCLUDE_DIRS:PATH=${PREFIX}/include" )
         config_args+=( "-D LAPACK_LIBRARY_NAMES:STRING=openblas" )
+elif [[ "${OS}" == "Darwin" ]]; then
+        config_args+=( "-DTrilinos_ENABLE_Fortran=OFF" )
 fi
 
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
