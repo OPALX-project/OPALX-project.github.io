@@ -43,7 +43,6 @@ The following packages must be build and installed, in parenthesis the recommend
 **If you want to compile OPAL with the  SAAMG solver:**
 
 * ParMETIS >= 4 (4.0.3)
-* OpenBLAS >= 0.2.9 (0.2.20)
 * trilinos >= 12.10.1 (12.10.1)
 
 {nbsp}
@@ -128,7 +127,6 @@ Build the software in this order:
 1. link:Recipes/h5hut[H5hut]
 1. link:Recipes/boost[Boost]
 1. optional: link:Recipes/parmetis[ParMETIS] (required by Trilinos)
-1. optional: link:Recipes/openblas[OpenBLAS] (required by Trilinos)
 1. optional: link:Recipes/trilinos[Trilinos] (OPAL with SAAMG solver)
 
 image::../images/note.png[]
