@@ -429,7 +429,7 @@ load_opal_gcc620() {
     export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
     export H5HUT_VERSION=2.0.0rc3
 
-    export OPAL_EXE_PATH=$TARGET_DIR/opal/src
+    export OPAL_EXE_PATH=$TARGET_DIR/opal/bin
     export PATH=$OPAL_EXE_PATH:$PATH
 
     export CRAYPE_LINK_TYPE=dynamic
