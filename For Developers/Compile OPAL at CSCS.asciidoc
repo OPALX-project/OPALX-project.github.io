@@ -37,7 +37,7 @@ This instruction only shows the installation of OPAL for the multicore architect
 ```
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module switch gcc/5.3.0 gcc/7.1.0
+> module switch gcc/5.3.0 gcc/6.2.0
 ```
 
 '''
@@ -53,7 +53,7 @@ There's no H5hut module available on Piz Daint. You can install it using subsequ
 > ./autogen.sh
 > module load daint-mc 
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module switch gcc/5.3.0 gcc/7.1.0
+> module switch gcc/5.3.0 gcc/6.2.0
 > module load CMake/3.9.1 
 > module load cray-hdf5-parallel/1.10.0
 > module load GSL/2.4-CrayGNU-17.08
@@ -94,7 +94,7 @@ Finally, we set some evironment variables:
 > tar -xf boost_1_62_0.tar.gz
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module switch gcc/5.3.0 gcc/7.1.0
+> module switch gcc/5.3.0 gcc/6.2.0
 > module load CMake/3.9.1 
 > ./bootstrap.sh --prefix=$HOME/boost_1_62_0/build
 > ./b2 --build-type=minimal --layout=system --without-mpi variant=release link=shared,static threading=multi install
@@ -120,7 +120,7 @@ Set up the environment:
 > module load GSL/2.4-CrayGNU-17.08
 > module load CMake/3.9.1
 > module load cray-hdf5-parallel/1.10.0
-> module switch gcc/5.3.0 gcc/7.1.0
+> module switch gcc/5.3.0 gcc/6.2.0
 
 > export H5HUT_HOME=$HOME/git/H5hut/build
 > export H5HUT_PREFIX=$H5HUT_HOME
@@ -173,13 +173,13 @@ or
 It's convenient to add a helper function to your `~/.bashrc` in order to make life easier:
 
 ```
-load_opal_gcc710() {
+load_opal_gcc620() {
     module load daint-mc
     module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4                                                          
     module load GSL/2.4-CrayGNU-17.08
     module load CMake/3.9.1
     module load cray-hdf5-parallel/1.10.0
-    module switch gcc/5.3.0 gcc/7.1.0
+    module switch gcc/5.3.0 gcc/6.2.0
 
     export H5HUT_HOME=$HOME/git/H5hut/build
     export H5HUT_PREFIX=$H5HUT_HOME
@@ -212,5 +212,5 @@ load_opal_gcc710() {
 
 At the next login (or by just doing `source ~/.bashrc`) you can load everything by executing
 ```
-> load_opal_gcc710
+> load_opal_gcc620
 ```
