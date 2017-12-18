@@ -194,7 +194,7 @@ make install
 ```
 
 '''
-===== Installation procedure
+==== Installation procedure
 ```
 > export PREFIX=$TARGET_DIR/H5hut/2.0.0rc3
 > ./h5hut_install.sh
@@ -326,17 +326,10 @@ make install
 # recipe for:
 P=opal
 V=1.9
-branch=trilinos-tpetra
-SHA=9e28eb703b907a3758726a14f29c168693d86c58
 
 # download
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-git clone git@gitlab.psi.ch:frey_m/src.git
-
-# branch
-cd src
-git checkout "$branch"
-git checkout "$SHA"
+git clone git@gitlab.psi.ch:OPAL/src.git
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
@@ -345,14 +338,10 @@ CXX=CC CC=cc cmake \
     -DCMAKE_BUILD_TYPE:STRING=Release \
     -DUSE_H5HUT2:BOOL=ON \
     -DENABLE_DKS:BOOL=OFF \
-    -DENABLE_AMR:BOOL=ON \
-    -DENABLE_AMR_MG_SOLVER=1 \
-    -DENABLE_IPPLTESTS:BOOL=TRUE \
+    -DENABLE_IPPLTESTS:BOOL=FALSE \
     -DENABLE_SAAMG_SOLVER:BOOL=FALSE \
     -DDBG_SCALARFIELD:BOOL=OFF \
     -DDBG_STENCIL:BOOL=OFF \
-    -DAMR_YT_DUMP:BOOL=OFF \
-    -DAMR_PYTHON_DUMP:BOOL=OFF \
     -DBUILD_LIBOPAL:BOOL=OFF \
     -DNO_FIELD_ASSIGN_OPTIMIZATION:BOOL=OFF \
     -DBUILD_OPAL_UNIT_TESTS:BOOL=OFF \
