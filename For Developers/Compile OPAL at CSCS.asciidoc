@@ -41,6 +41,15 @@ This instruction only shows the installation of OPAL for the multicore architect
 ```
 
 '''
+=== Environment variables for builds
+```
+> export TARGET_DIR=$HOME/gcc/6.2.0
+> export DOWNLOADS_DIR=$SCRATCH
+> export SRC_DIR=$SCRATCH
+> export NJOBS=4
+```
+
+'''
 === Building OpenBLAS
 
 ```bash
@@ -67,6 +76,20 @@ cd "$P-$V"
 make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
 ```
+
+Finally, we set some evironment variables:
+```
+> export PREFIX=$TARGET_DIR/OpenBLAS/0.2.20
+> ./openblas_install.sh
+> export OPENBLAS_DIR=$PREFIX
+> export OPENBLAS_HOME=$OPENBLAS_DIR
+> export OPENBLAS_INCLUDE_DIR=$OPENBLAS_HOME/include
+> export OPENBLAS_LIBRARY_DIR=$OPENBLAS_HOME/lib
+> export OPENBLAS_PREFIX=$OPENBLAS_HOME
+> export OPENBLAS_VERSION=0.2.20
+> export BLASLIB=OPENBLAS_LIBRARY_DIR/libopenblas.a
+```
+**Note**: For your convenience you might add above lines to your `.bashrc`.
 
 '''
 === Building H5hut
@@ -168,11 +191,14 @@ cd "${SRC_DIR}/$P/${P}_$V"
 ```
 Finally, we set some evironment variables:
 ```
-> export BOOST_HOME=$HOME/boost_1_62_0/build/
-> export BOOST_DIR=$BOOST_HOME
-> export BOOST_PREFIX=$BOOST_HOME
-> export BOOST_INCLUDE_DIR=$BOOST_HOME/include
-> export BOOST_LIBRARY_DIR=$BOOST_HOME/lib
+> export PREFIX=$TARGET_DIR/boost/1.62.0
+> ./boost_install.sh
+> export BOOST_DIR=$PREFIX
+> export BOOST_HOME=$BOOST_DIR
+> export BOOST_INCLUDE_DIR=$BOOST_DIR/include
+> export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
+> export BOOST_PREFIX=$BOOST_DIR
+> export BOOST_VERSION=1.62.0
 ```
 **Note**: For your convenience you might add above lines to your `.bashrc`.
 
@@ -204,7 +230,18 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 make -j ${NJOBS}
 make install
 ```
-
+Finally, we set some evironment variables:
+```
+> export PREFIX=$TARGET_DIR/gsl/2.4
+> ./gsl_install.sh
+> export GSL_DIR=$PREFIX
+> export GSL_HOME=$GSL_DIR
+> export GSL_INCLUDE_DIR=$GSL_HOME/include
+> export GSL_LIBRARY_DIR=$GSL_HOME/lib
+> export GSL_PREFIX=$GSL_DIR
+> export GSL_VERSION=2.4
+```
+**Note**: For your convenience you might add above lines to your `.bashrc`.
 
 '''
 === Building OPAL
