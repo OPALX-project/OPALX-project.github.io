@@ -33,10 +33,11 @@ environment properly:
 This instruction only shows the installation of OPAL for the multicore architecture (i.e. the module ```daint-mc```).
 
 '''
-=== Load compiler
+=== Load encironment
 ```
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
+> module load CMake/3.9.1
 > module switch gcc/5.3.0 gcc/6.2.0
 ```
 
