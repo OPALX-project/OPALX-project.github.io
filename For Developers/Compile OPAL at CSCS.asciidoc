@@ -41,39 +41,73 @@ This instruction only shows the installation of OPAL for the multicore architect
 ```
 
 '''
+=== Building OpenBLAS
+
+```bash
+#!/bin/bash
+
+# recipe for:
+P=OpenBLAS
+V=0.2.20
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+    "http://github.com/xianyi/$P/archive/v$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+cd "$P-$V" 
+
+# configure
+# nothing to configure
+
+# compile & install
+make TARGET=CORE2
+make TARGET=CORE2 PREFIX="${PREFIX}" install
+```
+
+'''
 === Building H5hut
+```
+#!/bin/bash
 
-There's no H5hut module available on Piz Daint. You can install it using subsequent steps:
-```
-> cd $HOME/git
-> mkdir H5hut
-> cd H5hut
-> git clone git@gitlab.psi.ch:H5hut/src.git
-> cd src
-> ./autogen.sh
-> module load daint-mc 
-> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module switch gcc/5.3.0 gcc/6.2.0
-> module load CMake/3.9.1 
-> module load cray-hdf5-parallel/1.10.0
-> module load GSL/2.4-CrayGNU-17.08
-```
+# recipe for:
+P=H5hut
+V=2.0.0rc3
+SHA=e447d536a366578643d8224811277636bc5e7271
 
-The environment variables for the GSL library are not set, you have to do it manually:
-```
-> export GSL_HOME= /apps/dom/UES/jenkins/6.0.UP04/mc/easybuild/software/GSL/2.4-CrayGNU-17.08/
-> export GSL_DIR=$GSL_HOME
-> export GSL_PREFIX=$GSL_PREFIX
-> export GSL_INCLUDE_DIR=$GSL_HOME/include
-> export GSL_LIBRARY_DIR=$GSL_HOME/lib
-```
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+    "https://gitlab.psi.ch/$P/src/repository/archive.tar.gz?ref=$P-$V"
 
-Compile it with:
-```
-> ./autogen.sh
-> CXX=CC CC=cc FC=ftn ./configure --prefix=$HOME/git/H5hut/build --enable-parallel --with-hdf5=$HDF5_ROOT
-> make
-> make install
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# pre-configure
+cd "src-$P-$V-$SHA"
+./autogen.sh
+cd ..
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CXX=CC CC=cc FC=ftn \
+    "${SRC_DIR}/$P/src-$P-$V-$SHA/configure" \
+    --prefix="${PREFIX}" \
+    --enable-parallel \
+    #--enable-fortran \
+    #--enable-shared \
+    --with-hdf5="${HDF5_PREFIX}" \
+    --with-pic \
+    --enable-python
+
+
+# compile & install
+make -j ${NJOBS}
+make install
 ```
 
 Finally, we set some evironment variables:
@@ -89,15 +123,48 @@ Finally, we set some evironment variables:
 '''
 === Building Boost
 ```
-> cd $HOME
-> wget https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.gz
-> tar -xf boost_1_62_0.tar.gz
-> module load daint-mc
-> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module switch gcc/5.3.0 gcc/6.2.0
-> module load CMake/3.9.1 
-> ./bootstrap.sh --prefix=$HOME/boost_1_62_0/build
-> ./b2 --build-type=minimal --layout=system --without-mpi variant=release link=shared,static threading=multi install
+#!/bin/bash
+
+# recipe for:
+P=boost
+V=1_62_0
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
+    "https://netcologne.dl.sourceforge.net/project/$P/$P/${V//_/.}/${P}_$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build"
+cd "${SRC_DIR}/$P/${P}_$V"
+./bootstrap.sh \
+    --prefix="${PREFIX}" \
+    --with-libraries=all
+
+# compile & install
+./b2 \
+    --build-type=minimal \
+    --build-dir=""${SRC_DIR}/$P/build"" \
+    --layout=system \
+    --without-mpi \
+    variant=release \
+    link=shared,static \
+    threading=multi \
+    stage
+./b2 \
+    --build-type=minimal \
+    --build-dir=""${SRC_DIR}/$P/build"" \
+    --layout=system \
+    --without-mpi \
+    variant=release \
+    link=shared,static \
+    threading=multi \
+    install
+
 ```
 Finally, we set some evironment variables:
 ```
@@ -108,6 +175,36 @@ Finally, we set some evironment variables:
 > export BOOST_LIBRARY_DIR=$BOOST_HOME/lib
 ```
 **Note**: For your convenience you might add above lines to your `.bashrc`.
+
+'''
+=== Building GSL
+```bash
+#!/bin/bash
+
+# recipe for:
+P=gsl
+V=2.4
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+    "ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+"${SRC_DIR}/$P/$P-$V/configure" \
+    --prefix="${PREFIX}" \
+    --disable-shared
+
+# compile & install
+make -j ${NJOBS}
+make install
+```
+
 
 '''
 === Building OPAL
@@ -147,11 +244,47 @@ Set up the environment:
 ```
 Assuming you have the source code in `$HOME/opal/src`, do:
 ```
-> cd $HOME/opal
-> mkdir build
-> cd build
-> CXX=CC CC=cc cmake -DUSE_H5HUT2=1 ../src
-> make
+#!/bin/bash
+
+# recipe for:
+P=opal
+V=1.9
+branch=trilinos-tpetra
+SHA=9e28eb703b907a3758726a14f29c168693d86c58
+
+# download
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+git clone git@gitlab.psi.ch:frey_m/src.git
+
+# branch
+cd src
+git checkout "$branch"
+git checkout "$SHA"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CXX=CC CC=cc cmake \
+    -DCMAKE_INSTALL_PREFIX:STRING="${PREFIX}" \
+    -DCMAKE_BUILD_TYPE:STRING=Release \
+    -DUSE_H5HUT2:BOOL=ON \
+    -DENABLE_DKS:BOOL=OFF \
+    -DENABLE_AMR:BOOL=ON \
+    -DENABLE_AMR_MG_SOLVER=1 \
+    -DENABLE_IPPLTESTS:BOOL=TRUE \
+    -DENABLE_SAAMG_SOLVER:BOOL=FALSE \
+    -DDBG_SCALARFIELD:BOOL=OFF \
+    -DDBG_STENCIL:BOOL=OFF \
+    -DAMR_YT_DUMP:BOOL=OFF \
+    -DAMR_PYTHON_DUMP:BOOL=OFF \
+    -DBUILD_LIBOPAL:BOOL=OFF \
+    -DNO_FIELD_ASSIGN_OPTIMIZATION:BOOL=OFF \
+    -DBUILD_OPAL_UNIT_TESTS:BOOL=OFF \
+    "${SRC_DIR}/$P/src"
+
+# compile & install
+make -j ${NJOBS}
+make install
+
 ```
 
 You might add the executable path to the environment variable:
@@ -175,38 +308,75 @@ It's convenient to add a helper function to your `~/.bashrc` in order to make li
 ```
 load_opal_gcc620() {
     module load daint-mc
-    module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4                                                          
-    module load GSL/2.4-CrayGNU-17.08
+    module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
     module load CMake/3.9.1
-    module load cray-hdf5-parallel/1.10.0
     module switch gcc/5.3.0 gcc/6.2.0
 
-    export H5HUT_HOME=$HOME/git/H5hut/build
-    export H5HUT_PREFIX=$H5HUT_HOME
-    export H5HUT_DIR=$H5HUT_HOME
-    export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
-    export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
+    TARGET_DIR=$HOME/gcc/6.2.0
 
-    export BOOST_HOME=$HOME/boost_1_62_0/build/
-    export BOOST_DIR=$BOOST_HOME
-    export BOOST_PREFIX=$BOOST_HOME
-    export BOOST_INCLUDE_DIR=$BOOST_HOME/include
-    export BOOST_LIBRARY_DIR=$BOOST_HOME/lib
-
-    export GSL_HOME=/apps/dom/UES/jenkins/6.0.UP04/mc/easybuild/software/GSL/2.4-CrayGNU-17.08/
-    
-    export GSL_DIR=$GSL_HOME
-    export GSL_PREFIX=$GSL_PREFIX
-    export GSL_INCLUDE_DIR=$GSL_HOME/include
-    export GSL_LIBRARY_DIR=$GSL_HOME/lib
-    
     export MPI_HOME=$MPICH_DIR
     export MPI_PREFIX=$MPI_HOME
     export MPI_INCLUDE_DIR=$MPI_HOME/include
     export MPI_LIBRARY_DIR=$MPI_HOME/lib
-    
-    export OPAL_EXE_PATH=$HOME/opal/build/src/
+
+    export OPENBLAS_DIR=$TARGET_DIR/OpenBLAS/0.2.20
+    export OPENBLAS_HOME=$OPENBLAS_DIR
+    export OPENBLAS_INCLUDE_DIR=$OPENBLAS_HOME/include
+    export OPENBLAS_LIBRARY_DIR=$OPENBLAS_HOME/lib
+    export OPENBLAS_PREFIX=$OPENBLAS_HOME
+    export OPENBLAS_VERSION=0.2.20
+    export BLASLIB=$OPENBLAS_LIBRARY_DIR/libopenblas.a
+
+    export LD_LIBRARY_PATH=$OPENBLAS_LIBRARY_DIR/:$LD_LIBRARY_PATH
+
+    export BOOST_DIR=$TARGET_DIR/boost/1.62.0
+    export BOOST_HOME=$BOOST_DIR
+    export BOOST_INCLUDE_DIR=$BOOST_DIR/include
+    export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
+    export BOOST_PREFIX=$BOOST_DIR
+    export BOOST_VERSION=1.62.0
+
+    export GSL_DIR=$TARGET_DIR/gsl/2.4
+    export GSL_HOME=$GSL_DIR
+    export GSL_INCLUDE_DIR=$GSL_HOME/include
+    export GSL_LIBRARY_DIR=$GSL_HOME/lib
+    export GSL_PREFIX=$GSL_DIR
+    export GSL_VERSION=2.4
+
+    export PREFIX=$TARGET_DIR/trilinos/12.10.1/
+    export TRILINOS_DIR=$TARGET_DIR/trilinos/12.10.1
+    export TRILINOS_HOME=$TRILINOS_DIR
+    export TRILINOS_PREFIX=$TRILINOS_DIR
+    export TRILINOS_INCLUDE_DIR=$TRILINOS_HOME/include
+    export TRILINOS_LIBRARY_DIR=$TRILINOS_HOME/lib
+    export TRILINOS_VERSION=12.10.1
+
+    export PREFIX=$TARGET_DIR/amrex/
+    export AMREX_DIR=$TARGET_DIR/amrex/
+    export AMREX_HOME=$AMREX_DIR
+    export AMREX_PREFIX=$AMREX_HOME
+    export AMREX_INCLUDE_DIR=$AMREX_HOME/include
+    export AMREX_LIBRARY_DIR=$AMREX_HOME/lib
+    export AMREX_GIT_SHA=207c75da3ad51deb2da1ba20bf8ce0a86264332a
+
+    export HDF5_DIR=$TARGET_DIR/hdf5/1.8.19
+    export HDF5_HOME=$HDF5_DIR
+    export HDF5_PREFIX=$HDF5_DIR
+    export HDF5_INCLUDE_DIR=$HDF5_HOME/include
+    export HDF5_LIBRARY_DIR=$HDF5_HOME/lib
+    export HDF5_VERSION=1.8.19
+
+    export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc3
+    export H5HUT_HOME=$H5HUT_DIR
+    export H5HUT_PREFIX=$H5HUT_HOME
+    export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
+    export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
+    export H5HUT_VERSION=2.0.0rc3
+
+    export OPAL_EXE_PATH=$TARGET_DIR/opal/src
     export PATH=$OPAL_EXE_PATH:$PATH
+
+    export CRAYPE_LINK_TYPE=dynamic
 }
 ```
 
