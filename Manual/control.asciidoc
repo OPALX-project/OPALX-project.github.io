@@ -181,6 +181,12 @@ PSDUMPFRAME::
   * `GLOBAL`: data is written in the global Cartesian frame;
   * `BUNCH_MEAN`: data is written in the bunch mean frame or;
   * `REFERENCE`: data is written in the frame of the reference particle.
+
+  Beware that the data is written in a given time step. Most accelerator 
+  physics quantities are defined at a given s-step where s is distance
+  along the reference trajectory. For non-isochronous accelerators,
+  particles at a given time step can be quite a long way away from the
+  reference particle, yielding unexpected results.
 SCSOLVEFREQ::
   If the space charge field is slowly varying w.r.t. external fields,
   this option allows to change the frequency of space charge
