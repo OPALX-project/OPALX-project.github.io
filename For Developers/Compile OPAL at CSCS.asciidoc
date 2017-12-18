@@ -33,7 +33,7 @@ environment properly:
 This instruction only shows the installation of OPAL for the multicore architecture (i.e. the module ```daint-mc```).
 
 '''
-=== Load encironment
+=== Load environment
 ```
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
@@ -42,7 +42,7 @@ This instruction only shows the installation of OPAL for the multicore architect
 ```
 
 '''
-=== Environment variables for builds
+=== Export environment variables for builds
 ```
 > export TARGET_DIR=$HOME/gcc/6.2.0
 > export DOWNLOADS_DIR=$SCRATCH
