@@ -93,14 +93,52 @@ make TARGET=CORE2 PREFIX="${PREFIX}" install
 > export OPENBLAS_VERSION=0.2.20
 > export BLASLIB=OPENBLAS_LIBRARY_DIR/libopenblas.a
 ```
-**Note**: For your convenience you might add above lines to your `.bashrc`.
-
 
 '''
 === Building HDF5
 
 '''
 ==== Installation script (hdf5_install.sh)
+
+```
+#!/bin/bash
+
+# recipe for:
+P=hdf5
+V_MAJOR=1
+V_MINOR=8
+V=${V_MAJOR}.${V_MINOR}.19
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+    "https://support.hdfgroup.org/ftp/HDF5/current$V_MAJOR$V_MINOR/src/$P-$V.tar.gz"
+
+#unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+#configure
+mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
+CXX=CC CC=cc Ftn=ftn \
+    "${SRC_DIR}/$P/$P-$V/configure" \
+    --prefix="${PREFIX}" \
+    --enable-shared \
+    --enable-parallel \
+    --enable-cxx \
+    --enable-unsupported \
+    --with-pic
+#    --enable-fortran
+
+# compile & install
+make -j ${NJOBS}
+make install
+
+```
+
+'''
+==== Installation procedure
+
 ```
 > export PREFIX=$TARGET_DIR/hdf5/1.8.19
 > ./hdf5_install.sh
