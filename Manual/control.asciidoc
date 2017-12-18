@@ -180,7 +180,6 @@ PSDUMPFRAME::
   * `GLOBAL`: data is written in the global Cartesian frame;
   * `BUNCH_MEAN`: data is written in the bunch mean frame or;
   * `REFERENCE`: data is written in the frame of the reference particle.
-
   Beware that the data is written in a given time step. Most accelerator 
   physics quantities are defined at a given s-step where s is distance
   along the reference trajectory. For non-isochronous accelerators,
