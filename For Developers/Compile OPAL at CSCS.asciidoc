@@ -79,9 +79,8 @@ cd "$P-$V"
 make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
 ```
-
 '''
-===== Installation procedure
+==== Installation procedure
 ```
 > export PREFIX=$TARGET_DIR/OpenBLAS/0.2.20
 > ./openblas_install.sh
