@@ -176,15 +176,15 @@ PSDUMPEACHTURN::
   simulation in _OPAL-cycl_. Its default set is false.
 PSDUMPFRAME::
   Control option that defines the frame in which the phase space data is
-  written for h5 and stat files.
-  * `GLOBAL`: data is written in the global Cartesian frame;
-  * `BUNCH_MEAN`: data is written in the bunch mean frame or;
-  * `REFERENCE`: data is written in the frame of the reference particle.
-  Beware that the data is written in a given time step. Most accelerator 
+  written for h5 and stat files.  Beware that the data is written in a 
+  given time step. Most accelerator 
   physics quantities are defined at a given s-step where s is distance
   along the reference trajectory. For non-isochronous accelerators,
   particles at a given time step can be quite a long way away from the
   reference particle, yielding unexpected results.
+  * `GLOBAL`: data is written in the global Cartesian frame;
+  * `BUNCH_MEAN`: data is written in the bunch mean frame or;
+  * `REFERENCE`: data is written in the frame of the reference particle.
 SCSOLVEFREQ::
   If the space charge field is slowly varying w.r.t. external fields,
   this option allows to change the frequency of space charge
