@@ -177,7 +177,6 @@ PSDUMPEACHTURN::
 PSDUMPFRAME::
   Control option that defines the frame in which the phase space data is
   written for h5 and stat files.
-+
   * `GLOBAL`: data is written in the global Cartesian frame;
   * `BUNCH_MEAN`: data is written in the bunch mean frame or;
   * `REFERENCE`: data is written in the frame of the reference particle.
