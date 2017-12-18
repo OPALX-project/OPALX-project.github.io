@@ -52,6 +52,8 @@ This instruction only shows the installation of OPAL for the multicore architect
 '''
 === Building OpenBLAS
 
+'''
+==== Installation script (openblas_install.sh)
 ```bash
 #!/bin/bash
 
@@ -77,7 +79,8 @@ make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
 ```
 
-Finally, we set some evironment variables:
+'''
+===== Installation procedure
 ```
 > export PREFIX=$TARGET_DIR/OpenBLAS/0.2.20
 > ./openblas_install.sh
@@ -91,8 +94,27 @@ Finally, we set some evironment variables:
 ```
 **Note**: For your convenience you might add above lines to your `.bashrc`.
 
+
+'''
+=== Building HDF5
+
+'''
+==== Installation script (hdf5_install.sh)
+```
+> export PREFIX=$TARGET_DIR/hdf5/1.8.19
+> ./hdf5_install.sh
+> export HDF5_DIR=$PREFIX
+> export HDF5_HOME=$HDF5_DIR
+> export HDF5_PREFIX=$HDF5_DIR
+> export HDF5_INCLUDE_DIR=$HDF5_HOME/include
+> export HDF5_LIBRARY_DIR=$HDF5_HOME/lib
+> export HDF5_VERSION=1.8.19
+```
+
 '''
 === Building H5hut
+'''
+==== Installation script (h5hut_install.sh)
 ```
 #!/bin/bash
 
@@ -133,18 +155,25 @@ make -j ${NJOBS}
 make install
 ```
 
-Finally, we set some evironment variables:
+'''
+===== Installation procedure
 ```
-> export H5HUT_HOME=$HOME/git/H5hut/build
+> export PREFIX=$TARGET_DIR/H5hut/2.0.0rc3
+> ./h5hut_install.sh
+> export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc3
+> export H5HUT_HOME=$H5HUT_DIR
 > export H5HUT_PREFIX=$H5HUT_HOME
-> export H5HUT_DIR=$H5HUT_HOME
 > export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
 > export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
+> export H5HUT_VERSION=2.0.0rc3
 ```
-**Note**: For your convenience you might add above lines to your `.bashrc`.
 
 '''
 === Building Boost
+
+'''
+==== Installation script (boost_install.sh)
+
 ```
 #!/bin/bash
 
@@ -189,7 +218,9 @@ cd "${SRC_DIR}/$P/${P}_$V"
     install
 
 ```
-Finally, we set some evironment variables:
+
+'''
+==== Installation procedure
 ```
 > export PREFIX=$TARGET_DIR/boost/1.62.0
 > ./boost_install.sh
@@ -200,10 +231,12 @@ Finally, we set some evironment variables:
 > export BOOST_PREFIX=$BOOST_DIR
 > export BOOST_VERSION=1.62.0
 ```
-**Note**: For your convenience you might add above lines to your `.bashrc`.
 
 '''
 === Building GSL
+
+'''
+==== Installation script (gsl_install.sh)
 ```bash
 #!/bin/bash
 
@@ -230,7 +263,9 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 make -j ${NJOBS}
 make install
 ```
-Finally, we set some evironment variables:
+
+'''
+==== Installation procedure
 ```
 > export PREFIX=$TARGET_DIR/gsl/2.4
 > ./gsl_install.sh
@@ -241,45 +276,12 @@ Finally, we set some evironment variables:
 > export GSL_PREFIX=$GSL_DIR
 > export GSL_VERSION=2.4
 ```
-**Note**: For your convenience you might add above lines to your `.bashrc`.
 
 '''
 === Building OPAL
-Assuming you have Boost and H5hut installed, you're now able to build OPAL. See in section https://gitlab.psi.ch/OPAL/src/wikis/For%20Developers/Compile-OPAL-on-RHEL6#user-content-building-opal[Building OPAL] if you do not yet have the OPAL source code.
 
-Set up the environment:
-```
-> module load daint-mc
-> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module load GSL/2.4-CrayGNU-17.08
-> module load CMake/3.9.1
-> module load cray-hdf5-parallel/1.10.0
-> module switch gcc/5.3.0 gcc/6.2.0
-
-> export H5HUT_HOME=$HOME/git/H5hut/build
-> export H5HUT_PREFIX=$H5HUT_HOME
-> export H5HUT_DIR=$H5HUT_HOME
-> export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
-> export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
-
-> export BOOST_HOME=$HOME/boost_1_62_0/build/
-> export BOOST_DIR=$BOOST_HOME
-> export BOOST_PREFIX=$BOOST_HOME
-> export BOOST_INCLUDE_DIR=$BOOST_HOME/include
-> export BOOST_LIBRARY_DIR=$BOOST_HOME/lib
-
-> export GSL_HOME= /apps/dom/UES/jenkins/6.0.UP04/mc/easybuild/software/GSL/2.4-CrayGNU-17.08/
-> export GSL_DIR=$GSL_HOME
-> export GSL_PREFIX=$GSL_PREFIX
-> export GSL_INCLUDE_DIR=$GSL_HOME/include
-> export GSL_LIBRARY_DIR=$GSL_HOME/lib
-
-> export MPI_HOME=$MPICH_DIR
-> export MPI_PREFIX=$MPI_HOME
-> export MPI_INCLUDE_DIR=$MPI_HOME/include
-> export MPI_LIBRARY_DIR=$MPI_HOME/lib
-```
-Assuming you have the source code in `$HOME/opal/src`, do:
+'''
+==== Installation script (opal_install.sh)
 ```
 #!/bin/bash
 
@@ -322,6 +324,12 @@ CXX=CC CC=cc cmake \
 make -j ${NJOBS}
 make install
 
+```
+'''
+==== Installation procedure
+```
+> export PREFIX=$TARGET_DIR/opal/1.9
+> ./opal_install.sh
 ```
 
 You might add the executable path to the environment variable:
@@ -379,22 +387,6 @@ load_opal_gcc620() {
     export GSL_LIBRARY_DIR=$GSL_HOME/lib
     export GSL_PREFIX=$GSL_DIR
     export GSL_VERSION=2.4
-
-    export PREFIX=$TARGET_DIR/trilinos/12.10.1/
-    export TRILINOS_DIR=$TARGET_DIR/trilinos/12.10.1
-    export TRILINOS_HOME=$TRILINOS_DIR
-    export TRILINOS_PREFIX=$TRILINOS_DIR
-    export TRILINOS_INCLUDE_DIR=$TRILINOS_HOME/include
-    export TRILINOS_LIBRARY_DIR=$TRILINOS_HOME/lib
-    export TRILINOS_VERSION=12.10.1
-
-    export PREFIX=$TARGET_DIR/amrex/
-    export AMREX_DIR=$TARGET_DIR/amrex/
-    export AMREX_HOME=$AMREX_DIR
-    export AMREX_PREFIX=$AMREX_HOME
-    export AMREX_INCLUDE_DIR=$AMREX_HOME/include
-    export AMREX_LIBRARY_DIR=$AMREX_HOME/lib
-    export AMREX_GIT_SHA=207c75da3ad51deb2da1ba20bf8ce0a86264332a
 
     export HDF5_DIR=$TARGET_DIR/hdf5/1.8.19
     export HDF5_HOME=$HDF5_DIR
