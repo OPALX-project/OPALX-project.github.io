@@ -204,8 +204,6 @@ RHODUMP::
   If true the scalar latexmath:[\rho] field is saved each time a phase
   space is written. There exists a reader in Visit with versions greater
   or equal 1.11.1.
-EFDUMP::
-  Not supported anymore.
 EBDUMP::
   If true the electric and magnetic field on the particle is saved each
   time a phase space is written.
