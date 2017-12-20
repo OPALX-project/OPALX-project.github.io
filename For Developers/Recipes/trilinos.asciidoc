@@ -25,6 +25,7 @@ if [[ "${OS}" == "Linux" ]]; then
         config_args+=( "-D LAPACK_LIBRARY_DIRS:PATH=${PREFIX}/lib" )
         config_args+=( "-D LAPACK_INCLUDE_DIRS:PATH=${PREFIX}/include" )
         config_args+=( "-D LAPACK_LIBRARY_NAMES:STRING=openblas" )
+        config_args+=( "-D CMAKE_Fortran_FLAGS:STRING=-fPIC" )
 elif [[ "${OS}" == "Darwin" ]]; then
         config_args+=( "-DTrilinos_ENABLE_Fortran=OFF" )
 fi
@@ -35,7 +36,6 @@ CC=mpicc CXX=mpicxx cmake \
         -D CMAKE_CXX_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
         -D CMAKE_C_FLAGS:STRING="-DMPICH_IGNORE_CXX_SEEK -fPIC" \
         -D CMAKE_CXX_STANDARD:STRING="11" \
-        -D CMAKE_Fortran_FLAGS:STRING="-fPIC" \
         -D CMAKE_BUILD_TYPE:STRING=Release \
         -D TPL_ENABLE_DLlib:BOOL=OFF \
         -D TPL_ENABLE_QT:BOOL=OFF \
