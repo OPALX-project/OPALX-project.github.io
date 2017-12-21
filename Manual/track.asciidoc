@@ -15,33 +15,35 @@ Tracking
 .Commands accepted in Tracking Mode
 [cols="<1,<3",options="header",]
 |=======================================================================
-|Command |Purpose
-|`TRACK` |Enter tracking mode
+|Command          | Purpose
+|`TRACK`          | Enter tracking mode
 
-|`LINE` |Label of `LINE` or `SEQUENCE`
+|`LINE`           | Label of `LINE` or `SEQUENCE`
 
-|`BEAM` |Label of `BEAM`
+|`BEAM`           | Label of `BEAM`
 
-|`T0` |Initial time
+|`T0`             | Initial time [s]
 
-|`DT` |Array of time step sizes for tracking
+|`DT`             | Array of time step sizes for tracking [s]
 
-|`MAXSTEPS` |Array of maximal number of time steps
+|`MAXSTEPS`       | Array of maximal number of time steps
 
-|`ZSTART` |z-location [m], from where to run simulation
+|`ZSTART`         | z-location [m], from where to run simulation
 
-|`ZSTOP` |Array of z-location [m], after which the simulation switches
+|`ZSTOP`          | Array of z-location [m], after which the simulation switches
 to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
 
-|`STEPSPERTURN` |Number of time steps per revolution period
+|`STEPSPERTURN`   | Number of time steps per revolution period
 
-|`TIMEINTEGRATOR` |Defines the time integrator used in _OPAL-cycl_
+|`TIMEINTEGRATOR` | Defines the time integrator used in _OPAL-cycl_
 
-|`name=expression` |Parameter relation
+|`NNB`            | Number of neighbouring bunches in _OPAL-cycl_
 
-|`RUN` |Run particles for specified number of turns or steps
+|`name=expression` | Parameter relation
 
-|`ENDTRACK` |Leave tracking mode
+|`RUN`            | Run particles for specified number of turns or steps
+
+|`ENDTRACK`       | Leave tracking mode
 |=======================================================================
 
 [[sec:trackmode]]
@@ -52,7 +54,7 @@ Before starting to track, a link:lines[beam line] and a
 link:beam[beam] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
-only the track commands see Table <<trackcmd,1>>. In order to preform
+only the track commands see Table <<trackcmd,1>>. In order to perform
 several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 `ZSTOP`. This can be used to change the time step manually.
 
@@ -67,13 +69,13 @@ T0::
   The initial time [s] of the simulation, its default value is 0.
 DT::
   Array of time step sizes for tracking, default length of the array is
-  1 and its only value is 1ps.
+  1 and its only value is 1 ps.
 MAXSTEPS::
   Array of maximal number of time steps, default length of the array is
   1 and its only value is 10.
 ZSTART::
   Initial position of the reference particle along the reference
-  trajectory, default position is 0.0m.
+  trajectory, default position is 0.0 m.
 ZSTOP::
   Array of z-locations [m], default length of the array is 1 and its
   only value is latexmath:[1E6] [m]. The simulation switches to the
