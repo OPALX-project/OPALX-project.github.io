@@ -201,9 +201,24 @@ The CONSTRAINT command defines a constraint for optimization.
 | EXPR | Expression that should be fulfilled during optimization.
 |=======================================================================
 
+
+Available Expressions
+^^^^^^^^^^^^^^^^^^^^^
+[#availableexpressions]
+.Available function for the EXPR attributes for OBJECTIVE and CONSTRAINT.
+[cols="<1,<5",options="header",]
+|=======================================================================
+| fromFile(<file>) | Simple functor that reads vector data from a file. If the file contains more than one value the sum is returned.
+| sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to $result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}$
+| radialPeak(<file>, <turn>) | A simple expression to get the n-th peak of a radial probe.
+| sumErrSqRadialPeak |
+| probVariableWithID |
+| sddsVariableAt |
+| sameSDDSVariableAt |
+
 Example Input File
 ^^^^^^^^^^^^^^^^^^
-Example input file for the optimization using the template 05-DL_QN3.tmpl:
+Example input file for the optimization using the template _05-DL_QN3.tmpl_:
 ....
 OPTION, ECHO=FALSE;
 OPTION, INFO=TRUE;
@@ -230,7 +245,7 @@ OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
 QUIT;
 ....
 
-Template file 05-DL_QN3.tmpl:
+Template file _05-DL_QN3.tmpl_:
 ....
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;
