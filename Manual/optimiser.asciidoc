@@ -216,7 +216,7 @@ Available Expressions
 | probVariableWithID(<var>, <id>, <probe_file>) |
 | sddsVariableAt(<var>, <spos>, <sdds_file>)  |  A simple expression to get SDDS value near a specific spos for a variable.
 | sameSDDSVariableAt(<var>, <spos>) | The same as sddsVariableAt, uses OPALs statistics file.
-|=======================================================================
+|=======================================================================================
 
 Example Input File
 ^^^^^^^^^^^^^^^^^^
