@@ -207,16 +207,16 @@ Available Expressions
 [#availableexpressions]
 .Available function for the EXPR attributes for OBJECTIVE and CONSTRAINT.
 [cols="<5,<5",options="header",]
-|=======================================================================================
+|===================================================================================================================================================
 | Function | Description
 | fromFile(<file>) | Simple functor that reads vector data from a file. If the file contains more than one value the sum is returned.
 | sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}]
-| sumErrSqRadialPeak<meas_file>, <sim_file>, <begin>, <end>) | A simple expression computing the sum of all peak errors (given as first and second argument) for a range of peaks (third argument and fourth argument) latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^end (measurement_i - value_i)^2}]
+| sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>) | A simple expression computing the sum of all peak errors (given as first and second argument) for a range of peaks (third argument and fourth argument) latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^end (measurement_i - value_i)^2}]
 | radialPeak(<file>, <turn>) | A simple expression to get the n-th peak of a radial probe.
 | probVariableWithID(<var>, <id>, <probe_file>) |
 | sddsVariableAt(<var>, <spos>, <sdds_file>)  |  A simple expression to get SDDS value near a specific spos for a variable.
 | sameSDDSVariableAt(<var>, <spos>) | The same as sddsVariableAt, uses OPALs statistics file.
-|=======================================================================================
+|===================================================================================================================================================
 
 Example Input File
 ^^^^^^^^^^^^^^^^^^
