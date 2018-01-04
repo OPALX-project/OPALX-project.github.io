@@ -209,7 +209,7 @@ Available Expressions
 [cols="<1,<5",options="header",]
 |=======================================================================
 | fromFile(<file>) | Simple functor that reads vector data from a file. If the file contains more than one value the sum is returned.
-| sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to `$result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}$`
+| sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}]
 | radialPeak(<file>, <turn>) | A simple expression to get the n-th peak of a radial probe.
 | sumErrSqRadialPeak |
 | probVariableWithID |
