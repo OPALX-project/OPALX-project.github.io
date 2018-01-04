@@ -201,3 +201,97 @@ The CONSTRAINT command defines a constraint for optimization.
 | EXPR | Expression that should be fulfilled during optimization.
 |=======================================================================
 
+Example Input File
+^^^^^^^^^^^^^^^^^^
+Example input file for the optimization using the template 05-DL_QN3.tmpl:
+....
+OPTION, ECHO=FALSE;
+OPTION, INFO=TRUE;
+
+TITLE, STRING="OPAL Test MAB, 2016-10-13";
+
+REAL up = 0.0000977;
+REAL loc = 2.0;
+
+dv0: DVAR, VARIABLE="QDX1_K1", LOWERBOUND=0, UPPERBOUND=35;
+dv1: DVAR, VARIABLE="QDX2_K1", LOWERBOUND=0, UPPERBOUND=34;
+dv2: DVAR, VARIABLE="QFX1_K1", LOWERBOUND=-35, UPPERBOUND=0;
+
+drmsx:OBJECTIVE,EXPR="fabs(sameSDDSVariableAt('rms_x',${loc}) - ${up})";
+drmsy:OBJECTIVE,EXPR="fabs(sameSDDSVariableAt('rms_y',${loc}) - 0.0001833)";
+goalfun:OBJECTIVE,EXPR="sameSDDSVariableAt('rms_x',2.00)";
+
+OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun}, DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50, NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0, NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir", TEMPLATEDIR="tmpl", FIELDMAPDIR="fieldmaps", OUTPUT="optLinac", OUTDIR="results";
+
+QUIT;
+....
+
+....
+OPTION, ECHO=FALSE;
+OPTION, INFO=FALSE;
+OPTION, PSDUMPFREQ=1000000;
+OPTION, STATDUMPFREQ=20;
+OPTION, CZERO=TRUE;
+OPTION, IDEALIZED=TRUE;
+OPTION, VERSION=10900;
+
+TITLE, STRING="OPAL Test MAB, 2016-10-13";
+
+//////////////////////////////                                                                                                                                                                                                                 
+// Begin Content                                                                                                                                                                                                                               
+//////////////////////////////                                                                                                                                                                                                                 
+
+REAL SOL  = 2.9979246E8;
+REAL Pcen = 100.0E6;
+REAL BRho = Pcen/SOL;
+REAL QK1  = 6.2519;
+REAL QSTR = QK1*BRho/2.0;
+
+QDX1: QUADRUPOLE, ELEMEDGE=0.0, L=0.10, APERTURE="circle(0.1)", K1=_QDX1_K1_ * BRho / 2;
+QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)", K1=_QFX1_K1_ * BRho / 2;
+QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)", K1=_QDX2_K1_ * BRho / 2;
+
+FODO: LINE = (QDX1, QFX1, QDX2);
+
+//////////////////////////////                                                                                                                                                                                                                 
+// Begin Summary                                                                                                                                                                                                                               
+//////////////////////////////                                                                                                                                                                                                                 
+
+FODO_Full: LINE = (FODO), ORIGIN={0,0,0}, ORIENTATION={0.0, 0.0, 0.0};
+
+//////////////////////////////                                                                                                                                                                                                                 
+// End Summary                                                                                                                                                                                                                                 
+//////////////////////////////                                                                                                                                                                                                                 
+
+// SC calculations on:                                                                                                                                                                                                                         
+Fs1:FIELDSOLVER, FSTYPE = FFT, MX = 16, MY = 16, MT = 16,
+                  PARFFTX = true, PARFFTY = true, PARFFTT = true,
+                  BCFFTX = open, BCFFTY = open, BCFFTT = open,
+                  BBOXINCR = 1, GREENSF = INTEGRATED;
+Fs2:FIELDSOLVER, FSTYPE = NONE, MX = 16, MY = 16, MT = 16,
+                 PARFFTX = true, PARFFTY = true, PARFFTT = true,
+                 BCFFTX = open, BCFFTY = open, BCFFTT = open,
+                 BBOXINCR = 1, GREENSF = INTEGRATED;
+
+
+Dist2: DISTRIBUTION, TYPE="FROMFILE", FNAME="fodo_opal.in";
+
+
+REAL MINSTEPFORREBIN = 500;
+
+REAL qb=77.0e-12;
+REAL bfreq=1300.0E6;
+REAL bcurrent=qb*bfreq;
+
+beam1: BEAM, PARTICLE = ELECTRON, pc = P0, NPART = 5000, BFREQ = bfreq, BCURRENT = bcurrent, CHARGE = -1;
+
+SELECT, LINE=FODO_Full;
+
+TRACK, LINE=FODO_Full, BEAM=beam1, MAXSTEPS={6e5}, DT={1e-12}, ZSTOP={2.02};
+
+RUN, METHOD = "PARALLEL-T", BEAM = beam1, FIELDSOLVER = Fs2, DISTRIBUTION = Dist2;
+
+ENDTRACK;
+
+QUIT;
+....
