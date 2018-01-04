@@ -128,6 +128,8 @@ OPAL Commands
 
 OPTIMIZE Command
 ^^^^^^^^^^^^^^^^^
+The OPTIMIZE command initiates optimization.
+
 [#optcommandattributes]
 .Attributes for the command OPTIMIZE.
 [cols="<1,<5",options="header",]
@@ -160,3 +162,42 @@ OPTIMIZE Command
 | TEMPLATEDIR |  Directory where templates are stored.
 | FIELDMAPDIR |  Directory where field maps are stored.
 |=======================================================================
+
+DVAR Command
+^^^^^^^^^^^^
+The DVAR command defines a variable for optimization.
+
+[#dvarcommandattributes]
+.Attributes for the command DVAR.
+[cols="<1,<5",options="header",]
+|=======================================================================
+|Attribute |Description
+| VARIABLE | Variable name that should be varied during optimization.
+| LOWERBOUND | Lower limit of the range of values that the variable should assume.
+| UPPERBOUND | Upper limit of the range of values that the variable should assume.
+|=======================================================================
+
+OBJECTIVE Command
+^^^^^^^^^^^^^^^^^
+The OBJECTIVE command defines an objective for optimization.
+
+[#objectivecommandattributes]
+.Attributes for the command OBJECTIVE.
+[cols="<1,<5",options="header",]
+|=======================================================================
+|Attribute |Description
+| EXPR | Expression to minimize during optimization.
+|=======================================================================
+
+CONSTRAINT Command
+^^^^^^^^^^^^^^^^^
+The CONSTRAINT command defines a constraint for optimization.
+
+[#constraintcommandattributes]
+.Attributes for the command CONSTRAINT.
+[cols="<1,<5",options="header",]
+|=======================================================================
+|Attribute |Description
+| EXPR | Expression that should be fulfilled during optimization.
+|=======================================================================
+
