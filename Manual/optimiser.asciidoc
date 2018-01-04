@@ -124,7 +124,7 @@ image:figures/optimiser/pareto-defs.png[]
 
 [[opt-pilot-commands]]
 OPAL Commands
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 OPTIMIZE Command
 ^^^^^^^^^^^^^^^^^
