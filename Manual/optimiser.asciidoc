@@ -221,11 +221,16 @@ drmsx:OBJECTIVE,EXPR="fabs(sameSDDSVariableAt('rms_x',${loc}) - ${up})";
 drmsy:OBJECTIVE,EXPR="fabs(sameSDDSVariableAt('rms_y',${loc}) - 0.0001833)";
 goalfun:OBJECTIVE,EXPR="sameSDDSVariableAt('rms_x',2.00)";
 
-OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun}, DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50, NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0, NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir", TEMPLATEDIR="tmpl", FIELDMAPDIR="fieldmaps", OUTPUT="optLinac", OUTDIR="results";
+OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun}, 
+          DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50, 
+          NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0, 
+          NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir", TEMPLATEDIR="tmpl", 
+          FIELDMAPDIR="fieldmaps", OUTPUT="optLinac", OUTDIR="results";
 
 QUIT;
 ....
 
+Template file 05-DL_QN3.tmpl:
 ....
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;
@@ -248,8 +253,10 @@ REAL QK1  = 6.2519;
 REAL QSTR = QK1*BRho/2.0;
 
 QDX1: QUADRUPOLE, ELEMEDGE=0.0, L=0.10, APERTURE="circle(0.1)", K1=_QDX1_K1_ * BRho / 2;
-QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)", K1=_QFX1_K1_ * BRho / 2;
-QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)", K1=_QDX2_K1_ * BRho / 2;
+QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)", 
+                  K1=_QFX1_K1_ * BRho / 2;
+QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)", 
+                  K1=_QDX2_K1_ * BRho / 2;
 
 FODO: LINE = (QDX1, QFX1, QDX2);
 
