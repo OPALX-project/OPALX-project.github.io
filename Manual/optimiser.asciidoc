@@ -121,3 +121,42 @@ the Pareto set for database queries.
 [fig:pareto-def]
 .Figure 2: Various definitions regarding Pareto optimality.
 image:figures/optimiser/pareto-defs.png[]
+
+[[opt-pilot-commands]]
+OPAL Commands
+~~~~~~~~~~~~~~~~~
+
+OPTIMIZE Command
+^^^^^^^^^^^^^^^^^
+[#optcommandattributes]
+.Attributes for the command OPTIMIZE.
+[cols="<1,<5",options="header",]
+|=======================================================================
+|Attribute |Description
+| INPUT |  Path to input file.
+| OUTPUT |  Name used in output file generation.
+| OUTDIR |  Name of directory used to store generation output files.
+| OBJECTIVES |  List of objectives to be used.
+| DVARS |  List of optimization variables to be used.
+| CONSTRAINTS |  List of constraints to be used.
+| INITIALPOPULATION |  Size of the initial population.
+| NUM_MASTERS |  Number of master nodes.
+| NUM_COWORKERS |  Number processors per worker.
+| SELECTOR |  Path of the selector.
+| DUMP_DAT |  Dump old generation data format with frequency.
+| DUMP_FREQ |  Dump old generation data format with frequency.
+| NUM_IND_GEN |  Number of individuals in a generation.
+| MAXGENERATIONS |  Number of generations to run.
+| EPSILON |  Tolerance of hypervolume criteria.
+| EXPECTED_HYPERVOL |  The reference hypervolume.
+| CONV_HVOL_PROG |  converge if change in hypervolume is smaller.
+| ONE_PILOT_CONVERGE | 
+| SOL_SYNCH |  Solution exchange frequency.
+| GENE_MUTATION_PROBABILITY |  Mutation probability of individual gene, default: 0.5.
+| MUTATION_PROBABILITY |  Mutation probability of genom, default: 0.5.
+| RECOMBINATION_PROBABILITY |  Probability for genes to recombine, default: 0.5.
+| SIMBIN_CROSSOVER_NU |  Simulated binary crossover.
+| SIMTMPDIR |  Directory where simulations are run.
+| TEMPLATEDIR |  Directory where templates are stored.
+| FIELDMAPDIR |  Directory where field maps are stored.
+|=======================================================================
