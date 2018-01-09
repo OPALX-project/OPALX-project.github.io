@@ -178,6 +178,7 @@ Finally, the optimiser command should be added:
 
 ```
 opt: OPTIMIZE, OBJECTIVES=objs, DVARS=dvars, CONSTRAINTS=constrs;
+```
 
 OPTIMIZE Command
 ^^^^^^^^^^^^^^^^^
