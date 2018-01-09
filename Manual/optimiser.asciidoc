@@ -126,6 +126,59 @@ image:figures/optimiser/pareto-defs.png[]
 OPAL Commands
 ~~~~~~~~~~~~~
 
+Basic Syntax
+^^^^^^^^^^^^
+
+One needs to define the design variables, objectives and constraints one by one:
+
+```
+d1: DVAR, VARIABLE="x1", LOWERBOUND="-1.0", UPPERBOUND="1.0";
+d2: DVAR, VARIABLE="x2", LOWERBOUND="-1.0", UPPERBOUND="1.0";
+d3: DVAR, VARIABLE="x3", LOWERBOUND="-1.0", UPPERBOUND="1.0";
+```
+
+This defines three design variables named `d1`, `d2` and `d3`.
+The variable names `x1`, `x2` and `x3` can be used in objectives and constraints.
+Bounds for design variables should always be given. Note the string notation.
+
+```
+obj1: OBJECTIVE, EXPR="-energy";
+obj2: OBJECTIVE, EXPR="emit_x";
+```
+
+This defines two objectives named `obj1` and `obj2`.
+The optimiser knows several mathematical functions and methods to access output files (see below).
+Without the use of these special methods design variables or the variables from the `.stat` output file at the end of the simulation can be used for optimisation.
+Note that objectives are always minimised, so in this case a solution where the final energy is maximal and the final horizontal emittance is minimal is looked for.
+
+```
+con1: CONSTRAINT, EXPR="x1+x2<1.0";
+con2: CONSTRAINT, EXPR="numParticles>1000";
+```
+
+This defines two constraints. The syntax is similar to the `OBJECTIVE` syntax.
+The first constraint consists of only design variables and will be evaluated before the simulation.
+The second constraint will be evaluated after the simulation.
+
+After defining the individual elements, one needs to define the sets of design variables, objectives and constraints:
+
+```
+dvars:   DVARS       = (d1, d2, d3);
+objs:    OBJECTIVES  = (obj1, obj2);
+constrs: CONSTRAINTS = (con1, con2);
+```
+
+Zero constraints can be defined as:
+
+```
+constrs: CONSTRAINTS = ();
+```
+
+Finally, the optimiser command should be added:
+
+```
+opt: OPTIMIZE, OBJECTIVES=objs, DVARS=dvars, CONSTRAINTS=constrs;
+
 OPTIMIZE Command
 ^^^^^^^^^^^^^^^^^
 The OPTIMIZE command initiates optimization.
@@ -171,8 +224,8 @@ The DVAR command defines a variable for optimization.
 .Attributes for the command DVAR.
 [cols="<1,<5",options="header",]
 |=======================================================================
-|Attribute |Description
-| VARIABLE | Variable name that should be varied during optimization.
+|Attribute   | Description
+| VARIABLE   | Variable name that should be varied during optimization.
 | LOWERBOUND | Lower limit of the range of values that the variable should assume.
 | UPPERBOUND | Upper limit of the range of values that the variable should assume.
 |=======================================================================
@@ -205,17 +258,19 @@ The CONSTRAINT command defines a constraint for optimization.
 Available Expressions
 ^^^^^^^^^^^^^^^^^^^^^
 [#availableexpressions]
-.Available function for the EXPR attributes for OBJECTIVE and CONSTRAINT.
+.Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
 [cols="<3,<5",options="header",]
 |=======================================================================
-| Function | Description
+| Function         | Description
 | fromFile(<file>) | Simple functor that reads vector data from a file. If the file contains more than one value the sum is returned.
-| sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}]
-| sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>) | A simple expression computing the sum of all peak errors (given as first and second argument) for a range of peaks (third argument and fourth argument) latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^end (measurement_i - value_i)^2}]
-| radialPeak(<file>, <turn>) | A simple expression to get the n-th peak of a radial probe.
-| probVariableWithID(<var>, <id>, <probe_file>) |
-| sddsVariableAt(<var>, <spos>, <sdds_file>)  |  A simple expression to get SDDS value near a specific spos for a variable.
-| sameSDDSVariableAt(<var>, <spos>) | The same as sddsVariableAt, uses OPALs statistics file.
+| sddsVariableAt(<var>, <spos>, <sdds_file>)     | A simple expression to get SDDS value near a specific spos for a variable.
+| sameSDDSVariableAt(<var>, <spos>)              | The same as `sddsVariableAt`, uses OPALs statistics file.
+| sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to
+latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}]
+| radialPeak(<file>, <turn>)                     | A simple expression to get the n-th peak of a radial probe https://gitlab.psi.ch/AMAS-BDModels/PSI-Ring/blob/master/RawData/RRI2-0038Y17.peaks[file].
+| sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>) | A simple expression computing the sum of all peak errors (given as first and second argument) for a range of peaks (third argument and fourth argument)
+latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^{end} (measurement_i - value_i)^2}]
+| probVariableWithID(<var>, <id>, <probe_file>)  | Returns the value of the variable (first argument) with a certain ID (second argument) from link:elements#probe-opal-cycl[probe] loss file (third argument).
 |=======================================================================
 
 Example Input File
@@ -234,9 +289,9 @@ dv0: DVAR, VARIABLE="QDX1_K1", LOWERBOUND=0, UPPERBOUND=35;
 dv1: DVAR, VARIABLE="QDX2_K1", LOWERBOUND=0, UPPERBOUND=34;
 dv2: DVAR, VARIABLE="QFX1_K1", LOWERBOUND=-35, UPPERBOUND=0;
 
-drmsx:OBJECTIVE,EXPR="fabs(sameSDDSVariableAt('rms_x',${loc}) - ${up})";
-drmsy:OBJECTIVE,EXPR="fabs(sameSDDSVariableAt('rms_y',${loc}) - 0.0001833)";
-goalfun:OBJECTIVE,EXPR="sameSDDSVariableAt('rms_x',2.00)";
+drmsx:   OBJECTIVE, EXPR="fabs(sameSDDSVariableAt('rms_x',${loc}) - ${up})";
+drmsy:   OBJECTIVE, EXPR="fabs(sameSDDSVariableAt('rms_y',${loc}) - 0.0001833)";
+goalfun: OBJECTIVE, EXPR="sameSDDSVariableAt('rms_x',2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun}, 
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50, 
