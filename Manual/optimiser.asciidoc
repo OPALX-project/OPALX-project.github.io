@@ -132,9 +132,9 @@ Basic Syntax
 One needs to define the design variables, objectives and constraints one by one:
 
 ```
-d1: DVAR, VARIABLE="x1", LOWERBOUND="-1.0", UPPERBOUND="1.0";
-d2: DVAR, VARIABLE="x2", LOWERBOUND="-1.0", UPPERBOUND="1.0";
-d3: DVAR, VARIABLE="x3", LOWERBOUND="-1.0", UPPERBOUND="1.0";
+d1: DVAR, VARIABLE="x1", LOWERBOUND=-1.0, UPPERBOUND=1.0;
+d2: DVAR, VARIABLE="x2", LOWERBOUND=-1.0, UPPERBOUND=1.0;
+d3: DVAR, VARIABLE="x3", LOWERBOUND=-1.0, UPPERBOUND=1.0;
 ```
 
 This defines three design variables named `d1`, `d2` and `d3`.
@@ -159,26 +159,6 @@ con2: CONSTRAINT, EXPR="numParticles>1000";
 This defines two constraints. The syntax is similar to the `OBJECTIVE` syntax.
 The first constraint consists of only design variables and will be evaluated before the simulation.
 The second constraint will be evaluated after the simulation.
-
-After defining the individual elements, one needs to define the sets of design variables, objectives and constraints:
-
-```
-dvars:   DVARS       = (d1, d2, d3);
-objs:    OBJECTIVES  = (obj1, obj2);
-constrs: CONSTRAINTS = (con1, con2);
-```
-
-Zero constraints can be defined as:
-
-```
-constrs: CONSTRAINTS = ();
-```
-
-Finally, the optimiser command should be added:
-
-```
-opt: OPTIMIZE, OBJECTIVES=objs, DVARS=dvars, CONSTRAINTS=constrs;
-```
 
 OPTIMIZE Command
 ^^^^^^^^^^^^^^^^^
