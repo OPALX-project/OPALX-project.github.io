@@ -145,13 +145,13 @@ The variables `d1`, `d2` and `d3` can be used in objectives and constraints.
 Bounds for design variables should always be given.
 
 ```
-obj1: OBJECTIVE, EXPR="-energy";
-obj2: OBJECTIVE, EXPR="emit_x";
+obj1: OBJECTIVE, EXPR="-sameSDDSVariableAt('energy', 1.0)";
+obj2: OBJECTIVE, EXPR="sameSDDSVariableAt('emit_x', 1.0)";
 ```
 
-This defines two objectives named `obj1` and `obj2`.
+This defines two objectives named `obj1` and `obj2` maximizing the energy and minimizing the emittance in x-direction. The function `sameSDDSVariableAt` accecpts as first argument the name of a variable form the `.stat` output file. As second argument it accepts the location where the variable should be evaluated in s-coordinates.
 The optimiser knows several mathematical functions and methods to access output files (see below).
-Without the use of these special methods design variables or the variables from the `.stat` output file at the end of the simulation can be used for optimisation.
+////Without the use of these special methods design variables or the variables from the `.stat` output file at the end of the simulation can be used for optimisation.////
 Note that objectives are always minimised, so in this case a solution where the final energy is maximal and the final horizontal emittance is minimal is looked for.
 
 ```
