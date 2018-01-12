@@ -138,8 +138,11 @@ d3: DVAR, VARIABLE="x3", LOWERBOUND=-1.0, UPPERBOUND=1.0;
 ```
 
 This defines three design variables named `d1`, `d2` and `d3`.
-The variable names `x1`, `x2` and `x3` can be used in objectives and constraints.
-Bounds for design variables should always be given. Note the string notation.
+For every variable name e.g. `x1` a corresponding variable `_x1_` has to exist in the input file. 
+////
+The variables `d1`, `d2` and `d3` can be used in objectives and constraints.
+////
+Bounds for design variables should always be given.
 
 ```
 obj1: OBJECTIVE, EXPR="-energy";
