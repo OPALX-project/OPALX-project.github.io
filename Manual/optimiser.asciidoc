@@ -151,17 +151,21 @@ obj2: OBJECTIVE, EXPR="sameSDDSVariableAt('emit_x', 1.0)";
 
 This defines two objectives named `obj1` and `obj2` maximizing the energy and minimizing the emittance in x-direction. The function `sameSDDSVariableAt` accecpts as first argument the name of a variable form the `.stat` output file. As second argument it accepts the location where the variable should be evaluated in s-coordinates.
 The optimiser knows several mathematical functions and methods to access output files (see below).
-////Without the use of these special methods design variables or the variables from the `.stat` output file at the end of the simulation can be used for optimisation.////
+////
+Without the use of these special methods design variables or the variables from the `.stat` output file at the end of the simulation can be used for optimisation.
+////
 Note that objectives are always minimised, so in this case a solution where the final energy is maximal and the final horizontal emittance is minimal is looked for.
 
 ```
-con1: CONSTRAINT, EXPR="x1+x2<1.0";
-con2: CONSTRAINT, EXPR="numParticles>1000";
+con1: CONSTRAINT, EXPR="sameSDDSVariableAt('rms_x', 1.0) < 1.0";
+con2: CONSTRAINT, EXPR="sameSDDSVariableAt('numParticles', 1.0) > 1000";
 ```
 
 This defines two constraints. The syntax is similar to the `OBJECTIVE` syntax.
+////
 The first constraint consists of only design variables and will be evaluated before the simulation.
 The second constraint will be evaluated after the simulation.
+////
 
 OPTIMIZE Command
 ^^^^^^^^^^^^^^^^^
