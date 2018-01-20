@@ -145,11 +145,11 @@ The variables `d1`, `d2` and `d3` can be used in objectives and constraints.
 Bounds for design variables should always be given.
 
 ```
-obj1: OBJECTIVE, EXPR="-sameSDDSVariableAt('energy', 1.0)";
-obj2: OBJECTIVE, EXPR="sameSDDSVariableAt('emit_x', 1.0)";
+obj1: OBJECTIVE, EXPR="-statVariableAt('energy', 1.0)";
+obj2: OBJECTIVE, EXPR="statVariableAt('emit_x', 1.0)";
 ```
 
-This defines two objectives named `obj1` and `obj2` maximizing the energy and minimizing the emittance in x-direction. The function `sameSDDSVariableAt` accecpts as first argument the name of a variable form the `.stat` output file. As second argument it accepts the location where the variable should be evaluated in s-coordinates.
+This defines two objectives named `obj1` and `obj2` maximizing the energy and minimizing the emittance in x-direction. The function `statVariableAt` accecpts as first argument the name of a variable form the `.stat` output file. As second argument it accepts the location where the variable should be evaluated in s-coordinates.
 The optimiser knows several mathematical functions and methods to access output files (see below).
 ////
 Without the use of these special methods design variables or the variables from the `.stat` output file at the end of the simulation can be used for optimisation.
@@ -157,8 +157,8 @@ Without the use of these special methods design variables or the variables from 
 Note that objectives are always minimised, so in this case a solution where the final energy is maximal and the final horizontal emittance is minimal is looked for.
 
 ```
-con1: CONSTRAINT, EXPR="sameSDDSVariableAt('rms_x', 1.0) < 1.0";
-con2: CONSTRAINT, EXPR="sameSDDSVariableAt('numParticles', 1.0) > 1000";
+con1: CONSTRAINT, EXPR="statVariableAt('rms_x', 1.0) < 1.0";
+con2: CONSTRAINT, EXPR="statVariableAt('numParticles', 1.0) > 1000";
 ```
 
 This defines two constraints. The syntax is similar to the `OBJECTIVE` syntax.
@@ -252,7 +252,7 @@ Available Expressions
 | Function         | Description
 | fromFile(<file>) | Simple functor that reads vector data from a file. If the file contains more than one value the sum is returned.
 | sddsVariableAt(<var>, <spos>, <sdds_file>)     | A simple expression to get SDDS value near a specific spos for a variable.
-| sameSDDSVariableAt(<var>, <spos>)              | The same as `sddsVariableAt`, uses OPALs statistics file.
+| statVariableAt(<var>, <spos>)              | The same as `sddsVariableAt`, uses OPALs statistics file.
 | sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to
 latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}]
 | radialPeak(<file>, <turn>)                     | A simple expression to get the n-th peak of a radial probe https://gitlab.psi.ch/AMAS-BDModels/PSI-Ring/blob/master/RawData/RRI2-0038Y17.peaks[file].
@@ -277,9 +277,9 @@ dv0: DVAR, VARIABLE="QDX1_K1", LOWERBOUND=0, UPPERBOUND=35;
 dv1: DVAR, VARIABLE="QDX2_K1", LOWERBOUND=0, UPPERBOUND=34;
 dv2: DVAR, VARIABLE="QFX1_K1", LOWERBOUND=-35, UPPERBOUND=0;
 
-drmsx:   OBJECTIVE, EXPR="fabs(sameSDDSVariableAt('rms_x',${loc}) - ${up})";
-drmsy:   OBJECTIVE, EXPR="fabs(sameSDDSVariableAt('rms_y',${loc}) - 0.0001833)";
-goalfun: OBJECTIVE, EXPR="sameSDDSVariableAt('rms_x',2.00)";
+drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x',${loc}) - ${up})";
+drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y',${loc}) - 0.0001833)";
+goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun}, 
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50, 
