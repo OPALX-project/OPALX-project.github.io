@@ -179,7 +179,7 @@ Bending Magnets
 ~~~~~~~~~~~~~~~
 
 Bending magnets refer to dipole fields that bend particle trajectories.
-Currently _OPAL_ supports three different bend elements: `RBEND`, (valid
+Currently _OPAL_ supports the following different bend elements: `RBEND`, (valid
 in _OPAL-t_, see Section_<<sec:RBend>>), `SBEND` (valid in _OPAL-t_, see
 Section <<sec:SBend>>), `RBEND3D`, (valid in _OPAL-t_, see Section <<sec:RBend3D>>)
 and `SBEND3D` (valid in _OPAL-cycl_, see Section <<sec:SBend3D>>).
@@ -1189,7 +1189,7 @@ label:QUADRUPOLE, TYPE=string, APERTURE=real-vector,
 The reference system for a quadrupole is a Cartesian coordinate system
 This is a restricted feature: `DOPAL-cycl`.
 
-A `QUADRUPOLE` has three real attributes:
+A `QUADRUPOLE` has the following real attributes:
 
 K1::
   The normal quadrupole component
@@ -1220,7 +1220,7 @@ label: SEXTUPOLE, TYPE=string, APERTURE=real-vector,
        L=real, K2=real, K2S=real;
 ....
 
-A `SEXTUPOLE` has three real attributes:
+A `SEXTUPOLE` has the following real attributes:
 
 K2::
   The normal sextupole component
@@ -1250,7 +1250,7 @@ label:OCTUPOLE, TYPE=string, APERTURE=real-vector,
       L=real, K3=real, K3S=real;
 ....
 
-An `OCTUPOLE` has three real attributes:
+An `OCTUPOLE` has the following real attributes:
 
 K3::
   The normal octupole component
@@ -1461,7 +1461,7 @@ the magnetic field, and also the initial condition of the injected
 reference particle, and it has currently the following attributes:
 
 TYPE::
-  The data format of field map, Currently three formats are implemented:
+  The data format of field map, Currently the following formats are implemented:
   CARBONCYCL, CYCIAE, AVFEQ, FFAG, BANDRF and default PSI format. For
   the details of their data format, please read
   Section link:opalcycl#sec:opalcycl:fieldmap[Field Maps].
