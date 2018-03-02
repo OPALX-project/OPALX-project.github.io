@@ -149,7 +149,7 @@ Clone the OPAL Git repository
 ```
 mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
-git clone git@gitlab.psi.ch:OPAL/src.git
+git clone git@gitlab.psi.ch/OPAL/src.git
 ```
 +
 Select the OPAL branch you want to compile. The current stable branch is `OPAL-1.6`:
