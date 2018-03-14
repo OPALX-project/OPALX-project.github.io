@@ -223,7 +223,8 @@ SCAN::
   If true one can simulate in a loop several machines where some
   variables can be random variables. Find an example in
   Section link:track#sec:randmach[Track a Random Machine]. ````Warning: files are not
-necessarily closed when a new scan begins````
+necessarily closed when a new scan begins```` We recommend using runOPAL.py (https://gitlab.psi.ch/OPAL/src/wikis/runOPAL)
+ 
 CZERO::
   If true the distributions are generated such that the centroid is
   exactly zero and not statistically dependent.
