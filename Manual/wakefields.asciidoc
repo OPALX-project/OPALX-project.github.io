@@ -378,7 +378,9 @@ References
 ~~~~~~~~~~
 
 * [[[bib:schott]]] G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).
-* [[[bib:schwinger1949]]] J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912.
+* [[[bib:schwinger1949]]] J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912. and http://puhep1.princeton.edu/~kirkmcd/accel/schwinger.pdf
+
+
 * [[[bib:murphy1997]]] J. B. Murphy, S. Krinsky, and R. L. Gluckstern, _Longitudinal Wakefield for an Electron Moving on a Circular Orbit_, Particle Accelerators 57, 9–64 (1997).
 * [[[bib:nodvick1954]]] J. S. Nodvick and D. S. Saxon, http://dx.doi.org/10.1103/PhysRev.96.180[_Suppression of Coherent Radiation by Electrons in a Synchrotron_], Phys. Rev. 96, 180–184 (1954) 10.1103/PhysRev.96.180.
 * [[[bib:saldin1997]]] E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov, http://dx.doi.org/10.1016/S0168-9002(97)00822-X[_On the Coherent Radiation of an Electron Bunch Moving in an Arc of a Circle_], Nucl. Instrum. Methods Phys. Res. Sect. A 398, 373–394 (1997) 10.1016/S0168-9002(97)00822-X.
