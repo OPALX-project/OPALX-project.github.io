@@ -59,7 +59,7 @@ _OPAL_-cycl
 ^^^^^^^^^^^
 
 The _OPAL_-cycl flavor see Section link:elements#sec:cyclotron[Cyclotron] is using the so called
-Cyclotron units. Lengths are define in (mm) frequencies in (MHz) momenta
+Cyclotron units. Lengths are defined in (mm), frequencies in (MHz), momenta
 in (latexmath:[\beta\gamma]) and angles in (deg), except `RFPHI` which
 is in (rad).
 
