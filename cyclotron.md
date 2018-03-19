@@ -31,7 +31,7 @@ A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by execu
 
 The result is shown below and was obtained with [cyclotron1.gpl](Cyclotron/cyclotron1.gpl).
 
-<center>![](Cyclotron/cyclotron1.png)</center>
+<center>[![](Cyclotron/cyclotron1.png)]()</center>
 
 # Accelerated Orbit Calculation using cyclotron2.in
 ### Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
@@ -45,7 +45,7 @@ As in the previous example, the result shown below where obtained with [cyclotro
 
 `gnuplot cyclotron2.gpl`
 
-<center>![](Cyclotron/cyclotron2.png)</center>
+<center>[![](Cyclotron/cyclotron2.png)]()</center>
 
 # 3D space charge calculation
 
