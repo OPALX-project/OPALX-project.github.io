@@ -25,6 +25,7 @@ MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure 
 
 ## Solved issues concerned by users in 1.6.1
 
+* Issue #213 correct phase output in multiprocessor mode 
 * Issue #169 New Material: BoronCarbide
 * Issue #106 Segfault in case of Material at beginning of beam line
 * Issue #102 PSDUMPFRAME report is wrong in OPTIOn TELL=TRUE
