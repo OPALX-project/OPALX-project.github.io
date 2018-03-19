@@ -1,6 +1,8 @@
+OPTION, VERSION = 10600;
+
 OPTION, ECHO= FALSE;
 OPTION, PSDUMPFREQ= 10;
-OPTION, PSDUMPLOCALFRAME= TRUE;
+OPTION, PSDUMPFRAME= REFERENCE;
 
 //////////////////////////////////////////////////////////////////////////////
 // input file for single particle tracking				    //
@@ -9,32 +11,32 @@ OPTION, PSDUMPLOCALFRAME= TRUE;
 
 TITLE, STRING= "Ring AEO";
 
-Edes= 0.072;
-pr0 = -0.0164;
-r0  = 2037;
+REAL Edes = 0.072;
+REAL pr0  = -0.0164;
+REAL r0   = 2037;
 
-phi01= 192.0+12;
-phi02= phi01+180.0;
-phi04= phi01;
-phi05= phi01+180.0;
-phi03= 111.40+36+2;
+REAL phi01 = 192.0+12;
+REAL phi02 = phi01+180.0;
+REAL phi04 = phi01;
+REAL phi05 = phi01+180.0;
+REAL phi03 = 111.40+36+2;
 
-volt1st= 0.847;
-ptg=     1.465;
-volt3rd= volt1st*4.0*0.112*ptg;
+REAL volt1st = 0.847;
+REAL ptg     = 1.465;
+REAL volt3rd = volt1st*4.0*0.112*ptg;
 
-r1=   1003.38;
-r2=   6203.38;
-rft1= 1845.45;
-rft2= 4477.24;
+REAL r1   = 1003.38;
+REAL r2   = 6203.38;
+REAL rft1 = 1845.45;
+REAL rft2 = 4477.24;
 
-f1=  50.65;
-f3= 3.0*f1;
+REAL f1 =  50.65;
+REAL f3 = 3.0*f1;
 
-gamma=(Edes+PMASS)/PMASS;
-beta=sqrt(1-(1/gamma^2)); 
-gambet=gamma*beta; 
-P0 = gamma*beta*PMASS;
+REAL gamma=(Edes+PMASS)/PMASS;
+REAL beta=sqrt(1-(1/gamma^2)); 
+REAL gambet=gamma*beta; 
+REAL P0 = gamma*beta*PMASS;
 
 Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=110.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, 
 	         FMAPFN="bfield.dat", TCR1=4350, TCR2=4470, MBTC=14e-3, SLPTC=6.0;

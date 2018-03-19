@@ -4,30 +4,34 @@ touch tuneresult
 exec 6<ic.dat
 N="228"
 j="1"
-while read -u 6 E1 r  pr
-# read in Energy, initil R and intial Pr of each SEO from FIXPO output
+while read -u 6 E1 r pr
+  # read in Energy, initial R and intial Pr of each SEO from FIXPO output
   do
-  echo -n j = 
-  echo " Running turn $j / $N"
-  echo -n energy= > data.dat 
-  echo -n "$E1"  >> data.dat
-  echo  ";" >> data.dat
-
-  echo -n r=  >> data.dat
-  echo -n "$r" >> data.dat
-  echo ";" >> data.dat
-
-  echo -n pr= >> data.dat
-  echo -n "$pr" >> data.dat
-  echo  ";" >> data.dat
-#
-# execute OPAL to calculate tuning frquency and store
-#
-$OPAL_EXE_PATH/opal cyclotron1.in  | grep "Max:"  >> tuneresult
-#   
-#   
-  j=$[$j+1]
+    if [ $j -gt $N ]; then
+        break
+    fi
+    echo -n j = 
+    echo " Running turn $j / $N"
+    echo -n "REAL energy=" > data.dat 
+    echo -n "$E1"  >> data.dat
+    echo  ";" >> data.dat
+    
+    echo -n "REAL r="  >> data.dat
+    echo -n "$r" >> data.dat
+    echo ";" >> data.dat
+    
+    echo -n "REAL pr=" >> data.dat
+    echo -n "$pr" >> data.dat
+    echo  ";" >> data.dat
+    #
+    # execute OPAL to calculate tuning frequency and store
+    #
+    $OPAL_EXE_PATH/opal cyclotron1.in | grep "Max:"  >> tuneresult
+    #
+    #
+    j=$[$j+1]
 done
+
 exec 6<&-
 #
 # post process
@@ -50,5 +54,5 @@ while [ $i -lt $N ]
 done
 exec 8<&-
 exec 9<&-
-#
-rm -rf *.stat timing.dat data cyclotron1-trackOrbit.dat *.h5 a.data tuneresult data.datrm -rf timing.dat data.dat *~
+# Remove intermediary files
+rm -rf *.stat timing.dat data cyclotron1-trackOrbit.dat *.h5 a.data tuneresult data.dat

@@ -5,6 +5,7 @@ Here we will run the Cyclotron flavour of OPAL (OPAL_cyc) in three distinct mode
 3. 3D space charge calculation
 
 # Preparation
+This example is for OPAL 1.6.x.
 If you do not have already access to OPAL, you can visit the download page [the download page](downloads). In
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalPSI). 
 
@@ -29,7 +30,8 @@ A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by execu
 
 `gnuplot cyclotron1.gpl`
 
-The result is shown below and was obtained with [cyclotron1.gpl](Cyclotron/cyclotron1.gpl).
+The result is saved in cyclotron1.pdf and shown below, 
+it was obtained with [cyclotron1.gpl](Cyclotron/cyclotron1.gpl).
 
 <center>![](Cyclotron/cyclotron1.png)</center>
 
@@ -37,17 +39,19 @@ The result is shown below and was obtained with [cyclotron1.gpl](Cyclotron/cyclo
 ### Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
 For this calculation the initial conditions are set in the input file. Run OPAL with
 
-`opal  cyclotron2.in | tee cyclotron2.out`
+`opal cyclotron2.in | tee cyclotron2.out`
 
 where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems. 
 
-As in the previous example, the result shown below where obtained with [cyclotron2.gpl](Cyclotron/cyclotron2.gpl)
+As in the previous example, the result is saved in cycltron2.pdf and shown below, 
+it was obtained with [cyclotron2.gpl](Cyclotron/cyclotron2.gpl)
 
 `gnuplot cyclotron2.gpl`
 
 <center>![](Cyclotron/cyclotron2.png)</center>
 
 # 3D space charge calculation
+### Under construction
 
 In cyclotron2.in, only the distribution and beam command, together with the field solver needs to be adapted.
 
