@@ -1,8 +1,8 @@
 // test for betatron oscillation frequency calculation for PSI Ring cyclotron.
 // called by tuning.bash and work together with FIXPO EORBIT output data. 
 
-// The require the distribution file two particles: first one is referenc particle,
-// and the other is off center particle with a dx and dz. as following:
+// The require the distribution file two particles: first one is reference particle,
+// and the other is off center particle with a dx and dz:
 // 2
 // 0.0         0.0           0.0           0.0          0.0           0.00
 // 0.01         0.0           0.0           0.0          0.01           0.00

@@ -26,7 +26,7 @@ while read -u 6 E1 r pr
     #
     # execute OPAL to calculate tuning frequency and store
     #
-    $OPAL_EXE_PATH/opal cyclotron1.in | grep "Max:"  >> tuneresult
+    opal cyclotron1.in | grep "Max:"  >> tuneresult
     #
     #
     j=$[$j+1]
