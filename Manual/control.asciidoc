@@ -219,12 +219,6 @@ CSRDUMP::
   The CSR field is dumped at each time step of the calculation. Each
   text file is named "Bend Name" (from input file) + "-CSRWake"
   + "time step number in that bend (starting from 1)" + ".txt".
-SCAN::
-  If true one can simulate in a loop several machines where some
-  variables can be random variables. Find an example in
-  Section link:track#sec:randmach[Track a Random Machine]. ````Warning: files are not
-necessarily closed when a new scan begins```` We recommend using runOPAL.py (https://gitlab.psi.ch/OPAL/src/wikis/runOPAL)
- 
 CZERO::
   If true the distributions are generated such that the centroid is
   exactly zero and not statistically dependent.
@@ -313,7 +307,7 @@ OPTION,SEED=987456321
 
 |`ASCIIDUMP` |= `FALSE` |`CZERO` |= `FALSE` |`RNGTYPE` |= `RANDOM`
 
-|`SCAN` |= `FALSE` |`NUMBLOCKS` |= `0` |`RECYCLEBLOCKS` |= `0`
+|`NUMBLOCKS` |= `0` |`RECYCLEBLOCKS` |= `0`
 
 |`NLHS` |= `1` |`IDEALIZE` |= `FALSE` |`ENABLEHDF5` |= `TRUE`
 
