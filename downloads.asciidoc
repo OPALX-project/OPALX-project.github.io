@@ -23,7 +23,7 @@ Download::
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0-1-x86_64-linux.tar.xz[OPAL-2.0.0-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0-1-x86_64-linux.tar.xz.md5[md5 sum] 
 | link:ReleaseNotes/OPAL%202.0.1[release notes]
-
+|========
 
 === OPAL Version 1.6
 
