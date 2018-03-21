@@ -13,6 +13,9 @@ The version of the newest binary distribution package for Linux is 1.6.1-2. For 
 '''
 
 == Packages
+
+=== OPAL Version 2.0
+
 === OPAL Version 1.6
 
 Download::
