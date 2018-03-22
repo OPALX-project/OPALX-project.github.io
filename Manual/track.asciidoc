@@ -166,64 +166,6 @@ _OPAL_ leaves *track mode* when it sees the command
   ENDTRACK;
 ....
 
-[[sec:randmach]]
-Track a Random Machine
-^^^^^^^^^^^^^^^^^^^^^^
-
-This example shows how to track a _random_ machine i.e. some parameters
-are random variables.
-
-....
-Option, SCAN=TRUE;
-......
-
-REAL I=0;
-WHILE (I < 3) {
-
-   REAL rv1:= (RANF()*4.7);
-   REAL rv2:=0.0;
-   REAL rv3:=0.0;
-   REAL rv4:=0.0;
-   REAL rv5:=0.0;
-
-   Ppo: PepperPot, L=200.0E-6, ELEMEDGE=6.0E-3,
-        R=1.0E-4, PITCH=0.5E-4, NHOLX=20, NHOLY=20,
-        XSIZE=5.0E-3, YSIZE=5.0E-3, OUTFN="ppo.h5";
-
-   Col: ECollimator, L=3.0E-3, ELEMEDGE=7.0E-3,
-        XSIZE=7.5E-4, YSIZE=7.5E-4, OUTFN="Coll.h5";
-   SP1: Solenoid, L=1.20, ELEMEDGE=-0.5315,
-        FMAPFN="1T2.T7", KS=8.246e-05 + rv2;
-   SP2: Solenoid, L=1.20, ELEMEDGE=-0.397,
-        FMAPFN="1T3.T7", KS=1.615e-05 + rv3;
-   SP3: Solenoid, L=1.20, ELEMEDGE=-0.267,
-        FMAPFN="1T3.T7", KS=1.016e-05 + rv4;
-   SP4: Solenoid, L=1.20, ELEMEDGE=-0.157,
-        FMAPFN="1T3.T7", KS=4.750e-05 + rv5;
-   SP5: Solenoid, L=1.20, ELEMEDGE=-0.047,
-        FMAPFN="1T3.T7", KS=0.0;
-
-   gun: RFCavity, L=0.013, VOLT=(-47.51437343 + rv1),
-        FMAPFN="1T1.T7", ELEMEDGE=0.00,
-        TYPE="STANDING", FREQ=1.0e-6;
-
-   value,{I, rv1, rv2, rv3, rv4, rv5};
-
-   l1: Line=(gun, Ppo, sp1, sp2, sp3, sp4, sp5);
-
-   SELECT, Line=l1;
-   TRACK, line=l1, beam=beam1, MAXSTEPS=500, DT=2.0e-13;
-    RUN, method="PARALLEL-T", beam=beam1,
-    fieldsolver=Fs1, distribution:=Dist1;
-   ENDTRACK;
-
-   SYSTEM,"mkdir -p scan0-" & STRING(I);
-   SYSTEM,"mv scan-0.h5 scan-0.stat scan-0.lbal scan0-"
-          & STRING(I);
-   I=EVAL(I+1.0);
-}
-....
-
 [[sec:trackrun]]
 Track Particles
 ~~~~~~~~~~~~~~~
