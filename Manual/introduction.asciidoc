@@ -138,7 +138,9 @@ See link:../ReleaseNotes/ReleaseNotes[Release Notes] for a detailed list of chan
 Known Issues and Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See https://gitlab.psi.ch/OPAL/src/issues
+See the https://gitlab.psi.ch/OPAL/src/issues[issue list] in the repository.
+
+See also link:pitfalls[pitfalls and limitations].
 
 [[acknowledgments]]
 Acknowledgments

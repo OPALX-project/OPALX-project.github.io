@@ -25,10 +25,10 @@ new _C++_ classes. It comes in the following flavours:
 
 * _OPAL-cycl_:
   tracks particles with 3D space charge including neighbouring turns in
-  cyclotrons and FFAG’s with time as the independent variable.
+  cyclotrons and FFAGs with time as the independent variable.
 * _OPAL-t_:
   can be used to model beam lines, linacs, rf-photo injectors and
-  complete XFEL’s excluding the undulator.
+  complete XFELs excluding the undulator.
 
 It should be noted that not all features of _OPAL_ are available in all
 flavours. The icon `DOPAL-t` means that a feature is not yet available
@@ -38,6 +38,7 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/introduction[Introduction]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/conventions[Conventions]
+. https://gitlab.psi.ch/OPAL/src/wikis/Manual/pitfalls[Pitfalls and Limitations]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/tutorial[Tutorial]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/opalt[OPAL-T]
 . https://gitlab.psi.ch/OPAL/src/wikis/Manual/opalcycl[OPAL-CYCL]
