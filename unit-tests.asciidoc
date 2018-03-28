@@ -6,7 +6,7 @@ The idea behind unit tests is to check "does this function do what I think it's 
 
 Unit testing is an essential part of the development process for OPAL.
 Also note that tests are code that we need to edit, etc, so tests should obey any
-link:../For-Developers/CodingStyle[relevant style guides].
+link:For%20Developers/CodingStyle[relevant style guides].
 
 == Quick Start
 
