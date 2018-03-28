@@ -28,7 +28,7 @@ OPAL Documentation & Help
 OPAL Start with Examples
 =====================
 1. [Cyclotron](Cyclotron)
-1. [FFAG - link missing](#FFAG)
+[comment]: # 1. [FFAG - link missing](#FFAG)
 1. [RF Photo Injector](RFPhotoInjector)
 1. [Examples from regression tests](RegressionTestExamples)
 1. [Post Processing](PostProcessing)
@@ -47,7 +47,7 @@ OPAL for Developers: Coding Style and Conventions
 ===========================================
 
 1. [Coding Style and Conventions](For Developers/Codingstyle)
-1. [Git workflow](git-usage)
+1. [Git usage](git-usage) and git workflow(git-workflow)
 1. [Compile OPAL at PSI](For Developers/Compile OPAL at PSI)
 1. [Compile OPAL on Mac with Macports](For Developers/Compile OPAL on Mac)
 1. [Compile OPAL on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
