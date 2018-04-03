@@ -122,6 +122,18 @@ the Pareto set for database queries.
 .Figure 2: Various definitions regarding Pareto optimality.
 image:figures/optimiser/pareto-defs.png[]
 
+
+[[opt-MOGA-theory]]
+MOGA Theory
+~~~~~~~~~~~
+
+Here some facts on “ What is the tradeoff between population size and the number of generations in genetic algorithms:
+
+https://cstheory.stackexchange.com/questions/5156/what-is-the-tradeoff-between-population-size-and-the-number-of-generations-in-ge
+
+
+
+
 [[opt-pilot-commands]]
 OPAL Commands
 ~~~~~~~~~~~~~
