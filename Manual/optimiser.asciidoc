@@ -127,7 +127,7 @@ image:figures/optimiser/pareto-defs.png[]
 MOGA Theory
 ~~~~~~~~~~~
 
-Here some facts on “ What is the tradeoff between population size and the number of generations in genetic algorithms:
+Here some facts on “What is the tradeoff between population size and the number of generations in genetic algorithms":
 
 1. https://cstheory.stackexchange.com/questions/5156/what-is-the-tradeoff-between-population-size-and-the-number-of-generations-in-ge
 
