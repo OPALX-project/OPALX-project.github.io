@@ -129,8 +129,11 @@ MOGA Theory
 
 Here some facts on “ What is the tradeoff between population size and the number of generations in genetic algorithms:
 
-https://cstheory.stackexchange.com/questions/5156/what-is-the-tradeoff-between-population-size-and-the-number-of-generations-in-ge
+1. https://cstheory.stackexchange.com/questions/5156/what-is-the-tradeoff-between-population-size-and-the-number-of-generations-in-ge
 
+2. https://www.researchgate.net/post/What_is_the_optimal_recommended_population_size_for_differential_evolution2
+
+3. http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1688360
 
 
 
