@@ -11,9 +11,7 @@ and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
 derived from _MAD9P_ and is based on the _CLASSIC_ class library, which
 was started in 1995 by an international collaboration. IPPL (Independent
 Parallel Particle Layer) is the framework which provides parallel
-particles and fields using data parallel ansatz. IPPL was inspired by the POOMA project.
- 
- _OPAL_ is built from
+particles and fields using data parallel ansatz. IPPL was inspired by the POOMA project. _OPAL_ is built from
 the ground up as a parallel application exemplifying the fact that HPC
 (High Performance Computing) is the third leg of science, complementing
 theory and the experiment. HPC is made possible now through the
