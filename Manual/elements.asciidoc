@@ -2001,6 +2001,8 @@ ECOLLIMATOR::
   Elliptic aperture,
 RCOLLIMATOR::
   Rectangular aperture.
+FLEXIBLECOLLIMATOR::
+  Description of shape and location of holes can be provided
 CCOLLIMATOR::
   Radial rectangular collimator in cyclotrons
 
@@ -2009,6 +2011,8 @@ label:ECOLLIMATOR, TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
 label:RCOLLIMATOR,TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
+label:FLEXIBLECOLLIMATOR, APERTURE=real-vector,
+      L=real, DESCRIPTION=string, FNAME=string, OUTFN=string;
 ....
 
 Each type has the following attributes:
@@ -2022,8 +2026,7 @@ OUTFN::
 Optically a collimator behaves like a drift space, but
 during tracking, it also introduces an aperture limit. The aperture is
 checked at the entrance. If the length is not zero, the aperture is also
-checked at the exit. Lost particles are saved in an H5hut file defined by
-`OUTFN`. The `ELEMEDGE` defines the location of the collimator and `L`
+checked at the exit and at every timestep. Lost particles are saved in an H5hut file defined by `OUTFN`. The `ELEMEDGE` defines the location of the collimator and `L`
 the length.
 
 The reference system for a collimator is a Cartesian coordinate system.
@@ -2038,6 +2041,7 @@ and `YSIZE`.
 For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
 respectively, for rectangular apertures they denote the half-width of
 the rectangle.
+>>PARTICLEMATTERINTERACTION<<
 
 XSIZE::
   The horizontal half-aperture (default: unlimited).
@@ -2050,6 +2054,8 @@ Example:
 Col:ECOLLIMATOR, L=1.0E-3, ELEMEDGE=3.0E-3, XSIZE=5.0E-4,
     YSIZE=5.0E-4, OUTFN="Coll.h5";
 ....
+
+>>``FLEXIBLECOLLIMATOR``...<<
 
 [[opal-cycl-mode]]
 _OPAL-cycl_ mode
