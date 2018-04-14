@@ -2041,7 +2041,6 @@ and `YSIZE`.
 For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
 respectively, for rectangular apertures they denote the half-width of
 the rectangle.
->>PARTICLEMATTERINTERACTION<<
 
 XSIZE::
   The horizontal half-aperture (default: unlimited).
@@ -2055,7 +2054,51 @@ Col:ECOLLIMATOR, L=1.0E-3, ELEMEDGE=3.0E-3, XSIZE=5.0E-4,
     YSIZE=5.0E-4, OUTFN="Coll.h5";
 ....
 
->>``FLEXIBLECOLLIMATOR``...<<
+The `FLEXIBLECOLLIMATOR` can be used to model both simple, rectangular or elliptic collimators and more complex devices like pepper-pots. The configuration of holes can be described with a special language. This language knows the following commands
+
+rectangle(width, height)::
+A rectangle that is centered at the origin of the 2D coordinate system.
+ellipse(width, height)::
+An ellipse that is centered at the origin of the 2D coordinate system.
+translate(command, shiftx, shifty)::
+Translates the holes that are define by the command by shiftx in the x-direction and shifty in the y-direction.
+rotate(command, angle)::
+Rotates the holes that are defined by the command about the origin of the 2D coordinate system.
+union(command1, command2 [, command3 [, command4 [...]]])::
+Collects the holes that are defined the by the commands.
+repeat(command, N, shiftx, shifty)::
+Repeates the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction.
+repeat(command, N, angle)::
+Repeates the holes that are defined by the command rotating each copy successively.
+
+A simple elliptic collimator with major and minor axis of 4 cm and 3 cm respectively can be defined using
+....
+ellipse(0.04, 0.03)
+....
+
+A regular pepper-pot with rectangular holes can be define like this
+....
+repeat( // repeat it in y-direction
+       repeat( // repeat it in x-direction
+              translate(
+                        rectangle(
+                                  0.002,
+                                  0.002,
+                                 ),
+                        -0.028,
+                        -0.028
+                       ),
+              20,
+              0.004,
+              0.0
+             ),
+       20,
+       0.0,
+       0.004
+      )
+....
+
+In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separat file (using `FNAME`; comments and newlines are allowed).
 
 [[opal-cycl-mode]]
 _OPAL-cycl_ mode
