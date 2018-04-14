@@ -2081,10 +2081,13 @@ A regular pepper-pot with rectangular holes can be define like this
 repeat( // repeat it in y-direction
        repeat( // repeat it in x-direction
               translate(
-                        rectangle(
-                                  0.002,
-                                  0.002
-                                 ),
+                        rotate(                        
+                               rectangle(
+                                         0.002,
+                                         0.002
+                                        ),
+                               0.78539
+                              ),
                         -0.028,
                         -0.028
                        ),
@@ -2097,6 +2100,7 @@ repeat( // repeat it in y-direction
        0.004
       )
 ....
+The latter example will produce a holes as in the following picture![pepperpot](/uploads/d7cf04babc2f72f8ceb5b3a85607c946/pepperpot.png)
 
 In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separat file (using `FNAME`; comments and newlines are allowed).
 
