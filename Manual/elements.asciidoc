@@ -2083,7 +2083,7 @@ repeat( // repeat it in y-direction
               translate(
                         rectangle(
                                   0.002,
-                                  0.002,
+                                  0.002
                                  ),
                         -0.028,
                         -0.028
