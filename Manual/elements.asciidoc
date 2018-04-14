@@ -513,7 +513,7 @@ The output is effectively identical, to within a small numerical error.
 Now, let us modify this first example so that we bend instead in the
 negative x direction. There are several ways to do this:
 
-1.  
+1.
 ....
 Bend: RBend, ANGLE = -30.0 * Pi / 180.0,
          FMAPFN = "1DPROFILE1-DEFAULT",
@@ -522,7 +522,7 @@ Bend: RBend, ANGLE = -30.0 * Pi / 180.0,
          L = 0.5,
          GAP = 0.02;
 ....
-2.  
+2.
 ....
 Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
          FMAPFN = "1DPROFILE1-DEFAULT",
@@ -532,7 +532,7 @@ Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
          GAP = 0.02,
          ROTATION = Pi;
 ....
-3.  
+3.
 ....
 Bend: RBend, K0 = 0.0350195,
          FMAPFN = "1DPROFILE1-DEFAULT",
@@ -541,7 +541,7 @@ Bend: RBend, K0 = 0.0350195,
          L = 0.5,
          GAP = 0.02;
 ....
-4.  
+4.
 ....
 Bend: RBend, K0 = -0.0350195,
          FMAPFN = "1DPROFILE1-DEFAULT",
@@ -1019,7 +1019,7 @@ B_z(\Delta_x, y, \Delta_z) &\approx B_0 e^{-\frac{n}{R} \Delta_x} y F'(\Delta_z)
 \end{aligned}
 ++++
 
-* In central region: 
+* In central region:
 
 [latexmath]
 ++++
@@ -1397,10 +1397,10 @@ M30:MULTIPOLET, L=1, RFRINGE=0.3, LFRINGE=0.2, ANGLE=PI/6, TP={2.0, 0.1}, VARRAD
 The field expansion used in this model is based on the following scalar potential:
 [latexmath]
 ++++
- V = z f_0(x,s) + \frac{z^3}{3!} f_1(x,s) + \frac{z^5}{5!} f_2(x,s) + \ldots 
+ V = z f_0(x,s) + \frac{z^3}{3!} f_1(x,s) + \frac{z^5}{5!} f_2(x,s) + \ldots
 ++++
 
-Mid-plane symmetry is assumed and the vertical component of the field on the mid-plane is given by the user under the form of the transverse profile latexmath:[T(x)]. The full expression for the vertical component is then 
+Mid-plane symmetry is assumed and the vertical component of the field on the mid-plane is given by the user under the form of the transverse profile latexmath:[T(x)]. The full expression for the vertical component is then
 [latexmath]
 ++++
 B_z = f_0 = T(x) \cdot S(s)
@@ -1408,7 +1408,7 @@ B_z = f_0 = T(x) \cdot S(s)
 where latexmath:[S(s)] is the fringe field. This element uses the Tanh model for the end fields, having only three parameters (the centre length latexmath:[s_0] and the fringe field lengths latexmath:[\lambda_{left}], latexmath:[\lambda_{right}]):
 [latexmath]
 ++++
- S(s) = \frac{1}{2} \left[ \tanh \left( \frac{s + s_0}{\lambda_{left}} \right) - 
+ S(s) = \frac{1}{2} \left[ \tanh \left( \frac{s + s_0}{\lambda_{left}} \right) -
  \tanh \left( \frac{s - s_0}{\lambda_{right}} \right) \right]
 ++++
 
@@ -1864,7 +1864,7 @@ _OPAL-t_ reads in this field map and constructs the total field of the
 structure fields and the exit fringe field.
 
 The fringe fields are treated as standing wave structures and are given
-by: 
+by:
 
 [latexmath]
 ++++
@@ -1874,7 +1874,7 @@ by:
     \mathbf{E_{exit}}(\mathbf{r}, t) &= \mathbf{E_{from-map}}(\mathbf{r}) \cdot \mathrm{VOLT} \cdot \cos \left( 2\pi \cdot \mathrm{FREQ} \cdot t
         + \phi_{exit} \right)
   \end{aligned}
-++++ 
+++++
 where VOLT and FREQ are the field magnitude and
 frequency attributes (see below).
 latexmath:[ \phi_{entrance}= \mathrm{LAG}], the phase attribute
@@ -2037,7 +2037,7 @@ _OPAL-t_ mode
 
 The `CCOLLIMATOR` isn’t supported. ``ECOLLIMATOR``s and ``RCOLLIMATOR``s
 detect all particles which are outside the aperture defined by `XSIZE`
-and `YSIZE`. 
+and `YSIZE`.
 For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
 respectively, for rectangular apertures they denote the half-width of
 the rectangle.
@@ -2081,7 +2081,7 @@ A regular pepper-pot with rectangular holes can be define like this
 repeat( // repeat it in y-direction
        repeat( // repeat it in x-direction
               translate(
-                        rotate(                        
+                        rotate(
                                rectangle(
                                          0.002,
                                          0.002
@@ -2100,7 +2100,8 @@ repeat( // repeat it in y-direction
        0.004
       )
 ....
-The latter example will produce a holes as in the following picture![pepperpot](/uploads/d7cf04babc2f72f8ceb5b3a85607c946/pepperpot.png)
+The latter example will produce a holes as in the following picture
+image:figures/Elements/pepperpot.png[]
 
 In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separat file (using `FNAME`; comments and newlines are allowed).
 
@@ -2163,7 +2164,7 @@ cma2: CCollimator, XSTART=x3, XEND=x4,YSTART=y3, YEND=y4,
  ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
 ....
 
-The particles lost on the CCOLLIMATOR are recorded in the HDF5 file 
+The particles lost on the CCOLLIMATOR are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
 [[septum-opal-cycl]]
@@ -2194,7 +2195,7 @@ eec2: Septum, xstart=4100.0, xend=4300.0,
 ystart=-1200.0, yend=-150.0, width=0.05;
 ....
 
-The particles lost on the SEPTUM are recorded in the HDF5 file 
+The particles lost on the SEPTUM are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
 [[probe-opal-cycl]]
@@ -2224,7 +2225,7 @@ prob1: Probe, xstart=4166.16, xend=4250.0,
 ystart=-1226.85, yend=-1241.3;
 ....
 
-The particles probed on the PROBE are recorded in the HDF5 file 
+The particles probed on the PROBE are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
@@ -2274,7 +2275,7 @@ opcharge=1, opmass=PMASS, opyield=2, stop=false;
 ....
 
 No matter what the value of STOP is, the particles hitting on the
-STRIPPER are recorded in the HDF5 file 
+STRIPPER are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
 [[degrader-opal-t]]
