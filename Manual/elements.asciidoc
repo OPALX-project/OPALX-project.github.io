@@ -1995,7 +1995,7 @@ This is a restricted feature: `DOPAL-cycl`.
 Collimators
 ~~~~~~~~~~~
 
-Three types of collimators are defined:
+Four types of collimators are defined:
 
 ECOLLIMATOR::
   Elliptic aperture,

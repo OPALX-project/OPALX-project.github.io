@@ -21,4 +21,7 @@ Combine it with big time steps and you'll observe strange effects like splitting
 
 Very Short Active Elements / Big Time Steps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is similar to the problem with hard edge fields. This concerns elements that model electromagnetic devices whose lengths are very short and comparable to the time step. In there case a split of the bunch can be observed which is caused by the fact that some particles are kicked more often than others. The length of the time step should then be adapted to reduce this effect.
+This is similar to the problem with hard edge fields.
+This concerns elements that model electromagnetic devices whose lengths are very short and comparable to the time step.
+In this case a split of the bunch can be observed which is caused by the fact that some particles are kicked more often than others.
+The length of the time step should then be decreased to reduce this effect.
