@@ -128,6 +128,11 @@ image:figures/H5rootPicture1.png[width=250]
 image:figures/H5rootPicture2.png[width=250]
 image:figures/H5rootPicture3.png[width=250]
 
+
+Very important information is displayed on the stdout i.e. the terminal. The user is strongly advised to consult
+the stdout frequently.  
+
+
 [[change-history]]
 Change History
 ~~~~~~~~~~~~~~
