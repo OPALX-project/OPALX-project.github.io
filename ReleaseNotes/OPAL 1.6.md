@@ -1,9 +1,11 @@
 # Release Notes for OPAL 1.6.x
 
 >
-**Note:** OPAL 1.6 will be the last minor release of OPAL 1.  New features will be *not* implemented in this major version. Bugs will still be fixed. We are working on OPAL 2 with many new features.
+**Note:** OPAL 1.6 will be the last minor release of OPAL 1.  New features will *not* be implemented in this major version. Bugs will still be fixed. We are working on OPAL 2 with many new features.
 
-## Installation
+## Installation of the binary package
+
+**Note:** Latest version of the binary package still includes OPAL 1.6.1. A new version will be available soon!
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
@@ -74,7 +76,7 @@ To date the following issues are not solved and scheduled for OPAL-1.6.1
 * Issue #149 **Degrader related**
 * Issue #162 **RBend related**
 
-## Input file related changes in OPAL-1.6.0
+## Input file related changes in OPAL-1.6
 
 * Input files must have a version tag, for example 
     ```
