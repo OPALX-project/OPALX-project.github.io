@@ -1609,14 +1609,14 @@ SYMMETRY::
 IS_CLOSED::
   Set to `FALSE` to disable checking for ring closure.
 LAT_RINIT::
-  Radius of the first element placement in the lattice [mm].
+  Radius of the first element placement in the lattice [m].
 LAT_PHIINIT::
   Azimuthal angle of the first element placed in the lattice [degree].
 LAT_THETAINIT::
   Angle in the mid-plane relative to the ring tangent for placement of
   the first element [degree].
 BEAM_RINIT::
-  Initial radius of the reference trajectory [mm].
+  Initial radius of the reference trajectory [m].
 BEAM_PHIINIT::
   Initial azimuthal angle of the reference trajectory [degree].
 BEAM_PRINIT::
