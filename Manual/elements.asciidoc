@@ -2133,7 +2133,7 @@ ZEND::
   The vertical coordinate of the end point. [mm]. Default value is
   -100mm.
 WIDTH::
-  The width of the septum. [mm]
+  The width of the collimator. [mm]
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element. Collimator
   physics is only a kind of particlematterinteraction. It can be applied
