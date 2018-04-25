@@ -1564,18 +1564,46 @@ significant impact on transverse beam dynamics. Hence a simple momentum
 kick is not enough and we need to read 3D field map to do precise
 simulation.
 
-In addition, the simplified trim-coil field model is also implemented so
-as to do fine tuning on the magnetic field. A trim-coil can be defined
-by 4 arguments:
+In addition, a trim-coil field model is also implemented
+to do fine tuning on the magnetic field. The trimcoils can be added with:
 
-TCR1::
-  Array of inner radii of the trim coils (mm)
-TCR2::
-  Array of outer radii of the trim coils (mm)
-MBTC::
-  Array of the maximal B field of the trim coils (kG)
+TRIMCOIL::
+  Array of the trim coil names
+
+A trim-coil can be defined in two ways:
+
+TYPE::
+  Type specifies PSI-RING or PSI-RING-OLD trim coil descriptions.
+  The general PSI-RING description is based on a rational function with polynomials in the nominator and the denominator.
+  The function describes the magnetic field [T] as function of the radius [mm].   
+  The PSI-RING-OLD type is described in http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf
+RMIN::
+  Inner radius of the trim coil [mm]
+RMAX::
+  Outer radius of the trim coil [mm]
+BMAX::
+  Maximal B field of the trim coils [T]
+COEFNUM::
+  Coefficients of the numerator, first coefficient is zeroth order (for PSI-RING type only)
+COEFDENOM::
+  Coefficients of the denominator, first coefficient is zeroth order.
+  If COEFDENOM is not specified, the denominator is 1, and the description will be a normal polynom.
+  (for PSI-RING type only).
 SLPTC::
-  Array of the slopes of the rising edge (1/mm)
+  Slopes of the rising edge [1/mm] (for PSI-RING-OLD type only)
+
+Example:
+
+....
+tc1:  TrimCoil, TYPE="PSI-RING-OLD", RMIN = 2022.09, RMAX = 2132.09, BMAX=0.0e-4, SLPTC=1;
+tc15: TrimCoil, TYPE="PSI-RING",     RMIN = 3000,    RMAX = 4500,    BMAX=13e-4,
+      COEFNUM   = {-0.426038643356, 0.311242287271, -0.0484487029431},
+      COEFDENOM = {19.3541404562, -22.2057165548, 9.99489842329, -2.00909633025, 0.14942099903};
+
+Ring: CYCLOTRON, TYPE="RINGCYC", CYHARMON=6, PHIINIT=0.0, PRINIT=0.0,
+      RINIT=2131, SYMMETRY=8.0, RFFREQ=50.65, BSCALE=1, FMAPFN="s03av.nar",
+      TRIMCOIL={tc1, tc15};
+....
 
 This is a restricted feature: _OPAL-cycl_.
 
