@@ -1570,7 +1570,7 @@ to do fine tuning on the magnetic field. The trimcoils can be added with:
 TRIMCOIL::
   Array of the trim coil names
 
-A trim-coil can be defined in two ways:
+A `TRIMCOIL` object can be defined in two ways:
 
 TYPE::
   Type specifies PSI-RING or PSI-RING-OLD trim coil descriptions.
@@ -1595,8 +1595,8 @@ SLPTC::
 Example:
 
 ....
-tc1:  TrimCoil, TYPE="PSI-RING-OLD", RMIN = 2022.09, RMAX = 2132.09, BMAX=0.0e-4, SLPTC=1;
-tc15: TrimCoil, TYPE="PSI-RING",     RMIN = 3000,    RMAX = 4500,    BMAX=13e-4,
+tc1:  TRIMCOIL, TYPE="PSI-RING-OLD", RMIN = 2022.09, RMAX = 2132.09, BMAX=2.0e-4, SLPTC=1;
+tc15: TRIMCOIL, TYPE="PSI-RING",     RMIN = 3000,    RMAX = 4500,    BMAX=13e-4,
       COEFNUM   = {-0.426038643356, 0.311242287271, -0.0484487029431},
       COEFDENOM = {19.3541404562, -22.2057165548, 9.99489842329, -2.00909633025, 0.14942099903};
 
