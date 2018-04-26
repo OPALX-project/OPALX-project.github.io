@@ -58,6 +58,7 @@ OPAL for Developers: Coding Style and Conventions
 1. [Building, executing and writing unit tests](unit-tests)
 1. [Adding new Elements to OPAL](new-elements)
 1. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
+1. [Technology & Ideas](tech-ideas)
 
 
 OPAL Physics Resources
