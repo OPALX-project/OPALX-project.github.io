@@ -250,7 +250,7 @@ logical-expr  ::= and-expr | logical-expr "||" and-expr
 |Operator |Meaning |result type |operand type
 |`X < Y`  |true, if `X` is less than `Y`        |logical |real,real
 
-|`X < = Y` |true, if `X` is not greater than `Y` |logical |real,real
+|`X` \<= `Y` |true, if `X` is not greater than `Y` |logical |real,real
 
 |`X > Y`  |true, if `X` is greater than `Y`     |logical |real,real
 
