@@ -27,7 +27,7 @@ MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure 
 ## Solved issues concerned by users in 1.6.2
 
 * Issue #213 correct phase output in multiprocessor mode 
-* Issue #217 SAAMG solver is still not fixed
+* Issue #217 SAAMG solver fixed
  
 ## Solved issues concerned by users in 1.6.1
 
