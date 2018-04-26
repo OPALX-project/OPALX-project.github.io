@@ -55,7 +55,7 @@ OPAL for Developers: Coding Style and Conventions
 1. [Compile OPAL on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
 1. Install Modules [local](installation-local) on MAC and Linux
 1. [OPAL 1.6.x source code documentation](http://amas.web.psi.ch/docs/opal/html/)
-1. [OPAL 2.x source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
+1. [OPAL 2.0.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 1. [Building, executing and writing unit tests](unit-tests)
 1. [Adding new Elements to OPAL](new-elements)
 1. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
