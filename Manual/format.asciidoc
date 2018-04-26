@@ -248,19 +248,19 @@ logical-expr  ::= and-expr | logical-expr "||" and-expr
 [cols="<,<,<,<",options="header",]
 |=======================================================================
 |Operator |Meaning |result type |operand type
-|`X < Y`  |true, if `X` is less than `Y`        |logical |real,real
+|`X` < `Y`  |true, if `X` is less than `Y`        |logical |real,real
 
-|`X` \<= `Y` |true, if `X` is not greater than `Y` |logical |real,real
+|`X` \<= `Y`|true, if `X` is not greater than `Y` |logical |real,real
 
-|`X > Y`  |true, if `X` is greater than `Y`     |logical |real,real
+|`X` > `Y`  |true, if `X` is greater than `Y`     |logical |real,real
 
-|`X >= Y` |true, if `X` is not less than `Y`    |logical |real,real
+|`X` >= `Y` |true, if `X` is not less than `Y`    |logical |real,real
 
-|`X == Y` |true, if `X` is equal to `Y`         |logical |real,real
+|`X` == `Y` |true, if `X` is equal to `Y`         |logical |real,real
 
-|`X != Y` |true, if `X` is not equal to `Y`     |logical |real,real
+|`X` != `Y` |true, if `X` is not equal to `Y`     |logical |real,real
 
-|`X && Y` |true, if both `X` and `Y` are true   |logical |logical,logical
+|`X` && `Y` |true, if both `X` and `Y` are true   |logical |logical,logical
 
 |`X` \|\| `Y` |true, if at least one of `X` and `Y` is
 true |logical |logical,logical
