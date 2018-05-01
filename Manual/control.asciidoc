@@ -151,7 +151,7 @@ SEED::
   integer in the range [0...999999999] (default: 123456789). SEED can be
   an expression. If SEED latexmath:[=] -1, the time is used as seed
   and the generator is not portable anymore. See also: random values
-  see Section link:format#sec:adefer[Deferred Expressions and Random Values].
+  see Section link:format#sec:adefer[Deferred Expressions and Random Values].
 PSDUMPFREQ::
   Defines after how many time steps the phase space is dumped into the
   H5hut file. Default value is 10.
@@ -304,36 +304,47 @@ OPTION,SEED=987456321
 .Default Settings for Options
 [cols="<,<,<,<,<,<",options="header",]
 |=======================================================================
-|`ECHO` |= `FALSE` |`INFO` |= `TRUE` |`TRACE` |= `FALSE`
-|`WARN` |= `TRUE` |`SEED` |= `123456789` |`TELL` |= `FALSE`
-
-|`SPTDUMPFREQ` |= `1` | | | |
-
-|`PSDUMPFREQ` |= `10` |`STATDUMPFREQ` |= `10` |`REPARTFREQ` |= `10`
-
-|`BOUNDPDESTROYFQ` |= `10` |`REBINFREQ` |= `100` |`SCSOLVEFREQ` |= `1`
-
-|`PSDUMPEACHTURN` |= `FALSE` | |
-|`MTSSUBSTEPS` |= `1`
-
-|`RHODUMP` |= `FALSE` |`EBDUMP` |= `FALSE` |`CSRDUMP` |= `FALSE`
-
-|`ASCIIDUMP` |= `FALSE` |`CZERO` |= `FALSE` |`RNGTYPE` |= `RANDOM`
-
-|`NUMBLOCKS` |= `0` |`RECYCLEBLOCKS` |= `0`
-
-|`NLHS` |= `1` |`IDEALIZE` |= `FALSE` |`ENABLEHDF5` |= `TRUE`
-
-|`REMOTEPARTDEL` |= `-1` |`LOGBENDTRAJECTORY` |= `FALSE` |`PPDEBUG` |=
-`FALSE`
-
-|`SURFDUMPFREQ` |= `-1` |`BEAMHALOBOUNDARY` |= `0.0` |`CLOTUNEONLY` |=
-`FALSE`
-
-|`VERSION` |= `none` |`AMR` |= `FALSE` |`MEMORYDUMP` |= `FALSE`
+|`ECHO`              |= `FALSE`
+|`INFO`              |= `TRUE`
+|`TRACE`             |= `FALSE`
+|`WARN`              |= `TRUE`
+|`TELL`              |= `FALSE`
+|`SEED`              |= `123456789`
+|`PSDUMPFREQ`        |= `10`
+|`STATDUMPFREQ`      |= `10`
+|`PSDUMPEACHTURN`    |= `FALSE`
+|`PSDUMPFRAME        |= `GLOBAL`
+|`SPTDUMPFREQ`       |= `1`
+|`REPARTFREQ`        |= `10`
+|`REBINFREQ`         |= `100`
+|`SCSOLVEFREQ`       |= `1`
+|`MTSSUBSTEPS`       |= `1`
+|`REMOTEPARTDEL`     |= `-1`
+|`RHODUMP`           |= `FALSE`
+|`EBDUMP`            |= `FALSE`
+|`CSRDUMP`           |= `FALSE`
+|`AUTOPHASE`         |= `6`
+|`PPDEBUG`           |= 'FALSE`
+|`SURFDUMPFREQ`      |= `-1`
+|`NUMBLOCKS`         |= `0`
+|`RECYCLEBLOCKS`     |= `0`
+|`NLHS`              |= `1`
+|`CZERO`             |= `FALSE`
+|`RNGTYPE`           |= `RANDOM`
+|`ENABLEHDF5`        |= `TRUE`
+|`ASCIIDUMP`         |= `FALSE`
+|`BOUNDPDESTROYFQ`   |= `10`
+|`BEAMHALOBOUNDARY`  |= `0.0`
+|`CLOTUNEONLY`       |= 'FALSE
+|`IDEALIZE`          |= `FALSE`
+|`LOGBENDTRAJECTORY` |= `FALSE`
+|`VERSION`           |= `none`
+|`AMR`               |= `FALSE`
+|`AMR_YT_DUMP_FREQ`  |= `10`
+|`MEMORYDUMP`        |= `FALSE`
 |=======================================================================
 
-[[sec:parameter]]
+[[SEC:parameter]]
 Parameter Statements
 ~~~~~~~~~~~~~~~~~~~~
 
