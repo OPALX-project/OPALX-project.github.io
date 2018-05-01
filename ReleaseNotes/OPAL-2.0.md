@@ -1,4 +1,9 @@
-* full 3D placement of elements
-* integration of optimizer
-* scan option is removed
-* many more features
+* OPAL-T: 3D placement of elements
+    * Overlapping fringe fields now supported
+* Integration of optimizer
+* OPAL-Cycl: general trim coils added
+* OPAL-T: A flexible collimator with configurable hole placement (e.g. for multi-slit or pepper-pot) added
+* Method for scalable generation of particle distribution now provided
+* OPAL-T: Normalization of field maps can be switched off
+* Scan option is removed
+* Many more features
