@@ -6,18 +6,18 @@
 ## Installation of the binary package
 
 >
-**Note:** The latest version of the binary package is OPAL 1.6.1-1 including OPAL 1.6.1. A new version with OPAL 1.6.2 will be available soon!
+**Note:** The latest version of the binary package is OPAL 1.6.2-1 including OPAL 1.6.2.available soon!
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
 1. Un-tar the package
     ```
-    tar xf OPAL-1.6.1-1-x86_64-linux.tar.bz2
+    tar xf OPAL-1.6.2-1-x86_64-linux.tar.xz
 
     ```
 1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
  ```
- source $PREFIX/OPAL-1.6.1/etc/profile.d/opal.sh
+ source "$PREFIX/OPAL-1.6.1/etc/profile.d/opal.sh"
  ```
 1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](http://amas.web.psi.ch/tools/H5root/index.html).
 
