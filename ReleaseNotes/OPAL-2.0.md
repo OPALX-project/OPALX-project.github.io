@@ -1,5 +1,32 @@
 # Release Notes for OPAL 2.0
 
+## New features in OPAL 2.0.0
+
+* OPAL-T: 3D placement of elements
+    * Overlapping fringe fields now supported
+* Integration of optimizer
+* OPAL-Cycl: general trim coils added
+* OPAL-T: A flexible collimator with configurable hole placement (e.g. for multi-slit or pepper-pot) added
+* Method for scalable generation of particle distribution now provided
+* OPAL-T: Normalization of field maps can be switched off
+* Scan option is removed
+* OPAL mode for highlighting in emacs added
+* Many more features
+
+## Input file related changes introduced in OPAL-1.6
+
+* Input files must have a version tag, for example 
+    ```
+    OPTION, VERSION=10900;
+    ```
+    indicating version 1.9.x and newer
+* OPAL is now fully typed. Each variable has to have a type for example
+    ```
+    REAL Edes=.072;
+    REAL gamma=(Edes+PMASS)/PMASS;
+    ```
+    Only **REAL, STRING, BOOL** and **ARRAY** are supported
+
 ## Installation of the binary package
 
 >
@@ -21,14 +48,3 @@
 >
 MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
 
-
-* OPAL-T: 3D placement of elements
-    * Overlapping fringe fields now supported
-* Integration of optimizer
-* OPAL-Cycl: general trim coils added
-* OPAL-T: A flexible collimator with configurable hole placement (e.g. for multi-slit or pepper-pot) added
-* Method for scalable generation of particle distribution now provided
-* OPAL-T: Normalization of field maps can be switched off
-* Scan option is removed
-* OPAL mode for highlighting in emacs added
-* Many more features
