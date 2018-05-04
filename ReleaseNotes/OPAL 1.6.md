@@ -6,7 +6,7 @@
 ## Installation of the binary package
 
 >
-**Note:** The latest version of the binary package is OPAL 1.6.2-1 including OPAL 1.6.2.available soon!
+**Note:** The latest version of the binary package is OPAL 1.6.2-1 including OPAL 1.6.2.
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
