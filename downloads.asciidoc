@@ -6,7 +6,7 @@
 '''
 
 == Overview 
-The current OPAL versions is 1.6.2 and 2.0.0 release candidate 2).
+The current OPAL versions is 1.6.2 and 2.0.0 (second release candidate).
 
 The version of the newest binary distribution package for Linux is 1.6.2-1. For the time being we do not provide OPAL  packages of 1.6 and 2.0 for macOS.
 
