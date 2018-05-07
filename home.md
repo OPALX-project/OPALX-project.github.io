@@ -11,7 +11,7 @@ OPAL Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
 
-* [OPAL Release Notes for OPAL 1.6]( ReleaseNotes/OPAL-1.6)
+* [OPAL Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
 
 * [Download page](downloads) with OPAL binaries.
 
