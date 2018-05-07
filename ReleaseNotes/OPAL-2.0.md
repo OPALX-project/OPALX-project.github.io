@@ -25,7 +25,7 @@
     REAL Edes=.072;
     REAL gamma=(Edes+PMASS)/PMASS;
     ```
-    Only **REAL, STRING, BOOL** and **ARRAY** are supported
+    Only **REAL, REAL CONSTANT, REAL VARIABLE, STRING, STRING CONSTANT, BOOL, BOOL CONSTANT** and **REAL VECTOR** are supported
 * OPAL-T: Beamlines containing a cathod have to have a `SOURCE` element to indicate this fact.
 * OPAL-T: The design energy of dipoles is now expected in MeV instead of eV
 * The meaning of `OFFSETZ` of the command `DISTRIBUTION` has changed. It now indicates a shift of the particle bunch relative to the reference particle. Use the `ZSTART` attribute of the `TRACK` command to start the simulation at a position `z > 0`
