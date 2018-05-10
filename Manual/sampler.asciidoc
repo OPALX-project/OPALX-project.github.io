@@ -101,7 +101,7 @@ SAMPLE,
     NUM_COWORKERS   = 1;
 QUIT;
 ....
-The samples of ```nstep``` are provided by ```nsteps.dat``` that could look like as follows:
+The samples of ```nstep``` are provided by ```nsteps.dat``` that could look like this:
 ....
 MX    nstep
 16    10
