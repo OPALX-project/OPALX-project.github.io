@@ -64,7 +64,8 @@ Available Sampling Methods
 | Method |Description
 | FROMFILE | The samples are provided by a file. A column represents the
              values of a design variable. The first line is the header reading
-             the variable name.
+             the variable name. Not all variables need to be provided in the file.
+             This allows also reading variables from different files.
 | SEQUENCE | Generates an equidistant sequence taking the lower and upper
              bound of the design variable command. 
 | UNIFORM_INT| Uniform random sampling of integers. It takes the lower and
