@@ -24,8 +24,6 @@ design variables is described in the section https://gitlab.psi.ch/OPAL/src/wiki
 
 SAMPLE Command
 ^^^^^^^^^^^^^^
-The SAMPLE command initiates.
-
 [#samplecommandattributes]
 .Attributes for the command SAMPLE.
 [cols="<1,<5",options="header",]
@@ -42,4 +40,34 @@ The SAMPLE command initiates.
 | SIMTMPDIR |  Directory where simulations are run.
 | TEMPLATEDIR |  Directory where templates are stored.
 | FIELDMAPDIR |  Directory where field maps are stored.
+|=======================================================================
+
+SAMPLING Command
+^^^^^^^^^^^^^^^^
+[#samplingcommandattributes]
+.Attributes for the command SAMPLING.
+[cols="<1,<5",options="header",]
+|=======================================================================
+|Attribute |Description
+| VARIABLE | Name of the design variable.
+| TYPE |  Sampling method (see next section).
+| SEED |  Seed for random sampling (default: 42).
+| FNAME | File to read the samples from.
+|=======================================================================
+
+Available Sampling Methods
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+[#samplemethods]
+.Available sampling methods.
+[cols="<1,<5",options="header",]
+|=======================================================================
+| Method |Description
+| FROMFILE | The samples are provided by a file. A column represents the
+             values of a design variable. The first line is the header reading
+             the variable name.
+| SEQUENCE | Generates an equidistant sequence taking the lower and upper
+             bound of the design variable command. 
+| UNIFORM_INT| Uniform random sampling of integers. It takes the lower and
+               upper bound of the design variable command.
+| UNIFORM_REAL |  Like UNIFORM_INT but for floats.
 |=======================================================================
