@@ -83,10 +83,9 @@ OPTION, INFO=TRUE;
 nstep:  DVAR, VARIABLE="nstep", LOWERBOUND=10,     UPPERBOUND=40;
 MX:     DVAR, VARIABLE="MX",    LOWERBOUND=16,      UPPERBOUND=32;
 
-
-SM1: SAMPLING, VARIABLE="nstep", TYPE="FROMFILE", FNAME="fname.dat";
-SM2: SAMPLING, VARIABLE="MX", TYPE="UNIFORM_INT", SEED=122;
-
+// Sampling methods
+SM1: SAMPLING, VARIABLE="nstep", TYPE="FROMFILE",    FNAME="nsteps.dat";
+SM2: SAMPLING, VARIABLE="MX",    TYPE="UNIFORM_INT", SEED=122;
 
 SAMPLE,
     N               = 10,
@@ -102,4 +101,18 @@ SAMPLE,
     NUM_COWORKERS   = 1;
 QUIT;
 ....
-
+The samples of ```nstep``` are provided by ```nsteps.dat``` that could look like as follows:
+....
+MX    nstep
+16    10
+17    11
+18    12
+19    13
+20    14
+21    15
+22    16
+23    17
+24    18
+25    19
+....
+Although the file contains samples for ```MX```, too. They are not considered.
