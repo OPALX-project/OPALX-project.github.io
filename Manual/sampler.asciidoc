@@ -10,19 +10,20 @@ toc::[]
 [[chp:sample]]
 Sampling
 --------
-
+This is a special feature of the [optimiser](https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser). Instead of performing a multi-objective optimisation, it creates samples
+of the the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
 
 [[sample-commands]]
 OPAL Commands
 ~~~~~~~~~~~~~
+It uses almost the same syntax as the optimiser.
 
+SAMPLE Command
+^^^^^^^^^^^^^^
+The SAMPLE command initiates.
 
-OPTIMIZE Command
-^^^^^^^^^^^^^^^^^
-The OPTIMIZE command initiates optimization.
-
-[#optcommandattributes]
-.Attributes for the command OPTIMIZE.
+[#samplecommandattributes]
+.Attributes for the command SAMPLE.
 [cols="<1,<5",options="header",]
 |=======================================================================
 |Attribute |Description
