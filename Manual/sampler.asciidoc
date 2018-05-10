@@ -10,7 +10,7 @@ toc::[]
 [[chp:sample]]
 Sampler
 --------
-This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[`optimiser` optimizser]. Instead of performing a multi-objective optimisation, it creates samples
+This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples
 of the the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
 
 [[sample-commands]]
