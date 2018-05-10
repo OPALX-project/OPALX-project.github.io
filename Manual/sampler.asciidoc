@@ -35,7 +35,7 @@ SAMPLE Command
 | DVARS |  List of design variables to be used.
 | SAMPLINGS | List of sample methods to be used.
 | N | Number of samples to run.
-| NUM_MASTERS |  Number of master nodes.
+| NUM_MASTERS |  Number of master nodes (currently only 1 master supported).
 | NUM_COWORKERS |  Number processors per worker.
 | SIMTMPDIR |  Directory where simulations are run.
 | TEMPLATEDIR |  Directory where templates are stored.
