@@ -72,3 +72,6 @@ Available Sampling Methods
                upper bound of the design variable command.
 | UNIFORM_REAL |  Like UNIFORM_INT but for floats.
 |=======================================================================
+
+Example Input File
+^^^^^^^^^^^^^^^^^
