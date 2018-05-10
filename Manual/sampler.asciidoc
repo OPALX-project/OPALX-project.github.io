@@ -17,6 +17,11 @@ OPAL Commands
 ~~~~~~~~~~~~~
 It uses almost the same syntax as the optimiser.
 
+Basic Syntax
+^^^^^^^^^^^^
+One needs to define the design variables and their sampling method. The syntax for
+design variables is described in the section https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[DVAR Command].
+
 SAMPLE Command
 ^^^^^^^^^^^^^^
 The SAMPLE command initiates.
