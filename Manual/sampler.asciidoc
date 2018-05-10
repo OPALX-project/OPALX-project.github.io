@@ -92,8 +92,8 @@ SAMPLE,
     DVARS           = {nstep, MX},
     SAMPLINGS       = {SM1, SM2},
     INPUT           = "Ring.tmpl",
-    OUTPUT          = "RingOpt",
-    OUTDIR          = "RingOpt",
+    OUTPUT          = "RingSample",
+    OUTDIR          = "RingSample",
     SIMTMPDIR       = "tmp",
     TEMPLATEDIR     = "template",
     FIELDMAPDIR     = "Fieldmaps",
@@ -115,7 +115,7 @@ MX    nstep
 24    18
 25    19
 ....
-Although the file contains samples for ```MX```, too. They are not considered. The
+Although the file contains samples for ```MX```, too, they are not considered. The
 corresponding template file ```Ring.tmpl``` reads:
 ....
 Option, ECHO=FALSE;
