@@ -67,7 +67,10 @@ Available Sampling Methods
              the variable name. Not all variables need to be provided in the file.
              This allows also reading variables from different files.
 | SEQUENCE | Generates an equidistant sequence taking the lower and upper
-             bound of the design variable command. 
+             bound of the design variable command.
+| GAUSSIAN_SEQUENCE | Generates a sequence with a gaussian distribution taking
+                      the difference between upper and lower bound of the design
+                      variable as 10 sigmas.
 | UNIFORM_INT| Uniform random sampling of integers. It takes the lower and
                upper bound of the design variable command.
 | UNIFORM_REAL |  Like UNIFORM_INT but for floats.
