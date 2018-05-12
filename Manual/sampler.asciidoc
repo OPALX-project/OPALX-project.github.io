@@ -28,18 +28,18 @@ SAMPLE Command
 .Attributes for the command SAMPLE.
 [cols="<1,<5",options="header",]
 |=======================================================================
-|Attribute |Description
-| INPUT |  Path to input file.
-| OUTPUT |  Name used in output file generation.
-| OUTDIR |  Name of directory used to store generation output files.
-| DVARS |  List of design variables to be used.
-| SAMPLINGS | List of sample methods to be used.
-| N | Number of samples to run.
-| NUM_MASTERS |  Number of master nodes (currently only 1 master supported).
-| NUM_COWORKERS |  Number processors per worker.
-| SIMTMPDIR |  Directory where simulations are run.
-| TEMPLATEDIR |  Directory where templates are stored.
-| FIELDMAPDIR |  Directory where field maps are stored.
+| Attribute     | Description
+| INPUT         | Path to input file.
+| OUTPUT        | Name used in output file generation.
+| OUTDIR        | Name of directory used to store generation output files.
+| DVARS         | List of design variables to be used.
+| SAMPLINGS     | List of sample methods to be used.
+| N             | Number of samples to run.
+| NUM_MASTERS   | Number of master nodes (currently only 1 master supported).
+| NUM_COWORKERS | Number processors per worker.
+| SIMTMPDIR     | Directory where simulations are run.
+| TEMPLATEDIR   | Directory where templates are stored.
+| FIELDMAPDIR   | Directory where field maps are stored.
 |=======================================================================
 
 SAMPLING Command
@@ -48,11 +48,11 @@ SAMPLING Command
 .Attributes for the command SAMPLING.
 [cols="<1,<5",options="header",]
 |=======================================================================
-|Attribute |Description
-| VARIABLE | Name of the design variable.
-| TYPE |  Sampling method (see next section).
-| SEED |  Seed for random sampling (default: 42).
-| FNAME | File to read the samples from.
+| Attribute | Description
+| VARIABLE  | Name of the design variable.
+| TYPE      | Sampling method (see next section).
+| SEED      | Seed for random sampling (default: 42).
+| FNAME     | File to read the samples from.
 |=======================================================================
 
 Available Sampling Methods
@@ -61,21 +61,21 @@ Available Sampling Methods
 .Available sampling methods.
 [cols="<1,<5",options="header",]
 |=======================================================================
-| Method |Description
-| FROMFILE | The samples are provided by a file. A column represents the
-             values of a design variable. The first line is the header reading
-             the variable name. Not all variables need to be provided in the file.
-             This allows also reading variables from different files.
-| SEQUENCE | Generates an equidistant sequence taking the lower and upper
-             bound of the design variable command.
+| Method            | Description
+| FROMFILE          | The samples are provided by a file. A column represents the
+                      values of a design variable. The first line is the header reading
+                      the variable name. Not all variables need to be provided in the file.
+                      This allows also reading variables from different files.
+| SEQUENCE          | Generates an equidistant sequence taking the lower and upper
+                      bound of the design variable command.
 | GAUSSIAN_SEQUENCE | Generates a sequence with a gaussian distribution taking
                       the difference between upper and lower bound of the design
                       variable as latexmath:[10\;\sigma].
 | GAUSSIAN_RANDOM   | Gaussian random sampling of floats. The upper and lower bound
                       are the latexmath:[\pm 5\; \sigma] limits of the distribution.
-| UNIFORM_INT| Uniform random sampling of integers. It takes the lower and
-               upper bound of the design variable command.
-| UNIFORM_REAL |  Like UNIFORM_INT but for floats.
+| UNIFORM_INT       | Uniform random sampling of integers. It takes the lower and
+                      upper bound of the design variable command.
+| UNIFORM_REAL      | Like UNIFORM_INT but for floats.
 |=======================================================================
 
 Example Input File
@@ -106,6 +106,7 @@ SAMPLE,
     NUM_COWORKERS   = 1;
 QUIT;
 ....
+
 The samples of ```nstep``` are provided by ```samples.dat``` that could look like this:
 ....
 MX    nstep
