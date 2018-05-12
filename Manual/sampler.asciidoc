@@ -70,9 +70,9 @@ Available Sampling Methods
              bound of the design variable command.
 | GAUSSIAN_SEQUENCE | Generates a sequence with a gaussian distribution taking
                       the difference between upper and lower bound of the design
-                      variable as 10 sigmas.
+                      variable as latexmath:[10\;\sigma].
 | GAUSSIAN_RANDOM   | Gaussian random sampling of floats. The upper and lower bound
-                      are the latexmath:[\pm 5 \sigma] limits of the distribution.
+                      are the latexmath:[\pm 5\; \sigma] limits of the distribution.
 | UNIFORM_INT| Uniform random sampling of integers. It takes the lower and
                upper bound of the design variable command.
 | UNIFORM_REAL |  Like UNIFORM_INT but for floats.
