@@ -34,7 +34,6 @@ SEQUENCESAMPLE Command (Sequence Mode)
 | OUTDIR        | Name of directory used to store generation output files.
 | DVARS         | List of design variables to be used.
 | SAMPLINGS     | List of sample methods to be used.
-| N             | Number of samples to run.
 | NUM_MASTERS   | Number of master nodes (currently only 1 master supported).
 | NUM_COWORKERS | Number processors per worker.
 | SIMTMPDIR     | Directory where simulations are run.
