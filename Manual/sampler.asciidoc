@@ -63,6 +63,7 @@ SAMPLING Command
 | TYPE      | Sampling method (see next section).
 | SEED      | Seed for random sampling (default: 42).
 | FNAME     | File to read the samples from.
+| N         | Number of samples per this design variable (only in sequence mode)
 |=======================================================================
 
 Available Sampling Methods
