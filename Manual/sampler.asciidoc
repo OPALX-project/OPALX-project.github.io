@@ -22,10 +22,10 @@ Basic Syntax
 One needs to define the design variables and their sampling method. The syntax for
 design variables is described in the section https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[DVAR Command].
 
-SAMPLE Command
-^^^^^^^^^^^^^^
+SEQUENCESAMPLE Command (Sequence Mode)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 [#samplecommandattributes]
-.Attributes for the command SAMPLE.
+.Attributes for the command SEQUENCESAMPLE.
 [cols="<1,<5",options="header",]
 |=======================================================================
 | Attribute     | Description
@@ -40,6 +40,17 @@ SAMPLE Command
 | SIMTMPDIR     | Directory where simulations are run.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
+|=======================================================================
+
+SAMPLE Command (Random Mode)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The SAMPLE command has the following attributes in addition to the attributes of the SEQUENCESAMPLE command
+[#samplecommandattributes]
+.Attributes for the command SEQUENCESAMPLE.
+[cols="<1,<5",options="header",]
+|=======================================================================
+| Attribute     | Description
+| N             | Number of samples to run.
 |=======================================================================
 
 SAMPLING Command
@@ -66,16 +77,19 @@ Available Sampling Methods
                       values of a design variable. The first line is the header reading
                       the variable name. Not all variables need to be provided in the file.
                       This allows also reading variables from different files.
-| SEQUENCE          | Generates an equidistant sequence taking the lower and upper
-                      bound of the design variable command.
-| GAUSSIAN_SEQUENCE | Generates a sequence with a gaussian distribution taking
+| UNIFORM           | In sequence mode: Generates an equidistant sequence taking the lower and upper
+                      bound of the design variable command as limits.
+                      In random mode: Uniform random sampling of floats. It takes the lower and upper
+                      bound of the design variable command as limits.
+| UNIFORM_INT       | In sequence mode: Generates an equidistant sequence of integers taking the lower
+                      and upper bound of the design variable command as limits.
+                      In random mode: Uniform random sampling of integers. It takes the lower and
+                      upper bound of the design variable command.
+| GAUSSIAN          | In sequence mode: Generates a sequence with a gaussian distribution taking
                       the difference between upper and lower bound of the design
                       variable as latexmath:[10\;\sigma].
-| GAUSSIAN_RANDOM   | Gaussian random sampling of floats. The upper and lower bound
+                      In random mode: Gaussian random sampling of floats. The upper and lower bound
                       are the latexmath:[\pm 5\; \sigma] limits of the distribution.
-| UNIFORM_INT       | Uniform random sampling of integers. It takes the lower and
-                      upper bound of the design variable command.
-| UNIFORM_REAL      | Like UNIFORM_INT but for floats.
 |=======================================================================
 
 Example Input File
