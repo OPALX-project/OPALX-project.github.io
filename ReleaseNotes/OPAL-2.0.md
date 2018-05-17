@@ -15,6 +15,7 @@
 
 ## Input file related changes (partially introduced in OPAL-1.6)
 
+* The attribute `BFREQ` of the `BEAM` command is now in MHz instead of Hz
 * Input files must have a version tag, for example 
     ```
     OPTION, VERSION=10900;
@@ -31,7 +32,6 @@
 * The meaning of `OFFSETZ` of the command `DISTRIBUTION` has changed. It now indicates a shift of the particle bunch relative to the reference particle. Use the `ZSTART` attribute of the `TRACK` command to start the simulation at a position `z > 0`
 * The attribute `DISTRIBUTION` of the command `DISTRIBUTION` has been renamed to `TYPE`
 * OPAL-T: The attribute `ROTATION` of `RBEND` and `SBEND` has been replaced by `PSI` which now can be applied to all elements to rotate them about the reference trajectory
-
 ## Installation of the binary package
 
 >
