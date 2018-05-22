@@ -101,12 +101,12 @@ SM1: SAMPLING, VARIABLE="nstep", TYPE="FROMFILE",    FNAME="samples.dat";
 SM2: SAMPLING, VARIABLE="MX",    TYPE="UNIFORM_INT", SEED=122, N = 6;
 
 SAMPLE,
+    SEQUENCE        = false,
     DVARS           = {nstep, MX},
     SAMPLINGS       = {SM1, SM2},
     INPUT           = "Ring.tmpl",
     OUTPUT          = "RingSample",
     OUTDIR          = "RingSample",
-    SIMTMPDIR       = "samples",
     TEMPLATEDIR     = "template",
     FIELDMAPDIR     = "Fieldmaps",
     NUM_MASTERS     = 1,
