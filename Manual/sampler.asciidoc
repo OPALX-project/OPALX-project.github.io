@@ -33,7 +33,7 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 [cols="<1,<5",options="header",]
 |=======================================================================
 | Attribute     | Description
-| SEQUENCE      | Random or sequence mode (default)
+| SEQUENCE      | Boolean for random or sequence mode (default: true)
 | INPUT         | Path to input file.
 | OUTPUT        | Name used in output file generation.
 | OUTDIR        | Name of directory used to run and store generation output files.
