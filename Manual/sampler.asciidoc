@@ -26,7 +26,7 @@ design variables is described in the section https://gitlab.psi.ch/OPAL/src/wiki
 
 SAMPLE Command
 ^^^^^^^^^^^^^^
-It allows random (SEQUENCE=false) and sequence mode.
+It allows *random* (SEQUENCE=false) and *sequence* mode.
 
 [#samplecommandattributes]
 .Attributes for the command SAMPLE.
