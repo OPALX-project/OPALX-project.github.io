@@ -24,34 +24,25 @@ Basic Syntax
 One needs to define the design variables and their sampling method. The syntax for
 design variables is described in the section https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[DVAR Command].
 
-SEQUENCESAMPLE Command (Sequence Mode)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SAMPLE Command
+^^^^^^^^^^^^^^
+It allows random (SEQUENCE=false) and sequence mode.
+
 [#samplecommandattributes]
-.Attributes for the command SEQUENCESAMPLE.
+.Attributes for the command SAMPLE.
 [cols="<1,<5",options="header",]
 |=======================================================================
 | Attribute     | Description
+| SEQUENCE      | Random or sequence mode (default)
 | INPUT         | Path to input file.
 | OUTPUT        | Name used in output file generation.
-| OUTDIR        | Name of directory used to store generation output files.
+| OUTDIR        | Name of directory used to run and store generation output files.
 | DVARS         | List of design variables to be used.
 | SAMPLINGS     | List of sample methods to be used.
 | NUM_MASTERS   | Number of master nodes (currently only 1 master supported).
 | NUM_COWORKERS | Number processors per worker.
-| SIMTMPDIR     | Directory where simulations are run.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
-|=======================================================================
-
-SAMPLE Command (Random Mode)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The SAMPLE command has the following attributes in addition to the attributes of the SEQUENCESAMPLE command
-[#samplecommandattributes]
-.Attributes for the command SEQUENCESAMPLE.
-[cols="<1,<5",options="header",]
-|=======================================================================
-| Attribute     | Description
-| N             | Number of samples to run.
 |=======================================================================
 
 SAMPLING Command
@@ -65,7 +56,7 @@ SAMPLING Command
 | TYPE      | Sampling method (see next section).
 | SEED      | Seed for random sampling (default: 42).
 | FNAME     | File to read the samples from.
-| N         | Number of samples per this design variable (only in sequence mode)
+| N         | Number of samples per this design variable
 |=======================================================================
 
 Available Sampling Methods
