@@ -74,8 +74,8 @@ used cores for a test example with parameters given in Table <<pex1,1>>. The
 data were obtained on a Cray XT5 at the Swiss Center for Scientific
 Computing.
 
-.Figure 1 : Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
 [#walldrift]
+.Figure 1 : Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
 image::figures/drift2c1.png[scaledwidth=75.0%]
 
 [[quality-management]]
