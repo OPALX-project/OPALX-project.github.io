@@ -75,7 +75,7 @@ data were obtained on a Cray XT5 at the Swiss Center for Scientific
 Computing.
 
 [#walldrift]
-Figure 1: Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
+**Figure 1: Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores**
 
 image:figures/drift2c1.png[scaledwidth=10cm]
 
