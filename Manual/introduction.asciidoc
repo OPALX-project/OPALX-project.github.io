@@ -75,7 +75,8 @@ data were obtained on a Cray XT5 at the Swiss Center for Scientific
 Computing.
 
 [#walldrift]
-.Figure 1: Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
+Figure 1: Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
+
 image:figures/drift2c1.png[scaledwidth=10cm]
 
 [[quality-management]]
@@ -102,11 +103,10 @@ size. Comments and _active contributions_ from readers are therefore
 most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelmann].
 
 [#guncomp1]
-ifdef::backend-html[]
-.Figure 2 : Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
+Figure 2 : Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
+
 image:figures/Gun/GunCompEn.png[scaledwidth=50.0%]
 image:figures/Gun/GunCompEx.png[scaledwidth=50.0%]
-endif::[]
 
 [[output]]
 Output
