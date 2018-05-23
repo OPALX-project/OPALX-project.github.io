@@ -183,7 +183,7 @@ year = {(2008-2018)}
 }
 ....
 
-[bibliography]
+[[bibliography]]
 References
 ~~~~~~~~~~
 * [[[bib:classic]]] F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
