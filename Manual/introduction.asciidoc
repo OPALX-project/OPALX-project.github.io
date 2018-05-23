@@ -76,7 +76,7 @@ Computing.
 
 [#walldrift]
 .Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
-image::figures/drift2c1.png[scaledwidth=75.0%]
+image:figures/drift2c1.png[scaledwidth=75.0%]
 
 [[quality-management]]
 Quality Management
