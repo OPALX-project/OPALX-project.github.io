@@ -103,7 +103,7 @@ size. Comments and _active contributions_ from readers are therefore
 most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelmann].
 
 [#guncomp1]
-Figure 2 : Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
+**Figure 2 : Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_**
 
 image:figures/Gun/GunCompEn.png[scaledwidth=50.0%]
 image:figures/Gun/GunCompEx.png[scaledwidth=50.0%]
@@ -123,7 +123,8 @@ to a file with extension .stat. The frequency with which this data is
 written can be controlled with the `OPTION` statement
 see Section link:control#sec:option[Option Statement] with the flag `STATDUMPFREQ`.
 
-.Figure 3 : H5root enables a variety of data analysis and post processing task on _OPAL_ data
+**Figure 3 : H5root enables a variety of data analysis and post processing task on _OPAL_ data**
+
 image:figures/H5rootPicture1.png[width=250]
 image:figures/H5rootPicture2.png[width=250]
 image:figures/H5rootPicture3.png[width=250]
