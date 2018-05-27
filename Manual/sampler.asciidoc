@@ -46,7 +46,7 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 |=======================================================================
 
 The difference between `SEQUENCE = TRUE` and `SEQUENCE = FALSE` is depicted in the following figure.
-image:figures/differenceSEQUENCESampler_scale.svg[scaledwidth=10cm]
+image:figures/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
 SAMPLING Command
 ^^^^^^^^^^^^^^^^
