@@ -33,7 +33,7 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 [cols="<1,<5",options="header",]
 |=======================================================================
 | Attribute     | Description
-| SEQUENCE      | Boolean for random or sequence mode (default: true)
+| SEQUENCE      | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
 | INPUT         | Path to input file.
 | OUTPUT        | Name used in output file generation.
 | OUTDIR        | Name of directory used to run and store generation output files.
@@ -44,6 +44,8 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
 |=======================================================================
+
+The difference between `SEQUENCE = TRUE` and `SEQUENCE = FALSE` is depicted in the following figure.
 
 SAMPLING Command
 ^^^^^^^^^^^^^^^^
