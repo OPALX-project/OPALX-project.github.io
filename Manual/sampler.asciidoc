@@ -8,9 +8,9 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp:sample]]
-Sampler 
+Sampler
 --------
-This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ). 
+This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
 
 **Be aware of the fact, this is an experimental feature in V2.0.0**
 
@@ -46,6 +46,7 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 |=======================================================================
 
 The difference between `SEQUENCE = TRUE` and `SEQUENCE = FALSE` is depicted in the following figure.
+image:figures/differenceSEQUENCESampler_scale.svg[scaledwidth=10cm]
 
 SAMPLING Command
 ^^^^^^^^^^^^^^^^
