@@ -53,6 +53,11 @@ Due to file size issues this example was compressed using 7za. Uncompress using 
 
 > cd ..
 
+Here is an example log file:
+
+[log](/uploads/ab8a09f990b35910776e341220f0ec30/log)
+
+
 To make plots, again do
 
 > python example_scripts/plot_orbit.py example_main_ring/
