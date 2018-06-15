@@ -3,7 +3,7 @@
 
 # recipe for:
 P=openmpi
-V=1.10.4
+V=${OPENMPI_VERSION:-1.10.7}
 
 # Download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.bz2" || \
