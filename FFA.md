@@ -1,4 +1,4 @@
-[TOSCA_cyli13_massaged.H.7z](/uploads/5e8f8739c9c28a86be8515ef12f3ce94/TOSCA_cyli13_massaged.H.7z)There are two methods to model FFAs in OPAL, using the OPAL-Cycl routines.
+There are two methods to model FFAs in OPAL, using the OPAL-Cycl routines.
 
 1. Tracking through an analytical field model (OPAL >= 2.0).
 2. Tracking through a 3D field map.
@@ -37,4 +37,8 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 
 # Tracking through an 3D field map
 
-[Kurri_ADS_Ring.tmp](/uploads/0104920ce78406cd339af798a1f2bafc/Kurri_ADS_Ring.tmp)[disttest.dat](/uploads/29fe68921d625edc84faf01c83a6b163/disttest.dat)
+[Kurri_ADS_Ring.tmp](/uploads/0104920ce78406cd339af798a1f2bafc/Kurri_ADS_Ring.tmp)
+
+[disttest.dat](/uploads/29fe68921d625edc84faf01c83a6b163/disttest.dat)
+
+[TOSCA_cyli13_massaged.H.7z](/uploads/5e8f8739c9c28a86be8515ef12f3ce94/TOSCA_cyli13_massaged.H.7z)
