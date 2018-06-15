@@ -4,7 +4,7 @@
 # **Set package and version**
 #
 P=cmake
-V=3.11.4
+V=${CMAKE_VERSION:-3.11.4}
 
 #
 # **Download CMake**
