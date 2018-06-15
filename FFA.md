@@ -16,7 +16,9 @@ To run the example, download the file example.tar.gz and do
 Then change into the working directory:
 
 > cd example/example_sector_ffa
+
 > /path/to/bin/opal SectorFFAGMagnet
+
 > cd ..
 
 If it worked - congratulations, you have run OPAL. You should see a lot of output. There is a sample log file here:
