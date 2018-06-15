@@ -3,7 +3,7 @@
 
 # recipe for:
 P=boost
-V=1_62_0
+V=${BOOST_VERSION:-1_66_0}
 
 # download
 test -r "${DOWNLOADS_DIR}/${P}_$V.tar.gz"  || \
