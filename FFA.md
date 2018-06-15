@@ -43,7 +43,7 @@ OPAL can be used to track through a 3D field map. By default interpolation is tr
 
 [example_2.7z](/uploads/4f80d93d4ac111fa4fe30e641bc394ee/example_2.7z)
 
-Due to file size issues this example was compressed using 7za. Uncompress using 7za from p7zip package.
+Due to file size issues this example was compressed using 7za. Uncompress using 7za from p7zip package. Then run in the usual way.
 
 > 7za x example_2.7z
 
