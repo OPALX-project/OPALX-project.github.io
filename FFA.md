@@ -34,3 +34,7 @@ This relies on a correct installation of PyRoot, the python API for ROOT plottin
 ![closed_orbit_plan_bz](/uploads/a8dd1e2e8c97983e98dee3060f487de7/closed_orbit_plan_bz.png)
 
 Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton at injection (3 MeV).
+
+# Tracking through an 3D field map
+
+[Kurri_ADS_Ring.tmp](/uploads/0104920ce78406cd339af798a1f2bafc/Kurri_ADS_Ring.tmp)[disttest.dat](/uploads/29fe68921d625edc84faf01c83a6b163/disttest.dat)
