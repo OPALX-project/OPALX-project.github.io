@@ -29,6 +29,6 @@ OPAL parses the input file, then writes out the position of each field element. 
 
 > python example_scripts/plot_orbit.py example_sector_ffa/
 
-Here is an example of the sort of plots you might see:
+This relies on a correct installation of PyRoot, the python API for ROOT plotting library - it doesn't always work. Here is an example of the sort of plots you might see:
 
 ![closed_orbit_plan_bz](/uploads/a8dd1e2e8c97983e98dee3060f487de7/closed_orbit_plan_bz.png)
