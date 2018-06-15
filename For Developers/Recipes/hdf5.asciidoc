@@ -3,7 +3,7 @@
 
 # recipe for:
 P=hdf5
-V=1.8.18
+V=${HDF5_VERSION:-1.8.18}
 
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.bz2"  ||
