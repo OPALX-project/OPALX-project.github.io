@@ -1,6 +1,6 @@
 There are two methods to model FFAs in OPAL, using the OPAL-Cycl routines.
 
-1. Tracking through an analytical field model (OPAL > 2.0).
+1. Tracking through an analytical field model (OPAL >= 2.0).
 2. Tracking through a 3D field map.
 
 # Tracking through an analytical field model
