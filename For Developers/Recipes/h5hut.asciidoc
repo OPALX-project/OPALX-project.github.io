@@ -3,7 +3,7 @@
 
 # recipe for:
 P=H5hut
-V=2.0.0rc4
+V=${H5HUT_VERSION:-2.0.0rc4}
 
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
