@@ -3,7 +3,7 @@
 
 # recipe for:
 P=gsl
-V=2.4
+V=${GSL_VERSION:-2.4}
 
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
