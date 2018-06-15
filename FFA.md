@@ -41,4 +41,4 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 
 [disttest.dat](/uploads/29fe68921d625edc84faf01c83a6b163/disttest.dat)
 
-[TOSCA_cyli13_massaged.H.7z](/uploads/5e8f8739c9c28a86be8515ef12f3ce94/TOSCA_cyli13_massaged.H.7z)
+[TOSCA_cyli13_massaged.H.7z](/uploads/5e8f8739c9c28a86be8515ef12f3ce94/TOSCA_cyli13_massaged.H.7z) (this is a 7zip file - uncompress using 7za, p7zip package).
