@@ -32,3 +32,5 @@ OPAL parses the input file, then writes out the position of each field element. 
 This relies on a correct installation of PyRoot, the python API for ROOT plotting library - it doesn't always work. Here is an example of the sort of plots you might see:
 
 ![closed_orbit_plan_bz](/uploads/a8dd1e2e8c97983e98dee3060f487de7/closed_orbit_plan_bz.png)
+
+Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton at injection (3 MeV).
