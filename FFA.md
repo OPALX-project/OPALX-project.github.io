@@ -15,7 +15,7 @@ To run the example, download the file example.tar.gz and do
 
 > tar -xzf example.tar.gz
 
-Then change into the working directory:
+Then change into the working directory and run the code:
 
 > cd example/example_sector_ffa
 
