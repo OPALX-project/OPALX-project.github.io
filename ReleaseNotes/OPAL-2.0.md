@@ -11,7 +11,7 @@
 * OPAL-T: Normalization of field maps can be switched off
 * Scan option is removed
 * OPAL mode for highlighting in emacs added
-* Many more features
+* Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
 
 ## Input file related changes
 
@@ -20,6 +20,13 @@
 * The meaning of `OFFSETZ` of the command `DISTRIBUTION` has changed. It now indicates a shift of the particle bunch relative to the reference particle. Use the `ZSTART` attribute of the `TRACK` command to start the simulation at a position `z > 0`
 * The attribute `DISTRIBUTION` of the command `DISTRIBUTION` has been renamed to `TYPE`
 * OPAL-T: The attribute `ROTATION` of `RBEND` and `SBEND` has been replaced by `PSI` which now can be applied to all elements to rotate them about the reference trajectory
+* OPAL-Cycl: The trim coil description has been changed and trim coils are now a separate element.
+A new recommended description based on a rational function has been added.
+The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC` has been inverted to [1/mm].
+
+## Output file related changes
+
+* OPAL-Cycl: _-trackOrbit.dat_ file is now in [m]
 
 ## Input file related changes introduced in [OPAL-1.6](OPAL-1.6)
 
