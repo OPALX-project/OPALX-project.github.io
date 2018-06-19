@@ -33,7 +33,7 @@ MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure 
 
 * Issue #169 New Material: BoronCarbide
 * Issue #106 Segfault in case of Material at beginning of beam line
-* Issue #102 PSDUMPFRAME report is wrong in OPTIOn TELL=TRUE
+* Issue #102 PSDUMPFRAME report is wrong in OPTION TELL=TRUE
 * Issue #105 RectangularDomain::getBoundaryStencil typo
 * Correct manual: no particle matter interaction for OPAL-cyc in 1.6.x
 
