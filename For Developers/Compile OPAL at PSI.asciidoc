@@ -15,7 +15,7 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 * Ubuntu 14 LTS and 16 LTS
 * OpenSUSE should work but is not tested
 
-If you *do not* want to use Pmodules, please follow the instruction for [building OPAL from scratch](For Developers/Compile OPAL on RHEL6).
+If you *do not* want to use Pmodules, please follow the instruction for link:Compile-OPAL-on-RHEL6[building OPAL from scratch].
 
 '''
 
