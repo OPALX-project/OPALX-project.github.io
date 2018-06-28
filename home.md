@@ -1,6 +1,6 @@
 [![](https://amas.web.psi.ch/images/logo.png)](/OPAL/wiki/TracIni#header_logo-section)
 
-# _OPAL_
+# Object Oriented Parallel Accelerator Library (_OPAL_)
 
 ## Introduction
 
