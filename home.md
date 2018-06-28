@@ -4,27 +4,27 @@
 
 ## Introduction
 
-OPAL (Object Oriented Parallel Accelerator Library) is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
+_OPAL_ is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
 
 ## Documentation & Help
 
-* [OPAL at PSI]( opalPSI) How to use and install
-
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
+* OPAL (<= 1.6.x) [PDF Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+* OPAL (>= 1.9.x) [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
+* [OPAL conversion utilities](OPAL conversion utilities) 
+* Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
+* Report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
+
+## Download
 
 * [OPAL Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
-
 * [Download page](downloads) with OPAL binaries.
 
-* OPAL (<= 1.6.x) [PDF Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+## _OPAL_ at PSI
 
-* OPAL (>= 1.9.x) [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
+* [OPAL at PSI]( opalPSI) How to use and install
+* Install Modules [local](installation-local) on MAC and Linux
 
-* [OPAL conversion utilities](OPAL conversion utilities) 
-
-* Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
-
-* Report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
 
 ## Start with Examples
 
@@ -52,7 +52,6 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 1. [Compile OPAL on Mac with Macports](For Developers/Compile OPAL on Mac)
 1. [Compile OPAL on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
 1. [Compile OPAL on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
-1. Install Modules [local](installation-local) on MAC and Linux
 1. [OPAL 2.0.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 1. [Building, executing and writing unit tests](unit-tests)
 1. [Adding new Elements to OPAL](new-elements)
