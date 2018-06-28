@@ -9,8 +9,8 @@ _OPAL_ is an open source C++ framework for general particle accelerator simulati
 ## Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
-* [OPAL 1.6](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
-* OPAL (>= 1.9.x) [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
+* [OPAL 1.6 manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+* OPAL 2.0 [Wiki manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
 * [OPAL conversion utilities](OPAL conversion utilities) 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 * Report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
