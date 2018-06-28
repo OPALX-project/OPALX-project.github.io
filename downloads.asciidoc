@@ -16,7 +16,7 @@ The version of the newest binary distribution package for Linux is 1.6.2-1. For 
 
 === Linux
 
-[cols="3*"]
+[cols="3*",options="noborder"]
 |========
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz[OPAL-2.0.0rc2-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5[md5 sum] 
@@ -109,15 +109,19 @@ The version of the newest binary distribution package for Linux is 1.6.2-1. For 
 
 | 1.4.0-1
 | update to OPAL version 1.4.0
+|
 
 | 1.3.2-3
 | add missing H5root (Linux package only!)
+|
 
 | 1.3.2-2
 | Fix in `vtk2h5grid`
+|
 
 | 1.3.1-1
 | update to OPAL version 1.3.1
+|
 
 |===
 
