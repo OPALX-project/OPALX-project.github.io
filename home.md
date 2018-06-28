@@ -17,12 +17,11 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 * OPAL 2.0 manual [Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
 * [OPAL conversion utilities](OPAL conversion utilities) 
 
-
 ## Download
 
 * [OPAL Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
-* [Download page](downloads) with OPAL binaries.
-
+* [Download _OPAL_ binary package](downloads)
+* 
 
 ## Start with Examples
 
@@ -43,12 +42,6 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 * Install Modules [local](installation-local) on MAC and Linux
 
 
-
-## Regression Tests
-
-1. on the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
-1. on the branch [OPAL-1.6.x](http://amas.web.psi.ch/opal/regressionTests/1.6/)
-
 ## OPAL for Developers: Coding Style and Conventions 
 
 1. [Coding Style and Conventions](For Developers/Codingstyle)
@@ -62,6 +55,12 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 1. [Adding new Elements to OPAL](new-elements)
 1. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
 1. [Technology & Ideas](tech-ideas)
+
+
+## Regression Tests
+
+* on the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
+* on the branch [OPAL-1.6.x](http://amas.web.psi.ch/opal/regressionTests/1.6/)
 
 
 # OPAL Physics Resources
