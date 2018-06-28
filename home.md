@@ -12,17 +12,23 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Documentation & Help
 
-* [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
-* OPAL 1.6 manual [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
-* OPAL 2.0 manual [Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
-* [OPAL conversion utilities](OPAL conversion utilities) 
+* [_OPAL_ Presentations]( OPALPresentations) and papers (ideal for an overview)
+* _OPAL_ 1.6 manual [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+* _OPAL_ 2.0 manual [Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
+* [_OPAL_ conversion utilities](OPAL conversion utilities) 
 
 ## Download
 
-* [OPAL Release Notes for OPAL 1.6]( ReleaseNotes/OPAL-1.6)
-* [OPAL Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
+* [_OPAL_ Release Notes for OPAL 1.6]( ReleaseNotes/OPAL-1.6)
+* [_OPAL_ Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
 * [Download _OPAL_ binary package](downloads)
 * [Download _OPAL_ source](download source)
+
+## Compiling _OPAL_
+
+* [Compile OPAL on Mac with Macports](For Developers/Compile OPAL on Mac)
+* [Compile OPAL on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
+* [Compile OPAL on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
 
 ## Start with Examples
 
@@ -41,21 +47,17 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 
 * [OPAL at PSI]( opalPSI) How to use and install
 * Install Modules [local](installation-local) on MAC and Linux
-
+* [Compile OPAL at PSI](For Developers/Compile OPAL at PSI)
 
 ## OPAL for Developers: Coding Style and Conventions 
 
-1. [Coding Style and Conventions](For Developers/Codingstyle)
-1. [Git usage](git-usage) and [git workflow](git-workflow)
-1. [Compile OPAL at PSI](For Developers/Compile OPAL at PSI)
-1. [Compile OPAL on Mac with Macports](For Developers/Compile OPAL on Mac)
-1. [Compile OPAL on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
-1. [Compile OPAL on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
-1. [OPAL 2.0.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
-1. [Building, executing and writing unit tests](unit-tests)
-1. [Adding new Elements to OPAL](new-elements)
-1. [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
-1. [Technology & Ideas](tech-ideas)
+* [Coding Style and Conventions](For Developers/Codingstyle)
+* [Git usage](git-usage) and [git workflow](git-workflow)
+* [OPAL 2.0.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
+* [Building, executing and writing unit tests](unit-tests)
+* [Adding new Elements to OPAL](new-elements)
+* [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
+* [Technology & Ideas](tech-ideas)
 
 
 ## Regression Tests
