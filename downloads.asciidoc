@@ -14,30 +14,14 @@ The version of the newest binary distribution package for Linux is 1.6.2-1. For 
 
 == Packages
 
-=== OPAL Version 2.0
+=== Linux
 
-Download::
 [cols="3*"]
 |========
-
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz[OPAL-2.0.0rc2-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5[md5 sum] 
 | link:ReleaseNotes/OPAL%202.0[release notes]
-|========
 
-Changes::
-[cols="3*"]
-|===
-| 2.0.0rc2-1
-| first version with OPAL 2.0.0 release candidate 2
-| 4. May 2018
-|===
-
-=== OPAL Version 1.6
-
-Download::
-[cols="3*"]
-|========
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz[OPAL-1.6.2-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5[md5 sum] 
@@ -51,9 +35,14 @@ Download::
 | link:ReleaseNotes/OPAL%201.6[release notes]
 |========
 
-Changes::
+
+== ChangesLog::
 [cols="3*"]
 |===
+| 2.0.0rc2-1
+| first version with OPAL 2.0.0 release candidate 2
+| 4. May 2018
+
 | 1.6.1-3
 | shared libraries like `libpng12`, `libz`, `libnuma` added to binary package.
 | 10. November 2017
@@ -84,6 +73,7 @@ Changes::
 
 | never releases
 |===
+
 
 Toolchain for Version 1.6::
 [cols=3*]
