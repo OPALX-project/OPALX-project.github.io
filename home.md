@@ -19,9 +19,10 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Download
 
+* [OPAL Release Notes for OPAL 1.6]( ReleaseNotes/OPAL-1.6)
 * [OPAL Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
 * [Download _OPAL_ binary package](downloads)
-* 
+* [Download _OPAL_ source](download source)
 
 ## Start with Examples
 
