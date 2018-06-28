@@ -6,8 +6,7 @@
 
 OPAL (Object Oriented Parallel Accelerator Library) is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
 
-OPAL Documentation & Help
-========================
+## Documentation & Help
 
 * [OPAL at PSI]( opalPSI) How to use and install
 
@@ -27,26 +26,25 @@ OPAL Documentation & Help
 
 * Report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
 
-OPAL Start with Examples
-=====================
+## Start with Examples
+
 1. [Cyclotron](Cyclotron)
 1. [RF Photo Injector](RFPhotoInjector)
 1. [Examples from regression tests](RegressionTestExamples)
 1. [Post Processing](PostProcessing)
 1. [FFA](FFA)
 
-The runOPAL.py Script
-=====================
+## The runOPAL.py Script
+
 The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
 data in a conceived way. Scans of multiple dimensions are easy to perform.
 
-Regression Tests
-===============
+## Regression Tests
+
 1. on the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
 1. on the branch [OPAL-1.6.x](http://amas.web.psi.ch/opal/regressionTests/1.6/)
 
-OPAL for Developers: Coding Style and Conventions 
-===========================================
+## OPAL for Developers: Coding Style and Conventions 
 
 1. [Coding Style and Conventions](For Developers/Codingstyle)
 1. [Git usage](git-usage) and [git workflow](git-workflow)
@@ -62,8 +60,7 @@ OPAL for Developers: Coding Style and Conventions
 1. [Technology & Ideas](tech-ideas)
 
 
-OPAL Physics Resources
-======================
+# OPAL Physics Resources
 
 1. Trim coil report (PSI Ring):  [PSI Ring](https://gitlab.psi.ch/OPAL/src/uploads/b9b3e4254af29470e2a81bf6e2feb20c/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
 
