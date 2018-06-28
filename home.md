@@ -4,9 +4,9 @@
 
 ## Introduction
 
-_OPAL_ is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
+_OPAL_ is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. _OPAL_ is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
 
-Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
+Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 
 Please report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues) or to the mailing list.
 
@@ -19,16 +19,16 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Download
 
-* [_OPAL_ Release Notes for OPAL 1.6]( ReleaseNotes/OPAL-1.6)
-* [_OPAL_ Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
+* [_OPAL_ release notes for version 1.6]( ReleaseNotes/OPAL-1.6)
+* [_OPAL_ release notes for version 2.0]( ReleaseNotes/OPAL-2.0)
 * [Download _OPAL_ binary package](downloads)
 * [Download _OPAL_ source](download source)
 
 ## Compiling _OPAL_
 
-* [Compile OPAL on Mac with Macports](For Developers/Compile OPAL on Mac)
-* [Compile OPAL on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
-* [Compile OPAL on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
+* [Compile _OPAL_ on Mac with Macports](For Developers/Compile OPAL on Mac)
+* [Compile _OPAL_ on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
+* [Compile _OPAL_ on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
 
 ## Start with Examples
 
@@ -45,18 +45,18 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 
 ## _OPAL_ at PSI
 
-* [OPAL at PSI]( opalPSI) How to use and install
+* [_OPAL_ at PSI]( opalPSI) How to use and install
 * Install Modules [local](installation-local) on MAC and Linux
-* [Compile OPAL at PSI](For Developers/Compile OPAL at PSI)
+* [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI)
 
 ## OPAL for Developers: Coding Style and Conventions 
 
 * [Coding Style and Conventions](For Developers/Codingstyle)
 * [Git usage](git-usage) and [git workflow](git-workflow)
-* [OPAL 2.0.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
+* [_OPAL_ 2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 * [Building, executing and writing unit tests](unit-tests)
-* [Adding new Elements to OPAL](new-elements)
-* [DKS & OPAL](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
+* [Adding new Elements to _OPAL_](new-elements)
+* [DKS (CUDA) & _OPAL_](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
 * [Technology & Ideas](tech-ideas)
 
 
