@@ -6,14 +6,17 @@
 
 _OPAL_ is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. OPAL is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
 
+Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
+
+Please report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues) or to the mailing list.
+
 ## Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
 * [OPAL 1.6 manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 * OPAL 2.0 [Wiki manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
 * [OPAL conversion utilities](OPAL conversion utilities) 
-* Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
-* Report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues)
+
 
 ## Download
 
