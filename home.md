@@ -13,8 +13,8 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 ## Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
-* [OPAL 1.6 manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
-* OPAL 2.0 [Wiki manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
+* OPAL 1.6 manual [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+* OPAL 2.0 manual [Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
 * [OPAL conversion utilities](OPAL conversion utilities) 
 
 
