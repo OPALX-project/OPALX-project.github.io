@@ -9,7 +9,7 @@ _OPAL_ is an open source C++ framework for general particle accelerator simulati
 ## Documentation & Help
 
 * [OPAL Presentations]( OPALPresentations) and papers (ideal for an overview)
-* OPAL (<= 1.6.x) [PDF Manual](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
+* [OPAL 1.6](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 * OPAL (>= 1.9.x) [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
 * [OPAL conversion utilities](OPAL conversion utilities) 
 * Please use the OPAL mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Add yourself to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
@@ -19,11 +19,6 @@ _OPAL_ is an open source C++ framework for general particle accelerator simulati
 
 * [OPAL Release Notes for OPAL 2.0]( ReleaseNotes/OPAL-2.0)
 * [Download page](downloads) with OPAL binaries.
-
-## _OPAL_ at PSI
-
-* [OPAL at PSI]( opalPSI) How to use and install
-* Install Modules [local](installation-local) on MAC and Linux
 
 
 ## Start with Examples
@@ -38,6 +33,13 @@ _OPAL_ is an open source C++ framework for general particle accelerator simulati
 
 The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
 data in a conceived way. Scans of multiple dimensions are easy to perform.
+
+## _OPAL_ at PSI
+
+* [OPAL at PSI]( opalPSI) How to use and install
+* Install Modules [local](installation-local) on MAC and Linux
+
+
 
 ## Regression Tests
 
