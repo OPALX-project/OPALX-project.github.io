@@ -69,7 +69,7 @@ The version of the newest binary distribution package for Linux is 1.6.2-1. For 
 
 |========
 
-=== ChangesLog
+== ChangeLog
 
 [cols="3*"]
 |===
