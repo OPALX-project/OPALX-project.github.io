@@ -1,6 +1,6 @@
 # Download _OPAL_ sources
 
-## tar-file
+## tar-files
 
 http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-1.6.2.tar.bz2[OPAL-1.6.2]
 
