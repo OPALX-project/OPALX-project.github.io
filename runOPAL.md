@@ -1,9 +1,9 @@
-# Obtain runOpal.py
+# Obtain runOPAL.py
 
-Clone runOpal.py  from [here](https://gitlab.psi.ch/OPAL/runOPAL).
+Clone runOPAL.py  from [here](https://gitlab.psi.ch/OPAL/runOPAL).
 
-# HowTo Use runOpal.py
-In order to use *runOpal.py* you have to provide two
+# HowTo Use runOPAL.py
+In order to use *runOPAL.py* you have to provide two
 files, a template file *foo.tmpl*,  and a data file *foo.data*.
 The template file will be stored in the directory *tmpl*.
 In the data file, symbols and values will be defined, which will be
@@ -19,9 +19,9 @@ The following environment variables recognized by the *runOPAL.py*:
    2. *TEMPLATES*
    3. *FIELDMAPS*
    4. *OPAL_EXE_PATH*
-   5. *SGE_QUEUE*
-   6. *SGE_RAM*
-   7. *SGE_TIME*
+   5. *QUEUE*
+   6. *RAM*
+   7. *TIME*
 
 In Bash parlance:
 
@@ -29,8 +29,8 @@ In Bash parlance:
 export TEMPLATES=$PWD/tmpl/
 export FIELDMAPS=$PWD/fieldmaps/
 export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/
-export SGE_QUEUE=all.q
-export SGE_RAM=8
+export QUEUE=all.q
+export RAM=8
 ```
 
 Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise 
@@ -40,9 +40,23 @@ From the TEMPLATES directory the *foo.tmpl* file is taken and the values are rep
 
 The field maps from the *FIELDMAPS* directory and the distributions from the *DISTRIBUTIONS* directory are linked to the directory where the simulation is executed. 
 
-*SGE_QUEUE* is the queue used for the simulation. Different queues may have different numbers of nodes and CPU's available as well as different run-time limitations.
+*QUEUE* is the queue used for the simulation. Different queues may have different numbers of nodes and CPU's available as well as different run-time limitations.
 
-*SGE_RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
+*RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
+
+
+# Recognized host names
+
+The following clusters and supercomputers are recognised for which batch jobs are setup automatically:
+
+* PSI Merlin cluster
+* ANL Theta
+* ANL Blues
+* ANL Bebop
+* NERSC Cori Haswell
+* NERSC Edison
+* CSCS Piz-Daint
+* MIT Engaging cluster
 
 
 # This is a snippet of a data and tmpl file (*foo.data*)
@@ -65,15 +79,14 @@ where also all results are stored. The general syntax of runOPAL.py is
 
 `runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description
- * *--info=<num>* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
+ * *--info=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
  * *--test* exercises everything except for the submission of the job.
  * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOPAL* will use the nearest position stored in the restart file as restart position. Unit of POS is meter.
  * *--restart-step* specifies the restart step of the simulation.
  * *--keep* if same simulation has been run before, keep old data and abort.
  * *--nobatch* run opal locally not using the batch system and waits until the job is done.
- * *--queue=<qname>* defines in which queue the job goes. Overwrites QUEUE
- * *--hypert=<num>* defines the number of Hyper-Threads used. Default 0.
- *
+ * *--queue=qname* defines in which queue the job goes. Overwrites QUEUE
+ * *--hypert=num* defines the number of Hyper-Threads used. Default 0.
  * *ATTR* refers to a name in the data file
  * *SCANVALUE* `start:end:step`, scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
@@ -138,7 +151,7 @@ After that you will have a directory foo with this content:
 `runOPAL.py --test EDES=0.050:0.250:0.050`
 
 
-dude:foo adelmann$ ls
+`dude:foo adelmann$` ls
 
 fieldmaps           foo.data        **foo_EDES=0.05:0.25:0.05**      setup.sh       tmpl
 
