@@ -2,7 +2,10 @@
 
 ## tar-file
 
-[OPAL-1.6.2](http://amas.web.psi.ch/)
+[OPAL-1.6.2](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-1.6.2.tar.bz2)
 
 
 ## Git repository
+
+
+git clone --single-branch --depth 1  --branch OPAL-1.6.2 https://gitlab.psi.ch/OPAL/src.git OPAL-1.6.2
