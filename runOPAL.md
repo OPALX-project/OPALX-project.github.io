@@ -63,15 +63,17 @@ You can run the *runOPAL.py* script without arguments, if the two files (*foo.tm
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
 where also all results are stored. The general syntax of runOPAL.py is
 
-`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--test] [--block] [--keep] [--nobatch] [--optPilot ][ATTR=SCANVALUE] {[ATTR=VALUE]}`
+`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description
+ * *--info=<num>* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
  * *--test* exercises everything except for the submission of the job.
- * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOpal* will use the nearest position stored in the restart file as restart position. 
+ * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOPAL* will use the nearest position stored in the restart file as restart position. Unit of POS is meter.
  * *--restart-step* specifies the restart step of the simulation.
- * *--block* runs opal local not using the batch system and waits until the job is done.
  * *--keep* if same simulation has been run before, keep old data and abort.
- * *--nobatch* uses plain mpirun on the local machine.
- * *--optPilot will submit a optPilot job on Merlin (check additional parameters that can be set in the *foo.data* file)
+ * *--nobatch* run opal locally not using the batch system and waits until the job is done.
+ * *--queue=<qname>* defines in which queue the job goes. Overwrites QUEUE
+ * *--hypert=<num>* defines the number of Hyper-Threads used. Default 0.
+ *
  * *ATTR* refers to a name in the data file
  * *SCANVALUE* `start:end:step`, scans a parameter space, e.g., *TFWHM=0.85:0.90:0.01*. 
 
@@ -180,28 +182,3 @@ In this example instead of a restart step, a restart position is specified.
 
 
 If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
-
-
-# Optimiser run (--optPilot)
-
-![runopal-2](/uploads/d4a85587896a5e9ece6dd7f2a3ea36ac/runopal-2.png)
-
-Additional parameters that are recognised:  
-
-`SIMTMPDIR` (default $PWD\tmp)
-
-`MAXGENERATIONS`   (default: 100)
-
-`INITIALPOPULATION` (default: 62)
-
-`INDEPENDENTGENS` (default: 62)
-
-`NUMCOWORKERS` (default: 1)
-
-`NUMMASTERS` (default: 1)
-
-`DUMPDAT` (default: 1)
-
-`SOLSYNCH` (default: 1)
-
-`MUTATIONPROB` (default: 0.5)
