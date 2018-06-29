@@ -8,7 +8,14 @@ http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.0.0rc2.tar.xz[OPAL-2.0.0rc2]
 
 ## Git repository
 
+Either clone the whole Git repository (quite huge!) with
 [source,sh]
 ----
-git clone --single-branch --depth 1  --branch OPAL-1.6.2 https://gitlab.psi.ch/OPAL/src.git OPAL-1.6.2
+git clone https://gitlab.psi.ch/OPAL/src.git
+----
+
+or clone a specific branch/tag with
+[source,sh]
+----
+git clone --single-branch --depth 1  --branch BRANCH_OR_TAG https://gitlab.psi.ch/OPAL/src.git [DIR]
 ----
