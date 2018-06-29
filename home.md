@@ -43,6 +43,10 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
 data in a conceived way. Scans of multiple dimensions are easy to perform.
 
+## pyOPALTools
+
+The [pyOPALTools](pyOPALTools) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
+
 ## _OPAL_ at PSI
 
 * [_OPAL_ at PSI]( opalPSI) How to use and install
