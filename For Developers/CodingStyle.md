@@ -214,11 +214,15 @@ Example:
 //
 // OPAL is licensed under the terms of the GNU GPL version 3.
 //
+```
+
+* * * * *
 
 ### 3.2. Header files
 
 Add class documentation below header.
 
+```
 /*!
   Class documentation
  */
