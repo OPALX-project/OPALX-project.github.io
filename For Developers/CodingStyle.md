@@ -21,8 +21,7 @@
 3.  [Documentation](#3-documentation)
     1.  [File Header for include files (.h
         only)](#31-file-header-for-include-files-h-only)
-    2.  [File Header for source files (.cpp and .c
-        only)](#32-file-header-for-source-files-cpp-and-c-only)
+    2.  [3.2. Header files](#32-header-files)
     3.  [API Documentation](#33-api-documentation)
     4.  [Code Documentation](#34-code-documentation)
     5.  [Doxygen](#35-doxygen)
@@ -203,38 +202,33 @@ Example:
 3. Documentation
 ----------------
 
-### 3.1. File Header for include files (.h only) 
+### 3.1. File Header
 
--   Link to copyright and license
--   Short description what is implemented in here (in Doxygen notation)
-
-Example:
 ```
 //
-//  Copyright & License: See Copyright.readme in src directory
+// Brief description of content
 //
+// Copyright (c) 2008-2018
+// Paul Scherrer Institut, Villigen PSI, Switzerland
+// All rights reserved.
+//
+// OPAL is licensed under the terms of the GNU GPL version 3.
+//
+
+### 3.2. Header files 
+
+Add class documentation below header.
 
 /*!
   Class documentation
  */
 ```
 
-### 3.2. File Header for source files (.cpp and .c only)
-
--   Link to copyright and license
-
-Example:
-```
-//
-//  Copyright & License: See Copyright.readme in src directory
-//
-```
-
 * * * * *
 
 ### 3.3. API Documentation
 
--   All public methods and functions must be documented using Doxygen
+-   All public methods and functions must be documented using Doxygen.
 
 ### 3.4. Code Documentation 
 
