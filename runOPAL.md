@@ -58,6 +58,7 @@ The following clusters and supercomputers are recognised for which batch jobs ar
 * CSCS Piz-Daint
 * MIT Engaging cluster
 
+Please open an [issue](https://gitlab.psi.ch/OPAL/runOPAL/issues) for adding additional clusters.
 
 # This is a snippet of a data and tmpl file (*foo.data*)
 ```
@@ -101,8 +102,8 @@ Simulation directory is foo using OPAL at  /gpfs/home/adelmann/build/opal-1.2.0/
 Using templatefile at /Users/adelmann/foo/tmpl/ using fieldmaps at /Users/adelmann/foo/fieldmaps/ 
 
 Parameter set in foo.in are:
-`
- :::: NPART= 1000
+
+`:::: NPART= 1000
  :::: K3= -17.18
  :::: K2= 15.13
  :::: K1= -15.34
@@ -138,39 +139,50 @@ Parameter set in foo.in are:
 
 After that you will have a directory foo with this content:
 
-`dude:foo adelmann$` ls
+```
+dude:foo adelmann$ ls
 
-**fieldmaps   foo     foo.data    setup.sh    tmpl**
+fieldmaps   foo     foo.data    setup.sh    tmpl
+```
 
-`dude:foo adelmann$` ls foo
+```
+dude:foo adelmann$ ls foo
 
-**foo.in run.sge**
+foo.in run.sge
+```
+
 
 # Example 2: 1D Parameter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050`
 
-
-`dude:foo adelmann$` ls
+```
+dude:foo adelmann$ ls
 
 fieldmaps           foo.data        **foo_EDES=0.05:0.25:0.05**      setup.sh       tmpl
+```
 
-`dude:foo adelmann$` ls foo_EDES=0.05:0.25:0.05    
+```
+dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05    
 
-**fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25**
-
+fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25
+```
 
 # Example 3: 2D Parameter Scan
 
-`runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01`
-
-`dude:foo adelmann$` ls
-
-fieldmaps       foo.data          **foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01**      setup.sh  tmpl
-
-`dude:foo adelmann$` ls foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01
+```
+runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01
+```
 
 ```
+dude:foo adelmann$ ls
+
+fieldmaps       foo.data          foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01      setup.sh  tmpl
+```
+
+```
+dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05_POS1=0.4:0.5:0.01
+
 fooEDES=0.05POS1=0.4    fooEDES=0.05POS1=0.45   fooEDES=0.15POS1=0.4    fooEDES=0.15POS1=0.45   fooEDES=0.1POS1=0.4     fooEDES=0.1POS1=0.45    fooEDES=0.25POS1=0.4    fooEDES=0.25POS1=0.45   fooEDES=0.2POS1=0.4 
 fooEDES=0.2POS1=0.45
 fooEDES=0.05POS1=0.41   fooEDES=0.05POS1=0.46   fooEDES=0.15POS1=0.41   fooEDES=0.15POS1=0.46   fooEDES=0.1POS1=0.41    fooEDES=0.1POS1=0.46    fooEDES=0.25POS1=0.41   fooEDES=0.25POS1=0.46   fooEDES=0.2POS1=0.41    fooEDES=0.2POS1=0.46
@@ -187,11 +199,14 @@ at */gpfs/homefelsim/adelmann/Phase3/FinPhase3/*.
 
 A restart simulation starting from ''step=10'' until ''ZSTOP=13.1'' m would then look like:
 
-`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1`
+```
+runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1
+```
 
 In this example instead of a restart step, a restart position is specified.
 
-`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1`
-
+```
+runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1
+```
 
 If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
