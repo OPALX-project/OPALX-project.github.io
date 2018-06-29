@@ -21,7 +21,7 @@
 3.  [Documentation](#3-documentation)
     1.  [File Header for include files (.h
         only)](#31-file-header-for-include-files-h-only)
-    2.  [3.2. Header files](#32-header-files)
+    2.  [Header files](#32-header-files)
     3.  [API Documentation](#33-api-documentation)
     4.  [Code Documentation](#34-code-documentation)
     5.  [Doxygen](#35-doxygen)
@@ -215,7 +215,7 @@ Example:
 // OPAL is licensed under the terms of the GNU GPL version 3.
 //
 
-### 3.2. Header files 
+### 3.2. Header files
 
 Add class documentation below header.
 
