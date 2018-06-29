@@ -642,3 +642,5 @@ std::tuple<
 [ http://www.kernel.org/doc/Documentation/CodingStyle](http://www.kernel.org/doc/Documentation/CodingStyle)
 
 [ http://www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html\#DOXYGEN](http://www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html#DOXYGEN)
+
+[Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
