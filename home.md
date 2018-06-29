@@ -45,7 +45,7 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 
 ## pyOPALTools
 
-The [pyOPALTools](pyOPALTools) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
+The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 
 ## _OPAL_ at PSI
 
