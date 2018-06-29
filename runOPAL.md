@@ -170,9 +170,7 @@ fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25
 
 # Example 3: 2D Parameter Scan
 
-```
-runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01
-```
+`runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01`
 
 ```
 dude:foo adelmann$ ls
@@ -199,14 +197,10 @@ at */gpfs/homefelsim/adelmann/Phase3/FinPhase3/*.
 
 A restart simulation starting from ''step=10'' until ''ZSTOP=13.1'' m would then look like:
 
-```
-runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1
-```
+`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1`
 
 In this example instead of a restart step, a restart position is specified.
 
-```
-runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1
-```
+`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1`
 
 If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
