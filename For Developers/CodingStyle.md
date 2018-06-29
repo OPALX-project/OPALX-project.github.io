@@ -646,14 +646,3 @@ std::tuple<
 ### Download in other formats:
 
 -   [Plain Text](For Developers/CodingStyle?format=txt)
-
-* * * * *
-
-[![Trac
-Powered](/OPAL/chrome/common/trac_logo_mini.png)](http://trac.edgewall.org/)
-
-Powered by [**Trac 0.12.1**](/OPAL/about)\
- By [Edgewall Software](http://www.edgewall.org/).
-
-Visit the Trac open source project at\
-<http://trac.edgewall.org/>
