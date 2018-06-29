@@ -16,7 +16,7 @@ The version of the newest binary distribution package for Linux is 1.6.2-1. For 
 
 === Linux
 
-[cols="30%,20%,20%",options="noborder"]
+[cols="3%,2%,2%",options="noborder",width="80%"]
 |========
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz[OPAL-2.0.0rc2-2 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5[md5 sum] 
