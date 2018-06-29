@@ -1,0 +1,8 @@
+# Download _OPAL_ sources
+
+## tar-file
+
+[OPAL-1.6.2](http://amas.web.psi.ch/)
+
+
+## Git repository

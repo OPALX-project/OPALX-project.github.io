@@ -137,6 +137,23 @@ The version of the newest binary distribution package for Linux is 1.6.2-1. For 
 
 == Toolchains
 
+=== Toolchain for Version 2.0
+[cols=3*]
+|=======
+| boost    | 1.66.0   | C++ libraries
+| CMake    | 3.9.6    | open-source build system
+| cuda     | 8.0.44   | GPU programming
+| DKS      | 1.1.2    | Dynamic Kernel Scheduler
+| gcc      | 7.3.0    | GNU Compiler Collection
+| gsl      | 2.4      | GNU Scientific Library
+| gtest    | 1.7.0    | Google test
+| H5hut    | 2.0.0rc4 | HDF5 utility toolkit
+| hdf5     | 1.10.1   | Hierachical Data Format 5
+| OpenBLAS | 0.2.20   | optimized BLAS and LAPACK library
+| openmpi  | 1.10.7   | open source MPI-2 implementation
+| trilinos | 12.12.1  | Object-Oriented Solver Framework
+|=======
+
 === Toolchain for Version 1.6
 [cols=3*]
 |=======
