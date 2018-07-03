@@ -78,13 +78,15 @@ You can run the *runOPAL.py* script without arguments, if the two files (*foo.tm
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
 where also all results are stored. The general syntax of runOPAL.py is
 
-`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
- * *--help* shows all available parameters with a short description
- * *--info=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
+`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
+ * *--help* shows all available parameters with a short description.
  * *--test* exercises everything except for the submission of the job.
+ * *--keep* if same simulation has been run before, keep old data and abort.
+ * *--quiet* suppress debug printout.
+ * *--info=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
+ * *--restart-file*  specifies the file that needs to be restarted.
  * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOPAL* will use the nearest position stored in the restart file as restart position. Unit of POS is meter.
  * *--restart-step* specifies the restart step of the simulation.
- * *--keep* if same simulation has been run before, keep old data and abort.
  * *--nobatch* run opal locally not using the batch system and waits until the job is done.
  * *--queue=qname* defines in which queue the job goes. Overwrites QUEUE
  * *--hypert=num* defines the number of Hyper-Threads used. Default 0.
