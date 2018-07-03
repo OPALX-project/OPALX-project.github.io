@@ -78,15 +78,12 @@ You can run the *runOPAL.py* script without arguments, if the two files (*foo.tm
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
 where also all results are stored. The general syntax of runOPAL.py is
 
-`runOPAL.py [--restart-file=FILE [--restart-step=STEPNR | --restart-pos=POS]] [--help] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
+`runOPAL.py [--help] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description.
  * *--test* exercises everything except for the submission of the job.
  * *--keep* if same simulation has been run before, keep old data and abort.
  * *--quiet* suppress debug printout.
  * *--info=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
- * *--restart-file*  specifies the file that needs to be restarted.
- * *--restart-pos* specifies the position (in meter) defining the restart of the simulation. If no data has been dumped at that position *runOPAL* will use the nearest position stored in the restart file as restart position. Unit of POS is meter.
- * *--restart-step* specifies the restart step of the simulation.
  * *--nobatch* run opal locally not using the batch system and waits until the job is done.
  * *--queue=qname* defines in which queue the job goes. Overwrites QUEUE
  * *--hypert=num* defines the number of Hyper-Threads used. Default 0.
@@ -190,19 +187,3 @@ fooEDES=0.05POS1=0.42   fooEDES=0.05POS1=0.47   fooEDES=0.15POS1=0.42   fooEDES=
 fooEDES=0.05POS1=0.43   fooEDES=0.05POS1=0.48   fooEDES=0.15POS1=0.43   fooEDES=0.15POS1=0.48   fooEDES=0.1POS1=0.43    fooEDES=0.1POS1=0.48    fooEDES=0.25POS1=0.43   fooEDES=0.25POS1=0.48   fooEDES=0.2POS1=0.43    fooEDES=0.2POS1=0.48
 fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=0.15POS1=0.49   fooEDES=0.1POS1=0.44    fooEDES=0.1POS1=0.49    fooEDES=0.25POS1=0.44   fooEDES=0.25POS1=0.49   fooEDES=0.2POS1=0.44    fooEDES=0.2POS1=0.49
 ```
-
-# Run a Restart (needs to be updated)
-
-In this particular example we assume that a simulation called  ''Phase3'' has successfully been executed. The output of the simulation is located
-
-at */gpfs/homefelsim/adelmann/Phase3/FinPhase3/*.
-
-A restart simulation starting from ''step=10'' until ''ZSTOP=13.1'' m would then look like:
-
-`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-step=10 ZSTOP=13.1`
-
-In this example instead of a restart step, a restart position is specified.
-
-`runOPAL.py --restart-file=/gpfs/homefelsim/adelmann/Phase3/FinPhase3/FinPhase3.h5 --restart-pos=10.0 ZSTOP=13.1`
-
-If there exists no phase space dump at the specified position (10.0 meters here), the nearest position will be located and used.
