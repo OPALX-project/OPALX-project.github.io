@@ -212,7 +212,7 @@ Example:
 // Paul Scherrer Institut, Villigen PSI, Switzerland
 // All rights reserved.
 //
-// OPAL is licensed under the terms of the GNU GPL version 3.
+// OPAL is licensed under GNU GPL version 3.
 //
 ```
 
