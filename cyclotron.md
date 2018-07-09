@@ -5,14 +5,14 @@ Here we will run the Cyclotron flavour of OPAL (OPAL_cyc) in three distinct mode
 3. 3D space charge calculation
 
 # Preparation
-This example is for OPAL 1.6.x.
+This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
 If you do not have already access to OPAL, you can visit the download page [the download page](downloads). In
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalPSI). 
 
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
 
-1. [cyclotron1.in]( Cyclotron/cyclotron1.in) ([cyclotron2.in]( Cyclotron/cyclotron2.in)) the OPAL input file(s)
+1. [cyclotron1.in](/uploads/045763d26c6711cab3a1b741552f1976/cyclotron1.in) and [cyclotron2.in](/uploads/3eeadc90ae833b73c378e026928b555e/cyclotron2.in) ([cyclotron1.in]( Cyclotron/cyclotron1.in) and [cyclotron2.in]( Cyclotron/cyclotron2.in) for 1.6.x) the OPAL input files
 2. [bfield.dat]( Cyclotron/bfield.dat) (magnetic field map)
 3. [rffield1.dat]( Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) (rf field maps)
 4. [dist1.dat]( Cyclotron/dist1.dat) [dist2.dat]( Cyclotron/dist2.dat) (the input distributions)
@@ -74,6 +74,5 @@ represents a beam with 3 mm rms. The field solver **Fs1** is the standard open d
 and the beam is represented by **1E5** macro particles
 
 **Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;**
-
 
 
