@@ -79,13 +79,15 @@ You can run the *runOPAL.py* script without arguments, if the two files (*foo.tm
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
 where also all results are stored. The general syntax of runOPAL.py is
 
-`runOPAL.py [--help] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
+`runOPAL.py [--help] [--filename=str] [--test] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description.
- * *--test* exercises everything except for the submission of the job.
+ * *--filename | -f=str* sets base falie name for both *.data and *.tmpl files.
+ * *--test | -t* exercises everything except for the submission of the job.
  * *--keep* if same simulation has been run before, keep old data and abort.
  * *--quiet* suppress debug printout.
- * *--info=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
+ * *--info | -i=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
  * *--nobatch* run opal locally not using the batch system and waits until the job is done.
+ * *--noopt* ignore optimization template (if any) and perform regular simulation.
  * *--queue=qname* defines in which queue the job goes. Overwrites QUEUE
  * *--hypert=num* defines the number of Hyper-Threads used. Default 0.
  * *ATTR* refers to a name in the data file
