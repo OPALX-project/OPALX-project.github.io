@@ -195,3 +195,47 @@ fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=
 # Example 4: Optimization Run
 
 Optimizer and template *\*.tmpl* files should be located in OPTIMIZER and TEMPLATES directories, respectively, while their *\*.data* files should be located in the working directory. Note that if *--filename* is not specified, runOPAL will try to guess which *.tmpl* file to use as input; if OPTIMIZER directory is unknown, runOPAL would attempt regular simulation run. More information on optimizer can be found on the [optimizer wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/optimiser).
+
+For instance, optimization for RF cavity phases with respect to maximum energy would be organized as follows.
+
+'''
+dude:foo nastya$ ls
+cyclotron.data      setenv.sh  tmpl_opt
+cyclotron_opt.data  tmpl
+dude:foo nastya$ ls tmpl/
+cyclotron.tmpl
+dude:foo nastya$ ls tmpl_opt/
+cyclotron_opt.tmpl
+'''
+
+Where *cyclotron_opt.tmpl* file sets up the optimization run:
+
+'''
+OPTION, ECHO=FALSE;
+OPTION, INFO=TRUE;
+
+phi0:  DVAR, VARIABLE="PHI0",  LOWERBOUND=-180, UPPERBOUND=180; // phase of the first cavity
+theta: DVAR, VARIABLE="THETA", LOWERBOUND=0, UPPERBOUND=45; // angle of between cavities
+
+energy: OBJECTIVE, EXPR="-statVariableAt('energy',600.0)";
+
+opt: OPTIMIZE, INPUT=_INPUT_,
+        OUTPUT="cyclotron_optimized", OUTDIR="results",
+        OBJECTIVES = {energy}, DVARS = {phi0, theta},
+        INITIALPOPULATION=10, NUM_MASTERS=1, NUM_COWORKERS=1,
+        NUM_IND_GEN=10, MAXGENERATIONS=20,
+        SIMTMPDIR="simtmpdir",
+        TEMPLATEDIR=_TEMPLATEDIR_,
+        FIELDMAPDIR=_FIELDMAPDIR_;
+
+QUIT;
+'''
+
+And variables set in *cyclotron_opt.data* are:
+
+'''
+CORES          8
+INPUT          "tmpl/cyclotron.tmpl"
+FIELDMAPDIR    "."
+TEMPLATEDIR    "tmpl"
+'''
