@@ -27,7 +27,7 @@ The following environment variables recognized by the *runOPAL.py*:
 In Bash parlance:
 
 ```bash
-export OPTIMIZER=$PWD/tmpl_opt/
+#export OPTIMIZER=$PWD/tmpl_opt/
 export TEMPLATES=$PWD/tmpl/
 export FIELDMAPS=$PWD/fieldmaps/
 export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/
@@ -37,7 +37,7 @@ export RAM=8
 
 Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise you need to set it accordingly. 
 
-From the TEMPLATES directory the *foo.tmpl* file is taken and the values are replaced. 
+If no OPTIMIZER directory is set, then runOPAL runs regular simulation by default: the *foo.tmpl* file is taken from the TEMPLATES directory and the values are replaced using *foo.data* file in the working directory. If OPTIMIZER directory is set in the environment (and no *--noopt*), runOPAL runs optimization job (see Example 4).
 
 The field maps from the *FIELDMAPS* directory and the distributions from the *DISTRIBUTIONS* directory are linked to the directory where the simulation is executed. 
 
