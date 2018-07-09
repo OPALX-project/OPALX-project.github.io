@@ -198,7 +198,7 @@ Optimizer and template *\*.tmpl* files should be located in OPTIMIZER and TEMPLA
 
 For instance, optimization for RF cavity phases with respect to maximum energy would be organized as follows.
 
-'''
+```
 dude:foo nastya$ ls
 cyclotron.data      setenv.sh  tmpl_opt
 cyclotron_opt.data  tmpl
@@ -206,11 +206,11 @@ dude:foo nastya$ ls tmpl/
 cyclotron.tmpl
 dude:foo nastya$ ls tmpl_opt/
 cyclotron_opt.tmpl
-'''
+```
 
 Where *cyclotron_opt.tmpl* file sets up the optimization run:
 
-'''
+```
 OPTION, ECHO=FALSE;
 OPTION, INFO=TRUE;
 
@@ -229,13 +229,13 @@ opt: OPTIMIZE, INPUT=_INPUT_,
         FIELDMAPDIR=_FIELDMAPDIR_;
 
 QUIT;
-'''
+```
 
 And variables set in *cyclotron_opt.data* are:
 
-'''
+```
 CORES          8
 INPUT          "tmpl/cyclotron.tmpl"
 FIELDMAPDIR    "."
 TEMPLATEDIR    "tmpl"
-'''
+```
