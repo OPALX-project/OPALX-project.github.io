@@ -194,4 +194,4 @@ fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=
 
 # Example 4: Optimization Run
 
-Optimizer and template *.tmpl files should be located in OPTIMIZER and TEMPLATES directories, respectively, while their *.data files should be located in the working directory. Note that if *--filename* is not specified, runOPAL will try to guess which *.tmpl file to use as input; if OPTIMIZER directory is unknown, runOPAL would attempt regular simulation run. More information on optimizer can be found on the [optimizer wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/optimiser).
+Optimizer and template *.tmpl* files should be located in OPTIMIZER and TEMPLATES directories, respectively, while their *.data* files should be located in the working directory. Note that if *--filename* is not specified, runOPAL will try to guess which *.tmpl* file to use as input; if OPTIMIZER directory is unknown, runOPAL would attempt regular simulation run. More information on optimizer can be found on the [optimizer wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/optimiser).
