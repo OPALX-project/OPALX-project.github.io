@@ -18,14 +18,16 @@ The following environment variables recognized by the *runOPAL.py*:
    1. *DISTRIBUTIONS*
    2. *TEMPLATES*
    3. *FIELDMAPS*
-   4. *OPAL_EXE_PATH*
-   5. *QUEUE*
-   6. *RAM*
-   7. *TIME*
+   4. *OPTIMIZER*
+   5. *OPAL_EXE_PATH*
+   6. *QUEUE*
+   7. *RAM*
+   8. *TIME*
 
 In Bash parlance:
 
 ```bash
+export OPTIMIZER=$PWD/tmpl_opt/
 export TEMPLATES=$PWD/tmpl/
 export FIELDMAPS=$PWD/fieldmaps/
 export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/
@@ -33,8 +35,7 @@ export QUEUE=all.q
 export RAM=8
 ```
 
-Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise 
-you need to set it accordingly. 
+Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise you need to set it accordingly. 
 
 From the TEMPLATES directory the *foo.tmpl* file is taken and the values are replaced. 
 
