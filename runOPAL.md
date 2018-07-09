@@ -81,11 +81,11 @@ where also all results are stored. The general syntax of runOPAL.py is
 
 `runOPAL.py [--help] [--filename=str] [--test] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description.
- * *--filename | -f=str* sets base falie name for both *.data and *.tmpl files.
- * *--test | -t* exercises everything except for the submission of the job.
+ * *--filename=str* (or *-f*) sets base falie name for both *.data and *.tmpl files.
+ * *--test* or (*-t*) exercises everything except for the submission of the job.
  * *--keep* if same simulation has been run before, keep old data and abort.
  * *--quiet* suppress debug printout.
- * *--info | -i=num* steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
+ * *--info=num* (or *-i*) steers the std-output of OPAL. The range is 0 < num < 6 (default), from minimal to maximum output.
  * *--nobatch* run opal locally not using the batch system and waits until the job is done.
  * *--noopt* ignore optimization template (if any) and perform regular simulation.
  * *--queue=qname* defines in which queue the job goes. Overwrites QUEUE
