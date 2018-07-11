@@ -1,5 +1,5 @@
 # Goal
-Here we will run the Cyclotron flavour of OPAL (OPAL_cyc) in three distinct modes
+Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct modes
 1. tune calculation
 2. accelerated orbit mode
 3. 3D space charge calculation
@@ -7,7 +7,7 @@ Here we will run the Cyclotron flavour of OPAL (OPAL_cyc) in three distinct mode
 # Preparation
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
 If you do not have already access to OPAL, you can visit the download page [the download page](downloads). In
-case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalPSI). 
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalPSI).
 
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
@@ -23,14 +23,14 @@ For this project we need input files, that you obtain by clicking on links below
 ### Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
 
 For the tune calculation we need initial conditions (ic):  energy, radius and radial momenta given to us by an other program in the file  ic.dat.
-The Bash script [cyclotron1.bash](Cyclotron/cyclotron1.bash) will run the tune calculation for all energies specified in ic.dat and store the 
+The Bash script [cyclotron1.bash](Cyclotron/cyclotron1.bash) will run the tune calculation for all energies specified in ic.dat and store the
 radial and vertical tune values together with reference data.
 Make sure the script has execute permission (`chmod u+x cyclotron1.bash`).
 A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by executing
 
 `gnuplot cyclotron1.gpl`
 
-The result is saved in cyclotron1.pdf and shown below, 
+The result is saved in cyclotron1.pdf and shown below,
 it was obtained with [cyclotron1.gpl](Cyclotron/cyclotron1.gpl).
 
 <center>![](Cyclotron/cyclotron1.png)</center>
@@ -41,9 +41,9 @@ For this calculation the initial conditions are set in the input file. Run OPAL 
 
 `opal cyclotron2.in | tee cyclotron2.out`
 
-where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems. 
+where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems.
 
-As in the previous example, the result is saved in cycltron2.pdf and shown below, 
+As in the previous example, the result is saved in cycltron2.pdf and shown below,
 it was obtained with [cyclotron2.gpl](Cyclotron/cyclotron2.gpl)
 
 `gnuplot cyclotron2.gpl`
