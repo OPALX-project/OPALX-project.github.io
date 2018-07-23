@@ -4,7 +4,7 @@
 
 ## Introduction
 
-_OPAL_ is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. _OPAL_ is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class. 
+_OPAL_ is an open source C++ framework for general particle accelerator simulations including 3D space charge, short range wake fields and particle matter interaction. _OPAL_ is based on IPPL (Independent Parallel Particle Layer) which adds parallel capabilities. Main functions inherited from IPPL are: structured rectangular grids, fields, parallel FFT and particles with the respective interpolation operators. Other features are, expression templates and massive parallelism (up to 65000 processors) which makes it possible to tackle the largest problems in the field. A new Trilinos based iterative solver - currently in the commissioning phase - handles arbitrary complex boundary conditions and benefiting from the new geometry class.
 
 Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
 
@@ -15,7 +15,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 * [_OPAL_ Presentations]( OPALPresentations) and papers (ideal for an overview)
 * _OPAL_ 1.6 manual [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide.pdf)
 * _OPAL_ 2.0 manual [Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf)
-* [_OPAL_ conversion utilities](OPAL conversion utilities) 
+* [_OPAL_ conversion utilities](OPAL conversion utilities)
 
 ## Download
 
@@ -53,14 +53,14 @@ The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contain
 * Install Modules [local](installation-local) on MAC and Linux
 * [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI)
 
-## OPAL for Developers: Coding Style and Conventions 
+## OPAL for Developers: Coding Style and Conventions
 
 * [Coding Style and Conventions](For Developers/Codingstyle)
 * [Git usage](git-usage) and [git workflow](git-workflow)
 * [_OPAL_ 2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 * [Building, executing and writing unit tests](unit-tests)
 * [Adding new Elements to _OPAL_](new-elements)
-* [DKS (CUDA) & _OPAL_](https://gitlab.psi.ch/uldis_l/DKS/wikis/home)
+* [DKS (CUDA) & _OPAL_](opaldks)
 * [Technology & Ideas](tech-ideas)
 
 
