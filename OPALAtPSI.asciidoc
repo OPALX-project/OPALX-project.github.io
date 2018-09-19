@@ -40,4 +40,4 @@ git checkout OPAL-2.0
 
 == Compile OPAL
 
-For instructions on compiling OPAL see [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI).
+For instructions on compiling OPAL see link:For[ ]Developers/Compile[ ]OPAL[ ]at[ ]PSI[Compile _OPAL_ at PSI].
