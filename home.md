@@ -26,7 +26,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Using and Compiling _OPAL_
 
-* [Use OPAL at PSI](OPALAtPSI)
+* [Use _OPAL_ at PSI](OPALAtPSI)
 * [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI)
 * [Compile _OPAL_ on Mac with Macports](For Developers/Compile OPAL on Mac)
 * [Compile _OPAL_ on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
@@ -52,7 +52,7 @@ The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contain
 
 ## _OPAL_ at PSI
 
-* [_OPAL_ at PSI]( opalPSI) How to use and install
+* [_OPAL_ at PSI](OPALAtPSI) How to use and install
 * Install Modules [local](installation-local) on MAC and Linux
 * [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI)
 

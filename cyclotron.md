@@ -7,7 +7,7 @@ Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct mod
 # Preparation
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
 If you do not have already access to OPAL, you can visit the download page [the download page](downloads). In
-case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalPSI).
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](OPALAtPSI).
 
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:

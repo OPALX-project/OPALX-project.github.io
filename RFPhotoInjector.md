@@ -5,7 +5,7 @@ Here we will run the rf-photo injector (OPAL_t)
 
 # Preparation
 If you do not have already access to OPAL, you can visit [the download page](downloads). In
-case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](opalPSI).
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](OPALATPSI).
 
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
