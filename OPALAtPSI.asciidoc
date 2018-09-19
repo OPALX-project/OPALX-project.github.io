@@ -2,7 +2,7 @@
 
 For using OPAL at PSI one can use the precompiled binaries that can be loaded with modules.
 
-== Load Modules
+== Load precompiled binary with Modules
 
 Load the OPAL tool-chain for OPAL 2.x
 ```
@@ -25,7 +25,7 @@ Now `opal` is available from the command line.
 
 An environment variable OPAL_EXE_PATH might point to the directory where the selected version of OPAL will reside.
 
-Some info on using [Merlin5](https://intranet.psi.ch/PSI_HPC/Merlin5)
+Some info on using https://intranet.psi.ch/PSI_HPC/Merlin5[Merlin5].
 
 == Get OPAL source
 
