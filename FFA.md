@@ -72,7 +72,7 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 
 OPAL can also model the full acceleration cycle for an FFA. There is an example FFA with RF active here:
 
-[example_3.tar.gz]
+[example_3.tar.gz](/uploads/cf31e0359a4d191fda22455e88483d21/example_3.tar.gz)
 
 Unpack it and run it like:
 
