@@ -67,3 +67,34 @@ Here is an example of the sort of plots you might see:
 ![closed_orbit_plan_bz](/uploads/874aee8942800805eed33587a909a778/closed_orbit_plan_bz.png)
 
 Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton at injection (11 MeV).
+
+# Tracking through an analytical field map with acceleration
+
+OPAL can also model the full acceleration cycle for an FFA. There is an example FFA with RF active here:
+
+[example_3.tar.gz]
+
+Unpack it and run it like:
+
+> tar -xzf example_3.tar.gz
+
+> cd example_3/example_sector_ffa
+
+> /path/to/bin/opal SectorFFAMagnet
+
+> cd ..
+
+Here is an example log file:
+
+[log]
+
+To make plots of the RF field do
+
+> python example_scripts/plot_dump_fields.py example_sector_ffa/
+
+Here are a couple of examples of the sort of plots you might see:
+
+![cavity_time_dependence_0](/uploads/6d5528136cfc3f4227ea7c4e916e7bcd/cavity_time_dependence_0.png)
+![cavity_time_dependence_5](/uploads/9d85e281cc0b787565cbce5b94c21670/cavity_time_dependence_5.png)
+
+These two plots show the RF cavity oscillations at 
