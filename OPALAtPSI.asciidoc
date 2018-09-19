@@ -1,18 +1,25 @@
-= Compile OPAL
+= Using OPAL at PSI
 
-'''
+For using OPAL at PSI one can use the precompiled binaries that can be loaded with modules.
 
 == Load Modules
-The modules required are:
 
+Load the OPAL tool-chain for OPAL 2.x
 ```
-1) gcc/5.4.0        4) hdf5/1.8.18 
-2) openmpi/1.10.4   5) gsl/2.2.1        7) H5hut/2.0.0rc3
-3) boost/1.62.0     6) cmake/3.4.1
+module use /afs/psi.ch/project/amas/modulefiles
+module use unstable
+module load opal-toolschain/2.0
 ```
 
-'''
-'''
+and for 1.6.x
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/1.6
+```
+
+Now `opal` is available from the command line.
+
+**Note**: For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
 
 == Get OPAL source
 
@@ -23,25 +30,14 @@ mkdir OPAL_repo
 cd OPAL_repo
 git clone git@gitlab.psi.ch:OPAL/src.git
 ```
-At the of the cloning process, the source directory is created and filled with the master version of the repository. 
 
-To get a specific branch, for example OPAL/1.6, do:
+To get a specific branch, for example OPAL/2.0, do:
 
 ```
 cd src
-git checkout OPAL-1.6
+git checkout OPAL-2.0
 ```
-
-'''
-'''
 
 == Compile OPAL
 
-Inside the OPAL_repo directory create another directory where to compile OPAL. 
-
-```
-mkdir build
-cd build
-cmake ../src/
-make -j n
-```
+For instructions on compiling OPAL see [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI).
