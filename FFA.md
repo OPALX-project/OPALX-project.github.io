@@ -86,15 +86,25 @@ Unpack it and run it like:
 
 Here is an example log file:
 
-[log]
+[log](/uploads/5487034fc64072c77d123983df75ccaa/log)
 
 To make plots of the RF field do
 
 > python example_scripts/plot_dump_fields.py example_sector_ffa/
+
+and to plot the particle energy with time, do
+
+> python example_scripts/plot_output_planes.py example_sector_ffa/
 
 Here are a couple of examples of the sort of plots you might see:
 
 ![cavity_time_dependence_0](/uploads/6d5528136cfc3f4227ea7c4e916e7bcd/cavity_time_dependence_0.png)
 ![cavity_time_dependence_5](/uploads/9d85e281cc0b787565cbce5b94c21670/cavity_time_dependence_5.png)
 
-These two plots show the RF cavity oscillations at 
+These two plots show the RF cavity oscillations at injection and after 500 microseconds. Note how the frequency of the RF cavity has increased - this is to match the increased particle revolution frequency (as the particles have accelerated so much).
+
+The particle energy increases with time to match the RF frequency, like:
+
+![t_vs_energy](/uploads/8bc6376cb3e365ae2c161480aa1f43b3/t_vs_energy.png)
+
+It looks like the acceleration worked!
