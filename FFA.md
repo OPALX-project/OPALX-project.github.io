@@ -107,4 +107,4 @@ The particle energy increases with time to match the RF frequency, like:
 
 ![t_vs_energy](/uploads/8bc6376cb3e365ae2c161480aa1f43b3/t_vs_energy.png)
 
-It looks like the acceleration worked!
+It looks like the acceleration worked! There are actually two particle trajectories shown: the black points show a particle tuned to match the RF reference trajectory, while the blue points show a particle that is offset longitudinally and oscillating around the reference trajectory.
