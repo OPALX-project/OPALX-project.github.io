@@ -50,12 +50,6 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 
 The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 
-## _OPAL_ at PSI
-
-* [_OPAL_ at PSI](OPALAtPSI) How to use and install
-* Install Modules [local](installation-local) on MAC and Linux
-* [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI)
-
 ## OPAL for Developers: Coding Style and Conventions
 
 * [Coding Style and Conventions](For Developers/Codingstyle)
