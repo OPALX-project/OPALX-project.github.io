@@ -29,7 +29,7 @@ module use unstable
 module load opal-toolschain/2.0
 ```
 
-**Note**: For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
+> **Note**: For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
 
 Optional:
 ```
