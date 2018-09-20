@@ -65,10 +65,6 @@ The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contain
 
 * [regression tests for current OPAL versions](regression-tests)
 
-* on the [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
-* on the branch [OPAL-1.6.x](http://amas.web.psi.ch/opal/regressionTests/1.6/)
-* on the branch [OPAL-2.0.x](http://amas.web.psi.ch/opal/regressionTests/OPAL-2.0/)
-
 # OPAL Physics Resources
 
 1. Trim coil report (PSI Ring):  [PSI Ring](https://gitlab.psi.ch/OPAL/src/uploads/b9b3e4254af29470e2a81bf6e2feb20c/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
