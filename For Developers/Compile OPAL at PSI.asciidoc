@@ -8,8 +8,7 @@ Achim Gsell
 
 == Introduction
 
->
-The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
+> The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
 
 >
 If you *do not* want to use Pmodules, please follow the instruction for link:Compile-OPAL-on-RHEL6[building OPAL from scratch].
