@@ -81,11 +81,11 @@ from inside your clone.
 
 OPAL uses CMake to configure the build process. You can either pass the option you want to use to `cmake` or you can run the command `ccmake ..` in the build directory **after** calling `cmake ..`:
 ```
-cd "$HOME/opal/src"
+cd "$HOME/opal"
 mkdir build
 cd build
-cmake ..    # see available arguments below
-ccmake ..  # optional
+cmake ../src    # see available arguments below
+ccmake ../src   # optional
 ```
 
 The following table shows the most important options:
@@ -100,12 +100,12 @@ The following table shows the most important options:
 
 *Example:*
 ```
-cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_DKS=TRUE ..
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_DKS=TRUE ../src
 ```
 
 '''
 == Compile OPAL
 ```
-cd "$HOME/opal/src/build"
+cd "$HOME/opal/build"
 make -j 5        # number depends on the number of cores on your system
 ```
