@@ -16,26 +16,34 @@ Achim Gsell
 
 == Load the OPAL tool-chain
 
-Load the OPAL tool-chain for OPAL 1.{5,6}.x
+.For OPAL 1.{5,6}.x
 ```
 module use /afs/psi.ch/project/amas/modulefiles
 module load opal-toolschain/1.6
 ```
 
-and for OPAL 2.x
-```
-module use /afs/psi.ch/project/amas/modulefiles
-module use unstable
-module load opal-toolschain/2.0
-```
-
-> **Note**: For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
-
-Optional:
+Optional, if you want to compile with CUDA support:
 ```
 module load cuda/8.0.44
 module load dks/1.1.2
 ```
+
+.For OPAL 2.0
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/2.0
+```
+
+.For OPAL 2.1
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/2.1
+```
+
+> **Note:** For the time being there is no CUDA support for OPAL 2.x
+
+> **Note:** For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
+
 
 '''
 == Get a clone of the OPAL repository
