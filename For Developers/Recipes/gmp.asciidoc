@@ -3,7 +3,7 @@
 
 # recipe for:
 P=gmp
-V=6.1.2
+V=${GMP_VERSION:-6.1.2}
 
 # download
 curl -L \
