@@ -62,7 +62,8 @@ the recommended version in parenthesis.
 | H5hut | 2.0.0rc3 | 2.0.0rc4 | A parallel version is required.
 
 | boost | 1.59 | 1.68.0 
-| The following boost libraries are required: `chrono`,  filesystem iostreams regex serialization system
+| The following boost libraries are required: `chrono`, `filesystem`,
+ `iostreams`, `regex`, `serialization`, `system`
 
 |=======
 
