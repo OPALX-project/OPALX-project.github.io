@@ -147,7 +147,7 @@ Build the software in this order:
 1. link:Recipes/gmp[GMP]
 1. link:Recipes/mpfr[MPFR]
 1. link:Recipes/mpc[MPC]
-1. link:Recipes/gcc[GCC5]
+1. link:Recipes/gcc[GCC]
 1. link:Recipes/openmpi[open-mpi]
 1. link:Recipes/hdf5[HDF5]
 1. link:Recipes/gsl[GSL]
