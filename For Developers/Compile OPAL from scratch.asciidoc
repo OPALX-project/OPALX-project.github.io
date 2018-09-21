@@ -41,8 +41,8 @@ the recommended version in parenthesis.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| cmake |3.0.0 | 3.11.4| Please note version 3.6.3 has some known issues
-  with hdf5
+| cmake |3.0.0 | 3.11.4| Please note that version 3.6.3 has some known issues
+  with hdf5. This version i
 
 | GNU Multiple Precision Arithmetic Library (GMP) | 6.0.0 | 6.1.2
 | required to compile GCC
@@ -52,13 +52,19 @@ the recommended version in parenthesis.
 | GNU MPC Library | 1.0.0 | 1.1.0 | required to compile GCC
 
 | GNU Compiler Collection | 5.3.0 | 7.3.0 | Use GCC >= 7.1.0 on macOS!
+
+| Open MPI | 1.10.2 | 3.1.2 | 
+
+| hdf5 | 1.8.18 | 1.10.3 | 
+
+| GNU Scientific Library | 2.4 | 2.5 |
+
+| H5hut | 2.0.0rc3 | 2.0.0rc4 |
+
+| boost | 1.59 | 1.68.0 |
+
 |=======
 
-* Open MPI >= 1.10.2 (3.1.2)
-* hdf5 >= 1.8.18 (1.10.3) 
-* GNU Scientific Library >= 2.4 (2.5)
-* H5hut >= 2.0.0rc3 (2.0.0rc4)
-* boost >= 1.59 (1.68.0)
 
 {nbsp}
 
