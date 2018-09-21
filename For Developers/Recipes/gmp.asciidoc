@@ -1,4 +1,4 @@
-link:Recipes[back to recipes]
+link:../Recipes[back to recipes]
 
 ---------------------------------------
 #!/bin/bash
