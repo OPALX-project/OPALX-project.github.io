@@ -91,17 +91,21 @@ To keep thinks simple, we set and use a couple of environment variables.
 
 {nbsp}
 
-`DOWNLOADS_DIR`::
- is the directory where we store downloaded files. In this instruction we use `${HOME}/Downloads`.
 
 `PREFIX`::
-is the common installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/software`.
+Installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/OPAL`.
+
+`DOWNLOADS_DIR`::
+ This is the directory where we store downloaded files. In this instruction we use `${PREFIX}/Downloads`.
 
 `SRC_DIR`::
-is the directory where we unpack and compile software. Here we use `${HOME}/src`.
+This is the directory where we unpack and compile software. Here we use `${PREFIX}/src`.
+
 `njobs`::
 number of parallel `make` jobs. The number should be less or equal the number of core on your system plus one. If your system has more then 8 cores, setting `njobs`to eight is quite reasonable.
+
 {nbsp}
+
 [listing]
 .Set environment variables and create used directories:
 --
