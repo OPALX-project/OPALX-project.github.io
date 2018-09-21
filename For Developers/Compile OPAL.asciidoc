@@ -100,8 +100,6 @@ This is the directory where we unpack and compile software. Here we use `${PREFI
 `njobs`::
 number of parallel `make` jobs. The number should be less or equal the number of core on your system plus one. If your system has more then 8 cores, setting `njobs`to eight is quite reasonable.
 
-{nbsp}
-
 [listing]
 .Set environment variables and create used directories:
 --
