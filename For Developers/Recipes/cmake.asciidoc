@@ -36,5 +36,3 @@ make -j ${NJOBS}
 make install
 ---------------------------------------------------
 
-*NOTE*:: 
-There seems to be a problem with version 3.10.0 and Clang.
