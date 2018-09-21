@@ -37,9 +37,9 @@ features. In this document we explain how to compile OPAL from scratch
 The list below shows the required software, the minimal version and
 the recommended version in parenthesis.
 
-[width="100%",options="header"]
+[width="100%",cols="2,2,2,10",options="header"]
 |=======
-| Name  | min Version | recommended Version | Notes
+| Name  | minimum Version | recommended Version | Notes
 
 | cmake |3.0.0 | 3.11.4| Please note version 3.6.3 has some known issues
   with hdf5
