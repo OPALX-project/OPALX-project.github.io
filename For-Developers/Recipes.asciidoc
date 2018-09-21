@@ -1,1 +1,14 @@
-# Recipes
+= Recipes
+
+== Compile and install required software
+
+Build the software in this order:
+
+1. link:Recipes/cmake[CMake]
+1. link:Recipes/openmpi[open-mpi]
+1. link:Recipes/hdf5[HDF5]
+1. link:Recipes/gsl[GSL]
+1. link:Recipes/h5hut[H5hut]
+1. link:Recipes/boost[Boost]
+1. optional: link:Recipes/parmetis[ParMETIS] (required by Trilinos)
+1. optional: link:Recipes/trilinos[Trilinos] (OPAL with SAAMG solver)
