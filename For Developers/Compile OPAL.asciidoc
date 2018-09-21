@@ -34,7 +34,6 @@ features. In this document we explain how to compile OPAL from scratch
 
 === Required software
 
-
 The list below shows the required software, the minimal version and
 the recommended version in parenthesis.
 
@@ -88,9 +87,6 @@ Before compiling everything yourself, you might want to try the versions availab
 == Setting up the environment
 
 To keep thinks simple, we set and use a couple of environment variables.
-
-{nbsp}
-
 
 `PREFIX`::
 Installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/OPAL`.
