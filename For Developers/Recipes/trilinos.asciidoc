@@ -5,13 +5,13 @@ link:../Recipes[back to recipes]
 
 # recipe for:
 P=trilinos
-V=${TRILINOS_VERSION:-12.10.1}
+V=${TRILINOS_VERSION:-12.12.1}
 
 # download
-test -r "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" || \
+test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
         curl -L \
                 --output "$_" \
-                http://trilinos.csbsju.edu/download/files/$P-$V-Source.tar.bz2
+                https://github.com/$P/$P/tarball/$P-release-${V//./-}
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
