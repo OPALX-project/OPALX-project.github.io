@@ -5,7 +5,7 @@ link:../Recipes[back to recipes]
 
 # recipe for:
 P=gsl
-V=${GSL_VERSION:-2.4}
+V=${GSL_VERSION:-2.5}
 
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
