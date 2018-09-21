@@ -1,3 +1,5 @@
+link:../Recipes[back to recipes]
+
 ---------------------------------------------------
 #!/bin/bash
 #
@@ -7,20 +9,20 @@ P=cmake
 V=${CMAKE_VERSION:-3.11.4}
 
 #
-# **Download CMake**
+# Download
 #
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
         curl -L \
                 --output "$_" \
                 "https://cmake.org/files/v${V%.*}/$P-$V.tar.gz"
 #
-# **Unpack CMake**
+# Unpack
 #
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 
 #
-# **Configure CMake**
+# Configure
 # You might have to add the option --system-curl
 #
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
@@ -28,7 +30,7 @@ mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
         --prefix="${PREFIX}" \
         --verbose
 #
-# **Compile and install CMake**
+# Compile and install CMake
 #
 make -j ${NJOBS}
 make install
@@ -36,4 +38,3 @@ make install
 
 *NOTE*:: 
 There seems to be a problem with version 3.10.0 and Clang.
-
