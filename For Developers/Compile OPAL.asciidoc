@@ -81,7 +81,7 @@ the recommended version in parenthesis.
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
 |=======
 
-Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59.
+Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59, MPI.
 
 '''
 
