@@ -14,7 +14,7 @@ curl -L \
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
