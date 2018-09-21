@@ -42,7 +42,7 @@ the recommended version in parenthesis.
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
 | cmake |3.0.0 | 3.11.4| Please note that version 3.6.3 has some known issues
-  with hdf5. This version i
+  with hdf5. 
 
 | GNU Multiple Precision Arithmetic Library (GMP) | 6.0.0 | 6.1.2
 | required to compile GCC
@@ -55,13 +55,14 @@ the recommended version in parenthesis.
 
 | Open MPI | 1.10.2 | 3.1.2 | 
 
-| hdf5 | 1.8.18 | 1.10.3 | 
+| hdf5 | 1.8.18 | 1.10.3 | A parallel version is required.
 
 | GNU Scientific Library | 2.4 | 2.5 |
 
-| H5hut | 2.0.0rc3 | 2.0.0rc4 |
+| H5hut | 2.0.0rc3 | 2.0.0rc4 | A parallel version is required.
 
-| boost | 1.59 | 1.68.0 |
+| boost | 1.59 | 1.68.0 
+| The following boost libraries are required: `chrono`,  filesystem iostreams regex serialization system
 
 |=======
 
