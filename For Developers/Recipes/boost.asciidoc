@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 -----------------------------------------
 #!/bin/bash
 
 # recipe for:
 P=boost
-V=${BOOST_VERSION:-1_66_0}
+V=${BOOST_VERSION:-1_68_0}
 
 # download
 test -r "${DOWNLOADS_DIR}/${P}_$V.tar.gz"  || \

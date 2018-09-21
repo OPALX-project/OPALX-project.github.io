@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 --------------------------------------------
 #!/bin/bash
 
 # recipe for:
 P=gcc
-V=5.4.0
+V=${GCC_VERSION:-7.3.0}
 
 # download
 curl -L \

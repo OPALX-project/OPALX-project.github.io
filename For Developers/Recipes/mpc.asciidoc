@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 -----------------------------------
 #!/bin/bash
 
 # recipe for:
 P=mpc
-V=1.0.3
+V=${MPC_VERSION:-1.1.0}
 
 # download
 curl -L \

@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 ------------------------------------
 #!/bin/bash
 
 # recipe for:
 P=mpfr
-V=3.1.5
+V=${MPFR_VERSION:=4.0.1}
 
 # download
 curl -L \

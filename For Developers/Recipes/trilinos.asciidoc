@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 -----------------------------------
 #!/bin/bash
 
 # recipe for:
 P=trilinos
-V=12.10.1
+V=${TRILINOS_VERSION:-12.10.1}
 
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V-Source.tar.bz2" || \

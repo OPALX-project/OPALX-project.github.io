@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 ----------------------------------------
 #!/bin/bash
 
 # recipe for:
 P=openmpi
-V=${OPENMPI_VERSION:-1.10.7}
+V=${OPENMPI_VERSION:-3.1.2}
 
 # Download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.bz2" || \

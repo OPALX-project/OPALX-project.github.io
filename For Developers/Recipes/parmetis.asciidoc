@@ -1,3 +1,5 @@
+link:../Recipes[back to recipes]
+
 ParMETIS is required only, if you want to compile OPAL with the SAAMG solver.
 It is a dependency of Trilinos.
 
@@ -6,7 +8,7 @@ It is a dependency of Trilinos.
 
 # recipe for:
 P=parmetis
-V=4.0.3
+V=${PARMETIS_VERSION:-4.0.3}
 
 # download
 curl -L \

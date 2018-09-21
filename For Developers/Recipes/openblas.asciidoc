@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 -----------------------------------
 #!/bin/bash
 
 # recipe for:
 P=OpenBLAS
-V=0.2.20
+V=${OPENBLAS_VERSION:-0.2.20}
 
 # download
 curl -L \

@@ -1,9 +1,11 @@
+link:../Recipes[back to recipes]
+
 -----------------------------------
 #!/bin/bash
 
 # recipe for:
 P=hdf5
-V=${HDF5_VERSION:-1.8.18}
+V=${HDF5_VERSION:-1.10.3}
 
 # download
 test -r "${DOWNLOADS_DIR}/$P-$V.tar.bz2"  ||
