@@ -1,4 +1,4 @@
-link:Compile opal from scratch[back to compile OPAL from scratch]
+[Compile _OPAL_ from scratch](back to "Compile OPAL from scratch")
 
 = Recipes
 
