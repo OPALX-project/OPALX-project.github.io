@@ -8,9 +8,10 @@ P=mpc
 V=${MPC_VERSION:-1.1.0}
 
 # download
-curl -L \
-	--output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-	"ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
+test -r "${DOWNLOADS_DIR}/$P-$V.tar.gz" || \
+        curl -L \
+                --output "$_" \
+                "ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
