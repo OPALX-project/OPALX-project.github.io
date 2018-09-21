@@ -70,10 +70,10 @@ the recommended version in parenthesis.
 | ParMETIS | 4.0.0 | 4.0.3
 | optional: required for OPAL compiled with SAAMG solver.
 
-| OpenBLAS | 0.2.9 | 0.2.20 |
+| OpenBLAS | 0.2.9 | 0.2.20
 | optional: required for OPAL compiled with SAAMG solver.
 
-| trilinos | 12.10.1 | 12.10.1 |
+| trilinos | 12.10.1 | 12.10.1
 | optional: required for OPAL compiled with SAAMG solver.
 
 | VTK | 7.1 | 8.0.0
