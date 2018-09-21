@@ -3,7 +3,7 @@ link:../Recipes[back to recipes]
 ---------------------------------------------------
 #!/bin/bash
 #
-# **Set package and version**
+# Recipe for
 #
 P=cmake
 V=${CMAKE_VERSION:-3.11.4}
