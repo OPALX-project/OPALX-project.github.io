@@ -1,3 +1,5 @@
+link:Compile opal from scratch[back to compile OPAL from scratch]
+
 = Recipes
 
 == Compile and/or install required software
