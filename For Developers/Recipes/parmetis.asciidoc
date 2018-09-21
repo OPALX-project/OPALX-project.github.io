@@ -11,9 +11,10 @@ P=parmetis
 V=${PARMETIS_VERSION:-4.0.3}
 
 # download
-curl -L \
-        --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-        "http://glaros.dtc.umn.edu/gkhome/fetch/sw/$P/$P-$V.tar.gz"
+test -r "${DOWNLOADS_DIR}/${P}_$V.tar.gz"  || \
+        curl -L \
+                --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+                "http://glaros.dtc.umn.edu/gkhome/fetch/sw/$P/$P-$V.tar.gz"
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
@@ -22,10 +23,10 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
-	 -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
-	 -D METIS_PATH="${SRC_DIR}/$P/$P-$V/metis" \
-	 -D GKLIB_PATH="${SRC_DIR}/$P/$P-$V/metis/GKlib" \
-	 "${SRC_DIR}/$P/$P-$V"
+         -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+         -D METIS_PATH="${SRC_DIR}/$P/$P-$V/metis" \
+         -D GKLIB_PATH="${SRC_DIR}/$P/$P-$V/metis/GKlib" \
+         "${SRC_DIR}/$P/$P-$V"
 
 # compile and install
 make -j ${NJOBS}
