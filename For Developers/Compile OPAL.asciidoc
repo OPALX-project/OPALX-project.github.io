@@ -152,7 +152,11 @@ mkdir -p "${SRC_DIR}"
 
 === Build everything from scratch
 
-The recipes should work on Linux and macOS. Build the software in this order:
+The recipes should work on Linux and macOS. Tested with:
+
+* macOS 10.13 and Xcode 10 (ongoing)
+
+ Build the software in this order:
 
 1. link:Recipes/cmake[CMake]
 1. link:Recipes/gmp[GMP]
