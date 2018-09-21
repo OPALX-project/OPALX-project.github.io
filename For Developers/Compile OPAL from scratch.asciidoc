@@ -65,31 +65,23 @@ the recommended version in parenthesis.
 | The following boost libraries are required: `chrono`, `filesystem`,
  `iostreams`, `regex`, `serialization`, `system`
 
+| google-test | 1.7.0 | 1.7.0 | optional: Required to run the unit-tests
+
+| ParMETIS | 4.0.0 | 4.0.3
+| optional: required for OPAL compiled with SAAMG solver.
+
+| OpenBLAS | 0.2.9 | 0.2.20 |
+| optional: required for OPAL compiled with SAAMG solver.
+
+| trilinos | 12.10.1 | 12.10.1 |
+| optional: required for OPAL compiled with SAAMG solver.
+
+| VTK | 7.1 | 8.0.0
+| optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
 |=======
 
-
-{nbsp}
-
-=== Optional requirements
-**If you want to run the unit tests, you need `google-test`:**
-
-* gtest >= 1.7.0 (1.7.0)
-
-{nbsp}
-
-**If you want to compile OPAL with the  SAAMG solver:**
-
-* ParMETIS >= 4 (4.0.3)
-* OpenBLAS >= 0.2.9 (0.2.20)
-* trilinos >= 12.10.1 (12.10.1)
-
-{nbsp}
-
-**If you want to compile H5hut with the VTK to H5hut mesh converter, you need:**
-
-* VTK >= 7.1 (8.0.0)
-
 '''
+
 == Setting up the environment
 
 To keep thinks simple, we set and use a couple of environment variables.
