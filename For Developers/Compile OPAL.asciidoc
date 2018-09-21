@@ -1,4 +1,4 @@
-= Compiling OPAL from scratch
+= Compiling OPAL
 Achim Gsell
 :doctype: article
 :numbered:
@@ -34,6 +34,7 @@ features. In this document we explain how to compile OPAL from scratch
 
 === Required software
 
+
 The list below shows the required software, the minimal version and
 the recommended version in parenthesis.
 
@@ -51,9 +52,9 @@ the recommended version in parenthesis.
 
 | GNU MPC Library | 1.0.0 | 1.1.0 | required to compile GCC
 
-| GNU Compiler Collection | 5.3.0 | 7.3.0 | Use GCC >= 7.1.0 on macOS!
+| GNU Compiler Collection | 5.3.0 | 7.3.0 | Do not try to build GCC < 7.1.0 on macOS!
 
-| Open MPI | 1.10.2 | 3.1.2 | 
+| Open MPI | 1.10.2 | 3.1.2 | as alternative MPICH can be used
 
 | hdf5 | 1.8.18 | 1.10.3 | A parallel version is required.
 
@@ -79,6 +80,8 @@ the recommended version in parenthesis.
 | VTK | 7.1 | 8.0.0
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
 |=======
+
+Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59.
 
 '''
 
