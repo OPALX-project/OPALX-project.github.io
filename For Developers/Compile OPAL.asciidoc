@@ -52,7 +52,7 @@ the recommended version in parenthesis.
 
 | cmake | 3.0.0 | 3.11.4 |
 1. CMake shipped with RHEL 7 and older cannot be used! +
-2. CMake version 3.11.4 (and newer) requires a C++ 11. +
+2. CMake version 3.11.4 (and newer) requires C\++ 11. +
 3. GCC 4.8.x shipped with RHEL7 cannot be used! +
 4. Please note that version 3.6.3 has some known issues with hdf5. +
 5. Version 3.11.4 requires a C++ compiler supporting C++11.
