@@ -41,8 +41,7 @@ the recommended version in parenthesis.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| cmake |3.0.0 | 3.11.4
-|
+| cmake | 3.0.0 | 3.11.4 |
 
 * Please note that version 3.6.3 has some known issues
   with hdf5.
