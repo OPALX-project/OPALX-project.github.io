@@ -41,10 +41,9 @@ the recommended version in parenthesis.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| cmake | 3.0.0 | 3.11.4 |
- <ul>
-   <li>Please note that version 3.6.3 has some known issues
-  with hdf5.</li
+| cmake | 3.0.0 | 3.11.4 | <ul>
+ <li>Please note that version 3.6.3 has some known issues
+  with hdf5.</li>
  <li>Version 3.11.4 requires a C++ compiler supporting C++11.</li>
  <li>GCC 4.8.x shipped with RHEL7 cannot be used!</li>
 </ul>
