@@ -33,6 +33,8 @@ features. In this document we explain how to compile OPAL from scratch
 * gzip
 * tar
 * m4
+* bison or compatible
+* flex or compatible
 
 {nbsp}
 
