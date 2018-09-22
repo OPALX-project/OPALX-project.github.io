@@ -20,8 +20,8 @@ tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.bz2"
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 "${SRC_DIR}/$P/$P-$V/configure" \
-		--prefix="${PREFIX}" \
-		--disable-shared
+        --prefix="${PREFIX}" \
+        --disable-shared
 
 # compile and install
 make -j ${NJOBS}
