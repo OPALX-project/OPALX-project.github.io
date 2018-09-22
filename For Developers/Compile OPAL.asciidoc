@@ -24,13 +24,13 @@ features. In this document we explain how to compile OPAL from scratch
 === System requirements
 
 * Operating system
-  * Linux (tested with RHEL 6,7)
-  * Windows with Windows Services for Linux (WSL)
-  * Mac with macos > 10.12
+   * Linux (tested with RHEL 6,7)
+   * Windows with Windows Services for Linux (WSL)
+   * Mac with macos > 10.12
 * Required development tools/packages
-  * macOS
-    * Xcode
-  * Linux (including WSL)
+   * macOS
+      * Xcode
+   * Linux (including WSL)
     * Python 2.7
     * zlib >= 1.2.11 including development package
     * bzip2
