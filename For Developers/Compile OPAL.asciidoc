@@ -26,7 +26,7 @@ features. In this document we explain how to compile OPAL from scratch
 * Operating system
 ** Linux (tested with RHEL 6,7)
 ** Windows with Windows Services for Linux (WSL)
-*** Mac with macos > 10.12
+** Mac with macos > 10.12
 * Required development tools/packages
 ** macOS
 *** Xcode
