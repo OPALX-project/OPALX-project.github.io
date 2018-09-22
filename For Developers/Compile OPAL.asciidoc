@@ -41,11 +41,6 @@ the recommended version in parenthesis.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| cmake | 3.0.0 | 3.11.4 |
-1. Please note that version 3.6.3 has some known issues with hdf5. +
-2. Version 3.11.4 requires a C++ compiler supporting C++11. +
-3. GCC 4.8.x shipped with RHEL7 cannot be used!
-
 | GNU Multiple Precision Arithmetic Library (GMP) | 6.0.0 | 6.1.2
 | required to compile GCC
 
@@ -54,6 +49,13 @@ the recommended version in parenthesis.
 | GNU MPC Library | 1.0.0 | 1.1.0 | required to compile GCC
 
 | GNU Compiler Collection | 5.3.0 | 7.3.0 | Do not try to build GCC < 7.1.0 on macOS!
+
+| cmake | 3.0.0 | 3.11.4 |
+1. CMake shipped with RHEL 7 and older cannot be used! +
+2. CMake version 3.11.4 (and newer) requires a C++ compiler supporting C++11. +
+3. GCC 4.8.x shipped with RHEL7 cannot be used!
+4. Please note that version 3.6.3 has some known issues with hdf5. +
+5. Version 3.11.4 requires a C++ compiler supporting C++11. +
 
 | Open MPI | 1.10.2 | 3.1.2 | as alternative MPICH can be used
 
