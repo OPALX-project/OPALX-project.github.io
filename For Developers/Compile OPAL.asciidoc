@@ -32,6 +32,7 @@ features. In this document we explain how to compile OPAL from scratch
 * bzip2
 * gzip
 * tar
+* m4
 
 {nbsp}
 
