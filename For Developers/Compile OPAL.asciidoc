@@ -167,7 +167,9 @@ mkdir -p "${SRC_DIR}"
 
 The recipes should work on Linux and macOS. Tested with:
 
-* macOS 10.13 and Xcode 10 (ongoing)
+* Redhat Enterprise Linux 7
+* macOS 10.12 with Xcode 9 
+* macOS 10.13 with Xcode 10 (ongoing)
 
 Build the software in this order:
 
