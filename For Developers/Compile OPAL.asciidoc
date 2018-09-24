@@ -61,14 +61,14 @@ the recommended version in parenthesis.
 
 | GNU Compiler Collection | 5.3.0 | 7.3.0 | 
 1. On macOS use GCC >= 7.1.0 or Clang shipped with Xcode. +
-2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g++` has called instead of the newly build staging binary `xg++`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
+2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g&#43;&#43;` was called instead of the newly build staging binary `xg&#43;&#43;`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
 
 | cmake | 3.0.0 | 3.11.4 |
 1. CMake shipped with RHEL 7 and older cannot be used! +
 2. CMake version 3.11.4 (and newer) requires C&#43;&#43; 11. +
 3. GCC 4.8.x shipped with RHEL7 cannot be used! +
 4. Please note that version 3.6.3 has some known issues with hdf5. +
-5. Version 3.11.4 requires a C++ compiler supporting C++11.
+5. Version 3.11.4 requires a C&#43;&#43; compiler supporting C&#43;&#43;11.
 
 | Open MPI | 1.10.2 | 3.1.2 | as alternative MPICH can be used
 
