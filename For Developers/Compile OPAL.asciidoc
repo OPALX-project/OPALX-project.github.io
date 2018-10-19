@@ -155,6 +155,10 @@ export CPLUS_INCLUDE_PATH
 export LIBRARY_PATH
 export LD_LIBRARY_PATH
 
+if [[ -z "${BOOST_DIR} ]] && [[ -z "${BOOST_ROOT} ]]; then
+        export BOOST_DIR="${PREFIX}"
+fi
+
 NJOBS=4
 
 mkdir -p "${PREFIX}"
