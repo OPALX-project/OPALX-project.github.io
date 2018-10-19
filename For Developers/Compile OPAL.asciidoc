@@ -234,7 +234,7 @@ GCC=gcc7
 
 sudo port install cmake
 sudo port install ${GCC}
-sudo port install gsl
+sudo port install gsl +${GCC}
 sudo port install OpenBLAS +${GCC}
 sudo port install openmpi-${GCC}
 sudo port install hdf5 +${GCC} +cxx +openmpi +threadsafe 
