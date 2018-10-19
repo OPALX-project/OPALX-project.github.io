@@ -193,6 +193,27 @@ Build the software in this order:
 
 === macOS: Using Macports
 
+If you have a Mac and Macports installed, you can install and use the following port to compile _OPAL_:
+
+----
+#select on of
+#GCC=gcc5
+#GCC=gcc6
+GCC=gcc7
+
+sudo port install cmake
+sudo port install ${GCC}
+sudo port install openmpi-${GCC}
+sudo port install hdf5-18 +${GCC} +cxx +openmpi +threadsafe 
+sudo port install gsl
+sudo port install parmetis
+sudo port install OpenBLAS
+----
+
+1. link:Recipes/h5hut[H5hut]
+1. link:Recipes/boost[Boost]
+1. optional: link:Recipes/trilinos[Trilinos]
+
 == Building OPAL
 
 1. **Get the OPAL sources**
