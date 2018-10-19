@@ -237,7 +237,7 @@ sudo port install ${GCC}
 sudo port install gsl
 sudo port install OpenBLAS
 sudo port install openmpi-${GCC}
-sudo port install hdf5-18 +${GCC} +cxx +openmpi +threadsafe 
+sudo port install hdf5 +${GCC} +cxx +openmpi +threadsafe 
 sudo port install parmetis +${GCC} +openmpi
 ----
 
