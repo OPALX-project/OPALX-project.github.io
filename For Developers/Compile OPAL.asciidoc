@@ -191,6 +191,44 @@ Build the software in this order:
 
 '''
 
+=== Linux @PSI
+
+> The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
+
+> If you *do not* want to use Pmodules, please follow the instruction for link:Compile-OPAL-on-RHEL6[building OPAL from scratch].
+
+'''
+
+==== Load the OPAL tool-chain
+
+**For OPAL 1.6.x**
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/1.6
+```
+
+Optional, if you want to compile with CUDA support:
+```
+module load cuda/8.0.44
+module load dks/1.1.2
+```
+
+**For OPAL 2.0**
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/2.0
+```
+
+**For OPAL master**
+```
+module use /afs/psi.ch/project/amas/modulefiles
+module load opal-toolschain/2.1
+```
+
+> **Note:** For the time being there is no CUDA support for OPAL 2.x
+
+> **Note:** For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
+
 === macOS: Using Macports
 
 If you have a Mac and Macports installed, you can install and use the following port to compile _OPAL_:
