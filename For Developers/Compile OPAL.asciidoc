@@ -251,6 +251,21 @@ The following software is not provided by Macports and must be installed by exec
 
 '''
 
+=== macOS: Xcode only
+
+> This needs to be tested!
+
+The C/C++ compiler Clang shipped with Xcode can be used to compile _OPAL_. A current CMake binary package can be downloaded for http://www.cmake.org. All other packages must be compiled:
+
+1. link:Recipes/openmpi[open-mpi]
+1. link:Recipes/hdf5[HDF5]
+1. link:Recipes/gsl[GSL]
+1. link:Recipes/h5hut[H5hut]
+1. link:Recipes/boost[Boost]
+1. optional: link:Recipes/parmetis[ParMETIS]
+1. optional: link:Recipes/openblas[OpenBLAS]
+1. optional: link:Recipes/trilinos[Trilinos]
+
 == Building OPAL
 
 === Get the OPAL sources
