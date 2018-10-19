@@ -236,8 +236,7 @@ sudo port install cmake
 sudo port install ${GCC}
 sudo port install gsl
 sudo port install OpenBLAS
-sudo port install openmpi-default +${GCC}
-sudo port install boost +${GCC} +openmpi
+sudo port install openmpi-${GCC}
 sudo port install hdf5-18 +${GCC} +cxx +openmpi +threadsafe 
 sudo port install parmetis +${GCC} +openmpi
 ----
@@ -245,7 +244,10 @@ sudo port install parmetis +${GCC} +openmpi
 The following software is not provided by Macports and must be installed by executing the recipes:
 
 1. link:Recipes/h5hut[H5hut]
+1. link:Recipes/boost[Boost]
 1. optional: link:Recipes/trilinos[Trilinos]
+
+> There are some strange issues with the `boost` boost from Macports if you want to compile with `variants +gcc7 +openmp`.
 
 == Building OPAL
 
