@@ -163,37 +163,11 @@ mkdir -p "${SRC_DIR}"
 --
 '''
 
-== Compile and install required software
-
-=== Build everything from scratch
-
-These recipes can be used with Linux and macOS. Tested with:
-
-* Redhat Enterprise Linux 7
-* macOS 10.12 with Xcode 9 
-* macOS 10.13 with Xcode 10 (ongoing)
-
-Build the software in this order:
-
-1. link:Recipes/gmp[GMP]
-1. link:Recipes/mpfr[MPFR]
-1. link:Recipes/mpc[MPC]
-1. link:Recipes/gcc[GCC]
-1. link:Recipes/cmake[CMake]
-1. link:Recipes/openmpi[open-mpi]
-1. link:Recipes/hdf5[HDF5]
-1. link:Recipes/gsl[GSL]
-1. link:Recipes/h5hut[H5hut]
-1. link:Recipes/boost[Boost]
-1. optional: link:Recipes/parmetis[ParMETIS]
-1. optional: link:Recipes/openblas[OpenBLAS]
-1. optional: link:Recipes/trilinos[Trilinos]
-
-'''
+== Setup required software
 
 === Linux @PSI
 
-> The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
+The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
 
 '''
 
@@ -220,6 +194,33 @@ module load opal-toolchain/master
 > **Note:** For the time being there is no CUDA support for OPAL 2.x
 
 > **Note:** For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
+
+
+=== Build everything from scratch
+
+These recipes can be used with Linux and macOS. Tested with:
+
+* Redhat Enterprise Linux 7
+* macOS 10.12 with Xcode 9 
+* macOS 10.13 with Xcode 10 (ongoing)
+
+Build the software in this order:
+
+1. link:Recipes/gmp[GMP]
+1. link:Recipes/mpfr[MPFR]
+1. link:Recipes/mpc[MPC]
+1. link:Recipes/gcc[GCC]
+1. link:Recipes/cmake[CMake]
+1. link:Recipes/openmpi[open-mpi]
+1. link:Recipes/hdf5[HDF5]
+1. link:Recipes/gsl[GSL]
+1. link:Recipes/h5hut[H5hut]
+1. link:Recipes/boost[Boost]
+1. optional: link:Recipes/parmetis[ParMETIS]
+1. optional: link:Recipes/openblas[OpenBLAS]
+1. optional: link:Recipes/trilinos[Trilinos]
+
+'''
 
 === macOS: Using Macports
 
