@@ -195,8 +195,6 @@ Build the software in this order:
 
 > The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
 
-> If you *do not* want to use Pmodules, please follow the instruction for link:Compile-OPAL-on-RHEL6[building OPAL from scratch].
-
 '''
 
 ==== Load the OPAL tool-chain
@@ -204,25 +202,19 @@ Build the software in this order:
 **For OPAL 1.6.x**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/1.6
-```
-
-Optional, if you want to compile with CUDA support:
-```
-module load cuda/8.0.44
-module load dks/1.1.2
+module load opal-toolchain/1.6
 ```
 
 **For OPAL 2.0**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/2.0
+module load opal-toolchain/2.0
 ```
 
 **For OPAL master**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/2.1
+module load opal-toolchain/master
 ```
 
 > **Note:** For the time being there is no CUDA support for OPAL 2.x
@@ -243,7 +235,7 @@ sudo port install cmake
 sudo port install ${GCC}
 sudo port install gsl
 sudo port install OpenBLAS
-sudo port install openmpi-${GCC}
+sudo port install openmpi-default +${GCC}
 sudo port install boost +${GCC} +openmpi
 sudo port install hdf5-18 +${GCC} +cxx +openmpi +threadsafe 
 sudo port install parmetis +${GCC} +openmpi
