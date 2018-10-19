@@ -27,10 +27,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 ## Using and Compiling _OPAL_
 
 * [Use _OPAL_ at PSI](OPALAtPSI)
-* [Compile _OPAL_ at PSI](For Developers/Compile OPAL at PSI)
-* [Compile _OPAL_ on Mac with Macports](For Developers/Compile OPAL on Mac)
-* [Compile _OPAL_ on Mac from scratch with Clang](For Developers/Compile OPAL on Mac from scratch)
-* [Compile _OPAL_ on RHEL 6/7 and other Linux distributions](For Developers/Compile OPAL on RHEL6)
+* [Compile _OPAL_](For Developers/Compile OPAL)
 * [Compile _OPAL_ at CSCS](For Developers/Compile OPAL at CSCS)
 
 ## Start with Examples
