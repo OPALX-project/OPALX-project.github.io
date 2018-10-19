@@ -249,6 +249,8 @@ The following software is not provided by Macports and must be installed by exec
 
 > There are some strange issues with the `boost` boost from Macports if you want to compile with `variants +gcc7 +openmp`.
 
+'''
+
 == Building OPAL
 
 === Get the OPAL sources
