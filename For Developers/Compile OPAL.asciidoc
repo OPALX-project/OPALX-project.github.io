@@ -249,71 +249,74 @@ The following software is not provided by Macports and must be installed by exec
 
 == Building OPAL
 
-1. **Get the OPAL sources**
-+
+=== Get the OPAL sources
+
 Clone the OPAL Git repository
-+
+
 ```
 mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
 git clone git@gitlab.psi.ch:OPAL/src.git
 ```
-+
-Select the OPAL branch you want to compile. The current stable branch is `OPAL-1.6`:
-+
+
+Select the OPAL branch you want to compile. The current stable branch is `OPAL-2.0`:
+
 ```
 cd "${SRC_DIR}/OPAL/src"
-git checkout OPAL-1.6
+git checkout OPAL-2.0
 ```
-+
+
 To checkout the (unstable) development branch run:
-+
+
 ```
 cd "${SRC_DIR}/OPAL/src"
 git checkout master
 ```
-+
+
 To get a list of all available branches, you can run the command
-+
+
 ```
 git branch -a
 ```
-+
-from inside your clone.
-+
 
-1. **Setup OPAL build environment**
-+
+from inside your clone.
+
+
+=== Setup OPAL build environment
+
 The environment must be set up as described above for building the dependencies.
-+
-1. **Configure OPAL**
-+
+
+=== Configure OPAL
+
 OPAL uses CMake to configure the build process. You can either pass options to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`.
-+
+
 --------------------------------------
 mkdir -p "${SRC_DIR}/OPAL/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
         --prefix="${PREFIX}" \
         "${SRC_DIR}/OPAL/src"
 --------------------------------------
-+
+
 The following table shows the most important options:
-+
 [width="80%"]
 |=======
 | `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
 | `CMAKE_INSTALL_PREFIX` | prefix for installation |
+| `ENABLE_AMR_SOLVER` | enable AMR solver | requires BoxLib
+| `ENABLE_DKS` | enable DKS | requires Cuda >= 8.0.x and DKS >= 1.1.1
+| `ENABLE_SAAMG_SOLVER` | enable SAAMG solver | requires trilinos >= 12.x and parmetis >= 4.0.3
 |=======
 
-1. **Compile and install OPAL**
-+
+
+=== Compile and install OPAL
+
 ```
 cd "${SRC_DIR}/OPAL/build"
 make -j ${NJOBS}
 make install
 ```
 
-== Compile OPAL with the SAAMG solver
+=== Compile OPAL with the SAAMG solver
 
 To compile OPAL with the SAAMG follow the steps in the section "Compile OPAL", but replace the configuration step with:
 --------------------------------------
