@@ -1,0 +1,1 @@
+Parts of the stat files of all runs should be stored into a single file such that the important data from all runs can be evaluated in post processing. The data should be supplemented with the values of the design variables. The file format for this storage should be based on hdf5 since it works well in massive parallel environment and it's already used in OPAL.
