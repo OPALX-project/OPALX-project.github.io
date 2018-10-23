@@ -56,7 +56,7 @@ The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contain
 * [Adding new Elements to _OPAL_](new-elements)
 * [DKS (CUDA) & _OPAL_](opaldks)
 * [Technology & Ideas](tech-ideas)
-* [File Format for stat Storage](file_format_storage)
+* [File Format for stat Storage](File Format for stat Storage)
 
 ## Regression Tests
 
