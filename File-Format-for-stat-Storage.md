@@ -13,7 +13,7 @@ Each sample (simulation run on x cores initiated by the `SAMPLE` or `OPTIMIZE` c
   "name_{I+J}": [double array of length N]
 }
 ```
-where `name_i` (1 <= i <= I) are the names of the design variables / objectives / columns from the stat file, `I` is the sum of the number of design variables and objectives (exact number can't be specified since both the design variable and the objectives are the users choice) and `J` is the number of column from the stat file that should be stored (not all columns should be stored, the specific columns are chosen by the users). 
+where `name_i` (1 <= i <= I) are the names of the design variables / objectives / columns from the stat file, `I` is the sum of the number of design variables and objectives (exact number can't be specified since both the design variable and the objectives are the users choice) and `J` is the number of column from the stat file that should be stored (not all columns should be stored, the specific columns are chosen by the users). The type of the `name_i` is string with max length 64 (should we sufficient). 
 
 Each sample will write the data independently of all other samples and the moment when it's written isn't coordinated between the samples. Also the length of the arrays can vary from sample to sample.
 
