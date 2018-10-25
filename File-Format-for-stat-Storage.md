@@ -5,23 +5,25 @@ Each sample (simulation run on x cores initiated by the `SAMPLE` or `OPTIMIZE` c
 {
   "name_1": double value,
   "name_2": double value,
-  "name_i": double value,
-  "name_{i+1}": [double array of length N],
-  "name_{i+2}": [double array of length N],
-  "name_{i+j}": [double array of length N]
+  "name_I": double value,
+  "name_{I+1}": [double array of length N],
+  "name_{I+2}": [double array of length N],
+  "name_{I+J}": [double array of length N]
 }
 ```
+where `name_i` (1 <= i <= I) are the names of the design variables / objectives / columns from the stat file, `I` is the sum of the number of design variables and objectives (exact number can't be specified since both the design variable and the objectives are the users choice) and `J` is the number of column from the stat file that should be stored (not all columns should be stored, the specific columns are chosen by the users). 
+
 Each sample will write the data independently of all other samples and the moment when it's written isn't coordinated between the samples. Also the length of the arrays can vary from sample to sample.
 
-Possibly we should also store some data in a header, e.g. the name of an objective and its expression (as string), the ranges of the design variables, the type of distribution of design variables (uniform / gaussian), whether raster is true or false. In json the whole file would look like this:
+Possibly we should also store some data in a header, e.g. the name of an objective and its expression (as string), the ranges of the design variables, the values from the data file that were needed, the type of distribution of design variables (uniform / gaussian), whether raster is true or false. In json the whole file would look like this:
 ```
 {
-  "name_I": double value,
-  "name_II": string value,
-  "name_III": integer value,
+  "hname_1": double value,
+  "hname_2": string value,
+  "hname_K": integer value,
   { sample_1 },
   { sample_2 },
   { sample_X }
 }
 ```
-where `{ sample_x }` is specified above.
+where `hname_k` (`1 <= k <= K, k,K \in unsigned integer`) are the names of the design variables / the variables from the data file / objectives and `{ sample_x }` is specified above.
