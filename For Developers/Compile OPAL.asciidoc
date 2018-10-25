@@ -222,6 +222,8 @@ Build the software in this order:
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-boost[Boost]
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-parmetis[ParMETIS]
 1. optional link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-openblas[OpenBLAS]
+There is (experimental?) CMake script had some issues. +
+You may try with other targets than `CORE2`. For auto-detection just run `make`.
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos]
 
 '''
