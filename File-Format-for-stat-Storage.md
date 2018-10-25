@@ -5,9 +5,11 @@ Each sample (simulation run on x cores initiated by the `SAMPLE` or `OPTIMIZE` c
 {
   "name_1": double value,
   "name_2": double value,
+  ...
   "name_I": double value,
   "name_{I+1}": [double array of length N],
   "name_{I+2}": [double array of length N],
+  ...
   "name_{I+J}": [double array of length N]
 }
 ```
