@@ -121,8 +121,8 @@ number of parallel `make` jobs. The number should be less or equal the number of
 .Set environment variables and create used directories:
 --
 PREFIX="${HOME}/OPAL"
-DOWNLOADS_DIR="${PREFIX}/Downloads"
-SRC_DIR="${PREFIX}/src"
+export DOWNLOADS_DIR="${PREFIX}/Downloads"
+export SRC_DIR="${PREFIX}/src"
 
 PATH="${PREFIX}/bin:${PATH}"
 
@@ -159,7 +159,7 @@ if [[ -z "${BOOST_DIR}" ]] && [[ -z "${BOOST_ROOT}" ]]; then
         export BOOST_DIR="${PREFIX}"
 fi
 
-NJOBS=4
+export NJOBS=4
 
 mkdir -p "${PREFIX}"
 mkdir -p "${DOWNLOADS_DIR}"
