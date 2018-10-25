@@ -26,4 +26,4 @@ Possibly we should also store some data in a header, e.g. the name of an objecti
   { sample_X }
 }
 ```
-where `hname_k` (`1 <= k <= K, k,K \in unsigned integer`) are the names of the design variables / the variables from the data file / objectives and `{ sample_x }` is specified above.
+where `hname_k` (1 <= k <= K, k,K \in unsigned integer) are the names of the design variables / the variables from the data file / objectives and `{ sample_x }` is specified above.
