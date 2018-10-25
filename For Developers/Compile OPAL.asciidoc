@@ -223,6 +223,7 @@ Build the software in this order:
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-parmetis[ParMETIS]
 1. optional link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-openblas[OpenBLAS]
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos]
+
 '''
 
 === macOS: Using Macports
