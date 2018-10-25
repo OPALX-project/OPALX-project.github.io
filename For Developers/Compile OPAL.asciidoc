@@ -220,9 +220,9 @@ Build the software in this order:
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gsl[GSL]
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-h5hut[H5hut]
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-boost[Boost]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-parmetis[ParMETIS]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-openblas[OpenBLAS]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos]
+1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-parmetis[ParMETIS]
+1. optional link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-openblas[OpenBLAS]
+1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos]
 '''
 
 === macOS: Using Macports
