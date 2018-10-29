@@ -252,7 +252,8 @@ The following software is not provided by Macports and must be installed by exec
 ----
 export TOOLSET='gcc'
 ----
-link:Recipes/boost[Boost]
+ +
+ link:Recipes/boost[Boost]
 1. optional: link:Recipes/trilinos[Trilinos]
 
 > There are some strange issues with the `boost` boost from Macports if you want to compile with `variants +gcc7 +openmp`.
