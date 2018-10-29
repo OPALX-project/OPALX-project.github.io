@@ -248,7 +248,12 @@ sudo port install parmetis +${GCC} +openmpi
 The following software is not provided by Macports and must be installed by executing the recipes:
 
 1. link:Recipes/h5hut[H5hut]
-1. link:Recipes/boost[Boost]
+1. Set toolset for Boost: +
+----
+export TOOLSET='gcc'
+----
++
+link:Recipes/boost[Boost]
 1. optional: link:Recipes/trilinos[Trilinos]
 
 > There are some strange issues with the `boost` boost from Macports if you want to compile with `variants +gcc7 +openmp`.
