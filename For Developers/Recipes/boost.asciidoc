@@ -18,11 +18,14 @@ mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
 
 # configure
+test -n "${TOOLSET}" || TOOLSET='gcc'
+
 mkdir -p "${SRC_DIR}/$P/build"
 cd "${SRC_DIR}/$P/${P}_$V" 
 ./bootstrap.sh \
         --prefix="${PREFIX}" \
-        --with-libraries=all
+        --with-libraries=all \
+        --with-toolset=${TOOLSET}
 
 # compile & install
 ./b2 \
@@ -30,6 +33,7 @@ cd "${SRC_DIR}/$P/${P}_$V"
         --build-dir=""${SRC_DIR}/$P/build"" \
         --layout=system \
         --without-mpi \
+        toolset="${TOOLSET}" \
         variant=release \
         link=shared,static \
         threading=multi \
@@ -39,6 +43,7 @@ cd "${SRC_DIR}/$P/${P}_$V"
         --build-dir=""${SRC_DIR}/$P/build"" \
         --layout=system \
         --without-mpi \
+        toolset="${TOOLSET}" \
         variant=release \
         link=shared,static \
         threading=multi \
