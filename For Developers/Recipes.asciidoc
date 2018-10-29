@@ -6,16 +6,16 @@ link:Compile%20OPAL[back to "Compile OPAL"]
 
 Build/install the software in following order:
 
-1. link:Recipes/gmp[GMP] (required by GCC)
-1. link:Recipes/mpfr[MPFR] (required by GCC)
-1. link:Recipes/mpc[MPC] (required by GCC
-1. link:Recipes/gcc[GCC]
-1. link:Recipes/cmake[CMake]
-1. link:Recipes/openmpi[open-mpi]
-1. link:Recipes/hdf5[HDF5]
-1. link:Recipes/gsl[GSL]
-1. link:Recipes/h5hut[H5hut]
-1. link:Recipes/boost[Boost]
-1. optional: link:Recipes/openblas[OpenBLAS] (OPAL with SAAMG solver)
-1. optional: link:Recipes/parmetis[ParMETIS] (OPAL with SAAMG solver)
-1. optional: link:Recipes/trilinos[Trilinos] (OPAL with SAAMG solver)
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gmp[GMP] (required for GCC)
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-mpfr[MPFR] (required for GCC)
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-mpc[MPC] (required for GCC)
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gcc[GCC]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-cmake[CMake]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-open-mpi[open-mpi]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-hdf5[HDF5]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gsl[GSL]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-h5hut[H5hut]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-boost[Boost]
+. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-parmetis[ParMETIS] (OPAL with SAAMG solver)
+. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-openblas[OpenBLAS] (OPAL with SAAMG solver)
+. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos] (OPAL with SAAMG solver)
