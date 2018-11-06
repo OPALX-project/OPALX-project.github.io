@@ -27,7 +27,7 @@ The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC
 
 ## Output file related changes
 
-* OPAL-Cycl: _-trackOrbit.dat_ file is now in [m] (instead of [mm]).
+* OPAL-Cycl: _-trackOrbit.dat_ file is now in [m] instead of [mm].
 
 ## Input file related changes introduced in [OPAL-1.6](OPAL-1.6)
 
