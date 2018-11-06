@@ -23,10 +23,11 @@
 * OPAL-Cycl: The trim coil description has been changed and trim coils are now a separate element.
 A new recommended description based on a rational function has been added.
 The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC` has been inverted to [1/mm].
+* The attributes `LAT_RINIT` and `BEAM_RINIT` of the element `RINGDEFINITION` have units [m] instead of [mm].
 
 ## Output file related changes
 
-* OPAL-Cycl: _-trackOrbit.dat_ file is now in [m]
+* OPAL-Cycl: _-trackOrbit.dat_ file is now in [m] (instead of [mm]).
 
 ## Input file related changes introduced in [OPAL-1.6](OPAL-1.6)
 
