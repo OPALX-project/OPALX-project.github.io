@@ -154,8 +154,6 @@ wrong paths in CMake scripts fixed
 |=======
 | boost    | 1.66.0   | C++ libraries
 | CMake    | 3.9.6    | open-source build system
-| cuda     | 8.0.44   | GPU programming
-| DKS      | 1.1.2    | Dynamic Kernel Scheduler
 | gcc      | 7.3.0    | GNU Compiler Collection
 | gsl      | 2.4      | GNU Scientific Library
 | gtest    | 1.7.0    | Google test
