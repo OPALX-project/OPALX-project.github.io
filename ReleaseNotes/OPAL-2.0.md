@@ -1,5 +1,10 @@
 # Release Notes for OPAL 2.0
 
+## Changes in OPAL 2.0.1
+
+* Bugfixes
+* TBW
+
 ## New features in OPAL 2.0.0
 
 * OPAL-T: 3D placement of elements
