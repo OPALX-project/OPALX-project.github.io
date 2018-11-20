@@ -26,10 +26,10 @@
    * [Contributed Talk](http://accelconf.web.cern.ch/AccelConf/ICAP2012/papers/thaai1_talk.pdf)
 1. [*OPAL a versatile Parallel Tool for Precise 3D Beam Dynamics Simulations* (talk), A. Adelmann et al., ERL2011](http://accelconf.web.cern.ch/AccelConf/ERL2011/talks/wg2016_talk.pdf)
 1. [*A Field Emission and Secondary Emission Model in OPAL*, C. Wang et al., HB2010, Morschach, Switzerland](http://accelconf.web.cern.ch/AccelConf/HB2010/papers/mopd55.pdf)
-1. [T. Schietinger et al. Linac2010, Tsukuba, Japan](https://accelconf.web.cern.ch/accelconf/LINAC2010/papers/tup009.pdf)
+1. [*First Commissioning Experience at the SwissFEL Injector Test Facility*, T. Schietinger et al. Linac2010, Tsukuba, Japan](https://accelconf.web.cern.ch/accelconf/LINAC2010/papers/tup009.pdf)
 1. [*The Object Oriented Parallel Accelerator Library (OPAL)*, A. Adelmann et al., PAC2009](http://accelconf.web.cern.ch/AccelConf/PAC2009/papers/fr5pfp065.pdf)
-1. [*The Object Oriented Parallel Accelerator Library (OPAL), Design, Implementation and Application*, A. Adelmann et al.](http://accelconf.web.cern.ch/AccelConf/ICAP2009/papers/we3iopk01.pdf)
-1. [T. Schietinger et al. Linac2008, Vancouver, Canada](http://www.triumf.info/hosted/LINAC08/conferenceguide.pdf)
+1. [*The Object Oriented Parallel Accelerator Library (OPAL), Design, Implementation and Application*, A. Adelmann et al., ICAP2009](http://accelconf.web.cern.ch/AccelConf/ICAP2009/papers/we3iopk01.pdf)
+1. [*Measurements and Modeling at the PSI-XFEL 500 kV Low-Emittance Electron Source*, T. Schietinger et al. Linac2008, Vancouver, Canada](http://accelconf.web.cern.ch/AccelConf/LINAC08/papers/tup097.pdf)
 1. [*Modeling High Intensity Beams in Cyclotrons* (talk), J. Yang et al., HB2008](http://accelconf.web.cern.ch/AccelConf/HB2008/talks/wga33_talk.pdf)
 
 # Papers related to OPAL
