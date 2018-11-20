@@ -24,11 +24,12 @@
 * OPAL-T: The design energy of dipoles is now expected in MeV instead of eV
 * The meaning of `OFFSETZ` of the command `DISTRIBUTION` has changed. It now indicates a shift of the particle bunch relative to the reference particle. Use the `ZSTART` attribute of the `TRACK` command to start the simulation at a position `z > 0`
 * The attribute `DISTRIBUTION` of the command `DISTRIBUTION` has been renamed to `TYPE`
+* The attributes `LAT_RINIT` and `BEAM_RINIT` of the element `RINGDEFINITION` have units [m] instead of [mm].
 * OPAL-T: The attribute `ROTATION` of `RBEND` and `SBEND` has been replaced by `PSI` which now can be applied to all elements to rotate them about the reference trajectory
 * OPAL-Cycl: The trim coil description has been changed and trim coils are now a separate element.
 A new recommended description based on a rational function has been added.
 The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC` has been inverted to [1/mm].
-* The attributes `LAT_RINIT` and `BEAM_RINIT` of the element `RINGDEFINITION` have units [m] instead of [mm].
+* OPAL-Cycl: `DUMPFIELDS` and `DUMPEMFIELDS` commands now uses metres and radians as input instead of mm and degrees.
 
 ## Output file related changes
 
@@ -37,7 +38,7 @@ The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC
 ## Input file related changes introduced in [OPAL-1.6](OPAL-1.6)
 
 * The attribute `BFREQ` of the `BEAM` command is now in MHz instead of Hz
-* Input files must have a version tag, for example 
+* Input files must have a version tag, for example
     ```
     OPTION, VERSION=20000;
     ```
