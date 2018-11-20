@@ -13,12 +13,19 @@
 
 1. [*Opal Simulations of the PSI Ring Cyclotron and a Design for a Higher Order Mode Flat Top Cavity*, N.J. Pogue et al., IPAC2017, Copenhagen, Denmark](http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf)
 1. [B. Kuske, M. Abo-Bakr, IPAC2017, Copenhagen, Denmark](http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/mopab033.pdf)
+1. [*OPAL a versatile Parallel Tool for Precise 3D Beam Dynamics Simulations*, A. Adelmann et al., ERL2011](http://accelconf.web.cern.ch/AccelConf/ERL2011/talks/wg2016_talk.pdf)
 1. [B. Kuske, Ch. Metzger-Kraus, IPAC2016, Busan, South Korea] (http://accelconf.web.cern.ch/AccelConf/ipac2016/papers/thoba03.pdf)
 1. [Ch. Metzger-Kraus et al, IPAC2016, Busan, South Korea] (http://accelconf.web.cern.ch/AccelConf/ipac2016/papers/wepoy034.pdf)
 1. [S. L. Sheehy et al. IPAC2015, Richmond, USA] (http://accelconf.web.cern.ch/AccelConf/IPAC2015/papers/mopje077.pdf)
-1. [*A Field Emission and Secondary Emission Model in OPAL*, C. Wang et al. HB2010, Morschach, Switzerland](http://accelconf.web.cern.ch/AccelConf/HB2010/papers/mopd55.pdf)
+1. [*Dynamic Kernel Scheduler (DKS) - Accelerating the Object Oriented Particle Accelerating Library (OPAL)*, U. Locans et al., ICAP2015](http://accelconf.web.cern.ch/AccelConf/ICAP2015/papers/modwc3.pdf)
+   * [Contributed Talk](accelconf.web.cern.ch/AccelConf/ICAP2015/talks/modwc3_talk.pdf)
+1. [*The Dark Current and Multipacting Capabilities in OPAL: Model, Benchmarks and Applications*, C. Wang et al., ICAP2012, Rostock, Germany](http://accelconf.web.cern.ch/AccelConf/ICAP2012/papers/thaai1.pdf)
+1. [*A Field Emission and Secondary Emission Model in OPAL*, C. Wang et al., HB2010, Morschach, Switzerland](http://accelconf.web.cern.ch/AccelConf/HB2010/papers/mopd55.pdf)
 1. [T. Schietinger et al. Linac2010, Tsukuba, Japan](https://accelconf.web.cern.ch/accelconf/LINAC2010/papers/tup009.pdf)
+1. [*The Object Oriented Parallel Accelerator Library (OPAL)*, A. Adelmann et al., PAC2009](http://accelconf.web.cern.ch/AccelConf/PAC2009/papers/fr5pfp065.pdf)
+1. [*The Object Oriented Parallel Accelerator Library (OPAL), Design, Implementation and Application*, A. Adelmann et al.](http://accelconf.web.cern.ch/AccelConf/ICAP2009/papers/we3iopk01.pdf)
 1. [T. Schietinger et al. Linac2008, Vancouver, Canada](http://www.triumf.info/hosted/LINAC08/conferenceguide.pdf)
+1. [*Modeling High Intensity Beams in Cyclotrons*, J. Yang et al., HB2008](http://accelconf.web.cern.ch/AccelConf/HB2008/talks/wga33_talk.pdf)
 
 # Papers related to OPAL
 
