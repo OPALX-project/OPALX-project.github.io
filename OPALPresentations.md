@@ -14,7 +14,7 @@
 1. [*Opal Simulations of the PSI Ring Cyclotron and a Design for a Higher Order Mode Flat Top Cavity*, N.J. Pogue et al., IPAC2017, Copenhagen, Denmark](http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf)
 1. [*Optics Development and Trajectory Tuning of bERLinPro at Low Energies*, B. Kuske, M. Abo-Bakr, IPAC2017, Copenhagen, Denmark](http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/mopab033.pdf)
 1. [*Modeling and Optimization of the APS Photo-Injector Using OPAL for high Efficiency FEL Experiments*, C. Hall et al., FEL2017](http://accelconf.web.cern.ch/AccelConf/fel2017/papers/tup022.pdf)
-1. [*Update on OPAL* (talk)], A. Adelmann et al., CYCLOTRONS2016](http://accelconf.web.cern.ch/AccelConf/cyclotrons2016/talks/wea04_talk.pdf)
+1. [*Update on OPAL* (talk), A. Adelmann et al., CYCLOTRONS2016](http://accelconf.web.cern.ch/AccelConf/cyclotrons2016/talks/wea04_talk.pdf)
 1. [*Start-to-end Calculations and Trajectory Correction for bERLinPro*, B. Kuske, Ch. Metzger-Kraus, IPAC2016, Busan, South Korea] (http://accelconf.web.cern.ch/AccelConf/ipac2016/papers/thoba03.pdf)
 1. [*Latest Improvements of OPAL*, Ch. Metzger-Kraus et al, IPAC2016, Busan, South Korea] (http://accelconf.web.cern.ch/AccelConf/ipac2016/papers/wepoy034.pdf)
 1. [*Photo-Injector Optimization and Validation Study with the OPAL Beam Simulation Code*, L. D. Duffy et al., NAPAC2016](http://accelconf.web.cern.ch/AccelConf/napac2016/papers/wepob39.pdf)
