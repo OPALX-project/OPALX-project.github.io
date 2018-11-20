@@ -3,7 +3,8 @@
 ## Changes in OPAL 2.0.1
 
 * Bugfixes
-* TBW
+   * Issue #235 Optimiser crashes with HDF5
+   * Issue #243 Collimator lost particle checks
 
 ## New features in OPAL 2.0.0
 
@@ -15,6 +16,7 @@
 * Method for scalable generation of particle distribution now provided
 * OPAL-T: Normalization of field maps can be switched off
 * Scan option is removed
+* Sample command added
 * OPAL mode for highlighting in emacs added
 * Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
 
