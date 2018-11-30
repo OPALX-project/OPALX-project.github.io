@@ -162,7 +162,7 @@ number of parallel `make` jobs. The number should be less or equal the number of
 
 .Set environment variables and create used directories:
 
-link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gmp[setup]
+link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/setup.sh[setup]
 
 '''
 
