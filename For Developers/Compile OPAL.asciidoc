@@ -165,9 +165,9 @@ This is the directory where we unpack and compile software. Here we use `${PREFI
 `njobs`::
 number of parallel `make` jobs. The number should be less or equal the number of core on your system plus one.
 
-.Set environment variables and create used directories:
+To setup the environment variables and create used directories, _source_ the following script:
 
-link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/setup.sh[setup]
+link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/setup.sh[setup.sh]
 
 '''
 
