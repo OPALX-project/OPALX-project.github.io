@@ -175,19 +175,19 @@ link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/setup.sh[setup.sh]
 
 Build the software in this order:
 
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gmp[GMP]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-mpfr[MPFR]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-mpc[MPC]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gcc[GCC]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-cmake[CMake]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-open-mpi[open-mpi]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-hdf5[HDF5]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-gsl[GSL]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-h5hut[H5hut]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-boost[Boost]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-parmetis[ParMETIS]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-openblas[OpenBLAS]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/010-build-gmp[GMP]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/020-build-mpfr[MPFR]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/030-build-mpc[MPC]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/040-build-gcc[GCC]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/050-build-cmake[CMake]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/060-build-open-mpi[open-mpi]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/070-build-hdf5[HDF5]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/080-build-gsl[GSL]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-h5hut[H5hut]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/110-build-boost[Boost]
+1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/200-build-parmetis[ParMETIS]
+1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/210-build-openblas[OpenBLAS]
+1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/220-build-trilinos[Trilinos]
 
 '''
 
