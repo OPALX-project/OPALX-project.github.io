@@ -136,7 +136,7 @@ module load opal-toolchain/master
 
 === Linux, macOS: Build everything from scratch
 
-These recipes can be used with Linux and macOS. Tested with:
+We provide recipes to build all required software. These recipes can be used with Linux and macOS. They are tested with:
 
 * Redhat Enterprise Linux 7
 * macOS 10.12 with Xcode 9 
@@ -144,7 +144,6 @@ These recipes can be used with Linux and macOS. Tested with:
 
 Run the following command to download the recipes:
 
-.Download build recipes
 [listing]
 --
 git clone git@gitlab.psi.ch:OPAL/build-recipes.git
