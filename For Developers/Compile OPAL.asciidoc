@@ -142,7 +142,13 @@ These recipes can be used with Linux and macOS. Tested with:
 * macOS 10.12 with Xcode 9 
 * macOS 10.13 with Xcode 10 (ongoing)
 
-To get the recipes clone the repsoitory 
+Run the following command to download the recipes:
+
+.Download build recipes
+[listing]
+--
+git clone git@gitlab.psi.ch:OPAL/build-recipes.git
+--
 
 ==== Setting up the environment
 
