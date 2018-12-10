@@ -1,5 +1,14 @@
 # Release Notes for OPAL 2.0
 
+## Changes in OPAL 2.0.2
+
+* Bugfixes
+   * Issue #206 Cyclotron elements positioning
+   * Issue #246 Add protection when all particles are in material
+   * Issue #247 Collimator geometry check fixed
+   * Issue #253 Probe, stripper and septum check fixed
+   * Issue #267 RFCavity applied twice
+
 ## Changes in OPAL 2.0.1
 
 * Bugfixes
