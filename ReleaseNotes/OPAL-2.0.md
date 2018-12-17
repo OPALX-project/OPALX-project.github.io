@@ -8,6 +8,7 @@
    * Issue #247 Collimator geometry check fixed
    * Issue #253 Probe, stripper and septum check fixed
    * Issue #267 RFCavity applied twice
+   * Issue #271 Fixed OPAL getting stuck sometimes on multicore
 
 ## Changes in OPAL 2.0.1
 
