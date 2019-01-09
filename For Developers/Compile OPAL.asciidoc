@@ -114,19 +114,19 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 **For OPAL 1.6.x**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolchain/1.6
+module load opal-toolschain/1.6
 ```
 
 **For OPAL 2.0**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolchain/2.0
+module load opal-toolschain/2.0
 ```
 
 **For OPAL master**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolchain/master
+module load opal-toolschain/master
 ```
 
 > **Note:** For the time being there is no CUDA support for OPAL 2.x

@@ -7,7 +7,7 @@
 // 0.0         0.0           0.0           0.0          0.0           0.00
 // 0.01         0.0           0.0           0.0          0.01           0.00
 // When the total particle number equals to 2, SEO mode is triggered automatically,
-// nevertheless of the existance of the cavity and other components. 
+// nevertheless of the existence of the cavity and other components. 
 
 OPTION, VERSION = 10600;
 
