@@ -18,7 +18,7 @@ For this project we need input files, that you obtain by clicking on links below
 4. [dist1.dat]( Cyclotron/dist1.dat) [dist2.dat]( Cyclotron/dist2.dat) (the input distributions)
 5. [ic.dat]( Cyclotron/ic.dat) (initial conditions for the tune calculation)
 6. [refsol.dat]( Cyclotron/refsol.dat) (the reference solution for the tune calculation)
-7. [cyclotron1.gpl]( Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl]( Cyclotron/cyclotron2.gpl) (plotting scripts for gnuplot)
+7. [cyclotron1.gpl]( Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl]( Cyclotron/cyclotron2.gpl) ([cyclotron2.gpl]( Cyclotron/1.6/cyclotron2.gpl) for 1.6.x) (plotting scripts for gnuplot)
 
 # Tune Calculation using cyclotron1.in
 ### Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
