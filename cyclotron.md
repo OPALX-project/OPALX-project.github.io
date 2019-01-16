@@ -12,12 +12,13 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
 
-1. [cyclotron1.in](/uploads/045763d26c6711cab3a1b741552f1976/cyclotron1.in) and [cyclotron2.in](/uploads/3eeadc90ae833b73c378e026928b555e/cyclotron2.in) ([cyclotron1.in]( Cyclotron/cyclotron1.in) and [cyclotron2.in]( Cyclotron/cyclotron2.in) for 1.6.x) the OPAL input files
+1. [cyclotron1.in](/Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in]( Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in]( Cyclotron/1.6/cyclotron2.in) for 1.6.x) the OPAL input files
 2. [bfield.dat]( Cyclotron/bfield.dat) (magnetic field map)
 3. [rffield1.dat]( Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) (rf field maps)
 4. [dist1.dat]( Cyclotron/dist1.dat) [dist2.dat]( Cyclotron/dist2.dat) (the input distributions)
 5. [ic.dat]( Cyclotron/ic.dat) (initial conditions for the tune calculation)
 6. [refsol.dat]( Cyclotron/refsol.dat) (the reference solution for the tune calculation)
+7. [cyclotron1.gpl]( Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl]( Cyclotron/cyclotron2.gpl) (plotting scripts for gnuplot)
 
 # Tune Calculation using cyclotron1.in
 ### Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
@@ -30,8 +31,7 @@ A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by execu
 
 `gnuplot cyclotron1.gpl`
 
-The result is saved in cyclotron1.pdf and shown below,
-it was obtained with [cyclotron1.gpl](Cyclotron/cyclotron1.gpl).
+The result is saved in cyclotron1.pdf and shown below.
 
 <center>![](Cyclotron/cyclotron1.png)</center>
 
@@ -43,10 +43,9 @@ For this calculation the initial conditions are set in the input file. Run OPAL 
 
 where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems.
 
-As in the previous example, the result is saved in cycltron2.pdf and shown below,
-it was obtained with [cyclotron2.gpl](Cyclotron/cyclotron2.gpl)
-
 `gnuplot cyclotron2.gpl`
+
+As in the previous example, the result is saved in cyclotron2.pdf and shown below.
 
 <center>![](Cyclotron/cyclotron2.png)</center>
 

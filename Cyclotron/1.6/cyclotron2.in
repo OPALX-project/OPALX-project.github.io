@@ -1,11 +1,11 @@
-OPTION, VERSION = 20000;
+OPTION, VERSION = 10600;
 
 OPTION, ECHO= FALSE;
 OPTION, PSDUMPFREQ= 10;
 OPTION, PSDUMPFRAME= REFERENCE;
 
 //////////////////////////////////////////////////////////////////////////////
-// input file for single particle tracking                  //
+// input file for single particle tracking				    //
 // the initial conditions are obtained from FIXPO GORBIT mode.              //
 //////////////////////////////////////////////////////////////////////////////
 
@@ -38,9 +38,8 @@ REAL beta=sqrt(1-(1/gamma^2));
 REAL gambet=gamma*beta; 
 REAL P0 = gamma*beta*PMASS;
 
-tc1: TRIMCOIL, TYPE="PSI-RING-OLD", RMIN = 4350.0, RMAX = 4470.0, BMAX=1.4e-3, SLPTC=0.6;
-
-Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=110.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", TRIMCOIL=tc1;
+Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=110.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, 
+	         FMAPFN="bfield.dat", TCR1=4350, TCR2=4470, MBTC=14e-3, SLPTC=6.0;
 
 Rf0: RFCAVITY, VOLT=volt1st, FMAPFN="rffield1.dat", TYPE="SINGLEGAP", 
 FREQ=f1, RMIN = r1, RMAX = r2, ANGLE=35.0,  PDIS = 416.0, GAPWIDTH = 300.0, PHI0=phi01; 
@@ -59,10 +58,10 @@ FREQ=f3, RMIN = rft1, RMAX = rft2, ANGLE=260.0, PDIS = 452.0, GAPWIDTH = 250.0, 
 
 L1:   LINE = (Ring,Rf0,Rf1,Rf2,Rf3,Rf4);
 
-Dist1:DISTRIBUTION, TYPE=FROMFILE,FNAME="dist2.dat"; 
+Dist1:DISTRIBUTION, DISTRIBUTION=FROMFILE,FNAME="dist2.dat"; 
 
 Fs1:FIELDSOLVER, FSTYPE=NONE, MX=64, MY=64, MT=64, PARFFTX=true, PARFFTY=true, PARFFTT=false,
-         BCFFTX=open, BCFFTY=open, BCFFTT=open;
+		 BCFFTX=open, BCFFTY=open, BCFFTT=open;
 
 Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;
 
@@ -72,3 +71,4 @@ TRACK, LINE= L1, BEAM= Beam1, MAXSTEPS= 720*15, STEPSPERTURN= 720;
  RUN, METHOD = "CYCLOTRON-T", BEAM= Beam1, FIELDSOLVER= Fs1, DISTRIBUTION= Dist1;
 ENDTRACK;
 STOP;
+
