@@ -212,7 +212,7 @@ sudo port install parmetis +${GCC} +openmpi
 
 The following software is not provided by Macports and must be installed by executing the recipes:
 
-. link:Recipes/h5hut[H5hut]
+. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-h5hut[H5hut]
 . Set toolset for Boost:
 +
 [source,sh]
