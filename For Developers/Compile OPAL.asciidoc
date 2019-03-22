@@ -45,21 +45,15 @@ features. In this document we explain how to compile OPAL from scratch
 
 === Required software
 
-The list below shows the required software, the minimal version and
-the recommended version in parenthesis.
+The list below shows the required software, the minimal and
+the recommended version.
 
 [width="100%",options="header"]
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| GNU Multiple Precision Arithmetic Library (GMP) | 6.0.0 | 6.1.2
-| required to compile GCC
-
-| GNU MPFR Library | 3.1.0 | 4.0.1 | required to compile GCC
-
-| GNU MPC Library | 1.0.0 | 1.1.0 | required to compile GCC
-
-| GNU Compiler Collection | 5.3.0 | 7.3.0 | 
+| GNU Compiler Collection +
+  Clang | 5.3.0 | 7.3.0 | 
 1. On macOS use GCC >= 7.1.0 or Clang shipped with Xcode. +
 2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g&#43;&#43;` was called instead of the newly build staging binary `xg&#43;&#43;`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
 
@@ -96,6 +90,22 @@ the recommended version in parenthesis.
 | VTK | 7.1 | 8.0.0
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
 |=======
+
+
+
+[width="100%",options="header"]
+|=======
+| **Name**  | **minimum Version** | **recommended Version** | **Notes**
+
+| GNU Multiple Precision Arithmetic Library (GMP) | 6.0.0 | 6.1.2
+| required to compile GCC
+
+| GNU MPFR Library | 3.1.0 | 4.0.1 | required to compile GCC
+
+| GNU MPC Library | 1.0.0 | 1.1.0 | required to compile GCC
+|=======
+
+
 
 Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59, MPI.
 
