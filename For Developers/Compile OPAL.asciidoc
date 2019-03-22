@@ -52,14 +52,13 @@ the recommended version.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| C&#43;&#43; Compiler | C&#43;&#43; 11 | C&#43;&#43; 17 | see below  
+| C&#43;&#43; Compiler | C&#43;&#43; 11 | C&#43;&#43; 17 | version is minimum/recommended C&#43;&#43; standard. For further instructions see section below.  
 
 | cmake | 3.0.0 | 3.11.4 |
 1. CMake shipped with RHEL 7 and older cannot be used! +
-2. CMake version 3.11.4 (and newer) requires C&#43;&#43; 11. +
-3. GCC 4.8.x shipped with RHEL7 cannot be used! +
-4. Please note that version 3.6.3 has some known issues with hdf5. +
-5. Version 3.11.4 requires a C&#43;&#43; compiler supporting C&#43;&#43;11.
+2. GCC 4.8.x shipped with RHEL7 cannot be used! +
+3. Please note that version 3.6.3 has some known issues with hdf5. +
+4. CMake version 3.11.4 and newer requires a C&#43;&#43; compiler supporting C&#43;&#43;11.
 
 | Open MPI | 1.10.2 | 3.1.2 | as alternative MPICH can be used
 
