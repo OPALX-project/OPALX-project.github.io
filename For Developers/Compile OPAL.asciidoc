@@ -119,7 +119,7 @@ For the time being Clang is only tested and recommended for macOS.
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
 | Clang (LLVM) | 9.0.0 | |
-1. Apple LLVM version 9.0.0 (clang-900.0.39.2) shipped with Xcode 9.2 for (macOS 10.13) +
+1. Apple LLVM version 9.0.0 (clang-900.0.38) shipped with Xcode 9.1 for (macOS 10.12) +
 2. Apple LLVM version 10.0.0 (clang-1000.11.45.5) shipped with Xcode 10.1 (macOS 10.14)
 |=======
 
@@ -155,7 +155,9 @@ module load opal-toolchain/master
 
 > **Note:** For the time being there is no CUDA support for OPAL 2.x
 
-> **Note:** For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
+> **Note:** For your convenience we recommend to add the line +
+`module use /afs/psi.ch/project/amas/modulefiles` +
+to your `.bashrc` or `.bash_profile`.
 
 
 === Linux, macOS: Build everything from scratch
