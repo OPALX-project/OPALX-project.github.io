@@ -11,3 +11,13 @@ The retreat takes place at HZB in Berlin-Adlershof from 1st to 4th of April 2019
 | 3 pm -  4 pm|Individual work |Individual work |Individual work |Individual work |
 | 4 pm -  5 pm|Individual work |Individual work |Individual work |Individual work <br> Final remarks<br>Farewell |
 | 5 pm -  6 pm|Individual work (open end)|Individual work (open end) |Individual work (open end) | |
+
+### Participants 
+* Andreas Adelmann 
+* Achim Gsell 
+* Jochem Snuverink 
+* Chris Rogers
+* Pedro Calvo Portela
+* Nicole R Neveu
+* Georgios Kourkafas
+* Christof Metzger-Kraus
