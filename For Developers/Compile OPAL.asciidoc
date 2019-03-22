@@ -52,7 +52,7 @@ the recommended version.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| C++ Compiler supporting C++ 11| | | see below  
+| C&#43;&#43 Compiler supporting C&#43;&#43 11| | | see below  
 
 | cmake | 3.0.0 | 3.11.4 |
 1. CMake shipped with RHEL 7 and older cannot be used! +
