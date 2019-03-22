@@ -45,6 +45,7 @@ features. In this document we explain how to compile OPAL from scratch
 
 === Required software
 
+Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59, MPI.
 The list below shows the required software, the minimal and
 the recommended version.
 
@@ -122,14 +123,11 @@ For the time being Clang is only tested and recommended for macOS.
 2. Apple LLVM version 10.0.0 (clang-1000.11.45.5) shipped with Xcode 10.1 (macOS 10.14)
 |=======
 
-
-Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59, MPI.
-
 '''
 
 == Setup required software
 
-=== Linux: @PSI
+=== Linux @PSI
 
 The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
 
@@ -140,19 +138,19 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 **For OPAL 1.6.x**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/1.6
+module load opal-toolchain/1.6
 ```
 
 **For OPAL 2.0**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/2.0
+module load opal-toolchain/2.0
 ```
 
 **For OPAL master**
 ```
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/master
+module load opal-toolchain/master
 ```
 
 > **Note:** For the time being there is no CUDA support for OPAL 2.x
