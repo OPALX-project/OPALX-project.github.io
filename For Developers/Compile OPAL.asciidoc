@@ -87,7 +87,11 @@ the recommended version.
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
 |=======
 
+=== C&#43;&#43; compiler
 
+==== GCC on Linux, macOS, WSL
+
+GCC can be used on Linux, macOS and Windows Services for Linux.
 
 [width="100%",options="header"]
 |=======
@@ -105,6 +109,18 @@ the recommended version.
 2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g&#43;&#43;` was called instead of the newly build staging binary `xg&#43;&#43;`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
 |=======
 
+==== Clang for macOS
+
+For the time being Clang is only tested and recommended for macOS.
+
+[width="100%",options="header"]
+|=======
+| **Name**  | **minimum Version** | **recommended Version** | **Notes**
+
+| Clang (LLVM) | 9.0.0 | |
+1. Apple LLVM version 9.0.0 (clang-900.0.39.2) shipped with Xcode 9.2 for (macOS 10.13) +
+2. Apple LLVM version 10.0.0 (clang-1000.11.45.5) shipped with Xcode 10.1 (macOS 10.14)
+|=======
 
 
 Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59, MPI.
