@@ -1,5 +1,7 @@
 The retreat takes place at HZB in Berlin-Adlershof from 1st to 4th of April 2019. All participants meet at 9 am on 1st of April in front of the main entrance ([here]( https://www.google.de/maps/place/52%C2%B025'41.2%22N+13%C2%B031'55.6%22E/@52.4281257,13.5314692,213m/data=!3m1!1e3!4m5!3m4!1s0x0:0x0!8m2!3d52.428102!4d13.532096)). Please contact me (Christof) on my mobile phone (+49 179 427 94 34) or by email if you're late.
 
+Timetables for train and bus can be found under https://www.bvg.de/en , information about the Adlershof campus under https://www.adlershof.de and restaurants on the campus under https://www.adlershof.de/gastronomie-speiseplaene/menues/.
+
 The provisional schedule for the retreat is as follows:
 
 |             | Monday, 4/1 | Thuesday, 4/2 | Wednesday, 4/3 | Thursday, 4/4 |
