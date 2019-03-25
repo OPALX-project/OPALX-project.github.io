@@ -2,6 +2,8 @@ The retreat takes place at HZB in Berlin-Adlershof from 1st to 4th of April 2019
 
 Timetables for train and bus can be found under https://www.bvg.de/en , information about the Adlershof campus under https://www.adlershof.de and restaurants on the campus under https://www.adlershof.de/gastronomie-speiseplaene/menues/.
 
+[Here is a map of the train and subway/underground network](/uploads/b195865d854d0864b326e30bf4fe3a2c/S_und_U-Bahnnetz_mit_Regionalbahn_Berlin_ABC.jpg) where I highlighted the train stop Adlershof (in red) as well as the two airports in green. To get from Tegel to Adlershof or from Adlershof to the city center you'll need a ticket AB, from Schönefeld you'll need a ticket BC. There also exist tickets for 4 or 5 days but they are probably more expensive than buying one for each trip. Please remember to validate your ticket on the platform (wine-red boxes)!
+
 The provisional schedule for the retreat is as follows:
 
 |             | Monday, 4/1 | Thuesday, 4/2 | Wednesday, 4/3 | Thursday, 4/4 |
