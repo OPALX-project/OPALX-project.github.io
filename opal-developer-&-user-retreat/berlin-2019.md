@@ -28,5 +28,7 @@ This schedule isn't completely fixed and can be modified / expanded on request.
 * Chris Rogers
 * Pedro Calvo Portela
 * Nicole R Neveu
+* Michael Abo-Bakr
+* Bettina Kuske
 * Georgios Kourkafas
 * Christof Metzger-Kraus
