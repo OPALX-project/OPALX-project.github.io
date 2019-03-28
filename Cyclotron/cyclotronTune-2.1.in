@@ -1,0 +1,51 @@
+// example of tune calculation with closed orbit finder for PSI Ring cyclotron.
+
+OPTION, VERSION = 20000;
+
+OPTION, ECHO= FALSE;
+OPTION, PSDUMPFREQ= 24500000;
+OPTION, SPTDUMPFREQ= 50;
+OPTION, PSDUMPEACHTURN= FALSE;
+OPTION, PSDUMPFRAME= GLOBAL;
+
+// For Tune Calculation
+OPTION, CLOTUNEONLY =true;
+
+TITLE,STRING= "PSI Ring";
+
+REAL Edes = 0.072; // GeV
+REAL r0   = 2037;         //mm
+REAL pr0  = -0.0164; //m_0*c
+REAL f1   = 50.65;
+
+// calculate initial momentum in units beta gamma
+REAL gamma  = (Edes+PMASS)/PMASS;
+REAL beta   = sqrt(1-(1/gamma^2));
+REAL gambet = gamma*beta;
+REAL P0     = gamma*beta*PMASS;
+
+// Cyclotron definition
+// FMLOWE and FMHIGHE needed for range of closed orbit finder
+Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", FMLOWE = 72, FMHIGHE = 590;
+
+// Beamline
+L1:   LINE = (Ring);
+
+//For Tune Calculation with OPAL
+DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
+        NSTEPS=1440, DENERGY=0.001, MAXSTEPSCO = 100, NSECTORS=8, SECTOR=FALSE;
+// Field solver
+Fs1:FIELDSOLVER, FSTYPE=NONE, MX=64, MY=64, MT=64, PARFFTX=true, PARFFTY=true, PARFFTT=false,
+                 BCFFTX=open, BCFFTY=open, BCFFTT=open;
+
+Beam1: BEAM, PARTICLE=PROTON, PC=P0, NPART=1, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;
+
+SELECT, LINE=L1;
+
+TRACK, LINE=L1, BEAM= Beam1, MAXSTEPS= 720, STEPSPERTURN= 720;
+
+RUN, METHOD= "CYCLOTRON-T", BEAM= Beam1, FIELDSOLVER= Fs1, DISTRIBUTION= DistTO;
+
+ENDTRACK;
+
+STOP;
