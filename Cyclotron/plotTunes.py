@@ -11,7 +11,7 @@ def main():
     E   = tunesOPAL[0]
     plt.scatter(Nur,Nuz,c=E,cmap=plt.get_cmap('winter'),marker=".",s=30,label="Close Orbit Finder")
     cbar = plt.colorbar()
-    cbar.set_label("E [MeV]", rotation = 270)
+    cbar.set_label("E [MeV]", rotation = 90, labelpad = 15)
     plt.xlabel(r"$\nu_r$")
     plt.ylabel(r"$\nu_z$")
     plt.title("Tune diagram for PSI Ring")
