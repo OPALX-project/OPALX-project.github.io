@@ -1,7 +1,7 @@
 # Goal
 Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct modes
 1. Tune Calculation
-   1. Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
+   * Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
 2. Accelerated orbit mode
 3. 3D space charge calculation (under construction)
 
@@ -43,14 +43,14 @@ The result is saved in cyclotron1.pdf and shown below.
 
 ### Needed files
 | File | Usage |
-| ---- |:-----:|
+| ---- |-------|
 | [cyclotronTune-2-1.in](Cyclotron/cyclotronTune-2-1.in) | OPAL input file |
 | [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
 | [plotTunes.py]( Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
 
 Since version 2.1 OPAL has a closed orbit finder with tune calculation.
 
-The important comamnds in the input file are:
+The important commands in the input file are:
 
 ```
 OPTION, CLOTUNEONLY =true;
@@ -69,9 +69,9 @@ DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
         NSTEPS=1440, DENERGY=0.001, MAXSTEPSCO = 100, NSECTORS=8, SECTOR=FALSE;
 ```
 
-The matched gaussian distribution with parameters for the closed orbit finder
+The matched gauss distribution with parameters for the closed orbit finder
 (energy steps of 0.001 GeV, average the field over 8 sectors and a maximum of 100 steps for the closed orbit finder to converge).
-More information can be found in the [Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/distribution#sec.distribution.gaussmatchedtype)
+More information on the matched gauss distribution can be found in the [Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/distribution#sec.distribution.gaussmatchedtype)
 
 Run OPAL with
 
@@ -81,9 +81,9 @@ and plot the result from the output file `data/tunes.dat` with
 
 `python3 plotTunes.py`
 
-The result is saved in plotTunes.png and shown below.
+The result is saved in `RingTunes.png` and shown below.
 
-<center>![](Cyclotron/plotTunes.png)</center>
+<center>![](Cyclotron/RingTunes.png)</center>
 
 
 # Accelerated Orbit Calculation using cyclotron2.in
