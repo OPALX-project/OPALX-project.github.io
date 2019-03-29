@@ -1,8 +1,9 @@
 # Goal
 Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct modes
-1. tune calculation
-2. accelerated orbit mode
-3. 3D space charge calculation
+1. Tune Calculation
+   1. Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
+2. Accelerated orbit mode
+3. 3D space charge calculation (under construction)
 
 # Preparation
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
@@ -12,13 +13,15 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
 
-1. [cyclotron1.in](/Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in]( Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in]( Cyclotron/1.6/cyclotron2.in) for 1.6.x) the OPAL input files
-2. [bfield.dat]( Cyclotron/bfield.dat) (magnetic field map)
-3. [rffield1.dat]( Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) (rf field maps)
-4. [dist1.dat]( Cyclotron/dist1.dat) [dist2.dat]( Cyclotron/dist2.dat) (the input distributions)
-5. [ic.dat]( Cyclotron/ic.dat) (initial conditions for the tune calculation)
-6. [refsol.dat]( Cyclotron/refsol.dat) (the reference solution for the tune calculation)
-7. [cyclotron1.gpl]( Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl]( Cyclotron/cyclotron2.gpl) ([cyclotron2.gpl]( Cyclotron/1.6/cyclotron2.gpl) for 1.6.x) (plotting scripts for gnuplot)
+| File | Usage |
+| ---- |:-----:|
+| [cyclotron1.in](/Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in]( Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in]( Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
+| [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
+| [rffield1.dat]( Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) | rf field maps |
+| [dist1.dat]( Cyclotron/dist1.dat) [dist2.dat]( Cyclotron/dist2.dat) | the input distributions |
+| [ic.dat]( Cyclotron/ic.dat) | initial conditions for the tune calculation |
+| [refsol.dat]( Cyclotron/refsol.dat) | the reference solution for the tune calculation |
+| [cyclotron1.gpl]( Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl]( Cyclotron/cyclotron2.gpl) ([cyclotron2.gpl]( Cyclotron/1.6/cyclotron2.gpl) for 1.6.x) | plotting scripts for gnuplot |
 
 # Tune Calculation using cyclotron1.in
 ### Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
@@ -34,6 +37,54 @@ A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by execu
 The result is saved in cyclotron1.pdf and shown below.
 
 <center>![](Cyclotron/cyclotron1.png)</center>
+
+
+### Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
+
+### Needed files
+| File | Usage |
+| ---- |:-----:|
+| [cyclotronTune-2-1.in](Cyclotron/cyclotronTune-2-1.in) | OPAL input file |
+| [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
+| [plotTunes.py]( Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
+
+Since version 2.1 OPAL has a closed orbit finder with tune calculation.
+
+The important comamnds in the input file are:
+
+```
+OPTION, CLOTUNEONLY =true;
+```
+
+This tells OPAL to only perform the closed orbit finder and tune calculation.
+
+```
+Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", FMLOWE=72, FMHIGHE=590;
+```
+
+The minimal and maximal energy for the tune calculation (72 and 590 MeV).
+
+```
+DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
+        NSTEPS=1440, DENERGY=0.001, MAXSTEPSCO = 100, NSECTORS=8, SECTOR=FALSE;
+```
+
+The matched gaussian distribution with parameters for the closed orbit finder
+(energy steps of 0.001 GeV, average the field over 8 sectors and a maximum of 100 steps for the closed orbit finder to converge).
+More information can be found in the [Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/distribution#sec.distribution.gaussmatchedtype)
+
+Run OPAL with
+
+`opal cyclotronTune-2-1.in`
+
+and plot the result from the output file `data/tunes.dat` with
+
+`python3 plotTunes.py`
+
+The result is saved in plotTunes.png and shown below.
+
+<center>![](Cyclotron/plotTunes.png)</center>
+
 
 # Accelerated Orbit Calculation using cyclotron2.in
 ### Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
