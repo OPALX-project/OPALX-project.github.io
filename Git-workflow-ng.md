@@ -52,4 +52,3 @@
     * unit tests
     * regression test(s)?
     ...
-* 
