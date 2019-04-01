@@ -44,6 +44,10 @@
     * review process must be defined
     * proposal: all core developers can review 
     * must be reviewed by at least 2 core developers
+    * merge assigned to creator
+    * Gitlab provides
+       * comments on commits
+       * comments on merge requests
   * more a "formal" review:
     * coding style
     * code duplications
