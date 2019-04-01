@@ -120,7 +120,7 @@ For the time being Clang is only tested and recommended for macOS.
 
 | Clang (LLVM) | 9.0.0 | |
 1. Apple LLVM version 9.0.0 (clang-900.0.38) shipped with Xcode 9.1 (macOS 10.12) +
-2. Apple LLVM version 10.0.0 (clang-1000.11.45.5) shipped with Xcode 10.1 (macOS 10.14)
+2. Apple LLVM version 10.0.1 (clang-1000.11.45.5) shipped with Xcode 10.2 (macOS 10.14)
 |=======
 
 '''
@@ -165,9 +165,13 @@ We provide recipes to build all required software. These recipes can be used on 
 
 * Redhat Enterprise Linux 7
 * macOS 10.12 with Xcode 9 
-* macOS 10.13 with Xcode 10
-* macOS 10.14 with Xcode 10.1 (ongoing)
+* macOS 10.13 with Xcode 10.1
 * Windows Services for Linux (ongoing)
+
+>
+With the last update of Xcode to version 10.2 it is *not* possible to compile GCC without patches. For macOS the recommended solution to compile OPAL is to use Clang.
+
+==== Setting up the environment
 
 Run the following command to download the recipes:
 
@@ -176,7 +180,6 @@ Run the following command to download the recipes:
 git clone git@gitlab.psi.ch:OPAL/build-recipes.git
 --
 
-==== Setting up the environment
 
 To keep thinks simple, we set and use a couple of environment variables.
 
