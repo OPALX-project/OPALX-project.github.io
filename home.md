@@ -24,20 +24,20 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 * [_OPAL_ Presentations]( OPALPresentations) and papers (ideal for an overview)
 * _OPAL_ 1.6 manual [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-1.6.0.pdf)
 * _OPAL_ 2.0 manual [Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home), [PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf) not always in sync with Wiki
-* [_OPAL_ conversion utilities](OPAL conversion utilities)
+* [_OPAL_ conversion utilities](OPAL-conversion-utilities)
 
 ## Download
 
 * [_OPAL_ release notes for version 1.6]( ReleaseNotes/OPAL-1.6)
 * [_OPAL_ release notes for version 2.0]( ReleaseNotes/OPAL-2.0)
 * [Download _OPAL_ binary package](downloads)
-* [Download _OPAL_ source](download source)
+* [Download _OPAL_ source](download-source)
 
 ## Using and Compiling _OPAL_
 
 * [Use _OPAL_ at PSI](OPALAtPSI)
-* [Compile _OPAL_](For Developers/Compile OPAL)
-* [Compile _OPAL_ at CSCS](For Developers/Compile OPAL at CSCS)
+* [Compile _OPAL_](For%20Developers/Compile-OPAL)
+* [Compile _OPAL_ at CSCS](For%20Developers/Compile-OPAL-at-CSCS)
 
 ## Start with Examples
 
