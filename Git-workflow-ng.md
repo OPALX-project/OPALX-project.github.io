@@ -1,28 +1,34 @@
 # OPAL/Git development workflow
 
-## QA and more
+## Motivation
 * QA is importent
-  * wrong physics (many users do not question the results)
   * users tries once or twice before giving
   * losing potential new developers
+  * wrong physics, many users do not question the results
 * more than QA
   * bug hunting is time consuming(!)
   * quick and dirty code usually stays forever once it is in
-  * we save time if we follow some rules
+  * we save time if we follow some simple rules
      * coding style
      * error handling
      * proper Git workflow
      * ...
-* do it right from the beginning
-     * otherwise someone spends more time in bug hunting
+     * do it right from the beginning, otherwise someone else spends more time in bug hunting
+
+## DevOps tools provided by Gitlab
+* Gitlab provides tools for continuous integration/- deployment (CI/CD)
+* maybe we can use (part of) them in the future
+   * unit tests
+   * coding style checker
+   * syntax checker (lint)
 
 ## Git workflow
 
 > Proposal to be discussed
 
-> we already have something: https://gitlab.psi.ch/OPAL/src/wikis/git-workflow
+> Chris already wrote something: https://gitlab.psi.ch/OPAL/src/wikis/git-workflow
 
-* branches and tags on upstream repository (http://gitlab.psi.ch/OPAL/src)
+* branches and tags on master upstream repository (http://gitlab.psi.ch/OPAL/src)
   * stable versions (like OPAL 1.6, 2.0)
      * tags for released versions
   * master for development
@@ -50,9 +56,11 @@
        * comments on merge requests
   * more a "formal" review:
     * coding style
+       * which checker to use?
+       * once we used uncrustify
     * code duplications
     * error handling
     * obvious errors
-    * unit tests
-    * regression test(s)?
-    ...
+    * unit tests written?
+    * regression test(s) available and working?
+* 
