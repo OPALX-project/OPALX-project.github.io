@@ -47,3 +47,26 @@ Let's consider each of these points individually
 * _we get logically separated functions_ - functions that do simple, understandable things are less likely to be buggy than functions that do complicated or difficult things. The process of really testing if a function does what you intended forces us to make code simple and understandable - otherwise the test becomes difficult to write.
 
 Explicitly, unit tests are not intended to test: that code works together in the desired fashion, code integrates properly with external libraries, the load on hardware is not too big, etc. These issues are dealt with in the Regression tests.
+
+== Test driven design (TDD)
+
+Test driven design (TDD) is recommended way to design code in which unit tests come for free.
+
+Instead of class design, TDD starts by writing the unit tests. This focuses directly on the usage of the new classes / features.
+
+From http://www.drdobbs.com/architecture-and-design/test-driven-design/240168102:
+
+> By putting the test first and then writing code to make the test pass, TDD becomes a way to design code.
+Even better, as you add tests you incrementally improve your design.
+In an environment that (deliberately) lacks detailed, up-front design thinking, that last characteristic is critical.
+The process works so well, in fact, that the architecture that emerges from a TDD environment is usually better than the one that, I at least, can create from whole cloth ahead of time.
+
+TDD consists of the following steps:
+
+1. Write unit tests
+  * _Unit test does not compile_
+2. Write class/feature design (skeleton)
+  * _Unit test will compile, but fail_
+3. Write class/feature implementation
+  * _Unit test will pass_ (if implementation correct)
+
