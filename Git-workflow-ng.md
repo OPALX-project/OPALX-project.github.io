@@ -63,4 +63,11 @@
     * obvious errors
     * unit tests written?
     * regression test(s) available and working?
-* 
+
+## Tools
+
+* splint, lint alternative (http://splint.org)
+* cppcheck, static code analisys (http://cppcheck.sourceforge.net)
+* uncrustify (http://uncrustify.sourceforge.net)
+* emacs
+   * flycheck
