@@ -51,8 +51,9 @@
     * can be used in a Changelog
   * must be reviewed
     * review process must be defined
-    * proposal: all core developers can review 
+    * proposal: all core developers can review? For now all members of group OPAL
     * must be reviewed by at least 2 core developers
+    * Can override approvers and approvals required per merge request?
     * merge assigned to creator
     * Gitlab provides
        * comments on commits
