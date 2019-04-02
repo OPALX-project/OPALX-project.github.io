@@ -50,7 +50,7 @@ Explicitly, unit tests are not intended to test: that code works together in the
 
 == Test driven design (TDD)
 
-Test driven design (TDD) is recommended way to design code in which unit tests come for free.
+Test driven design (TDD) is a recommended way to design code in which unit tests come for free.
 
 Instead of class design, TDD starts by writing the unit tests. This focuses directly on the usage of the new classes / features.
 
