@@ -47,15 +47,14 @@
 8.  [References](#8-references)
 
 
-1. Language Standards
-----
+# 1. Language Standards
+
 -   C99
 -   C++11 (minimum versions gcc 4.7.3 ~~and Intel 12~~)
 
 * * * * *
 
-2. Naming Conventions
----------------------
+# 2. Naming Conventions
 
 ### 2.1. General notes 
 
@@ -199,8 +198,7 @@ Example:
 
 * * * * *
 
-3. Documentation
-----------------
+# 3. Documentation
 
 ### 3.1. File Header
 
@@ -326,8 +324,7 @@ Example of detailed code description in Latex
    */
 ```
 
-4. Methods and Functions
-------------------------
+# 4. Methods and Functions
 
 ### 4.1. Complexity 
 
@@ -405,8 +402,7 @@ Example:   (from Linux coding style)
 ```
 * * * * *
 
-5. Formatting
--------------
+# 5. Formatting
 
 ### 5.1. Indentation
 
@@ -610,16 +606,14 @@ std::tuple<
 
 * * * * *
 
-6. Memory Allocation
---------------------
+# 6. Memory Allocation
 
 -   Use `std::vector` for dynamic arrays
 -   Use `std::unique_ptr`/`std::shared_ptr` where ever possible.
 
 * * * * *
 
-7. Error Handling
------------------
+# 7. Error Handling
 
 -   Always check error conditions and handle them!
 -   If we can proceed, it may be enough to print a warning.
@@ -632,8 +626,7 @@ std::tuple<
 
 * * * * *
 
-8. References
--------------
+# 8. References
 
 [ http://www.possibility.com/Cpp/CppCodingStandard.html](http://www.possibility.com/Cpp/CppCodingStandard.html)
 
