@@ -19,8 +19,7 @@
     13. [C++ File Extensions](#213-c-file-extensions)
 
 3.  [Documentation](#3-documentation)
-    1.  [File Header for include files (.h
-        only)](#31-file-header-for-include-files-h-only)
+    1.  [File Header](#31-file-header)
     2.  [Header files](#32-header-files)
     3.  [API Documentation](#33-api-documentation)
     4.  [Code Documentation](#34-code-documentation)
@@ -206,7 +205,7 @@ Example:
 //
 // Brief description of content
 //
-// Copyright (c) 2008-2018
+// Copyright (c) 2008-2019
 // Paul Scherrer Institut, Villigen PSI, Switzerland
 // All rights reserved.
 //
