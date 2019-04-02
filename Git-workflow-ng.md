@@ -22,6 +22,9 @@
    * coding style checker
    * syntax checker (lint)
 
+## Git recipes/howtos
+* to be written
+
 ## Git workflow
 
 > Proposal to be discussed
