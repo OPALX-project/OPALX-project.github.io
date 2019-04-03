@@ -132,8 +132,10 @@ Example
 -   Use camelCase\_m: like method names but append `_m`.
 -   No other underscores
 -   Physical units must be given, no units are noted by []
+-   Doxygen formulas: http://www.doxygen.nl/manual/formulas.html
 Example
 :   `bool doHdf5Save_m;`
+:   `real p_m; /// $\f\beta\gamma\f$
 
 * * * * *
 
