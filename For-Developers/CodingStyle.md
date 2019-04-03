@@ -131,7 +131,7 @@ Example
 -   Use descriptive names.
 -   Use camelCase\_m: like method names but append `_m`.
 -   No other underscores
-
+-   Physical units must be given, no units are noted by []
 Example
 :   `bool doHdf5Save_m;`
 
