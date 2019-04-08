@@ -32,3 +32,67 @@ This schedule isn't completely fixed and can be modified / expanded on request.
 * Bettina Kuske
 * Georgios Kourkafas
 * Christof Metzger-Kraus
+
+### Closeout session (round table)
+
+Andreas
+* paper
+    * deadline week after IPAC (end of May)
+* GPU / DKS (from Uldis Locans)
+    * We should decide here if we want to keep it
+    * Status
+        * multi GPU implementation is done for multi particle interaction
+        * CUDA has FFT multi GPU implementation (fixed nr of cards: either 16 or 32)
+    * regression tests on opal - runner needed
+        * For a test need to have GPU with CUDA installed
+    * Advantages
+        * in paper - will give new users?
+        * new clusters might have GPU options
+    * Disadvantages
+        * new implementation in future?
+        * extra work / comp. resources
+    * Responsibility in future?
+        * Uldis might stay longer at PSI - not sure
+    * Uldis will fix his code in 2.0 / master
+    * Decision / Compromise: if Uldis will fix his code and regr. tests will add him to paper and have regression test
+* Quarterly release scheme
+    * both in stable release and master
+    * next releases end of April
+* Next workshop?
+    * HZB can likely host again
+        * got two talks out of it and potential collaborations
+    * Nicole could host it at SLAC if people are willing to travel
+    * Chris could organise something
+        * in addition to an OPAL-users meeting / tutorial?
+    * Timeframe: next year April sounds reasonable
+        * Nicole will have a lot to work on next year
+* Adaptive time step?
+    * code found again!
+    * Question: how is time step changed?
+        * derivative of energy gain at the moment
+        * but is flexible
+
+Chris
+* OPAL-cycl and OPAL-t merge?
+    * Chris would like to move to OPAL-t
+        * not using RF Cavity or RF Fields
+    * TODO list
+        * element moving over - easy
+        * cyclotron track
+    * Need to be tried
+    * Matthias is the person to ask
+        * shouldn't do the work though
+
+Jochem
+* review MR workflow:
+    * agreed to set approvers afterwards
+
+Nicole
+* python parser?
+    * not sure yet what solution to choose, to be discussed with Chris Mayes
+
+Achim
+* cleanup headers to be done
+
+Andreas: License?
+Achim: yes GPL license added now
