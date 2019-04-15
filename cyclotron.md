@@ -36,8 +36,7 @@ A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by execu
 
 The result is saved in cyclotron1.pdf and shown below.
 
-<center>![](Cyclotron/cyclotron1.png)</center>
-
+![tunesFIXPO](Cyclotron/cyclotron1.png)
 
 ### Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
 
@@ -83,8 +82,7 @@ and plot the result from the output file `data/tunes.dat` with
 
 The result is saved in `RingTunes.png` and shown below.
 
-<center>![](Cyclotron/RingTunes.png)</center>
-
+![TunesClosedOrbitFinder](Cyclotron/RingTunes.png)
 
 # Accelerated Orbit Calculation using cyclotron2.in
 ### Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
@@ -98,7 +96,7 @@ where you also save the output in cyclotron2.out. It is always a good idea to ch
 
 As in the previous example, the result is saved in cyclotron2.pdf and shown below.
 
-<center>![](Cyclotron/cyclotron2.png)</center>
+![Orbit](Cyclotron/cyclotron2.png)
 
 # 3D space charge calculation
 ### Under construction
