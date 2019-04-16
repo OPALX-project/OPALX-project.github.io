@@ -9,3 +9,5 @@
 # Unit Tests
 
 * on [master branch](http://amas.web.psi.ch/opal/unitTests/master/)
+
+For more info see [the regression test repository](https://gitlab.psi.ch/OPAL/regression-tests/wikis/home)
