@@ -16,7 +16,7 @@ and for 1.6.x
 ```
 source /opt/psi/config/profile.bash
 module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolschain/1.6
+module load opal-toolchain/1.6
 module load OPAL/1.6.2
 ```
 
