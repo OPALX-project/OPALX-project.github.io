@@ -13,8 +13,8 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 # Needed Input Files
 For this project we need input files, that you obtain by clicking on links below:
 
-| File | Usage |
-| ---- |:-----:|
+| File | Description |
+| ---- |-----|
 | [cyclotron1.in](/Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in]( Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in]( Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
 | [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
 | [rffield1.dat]( Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) | rf field maps |
