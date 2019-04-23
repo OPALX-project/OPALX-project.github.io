@@ -8,7 +8,7 @@ http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.0.1.tar.xz[OPAL-2.0.1], http://
 
 ## Git repository
 
-Either clone the whole Git repository (quite huge!) with
+Either clone the whole Git repository (~ 2 GB!) with
 [source,sh]
 ----
 git clone https://gitlab.psi.ch/OPAL/src.git
