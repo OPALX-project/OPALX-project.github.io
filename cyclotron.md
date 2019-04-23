@@ -41,7 +41,7 @@ The result is saved in cyclotron1.pdf and shown below.
 ### Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
 
 ### Needed files
-| File | Usage |
+| File | Description |
 | ---- |-------|
 | [cyclotronTune-2-1.in](Cyclotron/cyclotronTune-2-1.in) | OPAL input file |
 | [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
