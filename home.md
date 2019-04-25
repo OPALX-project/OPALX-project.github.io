@@ -46,6 +46,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 1. [Examples from regression tests](RegressionTestExamples)
 1. [Post Processing](PostProcessing)
 1. [FFA](FFA)
+1. [Tutorial from Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/tutorial)
 
 ## The runOPAL.py Script
 
