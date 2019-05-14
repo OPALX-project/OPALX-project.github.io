@@ -47,7 +47,7 @@ The result is saved in cyclotron1.pdf and shown below.
 | [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
 | [plotTunes.py]( Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
 
-Since version 2.1 OPAL has a closed orbit finder with tune calculation.
+Since version 2.1 OPAL has a closed orbit finder with tune calculation based on Gordon's algorithm.
 
 The important commands in the input file are:
 
