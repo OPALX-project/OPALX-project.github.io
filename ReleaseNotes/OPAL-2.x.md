@@ -1,5 +1,9 @@
 # Release Notes for OPAL 2.x
 
+## Changes in OPAL 2.x
+* Bugfixes
+  * Issue #308 Time structure and time shift after particle-matter interaction
+
 ## New features in OPAL 2.x
 
 * _OPAL-map_
