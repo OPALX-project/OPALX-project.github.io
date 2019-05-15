@@ -5,7 +5,7 @@
 * _OPAL-map_
 * Objectives for `SAMPLER` command
 * Pixmap image as `COLLIMATOR` input
-* `CROSSOVER` and `MUTATION` attributes for optimiser
+* `CROSSOVER`, `MUTATION`, `STARTPOPULATION` and `BIRTH_CONTROL` attributes for optimiser
 * Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home)
 
 ## Input file related changes
