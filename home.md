@@ -44,7 +44,6 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 1. [Cyclotron](Cyclotron)
 1. [RF Photo Injector](RFPhotoInjector)
 1. [Examples from regression tests](RegressionTestExamples)
-1. [Post Processing](PostProcessing)
 1. [FFA](FFA)
 1. [Tutorial from Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/tutorial)
 
@@ -53,9 +52,10 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
 data in a conceived way. Scans of multiple dimensions are easy to perform.
 
-## pyOPALTools
+## Post Processing and pyOPALTools
 
 The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
+See also [Post Processing](PostProcessing).
 
 ## OPAL for Developers: Coding Style and Conventions
 
