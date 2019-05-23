@@ -79,6 +79,5 @@ The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC
  ```
 1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](http://amas.web.psi.ch/tools/H5root/index.html).
 
->
-MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
+> MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
 
