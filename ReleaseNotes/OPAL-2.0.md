@@ -64,8 +64,7 @@ The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC
 
 ## Installation of the binary package
 
->
-**Note:** The latest version of the binary package is OPAL 2.0.1-1.
+> **Note:** The latest version of the binary package is OPAL 2.0.1-1.
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
