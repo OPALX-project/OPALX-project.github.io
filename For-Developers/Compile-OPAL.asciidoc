@@ -112,7 +112,7 @@ GCC can be used on Linux, macOS and Windows Services for Linux.
 
 ==== Clang for macOS
 
-For the time being Clang is only tested and recommended for macOS.
+> *Note:* For the time being Clang is the only tested and recommended compiler for macOS.
 
 [width="100%",options="header"]
 |=======
@@ -166,6 +166,7 @@ We provide recipes to build all required software. These recipes can be used on 
 * Redhat Enterprise Linux 7
 * macOS 10.12 with Xcode 9 
 * macOS 10.13 with Xcode 10.1
+* macOS 10.14 with Xcode 10.2
 * Windows Services for Linux (ongoing)
 
 >
