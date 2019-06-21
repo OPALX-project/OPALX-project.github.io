@@ -67,7 +67,7 @@ the recommended version.
 
 | GNU Scientific Library | 2.4 | 2.5 |
 
-| H5hut | 2.0.0rc3 | 2.0.0rc4 | A parallel version is required.
+| H5hut | 2.0.0rc6 | 2.0.0rc6 | A parallel version is required.
 
 | boost | 1.59 | 1.68.0 
 | The following boost libraries are required: `chrono`, `filesystem`,
