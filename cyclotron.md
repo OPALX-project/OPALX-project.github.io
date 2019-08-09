@@ -3,7 +3,9 @@ Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct mod
 1. Tune Calculation
    * Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
 2. Accelerated orbit mode
+<!-- 
 3. 3D space charge calculation (under construction)
+--> 
 
 # Preparation
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
@@ -98,6 +100,7 @@ As in the previous example, the result is saved in cyclotron2.pdf and shown belo
 
 ![Orbit](Cyclotron/cyclotron2.png)
 
+<!--
 # 3D space charge calculation
 ### Under construction
 
@@ -122,5 +125,5 @@ represents a beam with 3 mm rms. The field solver **Fs1** is the standard open d
 and the beam is represented by **1E5** macro particles
 
 **Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;**
-
+-->
 
