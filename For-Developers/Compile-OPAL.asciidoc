@@ -17,7 +17,7 @@ Compiling OPAL can be quite challenging due to all the required
 libraries. Even if some libraries are available on the system, this
 doesn't mean that they can be used for compiling OPAL due to missing
 features. In this document we explain how to compile OPAL from scratch
-- including the recommended compiler and all libraries. 
+- including the recommended compiler and all libraries.
 
 == Requirements
 
@@ -45,7 +45,7 @@ features. In this document we explain how to compile OPAL from scratch
 
 === Required software
 
-Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.59, MPI.
+Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.60, MPI.
 The list below shows the required software, the minimal and
 the recommended version.
 
@@ -53,7 +53,7 @@ the recommended version.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| C&#43;&#43; Compiler | C&#43;&#43; 11 | C&#43;&#43; 17 | version is minimum/recommended C&#43;&#43; standard. For further instructions see section below.  
+| C&#43;&#43; Compiler | C&#43;&#43; 11 | C&#43;&#43; 17 | version is minimum/recommended C&#43;&#43; standard. For further instructions see section below.
 
 | cmake | 3.0.0 | 3.11.4 |
 1. CMake shipped with RHEL 7 and older cannot be used! +
@@ -69,7 +69,7 @@ the recommended version.
 
 | H5hut | 2.0.0rc6 | 2.0.0rc6 | A parallel version is required.
 
-| boost | 1.59 | 1.68.0 
+| boost | 1.60 | 1.68.0
 | The following boost libraries are required: `chrono`, `filesystem`,
  `iostreams`, `regex`, `serialization`, `system`
 
@@ -105,7 +105,7 @@ GCC can be used on Linux, macOS and Windows Services for Linux.
 
 | GNU MPC Library | 1.0.0 | 1.1.0 | required to compile GCC
 
-| GNU Compiler Collection | 5.3.0 | 7.3.0 | 
+| GNU Compiler Collection | 5.3.0 | 7.3.0 |
 1. On macOS use GCC >= 7.1.0 or Clang shipped with Xcode. +
 2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g&#43;&#43;` was called instead of the newly build staging binary `xg&#43;&#43;`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
 |=======
@@ -164,7 +164,7 @@ to your `.bashrc` or `.bash_profile`.
 We provide recipes to build all required software. These recipes can be used on Linux,  macOS and Windows Services for Linux. They are tested with:
 
 * Redhat Enterprise Linux 7
-* macOS 10.12 with Xcode 9 
+* macOS 10.12 with Xcode 9
 * macOS 10.13 with Xcode 10.1
 * macOS 10.14 with Xcode 10.2
 * Windows Services for Linux (ongoing)
@@ -237,7 +237,7 @@ sudo port install ${GCC}
 sudo port install gsl +${GCC}
 sudo port install OpenBLAS +${GCC}
 sudo port install openmpi-${GCC}
-sudo port install hdf5 +${GCC} +cxx +openmpi +threadsafe 
+sudo port install hdf5 +${GCC} +cxx +openmpi +threadsafe
 sudo port install parmetis +${GCC} +openmpi
 ----
 
