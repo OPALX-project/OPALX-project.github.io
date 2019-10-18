@@ -69,7 +69,7 @@ the recommended version.
 
 | H5hut | 2.0.0rc6 | 2.0.0rc6 | A parallel version is required.
 
-| boost | 1.60 | 1.68.0
+| boost | 1.66.0 | 1.68.0
 | The following boost libraries are required: `chrono`, `filesystem`,
  `iostreams`, `regex`, `serialization`, `system`
 
