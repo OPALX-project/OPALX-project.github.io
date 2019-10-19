@@ -45,7 +45,7 @@ features. In this document we explain how to compile OPAL from scratch
 
 === Required software
 
-Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.60, MPI.
+Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. The following software usually works without problems: cmake >= 3.0.0, gcc >= 5.3.0, gsl >= 2.4, boost >= 1.66, MPI.
 The list below shows the required software, the minimal and
 the recommended version.
 
