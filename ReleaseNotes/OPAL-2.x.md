@@ -6,13 +6,14 @@
 * Fixes for output (#355)
 * Issue #308 Time structure and time shift after particle-matter interaction
 * #257 RF Cavity applied twice
-* Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313)
+* Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313 #375)
 * Fixes for optimiser (#230 #233 #235 #257)
 
 ## [New features in OPAL 2.x](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&label_name[]=OPAL%202.1)
 
 * Track back in time (#353)
 * _OPAL-map_
+* BeamStripping physics
 * Objectives for `SAMPLER` command (#249)
 * Pixmap image as `COLLIMATOR` input (#237)
 * `CROSSOVER`, `MUTATION`, `STARTPOPULATION` and `BIRTH_CONTROL` attributes for optimiser (#257)
