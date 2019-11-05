@@ -25,7 +25,7 @@ tar xf OPAL-2.0.1-1-x86_64-linux.tar.xz
 +
 ```
 source "$PREFIX/OPAL-2.0.1-1/etc/profile.d/opal.sh"
- ```
+```
 1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](http://amas.web.psi.ch/tools/H5root/index.html).
 
 > **Note** MPI is included in the OPAL package. Be sure to use the MPI utilities shipped with the OPAL package!
