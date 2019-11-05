@@ -19,10 +19,10 @@ For the time being we do not provide OPAL  packages of 1.6 and 2.0 for macOS.
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
 1. Un-tar the package
- ```
++
+```
     tar xf OPAL-2.0.1-1-x86_64-linux.tar.xz
-
- ```
+```
 1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
  ```
     source "$PREFIX/OPAL-2.0.1-1/etc/profile.d/opal.sh"
