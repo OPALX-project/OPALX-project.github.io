@@ -119,13 +119,15 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 - `parmetis` added
 - wrong paths in CMake scripts fixed
 
+''''
+
+*OPAL 2.0.0rc2-2, 2018, 28th June*
+- `binutils` added
+
+''''
 
 [cols="3*"]
 |===
-
-| 2.0.0rc2-2
-| `binutils` added
-| 28. June 2018
 
 
 | 2.0.0rc2-1
