@@ -28,7 +28,9 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 > **Note** MPI is included in the OPAL package. Be sure to use the MPI utilities shipped with the OPAL package!
 
-== Current versions
+== Current OPAL versions
+
+=== Downloads
 
 [width="80%",cols="3,2,2"]
 |========
@@ -51,7 +53,31 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 |========
 
-== Old versions
+=== ChangeLog
+
+> **Note** This is the ChangeLog for the binary package *not* _OPAL_!
+
+''''
+
+*OPAL 2.1.2019.11-1 - 2019, November 14*
+
+- OPAL 2.1.2019.11 (git rev. 33a9bd1999808243eb17be7093b3b9065e531c6f)
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
+
+*OPAL 2.0.2-1 - 2019, November 14*
+
+- OPAL 2.0.2
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
+
+== Old OPAL versions
+
+=== Downloads
 
 [width="80%",cols="3,2,2"]
 |========
@@ -109,27 +135,9 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 |========
 
-== ChangeLog
+=== ChangeLog
 
 > **Note** This is the ChangeLog for the binary package *not* _OPAL_!
-
-''''
-
-*OPAL 2.1.2019.11-1 - 2019, November 14*
-
-- OPAL 2.1.2019.11 (git rev. 33a9bd1999808243eb17be7093b3b9065e531c6f)
-- compiled without SAAMG solver
-- updated toolchain
-- H5root removed
-- root removed
-
-*OPAL 2.0.2-1 - 2019, November 14*
-
-- OPAL 2.0.2
-- compiled without SAAMG solver
-- updated toolchain
-- H5root removed
-- root removed
 
 *OPAL 2.0.1-1 - 2018, November 16*
 
