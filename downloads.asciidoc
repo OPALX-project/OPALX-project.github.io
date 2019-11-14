@@ -111,6 +111,12 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 == ChangeLog
 
+*2.0.1-1*
+
+- update to OPAL 2.0.1
+- `parmetis` added
+
+
 [cols="3*"]
 |===
 | 2.0.1-1
