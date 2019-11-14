@@ -1,4 +1,4 @@
-= Downloads
+= OPAL binary packages
 :TOC:
 :numbered:
 :blank: pass:[ +]
