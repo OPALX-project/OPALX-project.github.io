@@ -77,18 +77,20 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 === Toolchain
 
-++boost    1.66.0++ C++ libraries
+> **Note** We use the same toolchain for OPAL version >= 2.0.2 and 2.1.x.
 
-`CMake    3.9.6    ` open-source build system
-
-
-| gcc      | 7.3.0    | GNU Compiler Collection
-| gsl      | 2.4      | GNU Scientific Library
-| gtest    | 1.7.0    | Google test
-| H5hut    | 2.0.0rc4 | HDF5 utility toolkit
-| hdf5     | 1.10.1   | Hierachical Data Format 5
-| OpenBLAS | 0.2.20   | optimized BLAS and LAPACK library
-| openmpi  | 1.10.7   | open source MPI-2 implementation
+[cols=4*]
+|=======
+| boost    | 1.66.0   | C++ libraries                     | 
+| CMake    | 3.15.5   | open-source build system          |
+| gcc      | 7.4.0    | GNU Compiler Collection           | for Linux binary
+| clang    | 11.0.0   | Clang  compiler                   | for macOS (Xcode 11.2.1)
+| gsl      | 2.6      | GNU Scientific Library            |
+| gtest    | 1.8.1    | Google test                       |
+| H5hut    | 2.0.0rc6 | HDF5 utility toolkit              |
+| hdf5     | 1.10.5   | Hierachical Data Format 5         |
+| OpenBLAS | 0.3.7    | optimized BLAS and LAPACK library |
+| openmpi  | 3.1.4    | open source MPI-2 implementation  |
 
 == Old OPAL versions
 
