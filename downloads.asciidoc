@@ -115,6 +115,14 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 ''''
 
+*OPAL 2.1.2019.11-1 - 2019, November 14*
+
+- OPAL 2.1.2019.11 (git rev. 33a9bd1999808243eb17be7093b3b9065e531c6f)
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
+
 *OPAL 2.0.2-1 - 2019, November 14*
 
 - OPAL 2.0.2
