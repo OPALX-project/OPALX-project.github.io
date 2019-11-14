@@ -115,6 +115,14 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 ''''
 
+*OPAL 2.0.2-1 - 2019, November 14*
+
+- OPAL 2.0.2
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
+
 *OPAL 2.0.1-1 - 2018, November 16*
 
 - update to OPAL 2.0.1
@@ -141,7 +149,7 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 ''''
 
-*OPAL 1.6.1-2 - 2017. November 6
+*OPAL 1.6.1-2 - 2017. November 6*
 
 - bug in H5root wrapper script fixed
 - file modes fixed
