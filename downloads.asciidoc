@@ -81,10 +81,10 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 [cols=4*]
 |=======
-| boost    | 1.66.0   | C++ libraries                     | 
+| boost    | 1.70.0   | C++ libraries                     | 
 | CMake    | 3.15.5   | open-source build system          |
-| gcc      | 7.4.0    | GNU Compiler Collection           | for Linux binary
-| clang    | 11.0.0   | Clang  compiler                   | for macOS (Xcode 11.2.1)
+| gcc      | 7.4.0    | GNU Compiler Collection           | on Linux
+| clang    | 11.0.0   | Clang  compiler                   | on macOS (Xcode 11.2.1)
 | gsl      | 2.6      | GNU Scientific Library            |
 | gtest    | 1.8.1    | Google test                       |
 | H5hut    | 2.0.0rc6 | HDF5 utility toolkit              |
