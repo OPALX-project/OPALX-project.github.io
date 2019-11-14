@@ -1,4 +1,4 @@
-= OPAL binary packages
+= OPAL binary distribution
 :TOC:
 :numbered:
 :blank: pass:[ +]
@@ -10,11 +10,11 @@ The newest stable version of OPAL is 2.0.2. Versions 2.1.x are development versi
 
 '''
 
-## Installation of the binary package
+## Installation of the binary distribution
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
-1. Un-tar the package, for example:
+1. Un-tar the file, for example:
 +
 ```
 tar xf OPAL-2.0.2-x86_64-linux-1.tar.xz
