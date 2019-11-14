@@ -77,7 +77,7 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 === Toolchain
 
-> **Note** We use the same toolchain for OPAL version >= 2.0.2 and 2.1.x.
+> **Note** For the time being we use the same toolchain for OPAL versions 2.0.2 and newer.
 
 [cols=4*]
 |=======
@@ -229,7 +229,7 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 === Toolchains
 
-==== Toolchain for Version <= 2.0.1
+==== Toolchain for version 2.0.1 and older
 
 [cols=3*]
 |=======
