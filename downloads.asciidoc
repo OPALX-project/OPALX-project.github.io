@@ -77,7 +77,7 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 === Toolchain
 
-```boost    1.66.0``` C++ libraries
+++boost    1.66.0++ C++ libraries
 
 `CMake    3.9.6    ` open-source build system
 
