@@ -113,7 +113,7 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 > **Note** This is the ChangeLog for the binary package *not* _OPAL_!
 
-*2.0.1-1*
+*OPAL 2.0.1-1, 2018, 16th November*
 
 - update to OPAL 2.0.1
 - `parmetis` added
