@@ -115,7 +115,7 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 ''''
 
-*OPAL 2.0.1-1, 2018, 16th November*
+*OPAL 2.0.1-1 - 2018, November 16*
 
 - update to OPAL 2.0.1
 - `parmetis` added
@@ -123,19 +123,19 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 ''''
 
-*OPAL 2.0.0rc2-2, 2018, 28th June*
+*OPAL 2.0.0rc2-2 - 2018, June 28*
 
 - `binutils` added
 
 ''''
 
-*OPAL 2.0.0rc2-1, 2017, 4th May*
+*OPAL 2.0.0rc2-1 - 2017, May 4*
 
 - first version with OPAL 2.0.0 release candidate 2
 
 ''''
 
-*OPAL 1.6.1-3; 2017, 10th November*
+*OPAL 1.6.1-3 - 2017, November 10th*
 
 - shared libraries like `libpng12`, `libz`, `libnuma` added to binary package.
 
