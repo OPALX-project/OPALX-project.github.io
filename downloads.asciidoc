@@ -111,6 +111,8 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 == ChangeLog
 
+> **Note** This is the ChangeLog for the binary package *not* _OPAL_!
+
 *2.0.1-1*
 
 - update to OPAL 2.0.1
