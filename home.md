@@ -15,7 +15,7 @@ The code is managed through the git distributed version control system. A suite 
 
 
 
-Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [mailing list](https://psilists.ethz.ch/sympa/subscribe/opal)
+Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [**mailing list**](https://psilists.ethz.ch/sympa/subscribe/opal)
 
 Please report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues) or to the mailing list.
 
