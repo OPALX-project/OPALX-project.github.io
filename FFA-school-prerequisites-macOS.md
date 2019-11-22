@@ -37,7 +37,7 @@ If you have Macports installed and want to use Python3 from Macports run
 sudo port install python37 py-numpy py-matplotlib py-scipy
 ```
 
-### Other Python libraries
+### Other Python libraries to be installed
 We also use xboa library as a backend.
 ```
 cd ~/path/to/working/dir
