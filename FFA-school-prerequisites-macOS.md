@@ -8,7 +8,7 @@ itself.
 mkdir -p ~/path/to/working/dir && cd "$_"
  
 wget http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz
-tar -xf OPAL-2.0.1-1-x86_64-linux.tar.xz
+tar -xf OPAL-2.0.1-1-x86_64-macos.tar.xz
 ```
 
 ## Install FFA school file
