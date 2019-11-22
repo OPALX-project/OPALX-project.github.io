@@ -71,7 +71,7 @@ sudo python3 setup.py install
 Finally, you need to set a few environment variables
 ```
 cd ~/path/to/working/dir/ffa-school
-export OPAL_BUILD_PATH=~/path/to/working/dir/OPAL-2.0.1/
+export OPAL_BUILD_PATH=~/path/to/working/dir/OPAL-2.0.2/
 source env.sh
 ```
 The env.sh script also checks that the environment is okay and returns an error
