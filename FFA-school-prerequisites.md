@@ -1,4 +1,4 @@
-# FFA school prerequisites for macOS
+# FFA school prerequisites
 
 ## Install OPAL
 
