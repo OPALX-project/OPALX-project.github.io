@@ -1,7 +1,7 @@
 # Goal
 Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct modes
 1. Tune Calculation
-   * Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
+   * Tune Calculation with OPAL's closed orbit finder (so far only in OPAL 2.1.x and higher)
 2. Accelerated orbit mode
 <!-- 
 3. 3D space charge calculation (under construction)
