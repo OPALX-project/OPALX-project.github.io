@@ -9,7 +9,7 @@
 // When the total particle number equals to 2, SEO mode is triggered automatically,
 // nevertheless of the existance of the cavity and other components.
 
-OPTION, VERSION = 20000;
+OPTION, VERSION = 20200;
 
 OPTION, ECHO= FALSE;
 OPTION, PSDUMPFREQ= 24500000;
@@ -31,7 +31,11 @@ REAL beta   = sqrt(1-(1/gamma^2));
 REAL gambet = gamma*beta;
 REAL P0     = gamma*beta*PMASS;
 
-tc1: TRIMCOIL, TYPE="PSI-RING-OLD", RMIN = 4350.0, RMAX = 4470.0, BMAX=1.4e-3, SLPTC=0.6;
+IF (OPALVERSION >= 20100){
+    tc1: TRIMCOIL, TYPE="PSI-BFIELD-MIRRORED", RMIN = 4350.0, RMAX = 4470.0, BMAX=1.4e-3, SLPTC=0.6;
+} ELSE {
+    tc1: TRIMCOIL, TYPE="PSI-RING-OLD",        RMIN = 4350.0, RMAX = 4470.0, BMAX=1.4e-3, SLPTC=0.6;
+}
 
 Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", TRIMCOIL=tc1;
 
