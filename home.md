@@ -27,7 +27,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 * [_OPAL_ conversion utilities](OPAL-conversion-utilities)
 
 ## Download
-
+* [_OPAL_ release notes for version 2.2]( ReleaseNotes/OPAL-2.2)
 * [_OPAL_ release notes for version 1.6]( ReleaseNotes/OPAL-1.6)
 * [_OPAL_ release notes for version 2.0]( ReleaseNotes/OPAL-2.0)
 * [Download _OPAL_ binary package](downloads)
