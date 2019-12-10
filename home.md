@@ -59,6 +59,7 @@ See also [Post Processing](PostProcessing).
 
 ## OPAL for Developers: Coding Style and Conventions
 
+* [Periodic Tele-cons](Periodic-Tele-cons)
 * [Coding Style and Conventions](For Developers/Codingstyle)
 * [Git usage](git-usage) and [git workflow](git-workflow)
 * [_OPAL_ 2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
