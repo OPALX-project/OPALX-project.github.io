@@ -17,7 +17,7 @@ Minutes
 2.
 
 
-3. OPAL Retreat SLAC 2020
+3. OPAL Retreat SLAC 2020 (March 30 to April 3)
 
 *I recommend booking a placeholder soon (if you want a traditional hotel).
 Closest towns are Redwood City, Palo Alto, Menlo Park, and Sunnyvale.
