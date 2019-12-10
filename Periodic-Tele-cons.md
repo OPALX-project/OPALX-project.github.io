@@ -1,1 +1,10 @@
 **December 09 2019**
+
+Agenda 
+
+1. OPAL Christmas release (2.2.0)
+2. OPAL Paper
+3. OPAL Retreat SLAC 2020
+4. E-meeting frequency
+5. AOB
+ 
