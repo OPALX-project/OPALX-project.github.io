@@ -32,6 +32,9 @@ Here’s a list of Sunnyvale options our admin has used in the past:*
 *Public transportation is available by bus (leaving from campus), on 30 minute intervals during the day (~7am to ~8pm):
 https://transportation.stanford.edu/marguerite*
 
+** Alternative Date: Feb 17 to 22 ** 
+
+
 4.
 
 5.
