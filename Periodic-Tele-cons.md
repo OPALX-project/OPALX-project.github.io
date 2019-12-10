@@ -2,7 +2,7 @@
 
 Agenda 
 
-1. OPAL Christmas release (2.2.0) (  )
+1. OPAL Christmas release (2.2.0) (https://gitlab.psi.ch/OPAL/src/issues?milestone_title=OPAL-2.2.0)
 
 2. OPAL Paper
 3. OPAL Retreat SLAC 2020
