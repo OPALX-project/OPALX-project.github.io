@@ -17,7 +17,20 @@ Minutes
 2.
 
 
-3.
+3. OPAL Retreat SLAC 2020
+
+*I recommend booking a placeholder soon (if you want a traditional hotel).
+Closest towns are Redwood City, Palo Alto, Menlo Park, and Sunnyvale.
+Here’s a list of Sunnyvale options our admin has used in the past:*
+
+* Wild Palms Hotel Sunnyvale
+* Cherry orchard Inn Sunnyvale
+* Courtyard by Marriott Hotel Cupertino
+* AC Hotel by Marriott Sunnyvale
+* Cupertino Inn
+
+*Public transportation is available by bus (leaving from campus), on 30 minute intervals during the day (~7am to ~8pm):
+https://transportation.stanford.edu/marguerite*
 
 4.
 
