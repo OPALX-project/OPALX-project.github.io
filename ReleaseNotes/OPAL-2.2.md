@@ -3,7 +3,7 @@
 ## Changes in OPAL 2.2.0
 
 * Bugfixes
-   
+   * Issue #401 Closed Orbit Finder should not call exit()
 
 ## New features in OPAL 2.2.0
 
