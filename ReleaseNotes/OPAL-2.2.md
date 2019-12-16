@@ -8,7 +8,7 @@
    * Issue #120 Particle Termination
 
 ## New features in OPAL 2.2.0
-
+   * Implement analytical Vertical FFA field map in OPAL (see Issue #402)
 
 ## Input file related changes
 
