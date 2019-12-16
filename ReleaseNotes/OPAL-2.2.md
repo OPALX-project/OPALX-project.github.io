@@ -4,6 +4,8 @@
 
 * Bugfixes
    * Issue #401 Closed Orbit Finder should not call exit()
+   * Issue #329 CollimatorPhysics: Error{0}> reduce: mismatched element count in vector reduction
+   * Issue #120 Particle Termination
 
 ## New features in OPAL 2.2.0
 
