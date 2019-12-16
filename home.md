@@ -10,10 +10,7 @@ _OPAL_ (Object Oriented Parallel Accelerator Library) is a parallel open source 
 * OPAL-t: models beam lines, linacs, rf-photo injectors and
 complete XFELs excluding the undulator.
 
-
 The code is managed through the git distributed version control system. A suite of unit tests have been developed for various parts of OPAL, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in asciidoc. Tools are available to readily convert asciidoc into formats such as pdf and html for display.
-
-
 
 Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [**mailing list**](https://psilists.ethz.ch/sympa/subscribe/opal)
 
@@ -59,7 +56,6 @@ See also [Post Processing](PostProcessing).
 
 ## OPAL for Developers: Coding Style and Conventions
 
-* [Periodic Tele-cons](Periodic-Tele-cons)
 * [Coding Style and Conventions](For Developers/Codingstyle)
 * [Git usage](git-usage) and [git workflow](git-workflow)
 * [_OPAL_ 2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
@@ -68,6 +64,7 @@ See also [Post Processing](PostProcessing).
 * [DKS (CUDA) & _OPAL_](opaldks)
 * [Technology & Ideas](tech-ideas)
 * [File Format for stat Storage](File Format for stat Storage)
+* [Periodic Tele-cons](Periodic-Tele-cons)
 
 ## Regression Tests
 
