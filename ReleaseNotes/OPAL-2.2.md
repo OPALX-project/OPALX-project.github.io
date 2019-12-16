@@ -8,8 +8,11 @@
    * Issue #120 Particle Termination
 
 ## New features in OPAL 2.2.0
-   * Implement analytical Vertical FFA field map in OPAL (see Issue #402)
-
+   * Track back in time (see Issue #353)
+   * Optimizer: Generalizing objectives with sddsVariableAt (see Issue #402)
+   * Implement analytical Vertical FFA field map in OPAL (see Issue #318)
+   * Specify trim coil range azimuthally (see Issue #276)
+   * OPAL-t : Transverse Distribution from Laser Profile (see Issue #275)
 ## Input file related changes
 
 
