@@ -25,8 +25,8 @@
 * Optimizer: Generalizing objectives with sddsVariableAt (#402)
 * `PHIMIN`, `PHIMAX`, `COEFNUMPHI`, `COEFDENOMPHI` attributes for `TRIMCOIL` element (#276)
 * Match distribution (#241)
-* Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home)
 * _OPAL-t_ : Transverse Distribution from Laser Profile (#275)
+* Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home)
 
 ## Input file related changes
 
