@@ -6,7 +6,7 @@
 * Fixes for output (#355 #382)
 * Issue #308 Time structure and time shift after particle-matter interaction
 * Fixes for RFCavity element (#267 #356)
-* Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313 #343 #375 #382)
+* Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313 #375 #382)
 * Fixes for optimiser (#230 #233 #235 #257)
 * Issue #401 Closed Orbit Finder should not call exit()
 * Issue #329 CollimatorPhysics: Error{0}> reduce: mismatched element count in vector reduction
@@ -27,6 +27,7 @@
 * `PHIMIN`, `PHIMAX`, `COEFNUMPHI`, `COEFDENOMPHI` attributes for `TRIMCOIL` element (#276)
 * Match distribution (#241)
 * _OPAL-t_ : Transverse Distribution from Laser Profile (#275)
+* _OPAL-Cycl_: Distinguish bunches in probe (#343)
 * Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home)
 
 ## Input file related changes
