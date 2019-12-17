@@ -6,11 +6,12 @@
 * Fixes for output (#355 #382)
 * Issue #308 Time structure and time shift after particle-matter interaction
 * Fixes for RFCavity element (#267 #356)
-* Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313 #375 #382)
+* Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313 #343 #375 #382)
 * Fixes for optimiser (#230 #233 #235 #257)
 * Issue #401 Closed Orbit Finder should not call exit()
 * Issue #329 CollimatorPhysics: Error{0}> reduce: mismatched element count in vector reduction
 * Issue #120 Particle Termination
+* Issue #342 Wrong turn number at restart (_OPAL-Cycl_)
 
 ## [New features in OPAL 2.2.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&label_name[]=OPAL%202.1)
 
