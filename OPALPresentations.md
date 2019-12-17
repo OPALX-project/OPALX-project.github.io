@@ -1,10 +1,9 @@
 # Talks on OPAL
 
 1. [OPAL Introduction (2019)](http://amas.web.psi.ch/people/aadelmann/pub/opal-lect1-ffa19.pdf)
-
-2. [APS Seminar 2017](http://amas.web.psi.ch/people/aadelmann/pub/anl-2017.pdf)
-
-3. [OPAL a Versatile Parallel Tool for Precise 3D Beam Dynamics Studies ICAP (2015)](http://amas.web.psi.ch/people/aadelmann/pub/icap-2015.pdf)
+1. [Recent Developments of the Open Source Code OPAL ICAP (2018)](http://accelconf.web.cern.ch/AccelConf/icap2018/talks/tupaf07_talk.pdf)
+1. [APS Seminar 2017](http://amas.web.psi.ch/people/aadelmann/pub/anl-2017.pdf)
+1. [OPAL a Versatile Parallel Tool for Precise 3D Beam Dynamics Studies ICAP (2015)](http://amas.web.psi.ch/people/aadelmann/pub/icap-2015.pdf)
 
 # OPAL lectures (a  bit outdated i.e. 2014)
 
@@ -37,9 +36,10 @@
 
 # Papers related to OPAL
 
+1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
 1. [*A Parallel General Purpose Multi-Objective Optimization Framework, with Application to Beam Dynamics*, N. Neveu et al. (2013)](http://arxiv.org/abs/1302.2889)
 1. [*A Fast and Scalable Low Dimensional Solver for Charged Particle Dynamics in large Particle Accelerators*, Y. Ineichen et al. (2012)]( http://dx.doi.org/10.1007/s00450-012-0216-2)
-1. [*A novel adaptive time stepping variant of the Boris-Buneman integrator for the simulation of particle accelerators with space charge*, M. Toggweiler et al. (2012)] (http://arxiv.org/abs/1211.3664)
+1. [*A novel adaptive time stepping variant of the Boris-Buneman integrator for the simulation of particle accelerators with space charge*, M. Toggweiler et al. (2012)](http://arxiv.org/abs/1211.3664)
 1. [*Dark Current and Multipacting Capabilities in OPAL: Model Benchmarks and Applications*, C. Wang et al. (2012)](http://arxiv.org/abs/1208.6577)
 1. [*Towards quantitative simulations of high power proton cyclotrons*, Y.J. Bi et al. (2011)](https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.14.054402)
 1. [*Beam dynamics in high intensity cyclotrons including neighboring bunch effects: Model, implementation, and application* , J.J. Yang et al. (2010)](https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.13.064201)
