@@ -5,7 +5,7 @@
 * Fixes for flattop distribution (#371 #372)
 * Fixes for output (#355 #382)
 * Issue #308 Time structure and time shift after particle-matter interaction
-* Fixes for RFCavity element (#257 #356)
+* Fixes for RFCavity element (#267 #356)
 * Fixes for cyclotron plugin elements (#206 #243 #246 #247 #253 #293 #313 #375 #382)
 * Fixes for optimiser (#230 #233 #235 #257)
 * Issue #401 Closed Orbit Finder should not call exit()
