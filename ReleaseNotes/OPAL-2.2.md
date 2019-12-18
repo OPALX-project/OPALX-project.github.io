@@ -12,6 +12,7 @@
 * Issue #329 CollimatorPhysics: Error{0}> reduce: mismatched element count in vector reduction
 * Issue #120 Particle Termination
 * Issue #342 Wrong turn number at restart (_OPAL-Cycl_)
+* Fix writing ASCII output of LossDataSink (!161)
 
 ## [New features in OPAL 2.2.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&label_name[]=OPAL%202.1)
 
