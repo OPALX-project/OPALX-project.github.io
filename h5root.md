@@ -113,7 +113,7 @@ For more complex operations you will likely want to write a macro.
 The example macro [example.C](H5root/example.C) is enclosed in the package.
 It was used to produce this jpeg image:
 
-![TunesClosedOrbitFinder](H5root/h5rootexample.jpg)
+![TunesClosedOrbitFinder](H5root/H5rootexample.jpg)
 
 ## Online Class Documentation
 
