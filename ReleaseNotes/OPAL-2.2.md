@@ -55,6 +55,6 @@
  ```
  source "$PREFIX/OPAL-2.2.0/etc/profile.d/opal.sh"
  ```
-1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](http://amas.web.psi.ch/tools/H5root/index.html).
+1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](https://gitlab.psi.ch/OPAL/src/wikis/h5root).
 
 > MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
