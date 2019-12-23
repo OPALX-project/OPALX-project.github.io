@@ -91,6 +91,14 @@ mpirun -np 4 opal example.in
 
 ''''
 
+*OPAL 2.2.0-1 - 2019, December 23*
+
+- OPAL 2.2.0
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
+
 *OPAL 2.1.2019.11-1 - 2019, November 14*
 
 - OPAL 2.1.2019.11 (git rev. 33a9bd1999808243eb17be7093b3b9065e531c6f)
