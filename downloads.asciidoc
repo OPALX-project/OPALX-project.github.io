@@ -85,36 +85,6 @@ mpirun -np 4 opal example.in
 
 |========
 
-=== ChangeLog
-
-> **Note** This is the ChangeLog for the binary package *not* _OPAL_!
-
-''''
-
-*OPAL 2.2.0-1 - 2019, December 23*
-
-- OPAL 2.2.0
-- compiled without SAAMG solver
-- updated toolchain
-- H5root removed
-- root removed
-
-*OPAL 2.1.2019.11-1 - 2019, November 14*
-
-- OPAL 2.1.2019.11 (git rev. 33a9bd1999808243eb17be7093b3b9065e531c6f)
-- compiled without SAAMG solver
-- updated toolchain
-- H5root removed
-- root removed
-
-*OPAL 2.0.2-1 - 2019, November 14*
-
-- OPAL 2.0.2
-- compiled without SAAMG solver
-- updated toolchain
-- H5root removed
-- root removed
-
 === Toolchain
 
 > **Note** For the time being we use the same toolchain for OPAL versions 2.0.2 and newer.
@@ -204,6 +174,31 @@ mpirun -np 4 opal example.in
 === ChangeLog
 
 > **Note** This is the ChangeLog for the binary package *not* _OPAL_!
+=== ChangeLog
+
+> **Note** This is the ChangeLog for the binary package *not* _OPAL_!
+
+''''
+
+*OPAL 2.2.0-1 - 2019, December 23*
+
+- OPAL 2.2.0
+
+*OPAL 2.1.2019.11-1 - 2019, November 14*
+
+- OPAL 2.1.2019.11 (git rev. 33a9bd1999808243eb17be7093b3b9065e531c6f)
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
+
+*OPAL 2.0.2-1 - 2019, November 14*
+
+- OPAL 2.0.2
+- compiled without SAAMG solver
+- updated toolchain
+- H5root removed
+- root removed
 
 *OPAL 2.0.1-1 - 2018, November 16*
 
