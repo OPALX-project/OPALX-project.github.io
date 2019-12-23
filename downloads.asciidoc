@@ -44,7 +44,7 @@ source "$PREFIX/OPAL-2.2.0/etc/profile.d/opal.sh"
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz[OPAL-2.2.0 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5[md5 sum] 
-| link:ReleaseNotes/OPAL%220[release notes]
+| link:ReleaseNotes/OPAL-2.2[release notes]
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz[OPAL-2.1.2019.11-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5[md5 sum] 
