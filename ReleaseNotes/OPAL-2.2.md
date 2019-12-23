@@ -39,22 +39,3 @@
 ## Output file related changes
 
 * _OPAL-Cycl_: Halo parameter added to STAT file (#268)
-
-## Installation of the binary package
-
-> **Note:** The latest version of the binary package is OPAL 2.2.0.
-
-1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
-1. change your working directory to `$PREFIX`
-1. Un-tar the package
-    ```
-    tar xf OPAL-2.2.0-x86_64-linux.tar.xz
-
-    ```
-1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
- ```
- source "$PREFIX/OPAL-2.2.0/etc/profile.d/opal.sh"
- ```
-1. Now you are ready to run opal, opal converter tools and the visualization tool [H5root](https://gitlab.psi.ch/OPAL/src/wikis/h5root).
-
-> MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
