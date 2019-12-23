@@ -6,7 +6,9 @@
 '''
 
 == Overview 
-The newest stable version of OPAL is 2.0.2. Versions 2.1.x are development version providing the newest features but less stability.
+The newest stable version of OPAL is 2.2.0. 
+
+Versions with an odd minor version number like 2.1.2019.11 are are development snapshots providing the newest features but less stability.
 
 '''
 
@@ -14,17 +16,22 @@ The newest stable version of OPAL is 2.0.2. Versions 2.1.x are development versi
 
 1. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
 1. change your working directory to `$PREFIX`
-1. Un-tar the file, for example:
+1. Un-tar the file, on **Linux**:
 +
 ```
-tar xf OPAL-2.0.2-x86_64-linux-1.tar.xz
+tar xf OPAL-2.2.0-1-x86_64-linux.tar.xz
+```
++
+On **macOS**:
++
+```
+tar xf OPAL-2.2.0-1-x86_64-macos.tar.xz
 ```
 1. Source the OPAL shell profile. For the time being only sh-like shells are supported.
 +
 ```
-source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
+source "$PREFIX/OPAL-2.2.0/etc/profile.d/opal.sh"
 ```
-1. Now you are ready to run opal, opal converter tools and the visualization tool https://gitlab.psi.ch/OPAL/src/wikis/h5root[H5root].
 
 > **Note** MPI is included in the OPAL package. Be sure to use the MPI utilities shipped with the OPAL package!
 
@@ -34,6 +41,10 @@ source "$PREFIX/OPAL-2.0.2/etc/profile.d/opal.sh"
 
 [width="80%",cols="3,2,2"]
 |========
+
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz[OPAL-2.2.0 for Linux]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5[md5 sum] 
+| link:ReleaseNotes/OPAL%220.0[release notes]
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz[OPAL-2.1.2019.11-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5[md5 sum] 
