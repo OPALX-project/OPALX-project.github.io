@@ -19,12 +19,12 @@
 * Track back in time (#353)
 * _OPAL-map_
 * BeamStripping physics
-* Analytical vertical FFA field map (#318)
+* Analytical vertical FFA field map (#402)
 * Objectives for `SAMPLER` command (#249)
 * Pixmap image as `COLLIMATOR` input (#237)
 * `CROSSOVER`, `MUTATION`, `STARTPOPULATION` and `BIRTH_CONTROL` attributes for optimiser (#257)
 * Optimiser restarting (#228, #251, #278)
-* Optimizer: Generalizing objectives with sddsVariableAt (#402)
+* Optimizer: Generalizing objectives with sddsVariableAt (#318)
 * `PHIMIN`, `PHIMAX`, `COEFNUMPHI`, `COEFDENOMPHI` attributes for `TRIMCOIL` element (#276)
 * Match distribution (#241)
 * _OPAL-t_ : Transverse Distribution from Laser Profile (#275)
