@@ -19,17 +19,17 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 ## Documentation & Help
 
 * [_OPAL_ Presentations]( OPALPresentations) and papers (ideal for an overview)
-* _OPAL_ 1.6
-[manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-1.6.0.pdf),
-[release notes](ReleaseNotes/OPAL-1.6)
-* _OPAL_ 2.0
-[manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home),
-[manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf) not always in sync with Wiki,
-[release notes](ReleaseNotes/OPAL-2.0)
 * _OPAL_ 2.2
 [manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home),
 [manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.2.0.pdf),
 [release notes](ReleaseNotes/OPAL-2.2)
+* _OPAL_ 2.0
+[manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home),
+[manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.0.0.pdf) not always in sync with Wiki,
+[release notes](ReleaseNotes/OPAL-2.0)
+* _OPAL_ 1.6
+[manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-1.6.0.pdf),
+[release notes](ReleaseNotes/OPAL-1.6)
 * [_OPAL_ conversion utilities](OPAL-conversion-utilities)
 
 ## Download
