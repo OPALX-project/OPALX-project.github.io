@@ -64,7 +64,7 @@ See also [Post Processing](PostProcessing).
 
 * [Coding Style and Conventions](For Developers/Codingstyle)
 * [Git usage](git-usage) and [git workflow](git-workflow)
-* [_OPAL_ 2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
+* [_OPAL_ 2.2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/)
 * [Building, executing and writing unit tests](unit-tests)
 * [Adding new Elements to _OPAL_](new-elements)
 * [DKS (CUDA) & _OPAL_](opaldks)
