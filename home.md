@@ -20,7 +20,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 * [_OPAL_ Presentations]( OPALPresentations) and papers (ideal for an overview)
 * _OPAL_ 2.2
-[manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home),
+[manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/home),
 [manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.2.0.pdf),
 [release notes](ReleaseNotes/OPAL-2.2)
 * _OPAL_ 2.0
@@ -48,7 +48,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 1. [RF Photo Injector](RFPhotoInjector)
 1. [Examples from regression tests](RegressionTestExamples)
 1. [FFA](FFA)
-1. [Tutorial from Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/tutorial)
+1. [Tutorial from Manual](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/tutorial)
 
 ## The runOPAL.py Script
 

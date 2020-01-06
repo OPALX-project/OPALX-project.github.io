@@ -1,11 +1,11 @@
 # Goal
 Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct modes
 1. Tune Calculation
-   * Tune Calculation with OPAL's closed orbit finder (so far only in OPAL 2.1.x and higher)
+   * Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
 2. Accelerated orbit mode
-<!-- 
+<!--
 3. 3D space charge calculation (under construction)
---> 
+-->
 
 # Preparation
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
@@ -49,7 +49,7 @@ The result is saved in cyclotron1.pdf and shown below.
 | [bfield.dat]( Cyclotron/bfield.dat) | magnetic field map |
 | [plotTunes.py]( Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
 
-Since version 2.1 OPAL has a closed orbit finder with tune calculation based on Gordon's algorithm.
+Since version 2.2 OPAL has a closed orbit finder with tune calculation based on Gordon's algorithm.
 
 The important commands in the input file are:
 
@@ -72,7 +72,7 @@ DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
 
 The matched gauss distribution with parameters for the closed orbit finder
 (energy steps of 0.001 GeV, average the field over 8 sectors and a maximum of 100 steps for the closed orbit finder to converge).
-More information on the matched gauss distribution can be found in the [Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/distribution#sec.distribution.gaussmatchedtype)
+More information on the matched gauss distribution can be found in the [Manual](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/distribution#sec.distribution.gaussmatchedtype)
 
 Run OPAL with
 

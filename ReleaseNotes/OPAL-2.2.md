@@ -29,7 +29,7 @@
 * Match distribution (#241)
 * _OPAL-t_ : Transverse Distribution from Laser Profile (#275)
 * _OPAL-Cycl_: Distinguish bunches in probe (#343), write plugin element output files every turn (#344)
-* Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home)
+* Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/home)
 
 ## Input file related changes
 
