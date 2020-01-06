@@ -66,7 +66,7 @@ See also [Post Processing](PostProcessing).
 
 ## OPAL for Developers: Coding Style and Conventions
 
-* [Coding Style and Conventions](For Developers/Codingstyle)
+* [Coding Style and Conventions](For-Developers/Codingstyle)
 * [Git usage](git-usage) and [git workflow](git-workflow)
 * [_OPAL_ 2.2.0 source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/html/)
 * [Building, executing and writing unit tests](unit-tests)
@@ -74,6 +74,7 @@ See also [Post Processing](PostProcessing).
 * [DKS (CUDA) & _OPAL_](opaldks)
 * [Technology & Ideas](tech-ideas)
 * [File Format for stat Storage](File Format for stat Storage)
+* [Release Procedure](For-Developers/Release-Procedure)
 * [Periodic Tele-cons](Periodic-Tele-cons)
 
 ## Regression Tests
