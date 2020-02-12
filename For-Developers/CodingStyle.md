@@ -208,7 +208,7 @@ Example:
 //
 // Brief description of content
 //
-// Copyright (c) 2008-2019
+// Copyright (c) 2008-2020
 // Paul Scherrer Institut, Villigen PSI, Switzerland
 // All rights reserved.
 //
