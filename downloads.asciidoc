@@ -6,7 +6,7 @@
 '''
 
 == Overview 
-The newest stable version of OPAL is 2.2.0. 
+The newest stable version of OPAL is 2.2.1. 
 
 Versions with an odd minor version number like 2.1.2019.11 are are development snapshots providing the newest features but less stability.
 
@@ -19,11 +19,11 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 ### On Linux
 
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz[OPAL-2.2.0 for Linux]
+1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz[OPAL-2.2.1 for Linux]
 1. Un-tar the downloaded file:
 +
 ```
-tar xf OPAL-2.2.0-1-x86_64-linux.tar.xz
+tar xf OPAL-2.2.1-1-x86_64-linux.tar.xz
 ```
 
 ### On macOS
@@ -45,7 +45,7 @@ You have to use Windows Services for Linux and install the Linux package as docu
 
 Source the OPAL shell profile. For the time being only sh-like shells - like BASH, ZSH - are supported.
 ```
-source "$PREFIX/OPAL-2.2.0/etc/profile.d/opal.sh"
+source "$PREFIX/OPAL-2.2.1/etc/profile.d/opal.sh"
 ```
 Now you are ready to run OPAL (assuming you have an input file `example.in`):
 ```
@@ -64,6 +64,10 @@ mpirun -np 4 opal example.in
 
 [width="80%",cols="3,2,2"]
 |========
+
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz[OPAL-2.2.1 for Linux]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5[md5 sum] 
+| link:ReleaseNotes/OPAL-2.2[release notes]
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz[OPAL-2.2.0 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5[md5 sum] 
