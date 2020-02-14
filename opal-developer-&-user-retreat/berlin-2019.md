@@ -32,6 +32,7 @@ This schedule isn't completely fixed and can be modified / expanded on request.
 * Bettina Kuske
 * Georgios Kourkafas
 * Christof Metzger-Kraus
+* Matthias Frey
 
 ### Closeout session (round table)
 
