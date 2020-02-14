@@ -122,6 +122,10 @@ mpirun -np 4 opal example.in
 
 ''''
 
+*OPAL 2.2.1-1 - 2019, December 23*
+
+- bugfix release OPAL 2.2.1
+
 *OPAL 2.2.0-1 - 2019, December 23*
 
 - OPAL 2.2.0
