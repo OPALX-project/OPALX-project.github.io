@@ -62,6 +62,8 @@ mpirun -np 4 opal example.in
 
 == Downloads
 
+=== Linux
+
 [width="80%",cols="3,2,2"]
 |========
 
@@ -73,13 +75,22 @@ mpirun -np 4 opal example.in
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5[md5 sum] 
 | link:ReleaseNotes/OPAL-2.2[release notes]
 
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz[OPAL-2.2.0 for Linux]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz.md5[md5 sum] 
-| link:ReleaseNotes/OPAL-2.2[release notes]
-
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-linux.tar.xz[OPAL-2.0.2-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-linux.tar.xz.md5[md5 sum] 
 | link:ReleaseNotes/OPAL%202.0[release notes]
+
+|========
+
+=== macOS
+
+> **Note** OPAL 2.2.1 is not yet available for macOS!
+
+[width="80%",cols="3,2,2"]
+|========
+
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz[OPAL-2.2.0 for macOS]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz.md5[md5 sum] 
+| link:ReleaseNotes/OPAL-2.2[release notes]
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz[OPAL-2.0.2-1 for macOS]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz.md5[md5 sum] 
