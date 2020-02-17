@@ -28,7 +28,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Documentation & Help
 
-* [_OPAL_ Presentations]( OPALPresentations) and papers (ideal for an overview)
+* [_OPAL_ Presentations](OPALPresentations and papers) (ideal for an overview)
 * _OPAL_ 2.2
 [manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/home),
 [manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.2.0.pdf),
