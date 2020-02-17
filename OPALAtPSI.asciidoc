@@ -30,7 +30,7 @@ Some info on using https://intranet.psi.ch/PSI_HPC/Merlin5[Merlin5].
 
 == Get OPAL source
 
-The OPAL source can be obtained from git@gitlab.psi.ch:OPAL/src.git
+The OPAL source can be cloned from https://gitlab.psi.ch/OPAL/src (`git@gitlab.psi.ch:OPAL/src.git`).
 
 ```
 mkdir OPAL_repo
