@@ -1,16 +1,16 @@
-**December 10 2019**
+## December 10 2019
 
-Agenda 
+#### Agenda 
 
-1. OPAL Christmas release (2.2.0) (https://gitlab.psi.ch/OPAL/src/issues?milestone_title=OPAL-2.2.0)
+1. OPAL Christmas release [2.2.0](https://gitlab.psi.ch/OPAL/src/issues?milestone_title=OPAL-2.2.0)
 
 2. OPAL Paper
 3. OPAL Retreat SLAC 2020
 4. E-meeting frequency
 5. OPAL Manual Workflow
 6. AOB
- 
-Minutes
+
+#### Minutes
 
 1. DKS will be in 2.4. All open issues for the milestones 2.2 will be closed or moved to 2.4 by Monday.
 
