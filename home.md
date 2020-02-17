@@ -7,12 +7,18 @@
 _OPAL_ (Object Oriented Parallel Accelerator Library) is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
 Using the MAD language with extensions, _OPAL_ can run on a laptop as well as on the largest high performance computing systems.
 _OPAL_ is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
-The _OPAL_ framework makes it easy to add new features in the form of new C++ classes. _OPAL_ comes in the following flavours:
 
-* OPAL-cycl: tracks particles with 3D space charge including neighbouring turns in cyclotrons and FFAs with time as the independent variable.
-* OPAL-t: models beam lines, linacs, rf-photo injectors and
-complete XFELs excluding the undulator.
-* OPAL-map: map tracking
+The _OPAL_ framework makes it easy to add new features in the form of new C++ classes.
+_OPAL_ comes in the following flavours:
+
+* _OPAL-cycl_:
+  tracks particles with 3D space charge including neighbouring turns in
+  cyclotrons and FFAs with time as the independent variable.
+* _OPAL-t_:
+  models beam lines, linacs, rf-photo injectors and
+  complete XFELs excluding the undulator.
+* _OPAL-map_:
+  map tracking
 
 The code is managed through the git distributed version control system. A suite of unit tests have been developed for various parts of OPAL, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in asciidoc. Tools are available to readily convert asciidoc into formats such as pdf and html for display.
 
