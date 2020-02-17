@@ -20,4 +20,5 @@
   * [ ] new label for `OPAL x.(y+1)`
   * [ ] update labels and milestones in issues
 * [ ] setup the regression-tests to run the new version
+* [ ] PSI module
 * [ ] write e-mail to mailing list
