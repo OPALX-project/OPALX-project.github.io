@@ -3,6 +3,7 @@
 ## [Bugfixes in OPAL 2.2.1](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Bug&label_name[]=OPAL%202.2)
 
 * Fix for segmentation fault in FromFile due to RASTER=TRUE (#465)
+* Fix format of _ElementPositions.sdds files (#468)
 
 ## [Bugfixes in OPAL 2.2.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Bug&label_name[]=OPAL%202.1)
 
