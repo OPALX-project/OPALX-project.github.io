@@ -8,6 +8,7 @@
 
 ## [New features in OPAL 2.4.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&milestone_title=OPAL%202.4.0)
 
+* MultiGauss distribution for microbunched beams (#470)
 * Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-master/wikis/home)
 
 ## Input file related changes
