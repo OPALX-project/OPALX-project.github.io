@@ -29,7 +29,6 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0. [Multipo
 1. Master thesis of Philippe Ganz, [_s-based maps from TPS & Lie-Series applied to Proton-Therapy Gantries_](Reports/thesisGanz.pdf). The work (_OPAL-map_)has been integrated in OPAL 2.0.0.
 
 
-
 # OPAL lectures (outdated i.e. 2014)
 
 1.  [OPAL Lecture 1](http://amas.web.psi.ch/people/aadelmann/pub/ffag14/opal-lect-ffag2014-1.pdf)
