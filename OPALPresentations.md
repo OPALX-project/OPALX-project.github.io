@@ -5,6 +5,31 @@
 1. [APS Seminar 2017](http://amas.web.psi.ch/people/aadelmann/pub/anl-2017.pdf)
 1. [OPAL a Versatile Parallel Tool for Precise 3D Beam Dynamics Studies ICAP (2015)](http://amas.web.psi.ch/people/aadelmann/pub/icap-2015.pdf)
 
+# Papers related to OPAL
+
+1. [*OPAL a Versatile Tool for Charged Particle Accelerator Simulations*, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
+1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
+1. [*A Parallel General Purpose Multi-Objective Optimization Framework, with Application to Beam Dynamics*, N. Neveu et al. (2013)](http://arxiv.org/abs/1302.2889)
+1. [*A Fast and Scalable Low Dimensional Solver for Charged Particle Dynamics in large Particle Accelerators*, Y. Ineichen et al. (2012)]( http://dx.doi.org/10.1007/s00450-012-0216-2)
+1. [*A novel adaptive time stepping variant of the Boris-Buneman integrator for the simulation of particle accelerators with space charge*, M. Toggweiler et al. (2012)](http://arxiv.org/abs/1211.3664)
+1. [*Dark Current and Multipacting Capabilities in OPAL: Model Benchmarks and Applications*, C. Wang et al. (2012)](http://arxiv.org/abs/1208.6577)
+1. [*Towards quantitative simulations of high power proton cyclotrons*, Y.J. Bi et al. (2011)](https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.14.054402)
+1. [*Beam dynamics in high intensity cyclotrons including neighboring bunch effects: Model, implementation, and application* , J.J. Yang et al. (2010)](https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.13.064201)
+1. [*A fast parallel poisson solver on irregular domains applied to beam dynamic simulations*, A. Adelmann et al. (2010)](http://dx.doi.org/10.1016/j.jcp.2010.02.022)
+1. [*Improvements of a fast parallel Poisson solver on irregular domains*, A. Adelmann et al. (2010)](http://dx.doi.org/10.1007/978-3-642-28151-8)
+
+# Reports and thesis on OPAL
+
+1. Trim coil report (PSI Ring):  [PSI Ring](Reports/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
+
+1. Report of Titus-Stefan Dascalu on Multipole, FFA and Synchrotron tracking. This work was
+supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0. [Multipole](Reports/reportDascalu.pdf)
+.
+
+1. Master thesis of Philippe Ganz, [_s-based maps from TPS & Lie-Series applied to Proton-Therapy Gantries_](Reports/thesisGanz.pdf). The work (_OPAL-map_)has been integrated in OPAL 2.0.0.
+
+
+
 # OPAL lectures (outdated i.e. 2014)
 
 1.  [OPAL Lecture 1](http://amas.web.psi.ch/people/aadelmann/pub/ffag14/opal-lect-ffag2014-1.pdf)
@@ -34,15 +59,3 @@
 1. [*Measurements and Modeling at the PSI-XFEL 500 kV Low-Emittance Electron Source*, T. Schietinger et al. Linac2008, Vancouver, Canada](http://accelconf.web.cern.ch/AccelConf/LINAC08/papers/tup097.pdf)
 1. [*Modeling High Intensity Beams in Cyclotrons* (talk), J. Yang et al., HB2008](http://accelconf.web.cern.ch/AccelConf/HB2008/talks/wga33_talk.pdf)
 
-# Papers related to OPAL
-
-1. [*OPAL a Versatile Tool for Charged Particle Accelerator Simulations*, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
-1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
-1. [*A Parallel General Purpose Multi-Objective Optimization Framework, with Application to Beam Dynamics*, N. Neveu et al. (2013)](http://arxiv.org/abs/1302.2889)
-1. [*A Fast and Scalable Low Dimensional Solver for Charged Particle Dynamics in large Particle Accelerators*, Y. Ineichen et al. (2012)]( http://dx.doi.org/10.1007/s00450-012-0216-2)
-1. [*A novel adaptive time stepping variant of the Boris-Buneman integrator for the simulation of particle accelerators with space charge*, M. Toggweiler et al. (2012)](http://arxiv.org/abs/1211.3664)
-1. [*Dark Current and Multipacting Capabilities in OPAL: Model Benchmarks and Applications*, C. Wang et al. (2012)](http://arxiv.org/abs/1208.6577)
-1. [*Towards quantitative simulations of high power proton cyclotrons*, Y.J. Bi et al. (2011)](https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.14.054402)
-1. [*Beam dynamics in high intensity cyclotrons including neighboring bunch effects: Model, implementation, and application* , J.J. Yang et al. (2010)](https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.13.064201)
-1. [*A fast parallel poisson solver on irregular domains applied to beam dynamic simulations*, A. Adelmann et al. (2010)](http://dx.doi.org/10.1016/j.jcp.2010.02.022)
-1. [*Improvements of a fast parallel Poisson solver on irregular domains*, A. Adelmann et al. (2010)](http://dx.doi.org/10.1007/978-3-642-28151-8)

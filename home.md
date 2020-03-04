@@ -28,7 +28,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Documentation & Help
 
-* [OPAL Presentations](OPALPresentations and papers) (ideal for an overview)
+* [OPAL Presentations, papers and reports](OPALPresentations) (ideal for an overview)
 * _OPAL_ 2.2
 [manual Wiki](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/home),
 [manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.2.0.pdf),
@@ -88,9 +88,4 @@ See also [Post Processing](PostProcessing).
 
 * [regression tests for current OPAL versions](regression-tests)
 
-# OPAL Physics Resources
-
-1. Trim coil report (PSI Ring):  [PSI Ring](https://gitlab.psi.ch/OPAL/src/uploads/b9b3e4254af29470e2a81bf6e2feb20c/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
-
-2. Report of Titus-Stefan Dascalu on Multipole, FFA and Synchrotron tracking. This work was 
-supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0. [Multipole](/uploads/0d3fc561b57e8962ed79a57cd6115e37/8FBB32A4-7FA1-4084-A4A7-CDDB1F949CD3_psi.ch.pdf)
+# [OPAL Physics Resources](OPALPresentations).
