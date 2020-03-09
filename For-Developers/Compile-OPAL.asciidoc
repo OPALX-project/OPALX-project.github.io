@@ -65,7 +65,7 @@ the recommended version.
 
 | hdf5 | 1.8.18 | 1.10.3 | A parallel version is required.
 
-| GNU Scientific Library | 2.4 | 2.5 |
+| GNU Scientific Library | 2.5 | 2.6 |
 
 | H5hut | 2.0.0rc6 | 2.0.0rc6 | A parallel version is required.
 
