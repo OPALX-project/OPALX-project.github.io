@@ -72,7 +72,7 @@ DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
 
 The matched gauss distribution with parameters for the closed orbit finder
 (energy steps of 0.001 GeV, average the field over 8 sectors and a maximum of 100 steps for the closed orbit finder to converge).
-More information on the matched gauss distribution can be found in the [Manual](https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/distribution#sec.distribution.gaussmatchedtype)
+More information on the matched gauss distribution can be found in the [Manual](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#sec.distribution.gaussmatchedtype).
 
 Run OPAL with
 

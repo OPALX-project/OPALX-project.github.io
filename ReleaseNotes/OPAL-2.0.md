@@ -28,7 +28,7 @@
 * Scan option is removed
 * Sample command added
 * OPAL mode for highlighting in emacs added
-* Many more features, for details see the [Wiki Manual](https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home)
+* Many more features, for details see the [manual](http://amas.web.psi.ch/opal/Documentation/2.0/OPAL_Manual.html)
 
 ## Input file related changes
 

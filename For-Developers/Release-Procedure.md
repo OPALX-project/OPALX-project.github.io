@@ -10,7 +10,7 @@
   * [ ] compile new binary for macOS
   * [ ] upload tar-balls to `/afs/psi.ch/project/amas/webhosting/Downloads/OPAL/package/`
 * [ ] manual/documentation
-  * [ ] setup a repository for the new version of the manual
+  * [ ] setup a new branch for the new version of the manual
   * [ ] correct (the links to) the example input files, field maps also in the manual
   * [ ] compile new PDF version of manual
   * [ ] copy to `/afs/psi.ch/project/amas/webhosting/docs/opal/opal_user_guide-x.y.0.pdf`
