@@ -40,7 +40,7 @@ The result is saved in cyclotron1.pdf and shown below.
 
 ![tunesFIXPO](Cyclotron/cyclotron1.png)
 
-### Tune Calculation with OPAL's closed orbit finder (so far only in OPAL development branches)
+### Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
 
 ### Needed files
 | File | Description |
