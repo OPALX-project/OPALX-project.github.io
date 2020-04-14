@@ -107,7 +107,7 @@ GCC can be used on Linux, macOS and Windows Services for Linux.
 | GNU MPC Library | 1.1.0 | 1.1.0 | required to compile GCC
 
 | GNU Compiler Collection | 7.3.0 | 7.5.0,8.2.0 or newer, 9.2 or newer |
-1. On macOS use GCC >= 7.1.0 or Clang shipped with Xcode. +
+1. On macOS we recommend to use either Clang shipped with Xcode or GCC from MacPorts or Homebrew. +
 2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g&#43;&#43;` was called instead of the newly build staging binary `xg&#43;&#43;`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
 |=======
 
