@@ -70,11 +70,11 @@ the recommended version.
 
 | H5hut | 2.0.0rc6 | 2.0.0rc6 | A parallel version is required.
 
-| boost | 1.66.0 | 1.70.0 or newer
+| boost | 1.66.0 | 1.70.0
 | The following boost libraries are required: `chrono`, `filesystem`,
  `iostreams`, `regex`, `serialization`, `system`
 
-| google-test | 1.7.0 | 1.8.x | optional: Required to run the unit-tests
+| google-test | 1.7.0 | 1.10.0 or newer | optional: Required to run the unit-tests
 
 | ParMETIS | 4.0.0 | 4.0.3
 | optional: required for OPAL compiled with SAAMG solver.
