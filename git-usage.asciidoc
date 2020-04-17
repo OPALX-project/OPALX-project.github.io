@@ -8,6 +8,14 @@ In OPAL, each developer works in a fork of the central repository inside your pe
 
 To develop a new feature for a given OPAL project, you have to
 
+```mermaid
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+```
+
 1. Create a fork
 1. Clone and setup the clone
 1. Code your feature
