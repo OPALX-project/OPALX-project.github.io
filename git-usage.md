@@ -1,5 +1,7 @@
 # OPAL Development Workflow
 
+[[TOC]]
+
 ## Develop a new OPAL Feature
 
 In OPAL, each developer works in a fork of the central repository inside your personal group or the OPAL group. When the development is done, the code is merged back into the central repository.
