@@ -8,7 +8,8 @@
 2. Create merge request (MR)
 3. Update your clone
 4. Checkout branch created for MR
-5. Implement your changes, don't forget to commit and push frequently
+5. Implement your changes
+1. commit and push frequently
 1. Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
 1. Wait for approval. As long as discussions are open:
    * answer to comments/suggestions/questions in discussions
@@ -16,9 +17,20 @@
 1. Merge
 
 ```mermaid
-graph TD;
+graph TB;
 
-  open_issue[Open issue] --> B;
+  open_issue[Open issue] --> create_mr;
+  create_mr[create MR] --> git_pull;
+  git_pull[update local repository] --> git_checkout;
+  git_checkout[checkout branch of MR] --> implement;
+  implement[implement your changes] --> git_commit;
+  git_commit[commit your changes] --> implement;
+  git_commit --> git_push;
+  git_push[push to upstream] --> implement;
+  git_push --> resolve_mr;
+  resolve_mr[resolve MR] --> discussion;
+  discussion{This is the text in the box}
+  
 ```
 
 ## Develop a new OPAL Feature
