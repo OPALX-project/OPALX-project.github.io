@@ -17,24 +17,32 @@
 1. Merge
 
 ```mermaid
-graph LR
-
-  solve_issue --- implement
+  graph LR
   subgraph fix issue in upstream
-    open_issue[Open issue <br> create MR] --> create_mr;
-    create_mr[create MR] --> git_pull;
-    git_pull[update local repository] --> git_checkout;
-    git_checkout[checkout branch of MR] --> solve_issue;
+    open_issue(Open issue & create MR] --> update_local)
+    update_local[git pull && git checkout BRANCH] --> solve_issue
     solve_issue[work on issue] --> resolve_mr
     resolve_mr[resolve MR] --> wait_approval;
     wait_approval[wait for approval] --> merge
     merge(merge)
   end
+```
+
+```mermaid
+graph LR
   subgraph work on issue
     implement[implement your changes] --> git_commit
     git_commit[commit your changes] --> implement
     git_commit --> git_push
     git_push[push to upstream] --> implement
+  end
+```
+
+```mermaid
+  graph LR
+  subgraph wait for approval
+    discussion{open discussions?} -->|yes| answer
+    answer[add comment] --> discussion
   end
 ```
 
