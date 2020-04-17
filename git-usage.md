@@ -2,24 +2,29 @@
 
 [[_TOC_]]
 
+## A short introduction
+
+On this Wiki page we explain the _OPAL_ development workflow. 
+
 ## Fixing issues in upstream
 
-1. Open issue
-2. Create merge request (MR)
-3. Update your clone
-4. Checkout branch created for MR
-5. Implement your changes
-1. commit and push frequently
+
+
+1. Open issue and create merge request (MR)
+3. Update your clone and checkout branch created for MR
+5. Implement your changes, commit and push frequently
 1. Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
 1. Wait for approval. As long as discussions are open:
    * answer to comments/suggestions/questions in discussions
    * Implement more/adapt your changes
 1. Merge
 
+Flowcharts (an experiment with _mermaid_,still not really nice):
+
 ```mermaid
   graph LR
-  subgraph fix issue in upstream
-    open_issue(Open issue & create MR] --> update_local)
+  subgraph Fixing issues in upstream
+    open_issue(Open issue & create MR) --> update_local
     update_local[git pull && git checkout BRANCH] --> solve_issue
     solve_issue[work on issue] --> resolve_mr
     resolve_mr[resolve MR] --> wait_approval;
@@ -38,13 +43,37 @@ graph LR
   end
 ```
 
+<br>
+
 ```mermaid
   graph LR
   subgraph wait for approval
+    wait(wait) --> discussion
     discussion{open discussions?} -->|yes| answer
-    answer[add comment] --> discussion
+    discussion -->|no| done
+    done(done)
+    answer[add comment] --> changes_required;
+    changes_required{are changes required?} -->|yes|work_on_issue
+    changes_required -->|no| wait
+    work_on_issue[work on issue] --> wait
   end
 ```
+
+### Open issue
+
+### Create merge request (MR)
+
+### Update your clone and checkout branch created for MR
+
+### Implement your changes, commit and push frequently
+
+### Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
+
+### Wait for approval. As long as discussions are open:
+   * answer to comments/suggestions/questions in discussions
+   * Implement more/adapt your changes
+
+### Merge
 
 ## Develop a new OPAL Feature
 
