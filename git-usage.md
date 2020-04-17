@@ -17,20 +17,25 @@
 1. Merge
 
 ```mermaid
-graph TB;
+graph LR
 
-  open_issue[Open issue] --> create_mr;
-  create_mr[create MR] --> git_pull;
-  git_pull[update local repository] --> git_checkout;
-  git_checkout[checkout branch of MR] --> implement;
-  implement[implement your changes] --> git_commit;
-  git_commit[commit your changes] --> implement;
-  git_commit --> git_push;
-  git_push[push to upstream] --> implement;
-  git_push --> resolve_mr;
-  resolve_mr[resolve MR] --> discussion;
-  discussion{This is the text in the box}
-  
+  solve_issue --- implement
+  subgraph fix issue in upstream
+    open_issue[Open issue <br> create MR] --> create_mr;
+    create_mr[create MR] --> git_pull;
+    git_pull[update local repository] --> git_checkout;
+    git_checkout[checkout branch of MR] --> solve_issue;
+    solve_issue[work on issue] --> resolve_mr
+    resolve_mr[resolve MR] --> wait_approval;
+    wait_approval[wait for approval] --> merge
+    merge(merge)
+  end
+  subgraph work on issue
+    implement[implement your changes] --> git_commit
+    git_commit[commit your changes] --> implement
+    git_commit --> git_push
+    git_push[push to upstream] --> implement
+  end
 ```
 
 ## Develop a new OPAL Feature
