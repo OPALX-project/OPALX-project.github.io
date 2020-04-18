@@ -1,3 +1,15 @@
+## April 20th, 2020 
+### Agenda (times in GMT):
+
+* 15:30-16:00: Discussion on integration of features: Andreas and Achim
+* 16:00-16:30: pyOPAL: Chris R. [2020-04-14_pyopal.pdf](uploads/d95c4a05e71d73c74f5e00568dacdf8e/2020-04-14_pyopal.pdf)
+* 16:30-17:00: pyOPALTools: Matthias [pyOPALTools.pdf](uploads/9238c973c61f05281ed1810b98493727/pyOPALTools.pdf)
+* 17:30-18:00: Sirepo: Stephen W. and Chris H.
+* 18:00-18:30: Open Discussion/Flow over
+
+
+
+
 ## December 10 2019
 
 #### Agenda 
@@ -39,15 +51,6 @@ Due to problems with the original date we evaluating the following **alternative
 5. The Manual workflow as it is was not debated. A great plus is the ability to do small changes with the 
 *edit button* hence without going to the entire workflow. 
 
-6. none
+6. None
 
 
-
-## April 20th, 2020 
-### Agenda (times in GMT):
-
-* 15:30-16:00: Discussion on integration of features: Andreas and Achim
-* 16:00-16:30: pyOPAL: Chris R. [2020-04-14_pyopal.pdf](uploads/d95c4a05e71d73c74f5e00568dacdf8e/2020-04-14_pyopal.pdf)
-* 16:30-17:00: pyOPALTools: Matthias [pyOPALTools.pdf](uploads/9238c973c61f05281ed1810b98493727/pyOPALTools.pdf)
-* 17:30-18:00: Sirepo: Stephen W. and Chris H.
-* 18:00-18:30: Open Discussion/Flow over
