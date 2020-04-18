@@ -20,6 +20,8 @@ In this document we show you to do each step on the command line. For many IDEs 
   TBW
 * **branch**  
   **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch** makes it possible to implement changes without impacting other branches. We use branches to separate code for different versions. For example in the _OPAL_ upstream repository we have the branches `OPAL-2.0`, `OPAL2.2`, `master`... Another use-case for branches is to fix bugs, code cleanup and small code changes in general. The lifetime of these branches should be short.
+* **protected branches**  
+  A **protected branch** is a branch you are **not** allowed to push to. The master branch and all branches for the different versions are protected. Changes to protected branches must be done via merge requests!
 
 ## Fixing issues in central repository
 
@@ -100,7 +102,16 @@ graph LR
   end
 ```
 
-### Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
+### Resolve work in progress (WIP) status  of your MR
+
+Open Gitlabs Web-GUI for the  next steps.
+
+* Open  merge request.
+* Resolve **WIP** status
+* Edit merge request:
+  * add at least two approvers
+  * assign merge request to yourself (usually)
+  * check the "delete branch" checkbox (there are only few cases where you don't want this)
 
 ### Wait for approval. As long as discussions are open:
    * answer to comments/suggestions/questions in discussions
@@ -121,6 +132,8 @@ graph LR
 ```
 
 ### Merge
+
+After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!  
 
 ## Develop a new OPAL Feature
 
