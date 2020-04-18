@@ -8,29 +8,31 @@ On this Wiki page we explain the _OPAL_ development workflow for fixing issues, 
 
 ## Some terminology
 
-* **upstream repository**  
-  In this document we use the term **upstream** repository for the original repository on `gitlab.psi.ch`. The upstream repository for _OPAL_ is `https://gitlab.psi.ch/OPAL/srv` for the manual it is `https://gitlab.psi.ch/OPAL/Documentation/Manual`
+* **central repository**  
+  In this document we use the term **central** repository for the original repository on `gitlab.psi.ch`. The central repository for _OPAL_ is `https://gitlab.psi.ch/OPAL/srv` for the manual it is `https://gitlab.psi.ch/OPAL/Documentation/Manual`
 * **fork**  
-  A **fork** is a complete copy of an upstream repository on `https://gitlab.psi.ch`. Forks are usually located in the users namespace and are created via Gitlabs fork mechanism.
+  A **fork** is a complete copy of an central repository on `https://gitlab.psi.ch`. Forks are usually located in the users namespace and are created via Gitlabs fork mechanism. We use forks to implement huger chances.
+* **origin**  
+  In Git, **origin** is a shorthand name for the remote repository that a repository was originally cloned from. This points either to the upstream repository or a forked repository.
+* **upstream**  
+  TBW
 * **branch**  
-  **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch**
-
-
+  **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch** makes it possible to implement changes without impacting other branches. We use branches to separate code for different versions. For example in the _OPAL_ upstream repository we have the branches `OPAL-2.0`, `OPAL2.2`, `master`... Another use-case for branches is to fix bugs, code cleanup and small code changes in general. The lifetime of these branches should be short.
 
 ## Fixing issues in upstream
 
-
+We use the following workflow to implement smaller changes, code cleanup and bugfixes:
 
 1. Open issue and create merge request (MR)
-3. Update your clone and checkout branch created for MR
-5. Implement your changes, commit and push frequently
+1. Update your clone and checkout branch created for MR
+1. Implement your changes, commit and push frequently
 1. Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
 1. Wait for approval. As long as discussions are open:
    * answer to comments/suggestions/questions in discussions
    * Implement more/adapt your changes
 1. Merge
 
-Flowcharts (an experiment with _mermaid_,still not really nice):
+Same as a flowchart (an experiment with _mermaid_, still not really nice):
 
 ```mermaid
   graph LR
@@ -44,17 +46,33 @@ Flowcharts (an experiment with _mermaid_,still not really nice):
   end
 ```
 
+### Open issue and create merge request
+
+
+### Update your clone and checkout branch created for MR
+
+### Implement your changes
+
 ```mermaid
 graph LR
   subgraph work on issue
+    git_checkout(checkout branch of MR) --> implement
     implement[implement your changes] --> git_commit
     git_commit[commit your changes] --> implement
     git_commit --> git_push
-    git_push[push to upstream] --> implement
+    git_push[push to origin] --> more_todo
+    more_todo{more to do?} -->|yes|implement
+    more_todo -->|no|resolve_mr
+    resolve_mr(resolve MR)
   end
 ```
 
-<br>
+
+### Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
+
+### Wait for approval. As long as discussions are open:
+   * answer to comments/suggestions/questions in discussions
+   * Implement more/adapt your changes
 
 ```mermaid
   graph LR
@@ -69,20 +87,6 @@ graph LR
     work_on_issue[work on issue] --> wait
   end
 ```
-
-### Open issue
-
-### Create merge request (MR)
-
-### Update your clone and checkout branch created for MR
-
-### Implement your changes, commit and push frequently
-
-### Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
-
-### Wait for approval. As long as discussions are open:
-   * answer to comments/suggestions/questions in discussions
-   * Implement more/adapt your changes
 
 ### Merge
 
