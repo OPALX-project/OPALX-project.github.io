@@ -2,9 +2,11 @@
 
 [[_TOC_]]
 
-## A short introduction
+## A very short introduction
 
 On this Wiki page we explain the _OPAL_ development workflow for fixing issues, implementing bigger changes and editing the manual. In the last section we explain the scheme we use for versioning.
+
+In this document we show you to do each step on the command line. For many IDEs have nativ Git support, for most(?) editors extensions are available, like Magic for Emacs. If you prefer a standalone GUI just Google for something like "git gui".
 
 ## Some terminology
 
@@ -19,7 +21,7 @@ On this Wiki page we explain the _OPAL_ development workflow for fixing issues, 
 * **branch**  
   **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch** makes it possible to implement changes without impacting other branches. We use branches to separate code for different versions. For example in the _OPAL_ upstream repository we have the branches `OPAL-2.0`, `OPAL2.2`, `master`... Another use-case for branches is to fix bugs, code cleanup and small code changes in general. The lifetime of these branches should be short.
 
-## Fixing issues in upstream
+## Fixing issues in central repository
 
 We use the following workflow to implement smaller changes, code cleanup and bugfixes:
 
@@ -32,7 +34,7 @@ We use the following workflow to implement smaller changes, code cleanup and bug
    * Implement more/adapt your changes
 1. Merge
 
-Same as a flowchart (an experiment with _mermaid_, still not really nice):
+Same as a flowchart (an experiment with _mermaid_):
 
 ```mermaid
   graph LR
@@ -48,10 +50,41 @@ Same as a flowchart (an experiment with _mermaid_, still not really nice):
 
 ### Open issue and create merge request
 
+The following steps must be performed in Gitlabs Web GUI:
 
-### Update your clone and checkout branch created for MR
+* Open issue in Gitlabs issue tracker. Select a template for the report. At the time of writing templates for bug reports and feature requests are available. For other issues use "no template".
+* It is usually a good idea to create a merge request as soon as you start working on the issue.
+  * Merge request for the **master** branch can be created directly via the issue tracker. In this case a new branch and and a request for merging this branch will be created. The merge request will be marked as **WIP** (work in progress).
+  * If you want to create a merge request for another branch, you have to create a branch related to the issue yourself. Choose a name for the branch which make the relation to the merge request clear.
+
+### Update your clone and checkout branch created for the merge request
+
+On you local copy, run
+```
+git pull
+git checkout BRANCH
+```
+
+> **Note:** Maybe you have to commit  your local changes first!
 
 ### Implement your changes
+
+1. implement your changes, check changes against coding style guide
+1. Tell Git which files you would like to commit
+   ```
+   git add <filename1> <filename2>
+   ```
+1. Commit the files locally on your development machine
+   ```
+   git commit -m "Description of changes"
+   ```
+1. push your changes to Gitlab (optional if you have to implement more changes)
+   ```
+   git push
+   ```
+1. go back to 1. if you are not done
+
+Same as _mermaid_ flowchart:
 
 ```mermaid
 graph LR
@@ -66,7 +99,6 @@ graph LR
     resolve_mr(resolve MR)
   end
 ```
-
 
 ### Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)
 
