@@ -4,7 +4,18 @@
 
 ## A short introduction
 
-On this Wiki page we explain the _OPAL_ development workflow. 
+On this Wiki page we explain the _OPAL_ development workflow for fixing issues, implementing bigger changes and editing the manual. In the last section we explain the scheme we use for versioning.
+
+## Some terminology
+
+* **upstream repository**  
+  In this document we use the term **upstream** repository for the original repository on `gitlab.psi.ch`. The upstream repository for _OPAL_ is `https://gitlab.psi.ch/OPAL/srv` for the manual it is `https://gitlab.psi.ch/OPAL/Documentation/Manual`
+* **fork**  
+  A **fork** is a complete copy of an upstream repository on `https://gitlab.psi.ch`. Forks are usually located in the users namespace and are created via Gitlabs fork mechanism.
+* **branch**  
+  **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch**
+
+
 
 ## Fixing issues in upstream
 
