@@ -12,7 +12,38 @@
 2.
 3.
 4.
-5.
+5. From the discussion on oyOPAL
+
+`
+import pyOPAL as myOPAL
+from opal import load_dataset , filetype
+
+myOPAL.option(PSDUMFREQ=10)
+
+dist   = myOPAL.distribution( ... )
+
+d1     = myOPAL.dirft(L=1.5)
+
+myLine = myOPAL.line()
+
+myLine.add(d1)
+
+...
+
+res = myOPAL.track (myLine,dist, )
+
+
+ds  = load_dataset(ds=res, ftype=filetype.STAT) 
+
+plt.figure(figsize=(9, 4))
+plt = ds.plot_profile1D(’time’, ’rms_x’) 
+plt.grid(linestyle=’dashed’) 
+plt.tight_layout()
+plt.show()
+`
+
+
+
 
 
 
