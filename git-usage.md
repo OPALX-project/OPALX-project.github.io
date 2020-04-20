@@ -149,6 +149,8 @@ After all discussions are closed and the merge request has been approved, you ca
 
 Huge changes like OPAL3d should be done in a fork. This includes all student work like Master- and PhD. thesis.
 
+> It is good practice to use the issue tracker and merge request in your fork.
+
 > Merge changes from your fork to the upstream repository, when the work is **done** or something **usable** is available. 
 
 **Setup:**
