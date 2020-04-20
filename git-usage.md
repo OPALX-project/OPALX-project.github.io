@@ -54,7 +54,7 @@ Same as a flowchart (an experiment with _mermaid_):
   end
 ```
 
-### Open issue and create merge request
+### 3.1 Open issue and create merge request
 
 The following steps must be performed in Gitlabs Web GUI:
 
@@ -63,7 +63,7 @@ The following steps must be performed in Gitlabs Web GUI:
   * Merge request for the **master** branch can be created directly via the issue tracker. In this case a new branch and and a request for merging this branch will be created. The merge request will be marked as **WIP** (work in progress).
   * If you want to create a merge request for another branch, you have to create a branch related to the issue yourself. Choose a name for the branch which make the relation to the merge request clear.
 
-### Update your clone and checkout branch created for the merge request
+### 3.2 Update your clone and checkout branch created for the merge request
 
 On you local copy, run
 ```
@@ -73,7 +73,7 @@ git checkout BRANCH
 
 > **Note:** Maybe you have to commit  your local changes first!
 
-### Implement your changes
+### 3.3 Implement your changes
 
 1. implement your changes, check changes against coding style guide
 1. Tell Git which files you would like to commit
@@ -106,7 +106,7 @@ graph LR
   end
 ```
 
-### Resolve work in progress (WIP) status  of your MR
+### 3.4 Resolve work in progress (WIP) status  of your MR
 
 Open Gitlabs Web-GUI for the  next steps.
 
@@ -117,7 +117,7 @@ Open Gitlabs Web-GUI for the  next steps.
   * assign merge request to yourself (usually)
   * check the "delete branch" checkbox (there are only few cases where you don't want this)
 
-### Wait for approval. As long as discussions are open:
+### 3.5 Wait for approval. As long as discussions are open:
    * answer to comments/suggestions/questions in discussions
    * Implement more/adapt your changes
 
@@ -135,7 +135,7 @@ Open Gitlabs Web-GUI for the  next steps.
   end
 ```
 
-### Merge
+### 3.6 Merge
 
 After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!  
 
@@ -154,7 +154,7 @@ The basic workflow is:
 
 In the next sections these steps are explained in more detail.
 
-### Create a fork
+### 4.1 Create a fork
 
 1. From the [OPAL group](https://gitlab.psi.ch/OPAL) on PSI's Gitlab, select the project (e.g.
 [`src`](https://gitlab.psi.ch/OPAL/src))
@@ -162,7 +162,7 @@ In the next sections these steps are explained in more detail.
 1. Next to the URI there is a button marked `fork`; click on it.
 1. You can build a fork in groups of which you are a member, or in your personal group, which is named after your username. Create the fork in your personal group. `Forking in progress` appears. Now wait (this can take a few minutes). If the fork has been created successfully, a URI to the new fork should be shown.
 
-### Clone your fork and setup clone
+### 4.2 Clone your fork and setup clone
 
 1. On your development machine, copy the URI of your fork to the clip board and clone it:  
    ```
@@ -178,7 +178,7 @@ In the next sections these steps are explained in more detail.
    git remote add upstream git@gitlab.psi.ch:OPAL/src.git
    ```
 
-### Workflow while implementing the new feature
+### 4.3 Workflow while implementing the new feature
 
 Write some code. It's a good idea to frequently commit code, and to merge from the upstream repository often. When you are ready to put the code back into the upstream repository:
 
@@ -202,31 +202,31 @@ Write some code. It's a good idea to frequently commit code, and to merge from t
    git push
    ```
 
-### Merge your new feature into central repository
+### 4.4 Merge your new feature into central repository
 
 * In your branch, click on the ```merge request``` link and select a reviewer from the list.
 * The reviewer will determine if the code is okay to merge. 
 * The reviewer clicks ```accept merge request``` and the code is merged back to the upstream repository; now watch the nightly builds...
 
+## 5. _OPAL_ Manual
 
+## 6. Versioning
 
-## 5. Versioning
+* **Major version number**  
+  * no incompatible changes in the input file
+  * no incompatible changes in the output files
 
-### Major version number
- * no incompatible changes in the input file
- * no incompatible changes in the output files
+* **Minor version number**  
+  * stable versions have an even minor version number (like 1.4.0)
+  * development version have an odd minor version number (like 1.5.0)
 
-### Minor version number
- * stable versions have an even minor version number (like 1.4.0)
- * development version have an odd minor version number (like 1.5.0)
+* **The third number in a version number**  
+  * identify bugfixes and feature changes (like 1.4.1)
 
-### The third number in a version number
- * identify bugfixes and feature changes (like 1.4.1)
+* **Stable versions**  
+  * only bugfixes and small feature changes are done in a stable version
+  * development for a stable version is done in a branch named OPAL-$MAJOR_VERSION.$MINOR_VERSION
 
-### Stable versions
- * only bugfixes and small feature changes are done in a stable version
- * development for a stable version is done in a branch named OPAL-$MAJOR_VERSION.$MINOR_VERSION
-
-### Development versions
- * development is done in the 'master' branch.
- * increase the third number in the version frequently to reflect changes (either bugfixes or new features)
+* **Development versions**  
+  * development is done in the 'master' branch.
+  * increase the third number in the version frequently to reflect changes (either bugfixes or new features)
