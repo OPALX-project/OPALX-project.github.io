@@ -2,13 +2,17 @@
 
 [[_TOC_]]
 
-## A very short introduction
+## 1. A short introduction
 
 On this Wiki page we explain the _OPAL_ development workflow for fixing issues, implementing bigger changes and editing the manual. In the last section we explain the scheme we use for versioning.
 
+* file all changes (bugfixes and feature changes) in the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues) of Gitlab
+ * all issues have to be assigned to an OPAL version number(to be discussed: maybe better a milestone?) (a certain feature will be implemented in  this version)
+ * create a branches for all issues, merge these branches to the desired central stable and development branches.
+
 In this document we show you to do each step on the command line. For many IDEs have nativ Git support, for most(?) editors extensions are available, like Magic for Emacs. If you prefer a standalone GUI just Google for something like "git gui".
 
-## Some terminology
+## 2. Terminology
 
 * **central repository**  
   In this document we use the term **central** repository for the original repository on `gitlab.psi.ch`. The central repository for _OPAL_ is `https://gitlab.psi.ch/OPAL/srv` for the manual it is `https://gitlab.psi.ch/OPAL/Documentation/Manual`
@@ -23,7 +27,7 @@ In this document we show you to do each step on the command line. For many IDEs 
 * **protected branches**  
   A **protected branch** is a branch you are **not** allowed to push to. The master branch and all branches for the different versions are protected. Changes to protected branches must be done via merge requests!
 
-## Fixing issues in central repository
+## 3. Fixing issues in central repository
 
 We use the following workflow to implement smaller changes, code cleanup and bugfixes:
 
@@ -135,16 +139,18 @@ Open Gitlabs Web-GUI for the  next steps.
 
 After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!  
 
-## Develop a new OPAL Feature
+## 4. Develop a new OPAL Feature
 
-In OPAL, each developer works in a fork of the central repository inside your personal group or the OPAL group. When the development is done, the code is merged back into the central repository.
+Huge changes like OPAL3d should be done in a fork. This includes all student work like Master- and PhD. thesis.
 
-To develop a new feature for a given OPAL project, you have to
+The basic workflow is:
 
 1. Create a fork
 1. Clone and setup the clone
 1. Code your feature
-1. Merge your changes into central repository
+1. Regularly merge changes from the central repository (git@gitlab.psi.ch:OPAL/src.git)
+1. Create a merge request from your fork to the central repository, when the work is done or something usable is available
+1. Merge your changes into central repository after approval
 
 In the next sections these steps are explained in more detail.
 
@@ -201,3 +207,26 @@ Write some code. It's a good idea to frequently commit code, and to merge from t
 * In your branch, click on the ```merge request``` link and select a reviewer from the list.
 * The reviewer will determine if the code is okay to merge. 
 * The reviewer clicks ```accept merge request``` and the code is merged back to the upstream repository; now watch the nightly builds...
+
+
+
+## 5. Versioning
+
+### Major version number
+ * no incompatible changes in the input file
+ * no incompatible changes in the output files
+
+### Minor version number
+ * stable versions have an even minor version number (like 1.4.0)
+ * development version have an odd minor version number (like 1.5.0)
+
+### The third number in a version number
+ * identify bugfixes and feature changes (like 1.4.1)
+
+### Stable versions
+ * only bugfixes and small feature changes are done in a stable version
+ * development for a stable version is done in a branch named OPAL-$MAJOR_VERSION.$MINOR_VERSION
+
+### Development versions
+ * development is done in the 'master' branch.
+ * increase the third number in the version frequently to reflect changes (either bugfixes or new features)
