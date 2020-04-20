@@ -2,6 +2,8 @@
 
 [[_TOC_]]
 
+---
+
 ## 1. A short introduction
 
 On this Wiki page we explain the _OPAL_ development workflow for fixing issues, implementing bigger changes and editing the manual. In the last section we explain the scheme we use for versioning.
@@ -11,6 +13,8 @@ On this Wiki page we explain the _OPAL_ development workflow for fixing issues, 
  * create a branches for all issues, merge these branches to the desired central stable and development branches.
 
 In this document we show you to do each step on the command line. For many IDEs have nativ Git support, for most(?) editors extensions are available, like Magic for Emacs. If you prefer a standalone GUI just Google for something like "git gui".
+
+---
 
 ## 2. Terminology
 
@@ -26,6 +30,8 @@ In this document we show you to do each step on the command line. For many IDEs 
   **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch** makes it possible to implement changes without impacting other branches. We use branches to separate code for different versions. For example in the _OPAL_ upstream repository we have the branches `OPAL-2.0`, `OPAL2.2`, `master`... Another use-case for branches is to fix bugs, code cleanup and small code changes in general. The lifetime of these branches should be short.
 * **protected branches**  
   A **protected branch** is a branch you are **not** allowed to push to. The master branch and all branches for the different versions are protected. Changes to protected branches must be done via merge requests!
+
+---
 
 ## 3. Fixing issues in central repository
 
@@ -139,16 +145,29 @@ Open Gitlabs Web-GUI for the  next steps.
 
 After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!
 
+---
+
 ## 4. Develop a new OPAL Feature
 
 Huge changes like OPAL3d should be done in a fork. This includes all student work like Master- and PhD. thesis.
 
-The basic workflow is:
+**Setup:**
 
-1. Create a fork
-1. Clone and setup the clone
+1. Open an issue in the [OPAL project](https://gitlab.psi.ch/OPAL/src)
+1. Create a fork on Gitlab.
+1. Create a new branch in your fork on Gitlab. This is the branch you have to work on. Do *not* work on the master-branch!
+1. Create a local clone.
+1. Checkout the branch created in step 3.
+
+**Implement:**
+
 1. Code your feature
-1. Regularly merge changes from the central repository (git@gitlab.psi.ch:OPAL/src.git)
+1. Commit and push to your fork frequently
+1. Frequently fetch changes from upstream master to your master and merge to your branch.
+1. Go back to 1. till you are done
+
+**Merge:**
+
 1. Create a merge request from your fork to the central repository, when the work is done or something usable is available
 1. Merge your changes into central repository after approval
 
@@ -156,13 +175,12 @@ In the next sections these steps are explained in more detail.
 
 ### 4.1 Create a fork
 
-1. From the [OPAL group](https://gitlab.psi.ch/OPAL) on PSI's Gitlab, select the project (e.g.
-[`src`](https://gitlab.psi.ch/OPAL/src))
-1. This will take you to a page showing the URI for cloning the repository and a few other options. 
-1. Next to the URI there is a button marked `fork`; click on it.
-1. You can build a fork in groups of which you are a member, or in your personal group, which is named after your username. Create the fork in your personal group. `Forking in progress` appears. Now wait (this can take a few minutes). If the fork has been created successfully, a URI to the new fork should be shown.
+1. Open the [OPAL project](https://gitlab.psi.ch/OPAL/src
+1. Push the fork button.
+1. Select a group you want to fork into. (to be discussed: do we want to keep all forks in a sub-group of OPAL? Like https://gitlab.psi.ch/OPAL/src/Forks.)
+1. Wait till the creation of the fork completes.
 
-### 4.2 Clone your fork and setup clone
+### 4.2 Create a local clone of your fork
 
 1. On your development machine, copy the URI of your fork to the clip board and clone it:  
    ```
@@ -170,43 +188,45 @@ In the next sections these steps are explained in more detail.
    ```
 1. Change into the cloned repository and add the central repository as a _remote_   
    ```
-   git remote add upstream <original repository>
+   git remote add upstream git@gitlab.psi.ch:OPAL/src
    ```   
-   *Example:*
-   for OPAL the source repository the command is
-   ```
-   git remote add upstream git@gitlab.psi.ch:OPAL/src.git
-   ```
 
 ### 4.3 Workflow while implementing the new feature
 
-Write some code. It's a good idea to frequently commit code, and to merge from the upstream repository often. When you are ready to put the code back into the upstream repository:
+It's a good practice 
+* to commit and push your changes frequently.
+* to merge from the upstream repository often.
+* use the issue tracker and merge request (no approvers are required for merge request in your fork)
 
-1. Check changes against coding style guide
+1. implement some changes
 1. Tell Git which files you would like to commit
    ```
    git add <filename1> <filename2>
     ```
-1. Commit the files locally on your development machine
+1. Commit the files locally
    ```
    git commit -m "Description of changes"
    ```
-1. Merge changes from upstream
+1. Merge changes from upstream. This step is optional, but do it frequently. 
    ```
    git merge upstream
    ```
-1. If there are conflicts, you may need to modify the codel then go back through the ```git add``` and ```git commit``` process. 
-1. Check that everything builds and tests pass
-1. When you are ready, push your code back to Gitlab by doing
+1. In case you have conflicts resolve them
+1. Push your changes to Gitlab
    ```
    git push
    ```
 
-### 4.4 Merge your new feature into central repository
+### 4.4 Merge your fork into the upstream repository
 
-* In your branch, click on the ```merge request``` link and select a reviewer from the list.
+* In the [_OPAL_ project](https://gitlab.psi.ch/OPAL/src)your branch, click on the ```merge request```
+* Select your fork as source branch
 * The reviewer will determine if the code is okay to merge. 
 * The reviewer clicks ```accept merge request``` and the code is merged back to the upstream repository; now watch the nightly builds...
+
+### 4.5 Links
+
+https://www.atlassian.com/git/tutorials/git-forks-and-upstreams
 
 ## 5. _OPAL_ Manual
 
