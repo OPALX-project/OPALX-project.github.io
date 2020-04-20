@@ -1,7 +1,7 @@
 ## April 20, 2020 
 ### Agenda (times in GMT):
 
-1. 15:30-16:00: Discussion on integration of features: Andreas and Achim
+1. 15:30-16:00: Discussion on integration of features: Andreas [opal-mini-retreat-2020.pdf](uploads/6e90fcafa361eb5a051f25886acf4e7f/opal-mini-retreat-2020.pdf) and Achim
 2. 16:00-16:30: pyOPAL: Chris R. [2020-04-14_pyopal.pdf](uploads/d95c4a05e71d73c74f5e00568dacdf8e/2020-04-14_pyopal.pdf)
 3. 16:30-17:00: pyOPALTools: Matthias [pyOPALTools.pdf](uploads/b5f44b870b48b7c0503d470106fb53f3/pyOPALTools.pdf)
 4. 17:30-18:00: Sirepo: Stephen W. and Chris H.
