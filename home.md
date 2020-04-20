@@ -18,7 +18,7 @@ _OPAL_ comes in the following flavours:
   models beam lines, linacs, rf-photo injectors and
   complete XFELs excluding the undulator.
 * _OPAL-map_:
-  map tracking
+  map tracking (experimental).
 
 The code is managed through the git distributed version control system. A suite of unit tests have been developed for various parts of OPAL, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in asciidoc. Tools are available to readily convert asciidoc into formats such as pdf and html for display.
 
