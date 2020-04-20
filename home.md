@@ -76,7 +76,7 @@ See also [Post Processing](PostProcessing).
 ## OPAL for Developers: Coding Style and Conventions
 
 * [Coding Style and Conventions](For-Developers/Codingstyle)
-* [Git usage](git-usage) and [git workflow](git-workflow)
+* [Development workflow, Git and Gitlab usage](git-usage)
 * [_OPAL_ source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/html/)
 * [Building, executing and writing unit tests](unit-tests)
 * [DKS (CUDA) & _OPAL_](opaldks)
