@@ -137,7 +137,7 @@ Open Gitlabs Web-GUI for the  next steps.
 
 ### 3.6 Merge
 
-After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!  
+After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!
 
 ## 4. Develop a new OPAL Feature
 
