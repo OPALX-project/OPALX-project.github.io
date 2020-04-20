@@ -4,7 +4,7 @@
 1. 15:30-16:30: Discussion on integration of features: Andreas [opal-mini-retreat-2020.pdf](uploads/6e90fcafa361eb5a051f25886acf4e7f/opal-mini-retreat-2020.pdf) and Achim
 2. 16:30-17:00: pyOPAL: Chris R. [2020-04-14_pyopal.pdf](uploads/d95c4a05e71d73c74f5e00568dacdf8e/2020-04-14_pyopal.pdf)
 3. 17:00-17:30: pyOPALTools: Matthias [pyOPALTools.pdf](uploads/d837c09d2849bad98a72a51d86056c21/pyOPALTools.pdf)
-4. 17:30-18:00: Sirepo: Stephen W. and Chris H.
+4. 17:30-18:00: Sirepo: Stephen W. 
 5. 18:00-18:30: Open Discussion/Flow over
 
 #### Minutes
