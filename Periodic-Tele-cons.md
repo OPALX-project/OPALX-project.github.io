@@ -12,7 +12,7 @@
 2.
 3.
 4.
-5. From the discussion on pyOPAL
+5. From the discussion on pyOPAL: could that be out ultimate goal w.r.t. Python?
 ```python 
 import pyOPAL as myOPAL
 from opal import load_dataset , filetype
