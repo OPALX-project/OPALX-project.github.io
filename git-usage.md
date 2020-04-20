@@ -10,7 +10,7 @@ On this Wiki page we explain the _OPAL_ development workflow for fixing issues, 
 
 * file all changes (bugfixes and feature changes) in the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues) of Gitlab
  * all issues have to be assigned to an OPAL version number(to be discussed: maybe better a milestone?) (a certain feature will be implemented in  this version)
- * create a branches for all issues, merge these branches to the desired central stable and development branches.
+ * create a branches for all issues, merge these branches to the desired upstream stable and development branches.
 
 In this document we show you to do each step on the command line. For many IDEs have nativ Git support, for most(?) editors extensions are available, like Magic for Emacs. If you prefer a standalone GUI just Google for something like "git gui".
 
@@ -18,14 +18,12 @@ In this document we show you to do each step on the command line. For many IDEs 
 
 ## 2. Terminology
 
-* **central repository**  
-  In this document we use the term **central** repository for the original repository on `gitlab.psi.ch`. The central repository for _OPAL_ is `https://gitlab.psi.ch/OPAL/srv` for the manual it is `https://gitlab.psi.ch/OPAL/Documentation/Manual`
+* **upstream repository**  
+  In this document we use the term **upstream** repository for the original repository on `gitlab.psi.ch`. The upstream repository for _OPAL_ is `https://gitlab.psi.ch/OPAL/srv` for the manual it is `https://gitlab.psi.ch/OPAL/Documentation/Manual`
 * **fork**  
-  A **fork** is a complete copy of an central repository on `https://gitlab.psi.ch`. Forks are usually located in the users namespace and are created via Gitlabs fork mechanism. We use forks to implement huger chances.
+  A **fork** is a complete copy of an upstream repository on `https://gitlab.psi.ch`. Forks are usually located in the users namespace and are created via Gitlabs fork mechanism. We use forks to implement huger chances.
 * **origin**  
   In Git, **origin** is a shorthand name for the remote repository that a repository was originally cloned from. This points either to the upstream repository or a forked repository.
-* **upstream**  
-  TBW
 * **branch**  
   **Branches** are a basic concept in Git. Usually multiple branches exist in the same Git repository. A **branch** makes it possible to implement changes without impacting other branches. We use branches to separate code for different versions. For example in the _OPAL_ upstream repository we have the branches `OPAL-2.0`, `OPAL2.2`, `master`... Another use-case for branches is to fix bugs, code cleanup and small code changes in general. The lifetime of these branches should be short.
 * **protected branches**  
@@ -33,7 +31,7 @@ In this document we show you to do each step on the command line. For many IDEs 
 
 ---
 
-## 3. Fixing issues in central repository
+## 3. Fixing issues in the upstream repository
 
 We use the following workflow to implement smaller changes, code cleanup and bugfixes:
 
@@ -151,6 +149,8 @@ After all discussions are closed and the merge request has been approved, you ca
 
 Huge changes like OPAL3d should be done in a fork. This includes all student work like Master- and PhD. thesis.
 
+> Merge changes from your fork to the upstream repository, when the work is **done** or something **usable** is available. 
+
 **Setup:**
 
 1. Open an issue in the [OPAL project](https://gitlab.psi.ch/OPAL/src)
@@ -168,15 +168,15 @@ Huge changes like OPAL3d should be done in a fork. This includes all student wor
 
 **Merge:**
 
-1. Create a merge request from your fork to the central repository, when the work is done or something usable is available
-1. Merge your changes into central repository after approval
+1. Create a merge request in the [_OPAL_ project](https://gitlab.psi.ch/OPAL/src), select at least two approvers and resolve work in progress (WIP) status.
+1. Wait for approval, depending on the discussions changes might be required (they usually are).
+1. Merge your changes
 
 In the next sections these steps are explained in more detail.
 
 ### 4.1 Create a fork
 
-1. Open the [OPAL project](https://gitlab.psi.ch/OPAL/src
-1. Push the fork button.
+1. Open the [OPAL project](https://gitlab.psi.ch/OPAL/src) and push the fork button
 1. Select a group you want to fork into. (to be discussed: do we want to keep all forks in a sub-group of OPAL? Like https://gitlab.psi.ch/OPAL/src/Forks.)
 1. Wait till the creation of the fork completes.
 
@@ -186,7 +186,7 @@ In the next sections these steps are explained in more detail.
    ```
    git clone <new repository>
    ```
-1. Change into the cloned repository and add the central repository as a _remote_   
+1. Change into the cloned repository and add the upstream repository as a _remote_   
    ```
    git remote add upstream git@gitlab.psi.ch:OPAL/src
    ```   
@@ -217,7 +217,9 @@ It's a good practice
    git push
    ```
 
-### 4.4 Merge your fork into the upstream repository
+### 4.4 Merge changes from your fork to the upstream repository
+
+Create a merge request from your fork to the upstream repository, when the work is done or something usable is available. 
 
 * In the [_OPAL_ project](https://gitlab.psi.ch/OPAL/src)your branch, click on the ```merge request```
 * Select your fork as source branch
@@ -229,6 +231,8 @@ It's a good practice
 https://www.atlassian.com/git/tutorials/git-forks-and-upstreams
 
 ## 5. _OPAL_ Manual
+
+For the manual we use the same workflow as for fixing issues in the master branch. The only difference is that merge request _requires_ no approval - it many cases asking for approval is a good idea anyway.
 
 ## 6. Versioning
 
