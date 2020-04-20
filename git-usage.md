@@ -226,10 +226,6 @@ The workflow to merge changes from upstream is
 5. After all discussions are closed you can merge the request.
 
 
-### 4.5 Links
-
-https://www.atlassian.com/git/tutorials/git-forks-and-upstreams
-
 ## 5. _OPAL_ Manual
 
 For the manual we use the same workflow as for fixing issues in the master branch. The only difference is that merge request _requires_ no approval - it many cases asking for approval is a good idea anyway.
@@ -254,3 +250,10 @@ For the manual we use the same workflow as for fixing issues in the master branc
 * **Development versions**  
   * development is done in the 'master' branch.
   * increase the third number in the version frequently to reflect changes (either bugfixes or new features)
+
+## 7. Links
+
+* https://www.atlassian.com/git/tutorials/git-forks-and-upstreams
+* splint, lint alternative (http://splint.org)
+* cppcheck, static code analisys (http://cppcheck.sourceforge.net)
+* uncrustify (http://uncrustify.sourceforge.net)
