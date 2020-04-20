@@ -200,33 +200,31 @@ It's a good practice
 * to merge from the upstream repository often.
 * use the issue tracker and merge request (no approvers are required for merge request in your fork)
 
-1. implement some changes
-1. Tell Git which files you would like to commit
+The workflow is basically the same as for fixing issues in an upstream branch. In addition you have to merge changes from the upstream repository.
+
+The workflow to merge changes from upstream is
+
+1. Fetch changes from upstream  
    ```
-   git add <filename1> <filename2>
-    ```
-1. Commit the files locally
+   git fetch
    ```
-   git commit -m "Description of changes"
+1. Merge changes from upstream
    ```
-1. Merge changes from upstream. This step is optional, but do it frequently. 
+   git merge upstream/master
    ```
-   git merge upstream
-   ```
-1. In case you have conflicts resolve them
-1. Push your changes to Gitlab
-   ```
-   git push
-   ```
+1. Resolve conflicts, if any
+
+> If your upstream branch is not `master`, replace it with the correct branch.
 
 ### 4.4 Merge changes from your fork to the upstream repository
 
-Create a merge request from your fork to the upstream repository, when the work is done or something usable is available. 
+1. Open a new merge request in the [_OPAL_ project](https://gitlab.psi.ch/OPAL/src).
+2. Select the group of the fork and your working branch as source branch and submit the request.
+3. Select at least to approvers and resolve the merge request.
+4. Discuss your changes with the approvers, maybe you have to implement some changes.  
+  > After committing new changes the request must be (re-)approved by all approvers.
+5. After all discussions are closed you can merge the request.
 
-* In the [_OPAL_ project](https://gitlab.psi.ch/OPAL/src)your branch, click on the ```merge request```
-* Select your fork as source branch
-* The reviewer will determine if the code is okay to merge. 
-* The reviewer clicks ```accept merge request``` and the code is merged back to the upstream repository; now watch the nightly builds...
 
 ### 4.5 Links
 
