@@ -17,3 +17,7 @@
 - `src/Classic/TrimCoils` definitions for trim coils
 - `optimizer` low level optimizer library
 - `ippl` low level library for grids, fft, particles, output
+
+The source code documentation based on Doxygen gives the [details](http://amas.web.psi.ch/docs/opal/master-doxygen/html/).
+
+
