@@ -76,16 +76,16 @@ See also [Post Processing](PostProcessing).
 ## OPAL for Developers: Coding Style and Conventions
 
 * [Coding Style and Conventions](For-Developers/Codingstyle)
-* [Development workflow, Git and Gitlab usage](OPAL-Development-Workflow)
+* [Development workflow, Git and Gitlab usage](For-Developers/OPAL-Development-Workflow)
 * [_OPAL_ source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/html/)
-* [Building, executing and writing unit tests](unit-tests)
-* [DKS (CUDA) & _OPAL_](opaldks)
-* [Technology & Ideas](tech-ideas)
-* [File Format for stat Storage](File Format for stat Storage)
+* [Building, executing and writing unit tests](For-Developers/unit-tests)
+* [DKS (CUDA) & _OPAL_](For-Developers/opaldks)
+* [Technology & Ideas](For-Developers/tech-ideas)
+* [File Format for stat Storage](For-Developers/File-Format-for-stat-Storage)
 * [IPPL Documentation](For-Developers/ippl_user_guide.pdf)
 * [Release Procedure](For-Developers/Release-Procedure)
-* [Periodic Tele-cons](Periodic-Tele-cons)
-* [Most Used Directories in the Code](Most-Used-Directories-in-the-Code)
+* [Periodic Tele-cons](For-Developers/Periodic-Tele-cons)
+* [Most Used Directories in the Code](For-Developers/Most-Used-Directories-in-the-Code)
 
 ## Regression Tests
 
