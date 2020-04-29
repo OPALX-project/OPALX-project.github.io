@@ -87,6 +87,9 @@ the recommended version.
 
 | VTK | 7.1 | 8.0.0
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
+
+| AMReX | 18.07 | 18.07
+| optional: required for OPAL compiled with AMR solvers.
 |=======
 
 === C&#43;&#43; compiler
