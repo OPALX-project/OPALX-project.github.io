@@ -20,7 +20,7 @@
 
 3.  [Documentation](#3-documentation)
     1.  [File Header](#31-file-header)
-    2.  [Header files](#32-header-files)
+    2.  [Header Files](#32-header-files)
     3.  [API Documentation](#33-api-documentation)
     4.  [Code Documentation](#34-code-documentation)
     5.  [Doxygen](#35-doxygen)
@@ -206,26 +206,53 @@ Example:
 
 ```
 //
-// Brief description of content
+// Brief description
 //
-// Copyright (c) 2008-2020
-// Paul Scherrer Institut, Villigen PSI, Switzerland
-// All rights reserved.
+// Copyright (c) YYYY, Notice mentioning University, Institute, Lab or Author
 //
-// OPAL is licensed under GNU GPL version 3.
+// Optional: related work, e.g. title of PhD or Master thesis
+//
+// This file is part of OPAL.
+//
+// OPAL is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// You should have received a copy of the GNU General Public License
+// along with OPAL.  If not, see <https://www.gnu.org/licenses/>.
 //
 ```
+
+For PSI employees the copyright notice would be:
+
+```
+// Copyright (c) YYYY1[, YYYY2...], Paul Scherrer Institut, Villigen PSI, Switzerland
+// All rights reserved.
+```
+
+For a PhD or Master student, or someone with another affiliation:
+
+```
+// Copyright (c) YYYY1[, YYYY2...], Firstname Lastname, University
+// All rights reserved
+```
+
+Copyright year should be updated, whenever there is a change to the file.
+Consecutive years should be aggregated with a dash, individual periods, comma-separated.
+
+This proposal has been discussed in src#482.
 
 * * * * *
 
-### 3.2. Header files
+### 3.2. Header Files
 
-Add class documentation below header.
+Add extensive class documentation below header.
 
 ```
 /*!
-  Class documentation
- */
+ Class documentation
+*/
 ```
 
 * * * * *
@@ -234,7 +261,7 @@ Add class documentation below header.
 
 -   All public methods and functions must be documented using Doxygen.
 
-### 3.4. Code Documentation 
+### 3.4. Code Documentation
 
 -   Comment what the code does not how.
 -   Write comments as you code.
