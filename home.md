@@ -79,7 +79,6 @@ See also [Post Processing](PostProcessing).
 * [Development workflow, Git and Gitlab usage](For-Developers/OPAL-Development-Workflow)
 * [_OPAL_ source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/html/)
 * [Building, executing and writing unit tests](For-Developers/unit-tests)
-* [DKS (CUDA) & _OPAL_](For-Developers/opaldks)
 * [Technology & Ideas](For-Developers/tech-ideas)
 * [File Format for stat Storage](For-Developers/File-Format-for-stat-Storage)
 * [IPPL Documentation](For-Developers/ippl_user_guide.pdf)

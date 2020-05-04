@@ -15,6 +15,7 @@
   * [ ] compile new PDF version of manual
   * [ ] copy to `/afs/psi.ch/project/amas/webhosting/docs/opal/opal_user_guide-x.y.0.pdf`
   * [ ] add links to the binaries in the wiki
+  * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/For-Developers/Compile-OPAL
   * [ ] compile the change log/release notes and publish it in the wiki: https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes
 * [ ] tracker
   * [ ] new label for `OPAL x.(y+1)`
