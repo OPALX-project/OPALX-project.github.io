@@ -1,6 +1,6 @@
 **OPAL with DKS enabled**
 
-OPAL compiled with DKS can be used in systems equipped with Nvidia GPU to offload FTPoissonSolver and CollimatorPhysics calculations from CPU to GPU.
+OPAL (only versions 2.2 and lower) compiled with DKS can be used in systems equipped with Nvidia GPU to offload FTPoissonSolver and CollimatorPhysics calculations from CPU to GPU.
 
 To enable GPU usage in OPAL-DKS use `--use-dks` command line argument when running OPAL.
 
