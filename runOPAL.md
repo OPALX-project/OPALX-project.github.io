@@ -245,3 +245,99 @@ INPUT          "tmpl/cyclotron.tmpl"
 FIELDMAPDIR    "."
 TEMPLATEDIR    "tmpl"
 ```
+
+# Using the Python interface
+
+There is a Python class `OpalRunner` that can be used to run OPAL simulations like functions.
+
+## Installation
+
+Before using the code, you have to install the repo. Clone the repo, `cd` to the repo base directory (the one containing `setup.py`) and run:
+
+```shell
+pip install .
+```
+
+If you are a developer and don't want to install the package every time to make changes to the Python code, use this command instead:
+
+```shell
+pip install -e .
+```
+
+## Example
+
+A full example can be found in the code below. You can find it, together with the demo config files, in the following archive: [opalrunner_demo.tar.xz](uploads/b4ad0b980d7190ab536a5d462cd5f966/opalrunner_demo.tar.xz)
+
+```python
+# Author: Renato Bellotti
+import pandas as pd
+import matplotlib.pyplot as plt
+from runOPAL import OpalRunner, SlurmJob
+
+#####################
+# Configuration
+#####################
+base_name = 'fullBeamline'
+
+# directory that contains the <base_name>.data file and a file tmpl/<base_name>.tmpl
+input_directory = '/data/user/bellotti_r/awa_masters/renato/test'
+
+# directory whose subdirectories will contain:
+# - <base_name>.stat files
+# - <base_name>.json (containing the design variable configuration)
+# - <base_name>.in (input file)
+output_dir = f'/data/user/bellotti_r/test_output'
+
+# directory where the fieldmaps are stored
+fieldmap_dir = f'{input_directory}/fieldmaps'
+
+################################################################
+# Select the design variable configurations you want to run
+################################################################
+dvars = pd.DataFrame(columns=['IBF', 'IM', 'GPHASE', 'ILS1', 'ILS2', 'ILS3', 'bunchCharge', 'lambda', 'SIGXY'])
+dvars.loc[0] = [450, 100., -50, 0, 0, 0, 0.3, 0.3, 1.5]
+dvars.loc[1] = [500, 150, 0, 10, 20, 30, 1, 1, 10]
+
+########################
+# Run the simulations
+########################
+runner = OpalRunner(input_directory, output_dir, fieldmap_dir, base_name)
+
+# This function is blocking, i. e. it waits until the SLURM jobs have finished.
+IDs = runner.run_configurations_blocking(dvars)
+
+# Alternative:
+# runner.run_configurations(dvars)
+
+########################
+# Load the results
+########################
+# `beams` is callable. Its only parameter is a float $s$ indicating a position.
+# `beams(s)` returns the provided quantities of interest (here: $\sigma_x, \epsilon_x$) at position $s$.
+# The rows of the result correspond the the indices of the design variable configurations that were run before.
+beams = runner.get_quantities_of_interest(['RMS Beamsize in x', 'Normalized Emittance x'],
+                                          [0, 1])
+
+s_values = np.linspace(0, 0.3, 50)
+
+# Each column is a vector sigma_x(s0), sigma_x(s1), ... for a design variable config.
+# There are 2 design variable configurations, so there are 2 columns
+sigma_x = pd.concat([beams(s)['RMS Beamsize in x'] for s in s_values], axis=1).T.reset_index(drop=True)
+epsilon_x = pd.concat([beams(s)['Normalized Emittance x'] for s in s_values], axis=1).T.reset_index(drop=True)
+
+fig, ax = plt.subplots()
+
+# Just plot the RMS Beamsize in x for the first design variable config.
+ax.plot(s_values, sigma_x[0])
+
+ax.set_xlabel('Path length [m]')
+ax.set_ylabel('$\sigma_x$ [m]');
+```
+
+## Where to put the configurations
+
+There are two options where you can add your variables. The ones that are common to all simulations should be written to the `.data` file. The settings that change between configurations should be columns in the `dvars` DataFrame.
+
+## Low-level access
+
+There is a class `Simulation` that is used by both the script and the OpalRunner. It is more complicated to use, but allows fine-grained control. Please see its docstring and/or use `help(Simulation)`.
