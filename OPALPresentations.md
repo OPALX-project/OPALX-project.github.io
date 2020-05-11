@@ -8,6 +8,7 @@
 # Papers related to OPAL
 
 1. [*OPAL a Versatile Tool for Charged Particle Accelerator Simulations*, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
+1. [*Machine learning for orders of magnitude speedup in multiobjective optimization of particle accelerator systems*, A. Edelen et al. (2020)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.044601)
 1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
 1. [*A Parallel General Purpose Multi-Objective Optimization Framework, with Application to Beam Dynamics*, N. Neveu et al. (2013)](http://arxiv.org/abs/1302.2889)
 1. [*A Fast and Scalable Low Dimensional Solver for Charged Particle Dynamics in large Particle Accelerators*, Y. Ineichen et al. (2012)]( http://dx.doi.org/10.1007/s00450-012-0216-2)
