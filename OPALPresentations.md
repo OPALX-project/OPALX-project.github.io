@@ -22,12 +22,11 @@
 # Reports and thesis on OPAL
 
 1. [AMAS Master and PhD projects](http://amas.web.psi.ch/people/aadelmann/ETH-Accel-Lecture-1/projectscompleted)
-1. Trim coil report (PSI Ring):  [PSI Ring](Reports/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
-1. Report of Titus-Stefan Dascalu on Multipole, FFA and Synchrotron tracking. This work was
-supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0. [Multipole](Reports/reportDascalu.pdf)
+1. [Trim coil report (PSI Ring)](Reports/TM-11-13-TrimCoils-Adam_Joho-1974.pdf)
+1. [Report of Titus-Stefan Dascalu on Multipole, FFA and Synchrotron tracking](Reports/reportDascalu.pdf). This work was
+supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 .
 1. Master thesis of Philippe Ganz, [_s-based maps from TPS & Lie-Series applied to Proton-Therapy Gantries_](Reports/thesisGanz.pdf). The work (_OPAL-map_) has been integrated in OPAL 2.0.0.
-
 
 # OPAL lectures (outdated i.e. 2014)
 
