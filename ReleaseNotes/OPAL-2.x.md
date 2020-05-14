@@ -14,5 +14,6 @@
 * Many more features, for details see the [manual](http://amas.web.psi.ch/opal/Documentation/master/OPAL_Manual.html)
 
 ## Input file related changes
+* The unit of the attributes FMLOWE and FMHIGHE in the cyclotron command is changed from MeV to GeV (!364)
 
 ## Output file related changes
