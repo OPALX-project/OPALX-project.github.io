@@ -7,6 +7,7 @@
 * Fix format of _ElementPositions.sdds files (#468)
 * Fix closed orbit finder (part of #285)
 * Fixes for multicharged particle in Opal-T (#544, #545)
+* Fix exception for `TRACKBACK = TRUE` with a traveling wave structure (#494)
 * SAAMG fixes (#541, #543) 
 * [Large code cleanup](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Cleanup&milestone_title=OPAL%202.4.0)
 
