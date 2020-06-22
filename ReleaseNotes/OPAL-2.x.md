@@ -16,6 +16,7 @@
 
 * MultiGauss distribution for microbunched beams (#470)
 * AMR (Adaptive Mesh Refinement, #496)
+* Data file no longer required for `SAMPLER` and `OPTIMIZER` (#239)
 * DKS was removed.
 
 ## Input file related changes
