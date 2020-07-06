@@ -9,7 +9,7 @@
 * Fixes for multicharged particle in Opal-T (#544, #545)
 * Fix exception for `TRACKBACK = TRUE` with a traveling wave structure (#494)
 * SAAMG fixes (#541, #543)
-* Fix for reading files in H5Block format (#316)
+* Fix for reading fields in H5Block format (#316)
 * Fix ascii2h5block (#469)
 * Fix for pressure data reading (#513)
 * Clang and MacOS compiler issues (#476, #483, #484, #485, #487, #488, #489, #512, #526, #531)
