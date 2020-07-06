@@ -20,7 +20,7 @@
 * MultiGauss distribution for microbunched beams (#470)
 * AMR (Adaptive Mesh Refinement, #496)
 * Data file no longer required for `SAMPLER` and `OPTIMIZER` (#239)
-* DKS was removed.
+* DKS was removed (#523).
 
 ## Input file related changes
 * The unit of the attributes FMLOWE and FMHIGHE in the cyclotron command is changed from MeV to GeV (!364)
