@@ -23,6 +23,7 @@
 * DKS was removed (#523).
 
 ## Input file related changes
-* The unit of the attributes FMLOWE and FMHIGHE in the cyclotron command is changed from MeV to GeV (!364)
+* The unit of the attributes `FMLOWE` and `FMHIGHE` in the cyclotron command is changed from MeV to GeV (!364)
+* The number of particles has to be equal in `BEAM` and `DISTRIBUTION` commands (#490, #558)
 
 ## Output file related changes
