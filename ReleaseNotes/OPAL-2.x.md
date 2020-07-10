@@ -11,8 +11,11 @@
 * SAAMG fixes (#541, #543)
 * Fix for reading fields in H5Block format (#316)
 * Fix ascii2h5block (#469)
+* Fix for `VALUE` command (#480)
+* Fix crash `BEAM` without particles (#490)
 * Fix for pressure data reading (#513)
-* Clang and MacOS compiler issues (#476, #483, #484, #485, #487, #488, #489, #512, #526, #531)
+* Fix infinite loop when `DESIGNENERGY` not specified in bends (#546)
+* Clang and MacOS compiler issues (#476, #483, #484, #485, #487, #488, #489, #512, #526, #527, #531)
 * [Large code cleanup](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Cleanup&milestone_title=OPAL%202.4.0)
 
 ## [New features in OPAL 2.4.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&milestone_title=OPAL%202.4.0)
