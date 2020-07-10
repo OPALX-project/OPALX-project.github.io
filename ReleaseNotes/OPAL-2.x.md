@@ -28,5 +28,6 @@
 ## Input file related changes
 * The unit of the attributes `FMLOWE` and `FMHIGHE` in the cyclotron command is changed from MeV to GeV (!364)
 * The number of particles has to be equal in `BEAM` and `DISTRIBUTION` commands (#490, #558)
+* Fix for `DISTRIBUTION` momentum input (`SIGMAPX`, `SIGMAPY`, `SIGMAPZ`) when `INPUTMOUNITS= EV`. Changed from kinetic energy to momentum (as supposed to) (#475)
 
 ## Output file related changes
