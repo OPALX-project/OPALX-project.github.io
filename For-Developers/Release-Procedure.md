@@ -1,6 +1,6 @@
 # ToDo List for OPAL release x.y
 
-* [ ] source code and binary
+**source code and binary**
   * [ ] create branch x.y
   * [ ] update version string in Doxyfile
   * [ ] update the version string in CMakeLists.txt and commit
@@ -9,7 +9,8 @@
   * [ ] compile new binary for Linux
   * [ ] compile new binary for macOS
   * [ ] upload tar-balls to `/afs/psi.ch/project/amas/webhosting/Downloads/OPAL/package/`
-* [ ] manual/documentation
+
+**manual/documentation**
   * [ ] setup a new branch for the new version of the manual
   * [ ] correct (the links to) the example input files, field maps also in the manual
   * [ ] compile new PDF version of manual
@@ -17,9 +18,14 @@
   * [ ] add links to the binaries in the wiki
   * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/For-Developers/Compile-OPAL
   * [ ] compile the change log/release notes and publish it in the wiki: https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes
-* [ ] tracker
+  * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/home
+  * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/regression-tests
+
+**tracker**
   * [ ] new label for `OPAL x.(y+1)`
   * [ ] update labels and milestones in issues
+
+**varia**
 * [ ] setup the regression-tests to run the new version
 * [ ] PSI module
 * [ ] write e-mail to mailing list
