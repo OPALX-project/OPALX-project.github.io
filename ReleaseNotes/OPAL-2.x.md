@@ -8,7 +8,7 @@
 * Fix closed orbit finder (part of #285)
 * Fixes for multicharged particle in Opal-T (#544, #545)
 * Fix exception for `TRACKBACK = TRUE` with a traveling wave structure (#494)
-* SAAMG fixes (#541, #543)
+* SAAMG fixes (#541, #542, #543)
 * Fix for reading fields in H5Block format (#316)
 * Fix ascii2h5block (#469)
 * Fix for `VALUE` command (#480)
@@ -27,7 +27,7 @@
 
 ## Input file related changes
 * The unit of the attributes `FMLOWE` and `FMHIGHE` in the cyclotron command is changed from MeV to GeV (!364)
-* The number of particles has to be equal in `BEAM` and `DISTRIBUTION` commands (#490, #558)
+* The number of particles has to be equal in `BEAM` and `DISTRIBUTION` commands (#558)
 * Fix for `DISTRIBUTION` momentum input (`SIGMAPX`, `SIGMAPY`, `SIGMAPZ`) when `INPUTMOUNITS= EV`. Changed from kinetic energy to momentum (as supposed to) (#475)
 
 ## Output file related changes
