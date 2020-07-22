@@ -20,7 +20,7 @@ In OPAL we use the google testing framework which has some convenience functions
 
 Documentation for gtest can be found at:
 
-https://github.com/google/googletest/blob/master/googletest/docs/Primer.md
+https://github.com/google/googletest/blob/master/googletest/docs/primer.md
 
 Go ahead and edit the tests if you need to. We should have one source file for each header file in the main body of the code. The directory structure is supposed to reflect the directory structure of the main OPAL source (add a directory if you need to). If you want to add an extra test, you need to make sure that it includes gtest `#include "gtest/gtest.h"` It should be automatically added to the test executable by cmake.
 
