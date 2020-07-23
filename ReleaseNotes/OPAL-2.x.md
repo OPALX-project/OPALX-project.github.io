@@ -11,13 +11,14 @@
 * Fix for `VALUE` command (#480)
 * Fix crash `BEAM` without particles (#490)
 * Fix exception for `TRACKBACK = TRUE` with a traveling wave structure (#494)
+* Fix for OrbitThreader (#509)
 * Fix for pressure data reading (#513)
 * SAAMG fixes (#541, #542, #543)
-* Fixes for multicharged particle in Opal-T (#544, #545)
+* Fixes for multicharged particle in Opal-T (#544, #545, #569)
 * Fix infinite loop when `DESIGNENERGY` not specified in bends (#546)
 * Fix for Autophasing (#568)
 * Fix for `MINBINEMITTED `and `MINSTEPFORREBIN `options (#571)
-* Fix for Source element (#572)
+* Fix for `SOURCE` element (#572)
 * Clang and MacOS compiler issues (#476, #483, #484, #485, #487, #488, #489, #512, #526, #527, #531)
 * [Large code cleanup](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Cleanup&milestone_title=OPAL%202.4.0)
 
@@ -32,5 +33,6 @@
 * The unit of the attributes `FMLOWE` and `FMHIGHE` in the cyclotron command is changed from MeV to GeV (!364)
 * The number of particles has to be equal in `BEAM` and `DISTRIBUTION` commands (#558)
 * Fix for `DISTRIBUTION` momentum input (`SIGMAPX`, `SIGMAPY`, `SIGMAPZ`) when `INPUTMOUNITS= EV`. Changed from kinetic energy to momentum (as supposed to) (#475)
+* `SOURCE` element can be made `TRANPARENT` for backtracking particles (#579)
 
 ## Output file related changes
