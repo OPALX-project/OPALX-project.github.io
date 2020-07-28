@@ -148,7 +148,7 @@ Clang is the recommended compiler for OPAL on macOS - as long as you do not need
 
 === Linux @PSI
 
-The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI  Linux distribution or you do not know whether the Pmodules are installed on your system.
+The easiest and recommended solution is to use the **Pmodules** environment available at PSI. Please link:Pmodules[read this wiki-page] if you are not using a PSI Linux distribution or you do not know whether the Pmodules are installed on your system.
 
 '''
 
@@ -169,7 +169,6 @@ module load toolchain/2.2
 ----
 
 **For OPAL master**
-
 ----
 module load opal-toolchain/master
 ----
@@ -183,14 +182,9 @@ module load opal-toolchain/master_slurm
 
 We provide recipes to build all required software. These recipes can be used on Linux,  macOS and Windows Services for Linux. They are tested with:
 
-* Redhat Enterprise Linux 7
-* macOS 10.12 with Xcode 9
-* macOS 10.13 with Xcode 10.1
-* macOS 10.14 with Xcode 10.2
-* Windows Services for Linux (ongoing)
-
->
-With the last update of Xcode to version 10.2 it is *not* possible to compile GCC without patches. For macOS the recommended solution to compile OPAL is to use Clang.
+* Redhat Enterprise Linux 6 & 7
+* macOS 10.12 - 10.15 with Xcode 9 - 11
+* Windows Services for Linux
 
 ==== Setting up the environment
 
