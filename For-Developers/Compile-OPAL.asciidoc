@@ -57,8 +57,8 @@ the recommended version.
 | C&#43;&#43; Compiler | C&#43;&#43; 11 | C&#43;&#43; 17 | version is minimum/recommended C&#43;&#43; standard. For further instructions see section below.
 
 | cmake | 3.0.0 | 3.11.4 or newer |
-1.With some version prior to 3.11.4 we had problems configuring HDF5 and Boost.
-1. For compiling CMake version 3.11.4 and newer a C&#43;&#43; compiler supporting C&#43;&#43;11 is required.
+1.With some version prior to 3.11.4 we had problems configuring HDF5 and Boost. +
+2. For compiling CMake version 3.11.4 and newer a C&#43;&#43; compiler supporting C&#43;&#43;11 is required.
 
 | Open MPI | 3.1.2 | 3.1.6 | as alternative MPICH can be used
 
@@ -80,10 +80,12 @@ the recommended version.
 | OpenBLAS | 0.2.9 | 0.3.10 or newer
 | optional: required for OPAL compiled with SAAMG solver.
 
-| trilinos | 12.10.1 | 12.12.1, 12.18.1 |
+| trilinos | 12.10.1
+| 12.12.1 (macOS) +
+ 12.18.1 (Linux) 
+| +
 1. optional: required for OPAL compiled with SAAMG solver. +
-1. Version `12.12.1` is recommended on macOS. +
-1. Version `12.18.1` does not compile on macOS.
+2. Version `12.18.1` does not compile on macOS.
 
 | VTK | 7.1.1 | 9.0.1
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
@@ -125,11 +127,11 @@ If you want to compile GCC, you have to compile the following libraries first wi
 
 |=======
 
-==== Clang
+==== Clang/LLVM (macOS only)
 
-Clang is the recommended compiler for OPAL on macOS. 
+Clang is the recommended compiler for OPAL on macOS - as long as you do not need AMR. If you want to compile OPAL with AMR a Fortran compiler is required. In this case it is recommended to use GCC. 
 
-> *Note:* For the time being Clang is the only tested and recommended compiler for macOS.
+> *Note:* A Fortran front-end "Flang" has been added to LLVM 11, but this is not included in Xcode 11.
 
 [width="100%",options="header"]
 |=======
