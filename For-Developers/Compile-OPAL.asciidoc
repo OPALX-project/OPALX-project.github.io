@@ -137,9 +137,9 @@ Clang is the recommended compiler for OPAL on macOS - as long as you do not need
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| Clang (LLVM) | 9.0.0 | |
-1. Apple LLVM version 9.0.0 (clang-900.0.38) shipped with Xcode 9.1 (macOS 10.12) +
-2. Apple LLVM version 10.0.1 (clang-1000.11.45.5) shipped with Xcode 10.2 (macOS 10.14)
+| Clang (LLVM) | 9.0.0 | 11.0.3 |
+1. Xcode 9 (macOS 10.12) +
+2. Xcode 11 (macOS 10.15)
 |=======
 
 '''
