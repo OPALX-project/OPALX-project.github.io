@@ -83,7 +83,7 @@ the recommended version.
 | optional: required for OPAL compiled with SAAMG solver.
 
 | trilinos | 12.10.1 | 12.12.1, 12.18.1 |
-| optional: required for OPAL compiled with SAAMG solver.
+1. optional: required for OPAL compiled with SAAMG solver.
 1. Version `12.18.1` does not compile on macOS.
 1. Version `12.12.1` is recommended on macOS.
 
