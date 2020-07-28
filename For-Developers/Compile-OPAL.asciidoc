@@ -104,9 +104,10 @@ GCC can be used on Linux, macOS and Windows Services for Linux.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| GNU Compiler Collection | 7.3.0 | 7.5.0,8.4.0 or newer, 9.3 |
+| GNU Compiler Collection | 7.3.0 | 7.5.x,8.4.x, 9.3.x |
+1. For the time being GCC 10.x is not recommended. There are issues with the Fortran code in AMReX.
 1. On macOS we recommend to use either Clang shipped with Xcode or GCC from MacPorts, Homebrew or Fink. +
-2. Compiling GCC on macOS doesn't always work out of the box.
+1. Compiling GCC on macOS doesn't always work out of the box.
 |=======
 
 
