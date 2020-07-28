@@ -106,29 +106,28 @@ on macOS, it is strongly recommended to use GCC provided by Macports, Homebrew, 
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
 | GNU Compiler Collection | 7.3.0 | 7.5.x,8.4.x, 9.3.x |
-1. For the time being GCC 10.x is not recommended. There are issues with the Fortran code in AMReX.
+1. For the time being GCC 10.x is not recommended. There are issues with the Fortran code in AMReX. +
 1. Compiling GCC on macOS doesn't always work out of the box.
 |=======
 
-
+If you want to compile GCC, you have to compile the following libraries first with an already available GCC:
 
 [width="100%",options="header"]
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| GNU Multiple Precision Arithmetic Library (GMP) | 6.0.0 | 6.1.2
-| required to compile GCC
+| GNU Multiple Precision Arithmetic Library (GMP) | 6.2.0 | 6.2.0 or newer
+|
 
-| GNU MPFR Library | 4.0.1 | 4.0.2 | required to compile GCC
+| GNU MPFR Library | 4.0.1 | 4.0.2 |
 
-| GNU MPC Library | 1.1.0 | 1.1.0 | required to compile GCC
+| GNU MPC Library | 1.1.0 | 1.1.0 |
 
-| GNU Compiler Collection | 7.3.0 | 7.5.0,8.2.0 or newer, 9.2 or newer |
-1. On macOS we recommend to use either Clang shipped with Xcode or GCC from MacPorts or Homebrew. +
-2. We observed some issues compiling GCC 7.3.0 on macOS 10.13 with Xcode 10. First issue was that `bits/basic_ios.h` was not found. This might have been an issue due too many parallel `make` processes and could be solved by re-running `make` with a single process. Second issue was, that `g&#43;&#43;` was called instead of the newly build staging binary `xg&#43;&#43;`. This issue could be solved by re-running `make` in the `gcc` sub-directory.
 |=======
 
-==== Clang for macOS
+==== Clang
+
+Clang is the recommended compiler for OPAL on macOS. 
 
 > *Note:* For the time being Clang is the only tested and recommended compiler for macOS.
 
