@@ -154,29 +154,30 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 
 ==== Load the OPAL tool-chain
 
-**For OPAL 1.6.x**
-```
-module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolchain/1.6
-```
+----
+module use /afs/psi.ch/project/amas/modulefiles/OPAL
+----
 
 **For OPAL 2.0**
-```
-module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolchain/2.0
-```
+----
+module load toolchain/2.0
+----
+
+**For OPAL 2.2**
+----
+module load toolchain/2.2
+----
 
 **For OPAL master**
-```
-module use /afs/psi.ch/project/amas/modulefiles
+
+----
 module load opal-toolchain/master
-```
+----
+or on Merlin6:
+----
+module load opal-toolchain/master_slurm
+----
 
-> **Note:** For the time being there is no CUDA support for OPAL 2.x
-
-> **Note:** For your convenience we recommend to add the line +
-`module use /afs/psi.ch/project/amas/modulefiles` +
-to your `.bashrc` or `.bash_profile`.
 
 === Build everything from scratch
 
