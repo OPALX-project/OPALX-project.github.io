@@ -83,11 +83,11 @@ the recommended version.
 | optional: required for OPAL compiled with SAAMG solver.
 
 | trilinos | 12.10.1 | 12.12.1, 12.18.1 |
-1. optional: required for OPAL compiled with SAAMG solver.
-1. Version `12.18.1` does not compile on macOS.
-1. Version `12.12.1` is recommended on macOS.
+1. optional: required for OPAL compiled with SAAMG solver. +
+1. Version `12.18.1` does not compile on macOS. +
+1. Version `12.12.1` is recommended on macOS. +
 
-| VTK | 7.1 | 8.0.0
+| VTK | 7.1.1 | 9.0.1
 | optional: required of you want to compile H5hut with the VTK to H5hut mesh converter.
 
 | AMReX | 18.07 | 18.07
@@ -99,6 +99,17 @@ the recommended version.
 ==== GCC on Linux, macOS, WSL
 
 GCC can be used on Linux, macOS and Windows Services for Linux.
+
+[width="100%",options="header"]
+|=======
+| **Name**  | **minimum Version** | **recommended Version** | **Notes**
+
+| GNU Compiler Collection | 7.3.0 | 7.5.0,8.4.0 or newer, 9.3 |
+1. On macOS we recommend to use either Clang shipped with Xcode or GCC from MacPorts, Homebrew or Fink. +
+2. Compiling GCC on macOS doesn't always work out of the box.
+|=======
+
+
 
 [width="100%",options="header"]
 |=======
