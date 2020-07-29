@@ -117,8 +117,8 @@ package manager.
 
 > **NOTE:** If you do not want to use the compilers provided by the
     system (Linux distribution, Xcode,...), make sure that the
-    commands `cc` and `c++` are calling the right binary. At least
-    with GCC from Macports `cc` and `c++` are not set with `port select`.
+    commands `cc` and `c&#43;&#43;` are calling the right binary. At least
+    with GCC from Macports `cc` and `c&#43;&#43;` are not set with `port select`.
 
 [width="100%",options="header"]
 |=======
@@ -202,7 +202,6 @@ parmetis/4.0.3_slurm
 trilinos/12.18.1_slurm
 gtest/1.10.0
 ----
-
 To load these modules, load the toolchain `master_slurm`:
 ----
 module load toolchain/master_slurm
@@ -216,6 +215,7 @@ module load toolchain/master_slurm
 ==== Other Linux Systems
 
 **To compile OPAL 2.0.x or 2.2.x**
+
 Use the modules:
 ----
 cmake/3.10.3
@@ -237,6 +237,7 @@ or
 module load toolchain/2.2
 ----
 **To compile OPAL 2.4.x or master**
+
 Use the modules:
 ----
 cmake/3.15.5
