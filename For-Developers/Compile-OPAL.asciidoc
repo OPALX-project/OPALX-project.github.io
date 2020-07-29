@@ -31,16 +31,15 @@ features. In this document we explain how to compile OPAL from scratch
 ** macOS
 *** Xcode
 *** Command line tools
+*** optional: Macports, Homebrew, Fink or another package manager
 ** Linux (including WSL)
 *** C/C++ compiler supporting C++11 or better
+*** optional: Fortran 95 compiler or better
+*** make
 *** bison or compatible
 *** flex or compatible
-*** autotools
-*** cmake
-*** bzip2
-*** gzip
-*** tar
-*** zlib >= 1.2.11 (development package!)
+*** autotools, cmake
+*** standard tools like: bzip2, gzip, xz, tar
 
 {nbsp}
 
