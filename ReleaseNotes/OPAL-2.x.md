@@ -28,11 +28,12 @@
 * AMR (Adaptive Mesh Refinement, #496)
 * Data file no longer required for `SAMPLER` and `OPTIMIZER` (#239)
 * DKS was removed (#523).
+* `SOURCE` element can be made `TRANPARENT` for backtracking particles (#579)
 
 ## Input file related changes
 * The unit of the attributes `FMLOWE` and `FMHIGHE` in the cyclotron command is changed from MeV to GeV (!364)
 * The number of particles has to be equal in `BEAM` and `DISTRIBUTION` commands (#558)
 * Fix for `DISTRIBUTION` momentum input (`SIGMAPX`, `SIGMAPY`, `SIGMAPZ`) when `INPUTMOUNITS= EV`. Changed from kinetic energy to momentum (as supposed to) (#475)
-* `SOURCE` element can be made `TRANPARENT` for backtracking particles (#579)
+* Elements positioned with `X`, `Y`, `Z` are now placed relative to the beamline instead of absolute coordinates (#578)
 
 ## Output file related changes
