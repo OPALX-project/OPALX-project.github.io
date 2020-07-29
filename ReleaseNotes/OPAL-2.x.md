@@ -11,7 +11,7 @@
 * Fix for `VALUE` command (#480)
 * Fix crash `BEAM` without particles (#490)
 * Fix exception for `TRACKBACK = TRUE` with a traveling wave structure (#494)
-* Fix for OrbitThreader (#509, $573)
+* Fix for OrbitThreader (#509, #573)
 * Fix for pressure data reading (#513)
 * SAAMG fixes (#541, #542, #543)
 * Fixes for multicharged particle in Opal-T (#544, #545, #569)
