@@ -262,17 +262,22 @@ or
 module load toolchain/master
 ----
 
+=== Build the OPAL toochain from scratch
 
+If you do not have access to the required software in binary form - either
+via a package manager or a module environment - you have to compile
+the missing pieces or everything yourself.
 
-=== Build everything from scratch
+We provide recipes to build all required software. These recipes can
+be used on Linux,  macOS and Windows Services for Linux. They are
+tested with, several Linux distributions including Redhat Enterprise
+Linux 6 & 7, Ubuntu 18 & 20, openSUE leaf 15, macOS 10.12 - 10.15 as
+well as with the Windows Services for Linux.
 
-We provide recipes to build all required software. These recipes can be used on Linux,  macOS and Windows Services for Linux. They are tested with:
+==== The OPAL Toolchain Builder
 
-* Redhat Enterprise Linux 6 & 7
-* macOS 10.12 - 10.15 with Xcode 9 - 11
-* Windows Services for Linux
-
-==== Setting up the environment
+The OPAL Toolchain Builder is a collection of recipes to build all
+required software you need to compile OPAL.
 
 Run the following command to download the recipes:
 
@@ -280,20 +285,26 @@ Run the following command to download the recipes:
 --
 git clone git@gitlab.psi.ch:OPAL/build-recipes.git
 --
+or
+[listing]
+--
+git clone https://gitlab.psi.ch/OPAL/build-recipes.git
+--
 
+==== Setting up the e>nvironment
 
 To keep thinks simple, we set and use a couple of environment variables.
 
-`PREFIX`::
+`OTB_PREFIX`::
 Installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/OPAL`.
 
-`DOWNLOADS_DIR`::
+`OTB_DOWNLOAD_DIR`::
  This is the directory where we store downloaded files. In this instruction we use `${PREFIX}/Downloads`.
 
-`SRC_DIR`::
+`OTB_SRC_DIR`::
 This is the directory where we unpack and compile software. Here we use `${PREFIX}/src`.
 
-`njobs`::
+`NJOBS`::
 number of parallel `make` jobs. The number should be less or equal the number of core on your system plus one.
 
 To setup the environment variables and create the required directory hierarchy, _source_ the following script:
