@@ -415,31 +415,31 @@ mpich
 
 Clone the OPAL Git repository
 
-```
+----
 mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
 git clone git@gitlab.psi.ch:OPAL/src.git
-```
+----
 
 Select the OPAL branch you want to compile. The current stable branch is `OPAL-2.0`:
 
-```
+----
 cd "${SRC_DIR}/OPAL/src"
 git checkout OPAL-2.0
-```
+----
 
 To checkout the (unstable) development branch run:
 
-```
+----
 cd "${SRC_DIR}/OPAL/src"
 git checkout master
-```
+----
 
 To get a list of all available branches, you can run the command
 
-```
+----
 git branch -a
-```
+----
 
 from inside your clone.
 
