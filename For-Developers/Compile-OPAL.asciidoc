@@ -460,7 +460,7 @@ CC=mpicc CXX=mpicxx cmake \
 --------------------------------------
 
 The following table shows the most important options:
-[width="80%"]
+[width="80%",cols="3"]
 |=======
 
 | `CMAKE_BUILD_TYPE`
