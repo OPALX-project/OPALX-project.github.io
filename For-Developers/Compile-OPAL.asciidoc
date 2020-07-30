@@ -164,7 +164,7 @@ front-end of LLVM or GCC from one of the package managers.
 
 '''
 
-== Setup required software
+== Setup or build required software
 
 === Linux @PSI
 
@@ -262,7 +262,7 @@ or
 module load toolchain/master
 ----
 
-=== Build the OPAL toochain from scratch
+=== Build the OPAL tool-chain from scratch
 
 If you do not have access to the required software in binary form - either
 via a package manager or a module environment - you have to compile
@@ -274,9 +274,9 @@ tested with, several Linux distributions including Redhat Enterprise
 Linux 6 & 7, Ubuntu 18 & 20, openSUE leaf 15, macOS 10.12 - 10.15 as
 well as with the Windows Services for Linux.
 
-==== The OPAL Toolchain Builder
+==== The OPAL Tool-chain Builder
 
-The OPAL Toolchain Builder (OTB) is a collection of recipes to build all
+The OPAL Tool-chain Builder (OTB) is a collection of recipes to build all
 required software you need to compile OPAL.
 
 Run the following command to download the recipes:
@@ -321,7 +321,7 @@ created by `setup.sh`.
 For more details please see the configurarion files in the `config`
 sub-directory.
 
-After sourcing the following environment variable are set (among others):
+After sourcing `setup.sh` the following environment variable are set (among others):
 
 `OTB_PREFIX`::
 Installation prefix for all software we have to compile and
@@ -347,75 +347,59 @@ configuration file.
 
 '''
 
-==== Compile
+==== Compiling the tool-chain
 
-Build the software in this order:
+**Compiling GCC**
+
+Compile GCC only if really required!
+
+> On macOS use Clang are a GCC provided by a package manager!
 
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/010-build-gmp[GMP]
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/020-build-mpfr[MPFR]
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/030-build-mpc[MPC]
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/040-build-gcc[GCC]
+
+**Comiling CMake**
+
+Before compiling CMake, check whether it is installed on your system
+and if whether the version fulfil the requirements.
+
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/050-build-cmake[CMake]
+
+**Everything else**
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/060-build-open-mpi[open-mpi]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/070-build-hdf5[HDF5]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/080-build-gsl[GSL]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-h5hut[H5hut]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/070-build-zlib[zlib]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/080-build-hdf5[HDF5]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-gsl[GSL]
+1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/100-build-h5hut[H5hut]
 1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/110-build-boost[Boost]
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/200-build-parmetis[ParMETIS]
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/210-build-openblas[OpenBLAS]
 1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/220-build-trilinos[Trilinos]
+1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/230-build-amrex[AMReX]
+1. optional: +
+link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/300-build-gtest[Google-test]
 
 '''
 
-=== macOS: Using Macports
+==== macOS: Using the tool-chain and Macports, Homebrew etc
 
-If you have a Mac and Macports installed, you can install and use the following port to compile _OPAL_:
+Most of the required packages are available via Macports, Homebrew or
+another package manager. If you want to use them, you should know what
+you are doing.
 
+If you are using one of this package managers, it is recommended to
+use a GCC provided by it - in case you do not want to use Clang.
+
+Other packages which are uncritical are
 ----
-#select on of
-#GCC=gcc5
-#GCC=gcc6
-GCC=gcc7
-
-sudo port install cmake
-sudo port install ${GCC}
-sudo port install gsl +${GCC}
-sudo port install OpenBLAS +${GCC}
-sudo port install openmpi-${GCC}
-sudo port install hdf5 +${GCC} +cxx +openmpi +threadsafe
-sudo port install parmetis +${GCC} +openmpi
+cmake
+openmpi
+mpich
 ----
-
-The following software is not provided by Macports and must be installed by executing the recipes:
-
-. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-h5hut[H5hut]
-. Set toolset for Boost:
-+
-[source,sh]
-----
-export TOOLSET='gcc'
-----
-. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-boost[Boost]
-. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/build-trilinos[Trilinos]
-
-> There are some strange issues with the `boost` boost from Macports if you want to compile with `variants +gcc7 +openmp`.
 
 '''
-
-=== macOS: Xcode only
-
-> This needs to be tested!
-
-The C/C++ compiler Clang shipped with Xcode can be used to compile _OPAL_. A current CMake binary package can be downloaded from http://www.cmake.org. All other packages must be compiled:
-
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/060-build-open-mpi[open-mpi]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/070-build-hdf5[HDF5]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/080-build-gsl[GSL]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-h5hut[H5hut]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/110-build-boost[Boost]
-1. optional: link:https://gitlab.psi.ch/OPAL/200-build-recipes/raw/master/build-parmetis[ParMETIS]
-1. optional: link:https://gitlab.psi.ch/OPAL/210-build-recipes/raw/master/build-openblas[OpenBLAS]
-1. optional: link:https://gitlab.psi.ch/OPAL/220-build-recipes/raw/master/build-trilinos[Trilinos]
 
 == Building OPAL
 
@@ -470,12 +454,26 @@ CC=mpicc CXX=mpicxx cmake \
 The following table shows the most important options:
 [width="80%"]
 |=======
-| `CMAKE_BUILD_TYPE` | build type can be either `Debug`, `Release`, `RelWithDebInfo` or `MinSizeRel` |
-| `CMAKE_INSTALL_PREFIX` | prefix for installation |
-| `ENABLE_AMR` | enable AMR solver | requires AMReX (release 18.07)
-| `ENABLE_AMR_MG_SOLVER` | enable AMR multigrid solver | requires trilinos >= 12.x and AMReX (release 18.07)
-| `ENABLE_DKS` | enable DKS | requires Cuda >= 8.0.x and DKS >= 1.1.1. only for OPAL versions 2.2 and lower
-| `ENABLE_SAAMG_SOLVER` | enable SAAMG solver | requires trilinos >= 12.x and parmetis >= 4.0.3
+| `CMAKE_BUILD_TYPE`
+| build type can be either `Debug`, `Release`, `RelWithDebInfo` or MinSizeRel`
+|
+
+| `CMAKE_INSTALL_PREFIX`
+| prefix for installation
+|
+
+| `ENABLE_AMR`
+| enable AMR solver
+| requires AMReX (release 18.07)
+
+| `ENABLE_AMR_MG_SOLVER`
+| enable AMR multigrid solver
+| requires trilinos >= 12.x and AMReX (release 18.07) 
+
+| `ENABLE_SAAMG_SOLVER`
+| enable SAAMG solver
+| requires trilinos >= 12.x and parmetis >= 4.0.3
+
 |=======
 
 
