@@ -276,7 +276,7 @@ well as with the Windows Services for Linux.
 
 ==== The OPAL Toolchain Builder
 
-The OPAL Toolchain Builder is a collection of recipes to build all
+The OPAL Toolchain Builder (OTB) is a collection of recipes to build all
 required software you need to compile OPAL.
 
 Run the following command to download the recipes:
@@ -291,25 +291,59 @@ or
 git clone https://gitlab.psi.ch/OPAL/build-recipes.git
 --
 
-==== Setting up the e>nvironment
+==== Setting up the environment
 
-To keep thinks simple, we set and use a couple of environment variables.
+To setup the build environment, you have to __source__ the file
+`setup.sh`. The syntax is:
+
+----
+source setup [--prefix OTB_PREFIX] [CONFIG_FILE]
+----
+
+If you source `setup.sh` without arguments,
+* `${HOME}/OPEL` will be used as installation directory.
+* open-mpi will be used
+* the default versions defined in the build recipes will be used.
+* GCC will be used on Linux (and WSL)
+* Clang will be used on macOS
+
+With the option `--prefix OTB_PREFIX` a root directory for all to be
+installed files can be defined.will be used.
+
+The configuration file can be used
+* to override the default toolchain for the OS.
+* to override the default versions of the software packages
+* to select a MPI implementation (open-mpi or MPICH)
+* to define a list of recipies which must be executed
+* to define a list of symbolic links in `$OTB_PREFIX`, which are
+created by `setup.sh`.
+
+For more details please see the configurarion files in the `config`
+sub-directory.
+
+After sourcing the following environment variable are set (among others):
 
 `OTB_PREFIX`::
-Installation prefix for all software we have to compile and install. In the following instructions we use `${HOME}/OPAL`.
+Installation prefix for all software we have to compile and
+install. In the following instructions we use `${HOME}/OPAL`. 
 
 `OTB_DOWNLOAD_DIR`::
- This is the directory where we store downloaded files. In this instruction we use `${PREFIX}/Downloads`.
+ This is the directory where we store downloaded files. In this
+ instruction we use `${PREFIX}/tmp/Downloads`. 
 
 `OTB_SRC_DIR`::
-This is the directory where we unpack and compile software. Here we use `${PREFIX}/src`.
+This is the directory where we unpack and compile software. Here we
+use `${PREFIX}/tmp/src`. 
 
 `NJOBS`::
-number of parallel `make` jobs. The number should be less or equal the number of core on your system plus one.
+The number of parallel `make` jobs. This number depends on the number
+of core on your system. We use `getconf _NPROCESSORS_ONLN` to get the
+number of cores (including hyperthreading). The number of parallel
+`make` jobs is set to 10, if we have more cores.
 
-To setup the environment variables and create the required directory hierarchy, _source_ the following script:
-
-link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/setup.sh[setup.sh]
+`OTB_RECIPES` (optional)::
+Array with recipes to be executed. This might be set in a
+configuration file.
 
 '''
 
