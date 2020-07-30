@@ -293,13 +293,14 @@ git clone https://gitlab.psi.ch/OPAL/build-recipes.git
 
 ==== Setting up the environment
 
+First change into the directory you used in the above Git command. In
+the following we assume that you are in this directory.
+
 To setup the build environment, you have to __source__ the file
 `setup.sh`. The syntax is:
-
 ----
 source setup [--prefix OTB_PREFIX] [CONFIG_FILE]
 ----
-
 If you source `setup.sh` without arguments,
 * `${HOME}/OPEL` will be used as installation directory.
 * open-mpi will be used
@@ -343,7 +344,12 @@ number of cores (including hyperthreading). The number of parallel
 
 `OTB_RECIPES` (optional)::
 Array with recipes to be executed. This might be set in a
-configuration file.
+configuration file. This environment variable is set in the
+configuration files we provide. It can be used to compile everything
+in one step with the following command: +
+----
+for recipe in "${OTB_RECIPE[@]}"; do ${recipe} || break; done
+----
 
 '''
 
