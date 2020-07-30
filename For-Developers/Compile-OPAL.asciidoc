@@ -346,10 +346,10 @@ number of cores (including hyperthreading). The number of parallel
 Array with recipes to be executed. This might be set in a
 configuration file. This environment variable is set in the
 configuration files we provide. It can be used to compile everything
-in one step with the following command: +
- ---- 
- for recipe in "${OTB_RECIPE[@]}"; do ${recipe} || break; done
- ----
+in one step with the following command:
+---- 
+for recipe in "${OTB_RECIPES[@]}"; do ${recipe} || break; done
+----
 
 '''
 
@@ -359,38 +359,40 @@ in one step with the following command: +
 
 Compile GCC only if really required!
 
-> On macOS use Clang are a GCC provided by a package manager!
+> On macOS use Clang provided by Xcode are a GCC provided by a package manager!
+----
+./010-build-gmp
+./020-build-mpfr
+./030-build-mpc
+./040-build-gcc
+----
 
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/010-build-gmp[GMP]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/020-build-mpfr[MPFR]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/030-build-mpc[MPC]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/040-build-gcc[GCC]
-
-**Comiling CMake**
+**Compiling CMake**
 
 Before compiling CMake, check whether it is installed on your system
 and if whether the version fulfil the requirements.
-
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/050-build-cmake[CMake]
+----
+./050-build-cmake
+----
 
 **Everything else**
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/060-build-open-mpi[open-mpi]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/070-build-zlib[zlib]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/080-build-hdf5[HDF5]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/090-build-gsl[GSL]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/100-build-h5hut[H5hut]
-1. link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/110-build-boost[Boost]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/200-build-parmetis[ParMETIS]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/210-build-openblas[OpenBLAS]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/220-build-trilinos[Trilinos]
-1. optional: link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/230-build-amrex[AMReX]
-1. optional: +
-link:https://gitlab.psi.ch/OPAL/build-recipes/raw/master/300-build-gtest[Google-test]
+----
+./060-build-openmpi
+./070-build-zlib
+./080-build-hdf5
+./090-build-gsl
+./100-build-h5hut
+./110-build-boost
+./200-build-parmetis
+./210-build-openblas
+./220-build-trilinos
+./230-build-amrex
+./300-build-gtest
+----
 
 '''
 
-==== macOS: Using the tool-chain and Macports, Homebrew etc
-
+==== macOS: Using the tool-chain and Macports, Homebrew or ...
 Most of the required packages are available via Macports, Homebrew or
 another package manager. If you want to use them, you should know what
 you are doing.
