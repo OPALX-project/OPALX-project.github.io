@@ -347,9 +347,9 @@ Array with recipes to be executed. This might be set in a
 configuration file. This environment variable is set in the
 configuration files we provide. It can be used to compile everything
 in one step with the following command: +
-----
-for recipe in "${OTB_RECIPE[@]}"; do ${recipe} || break; done
-----
+ ---- 
+ for recipe in "${OTB_RECIPE[@]}"; do ${recipe} || break; done
+ ----
 
 '''
 
