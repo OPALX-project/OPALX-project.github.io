@@ -124,8 +124,11 @@ package manager.
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| GNU Compiler Collection | 7.3.0 | 7.5.x,8.4.x, 9.3.x |
-1. For the time being GCC 10.1 is not recommended. GCC 10.1 fails to compile AMReX.
+| GNU Compiler Collection
+| 7.3.0
+| 7.5.x,8.4.x, 9.3.x
+| For the time being GCC 10.1 is not recommended. GCC 10.1 fails to compile AMReX.
+
 |=======
 
 If you want to compile GCC, you have to compile the following libraries first with an already available GCC:
@@ -134,12 +137,20 @@ If you want to compile GCC, you have to compile the following libraries first wi
 |=======
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
-| GNU Multiple Precision Arithmetic Library (GMP) | 6.2.0 | 6.2.0 or newer
+| GNU Multiple Precision Arithmetic Library (GMP)
+| 6.2.0
+| 6.2.0 or newer
 |
 
-| GNU MPFR Library | 4.0.1 | 4.0.2 |
+| GNU MPFR Library
+| 4.0.1
+| 4.0.2
+|
 
-| GNU MPC Library | 1.1.0 | 1.1.0 |
+| GNU MPC Library
+| 1.1.0
+| 1.1.0
+|
 
 |=======
 
