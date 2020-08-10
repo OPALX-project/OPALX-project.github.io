@@ -1,4 +1,4 @@
-# Release Notes for [OPAL 2.4.0](https://gitlab.psi.ch/OPAL/src/milestones/27)
+# Release Notes for [OPAL 2.4](https://gitlab.psi.ch/OPAL/src/milestones/27)
 
 ## [Bugfixes in OPAL 2.4.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Bug&milestone_title=OPAL%202.4.0)
 
