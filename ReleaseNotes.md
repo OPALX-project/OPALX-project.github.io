@@ -1,3 +1,4 @@
+* [2.6](ReleaseNotes/OPAL-2.6)
 * [2.4](ReleaseNotes/OPAL-2.4)
 * [2.2](ReleaseNotes/OPAL-2.2)
 * [2.0](ReleaseNotes/OPAL-2.0)
