@@ -311,8 +311,9 @@ To setup the build environment, you have to __source__ the file
 source setup [--prefix OTB_PREFIX] [CONFIG_FILE]
 ----
 If you source `setup.sh` without arguments,
-* `${HOME}/OPEL` will be used as installation directory.
-* open-mpi will be used
+
+* `${HOME}/OPAL` will be used as installation directory.
+* Open MPI will be used
 * the default versions defined in the build recipes will be used.
 * GCC will be used on Linux (and WSL)
 * Clang will be used on macOS
