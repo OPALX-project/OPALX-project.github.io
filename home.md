@@ -32,7 +32,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 * _OPAL_ development
 [manual HTML](http://amas.web.psi.ch/opal/Documentation/master/OPAL_Manual.html)
 [manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.3.0.pdf),
-[release notes](ReleaseNotes/OPAL-2.x)
+[release notes](ReleaseNotes/OPAL-2.6)
 * _OPAL_ 2.2
 [manual HTML](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html),
 [manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-2.2.0.pdf),
