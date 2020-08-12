@@ -16,11 +16,11 @@
 * SAAMG fixes (#541, #542, #543)
 * Fixes for multicharged particle in Opal-T (#544, #545, #569)
 * Fix infinite loop when `DESIGNENERGY` not specified in bends (#546)
-{::comment}* Fix for Autophasing (#568): This was only due to #515{:/comment}
 * Fix for `MINBINEMITTED `and `MINSTEPFORREBIN `options (#571)
 * Fix for `SOURCE` element (#572)
 * Clang and MacOS compiler issues (#476, #483, #484, #485, #487, #488, #489, #512, #526, #527, #531)
 * [Large code cleanup](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Cleanup&milestone_title=OPAL%202.4.0)
+<!--- * Fix for Autophasing (#568): This was only due to #515 -->
 
 ## [New features in OPAL 2.4.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&milestone_title=OPAL%202.4.0)
 
