@@ -1,5 +1,5 @@
 # Goal
-Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in three distinct modes
+Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in two distinct modes
 1. Tune Calculation
    * Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
 2. Accelerated orbit mode

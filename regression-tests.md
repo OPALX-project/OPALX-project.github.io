@@ -1,6 +1,7 @@
 # Regression Tests
 
 * on [master branch](http://amas.web.psi.ch/opal/regressionTests/master/)
+* on branch [OPAL-2.4](http://amas.web.psi.ch/opal/regressionTests/OPAL-2.4/)
 * on branch [OPAL-2.2](http://amas.web.psi.ch/opal/regressionTests/OPAL-2.2/)
 * on branch [OPAL-2.0](http://amas.web.psi.ch/opal/regressionTests/OPAL-2.0/)
 * on branch [OPAL-1.6](http://amas.web.psi.ch/opal/regressionTests/1.6/)

@@ -311,8 +311,9 @@ To setup the build environment, you have to __source__ the file
 source setup [--prefix OTB_PREFIX] [CONFIG_FILE]
 ----
 If you source `setup.sh` without arguments,
-* `${HOME}/OPEL` will be used as installation directory.
-* open-mpi will be used
+
+* `${HOME}/OPAL` will be used as installation directory.
+* Open MPI will be used
 * the default versions defined in the build recipes will be used.
 * GCC will be used on Linux (and WSL)
 * Clang will be used on macOS
@@ -427,7 +428,7 @@ Clone the OPAL Git repository
 ----
 mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
-git clone git@gitlab.psi.ch:OPAL/src.git
+git clone https://gitlab.psi.ch/OPAL/src.git
 ----
 
 Select the OPAL branch you want to compile. The current stable branch is `OPAL-2.0`:
