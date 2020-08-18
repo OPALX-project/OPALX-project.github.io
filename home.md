@@ -32,7 +32,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 | Version | Manual | Source code documentation | Release notes | 
 | ------- | ------ | ------------------------- | ------------- |
-| _OPAL_ development | cell | | |
+| _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html),  | | |
 | cell | cell | | |
 
 | Version | Manual | Source code documentation | Release notes |
