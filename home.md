@@ -32,8 +32,10 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 | Version | Manual | Source code documentation | Release notes | 
 | ------- | ------ | ------------------------- | ------------- |
-| _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [release notes](ReleaseNotes/OPAL-2.6) |
-| _OPAL_ 2.4 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [html](ReleaseNotes/OPAL-2.4) |
+| _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [html](ReleaseNotes/OPAL-2.6) |
+| _OPAL_ 2.4 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/2.4/index.html) | [html](ReleaseNotes/OPAL-2.4) |
+| _OPAL_ 2.2 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/2.2/index.html) | [html](ReleaseNotes/OPAL-2.2) |
+
 * _OPAL_ 2.2
 [manual HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html),
 [manual PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf),
@@ -42,9 +44,6 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 [manual HTML](http://amas.web.psi.ch/opal/Documentation/2.0/index.html),
 [manual PDF](http://amas.web.psi.ch/opal/Documentation/2.0/Manual.pdf),
 [release notes](ReleaseNotes/OPAL-2.0)
-* _OPAL_ 1.6
-[manual PDF](http://amas.web.psi.ch/docs/opal/opal_user_guide-1.6.0.pdf),
-[release notes](ReleaseNotes/OPAL-1.6)
 
 ### Presentations, papers and tools
 
