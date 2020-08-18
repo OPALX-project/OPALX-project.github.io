@@ -30,10 +30,10 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ### OPAL documentation
 
-| Version | Manual | Source code documentation | 
-| ------- | ------ | ------------------------- |
-| cell | cell | |
-| cell | cell | |
+| Version | Manual | Source code documentation | Release notes | 
+| ------- | ------ | ------------------------- | ------------- |
+| _OPAL_ development | cell | | |
+| cell | cell | | |
 
 | Version | Manual | Source code documentation | Release notes |
 | ------- | ------ | ------------------------- | ------------- |
