@@ -33,16 +33,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 | Version | Manual | Source code documentation | Release notes | 
 | ------- | ------ | ------------------------- | ------------- |
 | _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [release notes](ReleaseNotes/OPAL-2.6) |
-
-
-* _OPAL_ development
-[manual HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html)
-[manual PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf),
-[release notes](ReleaseNotes/OPAL-2.6)
-* _OPAL_ 2.4
-[manual HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html),
-[manual PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf),
-[release notes](ReleaseNotes/OPAL-2.4)
+| _OPAL_ 2.4 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [html](ReleaseNotes/OPAL-2.4) |
 * _OPAL_ 2.2
 [manual HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html),
 [manual PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf),
