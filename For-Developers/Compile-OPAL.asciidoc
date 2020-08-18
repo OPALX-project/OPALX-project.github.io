@@ -75,7 +75,7 @@ the recommended version.
 | GNU Scientific Library | 2.5 | 2.6
 |
 
-| VTK | 7.1.1 | 9.0.1
+| VTK | 7.1.1 | 8.2.0
 | optional: required if you want to compile H5hut with the VTK to H5hut mesh converter.
 
 | H5hut | 2.0.0rc6 | 2.0.0rc6
@@ -127,7 +127,7 @@ package manager.
 | GNU Compiler Collection
 | 7.3.0
 | 7.5.x,8.4.x, 9.3.x
-| For the time being GCC 10.1 is not recommended. GCC 10.1 fails to compile AMReX.
+| For the time being GCC 10.1 is not recommended. GCC 10.x fails to compile AMReX.
 
 |=======
 
