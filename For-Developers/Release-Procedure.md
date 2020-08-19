@@ -7,17 +7,18 @@
   * [ ] tag version x.y.0
   * [ ] upload source tar-ball to `/afs/psi.ch/project/amas/webhosting/Downloads/OPAL/src`
   * [ ] compile new binary for Linux
+  * [ ] upload Linux binary package to `/afs/psi.ch/project/amas/webhosting/Downloads/OPAL/package/`
   * [ ] compile new binary for macOS
-  * [ ] upload tar-balls to `/afs/psi.ch/project/amas/webhosting/Downloads/OPAL/package/`
+  * [ ] upload macOS binary package to `/afs/psi.ch/project/amas/webhosting/Downloads/OPAL/package/`
 
 **manual/documentation**
   * [ ] setup a new branch for the new version of the manual
-  * [ ] correct (the links to) the example input files, field maps also in the manual
-  * [ ] compile new PDF version of manual
-  * [ ] copy to `/afs/psi.ch/project/amas/webhosting/docs/opal/opal_user_guide-x.y.0.pdf`
+  * [ ] fix version, branches and links in `Manual.attributes`
+  * [ ] clone repository into `/afs/psi.ch/project/amas/webhosting/opal/Documentation/x.y` and checkout new branch
   * [ ] add links to the binaries in the wiki
   * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/For-Developers/Compile-OPAL
   * [ ] compile the change log/release notes and publish it in the wiki: https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes
+  * [ ] build Doxygen documentation
   * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/home
   * [ ] update https://gitlab.psi.ch/OPAL/src/wikis/regression-tests
 
@@ -25,7 +26,11 @@
   * [ ] new label for `OPAL x.(y+1)`
   * [ ] update labels and milestones in issues
 
+**regression-tests**
+
+* [ ] create new branch x.y
+* [ ] setup the regression-tests to run the new version on opalrunner.psi.ch
+
 **varia**
-* [ ] setup the regression-tests to run the new version
 * [ ] PSI module
 * [ ] write e-mail to mailing list
