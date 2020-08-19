@@ -5,7 +5,7 @@
 * Fix infinite loop with `DISTRIBUTION, CUTOFFPZ = 0` (#409)
 * Fix for segmentation fault in FromFile of the Sampling command due to RASTER=TRUE (#465)
 * Fix format of _ElementPositions.sdds files (#468)
-* Fix closed orbit finder (part of #285)
+* Fix closed orbit finder (part of #285, #593)
 * Fix for reading fields in H5Block format (#316, #577)
 * Fix ascii2h5block (#469)
 * Fix for `VALUE` command (#480)
