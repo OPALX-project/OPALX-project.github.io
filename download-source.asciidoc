@@ -6,6 +6,8 @@ http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-1.6.2.tar.bz2[OPAL-1.6.2], http:/
 
 http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.0.1.tar.xz[OPAL-2.0.1], http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.0.1.tar.xz.md5[MD5 sum]
 
+http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz[OPAL-2.4.0], http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5[MD5 sum]
+
 ## Git repository
 
 Either clone the whole Git repository (~ 2 GB!) with
