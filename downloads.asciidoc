@@ -19,20 +19,20 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 ### On Linux
 
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz[OPAL-2.2.1 for Linux]
+1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-linux.tar.xz[OPAL-2.4.0 for Linux]
 1. Un-tar the downloaded file:
 +
 ```
-tar xf OPAL-2.2.1-1-x86_64-linux.tar.xz
+tar xf OPAL-2.4.0-1-x86_64-linux.tar.xz
 ```
 
 ### On macOS
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz[OPAL-2.2.0 for macOS]
+1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
 1. Un-tar the downloaded file:
 +
 ```
-tar xf OPAL-2.2.0-1-x86_64-macos.tar.xz
+tar xf OPAL-2.4.0-1-x86_64-macos.tar.xz
 ```
 
 === On Windows
@@ -45,7 +45,7 @@ You have to use Windows Services for Linux and install the Linux package as docu
 
 Source the OPAL shell profile. For the time being only sh-like shells - like BASH, ZSH - are supported.
 ```
-source "$PREFIX/OPAL-2.2.1/etc/profile.d/opal.sh"
+source "$PREFIX/OPAL-2.4.0/etc/profile.d/opal.sh"
 ```
 Now you are ready to run OPAL (assuming you have an input file `example.in`):
 ```
@@ -67,6 +67,10 @@ mpirun -np 4 opal example.in
 [width="80%",cols="3,2,2"]
 |========
 
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-linux.tar.xz[OPAL-2.4.0 for Linux]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-linux.tar.xz.md5[md5 sum] 
+| link:ReleaseNotes/OPAL-2.4[release notes]
+
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz[OPAL-2.2.1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5[md5 sum] 
 | link:ReleaseNotes/OPAL-2.2[release notes]
@@ -83,10 +87,12 @@ mpirun -np 4 opal example.in
 
 === macOS
 
-> **Note** OPAL 2.2.1 is not yet available for macOS!
-
 [width="80%",cols="3,2,2"]
 |========
+
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-macos.tar.xz.md5[md5 sum] 
+| link:ReleaseNotes/OPAL-2.4[release notes]
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz[OPAL-2.2.0 for macOS]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz.md5[md5 sum] 
@@ -104,16 +110,19 @@ mpirun -np 4 opal example.in
 
 [cols=4*]
 |=======
-| boost    | 1.70.0   | C++ libraries                     | 
+| amrex    | 18.07    | Adaptive Mesh Refinement Library  |
+| boost    | 1.73.0   | C++ libraries                     | 
 | CMake    | 3.15.5   | open-source build system          |
-| gcc      | 7.4.0    | GNU Compiler Collection           | on Linux
-| clang    | 11.0.0   | Clang  compiler                   | on macOS (Xcode 11.2.1)
+| gcc      | 8.4.0    | GNU Compiler Collection           |
 | gsl      | 2.6      | GNU Scientific Library            |
-| gtest    | 1.8.1    | Google test                       |
+| gtest    | 1.10.0   | Google test                       |
 | H5hut    | 2.0.0rc6 | HDF5 utility toolkit              |
-| hdf5     | 1.10.5   | Hierachical Data Format 5         |
-| OpenBLAS | 0.3.7    | optimized BLAS and LAPACK library |
-| openmpi  | 3.1.4    | open source MPI-2 implementation  |
+| hdf5     | 1.10.6   | Hierachical Data Format 5         |
+| OpenBLAS | 0.3.9    | optimized BLAS and LAPACK library |
+| openmpi  | 3.1.6    | open source MPI-2 implementation  |
+| parmetis | 4.0.3    | required for Trilinos             |
+| trilinos | 12.18.1  | on Linux                          |
+| trilinos | 13.0     | on macOS                          |
 |=======
 
 == ChangeLog
@@ -121,6 +130,12 @@ mpirun -np 4 opal example.in
 > **Note** This is the ChangeLog for the binary package *not* _OPAL_!
 
 ''''
+
+*OPAL 2.4.0 - 2020, August 28
+
+- OPAL 2.4.0
+- AMR_MG and SAAMG solvers are enabled
+- update tool-chain
 
 *OPAL 2.2.1-1 - 2019, December 23*
 
@@ -285,6 +300,22 @@ mpirun -np 4 opal example.in
 |========
 
 === Toolchains for old versions
+
+==== Toolchain for version 2.2.1 and older
+
+[cols=4*]
+|=======
+| boost    | 1.70.0   | C++ libraries                     | 
+| CMake    | 3.15.5   | open-source build system          |
+| gcc      | 7.4.0    | GNU Compiler Collection           | on Linux
+| clang    | 11.0.0   | Clang  compiler                   | on macOS (Xcode 11.2.1)
+| gsl      | 2.6      | GNU Scientific Library            |
+| gtest    | 1.8.1    | Google test                       |
+| H5hut    | 2.0.0rc6 | HDF5 utility toolkit              |
+| hdf5     | 1.10.5   | Hierachical Data Format 5         |
+| OpenBLAS | 0.3.7    | optimized BLAS and LAPACK library |
+| openmpi  | 3.1.4    | open source MPI-2 implementation  |
+|=======
 
 ==== Toolchain for version 2.0.1 and older
 
