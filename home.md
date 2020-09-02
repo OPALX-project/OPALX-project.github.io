@@ -43,11 +43,10 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 | Version | Linux | macOS | Source |
 | ------- | ----- | ----- | ------ |
 | OPAL 2.4.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-macos.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) |
-| OPAL-2.2.1 |  [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5) | src [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) |
+| OPAL-2.2.1 |  [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5) | n.a. | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) |
 
 <!--
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz[OPAL-2.2.1 for Linux]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5[md5 sum] 
+ 
 | link:ReleaseNotes/OPAL-2.2[release notes]
 
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz[OPAL-2.2.0 for Linux]
