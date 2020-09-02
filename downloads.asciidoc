@@ -66,11 +66,12 @@ mpirun -np 4 opal example.in
 
 ''''
 
-* OPAL 2.4.0-2 - 2020, September 1
- - bugfix in the `opal.sh` shell profile
- - recompiled on Linux due to an illegal instruction in gfortran
+* OPAL 2.4.0-2 - 2020, September 1*
 
-*OPAL 2.4.0-1 - 2020, August 28
+- bugfix in the `opal.sh` shell profile
+- recompiled on Linux due to an illegal instruction in gfortran
+
+*OPAL 2.4.0-1 - 2020, August 28*
 
 - OPAL 2.4.0
 - AMR_MG and SAAMG solvers are enabled
