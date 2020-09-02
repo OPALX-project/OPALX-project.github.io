@@ -52,17 +52,14 @@ Documentation about installing and running the _OPAL_ binary package is availabl
 ## Git repository
 
 Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
-[source,sh]
-----
+```
 git clone https://gitlab.psi.ch/OPAL/src.git
-----
+```
 
 or clone a specific branch/tag with
-[source,sh]
-----
+```
 git clone --single-branch --depth 1  --branch BRANCH_OR_TAG https://gitlab.psi.ch/OPAL/src.git [DIR]
-----
-D
+```
 
 <!--
 * [Download _OPAL_ source](download-source)
