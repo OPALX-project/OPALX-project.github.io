@@ -70,7 +70,7 @@ data in a conceived way. Scans of multiple dimensions are easy to perform.
 The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 See also [Post Processing](PostProcessing).
 
-## OPAL for Developers: Coding Style and Conventions
+## OPAL for Developers
 
 * Development
   * [Coding Style and Conventions](For-Developers/Codingstyle)
@@ -78,7 +78,7 @@ See also [Post Processing](PostProcessing).
   * [Development workflow, Git and Gitlab usage](For-Developers/OPAL-Development-Workflow)
   * [Release Procedure](For-Developers/Release-Procedure)
 * Documentation
-  * [_OPAL_ source code documentation](http://amas.web.psi.ch/docs/opal/master-doxygen/html/)
+  * [_OPAL_ source code documentation](http://amas.web.psi.ch/opal/CodeDocumentation/master/)
   * [IPPL Documentation](For-Developers/ippl_user_guide.pdf)
   * [Most Used Directories in the Code](For-Developers/Most-Used-Directories-in-the-Code)
 * [Technology & Ideas](For-Developers/tech-ideas)
