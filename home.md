@@ -47,7 +47,22 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 | OPAL-2.2.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz.md5) | [html](ReleaseNotes/OPAL-2.2) |
 | OPAL-2.0.2 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz.md5) | [html](ReleaseNotes/OPAL-2.0) |
 
-Documentation about installing the _OPAL_ binary package is available [here](downloads).
+Documentation about installing and running the _OPAL_ binary package is available [here](downloads).
+
+## Git repository
+
+Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
+[source,sh]
+----
+git clone https://gitlab.psi.ch/OPAL/src.git
+----
+
+or clone a specific branch/tag with
+[source,sh]
+----
+git clone --single-branch --depth 1  --branch BRANCH_OR_TAG https://gitlab.psi.ch/OPAL/src.git [DIR]
+----
+D
 
 <!--
 * [Download _OPAL_ source](download-source)
