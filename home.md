@@ -83,11 +83,7 @@ See also [Post Processing](PostProcessing).
   * [IPPL Documentation](For-Developers/ippl_user_guide.pdf)
   * [Most Used Directories in the Code](For-Developers/Most-Used-Directories-in-the-Code)
 * [Technology & Ideas](For-Developers/tech-ideas)
-
 * [Periodic Tele-cons](For-Developers/Periodic-Tele-cons)
-
-## Regression Tests
-
 * [regression tests for current OPAL versions](regression-tests)
 
 # [OPAL Physics Resources](OPALPresentations)
