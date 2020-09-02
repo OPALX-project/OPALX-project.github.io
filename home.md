@@ -37,10 +37,6 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 | _OPAL_ 2.2 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/2.2/index.html) | [html](ReleaseNotes/OPAL-2.2) |
 | _OPAL_ 2.0 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.0/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.0/Manual.pdf) | [html](http://amas.web.psi.ch/opal/CodeDocumentation/2.0/index.html) | [html](ReleaseNotes/OPAL-2.0) |
 
-### Presentations, papers and tools
-
-* [_OPAL_ Presentations, papers and reports](OPALPresentations) (ideal for an overview)
-* [_OPAL_ conversion utilities](OPAL-conversion-utilities)
 
 ## Download
 * [Download _OPAL_ binary package](downloads)
@@ -60,15 +56,20 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 1. [FFA](FFA)
 1. [Tutorial from Manual](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#chp.tutorial)
 
-## The runOPAL.py Script
+## Tools
+### The runOPAL.py Script
 
 The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
 data in a conceived way. Scans of multiple dimensions are easy to perform.
 
-## Post Processing and pyOPALTools
+### Post Processing and pyOPALTools
 
 The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 See also [Post Processing](PostProcessing).
+
+### Conversion utilities
+
+* [_OPAL_ conversion utilities](OPAL-conversion-utilities)
 
 ## OPAL for Developers
 
