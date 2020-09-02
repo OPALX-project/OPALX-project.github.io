@@ -42,6 +42,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 | Version | Source | Linux <br> binary | macOS <br> binary | Release notes <br> of binary package |
 | ------- | ------ | ----------------- | ----------------- | ------------------------------------ |
+|         |        |                   |                   |                                      |
 
 <!--
 
