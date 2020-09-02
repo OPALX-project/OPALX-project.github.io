@@ -66,7 +66,7 @@ mpirun -np 4 opal example.in
 
 ''''
 
-* OPAL 2.4.0-2 - 2020, September 1*
+*OPAL 2.4.0-2 - 2020, September 1*
 
 - bugfix in the `opal.sh` shell profile
 - recompiled on Linux due to an illegal instruction in gfortran
@@ -172,8 +172,6 @@ mpirun -np 4 opal example.in
 ''''
 
 == Old OPAL versions
-
-=== Downloads
 
 [width="80%",cols="3,2,2"]
 |========
