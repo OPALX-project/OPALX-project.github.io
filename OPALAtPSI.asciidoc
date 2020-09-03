@@ -1,23 +1,26 @@
-= Using OPAL at PSI (and Merlin)
+= Using _OPAL_ at PSI
 
-For using OPAL at PSI one can use the precompiled binaries that can be loaded with modules.
+At PSI _OPAL_ is available as Pmodule.
 
-== Load precompiled binary with Modules
+== Load precompiled binary with Pmodules
 
-Load the OPAL tool-chain for OPAL 2.x
+The easiest way to load an _OPAL_ module is to use the "meta-modules" provided in `/afs/psi.ch/project/amas/modulefiles/OPAL`. Meta-modules are just modules loading a couple of other modules. To make the _OPAL_ meta-modules available, you have to run the command
 ```
-source /opt/psi/config/profile.bash
-module use /afs/psi.ch/project/amas/modulefiles
-module use unstable
-module load gcc/7.3.0 openmpi/3.1.3 OPAL/2.0.2
+module use /afs/psi.ch/project/amas/modulefiles/OPAL
 ```
+> **NOTE** For your convenience you might add this line to your shell profile (`.bashrc` for BASH).
 
-and for 1.6.x
-```
-source /opt/psi/config/profile.bash
-module use /afs/psi.ch/project/amas/modulefiles
-module load opal-toolchain/1.6
-module load OPAL/1.6.2
+To  get a list of all available _OPAL_ module with major version to, you can  use the command `module avail OPAL-2`:
+----
+module avail OPAL-2
+-------------------------------- /afs/psi.ch/project/amas: OPAL --------------------------------
+
+OPAL-2.4/2.4.0  OPAL-2.4/2.4.0_slurm
+----
+
+Now you can load a _OPAL_ meta-module a the command like
+``
+module load OPAL-2.4/2.4.0
 ```
 
 Now `opal` is available from the command line.
@@ -26,24 +29,6 @@ Now `opal` is available from the command line.
 
 An environment variable OPAL_EXE_PATH might point to the directory where the selected version of OPAL will reside.
 
-Some info on using https://intranet.psi.ch/PSI_HPC/Merlin5[Merlin5].
-
-== Get OPAL source
-
-The OPAL source can be cloned from https://gitlab.psi.ch/OPAL/src (`git@gitlab.psi.ch:OPAL/src.git`):
-
-```
-mkdir OPAL_repo
-cd OPAL_repo
-git clone git@gitlab.psi.ch:OPAL/src.git
-```
-
-To get a specific branch, for example OPAL/2.0, do:
-
-```
-cd src
-git checkout OPAL-2.0
-```
 
 == Compile OPAL
 
