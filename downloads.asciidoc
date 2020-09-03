@@ -19,7 +19,7 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 ### On Linux
 
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-linux.tar.xz[OPAL-2.4.0 for Linux]
+1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-linux.tar.xz[OPAL-2.4.0 for Linux]
 1. Un-tar the downloaded file:
 +
 ```
@@ -28,7 +28,7 @@ tar xf OPAL-2.4.0-2-x86_64-linux.tar.xz
 
 ### On macOS
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-1-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
+1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
 1. Un-tar the downloaded file:
 +
 ```
