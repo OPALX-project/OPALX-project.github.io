@@ -5,10 +5,10 @@ At PSI _OPAL_ is available as Pmodule.
 == Load precompiled binary with Pmodules
 
 The easiest way to load an _OPAL_ module is to use the "meta-modules" provided in `/afs/psi.ch/project/amas/modulefiles/OPAL`. Meta-modules are just modules loading a couple of other modules. To make the _OPAL_ meta-modules available, you have to run the command
-```
+----
 module use /afs/psi.ch/project/amas/modulefiles/OPAL
-```
-> **NOTE** For your convenience you might add this line to your shell profile (`.bashrc` for BASH).
+----
+> **NOTE:** For your convenience you might add this line to your shell profile (`.bashrc` for BASH).
 
 To  get a list of all available _OPAL_ module with major version to, you can  use the command `module avail OPAL-2`:
 ----
@@ -17,17 +17,11 @@ module avail OPAL-2
 
 OPAL-2.4/2.4.0  OPAL-2.4/2.4.0_slurm
 ----
-
-Now you can load a _OPAL_ meta-module a the command like
-``
+Now you can load the _OPAL_ meta-module for version 2.4.0 with the command
+----
 module load OPAL-2.4/2.4.0
-```
-
-Now `opal` is available from the command line.
-
-**Note**: For your convenience you might add these lines to your `.bashrc` or `.bash_profile`.
-
-An environment variable OPAL_EXE_PATH might point to the directory where the selected version of OPAL will reside.
+----
+> **NOTE:** If you want to run batch jobs on Merlin, use the modules tagged with `_slurm`!
 
 
 == Compile OPAL
