@@ -23,7 +23,7 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 1. Un-tar the downloaded file:
 +
 ```
-tar xf OPAL-2.4.0-1-x86_64-linux.tar.xz
+tar xf OPAL-2.4.0-2-x86_64-linux.tar.xz
 ```
 
 ### On macOS
@@ -32,7 +32,7 @@ tar xf OPAL-2.4.0-1-x86_64-linux.tar.xz
 1. Un-tar the downloaded file:
 +
 ```
-tar xf OPAL-2.4.0-1-x86_64-macos.tar.xz
+tar xf OPAL-2.4.0-2-x86_64-macos.tar.xz
 ```
 
 === On Windows
