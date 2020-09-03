@@ -8,7 +8,7 @@
 == Overview 
 The newest stable version of OPAL is 2.4.0. 
 
-Versions with an odd minor version number like 2.1.2019.11 are are development snapshots providing the newest features but less stability.
+Versions with an odd minor version number like 2.1.2019.11 are development snapshots providing the newest features but less stability.
 
 '''
 
