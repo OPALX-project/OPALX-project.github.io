@@ -20,7 +20,7 @@ _OPAL_ comes in the following flavours:
 * _OPAL-map_:
   map tracking (experimental).
 
-The code is managed through the Git distributed version control system. A suite of unit tests have been developed for various parts of __OPAL_, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in Asciidoc. Tools are available to readily convert Asciidoc into formats such as PDDF and HTML for display.
+The code is managed through the Git distributed version control system. A suite of unit tests have been developed for various parts of _OPAL_, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in Asciidoc. Tools are available to readily convert Asciidoc into formats such as PDDF and HTML for display.
 
 Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [**mailing list**](https://psilists.ethz.ch/sympa/subscribe/opal)
 
