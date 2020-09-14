@@ -44,7 +44,7 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 1. [*Latest Improvements of OPAL*, Ch. Metzger-Kraus et al, IPAC2016, Busan, South Korea](http://accelconf.web.cern.ch/AccelConf/ipac2016/papers/wepoy034.pdf)
 1. [*Photo-Injector Optimization and Validation Study with the OPAL Beam Simulation Code*, L. D. Duffy et al., NAPAC2016](http://accelconf.web.cern.ch/AccelConf/napac2016/papers/wepob39.pdf)
 1. [*Benchmark of RF Photoinjector and Dipole Using ASTRA, GPT, and OPAL*, N. Neveu et al., NAPAC2016](http://accelconf.web.cern.ch/AccelConf/napac2016/papers/thpoa46.pdf)
-1. [*Progress on Simulation of Fixed Field Alternating Gradient Accelerators* S. L. Sheehy et al. IPAC2015, Richmond, USA](http://accelconf.web.cern.ch/AccelConf/IPAC2015/papers/mopje077.pdf)
+1. [*Progress on Simulation of Fixed Field Alternating Gradient Accelerators* S. L. Sheehy et al., IPAC2015, Richmond, USA](http://accelconf.web.cern.ch/AccelConf/IPAC2015/papers/mopje077.pdf)
 1. [*Dynamic Kernel Scheduler (DKS) - Accelerating the Object Oriented Particle Accelerating Library (OPAL)*, U. Locans et al., ICAP2015](http://accelconf.web.cern.ch/AccelConf/ICAP2015/papers/modwc3.pdf)
    * [Contributed Talk](accelconf.web.cern.ch/AccelConf/ICAP2015/talks/modwc3_talk.pdf)
 1. [*The Dark Current and Multipacting Capabilities in OPAL: Model, Benchmarks and Applications*, C. Wang et al., ICAP2012, Rostock, Germany](http://accelconf.web.cern.ch/AccelConf/ICAP2012/papers/thaai1.pdf)
@@ -54,6 +54,6 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 1. [*First Commissioning Experience at the SwissFEL Injector Test Facility*, T. Schietinger et al. Linac2010, Tsukuba, Japan](https://accelconf.web.cern.ch/accelconf/LINAC2010/papers/tup009.pdf)
 1. [*The Object Oriented Parallel Accelerator Library (OPAL)*, A. Adelmann et al., PAC2009](http://accelconf.web.cern.ch/AccelConf/PAC2009/papers/fr5pfp065.pdf)
 1. [*The Object Oriented Parallel Accelerator Library (OPAL), Design, Implementation and Application*, A. Adelmann et al., ICAP2009](http://accelconf.web.cern.ch/AccelConf/ICAP2009/papers/we3iopk01.pdf)
-1. [*Measurements and Modeling at the PSI-XFEL 500 kV Low-Emittance Electron Source*, T. Schietinger et al. Linac2008, Vancouver, Canada](http://accelconf.web.cern.ch/AccelConf/LINAC08/papers/tup097.pdf)
+1. [*Measurements and Modeling at the PSI-XFEL 500 kV Low-Emittance Electron Source*, T. Schietinger et al., Linac2008, Vancouver, Canada](http://accelconf.web.cern.ch/AccelConf/LINAC08/papers/tup097.pdf)
 1. [*Modeling High Intensity Beams in Cyclotrons* (talk), J. Yang et al., HB2008](http://accelconf.web.cern.ch/AccelConf/HB2008/talks/wga33_talk.pdf)
 
