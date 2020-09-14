@@ -36,15 +36,14 @@ This instruction only shows the installation of OPAL for the multicore architect
 === Load environment
 ```
 > module load daint-mc
-> module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-> module load CMake/3.9.1
-> module switch gcc/5.3.0 gcc/6.2.0
+> module switch PrgEnv-cray/6.0.8 PrgEnv-gnu/6.0.8
+> module load CMake/3.14.5
 ```
 
 '''
 === Export environment variables for builds
 ```
-> export TARGET_DIR=$HOME/gcc/6.2.0
+> export TARGET_DIR=$HOME/gcc/8.3.0
 > export DOWNLOADS_DIR=$SCRATCH
 > export SRC_DIR=$SCRATCH
 > export NJOBS=4
@@ -78,6 +77,7 @@ cd "$P-$V"
 # compile & install
 make TARGET=CORE2
 make TARGET=CORE2 PREFIX="${PREFIX}" install
+
 ```
 '''
 ==== Installation procedure
@@ -105,13 +105,13 @@ make TARGET=CORE2 PREFIX="${PREFIX}" install
 # recipe for:
 P=hdf5
 V_MAJOR=1
-V_MINOR=8
-V=${V_MAJOR}.${V_MINOR}.19
+V_MINOR=10
+V=${V_MAJOR}.${V_MINOR}.6
 
 # download
 curl -L \
-    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-    "https://support.hdfgroup.org/ftp/HDF5/current$V_MAJOR$V_MINOR/src/$P-$V.tar.gz"
+     --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+     "https://support.hdfgroup.org/ftp/HDF5/releases/$P-$V_MAJOR.$V_MINOR/$P-$V/src/$P-$V.tar.gz"
 
 #unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
@@ -127,7 +127,6 @@ CXX=CC CC=cc Ftn=ftn \
     --enable-cxx \
     --enable-unsupported \
     --with-pic
-#    --enable-fortran
 
 # compile & install
 make -j ${NJOBS}
@@ -139,14 +138,14 @@ make install
 ==== Installation procedure
 
 ```
-> export PREFIX=$TARGET_DIR/hdf5/1.8.19
+> export PREFIX=$TARGET_DIR/hdf5/1.10.6
 > ./hdf5_install.sh
 > export HDF5_DIR=$PREFIX
 > export HDF5_HOME=$HDF5_DIR
 > export HDF5_PREFIX=$HDF5_DIR
 > export HDF5_INCLUDE_DIR=$HDF5_HOME/include
 > export HDF5_LIBRARY_DIR=$HDF5_HOME/lib
-> export HDF5_VERSION=1.8.19
+> export HDF5_VERSION=1.10.6
 ```
 
 '''
@@ -158,8 +157,8 @@ make install
 
 # recipe for:
 P=H5hut
-V=2.0.0rc3
-SHA=e447d536a366578643d8224811277636bc5e7271
+V=2.0.0rc6
+SHA=7e7a85f14fc3ee123c122859a641db624de41b2a
 
 # download
 curl -L \
@@ -181,8 +180,6 @@ CXX=CC CC=cc FC=ftn \
     "${SRC_DIR}/$P/src-$P-$V-$SHA/configure" \
     --prefix="${PREFIX}" \
     --enable-parallel \
-    #--enable-fortran \
-    #--enable-shared \
     --with-hdf5="${HDF5_PREFIX}" \
     --with-pic \
     --enable-python
@@ -191,19 +188,20 @@ CXX=CC CC=cc FC=ftn \
 # compile & install
 make -j ${NJOBS}
 make install
+
 ```
 
 '''
 ==== Installation procedure
 ```
-> export PREFIX=$TARGET_DIR/H5hut/2.0.0rc3
+> export PREFIX=$TARGET_DIR/H5hut/2.0.0rc6
 > ./h5hut_install.sh
-> export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc3
+> export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc6
 > export H5HUT_HOME=$H5HUT_DIR
 > export H5HUT_PREFIX=$H5HUT_HOME
 > export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
 > export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
-> export H5HUT_VERSION=2.0.0rc3
+> export H5HUT_VERSION=2.0.0rc6
 ```
 
 '''
@@ -217,7 +215,7 @@ make install
 
 # recipe for:
 P=boost
-V=1_62_0
+V=1_70_0
 
 # download
 curl -L \
@@ -233,41 +231,43 @@ mkdir -p "${SRC_DIR}/$P/build"
 cd "${SRC_DIR}/$P/${P}_$V"
 ./bootstrap.sh \
     --prefix="${PREFIX}" \
-    --with-libraries=all
+    --with-libraries=mpi,chrono,filesystem,iostreams,regex,serialization,system,timer
+
+echo "using mpi : : " >> project-config.jam
+echo "<include>\"${MPICH_DIR}/include\"" >> project-config.jam
+echo "<library-path>\"${MPICH_DIR}/lib\"" >> project-config.jam
+echo "<find-shared-library>mpich" >> project-config.jam
+echo "<find-shared-library>mpichcxx" >> project-config.jam
+echo "<find-shared-library>fmpich ;" >> project-config.jam
 
 # compile & install
 ./b2 \
-    --build-type=minimal \
     --build-dir=""${SRC_DIR}/$P/build"" \
     --layout=system \
-    --without-mpi \
     variant=release \
     link=shared,static \
     threading=multi \
     stage
 ./b2 \
-    --build-type=minimal \
     --build-dir=""${SRC_DIR}/$P/build"" \
     --layout=system \
-    --without-mpi \
     variant=release \
     link=shared,static \
     threading=multi \
     install
-
 ```
 
 '''
 ==== Installation procedure
 ```
-> export PREFIX=$TARGET_DIR/boost/1.62.0
+> export PREFIX=$TARGET_DIR/boost/1.70.0
 > ./boost_install.sh
 > export BOOST_DIR=$PREFIX
 > export BOOST_HOME=$BOOST_DIR
 > export BOOST_INCLUDE_DIR=$BOOST_DIR/include
 > export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
 > export BOOST_PREFIX=$BOOST_DIR
-> export BOOST_VERSION=1.62.0
+> export BOOST_VERSION=1.70.0
 ```
 
 '''
@@ -280,22 +280,24 @@ cd "${SRC_DIR}/$P/${P}_$V"
 
 # recipe for:
 P=gsl
-V=2.4
+V=${GSL_VERSION:-2.6}
+
+FNAME="$P-$V.tar.gz"
+DOWNLOAD_URL="ftp://ftp.gnu.org/gnu/$P/${FNAME}"
+SRC_FILE="${DOWNLOADS_DIR}/${FNAME}"
 
 # download
-curl -L \
-    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
-    "ftp://ftp.gnu.org/gnu/$P/$P-$V.tar.gz"
+test -r "${SRC_FILE}" || curl -L --output "$_" "${DOWNLOAD_URL}"
 
 # unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
-tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+tar xvf "${SRC_FILE}"
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
 "${SRC_DIR}/$P/$P-$V/configure" \
-    --prefix="${PREFIX}" \
-    --disable-shared
+                --prefix="${PREFIX}" \
+                --disable-shared
 
 # compile & install
 make -j ${NJOBS}
@@ -305,14 +307,14 @@ make install
 '''
 ==== Installation procedure
 ```
-> export PREFIX=$TARGET_DIR/gsl/2.4
+> export PREFIX=$TARGET_DIR/gsl/2.6
 > ./gsl_install.sh
 > export GSL_DIR=$PREFIX
 > export GSL_HOME=$GSL_DIR
 > export GSL_INCLUDE_DIR=$GSL_HOME/include
 > export GSL_LIBRARY_DIR=$GSL_HOME/lib
 > export GSL_PREFIX=$GSL_DIR
-> export GSL_VERSION=2.4
+> export GSL_VERSION=2.6
 ```
 
 '''
@@ -324,37 +326,32 @@ make install
 #!/bin/bash
 
 # recipe for:
-P=opal
-V=1.9
+P=OPAL
+V=2.4.0
+branch=master
 
 # download
-mkdir -p "${SRC_DIR}/$P" && cd "$_"
-git clone git@gitlab.psi.ch:OPAL/src.git
+mkdir -p "${DOWNLOADS_DIR}/$P" && cd "$_"
+curl -L \
+    --output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
+    "https://gitlab.psi.ch/$P/src/repository/archive.tar.gz?ref=$P-$V"
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
-CXX=CC CC=cc cmake \
+CXX=CC CC=cc FC=ftn cmake \
     -DCMAKE_INSTALL_PREFIX:STRING="${PREFIX}" \
     -DCMAKE_BUILD_TYPE:STRING=Release \
-    -DUSE_H5HUT2:BOOL=ON \
-    -DENABLE_DKS:BOOL=OFF \
-    -DENABLE_IPPLTESTS:BOOL=FALSE \
-    -DENABLE_SAAMG_SOLVER:BOOL=FALSE \
-    -DDBG_SCALARFIELD:BOOL=OFF \
-    -DDBG_STENCIL:BOOL=OFF \
-    -DNO_FIELD_ASSIGN_OPTIMIZATION:BOOL=OFF \
-    -DBUILD_OPAL_UNIT_TESTS:BOOL=OFF \
-    "${SRC_DIR}/$P/src"
+    -DCMAKE_C_COMPILER=cc \
+    -DCMAKE_CXX_COMPILER=CC \
+    "${DOWNLOADS_DIR}/$P/src"
 
 # compile & install
 make -j ${NJOBS}
-make install
-
 ```
 '''
 ==== Installation procedure
 ```
-> export PREFIX=$TARGET_DIR/opal/1.9
+> export PREFIX=$TARGET_DIR/opal/2.4.0
 > ./opal_install.sh
 ```
 
@@ -377,13 +374,12 @@ or
 It's convenient to add a helper function to your `~/.bashrc` in order to make life easier:
 
 ```
-load_opal_gcc620() {
+load_opal_gcc830() {
     module load daint-mc
-    module switch PrgEnv-cray/6.0.4 PrgEnv-gnu/6.0.4
-    module load CMake/3.9.1
-    module switch gcc/5.3.0 gcc/6.2.0
+    module switch PrgEnv-cray/6.0.8 PrgEnv-gnu/6.0.8
+    module load CMake/3.14.5
 
-    TARGET_DIR=$HOME/gcc/6.2.0
+    TARGET_DIR=$HOME/gcc/8.3.0
 
     export MPI_HOME=$MPICH_DIR
     export MPI_PREFIX=$MPI_HOME
@@ -400,33 +396,33 @@ load_opal_gcc620() {
 
     export LD_LIBRARY_PATH=$OPENBLAS_LIBRARY_DIR/:$LD_LIBRARY_PATH
 
-    export BOOST_DIR=$TARGET_DIR/boost/1.62.0
+    export BOOST_DIR=$TARGET_DIR/boost/1.70.0
     export BOOST_HOME=$BOOST_DIR
     export BOOST_INCLUDE_DIR=$BOOST_DIR/include
     export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
     export BOOST_PREFIX=$BOOST_DIR
-    export BOOST_VERSION=1.62.0
+    export BOOST_VERSION=1.70.0
 
-    export GSL_DIR=$TARGET_DIR/gsl/2.4
+    export GSL_DIR=$TARGET_DIR/gsl/2.6
     export GSL_HOME=$GSL_DIR
     export GSL_INCLUDE_DIR=$GSL_HOME/include
     export GSL_LIBRARY_DIR=$GSL_HOME/lib
     export GSL_PREFIX=$GSL_DIR
-    export GSL_VERSION=2.4
+    export GSL_VERSION=2.6
 
-    export HDF5_DIR=$TARGET_DIR/hdf5/1.8.19
+    export HDF5_DIR=$TARGET_DIR/hdf5/1.10.6
     export HDF5_HOME=$HDF5_DIR
     export HDF5_PREFIX=$HDF5_DIR
     export HDF5_INCLUDE_DIR=$HDF5_HOME/include
     export HDF5_LIBRARY_DIR=$HDF5_HOME/lib
-    export HDF5_VERSION=1.8.19
+    export HDF5_VERSION=1.10.6
 
-    export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc3
+    export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc6
     export H5HUT_HOME=$H5HUT_DIR
     export H5HUT_PREFIX=$H5HUT_HOME
     export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
     export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
-    export H5HUT_VERSION=2.0.0rc3
+    export H5HUT_VERSION=2.0.0rc6
 
     export OPAL_EXE_PATH=$TARGET_DIR/opal/bin
     export PATH=$OPAL_EXE_PATH:$PATH
@@ -437,5 +433,5 @@ load_opal_gcc620() {
 
 At the next login (or by just doing `source ~/.bashrc`) you can load everything by executing
 ```
-> load_opal_gcc620
+> load_opal_gcc830
 ```
