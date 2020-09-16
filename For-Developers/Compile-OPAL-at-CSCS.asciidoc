@@ -81,7 +81,7 @@ make TARGET=CORE2 PREFIX="${PREFIX}" install
 ```
 '''
 ==== Installation procedure
-```
+```bash
 > export PREFIX=$TARGET_DIR/OpenBLAS/0.2.20
 > ./openblas_install.sh
 > export OPENBLAS_DIR=$PREFIX
