@@ -10,8 +10,8 @@ mpl.rcParams['font.size']               = 12
 def main():
     fig, ax = plt.subplots(1)
     tunesOPAL = np.loadtxt("data/tunes.dat",skiprows = 1, unpack =True)
-    Nur = tunesOPAL[3]
-    Nuz = tunesOPAL[4]
+    Nur = tunesOPAL[4]
+    Nuz = tunesOPAL[5]
     E   = tunesOPAL[0]
     pco = ax.scatter(Nur,Nuz,c=E,cmap=plt.get_cmap('winter'),marker=".",s=30,label="Closed Orbit Finder")
     cbar = fig.colorbar(pco)
