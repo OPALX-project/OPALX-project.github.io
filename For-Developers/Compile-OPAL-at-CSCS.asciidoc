@@ -15,7 +15,7 @@ First you need a proper CSCS account. In order to do that click on http://www.cs
 === Login
 One has first to access http://www.cscs.ch/computers/ela/index.html[Ela] before being able to login to http://www.cscs.ch/computers/piz_daint/index.html[Piz Daint].
 
-```
+```bash
 $ ssh username@ela.cscs.ch
 > ssh daint
 
@@ -26,7 +26,7 @@ $ ssh username@ela.cscs.ch
 The hybrid architecture of Piz Daint allows to run on GPUs and CPUs. Therefore, it provides two modules in order to set up the
 environment properly:
 
-```
+```bash
 > module load daint-gpu
 > module load daint-mc
 ```
@@ -34,7 +34,7 @@ This instruction only shows the installation of OPAL for the multicore architect
 
 '''
 === Load environment
-```
+```bash
 > module load daint-mc
 > module switch PrgEnv-cray/6.0.8 PrgEnv-gnu/6.0.8
 > module load CMake/3.14.5
@@ -42,7 +42,7 @@ This instruction only shows the installation of OPAL for the multicore architect
 
 '''
 === Export environment variables for builds
-```
+```bash
 > export TARGET_DIR=$HOME/gcc/8.3.0
 > export DOWNLOADS_DIR=$SCRATCH
 > export SRC_DIR=$SCRATCH
@@ -99,7 +99,7 @@ make TARGET=CORE2 PREFIX="${PREFIX}" install
 '''
 ==== Installation script (hdf5_install.sh)
 
-```
+```bash
 #!/bin/bash
 
 # recipe for:
@@ -137,7 +137,7 @@ make install
 '''
 ==== Installation procedure
 
-```
+```bash
 > export PREFIX=$TARGET_DIR/hdf5/1.10.6
 > ./hdf5_install.sh
 > export HDF5_DIR=$PREFIX
@@ -152,7 +152,7 @@ make install
 === Building H5hut
 '''
 ==== Installation script (h5hut_install.sh)
-```
+```bash
 #!/bin/bash
 
 # recipe for:
@@ -193,7 +193,7 @@ make install
 
 '''
 ==== Installation procedure
-```
+```bash
 > export PREFIX=$TARGET_DIR/H5hut/2.0.0rc6
 > ./h5hut_install.sh
 > export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc6
@@ -210,7 +210,7 @@ make install
 '''
 ==== Installation script (boost_install.sh)
 
-```
+```bash
 #!/bin/bash
 
 # recipe for:
@@ -259,7 +259,7 @@ echo "<find-shared-library>fmpich ;" >> project-config.jam
 
 '''
 ==== Installation procedure
-```
+```bash
 > export PREFIX=$TARGET_DIR/boost/1.70.0
 > ./boost_install.sh
 > export BOOST_DIR=$PREFIX
@@ -306,7 +306,7 @@ make install
 
 '''
 ==== Installation procedure
-```
+```bash
 > export PREFIX=$TARGET_DIR/gsl/2.6
 > ./gsl_install.sh
 > export GSL_DIR=$PREFIX
@@ -322,7 +322,7 @@ make install
 
 '''
 ==== Installation script (opal_install.sh)
-```
+```bash
 #!/bin/bash
 
 # recipe for:
@@ -356,22 +356,22 @@ make install
 ```
 '''
 ==== Installation procedure
-```
+```bash
 > export PREFIX=$TARGET_DIR/opal/2.4.0
 > ./opal_install.sh
 ```
 
 You might add the executable path to the environment variable:
-```
+```bash
 > export OPAL_EXE_PATH=$PREFIX/bin
 > export PATH=$OPAL_EXE_PATH:$PATH
 ```
 Make sure you use the right directory. You can check if it worked with
-```
+```bash
 > which opal
 ```
 or
-```
+```bash
 > whereis opal
 ```
 
@@ -379,7 +379,7 @@ or
 == Modification of ~/.bashrc
 It's convenient to add a helper function to your `~/.bashrc` in order to make life easier:
 
-```
+```bash
 load_opal_gcc830() {
     module load daint-mc
     module switch PrgEnv-cray/6.0.8 PrgEnv-gnu/6.0.8
@@ -438,6 +438,6 @@ load_opal_gcc830() {
 ```
 
 At the next login (or by just doing `source ~/.bashrc`) you can load everything by executing
-```
+```bash
 > load_opal_gcc830
 ```
