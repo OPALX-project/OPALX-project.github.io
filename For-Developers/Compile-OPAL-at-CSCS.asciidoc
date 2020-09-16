@@ -336,7 +336,7 @@ curl -L \
     --output "${DOWNLOADS_DIR}/${P}-$V.tar.gz" \
     "https://gitlab.psi.ch/$P/src/repository/archive.tar.gz?ref=$P-$V"
 
-#unpack
+# unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 mv "${SRC_DIR}/$P/src-$P-$V-$SHA" "${SRC_DIR}/$P/$P-$V"
