@@ -113,7 +113,7 @@ curl -L \
      --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
      "https://support.hdfgroup.org/ftp/HDF5/releases/$P-$V_MAJOR.$V_MINOR/$P-$V/src/$P-$V.tar.gz"
 
-#unpack
+# unpack
 mkdir -p "${SRC_DIR}/$P" && cd "$_"
 tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
 
