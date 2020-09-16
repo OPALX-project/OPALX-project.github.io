@@ -328,13 +328,18 @@ make install
 # recipe for:
 P=OPAL
 V=2.4.0
-branch=master
+SHA=ffded40c6dd317d29776f58f33080e2919319d89
 
 # download
 mkdir -p "${DOWNLOADS_DIR}/$P" && cd "$_"
 curl -L \
-    --output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
+    --output "${DOWNLOADS_DIR}/${P}-$V.tar.gz" \
     "https://gitlab.psi.ch/$P/src/repository/archive.tar.gz?ref=$P-$V"
+
+#unpack
+mkdir -p "${SRC_DIR}/$P" && cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+mv "${SRC_DIR}/$P/src-$P-$V-$SHA" "${SRC_DIR}/$P/$P-$V"
 
 # configure
 mkdir -p "${SRC_DIR}/$P/build" && cd "$_"
@@ -343,10 +348,11 @@ CXX=CC CC=cc FC=ftn cmake \
     -DCMAKE_BUILD_TYPE:STRING=Release \
     -DCMAKE_C_COMPILER=cc \
     -DCMAKE_CXX_COMPILER=CC \
-    "${DOWNLOADS_DIR}/$P/src"
+    "${SRC_DIR}/$P/$P-$V/src"
 
 # compile & install
 make -j ${NJOBS}
+make install
 ```
 '''
 ==== Installation procedure
@@ -357,7 +363,7 @@ make -j ${NJOBS}
 
 You might add the executable path to the environment variable:
 ```
-> export OPAL_EXE_PATH=$HOME/opal/build/src/
+> export OPAL_EXE_PATH=$PREFIX/bin
 > export PATH=$OPAL_EXE_PATH:$PATH
 ```
 Make sure you use the right directory. You can check if it worked with
@@ -424,7 +430,7 @@ load_opal_gcc830() {
     export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
     export H5HUT_VERSION=2.0.0rc6
 
-    export OPAL_EXE_PATH=$TARGET_DIR/opal/bin
+    export OPAL_EXE_PATH=$TARGET_DIR/opal/2.4.0/bin
     export PATH=$OPAL_EXE_PATH:$PATH
 
     export CRAYPE_LINK_TYPE=dynamic
