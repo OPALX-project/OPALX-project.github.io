@@ -348,7 +348,7 @@ CXX=CC CC=cc FC=ftn cmake \
     -DCMAKE_BUILD_TYPE:STRING=Release \
     -DCMAKE_C_COMPILER=cc \
     -DCMAKE_CXX_COMPILER=CC \
-    "${SRC_DIR}/$P/$P-$V/src"
+    "${SRC_DIR}/$P/$P-$V"
 
 # compile & install
 make -j ${NJOBS}
