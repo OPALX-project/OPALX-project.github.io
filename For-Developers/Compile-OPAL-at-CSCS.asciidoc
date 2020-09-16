@@ -181,9 +181,7 @@ CXX=CC CC=cc FC=ftn \
     --prefix="${PREFIX}" \
     --enable-parallel \
     --with-hdf5="${HDF5_PREFIX}" \
-    --with-pic \
-    --enable-python
-
+    --with-pic
 
 # compile & install
 make -j ${NJOBS}
