@@ -49,7 +49,7 @@
 # 1. Language Standards
 
 -   C99
--   C++11 (minimum versions gcc 4.7.3 ~~and Intel 12~~)
+-   C++11
 
 * * * * *
 
@@ -549,12 +549,6 @@ Use braces even for single line blocks, otherwise wrong indentation will confuse
 if (i == 42) {
     return SUCCESS;
 }
-```
-
-or write them on then same line:
-
-```c++
-if (i == 42) return SUCCESS;
 ```
 
 **`for`-loop**
