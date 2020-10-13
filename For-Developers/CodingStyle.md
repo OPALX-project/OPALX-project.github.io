@@ -492,11 +492,15 @@ Heed that warning.
 -   no space around `.` and `->`
 
 Examples:
--   `if (i == 42) return i;`
--   `i = j + 2;`
--   `i += 42;`
--   `i++;`
--   `mesh->fname = argv[1];`
+```
+if (i == 42) {
+    return i;
+}
+i = j + 2;
+i += 42;
+i++;
+mesh->fname = argv[1];
+```
 
 * * * * *
 
