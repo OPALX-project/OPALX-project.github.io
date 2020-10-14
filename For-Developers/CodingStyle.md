@@ -1,4 +1,5 @@
 
+0. [Short Introduction](#0-short-introduction)
 1. [Language Standards](#1-language-standards)
 2.  [Naming Conventions](#2-naming-conventions)
     1.  [General notes](#21-general-notes)
@@ -44,6 +45,16 @@
 6.  [Memory Allocation](#6-memory-allocation)
 7.  [Error Handling](#7-error-handling)
 8.  [References](#8-references)
+
+# 0. Short Introduction
+
+In a huger software project it is good practice to define a coding-style. 
+This helps other developers to read your code and improves maintainability.
+
+The OPAL coding-style includes recommendations and conventions for
+* naming of classes, functions, variables etc
+A good example for a coding-style is the [Linux coding-style](https://www.kernel.org/doc/html/v4.10/process/coding-style.html). It's worth to read. 
+
 
 
 # 1. Language Standards
@@ -195,8 +206,9 @@ Example:
 
 ### 2.13. C++ File Extensions 
 
--   header files: `.h`
--   source files: `.cpp`
+- header files: `.h`
+- source files: `.cpp`
+- template classes: `.hpp`
 
 * * * * *
 
@@ -263,32 +275,21 @@ Add extensive class documentation below header.
 
 ### 3.4. Code Documentation
 
--   Comment what the code does not how.
+-   Generally comment WHAT the code does but not HOW.
 -   Write comments as you code.
+-   do not over-comment (do not comment the obvious).
+-   write the code so that the _working_ is obvious (so no commenting is required).
+-   try to use comments at the head of a function only.
+-   Avoid longer comments inside functions. If this is required, the 
+    function might already be to complex.
+-   split large complex functions into multiple self-descriptive functions, 
 -   use `/* ... */` for multi-line comments
 -   use `//` for *short* comments
 -   Make gotchas explicit
-    -   `:TODO:` to not forget to implement something later
-    -   `:BUG:` to document a known bug
+    -   `:TODO:` to not forget to implement something later.
+    -   `:BUG:` to document a known bug.
     -   `:WARNING:` beware of something.
 
-Quote from the Linux coding style:
-
-``` {.wiki}
-Comments are good, but there is also a danger of over-commenting.  NEVER
-try to explain HOW your code works in a comment: it's much better to
-write the code so that the _working_ is obvious, and it's a waste of
-time to explain badly written code.
-
-Generally, you want your comments to tell WHAT your code does, not HOW.
-Also, try to avoid putting comments inside a function body: if the
-function is so complex that you need to separately comment parts of it,
-you should probably go back to chapter 6 for a while.  You can make
-small comments to note or warn about something particularly clever (or
-ugly), but try to avoid excess.  Instead, put the comments at the head
-of the function, telling people what it does, and possibly WHY it does
-it.
-```
 
 This is over-commenting:
 
@@ -358,38 +359,11 @@ Example of detailed code description in Latex
 ### 4.1. Complexity 
 
 -   Do \*one\* thing per method.
+-   The maximum length of a function is inversely proportional to the
+complexity.
 -   Break down complex methods.
 -   Use helper functions/methods.
 -   3-4 levels of indentation are OK - 6+ definitely not.
-
-Quote from the Linux coding style:
-
-``` {.wiki}
-Functions should be short and sweet, and do just one thing.  They should
-fit on one or two screenfuls of text (the ISO/ANSI screen size is 80x24,
-as we all know), and do one thing and do that well.
-
-The maximum length of a function is inversely proportional to the
-complexity and indentation level of that function.  So, if you have a
-conceptually simple function that is just one long (but simple)
-case-statement, where you have to do lots of small things for a lot of
-different cases, it's OK to have a longer function.
-
-However, if you have a complex function, and you suspect that a
-less-than-gifted first-year high-school student might not even
-understand what the function is all about, you should adhere to the
-maximum limits all the more closely.  Use helper functions with
-descriptive names (you can ask the compiler to in-line them if you think
-it's performance-critical, and it will probably do a better job of it
-than you would have done).
-
-Another measure of the function is the number of local variables.  They
-shouldn't exceed 5-10, or you're doing something wrong.  Re-think the
-function, and split it into smaller pieces.  A human brain can
-generally easily keep track of about 7 different things, anything more
-and it gets confused.  You know you're brilliant, but maybe you'd like
-to understand what you did 2 weeks from now.
-```
 
 * * * * *
 
@@ -435,55 +409,27 @@ Example:   (from Linux coding style)
 
 ### 5.1. Indentation
 
-Quote from Linux Kernel coding style:
-
-``` {.wiki}
-Tabs are 8 characters, and thus indentations are also 8 characters.
-There are heretic movements that try to make indentations 4 (or even 2!)
-characters deep, and that is akin to trying to define the value of PI to
-be 3.
-```
-
--   We are heretic and use 4 characters (but 8 character are also
-    accepted).
+-   4 spaces per level.
 -   Use spaces not tabs.
 -   Don't even think about redefining the TAB-character ...
-
-Another quote from the Linux Kernel coding style:
-
-``` {.wiki}
-Rationale: The whole idea behind indentation is to clearly define where
-a block of control starts and ends.  Especially when you've been looking
-at your screen for 20 straight hours, you'll find it a lot easier to see
-how the indentation works if you have large indentations.
-
-Now, some people will claim that having 8-character indentations makes
-the code move too far to the right, and makes it hard to read on a
-80-character terminal screen.  The answer to that is that if you need
-more than 3 levels of indentation, you're screwed anyway, and should fix
-your program.
-
-In short, 8-char indents make things easier to read, and have the added
-benefit of warning you when you're nesting your functions too deep.
-Heed that warning.
-```
 
 * * * * *
 
 ### 5.2. Breaking long lines and strings
 
--   Avoid long lines.
--   If a line is longer than 80 characters, think about breaking it into reasonable chunks.
+-   The maximum length of a line is 100 characters. This limit applies 
+    to code as well as comments.
 -   This applies also to strings.
--   Without defining a hard limit, line with more than 160 characters are definitely far too long.
 -   Comments should fit within 80 characters per line
 
 * * * * *
 
 ### 5.3. Placing Spaces 
 
--   use a space before an opening parenthesis `(` and opening curly
-    bracket `{`.
+-   use a space between a keyword and an opening parenthesis `(`
+-   don't use a space between a function and the opening parenthesis
+-   use a space before an opening curly bracket `{` but not before a
+    C++11 braced list (see example below).
 -   do not use a space before an opening square bracket.
 -   use spaces around binary operators
 -   but no space after unary operators
@@ -500,6 +446,7 @@ i = j + 2;
 i += 42;
 i++;
 mesh->fname = argv[1];
+new int[3] a{1, 2, 3}; // C++ braced list
 ```
 
 * * * * *
@@ -575,14 +522,15 @@ do {
 
 ```c++
 switch (i) {
-case: 0 {
-    ...
-}
-case: 42 {
-    ...
-}
-default:
-    ...
+    case: 0 {
+        ...
+    }
+    case: 42 {
+        ...
+    }
+    default: {
+        ...
+    }
 }
 ```
 
@@ -591,16 +539,21 @@ It is good practice to keep the cases small.
 Example:
 ```c++
 switch (entity_type) {
-    case H5T_TYPE_VERTEX:
+    case H5T_TYPE_VERTEX: {
         return get_adjacencies_to_vertex (m, entity_id, dim, list);
-    case H5T_TYPE_EDGE:
+    }
+    case H5T_TYPE_EDGE: {
         return get_adjacencies_to_edge (m, entity_id, dim, list);
-    case H5T_TYPE_TRIANGLE:
+    }
+    case H5T_TYPE_TRIANGLE: {
         return get_adjacencies_to_triangle (m, entity_id, dim, list);
-    case H5T_TYPE_TET:
+    }
+    case H5T_TYPE_TET: {
         return get_adjacencies_to_tet (m, entity_id, dim, list);
-    default:
+    }
+    default: {
         break;
+    }
 }
 ```
 
