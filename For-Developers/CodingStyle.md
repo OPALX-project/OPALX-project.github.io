@@ -51,8 +51,19 @@
 In a huger software project it is good practice to define a coding-style. 
 This helps other developers to read your code and improves maintainability.
 
-The OPAL coding-style includes recommendations and conventions for
+The OPAL coding-style includes rules, recommendations and conventions for
 * naming of classes, functions, variables etc
+* length/complexity of functions
+* code commenting
+* code formatting
+* ...
+
+For code-formatting Clang-format should be used. The formatting rules are 
+defined in the file `.clang-format` in the top-level directory of the OPAL 
+repository. For the time being code formatting rules are not enforced, but this will be done somewhen in the future.
+
+The tool `clang-format` is available for most Linux distributions and macOS via Macports. At PSI `clang-format` is available via the Pmodule `clang`.
+
 A good example for a coding-style is the [Linux coding-style](https://www.kernel.org/doc/html/v4.10/process/coding-style.html). It's worth to read. 
 
 
