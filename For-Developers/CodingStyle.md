@@ -601,7 +601,7 @@ std::tuple<
 
 -   Use `std::vector` for dynamic arrays
 -   Use `std::unique_ptr`/`std::shared_ptr` and `std::make_unique` (once [Increase C++ Standard to c++17](https://gitlab.psi.ch/OPAL/src/-/issues/607) is implemented) / `std::make_shared` where ever possible.
--   Avoid old-style memory dynamic allocation using `new`
+-   Avoid old-style dynamic memory allocation using `new`
 
 * * * * *
 
