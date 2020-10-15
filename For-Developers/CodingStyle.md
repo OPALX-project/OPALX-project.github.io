@@ -457,7 +457,7 @@ i = j + 2;
 i += 42;
 i++;
 mesh->fname = argv[1];
-new int[3] a{1, 2, 3}; // C++ braced list
+int[3] a{1, 2, 3}; // C++ braced list
 ```
 
 * * * * *
@@ -600,7 +600,8 @@ std::tuple<
 # 6. Memory Allocation
 
 -   Use `std::vector` for dynamic arrays
--   Use `std::unique_ptr`/`std::shared_ptr` where ever possible.
+-   Use `std::unique_ptr`/`std::shared_ptr` and `std::make_unique` (once [Increase C++ Standard to c++17](https://gitlab.psi.ch/OPAL/src/-/issues/607) is implemented) / `std::make_shared` where ever possible.
+-   Avoid old-style memory dynamic allocation using `new`
 
 * * * * *
 
