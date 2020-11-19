@@ -11,7 +11,7 @@ OPAL can use a fully scaling field model including scaling fringe fields to mode
 
 [example.tar.gz](/uploads/ce9edbd174515324704553df84647864/example.tar.gz) (Tested on OPAL2.0rc2)
 
-[example_1-OPAL2.4.0.tar.gz](uploads/af56754c46f353a211575184a9ae0737/example_1-OPAL2.4.0.tar.gz)
+[example_1-OPAL2.4.0.tar.gz](uploads/af56754c46f353a211575184a9ae0737/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
 To run the example, download the file example.tar.gz and do
 
