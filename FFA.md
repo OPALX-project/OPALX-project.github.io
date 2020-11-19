@@ -29,8 +29,6 @@ If it worked - congratulations, you have run OPAL. You should see a lot of outpu
 
 [log](/uploads/00e68ff00bd4309eb8d52f9c061c26af/log)
 
-*Note that in recent versions, the FFA magnet name has changed from SECTORFFA**G**MAGNET to SECTORFFAMAGNET and the lattice will need to be updated. This is in line with the FFA accelerator community recommendation.*
-
 OPAL parses the input file, then writes out the position of each field element, then tracks the particle with some debugging output. You can then make some plots:
 
 > python example_scripts/plot_orbit.py example_sector_ffa/
