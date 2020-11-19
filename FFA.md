@@ -33,7 +33,7 @@ OPAL parses the input file, then writes out the position of each field element, 
 
 > python example_scripts/plot_orbit.py example_sector_ffa/
 
-For OPAL2.4.0 version, the plotting routines use matplotlib and python3. The OPAL2.0.0 version use python2 and PyRoot, the python API for ROOT plotting library - it doesn't always work. Here is an example of the sort of plots you might see:
+For OPAL2.4.0 version, the plotting routines use matplotlib and python3. The OPAL2.0.0 version use python2 and PyRoot, the python API for ROOT plotting library. Here is an example of the sort of plots you might see:
 
 ![opal_example_1_x_y_bz](uploads/d61a116b403f8d629befc73a5b815837/opal_example_1_x_y_bz.png)
 
