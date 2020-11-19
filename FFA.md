@@ -10,15 +10,16 @@ The following workflows have been checked with OPAL 2.0.0rc2.
 OPAL can use a fully scaling field model including scaling fringe fields to model FFAs analytically. A sample lattice file is available in this example:
 
 [example.tar.gz](/uploads/ce9edbd174515324704553df84647864/example.tar.gz) (Tested on OPAL2.0rc2)
-[example_1.tar.gz](uploads/e37a05871677afe2601fc9ee0a6850dc/example_1.tar.gz) (Tested on OPAL2.4.0_2)
+
+[example_1-OPAL2.4.0.tar.gz](uploads/af56754c46f353a211575184a9ae0737/example_1-OPAL2.4.0.tar.gz)
 
 To run the example, download the file example.tar.gz and do
 
-> tar -xzf example.tar.gz
+> tar -xzf example_1-OPAL2.4.0.tar.gz
 
 Then change into the working directory and run the code:
 
-> cd example/example_sector_ffa
+> cd example_1/example_sector_ffa
 
 > /path/to/bin/opal SectorFFAGMagnet
 
