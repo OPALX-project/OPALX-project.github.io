@@ -9,7 +9,8 @@ The following workflows have been checked with OPAL 2.0.0rc2.
 
 OPAL can use a fully scaling field model including scaling fringe fields to model FFAs analytically. A sample lattice file is available in this example:
 
-[example.tar.gz](/uploads/ce9edbd174515324704553df84647864/example.tar.gz)
+[example.tar.gz](/uploads/ce9edbd174515324704553df84647864/example.tar.gz) (Tested on OPAL2.0rc2)
+[example_1.tar.gz](uploads/e37a05871677afe2601fc9ee0a6850dc/example_1.tar.gz) (Tested on OPAL2.4.0_2)
 
 To run the example, download the file example.tar.gz and do
 
@@ -35,7 +36,7 @@ OPAL parses the input file, then writes out the position of each field element, 
 
 This relies on a correct installation of PyRoot, the python API for ROOT plotting library - it doesn't always work. Here is an example of the sort of plots you might see:
 
-![closed_orbit_plan_bz](/uploads/a8dd1e2e8c97983e98dee3060f487de7/closed_orbit_plan_bz.png)
+![opal_example_1_x_y_bz](uploads/d61a116b403f8d629befc73a5b815837/opal_example_1_x_y_bz.png)
 
 Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton trajectory at injection (3 MeV).
 
