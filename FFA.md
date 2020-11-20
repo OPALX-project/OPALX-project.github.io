@@ -1,9 +1,10 @@
-There are two methods to model FFAs in OPAL, using the OPAL-Cycl routines.
+Examples are provided for tracking FFAs in a number of circumstances:
 
-1. Tracking through an analytical field model (OPAL >= 2.0).
+1. Tracking through an analytical field model
 2. Tracking through a 3D field map.
+3. Tracking through an analytical field model with RF acceleration
 
-The following workflows have been checked with OPAL 2.0.0rc2.
+The following workflows have been checked with OPAL 2.0.0rc2 and OPAL 2.4.0_2.
 
 # Tracking through an analytical field model
 
