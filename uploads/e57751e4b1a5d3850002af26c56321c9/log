@@ -1,0 +1,1447 @@
+[NDW1765:30360] mca_base_component_repository_open: unable to open mca_oob_ud: libosmcomp.so.3: cannot open shared object file: No such file or directory (ignored)
+[NDW1765:30356] mca_base_component_repository_open: unable to open mca_oob_ud: libosmcomp.so.3: cannot open shared object file: No such file or directory (ignored)
+[NDW1765:30356] mca_base_component_repository_open: unable to open mca_btl_openib: librdmacm.so.1: cannot open shared object file: No such file or directory (ignored)
+[NDW1765:30356] mca_base_component_repository_open: unable to open mca_pml_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[NDW1765:30356] mca_base_component_repository_open: unable to open mca_mtl_psm: libpsm_infinipath.so.1: cannot open shared object file: No such file or directory (ignored)
+[NDW1765:30356] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+Ippl> CommMPI: Parent process waiting for children ...
+Ippl> CommMPI: Initialization complete.
+>                ____  _____       ___ 
+>               / __ \|  __ \ /\   | | 
+>              | |  | | |__) /  \  | |
+>              | |  | |  ___/ /\ \ | |
+>              | |__| | |  / ____ \| |____
+>               \____/|_| /_/    \_\______|
+OPAL> 
+OPAL> This is OPAL (Object Oriented Parallel Accelerator Library) Version 2.4.0
+OPAL>             git rev. ffded40c6dd317d29776f58f33080e2919319d89
+OPAL> 
+OPAL> 
+OPAL>                      (c) PSI, http://amas.web.psi.ch
+OPAL> 
+OPAL> 
+OPAL> The optimiser (former opt-Pilot) is integrated 
+OPAL> 
+OPAL> Please send cookies, goodies or other motivations (wine and beer ... ) 
+OPAL> to the OPAL developers opal@lists.psi.ch
+OPAL> 
+OPAL> Time: 17:28:13 date: 20/11/2020
+OPAL> 
+OPAL> Couldn't find startup file "/home/cr67/init.opal".
+OPAL> Note: this is not mandatory for an OPAL simulation!
+OPAL> 
+OPAL> * Reading input stream "VerticalSectorFFA".
+    2 //////////////////////////////////////////////////////////////////////////////
+    3 // Input file for single bunch tracking through VERTICAL FFA ring          //
+    4 //////////////////////////////////////////////////////////////////////////////
+    5 Title,string="Small ring using OPAL code";
+    6 Option, ASCIIDUMP=FALSE;
+    7 Option, ENABLEHDF5=TRUE;
+    8 OPTION, PSDUMPFREQ=100000;
+    9 Option, VERSION=10900;
+   10 Option, SPTDUMPFREQ=1;
+   11 Option, STATDUMPFREQ=100000;
+   12 
+   13 ////////// CONSTANTS ////////////////////////////////////
+   14 
+   15 // Note to self ... 
+   16 // * "Length" is total length of the sector magnet
+   17 // * each coil has centre length = Length/n * 0.8
+   18 
+   19 REAL DEGREE=PI/180.;
+   20 REAL MM=1000.;
+   21 REAL C_LIGHT=0.3; // m/ns
+   22 
+   23 ////////// MODULES ///////////////////////
+   24 BOOL DO_MAGNET_FIELD_MAPS=True;
+   25 
+   26 ////////// RING  ///////////////
+   27 REAL R0=4.04508497187;
+   28 REAL E0=3.0;
+   29 REAL P_MASS=938.2720813;
+   30 REAL P_CHARGE=1.0;
+   31 REAL P0=((E0+P_MASS)^2-P_MASS^2)^0.5;
+   32 REAL N_CELLS=10;
+   33 REAL RMIN=R0-1.0;
+   34 REAL RMAX=R0+1.0;
+   35 REAL FFA_CELL_LENGTH=2*PI/N_CELLS;
+   36 
+   37 ////////// TRACKING ///////////////
+   38 REAL STEP_SIZE=0.001; // m
+   39 REAL N_TURNS=0.95;
+   40 REAL BEAM_PHI_INIT=0.0;
+   41 REAL N_PARTICLES=4;
+   42 
+   43 ////////// MAIN MAGNETS/////////
+   44 REAL BF=-0.2777777777777778;
+   45 REAL DELTA_BF=0.0;
+   46 REAL BF_OFFSET=0.0; // distance from centre line to BF A and BF B [m]
+   47 REAL BD=0.05555555555555556;
+   48 REAL DELTA_BD=0.0;
+   49 REAL BD_OFFSET=0.0;
+   50 REAL F_LENGTH=0.4; // total length of all coils including occupancy is F_LENGTH
+   51 REAL D_LENGTH=0.24;
+   52 REAL FD_GAP=0.08;
+   53 REAL DRIFT_LENGTH=1.3;
+   54 REAL F_TILT_ANGLE=0.0; // not implemented
+   55 REAL M_INDEX=-1.28;
+   56 REAL F_END_LENGTH=0.2;
+   57 REAL D_END_LENGTH=0.2;
+   58 REAL MAX_HORIZONTAL_POWER=10;
+   59 REAL NEG_EXTENT=2.0;
+   60 REAL POS_EXTENT=4.0;
+   61 REAL BB_LENGTH=8.0;
+   62 REAL MAG_WIDTH=0.5;
+   63 
+   64 //////////// FIELD MAPS ///////////////
+   65 REAL MAP_C_X_MIN=-5.0;
+   66 REAL MAP_C_DX=0.01; // 1001 steps
+   67 REAL MAP_C_Y_MIN=-5.0;
+   68 REAL MAP_C_DY=0.01; // 1001 steps
+   69 
+   70 //////////// END VARIABLE DEFINITIONS //////////////////
+   71 
+   72 //////////// MACROS AND GLOBALS /////////////
+   73 BUILD_PROBE(NAME, ANGLE, DANGLE): MACRO {
+   74     NAME: PROBE, xstart=RMIN*1000*cos(ANGLE),  xend=RMAX*1000*cos(ANGLE),
+   75                  ystart=RMIN*1000*sin(ANGLE),  yend=RMAX*1000*sin(ANGLE);
+   76 }
+   77 
+   78 start: LOCAL_CARTESIAN_OFFSET,
+   79                 end_position_x=R0,
+   80                 end_position_y=R0,
+   81                 end_normal_x=-sin(360/40*degree),
+   82                 end_normal_y=-cos(360/40*degree); 
+   83 
+   84 null: LOCAL_CARTESIAN_OFFSET,
+   85                 end_position_x=0., end_position_y=0.,
+   86                 end_normal_x=1.0, end_normal_y=0.;
+   87 
+   88 //////////// MAIN MAGNETS /////////////////////
+   89 REAL F_CENTRE_LENGTH=F_LENGTH;
+   90 REAL D_CENTRE_LENGTH=D_LENGTH;
+   91 REAL BD_A=BD*(1+DELTA_BD);
+   92 REAL BD_B=BD*(-DELTA_BD);
+   93 REAL BF_A=BF*(1+DELTA_BF);
+   94 REAL BF_B=BF*(-DELTA_BF);
+   95 
+   96 
+   97 magnetF_A: VERTICALFFAMAGNET,
+   98           B0=BF_A,
+   99           FIELD_INDEX=M_INDEX,
+  100           MAX_HORIZONTAL_POWER=MAX_HORIZONTAL_POWER,
+  101           END_LENGTH=F_END_LENGTH,
+  102           CENTRE_LENGTH=F_CENTRE_LENGTH*2,
+  103           HEIGHT_NEG_EXTENT=NEG_EXTENT,
+  104           HEIGHT_POS_EXTENT=POS_EXTENT,
+  105           WIDTH=MAG_WIDTH,
+  106           BB_LENGTH=BB_LENGTH;
+  107 
+  108 magnetF_B: VERTICALFFAMAGNET,
+  109           B0=BF_B,
+  110           FIELD_INDEX=M_INDEX,
+  111           MAX_HORIZONTAL_POWER=MAX_HORIZONTAL_POWER,
+  112           END_LENGTH=F_END_LENGTH,
+  113           CENTRE_LENGTH=F_CENTRE_LENGTH*2,
+  114           HEIGHT_NEG_EXTENT=NEG_EXTENT,
+  115           HEIGHT_POS_EXTENT=POS_EXTENT,
+  116           WIDTH=MAG_WIDTH,
+  117           BB_LENGTH=BB_LENGTH;
+  118 
+  119 magnetD_A: VERTICALFFAMAGNET,
+  120           B0=BD_A,
+  121           FIELD_INDEX=M_INDEX,
+  122           MAX_HORIZONTAL_POWER=MAX_HORIZONTAL_POWER,
+  123           END_LENGTH=D_END_LENGTH,
+  124           CENTRE_LENGTH=D_CENTRE_LENGTH*2,
+  125           HEIGHT_NEG_EXTENT=NEG_EXTENT,
+  126           HEIGHT_POS_EXTENT=POS_EXTENT,
+  127           WIDTH=MAG_WIDTH,
+  128           BB_LENGTH=BB_LENGTH;
+  129 
+  130 magnetD_B: VERTICALFFAMAGNET,
+  131           B0=BD_B,
+  132           FIELD_INDEX=M_INDEX,
+  133           MAX_HORIZONTAL_POWER=MAX_HORIZONTAL_POWER,
+  134           END_LENGTH=D_END_LENGTH,
+  135           CENTRE_LENGTH=D_CENTRE_LENGTH*2,
+  136           HEIGHT_NEG_EXTENT=NEG_EXTENT,
+  137           HEIGHT_POS_EXTENT=POS_EXTENT,
+  138           WIDTH=MAG_WIDTH,
+  139           BB_LENGTH=BB_LENGTH;
+  140 
+  141 
+  142 /////////// Transform from point P0 to start of magnet BB with given centre //////////
+  143 OFFSET_X(delta_x, delta_y, tilt, bb_length, x_out): MACRO {
+  144     x_out = delta_x-bb_length*cos(tilt)/2.;
+  145 }
+  146 
+  147 OFFSET_Y(delta_x, delta_y, tilt, bb_length, y_out): MACRO {
+  148     y_out = delta_y-bb_length*sin(tilt)/2.;
+  149 }
+  150 
+  151 NORM_X(delta_x, delta_y, tilt, bb_length, tx_out): MACRO {
+  152     tx_out = cos(tilt)/2.;
+  153 }
+  154 
+  155 NORM_Y(delta_x, delta_y, tilt, bb_length, ty_out): MACRO {
+  156     ty_out = sin(tilt)/2.;
+  157 }
+  158 
+  159 MAGNET_OFFSET(delta_x, delta_y, tilt, bb_length, x_out, y_out, tx_out, ty_out): MACRO {
+  160     OFFSET_X(delta_x, delta_y, tilt, bb_length, x_out);
+  161     OFFSET_Y(delta_x, delta_y, tilt, bb_length, y_out);
+  162     NORM_X  (delta_x, delta_y, tilt, bb_length, tx_out);
+  163     NORM_Y  (delta_x, delta_y, tilt, bb_length, ty_out);
+  164 }
+  165 
+  166 // cartesian offset, including a bounding box
+  167 BUILD_CENTRE_OFFSET(name, delta_x, delta_y, tilt, bb_length): MACRO {
+  168     REAL x_out=0;
+  169     REAL y_out=0;
+  170     REAL tx_out=0;
+  171     REAL ty_out=0;
+  172 
+  173     MAGNET_OFFSET(delta_x, delta_y, tilt, bb_length, x_out, y_out, tx_out, ty_out);
+  174 
+  175     name: LOCAL_CARTESIAN_OFFSET,
+  176             end_position_x=x_out,
+  177             end_position_y=y_out,
+  178             end_normal_x=tx_out,
+  179             end_normal_y=ty_out;
+  180 }
+  181 
+  182 
+  183 // place an element on the circle having radius R at azimuthal angle phi
+  184 // offset from the circle by delta r and then tilt by delta phi
+  185 BUILD_AZIMUTHAL_OFFSET(name, radius, phi, delta_r, delta_phi, bb_length): MACRO {
+  186     REAL x_out=0;
+  187     REAL y_out=0;
+  188     REAL tx_out=0;
+  189     REAL ty_out=0;
+  190     //REAL cell_phi=2*PI/N_CELLS/2;
+  191 
+  192     // delta_x/y in the coordinate system of the ring
+  193     REAL delta_x = radius*sin(phi)+delta_r*sin(phi);
+  194     REAL delta_y = -radius*(1-cos(phi))+delta_r*cos(phi);
+  195 
+  196     MAGNET_OFFSET(delta_x, delta_y, -(phi+delta_phi), bb_length, x_out, y_out, tx_out, ty_out);
+  197 
+  198     name: LOCAL_CARTESIAN_OFFSET,
+  199             end_position_x=x_out,
+  200             end_position_y=y_out,
+  201             end_normal_x=tx_out,
+  202             end_normal_y=ty_out;
+  203 }
+  204 
+  205 
+  206 /////////// Transform from end of magnet BB back to the point P0 //////////
+  207 
+  208 R_OFFSET_X(delta_x, delta_y, tilt, bb_length, x_out): MACRO {
+  209     x_out =-delta_y*sin(tilt)-delta_x*cos(tilt)-bb_length/2.;
+  210 }
+  211 
+  212 R_OFFSET_Y(delta_x, delta_y, tilt, bb_length, y_out): MACRO {
+  213     y_out = -delta_y*cos(tilt)+delta_x*sin(tilt);
+  214 }
+  215 
+  216 R_NORM_X(delta_x, delta_y, tilt, bb_length, tx_out): MACRO {
+  217     tx_out = cos(tilt)/2.;
+  218 }
+  219 
+  220 R_NORM_Y(delta_x, delta_y, tilt, bb_length, ty_out): MACRO {
+  221     ty_out = -sin(tilt)/2.
+  222 }
+  223 
+  224 REVERSE_MAGNET_OFFSET(delta_x, delta_y, tilt, bb_length, x_out, y_out, tx_out, ty_out): MACRO {
+  225     R_OFFSET_X(delta_x, delta_y, tilt, bb_length, x_out);
+  226     R_OFFSET_Y(delta_x, delta_y, tilt, bb_length, y_out);
+  227     R_NORM_X  (delta_x, delta_y, tilt, bb_length, tx_out);
+  228     R_NORM_Y  (delta_x, delta_y, tilt, bb_length, ty_out);
+  229 }
+  230 
+  231 // cartesian offset, including a bounding box
+  232 // undoes a placement like BUILD_CENTRE_OFFSET; rectangular element
+  233 BUILD_CENTRE_REVERSE_OFFSET(name, delta_x, delta_y, tilt, bb_length): MACRO {
+  234     REAL x_out=0;
+  235     REAL y_out=0;
+  236     REAL tx_out=0;
+  237     REAL ty_out=0;
+  238 
+  239     REVERSE_MAGNET_OFFSET(delta_x, delta_y, tilt, bb_length, x_out, y_out, tx_out, ty_out);
+  240 
+  241     name: LOCAL_CARTESIAN_OFFSET,
+  242             end_position_x=x_out,
+  243             end_position_y=y_out,
+  244             end_normal_x=tx_out,
+  245             end_normal_y=ty_out;
+  246 }
+  247 
+  248 // place an element on the circle having radius R at azimuthal angle phi
+  249 // offset from the circle by delta r and then tilt by delta phi
+  250 BUILD_AZIMUTHAL_REVERSE_OFFSET(name, radius, phi, delta_r, delta_phi, bb_length): MACRO {
+  251     REAL x_out=0;
+  252     REAL y_out=0;
+  253     REAL tx_out=0;
+  254     REAL ty_out=0;
+  255     //REAL cell_phi=2*PI/N_CELLS/2;
+  256 
+  257     // delta_x/y in the coordinate system of the ring
+  258     REAL delta_x = radius*sin(phi)+delta_r*sin(phi);
+  259     REAL delta_y = -radius*(1-cos(phi))+delta_r*cos(phi);
+  260 
+  261     REVERSE_MAGNET_OFFSET(delta_x, delta_y, -(phi+delta_phi), bb_length, x_out, y_out, tx_out, ty_out);
+  262 
+  263     name: LOCAL_CARTESIAN_OFFSET,
+  264             end_position_x=x_out,
+  265             end_position_y=y_out,
+  266             end_normal_x=tx_out,
+  267             end_normal_y=ty_out;
+  268 }
+  269 
+  270 //////////////////////// AZIMUTHAL MODE /////////////////////////////////
+  271 
+  272 azimuthal_offset: LOCAL_CARTESIAN_OFFSET,
+  273             end_position_x=0,
+  274             end_position_y=0,
+  275             end_normal_x=cos(FFA_CELL_LENGTH/2),
+  276             end_normal_y=sin(FFA_CELL_LENGTH/2); 
+  277 
+  278 segment_offset: LOCAL_CARTESIAN_OFFSET,
+  279             end_position_x=0,
+  280             end_position_y=0,
+  281             end_normal_x=cos(FFA_CELL_LENGTH/2),
+  282             end_normal_y=-sin(FFA_CELL_LENGTH/2);
+  283 
+  284 azimuthal: Line = (azimuthal_offset);
+  285 segment: Line = (segment_offset);
+  286 
+  287 ///////////////////////// PLACEMENTS FOR MAGNET VD //////////////////////
+  288 
+  289 REAL F_BB=BB_LENGTH;
+  290 REAL D_BB=BB_LENGTH;
+  291 REAL F1_POS=DRIFT_LENGTH/2.+F_LENGTH/2.;
+  292 REAL F2_POS=DRIFT_LENGTH/2.+F_LENGTH+FD_GAP+D_LENGTH+FD_GAP+F_LENGTH/2.;
+  293 REAL F_TILT=F_TILT_ANGLE*DEGREE;
+  294 REAL D_POS=DRIFT_LENGTH/2.+F_LENGTH+FD_GAP+D_LENGTH/2.;
+  295 REAL CELL_LENGTH=DRIFT_LENGTH/2.+F_LENGTH+FD_GAP+D_LENGTH+FD_GAP+F_LENGTH+DRIFT_LENGTH/2.;
+  296 REAL BF_A_OFFSET=BF_OFFSET; // horizontal offset for bf_a
+  297 REAL BF_B_OFFSET=-1*BF_OFFSET; // horizontal offset for bf_b (not working when passes as arg to function)
+  298 REAL BD_A_OFFSET=BD_OFFSET; // horizontal offset for bf_a
+  299 REAL BD_B_OFFSET=-1*BD_OFFSET; // horizontal offset for bf_b (not working when passes as arg to function)
+  300 
+  301 // BUILD_CENTRE_OFFSET(name, delta_x, delta_y, tilt, bb_length)
+  302 BUILD_CENTRE_OFFSET(f1_a_offset, F1_POS, BF_A_OFFSET, F_TILT, F_BB);
+  303 BUILD_CENTRE_REVERSE_OFFSET(f1_a_offset_back, F1_POS, BF_A_OFFSET, F_TILT, F_BB);
+  304 BUILD_CENTRE_OFFSET(f1_b_offset, F1_POS, BF_B_OFFSET, F_TILT, F_BB);
+  305 BUILD_CENTRE_REVERSE_OFFSET(f1_b_offset_back, F1_POS, BF_B_OFFSET, F_TILT, F_BB);
+  306 
+  307 BUILD_CENTRE_OFFSET(d_a_offset, D_POS, BD_A_OFFSET, 0, D_BB);
+  308 BUILD_CENTRE_REVERSE_OFFSET(d_a_offset_back, D_POS, BD_A_OFFSET, 0, D_BB);
+  309 BUILD_CENTRE_OFFSET(d_b_offset, D_POS, BD_B_OFFSET, 0, D_BB);
+  310 BUILD_CENTRE_REVERSE_OFFSET(d_b_offset_back, D_POS, BD_B_OFFSET, 0, D_BB);
+  311 
+  312 BUILD_CENTRE_OFFSET(f2_a_offset, F2_POS, BF_A_OFFSET, -F_TILT, F_BB);
+  313 BUILD_CENTRE_REVERSE_OFFSET(f2_a_offset_back, F2_POS, BF_A_OFFSET, -F_TILT, F_BB);
+  314 BUILD_CENTRE_OFFSET(f2_b_offset, F2_POS, BF_B_OFFSET, -F_TILT, F_BB);
+  315 BUILD_CENTRE_REVERSE_OFFSET(f2_b_offset_back, F2_POS, BF_B_OFFSET, -F_TILT, F_BB);
+  316 
+  317 BUILD_CENTRE_OFFSET(cell_offset, CELL_LENGTH, 0., -FFA_CELL_LENGTH, 0);
+  318 value, VALUE={CELL_LENGTH};
+OPAL> 
+OPAL> value: {CELL_LENGTH} = {2.5}
+OPAL> 
+  319 
+  320 ///////////////////////////// TRIPLET CELL ///////////////////////////////
+  321 
+  322 cell: Line = (f1_a_offset, magnetF_A, f1_a_offset_back,
+  323               f1_b_offset, magnetF_B, f1_b_offset_back,
+  324               d_a_offset, magnetD_A, d_a_offset_back,
+  325               d_b_offset, magnetD_B, d_b_offset_back,
+  326               f2_a_offset, magnetF_A, f2_a_offset_back,
+  327               f2_b_offset, magnetF_B, f2_b_offset_back,
+  328               cell_offset);
+  329 
+  330 
+  331 ////////////////// PROBES
+  332 REAL RING_PROBE_PHI_OFFSET=0.0;
+  333 
+  334 REAL THIS_PROBE_PHI=0.0;
+  335 BUILD_PROBE(RingProbe01, THIS_PROBE_PHI, 0);
+  336 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  337 BUILD_PROBE(RingProbe02, THIS_PROBE_PHI, 0);
+  338 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  339 BUILD_PROBE(RingProbe03, THIS_PROBE_PHI, 0);
+  340 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  341 BUILD_PROBE(RingProbe04, THIS_PROBE_PHI, 0);
+  342 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  343 BUILD_PROBE(RingProbe05, THIS_PROBE_PHI, 0);
+  344 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  345 BUILD_PROBE(RingProbe06, THIS_PROBE_PHI, 0);
+  346 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  347 BUILD_PROBE(RingProbe07, THIS_PROBE_PHI, 0);
+  348 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  349 BUILD_PROBE(RingProbe08, THIS_PROBE_PHI, 0);
+  350 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  351 BUILD_PROBE(RingProbe09, THIS_PROBE_PHI, 0);
+  352 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  353 BUILD_PROBE(RingProbe10, THIS_PROBE_PHI, 0);
+  354 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  355 BUILD_PROBE(RingProbe11, THIS_PROBE_PHI, 0);
+  356 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  357 BUILD_PROBE(RingProbe12, THIS_PROBE_PHI, 0);
+  358 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  359 BUILD_PROBE(RingProbe13, THIS_PROBE_PHI, 0);
+  360 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  361 BUILD_PROBE(RingProbe14, THIS_PROBE_PHI, 0);
+  362 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  363 BUILD_PROBE(RingProbe15, THIS_PROBE_PHI, 0);
+  364 THIS_PROBE_PHI = EVAL(THIS_PROBE_PHI+FFA_CELL_LENGTH);
+  365 
+  366 
+  367 ringprobe: Line = (RingProbe01, RingProbe02, RingProbe03, RingProbe04, RingProbe05, 
+  368                    RingProbe06, RingProbe07, RingProbe08, RingProbe09, RingProbe10);
+  369 
+  370 IF (DO_MAGNET_FIELD_MAPS) {
+  371     DUMPEMFIELDS, COORDINATE_SYSTEM=CYLINDRICAL, FILE_NAME="FieldMapRPHI.dat",
+  372         R_START=3.5, R_STEPS=361, DR=0.0025,
+  373         PHI_START=-24.*DEGREE, PHI_STEPS=360, DPHI=0.25*DEGREE,
+  374         Z_START=0, Z_STEPS=1, DZ=0.100,
+  375         T_START=0, T_STEPS=1, DT=1.;
+  376 
+  377     DUMPFIELDS, FILE_NAME="FieldMapXY.dat",
+  378                 X_START=MAP_C_X_MIN, X_STEPS=1001, DX=MAP_C_DX,
+  379                 Y_START=MAP_C_Y_MIN, Y_STEPS=1001, DY=MAP_C_DY,
+  380                 Z_START=0.0, Z_STEPS=1, DZ=1e-3;
+  381 }
+  382 
+  383 REAL BEAM_PHI_INIT_DEG=BEAM_PHI_INIT*FFA_CELL_LENGTH*360/2/PI;
+  384 ringdef: RINGDEFINITION, HARMONIC_NUMBER=1, LAT_RINIT=R0, LAT_PHIINIT=0,
+  385          LAT_THETAINIT=0., BEAM_PHIINIT=BEAM_PHI_INIT_DEG, BEAM_PRINIT=0,
+  386          BEAM_RINIT=0.0, SYMMETRY=1, RFFREQ=1, IS_CLOSED=false,
+  387          MIN_R=0., MAX_R=10;
+  388 
+  389 // initial azimuthal placement
+  390 start: LOCAL_CARTESIAN_OFFSET,
+  391             end_position_x=R0,
+  392             end_position_y=R0,
+  393             end_normal_x=0.,
+  394             end_normal_y=-1.; 
+Ippl> Replacing the object "START".
+  395 
+  396 l1: Line = (ringdef, ringprobe, start,
+  397             segment, 
+  398             cell, cell, cell, cell, cell,
+  399             cell, cell, cell, cell, cell,
+  400             null
+  401            );
+  402 
+  403 Dist1: DISTRIBUTION, TYPE=fromfile, FNAME="disttest.dat", INPUTMOUNITS=NONE;
+  404 
+  405 Fs1:FIELDSOLVER, FSTYPE=None, MX=5, MY=5, MT=5,
+  406                  PARFFTX=true, PARFFTY=false, PARFFTT=false,
+  407                  BCFFTX=open, BCFFTY=open, BCFFTT=open,BBOXINCR=2;
+  408 
+  409 //// STEP SIZE ////
+  410 
+  411 REAL B_FREQ=1; // 1 MHz
+  412 REAL SPEED=C_LIGHT*(P0/(E0+P_MASS));
+  413 REAL STEP_SIZE_NS=STEP_SIZE/SPEED;
+  414 REAL STEPS_PER_TURN=1000/STEP_SIZE_NS/B_FREQ; // (this is really steps per B_FREQ)
+  415 REAL MAX_STEPS=2*PI*R0*N_TURNS/STEP_SIZE;
+  416 
+  417 beam1: BEAM, MASS=P_MASS/1000., CHARGE=P_CHARGE, pc=P0/1000., NPART=N_PARTICLES, BCURRENT=1, BFREQ=B_FREQ;
+  418 
+  419 VALUE, VALUE={E0, P0, P_MASS};
+OPAL> 
+OPAL> value: {E0,P0,P_MASS} = {3, 75.0908, 938.272}
+OPAL> 
+  420 
+  421 TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=MAX_STEPS, STEPSPERTURN=STEPS_PER_TURN;
+  422 RUN, METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
+Ippl> no solver attached
+OPAL> * Mass of simulation particle= 1.46406e+12 GeV/c^2
+OPAL> * Charge of simulation particle= 2.5e-07 [C]
+Ippl> Creating new file for data: VerticalSectorFFA.stat
+Ippl> Creating new file for data: VerticalSectorFFA.lbal
+OPAL> * ********************************************************************************** 
+OPAL> * Selected Tracking Method == CYCLOTRON-T, NEW TRACK
+OPAL> * ********************************************************************************** 
+OPAL> * Number of neighbour bunches= 1
+OPAL> * DT                         = 1e-12
+OPAL> * MAXSTEPS                   = 24145
+OPAL> * Phase space dump frequency = 100000
+OPAL> * Statistics dump frequency  = 100000 w.r.t. the time step.
+OPAL> * ********************************************************************************** 
+OPAL> 
+OPAL> * ************* D I S T R I B U T I O N ********************************************
+OPAL> * 
+OPAL> * Number of particles: 4
+OPAL> * 
+OPAL> * Distribution type: FROMFILE
+OPAL> * 
+OPAL> * Input file:        disttest.dat
+OPAL> * 
+OPAL> * Distribution is injected.
+OPAL> * 
+OPAL> * **********************************************************************************
+OPAL> 
+OPAL> * ************* B E A M ************************************************************ 
+OPAL> * BEAM        BEAM1
+OPAL> * PARTICLE    
+OPAL> * CURRENT     1 A
+OPAL> * FREQUENCY   1 MHz
+OPAL> * CHARGE      +e * 1 
+OPAL> * REST MASS   0.938272 GeV
+OPAL> * MOMENTUM    0.0750908
+OPAL> * NPART       4
+OPAL> * ********************************************************************************** 
+OPAL> 
+OPAL> * ************* F I E L D S O L V E R ********************************************** 
+OPAL> * FIELDSOLVER  FS1
+OPAL> * TYPE         NONE
+OPAL> * N-PROCESSORS 1
+OPAL> * MX           5
+OPAL> * MY           5
+OPAL> * MT           5
+OPAL> * BBOXINCR     2
+OPAL> * XDIM         parallel  
+OPAL> * YDIM         serial  
+OPAL> * Z(T)DIM      serial  
+OPAL> * ********************************************************************************** 
+OPAL> 
+OPAL> * ----------------------------- Adding Ring ------------------------------ *
+OPAL> * Initial beam radius = 0 [mm] 
+OPAL> * Initial gamma = 1.0032
+OPAL> * Initial beta = 0.0797759
+OPAL> * Total reference momentum   = 80.031 [MCU]
+OPAL> * Reference azimuthal momentum  = 80.031 [MCU]
+OPAL> * Reference radial momentum     = 0 [MCU]
+OPAL> * 1 fold field symmetry 
+OPAL> * Harmonic number h= 1 
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE01
+OPAL> * XStart  = 3.04508 [m]
+OPAL> * XEnd    = 5.04508 [m]
+OPAL> * YStart  = 0 [m]
+OPAL> * YEnd    = 0 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE02
+OPAL> * XStart  = 2.46353 [m]
+OPAL> * XEnd    = 4.08156 [m]
+OPAL> * YStart  = 1.78986 [m]
+OPAL> * YEnd    = 2.96543 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE03
+OPAL> * XStart  = 0.940983 [m]
+OPAL> * XEnd    = 1.55902 [m]
+OPAL> * YStart  = 2.89605 [m]
+OPAL> * YEnd    = 4.79816 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE04
+OPAL> * XStart  = -0.940983 [m]
+OPAL> * XEnd    = -1.55902 [m]
+OPAL> * YStart  = 2.89605 [m]
+OPAL> * YEnd    = 4.79816 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE05
+OPAL> * XStart  = -2.46353 [m]
+OPAL> * XEnd    = -4.08156 [m]
+OPAL> * YStart  = 1.78986 [m]
+OPAL> * YEnd    = 2.96543 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE06
+OPAL> * XStart  = -3.04508 [m]
+OPAL> * XEnd    = -5.04508 [m]
+OPAL> * YStart  = 3.72915e-16 [m]
+OPAL> * YEnd    = 6.17845e-16 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE07
+OPAL> * XStart  = -2.46353 [m]
+OPAL> * XEnd    = -4.08156 [m]
+OPAL> * YStart  = -1.78986 [m]
+OPAL> * YEnd    = -2.96543 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE08
+OPAL> * XStart  = -0.940983 [m]
+OPAL> * XEnd    = -1.55902 [m]
+OPAL> * YStart  = -2.89605 [m]
+OPAL> * YEnd    = -4.79816 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE09
+OPAL> * XStart  = 0.940983 [m]
+OPAL> * XEnd    = 1.55902 [m]
+OPAL> * YStart  = -2.89605 [m]
+OPAL> * YEnd    = -4.79816 [m]
+OPAL> * Initialize probe
+OPAL> * ------------------------------  Probe ------------------------------
+OPAL> * Name    = RINGPROBE10
+OPAL> * XStart  = 2.46353 [m]
+OPAL> * XEnd    = 4.08156 [m]
+OPAL> * YStart  = -1.78986 [m]
+OPAL> * YEnd    = -2.96543 [m]
+OPAL> * Initialize probe
+OPAL> * Added START to Ring
+OPAL> * Start position (0, 4045.08, 0) normal (1, -0, 0), phi 1.5708
+OPAL> * End position   (4045.08, 0, 0) normal (2.83277e-16, 1, 0)
+OPAL> * Added SEGMENT_OFFSET to Ring
+OPAL> * Start position (4045.08, 0, 0) normal (2.83277e-16, 1, 0), phi 2.83277e-16
+OPAL> * End position   (4045.08, 0, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (4045.08, 0, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (5018.49, -2995.83, 0) normal (-0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (5018.49, -2995.83, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (2546.35, 4612.62, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (2546.35, 4612.62, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 0, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (4045.08, 0, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (5018.49, -2995.83, 0) normal (-0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (5018.49, -2995.83, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (2546.35, 4612.62, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (2546.35, 4612.62, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 0, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (4045.08, 0, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4894.88, -2615.41, 0) normal (-0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (4894.88, -2615.41, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (2422.75, 4993.05, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (2422.75, 4993.05, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 9.09495e-13, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (4045.08, 9.09495e-13, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4894.88, -2615.41, 0) normal (-0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (4894.88, -2615.41, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (2422.75, 4993.05, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (2422.75, 4993.05, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 9.09495e-13, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (4045.08, 9.09495e-13, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4771.27, -2234.98, 0) normal (-0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (4771.27, -2234.98, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (2299.14, 5373.47, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (2299.14, 5373.47, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 1.81899e-12, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (4045.08, 1.81899e-12, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4771.27, -2234.98, 0) normal (-0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (4771.27, -2234.98, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (2299.14, 5373.47, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (2299.14, 5373.47, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 1.81899e-12, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (4045.08, 1.81899e-12, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (5820.95, 526.118, 0) normal (-0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (5820.95, 526.118, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (-651.19, 5228.4, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (-651.19, 5228.4, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (5820.95, 526.118, 0) normal (-0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (5820.95, 526.118, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (-651.19, 5228.4, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (-651.19, 5228.4, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (5497.34, 761.232, 0) normal (-0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (5497.34, 761.232, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (-974.797, 5463.51, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (-974.797, 5463.51, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (5497.34, 761.232, 0) normal (-0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (5497.34, 761.232, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (-974.797, 5463.51, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (-974.797, 5463.51, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (5173.73, 996.346, 0) normal (-0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (5173.73, 996.346, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (-1298.4, 5698.63, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (-1298.4, 5698.63, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (5173.73, 996.346, 0) normal (-0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (5173.73, 996.346, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (-1298.4, 5698.63, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (-1298.4, 5698.63, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (3272.54, 2377.64, 0) normal (-0.809017, 0.587785, 0), phi -0.942478
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (4400, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (4400, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-3600, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (-3600, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (4400, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (4400, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-3600, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (-3600, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (4000, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (4000, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-4000, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (-4000, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (4000, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (4000, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-4000, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (-4000, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (3600, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (3600, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-4400, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (-4400, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (3600, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (3600, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-4400, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (-4400, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (1250, 3847.1, 0) normal (-1, -5.55112e-17, 0), phi -1.5708
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (1298.4, 5698.63, 0) normal (-0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (1298.4, 5698.63, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-5173.73, 996.346, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (-5173.73, 996.346, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (1298.4, 5698.63, 0) normal (-0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (1298.4, 5698.63, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-5173.73, 996.346, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (-5173.73, 996.346, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (974.797, 5463.51, 0) normal (-0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (974.797, 5463.51, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-5497.34, 761.232, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (-5497.34, 761.232, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (974.797, 5463.51, 0) normal (-0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (974.797, 5463.51, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-5497.34, 761.232, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (-5497.34, 761.232, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (651.19, 5228.4, 0) normal (-0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (651.19, 5228.4, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-5820.95, 526.118, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (-5820.95, 526.118, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (651.19, 5228.4, 0) normal (-0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (651.19, 5228.4, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-5820.95, 526.118, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (-5820.95, 526.118, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (-1250, 3847.1, 0) normal (-0.809017, -0.587785, 0), phi -2.19911
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-2299.14, 5373.47, 0) normal (-0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-2299.14, 5373.47, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-4771.27, -2234.98, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (-4771.27, -2234.98, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-2299.14, 5373.47, 0) normal (-0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-2299.14, 5373.47, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-4771.27, -2234.98, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (-4771.27, -2234.98, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-2422.75, 4993.05, 0) normal (-0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (-2422.75, 4993.05, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-4894.88, -2615.41, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (-4894.88, -2615.41, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-2422.75, 4993.05, 0) normal (-0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (-2422.75, 4993.05, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-4894.88, -2615.41, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (-4894.88, -2615.41, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-2546.35, 4612.62, 0) normal (-0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-2546.35, 4612.62, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-5018.49, -2995.83, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (-5018.49, -2995.83, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-2546.35, 4612.62, 0) normal (-0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-2546.35, 4612.62, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-5018.49, -2995.83, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (-5018.49, -2995.83, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (-3272.54, 2377.64, 0) normal (-0.309017, -0.951057, 0), phi -2.82743
+OPAL> * End position   (-4045.08, 6.82121e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (-4045.08, 6.82121e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-5018.49, 2995.83, 0) normal (0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-5018.49, 2995.83, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-2546.35, -4612.62, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (-2546.35, -4612.62, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-5018.49, 2995.83, 0) normal (0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-5018.49, 2995.83, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-2546.35, -4612.62, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (-2546.35, -4612.62, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4894.88, 2615.41, 0) normal (0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (-4894.88, 2615.41, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-2422.75, -4993.05, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (-2422.75, -4993.05, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4894.88, 2615.41, 0) normal (0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (-4894.88, 2615.41, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-2422.75, -4993.05, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (-2422.75, -4993.05, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (-4045.08, 7.27596e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4771.27, 2234.98, 0) normal (0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-4771.27, 2234.98, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-2299.14, -5373.47, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (-2299.14, -5373.47, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4045.08, 6.36646e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (-4045.08, 6.36646e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4771.27, 2234.98, 0) normal (0.309017, -0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-4771.27, 2234.98, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-2299.14, -5373.47, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (-2299.14, -5373.47, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-4045.08, 5.45697e-12, 0) normal (0.309017, -0.951057, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (-4045.08, 5.45697e-12, 0) normal (0.309017, -0.951057, 0), phi 2.82743
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-5820.95, -526.118, 0) normal (0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-5820.95, -526.118, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (651.19, -5228.4, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (651.19, -5228.4, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-5820.95, -526.118, 0) normal (0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-5820.95, -526.118, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (651.19, -5228.4, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (651.19, -5228.4, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-5497.34, -761.232, 0) normal (0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (-5497.34, -761.232, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (974.797, -5463.51, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (974.797, -5463.51, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-5497.34, -761.232, 0) normal (0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (-5497.34, -761.232, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (974.797, -5463.51, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (974.797, -5463.51, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-5173.73, -996.346, 0) normal (0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-5173.73, -996.346, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (1298.4, -5698.63, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (1298.4, -5698.63, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-5173.73, -996.346, 0) normal (0.809017, -0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-5173.73, -996.346, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (1298.4, -5698.63, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (1298.4, -5698.63, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (-3272.54, -2377.64, 0) normal (0.809017, -0.587785, 0), phi 2.19911
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-4400, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-4400, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (3600, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (3600, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-4400, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-4400, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (3600, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (3600, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-4000, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (-4000, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (4000, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (4000, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-4000, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (-4000, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (4000, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (4000, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-3600, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-3600, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (4400, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (4400, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-3600, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-3600, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (4400, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (4400, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (-1250, -3847.1, 0) normal (1, 6.66134e-16, 0), phi 1.5708
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (-1298.4, -5698.63, 0) normal (0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-1298.4, -5698.63, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (5173.73, -996.346, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (5173.73, -996.346, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (-1298.4, -5698.63, 0) normal (0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-1298.4, -5698.63, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (5173.73, -996.346, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (5173.73, -996.346, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (-974.797, -5463.51, 0) normal (0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (-974.797, -5463.51, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (5497.34, -761.232, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (5497.34, -761.232, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (-974.797, -5463.51, 0) normal (0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (-974.797, -5463.51, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (5497.34, -761.232, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (5497.34, -761.232, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (-651.19, -5228.4, 0) normal (0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (-651.19, -5228.4, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (5820.95, -526.118, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (5820.95, -526.118, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (-651.19, -5228.4, 0) normal (0.809017, 0.587785, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (-651.19, -5228.4, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (5820.95, -526.118, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (5820.95, -526.118, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (1250, -3847.1, 0) normal (0.809017, 0.587785, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (1250, -3847.1, 0) normal (0.809017, 0.587785, 0), phi 0.942478
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F1_A_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (2299.14, -5373.47, 0) normal (0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (2299.14, -5373.47, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (4771.27, 2234.98, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F1_A_OFFSET_BACK to Ring
+OPAL> * Start position (4771.27, 2234.98, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F1_B_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (2299.14, -5373.47, 0) normal (0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (2299.14, -5373.47, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (4771.27, 2234.98, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F1_B_OFFSET_BACK to Ring
+OPAL> * Start position (4771.27, 2234.98, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added D_A_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (2422.75, -4993.05, 0) normal (0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_A to Ring
+OPAL> * Start position (2422.75, -4993.05, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (4894.88, 2615.41, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added D_A_OFFSET_BACK to Ring
+OPAL> * Start position (4894.88, 2615.41, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added D_B_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (2422.75, -4993.05, 0) normal (0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETD_B to Ring
+OPAL> * Start position (2422.75, -4993.05, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (4894.88, 2615.41, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added D_B_OFFSET_BACK to Ring
+OPAL> * Start position (4894.88, 2615.41, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F2_A_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (2546.35, -4612.62, 0) normal (0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_A to Ring
+OPAL> * Start position (2546.35, -4612.62, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (5018.49, 2995.83, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F2_A_OFFSET_BACK to Ring
+OPAL> * Start position (5018.49, 2995.83, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F2_B_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (2546.35, -4612.62, 0) normal (0.309017, 0.951057, 0)
+OPAL> Adding Vertical FFA Magnet
+OPAL> * Added MAGNETF_B to Ring
+OPAL> * Start position (2546.35, -4612.62, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (5018.49, 2995.83, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added F2_B_OFFSET_BACK to Ring
+OPAL> * Start position (5018.49, 2995.83, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0)
+OPAL> * Added CELL_OFFSET to Ring
+OPAL> * Start position (3272.54, -2377.64, 0) normal (0.309017, 0.951057, 0), phi 0.314159
+OPAL> * End position   (4045.08, 5.45697e-12, 0) normal (-0.309017, 0.951057, 0)
+OPAL> * Added NULL to Ring
+OPAL> * Start position (4045.08, 5.45697e-12, 0) normal (-0.309017, 0.951057, 0), phi -0.314159
+OPAL> * End position   (4045.08, 5.45697e-12, 0) normal (-0.309017, 0.951057, 0)
+OPAL > Applying symmetry to Ring
+OPAL> * ---------------------------------------------------
+OPAL> * The selected Beam line elements are :
+OPAL> * -> Ring
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * -> Probe
+OPAL> * ---------------------------------------------------
+OPAL> * 4th order Runge-Kutta integrator
+OPAL> * Before repartition:  min local particle number 4 max local particle number: 4
+OPAL> * After repartition:   min local particle number 4 max local particle number: 4
+OPAL> 
+OPAL> * *********************** Bunch information in local frame: ************************
+OPAL> * ************** B U N C H ********************************************************* 
+OPAL> * NP              = 4
+OPAL> * Qtot            =     1000.000 [nC]         Qi    =      250.000 [nC]
+OPAL> * Ekin            =       3.000 [MeV]         dEkin =        0.000 [eV]
+OPAL> * rmax            = (    934.85505 ,      0.00000 ,     66.61989 ) [mm]
+OPAL> * rmin            = (     -2.80457 ,      0.00000 ,     -0.02221 ) [m]
+OPAL> * rms beam size   = (         -nan ,      0.00000 ,         -nan ) [m]
+OPAL> * rms momenta     = (  0.00000e+00 ,  0.00000e+00 ,  0.00000e+00 ) [beta gamma]
+OPAL> * mean position   = (    934.85505 ,      0.00000 ,    -22.20663 ) [mm]
+OPAL> * mean momenta    = (  0.00000e+00 ,  8.00310e-02 ,  0.00000e+00 ) [beta gamma]
+OPAL> * rms emittance   = ( -0.00000e+00 ,  0.00000e+00 , -0.00000e+00 ) (not normalized)
+OPAL> * rms correlation = (         -nan ,  0.00000e+00 ,         -nan )
+OPAL> * hr              = (    934.85505 ,      0.00000 ,     22.20663 ) [mm]
+OPAL> * dh              =   1.00000e-10 [%]
+OPAL> * t               =        0.000 [fs]         dT    =       41.785 [ps]
+OPAL> * spos            =        0.000 [um]
+OPAL> * ********************************************************************************** 
+OPAL> 
+OPAL> 
+OPAL> * Phase space dump 0 (global frame) at integration step 0
+OPAL> * T = 0 ns, Live Particles: 4
+OPAL> * E = 3 MeV, beta * gamma = 0.080031
+OPAL> * Bunch position: R =  0 mm, Theta = 0 Deg, Z = 0 mm
+OPAL> * Local Azimuth = 0 Deg, Local Elevation = 0 Deg
+OPAL> 
+OPAL> * *********************** Bunch information in global frame: ***********************
+OPAL> * ************** B U N C H ********************************************************* 
+OPAL> * NP              = 4
+OPAL> * Qtot            =     1000.000 [nC]         Qi    =      250.000 [nC]
+OPAL> * Ekin            =       3.000 [MeV]         dEkin =        0.000 [eV]
+OPAL> * rmax            = (      3.73942 ,      0.00000 ,      0.00000 ) [m]
+OPAL> * rmin            = (      0.00000 ,      0.00000 ,    -88.82652 ) [mm]
+OPAL> * rms beam size   = (         -nan ,      0.00000 ,      0.00000 ) [m]
+OPAL> * rms momenta     = (  0.00000e+00 ,  0.00000e+00 ,  0.00000e+00 ) [beta gamma]
+OPAL> * mean position   = (      3.73942 ,      0.00000 ,     -0.08883 ) [m]
+OPAL> * mean momenta    = (  0.00000e+00 ,  8.00310e-02 ,  0.00000e+00 ) [beta gamma]
+OPAL> * rms emittance   = ( -0.00000e+00 ,  0.00000e+00 ,  0.00000e+00 ) (not normalized)
+OPAL> * rms correlation = (         -nan ,  0.00000e+00 ,  0.00000e+00 )
+OPAL> * hr              = (    934.85505 ,      0.00000 ,     22.20663 ) [mm]
+OPAL> * dh              =   1.00000e-10 [%]
+OPAL> * t               =        0.000 [fs]         dT    =       41.785 [ps]
+OPAL> * spos            =        0.000 [um]
+OPAL> * ********************************************************************************** 
+OPAL> 
+OPAL> * Beginning of this run is at t = 0 [ns]
+OPAL> * The time step is set to dt = 0.041785 [ns]
+OPAL> * Single particle trajectory dump frequency is set to 1
+OPAL> * The frequency to solve space charge fields is set to 1
+OPAL> * The repartition frequency is set to 10
+OPAL> 
+OPAL> * --------------------------------- Start tracking ------------------------------------ *
+OPAL > RINGDEF: particle 0 at ( 0.20619 , 9.99798 , -0.23405 ) m out of the field map boundary
+OPAL> At step 10012, lost 1 particles on stripper, collimator, septum, geometry, out of cyclotron aperture or beam stripping
+Warning> !!! Extremely high particle density detected !!!
+OPAL> 
+OPAL> *** Finished turn 1, Total number of live particles: 3
+OPAL> 
+OPAL> * ---------------------------- DONE TRACKING PARTICLES -------------------------------- * 
+OPAL> *
+OPAL> * Finished during turn 2 (1 turns completed)
+OPAL> * Cave: Turn number is not correct for restart mode
+OPAL> 
+OPAL> * *********************** Bunch information in global frame: ***********************
+OPAL> * ************** B U N C H ********************************************************* 
+OPAL> * NP              = 3
+OPAL> * Qtot            =      750.000 [nC]         Qi    =      250.000 [nC]
+OPAL> * Ekin            =       3.000 [MeV]         dEkin =        0.000 [eV]
+OPAL> * rmax            = (      3.74291 ,     -0.09216 ,     -0.08168 ) [m]
+OPAL> * rmin            = (      3.74291 ,     -0.09216 ,     -0.08168 ) [m]
+OPAL> * rms beam size   = (      0.00000 ,         -nan ,      0.00000 ) [um]
+OPAL> * rms momenta     = (  0.00000e+00 ,  0.00000e+00 ,  0.00000e+00 ) [beta gamma]
+OPAL> * mean position   = (      3.74291 ,     -0.09216 ,     -0.08168 ) [m]
+OPAL> * mean momenta    = ( -4.96488e-05 ,  8.00272e-02 ,  7.78809e-04 ) [beta gamma]
+OPAL> * rms emittance   = (  0.00000e+00 , -0.00000e+00 ,  0.00000e+00 ) (not normalized)
+OPAL> * rms correlation = (  0.00000e+00 ,         -nan , -0.00000e+00 )
+OPAL> * hr              = (      0.00005 ,      0.00005 ,      0.00005 ) [um]
+OPAL> * dh              =   1.00000e-10 [%]
+OPAL> * t               =        1.009 [ms]         dT    =       41.785 [ps]
+OPAL> * spos            =        24.129 [m]
+OPAL> * ********************************************************************************** 
+OPAL> 
+OPAL> * ----------------------------------------------- *
+OPAL> * Finalizing i.e. write data and close files :
+OPAL> * Probe goes offline RINGPROBE01
+Ippl> Save RINGPROBE01.peaks and RINGPROBE01.hist
+OPAL> * Probe goes offline RINGPROBE02
+Ippl> Save RINGPROBE02.peaks and RINGPROBE02.hist
+OPAL> * Probe goes offline RINGPROBE03
+Ippl> Save RINGPROBE03.peaks and RINGPROBE03.hist
+OPAL> * Probe goes offline RINGPROBE04
+Ippl> Save RINGPROBE04.peaks and RINGPROBE04.hist
+OPAL> * Probe goes offline RINGPROBE05
+Ippl> Save RINGPROBE05.peaks and RINGPROBE05.hist
+OPAL> * Probe goes offline RINGPROBE06
+Ippl> Save RINGPROBE06.peaks and RINGPROBE06.hist
+OPAL> * Probe goes offline RINGPROBE07
+Ippl> Save RINGPROBE07.peaks and RINGPROBE07.hist
+OPAL> * Probe goes offline RINGPROBE08
+Ippl> Save RINGPROBE08.peaks and RINGPROBE08.hist
+OPAL> * Probe goes offline RINGPROBE09
+Ippl> Save RINGPROBE09.peaks and RINGPROBE09.hist
+OPAL> * Probe goes offline RINGPROBE10
+Ippl> Save RINGPROBE10.peaks and RINGPROBE10.hist
+OPAL> * ----------------------------------------------- *
+  423 ENDTRACK;
+  424 STOP;
+OPAL> * End of input stream "VerticalSectorFFA".
+Timings> -----------------------------------------------------------------
+Timings>      Timing results for 1 nodes:
+Timings> -----------------------------------------------------------------
+Timings> mainTimer........... Wall tot =    20.2211, CPU tot =      19.56
+Timings> 
+Timings> Binaryrepart........ Wall max = 2.6712e-05, CPU max =          0
+Timings>                      Wall avg = 2.6712e-05, CPU avg =          0
+Timings>                      Wall min = 2.6712e-05, CPU min =          0
+Timings> 
+Timings> Boundingbox......... Wall max = 4.3334e-05, CPU max =          0
+Timings>                      Wall avg = 4.3334e-05, CPU avg =          0
+Timings>                      Wall min = 4.3334e-05, CPU min =          0
+Timings> 
+Timings> Boundingbox-bounds.. Wall max =  5.013e-06, CPU max =          0
+Timings>                      Wall avg =  5.013e-06, CPU avg =          0
+Timings>                      Wall min =  5.013e-06, CPU min =          0
+Timings> 
+Timings> Boundingbox-update.. Wall max =  4.208e-06, CPU max =          0
+Timings>                      Wall avg =  4.208e-06, CPU avg =          0
+Timings>                      Wall min =  4.208e-06, CPU min =          0
+Timings> 
+Timings> Compute Statistics.. Wall max = 4.1855e-05, CPU max =          0
+Timings>                      Wall avg = 4.1855e-05, CPU avg =          0
+Timings>                      Wall min = 4.1855e-05, CPU min =          0
+Timings> 
+Timings> Create Distr........ Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> DeleteParticles..... Wall max = 0.00997111, CPU max =       0.01
+Timings>                      Wall avg = 0.00997111, CPU avg =       0.01
+Timings>                      Wall min = 0.00997111, CPU min =       0.01
+Timings> 
+Timings> Dump................ Wall max =   0.264405, CPU max =       0.21
+Timings>                      Wall avg =   0.264405, CPU avg =       0.21
+Timings>                      Wall min =   0.264405, CPU min =       0.21
+Timings> 
+Timings> Fast inside test.... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> Frametransform...... Wall max = 1.0217e-05, CPU max =          0
+Timings>                      Wall avg = 1.0217e-05, CPU avg =          0
+Timings>                      Wall min = 1.0217e-05, CPU min =          0
+Timings> 
+Timings> Histogram........... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> Initialize geometry. Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> Inside test......... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> Integration......... Wall max =    5.12567, CPU max =       5.13
+Timings>                      Wall avg =    5.12567, CPU avg =       5.13
+Timings>                      Wall min =    5.12567, CPU min =       5.13
+Timings> 
+Timings> Load Distr.......... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> Particle Inside..... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> PluginElements...... Wall max =  0.0567729, CPU max =       0.05
+Timings>                      Wall avg =  0.0567729, CPU avg =       0.05
+Timings>                      Wall min =  0.0567729, CPU min =       0.05
+Timings> 
+Timings> Ray tracing......... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> SelfField total..... Wall max =          0, CPU max =          0
+Timings>                      Wall avg =          0, CPU avg =          0
+Timings>                      Wall min =          0, CPU min =          0
+Timings> 
+Timings> Write H5-File....... Wall max =  0.0835469, CPU max =          0
+Timings>                      Wall avg =  0.0835469, CPU avg =          0
+Timings>                      Wall min =  0.0835469, CPU min =          0
+Timings> 
+Timings> Write Stat.......... Wall max = 0.000893591, CPU max =          0
+Timings>                      Wall avg = 0.000893591, CPU avg =          0
+Timings>                      Wall min = 0.000893591, CPU min =          0
+Timings> 
+Timings> -----------------------------------------------------------------
