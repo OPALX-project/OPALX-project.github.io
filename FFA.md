@@ -43,23 +43,23 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 
 OPAL can be used to track through a 3D field map. By default interpolation is trilinear. A sample lattice file is available in this example:
 
-[example_2.7z](/uploads/4f80d93d4ac111fa4fe30e641bc394ee/example_2.7z)
+[example_2-OPAL2.0.0rc2.7z](uploads/00207f6567b458dcc026db5685fb696e/example_2-OPAL2.0.0rc2.7z)
+
 [example_2-OPAL2.4.0.7z](uploads/01aa55a6183fda17f608c44867191b6d/example_2-OPAL2.4.0.7z)
 
 Due to the size of the field map this example was compressed using 7za. Uncompress using 7za from p7zip package. Then run in the usual way.
 
-> 7za x example_2.7z
+> 7za x example_2-OPAL2.4.0.7z
 
 > cd example_2/example_main_ring
 
-> /path/to/bin/opal Kurri_ADS_Ring
+> /path/to/bin/opal KURNS_ADS_Ring
 
 > cd ..
 
 Here is an example log file:
 
-[log](/uploads/ab8a09f990b35910776e341220f0ec30/log)
-
+[log](uploads/811a1c51ca9ea0ab08b1e9af59ae0467/log)
 
 To make plots, again do
 
