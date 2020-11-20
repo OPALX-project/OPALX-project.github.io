@@ -67,7 +67,7 @@ To make plots, again do
 
 Here is an example of the sort of plots you might see:
 
-![closed_orbit_plan_bz](/uploads/874aee8942800805eed33587a909a778/closed_orbit_plan_bz.png)
+![opal_example_2_x_y_bz](uploads/1bea4bf28bb27b2eb0cf6e3395d2b464/opal_example_2_x_y_bz.png)
 
 Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton at injection (11 MeV).
 
