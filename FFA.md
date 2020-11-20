@@ -114,3 +114,33 @@ The particle energy increases with time to match the RF frequency, like:
 ![t_vs_energy](/uploads/8bc6376cb3e365ae2c161480aa1f43b3/t_vs_energy.png)
 
 It looks like the acceleration worked! There are actually two particle trajectories shown: the black points show a particle tuned to match the RF reference trajectory, while the blue points show a particle that is offset longitudinally and oscillating around the reference trajectory.
+
+# Tracking through an analytical vertical FFA field map
+
+OPAL can track through a vertical FFA field. There is an example of OPAL with a vertical FFA field here (OPAL >2.4.0 only):
+
+[example_4-OPAL2.4.0.tar.gz](uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz)
+
+Run it like
+
+> tar -xzf example_4-OPAL2.4.0.tar.gz
+
+> cd example_3/example_sector_ffa
+
+> /path/to/bin/opal VerticalSectorFFA
+
+> cd ..
+
+Here is an example log file:
+
+[log](uploads/e57751e4b1a5d3850002af26c56321c9/log)
+
+To make plots of the field and orbits
+
+> python example_scripts/plot_orbit.py example_vertical_ffa/
+
+Here is the sort of plot you might see:
+
+![opal_example_4_x_y_bz](uploads/ba134f18f376d84077a69226baad9663/opal_example_4_x_y_bz.png)
+
+This shows the field in the vertical direction with the trajectory of the closed orbit superimposed. The lattice is a 10 cell triplet lattice, as described in (paper).  Note that at present (Nov 2020), RF acceleration is not supported in VFFAs.
