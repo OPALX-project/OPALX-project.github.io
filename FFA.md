@@ -77,6 +77,8 @@ OPAL can also model the full acceleration cycle for an FFA. There is an example 
 
 [example_3.tar.gz](/uploads/cf31e0359a4d191fda22455e88483d21/example_3.tar.gz)
 
+[example_3-OPAL2.4.0.tar.gz](uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz)
+
 Unpack it and run it like:
 
 > tar -xzf example_3.tar.gz
