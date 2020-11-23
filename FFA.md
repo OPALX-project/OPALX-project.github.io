@@ -1,8 +1,9 @@
 Examples are provided for tracking FFAs in a number of circumstances:
 
-1. Tracking through an analytical field model
+1. Tracking through an analytical horizontal FFA field model
 2. Tracking through a 3D field map.
-3. Tracking through an analytical field model with RF acceleration
+3. Tracking through an analytical horizontal FFA field model with RF acceleration
+4. Tracking through an analytical vertical FFA field model
 
 The following workflows have been checked with OPAL 2.0.0rc2 and OPAL 2.4.0_2.
 
@@ -12,7 +13,7 @@ OPAL can use a fully scaling field model including scaling fringe fields to mode
 
 [example_1-OPAL2.0.0rc2.tar.gz](uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
 
-[example_1-OPAL2.4.0.tar.gz](uploads/af56754c46f353a211575184a9ae0737/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
+[example_1-OPAL2.4.0.tar.gz](uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
 To run the example, download the file example.tar.gz and do
 
