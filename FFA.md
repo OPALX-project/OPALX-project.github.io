@@ -118,7 +118,7 @@ It looks like the acceleration worked! There are actually two particle trajector
 
 # Tracking through an analytical vertical FFA field map
 
-OPAL can track through a vertical FFA field. There is an example of OPAL with a vertical FFA field here (OPAL >2.4.0 only):
+OPAL can track through a vertical FFA field, where the orbit moves vertically as the energy increases. This is unlike a conventional hFFA where the orbit moves radially. There is an example of OPAL with a vertical FFA field here (OPAL >2.4.0 only):
 
 [example_4-OPAL2.4.0.tar.gz](uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz)
 
