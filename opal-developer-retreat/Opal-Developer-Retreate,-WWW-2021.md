@@ -5,7 +5,7 @@ Two polls are currently open for developers to find a suitable week and the pref
 ### Location: WWW
 
 ### Schedule
-Following is tentative schedule for the week. This is fluid (will change a little), and new items are welcome.    
+Following is tentative schedule for the week. This is fluid (will change), and new items are welcome.    
 For all presentations and discussion sections, a zoom link will be available (and posted here soon).
 
 ### Empty time slots are for coding and group or individual work.
