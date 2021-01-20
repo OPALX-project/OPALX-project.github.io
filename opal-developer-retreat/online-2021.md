@@ -1,0 +1,1 @@
+Two polls are currently open for developers to find a suitable week and the prefered length. They will be closed end of January.
