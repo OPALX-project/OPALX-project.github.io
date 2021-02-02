@@ -11,6 +11,7 @@
 
 * New Undulator element with its own FDTD electromagnetic solver, making use of the [(MITHRA)](https://github.com/aryafallahi/mithra) library (#535)
 * `LOWENERGYTHR` attribute (in MeV) for energy loss calculation by `PARTICLEMATTERINTERACTION` command (#83)
+* `ALPHA` particles are supported in `BEAM` command (#634)
 
 ## Input file related changes
 
