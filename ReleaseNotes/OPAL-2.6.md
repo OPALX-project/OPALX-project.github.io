@@ -17,5 +17,7 @@
 ## Input file related changes
 
 * `RING` field map has been explicitly added as a cyclotron `TYPE` (#626, https://gitlab.psi.ch/OPAL/documentation/manual/-/merge_requests/106)
+* `COLLIMATOR` and `DEGRADER` `TYPE` of `PARTICLEMATTERINTERACTION` has been renamed as `SCATTERING` (#633)
+* `BEAMSTRIPPING` element has been renamed as `VACUUM` (#633)
 
 ## Output file related changes
