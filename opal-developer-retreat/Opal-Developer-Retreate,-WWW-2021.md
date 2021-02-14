@@ -25,6 +25,17 @@ For all presentations and discussion sections, a zoom link will be available (an
 | 6&nbsp;pm| 9&nbsp;am  |  |  |  |  |
 
 ### Remote Participants 
+Achim,
+Andreas,
+Arnau,
+Chris,
+Christof,
+Daniel,
+Jochem,
+Matthias,
+Nicole,
+Pedro,
+Philippe.
 
 
 ### Topics up for discussion (round table)
