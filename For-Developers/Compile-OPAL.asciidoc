@@ -39,7 +39,7 @@ features. In this document we explain how to compile OPAL from scratch
 *** bison or compatible
 *** flex or compatible
 *** autotools, cmake
-*** standard tools like: bzip2, gzip, xz, tar
+*** standard tools like: curl, bzip2, gzip, xz, tar
 
 {nbsp}
 
@@ -83,7 +83,7 @@ the recommended version.
 
 | boost | 1.66.0 | 1.73.0
 | The following boost libraries are required: `chrono`, `filesystem`,
- `iostreams`, `regex`, `serialization`, `system`
+ `iostreams`, `regex`, `serialization`, `system`, `timer`
 
 | ParMETIS | 4.0.0 | 4.0.3
 | optional: required for OPAL compiled with SAAMG solver.
