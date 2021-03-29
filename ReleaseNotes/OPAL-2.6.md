@@ -4,14 +4,14 @@
 
 * Opal-T writing of LossDataSink if executed in parallel (#585)
 * Floating point comparisons in BoundaryGeometry (#611)
-* Loss output file in ASCII format (#620)
+* Header of loss output file in ASCII format (#620)
 * Fix for `FROMFILE` Distribution (#622)
 * Loss files overwritten for collimators (#636)
 
 ## [New features in OPAL 2.6.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&milestone_title=OPAL%202.6)
 
 * New Undulator element with its own FDTD electromagnetic solver, making use of the [(MITHRA)](https://github.com/aryafallahi/mithra) library (#535)
-* `LOWENERGYTHR` attribute (in MeV) for energy loss calculation by `PARTICLEMATTERINTERACTION` command (#83)
+* `LOWENERGYTHR` attribute (in [MeV]) for energy loss calculation by `PARTICLEMATTERINTERACTION` command (#83)
 * `ALPHA` particles are supported in `BEAM` command (#634)
 
 ## Input file related changes
@@ -21,3 +21,5 @@
 * `BEAMSTRIPPING` element has been renamed as `VACUUM` (#633)
 
 ## Output file related changes
+* More information has been added to the HDF5 file written by monitors (#503)
+* The unit of time in loss output file is changed from [ns] to [s] (#640)
