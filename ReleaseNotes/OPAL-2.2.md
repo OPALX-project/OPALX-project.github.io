@@ -44,3 +44,4 @@
 ## Output file related changes
 
 * _OPAL-Cycl_: Halo parameter added to STAT file (#268)
+* Loss output files in ASCII format is changed from [mm] to [m] (#378)
