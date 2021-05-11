@@ -20,6 +20,7 @@
 * `RING` field map has been explicitly added as a cyclotron `TYPE` (#626, https://gitlab.psi.ch/OPAL/documentation/manual/-/merge_requests/106)
 * `COLLIMATOR` and `DEGRADER` `TYPE` of `PARTICLEMATTERINTERACTION` has been renamed as `SCATTERING` (#633)
 * `BEAMSTRIPPING` element has been renamed as `VACUUM` (#633)
+* Since [version 2.4](ReleaseNotes/OPAL-2.4) the `DISTRIBUTION` momentum input is changed to momentum (instead of energy). To avoid confusion, this is also made clear in the `DISTRIBUTION` command, `INPUTMOUNITS = EV` is changed to `INPUTMOUNITS = EVOVERC`  (#649)
 
 ## Output file related changes
 * More information has been added to the HDF5 file written by monitors (#503)
