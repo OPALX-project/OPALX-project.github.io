@@ -1,7 +1,7 @@
 Two polls are currently open for developers to find a suitable week and the prefered length. They will be closed end of January.
 
 # WWW 2021: OPAL Developers Retreat
-### Dates: TBD, May or June 2021
+### Dates: 7-10 June 2021
 ### Location: WWW
 
 ### Schedule
