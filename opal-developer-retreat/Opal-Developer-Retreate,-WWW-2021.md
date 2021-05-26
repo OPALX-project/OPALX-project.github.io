@@ -39,3 +39,5 @@ Philippe.
 
 
 ### Topics up for discussion (round table)
+
+* [Task List](https://gitlab.psi.ch/OPAL/src/-/issues/227)
