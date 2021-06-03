@@ -9,7 +9,7 @@ Following is tentative schedule for the week. This is fluid (will change), and n
 For all presentations and discussion sections, a zoom link will be available (and posted here soon).
 
 
-**Monday**
+**Tuesday**
 
 | Time CET        | Time PST         |  Who     |                                                                  |
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
@@ -18,7 +18,7 @@ For all presentations and discussion sections, a zoom link will be available (an
 | 5:00pm - 6:00pm | 8:00am -  9:00am | Chris    | Tutorial PyOPAL Development                                      |
 | 6:00pm - 7:00pm | 9:00am - 10:00am | all      | Release cycle? Versioning? CI/CD? Jenkins? (discussion)          | 
  
-**Tuesday**
+**Wednesday**
 
 | Time CET        | Time PST         |  Who     |                                                                  |
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
@@ -27,7 +27,7 @@ For all presentations and discussion sections, a zoom link will be available (an
 | 5:00pm - 6:00pm | 8:00am -  9:00am | all      | Open issues and feature requests in Gitlab (discussion)          |
 | 6:00pm - 7:00pm | 9:00am - 10:00am | all      | Define roadmap for new features (discussion)                     |
 
-**Wednesday**
+**Thursday**
 
 | Time CET        | Time PST         |  Who      |                                                                  |
 | :----           | :--------------- | :-------- | :--------------------------------------------------------------- |
