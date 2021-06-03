@@ -53,7 +53,7 @@ For all presentations and discussion sections, a zoom link will be available (an
 | 4&nbsp;pm| 7&nbsp;am  | Introduction, organizational stuff<br>'Remarks on the status and future of OPAL' (30 mins; Andreas) <br> PyOPAL status & discussion (30 mins; Chris) | IPPL V 2.0 towards a performant and hardware independent OPAL (30 mins; Andreas)<br> | OPAL paper  (20 mins; Andreas)  |  | 
 | 5&nbsp;pm| 8&nbsp;am  | Tutorial OpalPy Development (60 mins; Chris) | Using OPAL to model vFFAs - "relativistic cyclotrons" (30 mins; Chris)  |  | End | 
 | 6&nbsp;pm| 9&nbsp;am  |  |  |  |  |
---/>
+/-->
 
 ### Remote Participants 
 Achim,
