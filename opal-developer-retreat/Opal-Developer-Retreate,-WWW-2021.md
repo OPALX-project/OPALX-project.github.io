@@ -1,15 +1,33 @@
 Two polls are currently open for developers to find a suitable week and the prefered length. They will be closed end of January.
 
 # WWW 2021: OPAL Developers Retreat
-### Dates: 7-9 June 2021
+### Dates: 8-10 June 2021
 ### Location: WWW
+
+```
+Join Zoom Meeting
+https://psich.zoom.us/j/65491542005?pwd=NjVnWEtQaHdBQ0JiSTJHRjM0NkpDZz09
+
+Meeting ID: 654 9154 2005
+Passcode: OPAL
+One tap mobile
++19712471195,,65491542005#,,,,*730737# US (Portland)
++12063379723,,65491542005#,,,,*730737# US (Seattle)
+
+Dial by your location
+        +1 971 247 1195 US (Portland)
+        +1 206 337 9723 US (Seattle)
+Meeting ID: 654 9154 2005
+Passcode: 730737
+Find your local number: https://psich.zoom.us/u/cevgYcq2N
+```
 
 ### Schedule
 Following is tentative schedule for the week. This is fluid (will change), and new items are welcome.    
 For all presentations and discussion sections, a zoom link will be available (and posted here soon).
 
 
-**Tuesday**
+**Tuesday, 8 June**
 
 | Time CET        | Time PST         |  Who     |                                                                  |
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
@@ -18,7 +36,7 @@ For all presentations and discussion sections, a zoom link will be available (an
 | 5:00pm - 6:00pm | 8:00am -  9:00am | Chris    | Tutorial PyOPAL Development                                      |
 | 6:00pm - 7:00pm | 9:00am - 10:00am | all      | Release cycle? Versioning? CI/CD? Jenkins? (discussion)          | 
  
-**Wednesday**
+**Wednesday, 9 June**
 
 | Time CET        | Time PST         |  Who     |                                                                  |
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
@@ -27,7 +45,7 @@ For all presentations and discussion sections, a zoom link will be available (an
 | 5:00pm - 6:00pm | 8:00am -  9:00am | all      | Open issues and feature requests in Gitlab (discussion)          |
 | 6:00pm - 7:00pm | 9:00am - 10:00am | all      | Define roadmap for new features (discussion)                     |
 
-**Thursday**
+**Thursday, 10 June**
 
 | Time CET        | Time PST         |  Who      |                                                                  |
 | :----           | :--------------- | :-------- | :--------------------------------------------------------------- |
