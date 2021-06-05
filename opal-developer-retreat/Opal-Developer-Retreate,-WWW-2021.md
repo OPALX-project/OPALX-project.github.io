@@ -1,5 +1,3 @@
-Two polls are currently open for developers to find a suitable week and the prefered length. They will be closed end of January.
-
 # WWW 2021: OPAL Developers Retreat
 ### Dates: 8-10 June 2021
 ### Location: WWW
@@ -23,8 +21,7 @@ Find your local number: https://psich.zoom.us/u/cevgYcq2N
 ```
 
 ### Schedule
-Following is tentative schedule for the week. This is fluid (will change), and new items are welcome.    
-For all presentations and discussion sections, a zoom link will be available (and posted here soon).
+Following is the schedule for the OPAL workshop. We can adapt it during the workshop according our needs.
 
 
 **Tuesday, 8 June**
