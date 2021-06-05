@@ -66,7 +66,7 @@ Jochem,
 Matthias,
 Nicole,
 Pedro,
-Philippe.
+Philippe (philippe.piot@gmail.com).
 
 
 ### Topics up for discussion (round table)
