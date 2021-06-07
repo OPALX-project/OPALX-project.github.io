@@ -26,7 +26,7 @@ Following is the schedule for the OPAL workshop. We can adapt it during the work
 
 **Tuesday, 8 June**
 
-| Time CET        | Time PST         |  Who     |                                                                  |
+| Time CEST       | Time PST         |  Who     |                                                                  |
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
 | 4:00pm - 4:30pm | 7:00am -  7:30am | Andreas  | Introduction, organizational stuff                               |
 | 4:30pm - 5:00pm | 7:30am -  8:00am | Chris    | PyOPAL status & discussion                                       |
@@ -35,7 +35,7 @@ Following is the schedule for the OPAL workshop. We can adapt it during the work
  
 **Wednesday, 9 June**
 
-| Time CET        | Time PST         |  Who     |                                                                  |
+| Time CEST       | Time PST         |  Who     |                                                                  |
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
 | 4:00pm - 4:30pm | 7:00am -  7:30am | Andreas  | IPPL V 2.0                                                       |
 | 4:30pm - 5:00pm | 7:30am -  8:00am | Chris    | Using OPAL to model vFFAs - "relativistic cyclotrons"            |
@@ -44,7 +44,7 @@ Following is the schedule for the OPAL workshop. We can adapt it during the work
 
 **Thursday, 10 June**
 
-| Time CET        | Time PST         |  Who      |                                                                  |
+| Time CEST       | Time PST         |  Who      |                                                                  |
 | :----           | :--------------- | :-------- | :--------------------------------------------------------------- |
 | 4:00pm - 4:30pm | 7:00am -  7:30am | Arnau     | Start-to-end modelling of FELs with OPAL-FEL full Maxwell solver |
 | 4:30pm - 5:00pm | 7:30am -  8:00am | Nicole    | Beam shaping for the LCLS-II Injector with OPAL-t                |
@@ -55,7 +55,7 @@ Following is the schedule for the OPAL workshop. We can adapt it during the work
 <!--
 
 ### Empty time slots are for coding and group or individual work.
-|   Time  CET 
+|   Time  CEST 
  Time PST | Monday | Tuesday | Wednesday | Thursday |
 | :--------- | :--------- | :-------- | :---------- | :----------- | :---------- |
 | 9&nbsp;am | 0&nbsp;am  | - |  |  |  | 
