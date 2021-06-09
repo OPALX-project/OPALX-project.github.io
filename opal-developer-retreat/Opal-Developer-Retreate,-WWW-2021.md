@@ -39,8 +39,8 @@ Following is the schedule for the OPAL workshop. We can adapt it during the work
 | :----           | :--------------- | :------- | :--------------------------------------------------------------- |
 | 4:00pm - 4:30pm | 7:00am -  7:30am | Andreas  | IPPL V 2.0                                                       |
 | 4:30pm - 5:00pm | 7:30am -  8:00am | Chris    | Using OPAL to model vFFAs - "relativistic cyclotrons"            |
-| 5:00pm - 6:00pm | 8:00am -  9:00am | all      | Open issues and feature requests in Gitlab (discussion)          |
-| 6:00pm - 7:00pm | 9:00am - 10:00am | all      | Define roadmap for new features (discussion)                     |
+| 5:00pm - 6:00pm | 8:00am -  9:00am | all      | Release cycle? Versioning? CI/CD? Jenkins? (discussion)          | 
+| 6:00pm - 7:00pm | 9:00am - 10:00am | all      | Open issues and feature requests in Gitlab (discussion)          |
 
 **Thursday, 10 June**
 
@@ -48,8 +48,9 @@ Following is the schedule for the OPAL workshop. We can adapt it during the work
 | :----           | :--------------- | :-------- | :--------------------------------------------------------------- |
 | 4:00pm - 4:30pm | 7:00am -  7:30am | Arnau     | Start-to-end modelling of FELs with OPAL-FEL full Maxwell solver |
 | 4:30pm - 5:00pm | 7:30am -  8:00am | Nicole    | Beam shaping for the LCLS-II Injector with OPAL-t                |
-| 5:00pm - 6:00pm | 8:00am -  9:00am | all       | Time to continue discussions on open topics                      |
-| 6:00pm - 6:30pm | 9:00am -  9:30am | all       | Final round                                                      |
+| 5:00pm - 6:00pm | 8:00am -  9:00am | all       | Define roadmap for new features (discussion)                     |
+| 6:00pm - 6:30pm | 9:00am -  9:30am | all       | Time to continue discussions on open topics                      |
+| 6:30pm - 7:00pm | 9:30am - 10:00am | all       | Final round                                                      |
 
 
 <!--
