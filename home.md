@@ -109,6 +109,8 @@ See also [Post Processing](PostProcessing).
 * [Periodic Tele-cons](For-Developers/Periodic-Tele-cons)
 
 ## Build-, Unit- and Regression Tests
-* [regression tests for current OPAL versions](Tests)
+
+* on [master branch](http://amas.web.psi.ch/opal/master/)
+* on [OPAL 2.4 branch](http://amas.web.psi.ch/opal/OPAL-2.4/)
 
 ## [OPAL Physics Resources](OPALPresentations)
