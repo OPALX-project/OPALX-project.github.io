@@ -7,6 +7,7 @@
 * Header of loss output file in ASCII format (#620)
 * Fix for `FROMFILE` Distribution (#622)
 * Loss files overwritten for collimators (#636)
+* Fix for normal component formula for `MULTIPOLE` element (#653)
 
 ## [New features in OPAL 2.6.0](https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&milestone_title=OPAL%202.6)
 
@@ -25,3 +26,4 @@
 ## Output file related changes
 * More information has been added to the HDF5 file written by monitors (#503)
 * The unit of time in loss output file is changed from [ns] to [s] (#640)
+* The header of ASCII loss output header has been modified (#650, OPAL/pyOPALTools#99)
