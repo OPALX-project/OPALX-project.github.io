@@ -19,6 +19,7 @@
 * Stopping power at low energy region (#634)
 * `ALPHA` particles are supported in `BEAM` command (#634)
 * `ENABLEVTK` option (default true) to control writing of voxel mesh output (#647)
+* `OUTFN` attribute has been added to Cyclotron and Source elements (#650)
 
 ## Input file related changes
 
