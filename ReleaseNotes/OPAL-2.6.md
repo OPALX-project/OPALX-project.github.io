@@ -20,6 +20,7 @@
 * `ALPHA` particles are supported in `BEAM` command (#634)
 * `ENABLEVTK` option (default true) to control writing of voxel mesh output (#647)
 * `OUTFN` attribute has been added to Cyclotron and Source elements (#650)
+* Gas stripping is now available for `DEUTERON` beams and `H2P` beams in `AIR` (#665)
 
 ## Input file related changes
 
@@ -35,3 +36,4 @@
 * The unit of time in loss output file is changed from [ns] to [s] (#640)
 * The header of ASCII loss output has been modified (#650, OPAL/pyOPALTools#99)
 * `DumpFields` and `DumpEMFields` print attributes info in stdout (#651)
+* The units of cyclotron output field map 'eb.out' have been changed to [m] and [deg] (#662)
