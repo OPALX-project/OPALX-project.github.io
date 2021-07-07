@@ -32,7 +32,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 | Version | Manual | Source code <br> documentation | Release notes | 
 | ------- | ------ | ------------------------- | ------------- |
-| _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [Wiki](ReleaseNotes/OPAL-2.6) |
+| _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [Wiki](ReleaseNotes/OPAL-2021.1) |
 | _OPAL_ 2.4 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.4/index.html) | [Wiki](ReleaseNotes/OPAL-2.4) |
 | _OPAL_ 2.2 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.2/index.html) | [Wiki](ReleaseNotes/OPAL-2.2) |
 | _OPAL_ 2.0 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.0/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.0/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.0/index.html) | [Wiki](ReleaseNotes/OPAL-2.0) |
