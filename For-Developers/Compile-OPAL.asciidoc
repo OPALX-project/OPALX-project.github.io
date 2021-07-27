@@ -23,23 +23,13 @@ features. In this document we explain how to compile OPAL from scratch
 
 === System requirements
 
-* Operating system
-** Linux
-** Windows with Windows Services for Linux (WSL)
-** Mac with macos >= 10.15
-* Required development tools/packages
-** macOS
-*** Xcode
-*** Command line tools
-*** optional: Macports, Homebrew, Fink or another package manager
-** Linux (including WSL)
-*** C/C++ compiler supporting C++17 or better
-*** optional: Fortran 95 compiler or better
-*** make
-*** bison or compatible
-*** flex or compatible
-*** autotools, cmake
-*** standard tools like: curl, bzip2, gzip, xz, tar
+==== Operating systems
+
+Linux:: the usual standard and development tools like gcc, autotools, cmake, make, lex/flex, yacc/bison, tar, bzip2 ...
+
+Windows:: use Windows Services for Linux
+
+macOS:: Xcode, command line tools, for some features Macports or Homebrew
 
 {nbsp}
 
