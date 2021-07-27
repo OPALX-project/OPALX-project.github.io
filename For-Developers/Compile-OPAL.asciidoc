@@ -190,30 +190,14 @@ module use /afs/psi.ch/project/amas/modulefiles/OPAL
 === Compiling on Merlin6
 
 On Merlin6 special version of the modules should be used. These
-modules provide a better integration with the SLURM batch system. The
-recommended modules are:
-
-----
-cmake/3.15.5
-gcc/8.4.0
-openmpi/3.1.6_slurm
-hdf5/1.10.6_slurm
-gsl/2.6
-H5hut/2.0.0rc6_slurm
-boost/1.70.0_slurm
-amrex/18.07_3d_slurm
-OpenBLAS/0.3.10
-parmetis/4.0.3_slurm
-trilinos/12.18.1_slurm
-gtest/1.10.0
-----
+modules provide a better integration with the SLURM batch system. 
 To load these modules, load the toolchain `master_slurm`:
 ----
 module load toolchain/master_slurm
 ----
 
-> **Note:** This toolchain can be used to compile OPAL 2.2.x, OPAL
-    2.4.x and the current master branch.
+> **Note:** This toolchain can be used to compile OPAL 2021.x, OPAL
+    and the current master branch.
 
 '''
 
