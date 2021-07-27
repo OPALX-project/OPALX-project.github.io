@@ -51,53 +51,52 @@ the recommended version.
 
 [width="100%",options="header"]
 |=======
-| **Name**  | **minimum Version** | **recommended Versions** | **Notes**
+| **Name**  | **recommended Versions** | **Notes**
 
-| C/C&#43;&#43; Compiler |  | 
+| C/C&#43;&#43; Compiler | 
 | must support C&#43;&#43; 17 or better. For further instructions see section below.
 
-| Fortran Compiler | |
+| Fortran Compiler |
 | optional, must support Fortan 95 or better.
 
-| cmake | 3.15.5 | 3.20.5 or newer
+| cmake | 3.20.5 or newer
 | 
 
-| Open MPI | 3.1.6 | 4.0.5
+| Open MPI | 4.0.5
 | as alternative MPICH can be used
 
-| zlib | 1.2.11 | 1.2.11
+| zlib | 1.2.11
 | use system zlib if available (`libz.a` or `libz.so`)
 
-| hdf5 | 1.8.18 | 1.10.7
+| hdf5 | 1.10.7
 | A parallel version is required.
 
-| GNU Scientific Library | 2.5 | 2.6
+| GNU Scientific Library | 2.7
 |
 
-| VTK | 7.1.1 | 8.2.0
+| VTK | ?
 | optional: required if you want to compile H5hut with the VTK to H5hut mesh converter.
 
-| H5hut | 2.0.0rc6 | 2.0.0rc6
+| H5hut | 2.0.0rc6
 | A parallel version is required.
 
-| boost | 1.73.0 | 1.76.0
+| boost | 1.76.0
 | The following boost libraries are required: `chrono`, `filesystem`,
  `iostreams`, `regex`, `serialization`, `system`, `timer`
 
-| ParMETIS | 4.0.0 | 4.0.3
+| ParMETIS | 4.0.3
 | optional: required for OPAL compiled with SAAMG solver.
 
-| OpenBLAS | 0.3.10 | 0.3.15 or newer
+| OpenBLAS | 0.3.15 or newer
 | optional: required for OPAL compiled with SAAMG solver.
 
-| trilinos | 13.0.1
-| 13.0.1 
+| trilinos | 13.0.1 
 | optional: required for OPAL compiled with SAAMG solver.
 
-| AMReX | 18.07 | 18.07
+| AMReX | 18.07
 | optional: required for OPAL compiled with AMR solvers.
 
-| google-test | 1.7.0 | 1.10.0 or newer
+| google-test | 1.10.0 or newer
 | optional: Required to run the unit-tests
 
 |=======
@@ -122,7 +121,6 @@ package manager.
 | **Name**  | **minimum Version** | **recommended Version** | **Notes**
 
 | GNU Compiler Collection
-| 8.4.0
 | 10.3.0
 | 
 
@@ -132,20 +130,17 @@ If you want to compile GCC, you have to compile the following libraries first wi
 
 [width="100%",options="header"]
 |=======
-| **Name**  | **minimum Version** | **recommended Version** | **Notes**
+| **Name**  | **recommended Version** | **Notes**
 
 | GNU Multiple Precision Arithmetic Library (GMP)
-| 6.2.0
 | 6.2.1 or newer
 |
 
 | GNU MPFR Library
-| 4.0.2
 | 4.1.0
 |
 
 | GNU MPC Library
-| 1.1.0
 | 1.2.1
 |
 
@@ -163,9 +158,9 @@ front-end of LLVM or GCC from one of the package managers.
 
 [width="100%",options="header"]
 |=======
-| **Name**  | **minimum Version** | **recommended Version** | **Notes**
+| **Name**  | **recommended Version** | **Notes**
 
-| Clang (LLVM) | 11.0.3 | 12.4 |
+| Clang (LLVM) | 12.4 |
 
 |=======
 
