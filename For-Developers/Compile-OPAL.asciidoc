@@ -43,7 +43,7 @@ the recommended version.
 |=======
 | **Name**  | **recommended Versions** | **Notes**
 
-| C/C&#43;&#43; Compiler | 
+| C/C&#43;&#43; Compiler | gcc 10 or Clang 12
 | must support C&#43;&#43; 17 or better. For further instructions see section below.
 
 | Fortran Compiler |
