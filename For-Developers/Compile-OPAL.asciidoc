@@ -27,7 +27,7 @@ features. In this document we explain how to compile OPAL from scratch
 
 Linux:: the usual standard and development tools like gcc, autotools, cmake, make, lex/flex, yacc/bison, tar, bzip2 ...
 
-Windows:: use Windows Services for Linux
+Windows:: use Windows Subsystem for Linux (WSL)
 
 macOS:: Xcode, command line tools, for some features Macports or Homebrew
 
