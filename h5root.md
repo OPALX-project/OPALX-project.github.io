@@ -1,3 +1,5 @@
+# H5root is no longer supported! Please use [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home) instead for postprocessing.
+
 # H5root: a ROOT Based Graphical User Interface for H5hut
 
 The purpose of this application is convenient graphical access to the data stored in

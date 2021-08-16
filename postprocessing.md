@@ -5,7 +5,3 @@ OPAL writes two kind of data:
 For postprocessing we recommend to use the [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home) Python package which contains many tools for pre- and postprocessing, and analysing and plotting output data.
 
 The statistical data can be conveniently plotted with [gnuplot](http://www.gnuplotting.org), as shown in the example section [Cyclotron](Cyclotron).
-
-For the h5 data we provide a [ROOT](https://root.cern.ch/) based plotting utility [H5root](https://gitlab.psi.ch/OPAL/src/wikis/h5root). H5root is part of the binary package. A phase space density plot is shown below.
-
-![H5rootScreenshot](http://amas.web.psi.ch/tools/H5root/H5root.png)
