@@ -4,7 +4,7 @@ At PSI _OPAL_ is available as Pmodule.
 
 == Load precompiled binary with Pmodules
 
-The easiest way to load an _OPAL_ module is to use the "meta-modules" provided in `/afs/psi.ch/project/amas/modulefiles/OPAL`. Meta-modules are just modules loading a couple of other modules. To make the _OPAL_ meta-modules available, you have to run the command
+The easiest way to load an _OPAL_ module is to use the "meta-modules" provided in `/afs/psi.ch/project/amas/modulefiles/OPAL`. Meta-modules are modules loading a couple of other modules. To make the _OPAL_ meta-modules available, you have to run the command
 ----
 module use /afs/psi.ch/project/amas/modulefiles/OPAL
 ----
