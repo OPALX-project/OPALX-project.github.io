@@ -33,6 +33,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 | Version | Manual | Source code <br> documentation | Release notes | 
 | ------- | ------ | ------------------------- | ------------- |
 | _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [Wiki](ReleaseNotes/OPAL-2021.1) |
+| _OPAL_ 2021.1 | [HTML](http://amas.web.psi.ch/opal/Documentation/2021.1/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2021.1/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation2021.1/index.html) | [Wiki](ReleaseNotes/OPAL-2021.1) |
 | _OPAL_ 2.4 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.4/index.html) | [Wiki](ReleaseNotes/OPAL-2.4) |
 | _OPAL_ 2.2 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.2/index.html) | [Wiki](ReleaseNotes/OPAL-2.2) |
 | _OPAL_ 2.0 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.0/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.0/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.0/index.html) | [Wiki](ReleaseNotes/OPAL-2.0) |
@@ -42,6 +43,12 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 | Version | Source | Linux <br> binary | macOS <br> binary | Release notes <br> of binary package |
 | ------- | ------ | ----------------- | ----------------- | ------------------------------------ |
+| OPAL 2021.1.0 
+| [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2021.1.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2021.1.0.tar.xz.md5) 
+| [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2021.1.0-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2021.1.0-x86_64-linux.tar.xz.md5)
+| 
+| [Wiki](ReleaseNotes/OPAL-2021.1)
+|
 | OPAL 2.4.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-macos.tar.xz.md5) | [Wiki](ReleaseNotes/OPAL-2.4) |
 | OPAL-2.2.1 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.1.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.1.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5) | n.a.  | [Wiki](ReleaseNotes/OPAL-2.2) |
 | OPAL-2.2.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz.md5) | [Wiki](ReleaseNotes/OPAL-2.2) |
