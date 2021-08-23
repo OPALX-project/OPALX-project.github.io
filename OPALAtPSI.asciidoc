@@ -12,16 +12,13 @@ module use /afs/psi.ch/project/amas/modulefiles/OPAL
 
 To  get a list of all available _OPAL_ module with major version to, you can  use the command `module avail OPAL-2`:
 ----
-module avail OPAL-2
--------------------------------- /afs/psi.ch/project/amas: OPAL --------------------------------
+------------------------- /afs/psi.ch/project/amas/modulefiles/OPAL -------------------------
 
-OPAL-2.4/2.4.0  OPAL-2.4/2.4.0_slurm
+OPAL-2/2.0.2                    OPAL-2/2.2.1-1_slurm            OPAL-2/2.2.1_slurm
+OPAL-2/2.4.0                    OPAL-2/2.4.0_slurm              OPAL-2/2021.1
 ----
-Now you can load the _OPAL_ meta-module for version 2.4.0 with the command
-----
-module load OPAL-2.4/2.4.0
-----
-> **NOTE:** If you want to run batch jobs on Merlin, use the modules tagged with `_slurm`!
+
+> **NOTE:** Modules tagged with `_slurm` can be used on Merlin6 only!
 
 
 == Compile OPAL
