@@ -86,6 +86,9 @@ the recommended version.
 | AMReX | 18.07
 | optional: required for OPAL compiled with AMR solvers.
 
+| MITHRA | 2.0
+| optional: required for OPAL compiled with FEL simulation.
+
 | google-test | 1.10.0 or newer
 | optional: Required to run the unit-tests
 
@@ -204,14 +207,15 @@ the missing pieces or everything yourself.
 
 We provide recipes to build all required software. These recipes can
 be used on Linux,  macOS and Windows Services for Linux. They are
-tested with, several Linux distributions including Redhat Enterprise
-Linux 6 & 7, Ubuntu 18 & 20, openSUE leaf 15, macOS 10.12 - 10.15 as
+tested with several Linux distributions including Redhat Enterprise
+Linux 6 & 7, Ubuntu 18, 20 and 21, openSUSE leaf 15, macOS 10.12 - 10.15 as
 well as with the Windows Services for Linux.
 
 === The OPAL Tool-chain Builder
 
 The OPAL Tool-chain Builder (OTB) is a collection of recipes to build all
-required software you need to compile OPAL.
+required software you need to compile OPAL - including a recipe to compile
+OPAL itself.
 
 Run the following command to download the recipes:
 
@@ -238,10 +242,10 @@ source setup [--prefix OTB_PREFIX] [CONFIG_FILE]
 If you source `setup.sh` without arguments,
 
 * `${HOME}/OPAL` will be used as installation directory.
-* Open MPI will be used
-* the default versions defined in the build recipes will be used.
-* GCC will be used on Linux (and WSL)
-* Clang will be used on macOS
+* Open MPI will be used.
+* The default versions defined in the build recipes will be used.
+* GCC will be used on Linux (and WSL).
+* Clang will be used on macOS.
 
 With the option `--prefix OTB_PREFIX` a root directory for all to be
 installed files can be defined.will be used.
@@ -323,7 +327,13 @@ and if whether the version fulfil the requirements.
 ./210-build-openblas
 ./220-build-trilinos
 ./230-build-amrex
+./240-build-MITHRA
 ./300-build-gtest
+----
+
+**OPAL itself**
+----
+./400-build-OPAL
 ----
 
 '''
