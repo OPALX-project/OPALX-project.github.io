@@ -247,6 +247,7 @@ With the option `--prefix OTB_PREFIX` a root directory for all to be
 installed files can be defined.will be used.
 
 The configuration file can be used
+
 * to override the default toolchain for the OS.
 * to override the default versions of the software packages
 * to select a MPI implementation (open-mpi or MPICH)
