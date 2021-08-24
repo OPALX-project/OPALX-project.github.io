@@ -1,4 +1,3 @@
-= OPAL binary distribution
 :TOC:
 :numbered:
 :blank: pass:[ +]
