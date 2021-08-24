@@ -38,6 +38,13 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 | _OPAL_ 2.2 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.2/index.html) | [Wiki](ReleaseNotes/OPAL-2.2) |
 | _OPAL_ 2.0 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.0/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.0/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.0/index.html) | [Wiki](ReleaseNotes/OPAL-2.0) |
 
+### Start with Examples
+
+1. [Cyclotron](Cyclotron)
+1. [RF Photo Injector](RFPhotoInjector)
+1. [Examples from regression tests](RegressionTestExamples)
+1. [FFA](FFA)
+1. [Tutorial from Manual](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#chp.tutorial)
 
 ## Download
 
@@ -75,13 +82,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG https://gitlab.psi.c
 * [Compile _OPAL_](For%20Developers/Compile-OPAL)
 * [Compile _OPAL_ at CSCS](For%20Developers/Compile-OPAL-at-CSCS)
 
-## Start with Examples
 
-1. [Cyclotron](Cyclotron)
-1. [RF Photo Injector](RFPhotoInjector)
-1. [Examples from regression tests](RegressionTestExamples)
-1. [FFA](FFA)
-1. [Tutorial from Manual](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#chp.tutorial)
 
 ## Tools
 ### The runOPAL.py Script
