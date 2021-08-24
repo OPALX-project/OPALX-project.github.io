@@ -172,7 +172,23 @@ mpirun -np 4 opal example.in
 
 == Old OPAL versions
 
-[width="80%",cols="3,2,2"]
+[%header,width="80%",cols="2,2,2,2"]
+|========
+| Version 
+| Source
+| Linux
+| macOS
+| Release Notes
+
+| OPAL-2.1.2019.11-1
+|
+| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz[tar.xz], http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5[md5] 
+|
+| link:ReleaseNotes/OPAL%202.0[release notes]
+|========
+
+
+[width="80%",cols="2,2,2,2"]
 |========
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz[OPAL-2.1.2019.11-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5[md5 sum] 
