@@ -41,6 +41,8 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 ## Download
 
+### Source tar-balls and binary packages
+
 | Version | Source | Linux <br> binary | macOS <br> binary | Release notes <br> of binary package |
 | ------- | ------ | ----------------- | ----------------- | ------------------------------------ |
 | OPAL 2021.1.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2021.1.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2021.1.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2021.1.0-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2021.1.0-x86_64-linux.tar.xz.md5) | | [Wiki](ReleaseNotes/OPAL-2021.1) |
@@ -51,7 +53,7 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 Documentation about installing and running the _OPAL_ binary package is available [here](downloads).
 
-## Git repository
+### Git repository
 
 Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
 ```
