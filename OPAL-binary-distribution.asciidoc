@@ -188,7 +188,7 @@ mpirun -np 4 opal example.in
 |========
 
 
-[width="80%",cols="2,2,2,2"]
+[width="80%",cols="3,2,2"]
 |========
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz[OPAL-2.1.2019.11-1 for Linux]
 | http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5[md5 sum] 
