@@ -172,7 +172,7 @@ mpirun -np 4 opal example.in
 
 == Old OPAL versions
 
-[%header,width="80%",cols="2,2,2,2"]
+[%header,width="80%",cols="2,2,2,2,2"]
 |========
 | Version 
 | Source
