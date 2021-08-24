@@ -19,8 +19,3 @@ OPAL-2/2.4.0                    OPAL-2/2.4.0_slurm              OPAL-2/2021.1
 ----
 
 > **NOTE:** Modules tagged with `_slurm` can be used on Merlin6 only!
-
-
-== Compile OPAL
-
-For instructions on compiling OPAL see link:For%20Developers/Compile%20OPAL[Compile _OPAL_].
