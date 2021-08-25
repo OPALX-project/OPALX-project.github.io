@@ -174,6 +174,7 @@ mpirun -np 4 opal example.in
 
 :lnk_pkg: http://amas.web.psi.ch/Downloads/OPAL/package/
 :lnk_src: http://amas.web.psi.ch/Downloads/OPAL/src/
+
 :linux_pkg: -x86_64-linux.tar.xz[tar.xz]
 :linux_md5: -x86_64-linux.tar.xz.md5[md5]
 :macos_pkg: -x86_64-macos.tar.xz[tar.xz]
@@ -194,7 +195,7 @@ mpirun -np 4 opal example.in
 | link:ReleaseNotes/OPAL%202.0[release notes]
 
 | OPAL-2.0.1-1
-| {lnk_src}/OPAL-2.0.1.tar.xz
+| {lnk_src}/OPAL-2.0.1.tar.xz[source]
 | {lnk_pkg}/OPAL-2.0.1-1{linux_pkg}, {lnk_pkg}OPAL-2.0.1-1{linux_md5} 
 | 
 | link:ReleaseNotes/OPAL%202.0[release notes]
@@ -212,19 +213,19 @@ mpirun -np 4 opal example.in
 | link:ReleaseNotes/OPAL%202.0[release notes]
 
 | OPAL-1.6.2-1
-| {lnk_src}/OPAL-1.6.2.tar.xz
+| {lnk_src}/OPAL-1.6.2.tar.xz[source]
 | {lnk_pkg}/OPAL-1.6.2-1{linux_pkg}, {lnk_pkg}OPAL-1.6.2-1{linux_md5} 
 | 
 | link:ReleaseNotes/OPAL%201.6[release notes]
 
 | OPAL-1.6.1-3
-| {lnk_src}/OPAL-1.6.1.tar.xz
+| {lnk_src}/OPAL-1.6.1.tar.xz[source]
 | {lnk_pkg}/OPAL-1.6.1-3{linux_pkg}, {lnk_pkg}OPAL-1.6.1-3{linux_md5} 
 | 
 | link:ReleaseNotes/OPAL%201.6[release notes]
 
 | OPAL-1.6.0-2
-| {lnk_src}/OPAL-1.6.0.tar.xz
+| {lnk_src}/OPAL-1.6.0.tar.xz[source]
 | {lnk_pkg}/OPAL-1.6.0-2{linux_pkg}, {lnk_pkg}OPAL-1.6.0-2{linux_md5} 
 | 
 | link:ReleaseNotes/OPAL%201.6[release notes]
