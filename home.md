@@ -60,6 +60,8 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 Documentation about installing and running the _OPAL_ binary package is available [here](OPAL-binary-package).
 
+A ChangeLog of the binary packages is available [here](OPAL-binary-package-ChangeLog).
+
 Older version can be found [here](OPAL-binary-package-old-versions).
 
 ### Git repository
