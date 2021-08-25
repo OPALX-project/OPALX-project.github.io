@@ -2,10 +2,18 @@
 :numbered:
 :blank: pass:[ +]
 
-'''
+:OPAL: _OPAL_
+:OPAL_VER: 2021.1
+:OPAL_NAME_VER: OPAL-{OPAL_VER}
+:OPAL_PKG: OPAL-2021.1-1
+:OPAL_PKG_LINUX: {OPAL_PKG}-x86_64-linux.tar.xz
+:OPAL_PKG_MACOS: {OPAL_PKG}-x86_64-macos.tar.xz
+
+:LNK_PKG:  http://amas.web.psi.ch/Downloads/OPAL/package/
 
 == Overview 
-The newest stable version of OPAL is 2021.1
+
+The newest stable version of OPAL is {OPAL_VER}.
 
 '''
 
@@ -16,16 +24,16 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 ### On Linux
 
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-linux.tar.xz[OPAL-2.4.0 for Linux]
+1. download {LNK_PKG}{OPAL_PKG_LINUX}[{OPAL_NAME_VER} for Linux]
 1. Un-tar the downloaded file:
 +
 ```
-tar xf OPAL-2.4.0-2-x86_64-linux.tar.xz
+tar xf {OPAL_PKG_LINUX}
 ```
 
 ### On macOS
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
+1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL_PKG}-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
 1. Un-tar the downloaded file:
 +
 ```
