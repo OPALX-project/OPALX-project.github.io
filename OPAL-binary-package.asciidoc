@@ -173,7 +173,7 @@ mpirun -np 4 opal example.in
 == Old OPAL versions
 
 :lnk_pkg: http://amas.web.psi.ch/Downloads/OPAL/package/
-:lnk_src: http://amas.web.psi.ch/Downloads/OPAL/src
+:lnk_src: http://amas.web.psi.ch/Downloads/OPAL/src/
 :linux_pkg: -x86_64-linux.tar.xz[tar.xz]
 :linux_md5: -x86_64-linux.tar.xz.md5[md5]
 :macos_pkg: -x86_64-macos.tar.xz[tar.xz]
