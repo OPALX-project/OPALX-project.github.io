@@ -228,44 +228,42 @@ mpirun -np 4 opal example.in
 | 
 | link:ReleaseNotes/OPAL%201.6[release notes]
 
-| 
+| OPAL-1.4.0-1
 |
-| {lnk_pkg}/{linux_pkg}, {lnk_pkg}{linux_md5} 
+| {lnk_pkg}/OPAL-1.4.0-1{linux_pkg}, {lnk_pkg}OPAL-1.4.0-1{linux_md5} 
+| {lnk_pkg}/OPAL-1.4.0-1{macos_pkg}, {lnk_pkg}OPAL-1.4.0-1{macos_md5}
+| link:ReleaseNotes/OPAL%201.4.0[release notes]
+
+
+| OPAL-1.3.2-3
+|
+| {lnk_pkg}/OPAL-1.3.2-3{linux_pkg}, {lnk_pkg}OPAL-1.3.2-3{linux_md5} 
 | 
-| link:ReleaseNotes/OPAL%202.0[release notes]
+| link:ReleaseNotes/OPAL%201.4.0[release notes]
+
+| OPAL-1.3.2-2
+|
+| {lnk_pkg}/OPAL-1.3.2-2{linux_pkg}, {lnk_pkg}OPAL-1.3.2-2{linux_md5} 
+| {lnk_pkg}/OPAL-1.3.2-2{macos_pkg}, {lnk_pkg}OPAL-1.3.2-2{macos_md5} 
+| link:ReleaseNotes/OPAL%201.4.0[release notes]
+
+| OPAL-1.3.1-1
+|
+| {lnk_pkg}/OPAL-1.3.1-1{linux_pkg}, {lnk_pkg}OPAL-1.3.1-1{linux_md5} 
+| {lnk_pkg}/OPAL-1.3.1-1{macos_pkg}, {lnk_pkg}OPAL-1.3.1-1{macos_md5} 
+| link:ReleaseNotes/OPAL%201.4.0[release notes]
+
+| OPAL-1.3.0-1
+|
+| {lnk_pkg}/OPAL-1.3.0-1{linux_pkg}, {lnk_pkg}OPAL-1.3.0-1{linux_md5} 
+| {lnk_pkg}/OPAL-1.3.0-1{macos_pkg}, {lnk_pkg}OPAL-1.3.0-1{macos_md5} 
+| link:ReleaseNotes/OPAL%201.4.0[release notes]
+
+| OPAL-1.2.0-1
+|
+| {lnk_pkg}/OPAL-1.2.0-1{linux_pkg}, {lnk_pkg}OPAL-1.2.0-1{linux_md5} 
+| {lnk_pkg}/OPAL-1.2.0-1{macos_pkg}, {lnk_pkg}OPAL-1.2.0-1{macos_md5} 
+| link:ReleaseNotes/OPAL%201.4.0[release notes]
 
 |========
 
-
-[width="80%",cols="3,2,2"]
-|========
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.bz2[OPAL-1.4.0-1 for Linux]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.bz2.md5[md5 sum] 
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.4.0-1 for macOS]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-apple-darwin.tar.bz2[md5 sum]
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.bz2[OPAL-1.3.2-3 for Linux]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.bz2.md5[md5 sum] 
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.bz2[OPAL-1.3.2-2 for Linux]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.bz2.md5[md5 sum]
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.2-3 for macOS]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-apple-darwin.tar.bz2[md5 sum]
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.bz2[OPAL-1.3.1-1 for Linux]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.bz2.md5[md5 sum] 
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2.md5[OPAL-1.3.1-1 for macOS]
-| http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-apple-darwin.tar.bz2[md5 sum]
-| link:ReleaseNotes/OPAL%201.4.0[release notes] 
-
-|========
