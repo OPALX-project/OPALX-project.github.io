@@ -6,6 +6,8 @@
 
 :LNK_PKG:  http://amas.web.psi.ch/Downloads/OPAL/package/
 
+:OPAL_VER: 2021.1
+
 :OPAL_VER_LINUX: 2021.1
 :OPAL_NVS_LINUX: OPAL-{OPAL_VER_LINUX}
 :OPAL_PKG_LINUX: OPAL-{OPAL_VER_LINUX}-1-x86_64-linux.tar.xz
@@ -19,7 +21,7 @@
 
 == Overview 
 
-The newest stable version of OPAL is {OPAL_VER}.
+The newest stable version of OPAL is {OPAL_VER}. It might be that the latest version is not available for all platforms.
 
 '''
 
