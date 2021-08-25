@@ -6,7 +6,7 @@
 :OPAL_VER: 2021.1
 :OPAL_NAME_VER: OPAL-{OPAL_VER}
 :OPAL_PKG: OPAL-2021.1.0-1
-:OPAL_PKG_LINUX: {OPAL_PKG}-x86_64-linux.tar.xz
+:OPAL_PKG_LINUX: OPAL-2021.1.0-1-x86_64-linux.tar.xz
 :OPAL_PKG_MACOS: {OPAL_PKG}-x86_64-macos.tar.xz
 
 :LNK_PKG:  http://amas.web.psi.ch/Downloads/OPAL/package/
