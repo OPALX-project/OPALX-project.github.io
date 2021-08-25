@@ -46,14 +46,9 @@ source "$PREFIX/OPAL-2.4.0/etc/profile.d/opal.sh"
 ```
 Now you are ready to run OPAL (assuming you have an input file `example.in`):
 ```
-opal
-```
-or
-```
 opal example.in
 ```
 or
 ```
 mpirun -np 4 opal example.in
 ```
-
