@@ -60,6 +60,8 @@ Please report bugs and feature requests to the [issue tracker](https://gitlab.ps
 
 Documentation about installing and running the _OPAL_ binary package is available [here](OPAL-binary-package).
 
+Older version can be found [here](OPAL-binary-package-old-versions).
+
 ### Git repository
 
 Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
