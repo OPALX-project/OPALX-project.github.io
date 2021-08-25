@@ -21,7 +21,9 @@
 
 == Overview 
 
-The newest stable version of OPAL is {OPAL_VER}. It might be that the latest version is not available for all platforms.
+The newest stable version of OPAL is {OPAL_VER}.
+
+It might be that a binary package of the latest version is not available for all platforms.
 
 '''
 
