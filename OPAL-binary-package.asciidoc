@@ -3,13 +3,19 @@
 :blank: pass:[ +]
 
 :OPAL: _OPAL_
-:OPAL_VER: 2021.1
-:OPAL_NAME_VER: OPAL-{OPAL_VER}
-:OPAL_PKG: OPAL-2021.1.0-1
-:OPAL_PKG_LINUX: OPAL-2021.1.0-1-x86_64-linux.tar.xz
-:OPAL_PKG_MACOS: {OPAL_PKG}-x86_64-macos.tar.xz
 
 :LNK_PKG:  http://amas.web.psi.ch/Downloads/OPAL/package/
+
+:OPAL_VER_LINUX: 2021.1
+:OPAL_NVS_LINUX: OPAL-{OPAL_VER_LINUX}
+:OPAL_PKG_LINUX: OPAL-{OPAL_VER_LINUX}-1-x86_64-linux.tar.xz
+:LNK_PKG_LINUX: {LNK_PKG}{LNK_PKG_LINUX}
+
+:OPAL_VER_MACOS: 2.4.0
+:OPAL_NVS_MACOS: OPAL-{OPAL_VER_MACOS}
+:OPAL_PKG_MACOS: OPAL-{OPAL_VER_MACOS}-1-x86_64-macos.tar.xz
+:LNK_PKG_MACOS: {LNK_PKG}{LNK_PKG_MACOS}
+
 
 == Overview 
 
@@ -24,7 +30,7 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 ### On Linux
 
 1. change your working directory to `$PREFIX`
-1. download {LNK_PKG}{OPAL_PKG_LINUX}[{OPAL_NAME_VER} for Linux]
+1. download {LNK_PKG_LINUX}[{OPAL_NVS_LINUX} for Linux]
 1. Un-tar the downloaded file:
 +
 [source,sh,subs="attributes"] 
@@ -34,12 +40,13 @@ tar xf {OPAL_PKG_LINUX}
 
 ### On macOS
 1. change your working directory to `$PREFIX`
-1. download http://amas.web.psi.ch/Downloads/OPAL/package/OPAL_PKG}-x86_64-macos.tar.xz[OPAL-2.4.0 for macOS]
+1. download {LNK_PKG_MACOS}[{OPAL_NVS_MACOS} for macOS]
 1. Un-tar the downloaded file:
 +
-```
-tar xf OPAL-2.4.0-2-x86_64-macos.tar.xz
-```
+[source,sh,subs="attributes"]
+----
+tar xf {OPAL_PKG_MACOS}
+----
 
 === On Windows
 
@@ -50,14 +57,17 @@ You have to use Windows Services for Linux and install the Linux package as docu
 > **Note** MPI is included in the OPAL package. Be sure to use the MPI utilities shipped with the OPAL package!
 
 Source the OPAL shell profile. For the time being only sh-like shells - like BASH, ZSH - are supported.
-```
-source "$PREFIX/OPAL-2.4.0/etc/profile.d/opal.sh"
-```
+[source,sh,subs="attributes"]
+----
+source "$PREFIX/{OPAL_NVS_LINUX}/etc/profile.d/opal.sh"
+----
 Now you are ready to run OPAL (assuming you have an input file `example.in`):
-```
+[source,sh,subs="attributes"]
+----
 opal example.in
-```
+----
 or
-```
+[source,sh,subs="attributes"]
+----
 mpirun -np 4 opal example.in
-```
+----
