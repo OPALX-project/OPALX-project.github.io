@@ -27,9 +27,9 @@ The package can be installed wherever you want. Let's name this directory `$PREF
 1. download {LNK_PKG}{OPAL_PKG_LINUX}[{OPAL_NAME_VER} for Linux]
 1. Un-tar the downloaded file:
 +
-```
+----
 tar xf {OPAL_PKG_LINUX}
-```
+----
 
 ### On macOS
 1. change your working directory to `$PREFIX`
