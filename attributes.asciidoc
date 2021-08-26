@@ -16,4 +16,4 @@
 :linux_pkg:		-x86_64-linux.tar.xz[tar.xz]
 :linux_md5:		-x86_64-linux.tar.xz.md5[md5]
 :macos_pkg:		-x86_64-macos.tar.xz[tar.xz]
-:macos_md5:		-x86_64-macos.tar.xz.md5[md]
+:macos_md5:		-x86_64-macos.tar.xz.md5[md5]
