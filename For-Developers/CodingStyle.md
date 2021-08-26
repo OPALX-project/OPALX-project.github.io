@@ -1,52 +1,5 @@
 [[_TOC_]]
 
-0. [Short Introduction](#0-short-introduction)
-1. [Language Standards](#1-language-standards)
-2.  [Naming Conventions](#2-naming-conventions)
-    1.  [General notes](#21-general-notes)
-    2.  [Class Names](#22-class-names)
-    3.  [File Names](#23-file-names)
-    4.  [Class Library Names](#24-class-library-names)
-    5.  [Method Names](#25-method-names)
-    6.  [C Function Names](#26-c-function-names)
-    7.  [Class Member Variable Names](#27-class-member-variable-names)
-    8.  [Method Argument and local Variable
-        Names](#28-method-argument-and-local-variable-names)
-    9.  [Pointer and Reference Variables
-        Names](#29-pointer-and-reference-variables-names)
-    10. [Global and Static Variables](#210-global-and-static-variables)
-    11. [Global Constants, Enums and Macro
-        Names](#211-global-constants-enums-and-macro-names)
-    12. [Type Names](#212-type-names)
-    13. [C++ File Extensions](#213-c-file-extensions)
-
-3.  [Documentation](#3-documentation)
-    1.  [File Header](#31-file-header)
-    2.  [Header Files](#32-header-files)
-    3.  [API Documentation](#33-api-documentation)
-    4.  [Code Documentation](#34-code-documentation)
-    5.  [Doxygen](#35-doxygen)
-
-4.  [Methods and Functions](#4-methods-and-functions)
-    1.  [Complexity](#41-complexity)
-    2.  [Centralized exiting and early
-        returns](#42-centralized-exiting-and-early-returns)
-
-5.  [Formatting](#5-formatting)
-    1.  [Indentation](#51-indentation)
-    2.  [Breaking long lines and
-        strings](#52-breaking-long-lines-and-strings)
-    3.  [Placing Spaces](#53-placing-spaces)
-    4.  [Pointer and Reference
-        Variables](#54-pointer-and-reference-variables)
-    5.  [Placing Braces](#55-placing-braces)
-    6.  [C++ Templates](#56-c-templates)
-    7.  [Tools](#57-tools)
-
-6.  [Memory Allocation](#6-memory-allocation)
-7.  [Error Handling](#7-error-handling)
-8.  [References](#8-references)
-
 # 0. Short Introduction
 
 In a huger software project it is good practice to define a coding-style. 
@@ -72,7 +25,7 @@ A good example for a coding-style is the [Linux coding-style](https://www.kernel
 # 1. Language Standards
 
 -   C99
--   C++11
+-   C++17
 
 * * * * *
 
