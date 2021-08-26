@@ -26,7 +26,7 @@ Please use the _OPAL_ mailing list {mail_mailing_list} to discuss problems and i
 
 Please report bugs and feature requests to the {link_issue_tracker}[issue tracker] or to the mailing list.
 
-## Documentation & Help
+## Documentation, Help, Presentations & Papers
 
 ### OPAL documentation
 
@@ -71,6 +71,10 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 1. link:RegressionTestExamples[Examples from regression tests]
 1. link:FFA[FFA]
 1. {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
+
+=== Presentations & Papers
+
+* link:OPALPresentations[OPAL Physics Resources]
 
 == Download
 
@@ -169,4 +173,3 @@ See also link:postprocessing[Post Processing].
 ** on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 ** on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
 
-== link:OPALPresentations[OPAL Physics Resources]
