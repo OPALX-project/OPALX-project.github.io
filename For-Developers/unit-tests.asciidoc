@@ -1,4 +1,3 @@
-= Unit Tests
 
 The idea behind unit tests is to check "does this function do what I think it's doing". We want to check that, when we write a function, we haven't put any subtle (or not so subtle) errors in the code. Also we want to check that when we change some other function, it doesn't break existing code. So for each function (or maybe pair of functions) we write a test function. These are known as "unit tests".
 
@@ -69,4 +68,3 @@ TDD consists of the following steps:
   * _Unit test will compile, but fail_
 3. Write class/feature implementation
   * _Unit test will pass_ (if implementation correct)
-
