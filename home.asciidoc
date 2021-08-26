@@ -154,18 +154,23 @@ link:OPAL-conversion-utilities[_OPAL_ conversion utilities]
 
 == OPAL for Developers
 
-* **Development**
-** link:For-Developers/Codingstyle[Coding Style and Conventions]
-** link:For-Developers/unit-tests[Building, executing and writing unit tests]
-** link:For-Developers/OPAL-Development-Workflow[Development workflow, Git and Gitlab usage]
-** link:For-Developers/Release-Procedure[Release Procedure]
-* **Documentation**
-** {link_doxydoc}/master[_OPAL_ source code documentation]
-** link:For-Developers/ippl_user_guide.pdf[IPPL Documentation]
-** link:For-Developers/Most-Used-Directories-in-the-Code[Most Used Directories in the Code]
-** link:For-Developers/tech-ideas[Technology & Ideas]
-** link:For-Developers/Periodic-Tele-cons[Workshops and virtual meetings]
-* **Build-, Unit- and Regression Tests**
-** on {link_opal_base}/master[_OPAL_ development branch]
-** on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
-** on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
+**Development**
+
+* link:For-Developers/Codingstyle[Coding Style and Conventions]
+* link:For-Developers/unit-tests[Building, executing and writing unit tests]
+* link:For-Developers/OPAL-Development-Workflow[Development workflow, Git and Gitlab usage]
+* link:For-Developers/Release-Procedure[Release Procedure]
+
+**Documentation**
+
+* {link_doxydoc}/master[_OPAL_ source code documentation]
+* link:For-Developers/ippl_user_guide.pdf[IPPL Documentation]
+* link:For-Developers/Most-Used-Directories-in-the-Code[Most Used Directories in the Code]
+* link:For-Developers/tech-ideas[Technology & Ideas]
+* link:For-Developers/Periodic-Tele-cons[Workshops and virtual meetings]
+
+**Build-, Unit- and Regression Tests**
+
+* on {link_opal_base}/master[_OPAL_ development branch]
+* on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
+* on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
