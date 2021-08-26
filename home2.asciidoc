@@ -1,6 +1,6 @@
-[![](https://amas.web.psi.ch/images/logo.png)](/OPAL/wiki/TracIni#header_logo-section)
-
+image::images/logo.png[]
 = Object Oriented Parallel Accelerator Library (_OPAL_)
+include::wiki.attributes[]
 
 == Introduction
 
@@ -22,105 +22,151 @@ _OPAL_ comes in the following flavours:
 
 The code is managed through the Git distributed version control system. A suite of unit tests have been developed for various parts of _OPAL_, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in Asciidoc. Tools are available to readily convert Asciidoc into formats such as PDF and HTML for display.
 
-Please use the _OPAL_ mailing list opal@ … (opal AT lists.psi.ch) to discuss problems and issues. Subscribe to the [**mailing list**](https://psilists.ethz.ch/sympa/subscribe/opal)
+Please use the _OPAL_ mailing list {mail_mailing_list} to discuss problems and issues. Subscribe to the {link_mailing_list}[**mailing list**].
 
-Please report bugs and feature requests to the [issue tracker](https://gitlab.psi.ch/OPAL/src/issues) or to the mailing list.
+Please report bugs and feature requests to the {link_issue_tracker}[issue tracker] or to the mailing list.
 
 ## Documentation & Help
 
 ### OPAL documentation
 
-| Version | Manual | Source code <br> documentation | Release notes | 
-| ------- | ------ | ------------------------- | ------------- |
-| _OPAL_ development | [HTML](http://amas.web.psi.ch/opal/Documentation/master/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/master/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master/index.html) | [Wiki](ReleaseNotes/OPAL-2021.2) |
-| _OPAL_ 2021.1 | [HTML](http://amas.web.psi.ch/opal/Documentation/2021.1/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2021.1/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2021.1/index.html) | [Wiki](ReleaseNotes/OPAL-2021.1) |
-| _OPAL_ 2.4 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.4/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.4/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.4/index.html) | [Wiki](ReleaseNotes/OPAL-2.4) |
-| _OPAL_ 2.2 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.2/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.2/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.2/index.html) | [Wiki](ReleaseNotes/OPAL-2.2) |
-| _OPAL_ 2.0 | [HTML](http://amas.web.psi.ch/opal/Documentation/2.0/index.html), [PDF](http://amas.web.psi.ch/opal/Documentation/2.0/Manual.pdf) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/2.0/index.html) | [Wiki](ReleaseNotes/OPAL-2.0) |
+[%header,width="80%",cols="2,2,2,2"]
+|========
+| Version 
+| Manual
+| Source code documentation
+| Release notes
 
-### Start with Examples
+| _OPAL_ development
+| {link_manual}/master[HTML], {link_manual}/master/Manual.pdf[PDF]
+| {link_doxydoc}/master[HTML]
+| link:RelaseNotes/OPAL-2021.1[Wiki]
 
-1. [Cyclotron](Cyclotron)
-1. [RF Photo Injector](RFPhotoInjector)
-1. [Examples from regression tests](RegressionTestExamples)
-1. [FFA](FFA)
-1. [Tutorial from Manual](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#chp.tutorial)
+| _OPAL_ 2021.1
+| {link_manual}/2021.1[HTML], {link_manual}/2021.1/Manual.pdf[PDF]
+| {link_doxydoc}/2021.1[HTML]
+| link:RelaseNotes/OPAL-2021.1[Wiki]
 
-## Download
+| _OPAL_ 2.4
+| {link_manual}/2.4[HTML], {link_manual}/2.4/Manual.pdf[PDF]
+| {link_doxydoc}/2.4[HTML]
+| link:RelaseNotes/OPAL-2.4[Wiki]
 
-### Source tar-balls and binary packages
+| _OPAL_ 2.2
+| {link_manual}/2.2[HTML], {link_manual}/2.2/Manual.pdf[PDF]
+| {link_doxydoc}/2.2[HTML]
+| link:RelaseNotes/OPAL-2.2[Wiki]
 
-| Version | Source | Linux <br> binary | macOS <br> binary |
-| ------- | ------ | ----------------- | ----------------- |
-| OPAL 2021.1.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2021.1.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2021.1.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2021.1.0-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2021.1.0-x86_64-linux.tar.xz.md5) | |
-| OPAL 2.4.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.4.0-2-x86_64-macos.tar.xz.md5) |
-| OPAL-2.2.1 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.1.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.1.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.1-1-x86_64-linux.tar.xz.md5) | n.a.  |
-| OPAL-2.2.0 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.2.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.2.0-1-x86_64-macos.tar.xz.md5) |
-| OPAL-2.0.2 | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/src/OPAL-2.4.0.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-linux.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-linux.tar.xz.md5) | [tar.xz](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz), [md5](http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.2-1-x86_64-macos.tar.xz.md5) |
+| _OPAL_ 2.0
+| {link_manual}/2.0[HTML], {link_manual}/2.0/Manual.pdf[PDF]
+| {link_doxydoc}/2.0[HTML]
+| link:RelaseNotes/OPAL-2.0[Wiki]
 
-Documentation about installing and running the _OPAL_ binary package is available [here](OPAL-binary-package).
+|========
 
-A ChangeLog of the binary packages is available [here](OPAL-binary-package-ChangeLog).
+=== Start with Examples
 
-Older version can be found [here](OPAL-binary-package-old-versions).
+1. link:Cyclotron[Cyclotron]
+1. link:RFPhotoInjector[RF Photo Injector]
+1. link:RegressionTestExamples[Examples from regression tests]
+1. link:FFA[FFA]
+1. {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
 
-### Git repository
+== Download
+
+=== Source tar-balls and binary packages
+
+[%header,width="80%",cols="2,2,2,2"]
+|========
+| Version 
+| Source
+| Linux binary
+| macOS binary
+
+| _OPAL_ 2021.1.0
+| {link_src}/OPAL-2021.1.0.tar.xz[tar.xz], {link_src}/OPAL-2021.1.0.tar.xz.md5[md5]
+| 
+| 
+
+| _OPAL_ 2.4.0
+| {link_src}/OPAL-2.4.0.tar.xz[tar.xz], {link_src}/OPAL-2.4.0.tar.xz.md5[md5]
+| {link_pkg}/OPAL-2.4.0-2{linux_pkg}, {link_pkg}/OPAL-2.4.0-2{linux_md5}
+| {link_pkg}/OPAL-2.4.0-2{macos_pkg}, {link_pkg}/OPAL-2.4.0-2{macos_md5}
+
+| _OPAL_ 2.2.1
+| {link_src}/OPAL-2.2.1.tar.xz[tar.xz], {link_src}/OPAL-2.2.1.tar.xz.md5[md5]
+| {link_pkg}/OPAL-2.1.1-1{linux_pkg}, {link_pkg}/OPAL-2.2.1-1{linux_md5}
+| 
+
+| _OPAL_ 2.2.0
+| {link_src}/OPAL-2.2.0.tar.xz[tar.xz], {link_src}/OPAL-2.2.0.tar.xz.md5[md5]
+| {link_pkg}/OPAL-2.2.0-1{linux_pkg}, {link_pkg}/OPAL-2.2.0-1{linux_md5}
+| {link_pkg}/OPAL-2.2.0-1{macos_pkg}, {link_pkg}/OPAL-2.2.0-1{macos_md5}
+
+| _OPAL_ 2.0.2
+| {link_src}/OPAL-2.0.2.tar.xz[tar.xz], {link_src}/OPAL-2.0.2.tar.xz.md5[md5]
+| {link_pkg}/OPAL-2.0.2-1{linux_pkg}, {link_pkg}/OPAL-2.0.2-1{linux_md5}
+| {link_pkg}/OPAL-2.0.2-1{macos_pkg}, {link_pkg}/OPAL-2.0.2-1{macos_md5}
+
+|========
+
+Documentation about installing and running the _OPAL_ binary package is available link:OPAL-binary-package[here].
+
+A ChangeLog of the binary packages is available link:OPAL-binary-package-ChangeLog[here].
+
+Older version can be found link:OPAL-binary-package-old-versions[here].
+
+=== Git repository
 
 Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
-```
-git clone https://gitlab.psi.ch/OPAL/src.git
-```
+[source,sh,subs="attributes"] 
+----
+git clone {link_repo}.git
+----
 
 or clone a specific branch/tag with
-```
-git clone --single-branch --depth 1  --branch BRANCH_OR_TAG https://gitlab.psi.ch/OPAL/src.git [DIR]
-```
+[source,sh,subs="attributes"] 
+----
+git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR]
+----
 
-<!--
-* [Download _OPAL_ source](download-source)
--->
+== Using and Compiling _OPAL_
 
-## Using and Compiling _OPAL_
-
-* [Use _OPAL_ at PSI](OPALAtPSI)
-* [Compile _OPAL_](For%20Developers/Compile-OPAL)
-* [Compile _OPAL_ at CSCS](For%20Developers/Compile-OPAL-at-CSCS)
+* link:OPALAtPSI[Use _OPAL_ at PSI]
+* link:For%20Developers/Compile-OPAL[Compile _OPAL_]
+* link:For%20Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
 
 
+== Tools
+=== The runOPAL.py Script
 
-## Tools
-### The runOPAL.py Script
+The link:runOPAL[runOPAL] Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.
 
-The [runOPAL](runOPAL) Python scripts allows you to run, automated, several OPAL jobs and obtain the
-data in a conceived way. Scans of multiple dimensions are easy to perform.
+=== Post Processing and pyOPALTools
 
-### Post Processing and pyOPALTools
-
-The [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
+The {link_pyopaltools}/wikis/home[pyOPALTools] Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 See also [Post Processing](PostProcessing).
 
-### Conversion utilities
+=== Conversion utilities
 
-* [_OPAL_ conversion utilities](OPAL-conversion-utilities)
+* link:OPAL-conversion-utilities[_OPAL_ conversion utilities]
 
-## OPAL for Developers
+== OPAL for Developers
 
-* Development
-  * [Coding Style and Conventions](For-Developers/Codingstyle)
-  * [Building, executing and writing unit tests](For-Developers/unit-tests)
-  * [Development workflow, Git and Gitlab usage](For-Developers/OPAL-Development-Workflow)
-  * [Release Procedure](For-Developers/Release-Procedure)
-* Documentation
-  * [_OPAL_ source code documentation](http://amas.web.psi.ch/opal/CodeDocumentation/master/)
-  * [IPPL Documentation](For-Developers/ippl_user_guide.pdf)
-  * [Most Used Directories in the Code](For-Developers/Most-Used-Directories-in-the-Code)
-* [Technology & Ideas](For-Developers/tech-ideas)
-* [Periodic Tele-cons](For-Developers/Periodic-Tele-cons)
+* **Development**
+** link:For-Developers/Codingstyle[Coding Style and Conventions]
+** link:For-Developers/unit-tests[Building, executing and writing unit tests]
+** link:For-Developers/OPAL-Development-Workflow[Development workflow, Git and Gitlab usage]
+** link:For-Developers/Release-Procedure[Release Procedure]
+* **Documentation**
+** {link_doxydoc}/master[_OPAL_ source code documentation]
+** link:For-Developers/ippl_user_guide.pdf[IPPL Documentation]
+** link:For-Developers/Most-Used-Directories-in-the-Code[Most Used Directories in the Code]
+** link:For-Developers/tech-ideas[Technology & Ideas]
+** link:For-Developers/Periodic-Tele-cons[Workshops and virtual meetings]
+* **Build-, Unit- and Regression Tests**
+** on {link_opal_base}/master[_OPAL_ development branch]
+** on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
+** on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
 
-## Build-, Unit- and Regression Tests
-
-* on [master branch](http://amas.web.psi.ch/opal/master/)
-* on [OPAL 2021.1 branch](http://amas.web.psi.ch/opal/OPAL-2021.1/)
-* on [OPAL 2.4 branch](http://amas.web.psi.ch/opal/OPAL-2.4/)
-
-## [OPAL Physics Resources](OPALPresentations)
+== link:OPALPresentations[OPAL Physics Resources]
