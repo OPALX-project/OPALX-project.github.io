@@ -1,3 +1,4 @@
+[[TOC]]
 
 0. [Short Introduction](#0-short-introduction)
 1. [Language Standards](#1-language-standards)
