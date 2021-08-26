@@ -66,11 +66,11 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 === Start with Examples
 
-1. link:Cyclotron[Cyclotron]
-1. link:RFPhotoInjector[RF Photo Injector]
-1. link:RegressionTestExamples[Examples from regression tests]
-1. link:FFA[FFA]
-1. {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
+* link:Cyclotron[Cyclotron]
+* link:RFPhotoInjector[RF Photo Injector]
+* link:RegressionTestExamples[Examples from regression tests]
+* link:FFA[FFA]
+* {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
 
 === Presentations & Papers
 
@@ -172,4 +172,3 @@ See also link:postprocessing[Post Processing].
 ** on {link_opal_base}/master[_OPAL_ development branch]
 ** on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 ** on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
-
