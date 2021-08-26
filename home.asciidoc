@@ -26,6 +26,8 @@ Please use the _OPAL_ mailing list {mail_mailing_list} to discuss problems and i
 
 Please report bugs and feature requests to the {link_issue_tracker}[issue tracker] or to the mailing list.
 
+---
+
 ## Documentation, Help, Presentations & Papers
 
 ### OPAL documentation
