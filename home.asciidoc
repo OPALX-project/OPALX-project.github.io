@@ -1,6 +1,6 @@
 image::images/logo.png[]
 = Object Oriented Parallel Accelerator Library (_OPAL_)
-include::wiki.attributes[]
+include::attributes.asciidoc[]
 
 == Introduction
 
