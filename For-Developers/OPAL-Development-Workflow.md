@@ -1,5 +1,3 @@
-# OPAL Development Workflow
-
 [[_TOC_]]
 
 ---
