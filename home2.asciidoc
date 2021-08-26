@@ -145,7 +145,7 @@ The link:runOPAL[runOPAL] Python scripts allows you to run, automated, several O
 === Post Processing and pyOPALTools
 
 The {link_pyopaltools}/wikis/home[pyOPALTools] Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
-See also [Post Processing](PostProcessing).
+See also link:[Post Processing].
 
 === Conversion utilities
 
