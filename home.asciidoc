@@ -42,27 +42,27 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 | _OPAL_ development
 | {link_manual}/master[HTML], {link_manual}/master/Manual.pdf[PDF]
 | {link_doxydoc}/master[HTML]
-| link:RelaseNotes/OPAL-2021.1[Wiki]
+| link:ReleaseNotes/OPAL-2021.2[Wiki]
 
 | _OPAL_ 2021.1
 | {link_manual}/2021.1[HTML], {link_manual}/2021.1/Manual.pdf[PDF]
 | {link_doxydoc}/2021.1[HTML]
-| link:RelaseNotes/OPAL-2021.1[Wiki]
+| link:ReleaseNotes/OPAL-2021.1[Wiki]
 
 | _OPAL_ 2.4
 | {link_manual}/2.4[HTML], {link_manual}/2.4/Manual.pdf[PDF]
 | {link_doxydoc}/2.4[HTML]
-| link:RelaseNotes/OPAL-2.4[Wiki]
+| link:ReleaseNotes/OPAL-2.4[Wiki]
 
 | _OPAL_ 2.2
 | {link_manual}/2.2[HTML], {link_manual}/2.2/Manual.pdf[PDF]
 | {link_doxydoc}/2.2[HTML]
-| link:RelaseNotes/OPAL-2.2[Wiki]
+| link:ReleaseNotes/OPAL-2.2[Wiki]
 
 | _OPAL_ 2.0
 | {link_manual}/2.0[HTML], {link_manual}/2.0/Manual.pdf[PDF]
 | {link_doxydoc}/2.0[HTML]
-| link:RelaseNotes/OPAL-2.0[Wiki]
+| link:ReleaseNotes/OPAL-2.0[Wiki]
 
 |========
 
