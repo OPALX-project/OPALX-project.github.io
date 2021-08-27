@@ -16,7 +16,7 @@ _OPAL_ comes in the following flavours:
   cyclotrons and FFAs with time as the independent variable.
 * _OPAL-t_:
   models beam lines, linacs, rf-photo injectors and
-  complete XFELs excluding the undulator.
+  complete XFELs.
 * _OPAL-map_:
   map tracking (experimental).
 
