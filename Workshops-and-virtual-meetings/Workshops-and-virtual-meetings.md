@@ -2,4 +2,4 @@
 * [2020, February](Workshops-and-virtual-meetings/202002)
 * [2020, April - Python Integration](Workshops-and-virtual-meetings/202004)
 * [2019, December](Workshops-and-virtual-meetings/20191210)
-* [2019, April](Workshops-and-virtual-meetings/201904)
+* [2019, April - Berlin](Workshops-and-virtual-meetings/201904)
