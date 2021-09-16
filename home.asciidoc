@@ -88,7 +88,9 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 |========
 
-Documentation about installing and running the _OPAL_ binary package is available link:OPAL-binary-package[here].
+=== _OPAL_ binary packages
+
+Documentation about installing and running a _OPAL_ binary package is available link:OPAL-binary-package[here].
 
 A ChangeLog of the binary packages is available link:OPAL-binary-package-ChangeLog[here].
 
