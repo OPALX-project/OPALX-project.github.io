@@ -88,6 +88,20 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 |========
 
+=== Git repository
+
+Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
+[source,sh,subs="attributes"] 
+----
+git clone {link_repo}.git
+----
+
+or clone a specific branch/tag with
+[source,sh,subs="attributes"] 
+----
+git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR]
+----
+
 === _OPAL_ binary packages
 
 * link:OPAL-binary-package[installing and running a _OPAL_ binary package].
@@ -105,22 +119,6 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 === Presentations & Papers
 
 * link:OPALPresentations[OPAL Physics Resources]
-
----
-
-== Git repository
-
-Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
-[source,sh,subs="attributes"] 
-----
-git clone {link_repo}.git
-----
-
-or clone a specific branch/tag with
-[source,sh,subs="attributes"] 
-----
-git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR]
-----
 
 ---
 
