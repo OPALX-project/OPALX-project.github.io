@@ -36,7 +36,8 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 |========
 | Version 
 | Manual
-| Source code documentation
+| Source code +
+  documentation
 | Release notes
 
 | _OPAL_ development
