@@ -38,7 +38,7 @@ A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by execu
 
 The result is saved in cyclotron1.pdf and shown below.
 
-![tunesFIXPO](Examples/Cyclotron/cyclotron1.png)
+![tunesFIXPO](Cyclotron/cyclotron1.png)
 
 ### Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
 
