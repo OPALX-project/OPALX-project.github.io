@@ -84,7 +84,7 @@ and plot the result from the output file `data/tunes.dat` with
 
 The result is saved in `RingTunes.png` and shown below.
 
-![TunesClosedOrbitFinder](Examples/Cyclotron/RingTunes.png)
+![TunesClosedOrbitFinder](Cyclotron/RingTunes.png)
 
 # Accelerated Orbit Calculation using cyclotron2.in
 ### Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
@@ -98,7 +98,7 @@ where you also save the output in cyclotron2.out. It is always a good idea to ch
 
 As in the previous example, the result is saved in cyclotron2.pdf and shown below.
 
-![Orbit](Examples/Cyclotron/cyclotron2.png)
+![Orbit](Cyclotron/cyclotron2.png)
 
 <!--
 # 3D space charge calculation
