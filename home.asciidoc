@@ -90,11 +90,9 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 === _OPAL_ binary packages
 
-Documentation about installing and running a _OPAL_ binary package is available link:OPAL-binary-package[here].
-
-A ChangeLog of the binary packages is available link:OPAL-binary-package-ChangeLog[here].
-
-Older version can be found link:OPAL-binary-package-old-versions[here].
+* link:OPAL-binary-package[installing and running a _OPAL_ binary package].
+* link:OPAL-binary-package-ChangeLog[ChangeLog of the binary packages].
+* link:OPAL-binary-package-old-versions[Obsolete versions].
 
 === Start with Examples
 
