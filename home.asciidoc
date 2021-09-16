@@ -68,10 +68,10 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 === Start with Examples
 
-* link:Cyclotron[Examples/Cyclotron]
-* link:RFPhotoInjector[Examples/RF Photo Injector]
-* link:RegressionTestExamples[Examples from regression tests]
-* link:FFA[FFA]
+* link:Examples/Cyclotron[Cyclotron]
+* link:Examples/RFPhotoInjector[RF Photo Injector]
+* link:Examples/RegressionTestExamples[Examples from regression tests]
+* link:Examples/FFA[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
 
 === Presentations & Papers
