@@ -28,9 +28,7 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 ---
 
-## Documentation, Help, Presentations & Papers
-
-### OPAL documentation
+## Download, Documentation, Help, Presentations & Papers
 
 [%header,width="80%",cols="2,2,2,2,2,2"]
 |========
@@ -54,8 +52,8 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 | link:ReleaseNotes/OPAL-2021.2[Wiki]
 
 | {link_src}/OPAL-2021.1.0.tar.xz[_OPAL_ 2021.1.0] ({link_src}/OPAL-2021.1.0.tar.xz.md5[md5])
-|
-|
+| {link_pkg}/OPAL-2021.1.0-1{linux_pkg} ({link_pkg}/OPAL-2021.1.0-1{linux_md5})
+| {link_pkg}/OPAL-2021.1.0-1{macos_pkg} ({link_pkg}/OPAL-2021.1.0-1{macos_md5})
 | {link_manual}/2021.1[HTML], {link_manual}/2021.1/Manual.pdf[PDF]
 | {link_doxydoc}/2021.1[HTML]
 | link:ReleaseNotes/OPAL-2021.1[Wiki]
