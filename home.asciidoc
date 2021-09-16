@@ -34,11 +34,13 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 [%header,width="80%",cols="2,2,2,2"]
 |========
-| Version 
+| Version/ +
+  Source code 
 | Manual
 | Source code +
   documentation
-| Release notes
+| Release +
+  notes
 
 | _OPAL_ development
 | {link_manual}/master[HTML], {link_manual}/master/Manual.pdf[PDF]
