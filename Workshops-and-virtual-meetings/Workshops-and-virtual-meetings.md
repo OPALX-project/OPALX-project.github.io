@@ -1,2 +1,5 @@
-* [20 April 2020 - Python Integration](Workshops-and-virtual-meetings/20200420)
-* [10 December 2019](Workshops-and-virtual-meetings/20191210)
+* [2021, June](Workshops-and-virtual-meetings/202106)
+* [2020, February](Workshops-and-virtual-meetings/202002)
+* [2020, April - Python Integration](Workshops-and-virtual-meetings/202004)
+* [2019, December](Workshops-and-virtual-meetings/20191210)
+* [2019, April](Workshops-and-virtual-meetings/201904)
