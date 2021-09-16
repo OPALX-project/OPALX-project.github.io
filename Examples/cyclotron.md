@@ -17,7 +17,7 @@ For this project we need input files, that you obtain by clicking on links below
 
 | File | Description |
 | ---- |-----|
-| [cyclotron1.in](/Examples/Cyclotron/cyclotron1.in) and [cyclotron2.in](Examples/Cyclotron/cyclotron2.in) ([cyclotron1.in]( Examples/Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in]( Examples/Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
+| [cyclotron1.in](Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in](Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in](Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
 | [bfield.dat]( Examples/Cyclotron/bfield.dat) | magnetic field map |
 | [rffield1.dat]( Examples/Cyclotron/rffield1.dat) and [rffield2.dat](Examples/Cyclotron/rffield2.dat) | rf field maps |
 | [dist1.dat]( Examples/Cyclotron/dist1.dat) [dist2.dat]( Examples/Cyclotron/dist2.dat) | the input distributions |
