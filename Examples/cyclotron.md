@@ -9,7 +9,7 @@ Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in two distinct modes
 
 # Preparation
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
-If you do not have already access to OPAL, you can visit the download page [the download page](downloads). In
+If you do not have already access to OPAL, you can visit the download page [the download page](home). In
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](OPALAtPSI).
 
 # Needed Input Files
@@ -126,4 +126,3 @@ and the beam is represented by **1E5** macro particles
 
 **Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;**
 -->
-
