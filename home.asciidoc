@@ -34,9 +34,9 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 |========
 | Version/ +
   Source code 
-| Linux +
+| Linux binary +
   package
-| macOS +
+| macOS binary +
   package
 | Manual
 | Source code +
