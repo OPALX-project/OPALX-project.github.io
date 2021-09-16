@@ -4,7 +4,7 @@ This example describes a rf-photo injector, as part of the Argonne Wakefield Acc
 Here we will run the rf-photo injector (OPAL_t) 
 
 # Preparation
-If you do not have already access to OPAL, you can visit [the download page](downloads). In
+If you do not have already access to OPAL, you can visit [the download page](home). In
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](OPALATPSI).
 
 # Needed Input Files
