@@ -32,7 +32,7 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 ### OPAL documentation
 
-[%header,width="80%",cols="2,2,2,2"]
+[%header,width="80%",cols="2,2,2,2,2,2"]
 |========
 | Version/ +
   Source code 
