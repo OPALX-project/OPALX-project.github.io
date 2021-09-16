@@ -131,15 +131,11 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 ---
 
 == Tools
-The runOPAL.py Script::
-The link:runOPAL[runOPAL] Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.
 
-Post Processing and pyOPALTools::
-The {link_pyopaltools}/wikis/home[pyOPALTools] Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
+* The link:runOPAL[runOPAL] Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.
+* The {link_pyopaltools}/wikis/home[pyOPALTools] Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 See also link:postprocessing[Post Processing].
-
-Conversion utilities::
-link:OPAL-conversion-utilities[_OPAL_ conversion utilities]
+* link:OPAL-conversion-utilities[_OPAL_ conversion utilities]
 
 ---
 
