@@ -18,18 +18,18 @@ For this project we need input files, that you obtain by clicking on links below
 | File | Description |
 | ---- |-----|
 | [cyclotron1.in](Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in](Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in](Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
-| [bfield.dat]( Examples/Cyclotron/bfield.dat) | magnetic field map |
-| [rffield1.dat]( Examples/Cyclotron/rffield1.dat) and [rffield2.dat](Examples/Cyclotron/rffield2.dat) | rf field maps |
-| [dist1.dat]( Examples/Cyclotron/dist1.dat) [dist2.dat]( Examples/Cyclotron/dist2.dat) | the input distributions |
-| [ic.dat]( Examples/Cyclotron/ic.dat) | initial conditions for the tune calculation |
-| [refsol.dat]( Examples/Cyclotron/refsol.dat) | the reference solution for the tune calculation |
-| [cyclotron1.gpl]( Examples/Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl]( Examples/Cyclotron/cyclotron2.gpl) ([cyclotron2.gpl]( Examples/Cyclotron/1.6/cyclotron2.gpl) for 1.6.x) | plotting scripts for gnuplot |
+| [bfield.dat](Cyclotron/bfield.dat) | magnetic field map |
+| [rffield1.dat](Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) | rf field maps |
+| [dist1.dat](Cyclotron/dist1.dat) [dist2.dat](Cyclotron/dist2.dat) | the input distributions |
+| [ic.dat](Cyclotron/ic.dat) | initial conditions for the tune calculation |
+| [refsol.dat](Cyclotron/refsol.dat) | the reference solution for the tune calculation |
+| [cyclotron1.gpl](Cyclotron/cyclotron1.gpl) and [cyclotron2.gpl](Cyclotron/cyclotron2.gpl) ([cyclotron2.gpl](Cyclotron/1.6/cyclotron2.gpl) for 1.6.x) | plotting scripts for gnuplot |
 
 # Tune Calculation using cyclotron1.in
 ### Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
 
 For the tune calculation we need initial conditions (ic):  energy, radius and radial momenta given to us by an other program in the file  ic.dat.
-The Bash script [cyclotron1.bash](Examples/Cyclotron/cyclotron1.bash) will run the tune calculation for all energies specified in ic.dat and store the
+The Bash script [cyclotron1.bash](Cyclotron/cyclotron1.bash) will run the tune calculation for all energies specified in ic.dat and store the
 radial and vertical tune values together with reference data.
 Make sure the script has execute permission (`chmod u+x cyclotron1.bash`).
 A comparison can be plotted with [gnuplot](http://www.gnuplotting.org), by executing
@@ -45,9 +45,9 @@ The result is saved in cyclotron1.pdf and shown below.
 ### Needed files
 | File | Description |
 | ---- |-------|
-| [cyclotronTune-2-1.in](Examples/Cyclotron/cyclotronTune-2-1.in) | OPAL input file |
-| [bfield.dat]( Examples/Cyclotron/bfield.dat) | magnetic field map |
-| [plotTunes.py]( Examples/Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
+| [cyclotronTune-2-1.in](Cyclotron/cyclotronTune-2-1.in) | OPAL input file |
+| [bfield.dat](Cyclotron/bfield.dat) | magnetic field map |
+| [plotTunes.py](Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
 
 Since version 2.2 OPAL has a closed orbit finder with tune calculation based on Gordon's algorithm.
 
