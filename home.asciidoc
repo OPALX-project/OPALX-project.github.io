@@ -59,34 +59,40 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 | link:ReleaseNotes/OPAL-2021.1[Wiki]
 
 | {link_src}/OPAL-2.4.0.tar.xz[_OPAL_ 2.4.0] ({link_src}/OPAL-2.4.0.tar.xz.md5[md5])
-|
-|
+| {link_pkg}/OPAL-2.4.0-2{linux_pkg}, {link_pkg}/OPAL-2.4.0-2{linux_md5}
+| {link_pkg}/OPAL-2.4.0-2{macos_pkg}, {link_pkg}/OPAL-2.4.0-2{macos_md5}
 | {link_manual}/2.4[HTML], {link_manual}/2.4/Manual.pdf[PDF]
 | {link_doxydoc}/2.4[HTML]
 | link:ReleaseNotes/OPAL-2.4[Wiki]
 
 | {link_src}/OPAL-2.2.1.tar.xz[_OPAL_ 2.2.1] ({link_src}/OPAL-2.2.1.tar.xz.md5[md5])
-|
-|
+| {link_src}/OPAL-2.2.1.tar.xz[tar.xz], {link_src}/OPAL-2.2.1.tar.xz.md5[md5]
+| {link_pkg}/OPAL-2.2.1-1{linux_pkg}, {link_pkg}/OPAL-2.2.1-1{linux_md5}
 | {link_manual}/2.2[HTML], {link_manual}/2.2/Manual.pdf[PDF]
 | {link_doxydoc}/2.2[HTML]
 | link:ReleaseNotes/OPAL-2.2[Wiki]
 
 | {link_src}/OPAL-2.2.1.tar.xz[_OPAL_ 2.2.0] ({link_src}/OPAL-2.2.0.tar.xz.md5[md5])
-|
-|
+| {link_pkg}/OPAL-2.2.0-1{linux_pkg}, {link_pkg}/OPAL-2.2.0-1{linux_md5}
+| {link_pkg}/OPAL-2.2.0-1{macos_pkg}, {link_pkg}/OPAL-2.2.0-1{macos_md5}
 | {link_manual}/2.2[HTML], {link_manual}/2.2/Manual.pdf[PDF]
 | {link_doxydoc}/2.2[HTML]
 | link:ReleaseNotes/OPAL-2.2[Wiki]
 
 | {link_src}/OPAL-2.0.2.tar.xz[_OPAL_ 2.0.2] ({link_src}/OPAL-2.0.2.tar.xz.md5[md5])
-|
-|
+| {link_pkg}/OPAL-2.0.2-1{linux_pkg}, {link_pkg}/OPAL-2.0.2-1{linux_md5}
+| {link_pkg}/OPAL-2.0.2-1{macos_pkg}, {link_pkg}/OPAL-2.0.2-1{macos_md5}
 | {link_manual}/2.0[HTML], {link_manual}/2.0/Manual.pdf[PDF]
 | {link_doxydoc}/2.0[HTML]
 | link:ReleaseNotes/OPAL-2.0[Wiki]
 
 |========
+
+Documentation about installing and running the _OPAL_ binary package is available link:OPAL-binary-package[here].
+
+A ChangeLog of the binary packages is available link:OPAL-binary-package-ChangeLog[here].
+
+Older version can be found link:OPAL-binary-package-old-versions[here].
 
 === Start with Examples
 
@@ -102,52 +108,7 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 ---
 
-== Download
-
-=== Source tar-balls and binary packages
-
-[%header,width="80%",cols="2,2,2,2"]
-|========
-| Version 
-| Source
-| Linux binary
-| macOS binary
-
-| _OPAL_ 2021.1.0
-| {link_src}/OPAL-2021.1.0.tar.xz[tar.xz], {link_src}/OPAL-2021.1.0.tar.xz.md5[md5]
-| {link_pkg}/OPAL-2021.1.0-1{linux_pkg}, {link_pkg}/OPAL-2021.1.0-1{linux_md5}
-| {link_pkg}/OPAL-2021.1.0-1{macos_pkg}, {link_pkg}/OPAL-2021.1.0-1{macos_md5}
- 
-
-| _OPAL_ 2.4.0
-| {link_src}/OPAL-2.4.0.tar.xz[tar.xz], {link_src}/OPAL-2.4.0.tar.xz.md5[md5]
-| {link_pkg}/OPAL-2.4.0-2{linux_pkg}, {link_pkg}/OPAL-2.4.0-2{linux_md5}
-| {link_pkg}/OPAL-2.4.0-2{macos_pkg}, {link_pkg}/OPAL-2.4.0-2{macos_md5}
-
-| _OPAL_ 2.2.1
-| {link_src}/OPAL-2.2.1.tar.xz[tar.xz], {link_src}/OPAL-2.2.1.tar.xz.md5[md5]
-| {link_pkg}/OPAL-2.2.1-1{linux_pkg}, {link_pkg}/OPAL-2.2.1-1{linux_md5}
-| 
-
-| _OPAL_ 2.2.0
-| {link_src}/OPAL-2.2.0.tar.xz[tar.xz], {link_src}/OPAL-2.2.0.tar.xz.md5[md5]
-| {link_pkg}/OPAL-2.2.0-1{linux_pkg}, {link_pkg}/OPAL-2.2.0-1{linux_md5}
-| {link_pkg}/OPAL-2.2.0-1{macos_pkg}, {link_pkg}/OPAL-2.2.0-1{macos_md5}
-
-| _OPAL_ 2.0.2
-| {link_src}/OPAL-2.0.2.tar.xz[tar.xz], {link_src}/OPAL-2.0.2.tar.xz.md5[md5]
-| {link_pkg}/OPAL-2.0.2-1{linux_pkg}, {link_pkg}/OPAL-2.0.2-1{linux_md5}
-| {link_pkg}/OPAL-2.0.2-1{macos_pkg}, {link_pkg}/OPAL-2.0.2-1{macos_md5}
-
-|========
-
-Documentation about installing and running the _OPAL_ binary package is available link:OPAL-binary-package[here].
-
-A ChangeLog of the binary packages is available link:OPAL-binary-package-ChangeLog[here].
-
-Older version can be found link:OPAL-binary-package-old-versions[here].
-
-=== Git repository
+== Git repository
 
 Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
 [source,sh,subs="attributes"] 
