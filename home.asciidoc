@@ -93,8 +93,8 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 | _OPAL_ 2021.1.0
 | {link_src}/OPAL-2021.1.0.tar.xz[tar.xz], {link_src}/OPAL-2021.1.0.tar.xz.md5[md5]
-| {link_pkg}/OPAL-2021.1.0{linux_pkg}, {link_pkg}/OPAL-2021.1.0{linux_md5}
-| {link_pkg}/OPAL-2021.1.0{macos_pkg}, {link_pkg}/OPAL-2021.1.0{macos_md5}
+| {link_pkg}/OPAL-2021.1.0-1{linux_pkg}, {link_pkg}/OPAL-2021.1.0-1{linux_md5}
+| {link_pkg}/OPAL-2021.1.0-1{macos_pkg}, {link_pkg}/OPAL-2021.1.0-1{macos_md5}
  
 
 | _OPAL_ 2.4.0
