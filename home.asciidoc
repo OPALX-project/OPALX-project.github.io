@@ -177,7 +177,7 @@ link:OPAL-conversion-utilities[_OPAL_ conversion utilities]
 * link:For-Developers/ippl_user_guide.pdf[IPPL Documentation]
 * link:For-Developers/Most-Used-Directories-in-the-Code[Most Used Directories in the Code]
 * link:For-Developers/tech-ideas[Technology & Ideas]
-* link:Workshops-and-virtual-meetings/Workshops-and-virtual-meetings.md[Workshops and virtual meetings]
+* link:Workshops-and-virtual-meetings/Workshops-and-virtual-meetings[Workshops and virtual meetings]
 
 **Build-, Unit- and Regression Tests**
 
