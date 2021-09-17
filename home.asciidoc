@@ -125,6 +125,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 == Using and Compiling _OPAL_
 
 * link:OPALAtPSI[Use _OPAL_ at PSI]
+* link:For%20Developers/Supported-OS-and-required-Software[Supported OS and required Software]
 * link:For%20Developers/Compile-OPAL[Compile _OPAL_]
 * link:For%20Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
 
