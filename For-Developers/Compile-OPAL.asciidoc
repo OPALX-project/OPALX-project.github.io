@@ -1,5 +1,4 @@
 :doctype: article
-:numbered:
 
 '''
 
@@ -48,6 +47,7 @@ from inside your clone.
 
 OPAL uses CMake to configure the build process. You can either pass options to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`.
 
+[source,sh]
 --------------------------------------
 mkdir -p "${SRC_DIR}/OPAL/build" && cd "$_"
 CC=mpicc CXX=mpicxx cmake \
@@ -80,7 +80,6 @@ The following table shows the most important options:
 | requires trilinos >= 12.x and parmetis >= 4.0.3
 
 |=======
-
 
 == Compile and install OPAL
 
