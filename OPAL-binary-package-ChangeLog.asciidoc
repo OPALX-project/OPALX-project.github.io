@@ -5,7 +5,7 @@
 
 - OPAL 2021.1.0
 - update tool-chain
-- use RPATH in binaries
+- set RPATH in executables and libraries
 
 *OPAL 2.4.0-2 - 2020, September 1*
 
