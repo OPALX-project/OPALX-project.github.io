@@ -19,58 +19,6 @@ doesn't mean that they can be used for compiling _OPAL_ due to missing
 features. In this document we explain how to compile _OPAL_ from scratch
 - including the recommended compiler and all libraries.
 
-== Compile __OPAL__ on a Linux system @PSI
-
-The easiest and recommended solution is to use the **Pmodules**
-environment available at PSI. Please link:Pmodules[read this
-wiki-page] if you are not using a PSI Linux distribution or you do not
-know whether the Pmodules are installed on your system.
-
-Instead of loading each single module, you can use the meta-modules
-available in the directory
-`/afs/psi.ch/project/amas/modulefiles/OPAL`. To make these
-meta-modules available, run the command:
-
-----
-module use /afs/psi.ch/project/amas/modulefiles/OPAL
-----
-
-=== Compiling on Merlin6
-
-On Merlin6 special version of the modules should be used. These
-modules provide a better integration with the SLURM batch system. 
-Depending on the version you want to compile use one of the 
-following commands:
-----
-module load toolchain/2.2_slurm
-----
-----
-module load toolchain/2.4_slurm
-----
-----
-module load toolchain/2021.1_slurm
-----
-----
-module load toolchain/master_slurm
-----
-
-'''
-
-=== Other Linux Systems
-
-Use one of the following toolchains:
-----
-module load toolchain/2.2
-----
-----
-module load toolchain/2.4
-----
-----
-module load toolchain/2021.1
-----
-----
-module load toolchain/master
-----
 
 == Build the OPAL tool-chain from scratch
 
