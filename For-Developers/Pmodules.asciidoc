@@ -37,6 +37,7 @@ sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
 source /opt/psi/config/profile.bash
 ----
 
+////
 ==== Install the required modules on your local disk
 
 1. First you have to choose an installation directory. The modules can be installed anywhere. Around x GB are required for the installation. The following `$DSTDIR` represents the installation directory.
@@ -75,3 +76,4 @@ modmanage install H5hut/2.0.0rc3 trilinos/12.10.1-1 --with=gcc/5.4.0 --with=open
 modmanage install cuda/8.0.44
 modmanage install dks/1.1.2 --with=gcc/5.4.0 --with=openmpi/1.10.4
 ----
+////
