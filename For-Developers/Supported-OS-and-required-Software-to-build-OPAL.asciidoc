@@ -76,34 +76,15 @@ the recommended version.
 | google-test | 1.10.0 or newer
 | optional: Required to run the unit-tests
 
-| GNU Multiple Precision Arithmetic Library (GMP)
-| 6.2.1 or newer
-| optional: if you want to compile GCC
-
-|=======
-
-|=======
-| GNU MPFR Library
-| 4.1.0
-| optional: if you want to compile GCC
-
-| GNU MPC Library
-| 1.2.1
-| optional: if you want to compile GCC
-
-| GNU Compiler Collection
-| 10.3.0
-| optional: if you want to compile it
-
 |=======
 
 == Compiler
 
 === GNU Compiler Collection
 
-The GNU Compiler Collection (GCC) is the recommended compiler for OPAL
+The GNU Compiler Collection (GCC) is the recommended compiler for _OPAL_
 on a Linux system and on Windows with the Windows Services for
-Linux. If you want to use GCC on macOS, it is strongly recommended to
+Linux. If you want to use GCC on macOS, it is recommended to
 use GCC provided by Macports, Homebrew, Fink or another software
 package manager.  
 
@@ -112,6 +93,25 @@ package manager.
     commands `cc` and `c&#43;&#43;` are calling the right binary. At least
     with GCC from Macports `cc` and `c&#43;&#43;` are not set with `port select`.
 
+[width="100%",options="header"]
+|=======
+| **Name**
+| **recommended Versions**
+| **Notes**
+
+| GNU Multiple Precision Arithmetic Library (GMP)
+| 6.2.1 or newer
+| optional: if you want to compile GCC
+
+| GNU MPFR Library
+| 4.1.0
+| optional: if you want to compile GCC
+
+| GNU MPC Library
+| 1.2.1
+| optional: if you want to compile GCC
+
+|=======
 
 === Clang/LLVM (macOS only)
 
