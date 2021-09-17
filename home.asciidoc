@@ -130,7 +130,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 
 * link:For%20Developers/Supported-OS-and-required-Software-to-build-OPAL[Supported OS and required Software to build _OPAL_]
 * link:For%20Developers/Setup-build-environment-at-PSI[Setup build environment at PSI]
-* link:For%20Developers/Compile-required-software[Compile required software]
+* link:For%20Developers/Compile-required-software[Compile required software (_OPAL_ build recipes)]
 * link:For%20Developers/Compile-OPAL[Compile _OPAL_]
 * link:For%20Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
 
