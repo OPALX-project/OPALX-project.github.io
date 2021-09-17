@@ -1,5 +1,3 @@
-:TOC:
-
 The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next two sections. The Pmodules are running on 
 
 * Redhat Enterprise Linux 6, 7 and 8 and Clones like Scientific Linux and CentOS
