@@ -8,13 +8,11 @@
 Compiling _OPAL_ can be quite challenging due to all the required
 libraries. Even if some libraries are available on the system, this
 doesn't mean that they can be used for compiling _OPAL_ due to missing
-features. In this document we explain how to compile _OPAL_ from scratch
-- including the recommended compiler and all libraries.
+features.
 
+> **NOTE**:  In the code snippets below we use the environment variables `SRC_DIR` and `PREFIX`. Whereby `SRC_DIR` must be set to the directory _OPAL_ will be build in and `PREFIX` to the _OPAL_ installation directory.
 
-== Building OPAL
-
-=== Get the OPAL sources
+== Get the OPAL sources
 
 Clone the OPAL Git repository
 
@@ -46,12 +44,7 @@ git branch -a
 
 from inside your clone.
 
-
-=== Setup OPAL build environment
-
-The environment must be set up as described above for building the dependencies.
-
-=== Configure OPAL
+== Configure OPAL
 
 OPAL uses CMake to configure the build process. You can either pass options to `cmake` or you can run the command `ccmake` in the build directory **after** calling `cmake`.
 
@@ -89,23 +82,10 @@ The following table shows the most important options:
 |=======
 
 
-=== Compile and install OPAL
+== Compile and install OPAL
 
 ----
 cd "${SRC_DIR}/OPAL/build"
 make -j ${NJOBS}
 make install
 ----
-
-=== Compile OPAL with the SAAMG solver
-
-To compile OPAL with the SAAMG follow the steps in the section "Compile OPAL", but replace the configuration step with:
---------------------------------------
-mkdir -p "${SRC_DIR}/OPAL/build"
-cd "${SRC_DIR}/OPAL/build"
-CC=mpicc CXX=mpicxx cmake \
-        --prefix="${PREFIX}" \
-        -D ENABLE_SAAMG_SOLVER=TRUE \
-        "${SRC_DIR}/OPAL/src"
---------------------------------------
-'''
