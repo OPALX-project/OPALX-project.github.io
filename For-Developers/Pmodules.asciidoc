@@ -10,7 +10,7 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 
 To check whether Pmodules are available on your system, run `module --version`. The output should look like:
 
-[source=sh]
+[source,sh,subs="attributes"] 
 ----
 $ module --version
 
@@ -26,7 +26,7 @@ If Pmodules are not installed on your system, you can either use modules availab
 
 You (or your system administrator if you don't have `root` access) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
 
-[source=sh]
+[source,sh,subs="attributes"] 
 ----
 sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
 ----
@@ -41,31 +41,36 @@ source /opt/psi/config/profile.bash
 1. First you have to choose an installation directory. The modules can be installed anywhere. Around x GB are required for the installation. The following `$DSTDIR` represents the installation directory.
 1. In the second step the Pmodules software must be installed with the command:
 +
-```
+[source,sh,subs="attributes"] 
+----
 /afs/psi.ch/sys/psi.x86_64_slp6/Tools/Pmodules/default/bin/modmanage  init "${DSTDIR}"
-```
+----
 1. Next we have to setup the symbolic link:
 +
-```
+[source,sh,subs="attributes"] 
+----
 sudo ln -s "${DSTDIR}" /opt/psi
-```
+----
 1. Source the configuration file
 +
-```
+[source,sh,subs="attributes"] 
+----
 source /opt/psi/config/profile.bash
-```
+----
 Remember to add the same line to your `.bashrc` or `.bash_profile`
 1. Now you can install the required modules:
 +
-```
+[source,sh,subs="attributes"] 
+----
 modmanage install cmake/3.6.3
 modmanage install boost/1.62.0 gsl/2.2.1 gtest/1.7.0 OpenBLAS/0.2.19 root/6.08.02 --with=gcc/5.4.0
 modmanage install parmetis/4.0.3 --with=gcc/5.4.0 --with=openmpi/1.10.4
 modmanage install H5hut/2.0.0rc3 trilinos/12.10.1-1 --with=gcc/5.4.0 --with=openmpi/1.10.4 --with=hdf5/1.8.18
-```
+----
 1. Optional (only for OPAL versions 2.2 and lower): if you want to compile with DKS (CUDA), you have to install the following modules in addition:
 +
-```
+[source,sh,subs="attributes"] 
+----
 modmanage install cuda/8.0.44
 modmanage install dks/1.1.2 --with=gcc/5.4.0 --with=openmpi/1.10.4
-```
+----
