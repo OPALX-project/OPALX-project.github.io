@@ -15,6 +15,7 @@ features.
 
 Clone the OPAL Git repository
 
+[source,sh]
 ----
 mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
@@ -23,6 +24,7 @@ git clone https://gitlab.psi.ch/OPAL/src.git
 
 Select the OPAL branch you want to compile. The current stable branch is `OPAL-2021.1`:
 
+[source,sh]
 ----
 cd "${SRC_DIR}/OPAL/src"
 git checkout OPAL-2021.1
@@ -30,6 +32,7 @@ git checkout OPAL-2021.1
 
 To checkout the (unstable) development branch run:
 
+[source,sh]
 ----
 cd "${SRC_DIR}/OPAL/src"
 git checkout master
@@ -37,6 +40,7 @@ git checkout master
 
 To get a list of all available branches, you can run the command
 
+[source,sh]
 ----
 git branch -a
 ----
@@ -83,6 +87,7 @@ The following table shows the most important options:
 
 == Compile and install OPAL
 
+[source,sh]
 ----
 cd "${SRC_DIR}/OPAL/build"
 make -j ${NJOBS}
