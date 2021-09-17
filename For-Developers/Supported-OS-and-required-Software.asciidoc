@@ -1,1 +1,120 @@
-tbw
+== Operating systems
+
+Linux:: the usual standard and development tools like gcc, autotools, cmake, make, lex/flex, yacc/bison, tar, bzip2 ...
+
+Windows:: use Windows Subsystem for Linux (WSL)
+
+macOS:: Xcode, command line tools, for some features Macports or Homebrew
+
+{nbsp}
+
+== Required software
+
+Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. 
+The list below shows the required software, the minimal and
+the recommended version.
+
+[width="100%",options="header"]
+|=======
+| **Name**  | **recommended Versions** | **Notes**
+
+| C/C&#43;&#43; Compiler | gcc 10 or Clang 12
+| must support C&#43;&#43; 17 or better. For further instructions see section below.
+
+| Fortran Compiler | gfortran 10
+| optional, must support Fortan 95 or better.
+
+| cmake | 3.20.5 or newer
+| 
+
+| Open MPI | 4.0.5
+| as alternative MPICH can be used
+
+| zlib | 1.2.11
+| use system zlib if available (`libz.a` or `libz.so`)
+
+| hdf5 | 1.10.7
+| A parallel version is required.
+
+| GNU Scientific Library | 2.7
+|
+
+| VTK | ?
+| optional: required if you want to compile H5hut with the VTK to H5hut mesh converter.
+
+| H5hut | 2.0.0rc6
+| A parallel version is required.
+
+| boost | 1.76.0
+| The following boost libraries are required: `chrono`, `filesystem`,
+ `iostreams`, `regex`, `serialization`, `system`, `timer`
+
+| ParMETIS | 4.0.3
+| optional: required for OPAL compiled with SAAMG solver.
+
+| OpenBLAS | 0.3.15 or newer
+| optional: required for OPAL compiled with SAAMG solver.
+
+| trilinos | 13.0.1 
+| optional: required for OPAL compiled with SAAMG solver.
+
+| AMReX | 18.07
+| optional: required for OPAL compiled with AMR solvers.
+
+| MITHRA | 2.0
+| optional: required for OPAL compiled with FEL simulation.
+
+| google-test | 1.10.0 or newer
+| optional: Required to run the unit-tests
+
+| GNU Multiple Precision Arithmetic Library (GMP)
+| 6.2.1 or newer
+| optional: if you want to compile GCC
+
+| GNU MPFR Library
+| 4.1.0
+| optional: if you want to compile GCC
+
+| GNU MPC Library
+| 1.2.1
+| optional: if you want to compile GCC
+
+| GNU Compiler Collection
+| 10.3.0
+| optional: if you want to compile it
+
+|=======
+
+== Compiler
+
+=== GNU Compiler Collection
+
+The GNU Compiler Collection (GCC) is the recommended compiler for OPAL
+on a Linux system and on Windows with the Windows Services for
+Linux. If you want to use GCC on macOS, it is strongly recommended to
+use GCC provided by Macports, Homebrew, Fink or another software
+package manager.  
+
+> **NOTE:** If you do not want to use the compilers provided by the
+    system (Linux distribution, Xcode,...), make sure that the
+    commands `cc` and `c&#43;&#43;` are calling the right binary. At least
+    with GCC from Macports `cc` and `c&#43;&#43;` are not set with `port select`.
+
+
+=== Clang/LLVM (macOS only)
+
+Clang is the recommended compiler for OPAL on macOS - as long as you
+do not need AMR. If you want to compile OPAL with AMR, a Fortran
+compiler is required. In this case you can either use the new Flang
+front-end of LLVM or GCC from one of the package managers.
+
+> *Note:* The LLVM Fortran front-end Flang is not included in
+   Xcode. You have to compile it yourself.
+
+[width="100%",options="header"]
+|=======
+| **Name**  | **recommended Version** | **Notes**
+
+| Clang (LLVM) | 12.4 |
+
+|=======
