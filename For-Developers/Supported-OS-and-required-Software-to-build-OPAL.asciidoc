@@ -19,8 +19,10 @@ macOS:: Xcode, command line tools, for some features Macports or Homebrew
 Windows:: use Windows Subsystem for Linux (WSL)
 
 Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. 
-The list below shows the required software, the minimal and
-the recommended version.
+
+Build scripts for all required software are available link:tbd[here].
+
+The list below shows the required software and versions we use to compile _OPAL_.
 
 [cols="2,2,2",width="100%",options="header"]
 |=======
@@ -93,6 +95,8 @@ package manager.
     commands `cc` and `c&#43;&#43;` are calling the right binary. At least
     with GCC from Macports `cc` and `c&#43;&#43;` are not set with `port select`.
 
+For compiling GCC you need:
+
 [cols="2,2,2",width="100%",options="header"]
 |=======
 | **Name**
@@ -117,11 +121,11 @@ package manager.
 
 Clang is the recommended compiler for OPAL on macOS - as long as you
 do not need AMR. If you want to compile OPAL with AMR, a Fortran
-compiler is required. In this case you can either use the new Flang
+compiler is required. In this case you can try with the new Flang
 front-end of LLVM or GCC from one of the package managers.
 
 > *Note:* The LLVM Fortran front-end Flang is not included in
-   Xcode. You have to compile it yourself.
+   Xcode.
 
 [width="100%",options="header"]
 |=======
