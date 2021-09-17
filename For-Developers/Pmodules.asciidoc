@@ -31,7 +31,8 @@ If Pmodules are not installed on your system, you can either use modules availab
 sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
 ----
 1. Add the following line to your `.bashrc` or `.bash_profile`:
-[source,sh,subs="attributes"] 
++
+[source,sh,subs="attributes"]
 ----
 source /opt/psi/config/profile.bash
 ----
