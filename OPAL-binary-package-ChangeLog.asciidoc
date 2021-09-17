@@ -1,7 +1,11 @@
-
 > **Note** This is the ChangeLog for the binary package *not* _OPAL_!
 
 ''''
+*OPAL 2021.1.0-1 - 2021, September 16*
+
+- OPAL 2021.1.0
+- update tool-chain
+- use RPATH in binaries
 
 *OPAL 2.4.0-2 - 2020, September 1*
 
