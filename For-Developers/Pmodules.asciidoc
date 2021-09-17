@@ -12,12 +12,13 @@ The easiest and recommended solution is to use the **Pmodules** environment avai
 
 To check whether Pmodules are available on your system, run `module --version`. The output should look like:
 
-```
+[source=sh]
+----
 $ module --version
 
 Pmodules 1.0.0rc6 using Tcl Environment Modules 3.2.10
 Copyright GNU GPL v2
-```
+----
 
 == If not already done, install Pmodules
 
