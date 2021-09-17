@@ -1,1 +1,153 @@
-TBW
+If you do not have access to the required software in binary form - either
+via a package manager or a module environment - you have to compile
+the missing pieces or everything yourself.
+
+We provide recipes to build all required software. These recipes can
+be used on Linux,  macOS and Windows Services for Linux. They are
+tested with several Linux distributions including Redhat Enterprise
+Linux 6 & 7, Ubuntu 18, 20 and 21, openSUSE leaf 15, macOS 10.12 - 10.15 as
+well as with the Windows Services for Linux.
+
+== The OPAL Tool-chain Builder
+
+The OPAL Tool-chain Builder (OTB) is a collection of recipes to build all
+required software you need to compile OPAL - including a recipe to compile
+OPAL itself.
+
+Run the following command to download the recipes:
+
+[listing]
+--
+git clone git@gitlab.psi.ch:OPAL/build-recipes.git
+--
+or
+[listing]
+--
+git clone https://gitlab.psi.ch/OPAL/build-recipes.git
+--
+
+=== Setting up the environment
+
+First change into the directory you used in the above Git command. In
+the following we assume that you are in this directory.
+
+To setup the build environment, you have to __source__ the file
+`setup.sh`. The syntax is:
+----
+source setup [--prefix OTB_PREFIX] [CONFIG_FILE]
+----
+If you source `setup.sh` without arguments,
+
+* `${HOME}/OPAL` will be used as installation directory.
+* Open MPI will be used.
+* The default versions defined in the build recipes will be used.
+* GCC will be used on Linux (and WSL).
+* Clang will be used on macOS.
+
+With the option `--prefix OTB_PREFIX` a root directory for all to be
+installed files can be defined.will be used.
+
+The configuration file can be used
+
+* to override the default toolchain for the OS.
+* to override the default versions of the software packages
+* to select a MPI implementation (open-mpi or MPICH)
+* to define a list of recipies which must be executed
+* to define a list of symbolic links in `$OTB_PREFIX`, which are
+created by `setup.sh`.
+
+For more details please see the configurarion files in the `config`
+sub-directory.
+
+After sourcing `setup.sh` the following environment variable are set (among others):
+
+`OTB_PREFIX`::
+Installation prefix for all software we have to compile and
+install. In the following instructions we use `${HOME}/OPAL`. 
+
+`OTB_DOWNLOAD_DIR`::
+ This is the directory where we store downloaded files. In this
+ instruction we use `${PREFIX}/tmp/Downloads`. 
+
+`OTB_SRC_DIR`::
+This is the directory where we unpack and compile software. Here we
+use `${PREFIX}/tmp/src`. 
+
+`NJOBS`::
+The number of parallel `make` jobs. This number depends on the number
+of core on your system. We use `getconf _NPROCESSORS_ONLN` to get the
+number of cores (including hyperthreading). The number of parallel
+`make` jobs is set to 10, if we have more cores.
+
+`OTB_RECIPES` (optional)::
+Array with recipes to be executed. This might be set in a
+configuration file. This environment variable is set in the
+configuration files we provide. It can be used to compile everything
+in one step with the following command:
+---- 
+for recipe in "${OTB_RECIPES[@]}"; do ${recipe} || break; done
+----
+
+'''
+
+=== Compiling the tool-chain
+
+**Compiling GCC**
+
+Compile GCC only if really required!
+
+> On macOS use Clang provided by Xcode are a GCC provided by a package manager!
+----
+./010-build-gmp
+./020-build-mpfr
+./030-build-mpc
+./040-build-gcc
+----
+
+**Compiling CMake**
+
+Before compiling CMake, check whether it is installed on your system
+and if whether the version fulfil the requirements.
+----
+./050-build-cmake
+----
+
+**Everything else**
+----
+./060-build-openmpi
+./070-build-zlib
+./080-build-hdf5
+./090-build-gsl
+./100-build-h5hut
+./110-build-boost
+./200-build-parmetis
+./210-build-openblas
+./220-build-trilinos
+./230-build-amrex
+./240-build-MITHRA
+./300-build-gtest
+----
+
+**OPAL itself**
+----
+./400-build-OPAL
+----
+
+'''
+
+== macOS: Using the tool-chain and Macports, Homebrew or ...
+Most of the required packages are available via Macports, Homebrew or
+another package manager. If you want to use them, you should know what
+you are doing.
+
+If you are using one of this package managers, it is recommended to
+use a GCC provided by it - in case you do not want to use Clang.
+
+Other packages which are uncritical are
+----
+cmake
+openmpi
+mpich
+----
+
+'''
