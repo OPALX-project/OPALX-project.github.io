@@ -1,4 +1,3 @@
-= Using _OPAL_ at PSI
 
 At PSI _OPAL_ is available as Pmodule.
 
