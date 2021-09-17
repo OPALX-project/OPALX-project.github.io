@@ -3,8 +3,6 @@ environment available at PSI. Please link:Pmodules[read this
 wiki-page] if you are not using a PSI Linux distribution or you do not
 know whether the Pmodules are installed on your system.
 
-== On a Linux system @PSI
-
 Instead of loading each single module, you can use the meta-modules
 available in the directory
 `/afs/psi.ch/project/amas/modulefiles/OPAL`. To make these
@@ -31,4 +29,21 @@ module load toolchain/2021.1_slurm
 ----
 ----
 module load toolchain/master_slurm
+----
+
+== On other Linux systems @PSI
+
+Depending on the version you want to compile use one of the 
+following commands:
+----
+module load toolchain/2.2
+----
+----
+module load toolchain/2.4
+----
+----
+module load toolchain/2021.1
+----
+----
+module load toolchain/master
 ----
