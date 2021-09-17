@@ -1,44 +1,36 @@
-= Pmodules for OPAL
 :TOC:
-
-== Check whether the software requirements are fulfilled on your system
-=== Requirements
 
 The easiest and recommended solution is to use the **Pmodules** environment available at PSI. How to install and use the Pmodules is explained in the next two sections. The Pmodules are running on 
 
-* Redhat Enterprise Linux 6 and 7 and Clones like Scientific Linux and Centor
-* Ubuntu 14 LTS and 16 LTS
-* OpenSUSE should work but is not tested
-
+* Redhat Enterprise Linux 6, 7 and 8 and Clones like Scientific Linux and CentOS
+* Ubuntu 18 LTS, 20 LTS, 21 ...
+* OpenSUSE leap 15.x
 
 '''
 
-=== Check whether Pmodules are available
+== Check whether Pmodules are available
 
 To check whether Pmodules are available on your system, run `module --version`. The output should look like:
 
 ```
 $ module --version
 
-Pmodules 0.99.10 using Tcl Environment Modules 3.2.10
+Pmodules 1.0.0rc6 using Tcl Environment Modules 3.2.10
 Copyright GNU GPL v2
 ```
 
-{nbsp}
-
-=== If not already done, install Pmodules
+== If not already done, install Pmodules
 
 If Pmodules are not installed on your system, you can either use modules available on AFS or you can install the required modules on your local disk. 
 
-**Note**: For the time being Pmodules supports only bash but **not** tcsh.
-
-==== Use the modules on AFS
+=== Use the modules available on AFS
 
 You (or your system administrator if you don't have `root` access) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
 
-```
+[source=sh]
+----
 sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
-```
+----
 
 Add the following line to your `.bashrc` or `.bash_profile`:
 ```
