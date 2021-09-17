@@ -24,17 +24,17 @@ If Pmodules are not installed on your system, you can either use modules availab
 
 === Use the modules available on AFS
 
-You (or your system administrator if you don't have `root` access) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
-
+1. You (or your system administrator if you don't have `root` access) have to set a symbolic link in the directory `/opt` to the Pmodules installation on AFS:
++
 [source,sh,subs="attributes"] 
 ----
 sudo ln -s /afs/psi.ch/sys/psi.x86_64_slp6 /opt/psi
 ----
-
-Add the following line to your `.bashrc` or `.bash_profile`:
-```
+1. Add the following line to your `.bashrc` or `.bash_profile`:
+[source,sh,subs="attributes"] 
+----
 source /opt/psi/config/profile.bash
-```
+----
 
 ==== Install the required modules on your local disk
 
