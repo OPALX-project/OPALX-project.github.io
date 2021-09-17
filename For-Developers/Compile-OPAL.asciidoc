@@ -1,5 +1,3 @@
-= Compiling OPAL
-Achim Gsell
 :doctype: article
 :numbered:
 
