@@ -124,7 +124,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 
 == Using _OPAL_ at PSI
 
-* link:OPALAtPSI[Using _OPAL_ at PSI]
+* link:Using-OPAL-at-PSI[Using _OPAL_ at PSI]
 
 == Compiling _OPAL_
 
