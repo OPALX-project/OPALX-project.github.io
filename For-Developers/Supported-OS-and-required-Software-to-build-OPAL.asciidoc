@@ -1,14 +1,22 @@
 == Operating systems
 
-Linux:: the usual standard and development tools like gcc, autotools, cmake, make, lex/flex, yacc/bison, tar, bzip2 ...
+The following operating systems are supported:
 
-Windows:: use Windows Subsystem for Linux (WSL)
+* Linux
+** Redhat Enterprise Linux
+** Suse Leap
+** Ubuntu
+** ...
+* macOS
+* Windows (with the Windows Subsystem for Linux (WSL))
+
+== Required software
+
+Linux:: the usual standard and development tools like gcc, autotools, cmake, make, lex/flex, yacc/bison, tar, bzip2 ...
 
 macOS:: Xcode, command line tools, for some features Macports or Homebrew
 
-{nbsp}
-
-== Required software
+Windows:: use Windows Subsystem for Linux (WSL)
 
 Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. 
 The list below shows the required software, the minimal and
@@ -18,17 +26,18 @@ the recommended version.
 |=======
 | **Name**  | **recommended Versions** | **Notes**
 
+| cmake | 3.20.5 or newer
+| 
+
 | C/C&#43;&#43; Compiler | gcc 10 or Clang 12
-| must support C&#43;&#43; 17 or better. For further instructions see section below.
+| must support C&#43;&#43; 17 or better. Minimum version for GCC is 8.4.0. If this or a newer version is available on your system, use it. If you want/have to compile GCC yourself, see the instructions below.
 
 | Fortran Compiler | gfortran 10
 | optional, must support Fortan 95 or better.
 
-| cmake | 3.20.5 or newer
-| 
-
-| Open MPI | 4.0.5
-| as alternative MPICH can be used
+| MPI | Open MPI 4.0.5 +
+        MPICH 3
+| If MPI is installed on your system or available as environment module, use it. In most cases this works better than compiling MPI yourself.
 
 | zlib | 1.2.11
 | use system zlib if available (`libz.a` or `libz.so`)
@@ -71,6 +80,9 @@ the recommended version.
 | 6.2.1 or newer
 | optional: if you want to compile GCC
 
+|=======
+
+|=======
 | GNU MPFR Library
 | 4.1.0
 | optional: if you want to compile GCC
