@@ -64,3 +64,7 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 1. [*The Object Oriented Parallel Accelerator Library (OPAL), Design, Implementation and Application*, A. Adelmann et al., ICAP2009](http://accelconf.web.cern.ch/AccelConf/ICAP2009/papers/we3iopk01.pdf)
 1. [*Measurements and Modeling at the PSI-XFEL 500 kV Low-Emittance Electron Source*, T. Schietinger et al., Linac2008, Vancouver, Canada](http://accelconf.web.cern.ch/AccelConf/LINAC08/papers/tup097.pdf)
 1. [*Modeling High Intensity Beams in Cyclotrons* (talk), J. Yang et al., HB2008](http://accelconf.web.cern.ch/AccelConf/HB2008/talks/wga33_talk.pdf)
+
+# [PSI BD Palaver Meetings](https://indico.psi.ch/category/223/)
+
+1. [*Orbit Matching in Ring cyclotron*, N. Pogue](https://indico.psi.ch/event/4996/attachments/8795/11184/Final_Presentation.pdf)
