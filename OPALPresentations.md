@@ -8,7 +8,9 @@
 
 # Papers related to OPAL
 
-1. [*OPAL a Versatile Tool for Charged Particle Accelerator Simulations*, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
+1. [***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
+1. [*Benchmarking Collective Effects of Electron Interactions in a Wiggler with OPAL-FEL*, A. Alba et al. (2021)](https://arxiv.org/pdf/2112.02316.pdf)
+1. [*OPAL-MITHRA: Self-consistent Software for Start-to-End Simulation of Undulator-based Facilities*, A. Alba et al. (2020)](https://doi.org/10.1109/IVNC49440.2020.9203404)
 1. [*Machine learning for orders of magnitude speedup in multiobjective optimization of particle accelerator systems*, A. Edelen et al. (2020)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.044601)
 1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
 1. [*Realistic simulations of a cyclotron spiral inflector within a particle-in-cell framework*, D. Winklehner, et al. (2017)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.20.124201)
