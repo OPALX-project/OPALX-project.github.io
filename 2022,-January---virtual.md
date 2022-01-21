@@ -1,0 +1,17 @@
+## January 19, 2022
+
+1. [Participants](#participants)
+1. [Agenda](#agenda-times-in-gmt)
+
+### Participants
+
+Andreas Adelmann, Arnau Alba, Pedro Calvo, Matthias Frey, Achim Gsell, Christof Kraus, Nicole Neveu, Chris Rogers, Jochem Snuverink, Sriramkrishnan Muralikrishnan, Daniel Winklehner.
+
+### Agenda (times in GMT):
+
+1. 17:00-17:30: Updates OPAL: Andreas [opal-delveloper-1-2022.pdf](uploads/4db472d89ba78e0f790ed7ad2f6a6580/opal-delveloper-1-2022.pdf)
+2. 17:30-17:45: Updates on IPPL V 2.x: Sri [ippl_2.0_OPAL_developer_2022.pdf](uploads/cf9255d41160d4d0b3f6afc27b633084/ippl_2.0_OPAL_developer_2022.pdf)
+3. 17:45-18:00: New challenges in FEL modeling and consequences for OPAL: Andreas [opal-challenges-1.pdf](uploads/1db0798d5222abd4b8375c5c2c7fbcda/opal-challenges-1.pdf)
+4. 18:00-18:30: pyOPAL: Chris R. [2022-01-13_opal-devs.pdf](uploads/e4aaa2afd89778b59d28e7164a3c3ecb/2022-01-13_opal-devs.pdf)
+5. 18:30-18:45: 2022 releases: Achim
+6. 18:45-19:00: Pressing open issues: All
