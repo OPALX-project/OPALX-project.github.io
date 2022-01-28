@@ -1,5 +1,6 @@
 # Talks on OPAL
 
+1. [Development of the simulation code OPAL, Snowmass’21](https://indico.mit.edu/event/150/contributions/335/attachments/153/285/OPAL_presentation_Snowmass21_PedroCalvo.pdf)
 1. [Start-to-end Modelling of FELs with OPAL-FEL Full Maxwell Solver](uploads/099b6ed392a42ccb207e2b6a52ea99dc/ArnauAlba_OPALretreat_10-06-2021.pdf)
 1. [OPAL Introduction (2019)](uploads/07f5d89fe8b24637a1a5106f7530e51f/ffa-19-opal.pdf)
 1. [Recent Developments of the Open Source Code OPAL ICAP (2018)](http://accelconf.web.cern.ch/AccelConf/icap2018/talks/tupaf07_talk.pdf)
@@ -10,6 +11,7 @@
 
 1. [***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
 1. [*Benchmarking Collective Effects of Electron Interactions in a Wiggler with OPAL-FEL*, A. Alba et al. (2021)](https://arxiv.org/pdf/2112.02316.pdf)
+1. [*Beam stripping interactions in compact cyclotrons*, P. Calvo et al. (2021)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.090101)
 1. [*OPAL-MITHRA: Self-consistent Software for Start-to-End Simulation of Undulator-based Facilities*, A. Alba et al. (2020)](https://doi.org/10.1109/IVNC49440.2020.9203404)
 1. [*Machine learning for orders of magnitude speedup in multiobjective optimization of particle accelerator systems*, A. Edelen et al. (2020)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.044601)
 1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
