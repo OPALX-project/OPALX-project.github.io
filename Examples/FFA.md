@@ -5,13 +5,11 @@ Examples are provided for tracking FFAs in a number of circumstances:
 3. Tracking through an analytical horizontal FFA field model with RF acceleration
 4. Tracking through an analytical vertical FFA field model
 
-The following workflows have been checked with OPAL 2.0.0rc2 and OPAL 2.4.0_2.
+The following workflows have been checked with OPAL 2.4.0_2. Note that examples checked against OPAL 2.0.0 are given at the bottom of the page, for this very old version of OPAL.
 
 # Tracking through an analytical field model
 
 OPAL can use a fully scaling field model including scaling fringe fields to model FFAs analytically. A sample lattice file is available in this example:
-
-[example_1-OPAL2.0.0rc2.tar.gz](uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
 
 [example_1-OPAL2.4.0.tar.gz](uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
@@ -45,8 +43,6 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 
 OPAL can be used to track through a 3D field map. By default interpolation is trilinear. A sample lattice file is available in this example:
 
-[example_2-OPAL2.0.0rc2.7z](uploads/00207f6567b458dcc026db5685fb696e/example_2-OPAL2.0.0rc2.7z) (Tested on OPAL2.0.0rc2)
-
 [example_2-OPAL2.4.0.7z](uploads/01aa55a6183fda17f608c44867191b6d/example_2-OPAL2.4.0.7z) (Tested on OPAL2.4.0_2)
 
 Due to the size of the field map this example was compressed using 7za. Uncompress using 7za from p7zip package. Then run in the usual way.
@@ -76,8 +72,6 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 # Tracking through an analytical field map with acceleration
 
 OPAL can also model the full acceleration cycle for an FFA. There is an example FFA with RF active here:
-
-[example_3-OPAL2.0.0rc2.tar.gz](uploads/ffd9fb7728b367535b92f7b1c5fd0c02/example_3-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
 
 [example_3-OPAL2.4.0.tar.gz](uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
@@ -145,3 +139,11 @@ Here is the sort of plot you might see:
 ![opal_example_4_x_y_bz](uploads/ba134f18f376d84077a69226baad9663/opal_example_4_x_y_bz.png)
 
 This shows the field in the vertical direction with the trajectory of the closed orbit superimposed. The lattice is a 10 cell triplet lattice, as described in https://arxiv.org/abs/2011.10783.  Note that at present (Nov 2020), RF acceleration is not supported in VFFAs.
+
+# Old version of the examples
+
+[example_1-OPAL2.0.0rc2.tar.gz](uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
+
+[example_2-OPAL2.0.0rc2.7z](uploads/00207f6567b458dcc026db5685fb696e/example_2-OPAL2.0.0rc2.7z) (Tested on OPAL2.0.0rc2)
+
+[example_3-OPAL2.0.0rc2.tar.gz](uploads/ffd9fb7728b367535b92f7b1c5fd0c02/example_3-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
