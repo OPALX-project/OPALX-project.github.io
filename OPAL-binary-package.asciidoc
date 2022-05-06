@@ -6,7 +6,7 @@
 
 :LNK_PKG:  http://amas.web.psi.ch/Downloads/OPAL/package/
 
-:OPAL_VER: 2021.1
+:OPAL_VER: 2021.1.0
 
 :OPAL_VER_LINUX: 2021.1
 :OPAL_NVS_LINUX: OPAL-{OPAL_VER_LINUX}
