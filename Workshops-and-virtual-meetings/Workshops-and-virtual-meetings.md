@@ -1,3 +1,4 @@
+* [2022, June - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting June 2022)
 * [2022, April - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting April 2022)
 * [2022, January - virtual](Workshops-and-virtual-meetings/202201)
 * [2021, June - virtual](Workshops-and-virtual-meetings/202106)
