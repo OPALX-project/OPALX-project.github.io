@@ -81,7 +81,7 @@ where also all results are stored. The general syntax of runOPAL.py is
 
 `runOPAL.py [--help] [--filename=str] [--test] [--quiet] [--info=num] [--test] [--keep] [--queue=qname] [--hypert=num] [--nobatch] [ATTR=SCANVALUE] {[ATTR=VALUE]}`
  * *--help* shows all available parameters with a short description.
- * *--filename=str* (or *-f*) sets base falie name for both *.data and *.tmpl files.
+ * *--filename=str* (or *-f*) sets base file name for both *.data and *.tmpl files.
  * *--test* or (*-t*) exercises everything except for the submission of the job.
  * *--keep* if same simulation has been run before, keep old data and abort.
  * *--quiet* suppress debug printout.
