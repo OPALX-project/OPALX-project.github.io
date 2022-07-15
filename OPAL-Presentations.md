@@ -10,8 +10,24 @@
 # Papers related to OPAL
 
 1. [***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
+1. [*Comparison of Multiobjective Optimization Methods for the LCLS-II Photoinjector*, N. Neveu et al. (2022)](https://arxiv.org/pdf/2206.03882.pdf)
+1. [*ALPINE: A set of performance portable plasma physics particle-in-cell mini-apps for exascale computing*, S. Muralikrishnan et al. (2022)](https://arxiv.org/abs/2205.11052)
+1. [*Order-of-magnitude beam current improvement in compact cyclotrons*, D. Winklehner et al. (2022)](https://iopscience.iop.org/article/10.1088/1367-2630/ac5001)
+1. [*Beam dynamics and characterization of a new high-intensity compact air-core high temperature superconducting skeleton cyclotron (HTS-SC)*, H. W. Koay et al. (2022)](https://www.sciencedirect.com/science/article/pii/S2211379721010676?via%3Dihub)
+1. [*Eliminating uncertainty of thermal emittance measurement in solenoid scans due to rf and solenoid fields overlap*, L. Zheng et al. (2022)](https://www.sciencedirect.com/science/article/pii/S0168900221010378?via%3Dihub)
+1. [*Temporal shaping of narrow-band picosecond pulses via noncolinear sum-frequency mixing of dispersion-controlled pulses*, R. Lemons et al. (2022)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.25.013401)
+1. [*Magnetic field analysis of shimmed DECY-13 cyclotron magnet*, Taufik et al. (2022)](https://aip.scitation.org/doi/abs/10.1063/5.0066254) 
 1. [*Benchmarking Collective Effects of Electron Interactions in a Wiggler with OPAL-FEL*, A. Alba et al. (2021)](https://arxiv.org/pdf/2112.02316.pdf)
 1. [*Beam stripping interactions in compact cyclotrons*, P. Calvo et al. (2021)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.090101)
+1. [*Global sensitivity analysis on numerical solver parameters of Particle-In-Cell models in particle accelerator systems* M. Frey et al. (2021)](https://www.sciencedirect.com/science/article/pii/S0010465520302770?via%3Dihub)
+1. [*Sparse grid-based adaptive noise reduction strategy for particle-in-cell schemes*, S. Muralikrishnan et al. (2021)](https://www.sciencedirect.com/science/article/pii/S2590055221000111?via%3Dihub)
+1. [*Fast, efficient and flexible particle accelerator optimisation using densely connected and invertible neural networks*, R. Bellotti et al. (2021)](https://arxiv.org/abs/2107.00060)
+1. [*Status of the Polarized Source and Beam Preparation System at MESA*, S. Friederich et al. (2021)](https://accelconf.web.cern.ch/ipac2021/papers/wepab063.pdf)
+1. [*Electromagnetic and Engineering Design of a High-Current 15-MeV/u Cyclotron*, S. Kutsaev et al. (2021)](https://ieeexplore.ieee.org/document/9402900)
+1. [*libEnsemble: A Library to Coordinate the Concurrent Evaluation of Dynamic Ensembles of Calculations*, S. Hudson et al. (2021)](https://arxiv.org/abs/2104.08322)
+1. [*FFT-based free space Poisson solvers: why Vico-Greengard-Ferrando should replace Hockney-Eastwood*, J. Zou et al. (2021)](https://arxiv.org/abs/2103.08531)
+1. [*Verification of DECY-13 cyclotron magnet design using cyclotron particle tracking codes*, Taufik et al. (2021)](https://iopscience.iop.org/article/10.1088/1742-6596/1825/1/012083)
+1. [*Optics design of vertical excursion fixed-field alternating gradient accelerators*, S. Machida et al. (2021)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.24.021601)
 1. [*OPAL-MITHRA: Self-consistent Software for Start-to-End Simulation of Undulator-based Facilities*, A. Alba et al. (2020)](https://doi.org/10.1109/IVNC49440.2020.9203404)
 1. [*Machine learning for orders of magnitude speedup in multiobjective optimization of particle accelerator systems*, A. Edelen et al. (2020)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.044601)
 1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
@@ -35,7 +51,6 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 1. Master thesis of Philippe Ganz, [_s-based maps from TPS & Lie-Series applied to Proton-Therapy Gantries_](Reports/thesisGanz.pdf). The work (_OPAL-map_) has been integrated in OPAL 2.0.0.
 1. [_Optimizing the radioisotope production of the novel AMIT superconducting weak focusing cyclotron_, Pedro Calvo, PhD Thesis, UCM-CIEMAT (2021)](https://eprints.ucm.es/id/eprint/65502/1/T42561.pdf).
 
-
 # OPAL lectures
 
 1.  [OPAL Lecture 1](http://amas.web.psi.ch/people/aadelmann/pub/ffag14/opal-lect-ffag2014-1.pdf) (outdated i.e. 2014)
@@ -45,6 +60,7 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 
 # OPAL Conference Contributions
 
+1. [*High-Current H2+ Beams from a Compact Cyclotron using RFQ Direct Injection*, D. Winklehner et al., IPAC2021, Campinas, SP, Brazil](https://accelconf.web.cern.ch/ipac2021/papers/tuxb07.pdf) 
 1. [*Recent Developments of the Open Source Code OPAL*, A. Adelmann, CYCLOTRONS2019, Cape Town, South Africa](https://cyclotrons2019.vrws.de/talks/tha02_talk.pdf)
 1. [*Precise Modelling and Large Scale Multiobjective Optimisation of Cyclotrons*, J. Snuverink et al., CYCLOTRONS2019, Cape Town, South Africa](https://doi.org/10.18429/JACoW-Cyclotrons2019-THA01)
 1. [*Beam Stripping Interactions Implemented in Cyclotrons with OPAL Simulation Code*, P. Calvo et al., CYCLOTRONS2019, Cape Town, South Africa](https://cyclotrons2019.vrws.de/papers/mop034.pdf)
