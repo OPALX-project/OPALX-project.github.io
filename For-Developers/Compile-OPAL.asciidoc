@@ -71,6 +71,10 @@ The following table shows the most important options:
 | prefix for installation
 |
 
+| `BUILD_OPAL_UNIT_TESTS`
+| enable the unit-tests
+| requires google-test >= 1.10.0
+
 | `ENABLE_AMR`
 | enable AMR solver
 | requires AMReX (release 18.07)
@@ -78,6 +82,14 @@ The following table shows the most important options:
 | `ENABLE_AMR_MG_SOLVER`
 | enable AMR multigrid solver
 | requires trilinos >= 12.x and AMReX (release 18.07) 
+
+| `ENABLE_BANDRF`
+| compile BANDRF field conversion scripts
+| 
+
+| `ENABLE_OPAL_FEL`
+| enable full-wave solver
+| requires MITHRA 2.0
 
 | `ENABLE_SAAMG_SOLVER`
 | enable SAAMG solver
