@@ -111,7 +111,10 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 === Start with Examples
 
 * link:Examples/Cyclotron[Cyclotron]
-* link:Examples/RFPhotoInjector[RF Photo Injector]
+* link:Examples/RFPhotoInjector[AWA RF Photo Injector]
+* link:Examples/AWAEEXBeamline[AWA EEX Beamline]
+* link:Examples/AWADriveLinac[AWA Drive Linac]
+
 * link:Examples/RegressionTestExamples[Examples from regression tests]
 * link:Examples/FFA[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
