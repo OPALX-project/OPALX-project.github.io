@@ -5,15 +5,16 @@
 :link_mailing_list:     https://psilists.ethz.ch/sympa/subscribe/opal
 :link_pkg:              http://amas.web.psi.ch/Downloads/OPAL/package/
 :link_src:              http://amas.web.psi.ch/Downloads/OPAL/src/
-:link_repo:             https://gitlab.psi.ch/OPAL/src
-:link_pyOPALTools:      https://gitlab.psi.ch/OPAL/pyOPALTools
+:link_repo_base:        https://gitlab.psi.ch/OPAL
+:link_repo:             {link_repo_base}/src
+:link_regression:       {link_repo_base}/regression-tests
+:link_pyOPALTools:      {link_repo_base}/pyOPALTools
 
 :link_issue_tracker:    {link_repo}/issues
 
 :link_opal_base:        http://amas.web.psi.ch/opal
 :link_manual:           {link_opal_base}/Documentation
 :link_doxydoc:          {link_opal_base}/CodeDocumentation
-:link_regression:       {link_opal_base}/regression-tests
 
 :linux_pkg:             -x86_64-linux.tar.xz[tar.xz]
 :linux_md5:             -x86_64-linux.tar.xz.md5[md5]
