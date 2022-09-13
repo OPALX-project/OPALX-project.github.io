@@ -165,7 +165,7 @@ See also link:postprocessing[Post Processing].
 * link:For-Developers/tech-ideas[Technology & Ideas]
 * link:Workshops-and-virtual-meetings[Workshops and virtual meetings]
 
-**Build-, Unit- and Regression Tests**
+**Build-, Unit- and {link_regression}[Regression Tests]**
 
 * on {link_opal_base}/master[_OPAL_ development branch]
 * on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]

@@ -1,19 +1,21 @@
-:OPAL_VER:		2021.1
+:OPAL_VER:              2021.1
 
-:mail_mailing_list:	opal AT lists.psi.ch
+:mail_mailing_list:     opal AT lists.psi.ch
 
-:link_mailing_list:	https://psilists.ethz.ch/sympa/subscribe/opal
-:link_pkg: 		http://amas.web.psi.ch/Downloads/OPAL/package/
-:link_src: 		http://amas.web.psi.ch/Downloads/OPAL/src/
-:link_repo:		https://gitlab.psi.ch/OPAL/src
-:link_pyOPALTools:	https://gitlab.psi.ch/OPAL/pyOPALTools
-:link_issue_tracker:	{link_repo}/issues
+:link_mailing_list:     https://psilists.ethz.ch/sympa/subscribe/opal
+:link_pkg:              http://amas.web.psi.ch/Downloads/OPAL/package/
+:link_src:              http://amas.web.psi.ch/Downloads/OPAL/src/
+:link_repo:             https://gitlab.psi.ch/OPAL/src
+:link_pyOPALTools:      https://gitlab.psi.ch/OPAL/pyOPALTools
 
-:link_opal_base:	http://amas.web.psi.ch/opal
-:link_manual:		{link_opal_base}/Documentation
-:link_doxydoc:		{link_opal_base}/CodeDocumentation
+:link_issue_tracker:    {link_repo}/issues
 
-:linux_pkg:		-x86_64-linux.tar.xz[tar.xz]
-:linux_md5:		-x86_64-linux.tar.xz.md5[md5]
-:macos_pkg:		-x86_64-macos.tar.xz[tar.xz]
-:macos_md5:		-x86_64-macos.tar.xz.md5[md5]
+:link_opal_base:        http://amas.web.psi.ch/opal
+:link_manual:           {link_opal_base}/Documentation
+:link_doxydoc:          {link_opal_base}/CodeDocumentation
+:link_regression:       {link_opal_base}/regression-tests
+
+:linux_pkg:             -x86_64-linux.tar.xz[tar.xz]
+:linux_md5:             -x86_64-linux.tar.xz.md5[md5]
+:macos_pkg:             -x86_64-macos.tar.xz[tar.xz]
+:macos_md5:             -x86_64-macos.tar.xz.md5[md5]
