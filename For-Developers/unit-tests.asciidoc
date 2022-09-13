@@ -9,27 +9,37 @@ link:For%20Developers/CodingStyle[relevant style guides].
 
 == Quick Start
 
-* Run tests/tools/install_gtests.bash to install gtest framework (does not work on macs)
-* From the root opal source directory run cmake -DBUILD_OPAL_UNIT_TESTS=1
-* Run tests/opal_unit_tests to run the unit tests
+* Run `tests/tools/install_gtests.bash` to install gtest framework (does not work on macs)
+* From the root opal source directory run `cmake -DBUILD_OPAL_UNIT_TESTS=1`
+* Run `tests/opal_unit_tests` to run the unit tests
 
 == Setting up the tests
 
-In OPAL we use the google testing framework which has some convenience functions for e.g. equality testing in the presence of floating point errors, setting up common test data, etc. There is a script for installing gtest in tests/tools/install_gtest.bash. At the moment it doesn't work on macs - sorry about that.
+In OPAL we use the google testing framework which has some convenience functions for e.g. equality testing in the presence of floating point errors, setting up common test data, etc.
+There is a script for installing gtest in `tests/tools/install_gtest.bash`.
+At the moment it doesn't work on macs - sorry about that.
 
 Documentation for gtest can be found at:
 
 https://github.com/google/googletest/blob/master/googletest/docs/primer.md
 
-Go ahead and edit the tests if you need to. We should have one source file for each header file in the main body of the code. The directory structure is supposed to reflect the directory structure of the main OPAL source (add a directory if you need to). If you want to add an extra test, you need to make sure that it includes gtest `#include "gtest/gtest.h"` It should be automatically added to the test executable by cmake.
+Go ahead and edit the tests if you need to
+We should have one source file for each header file in the main body of the code.
+The directory structure is supposed to reflect the directory structure of the main OPAL source (add a directory if you need to).
+If you want to add an extra test, you need to make sure that it includes gtest `#include "gtest/gtest.h"`
+It should be automatically added to the test executable by cmake.
 
-To run the tests, either run the full regression testing suite, or run just the cpp tests by running executable test/opal_unit_tests (after building). If you are just interested in a specific test, you can do e.g. `test/opal_unit_tests --gtest_filter=SBend3DTest.*` to run all tests from SBend3DTest. There are some other useful command line options; do test/opal_unit_tests --help to list them all.
+To run the tests, either run the full regression testing suite,
+or run just the cpp tests by running executable test/opal_unit_tests (after building).
+If you are just interested in a specific test,
+you can do e.g. `tests/opal_unit_tests --gtest_filter=SBend3DTest.*` to run all tests from SBend3DTest.
+There are some other useful command line options; do `tests/opal_unit_tests --help` to list them all.
 
 In general:
 
-* Unit tests are in the directory tests
-* Code which is in src/Classic should have tests in tests/classic_src
-* Other code should have tests in tests/opal_src
+* Unit tests are in the directory `tests`
+* Code which is in src/Classic should have tests in `tests/classic_src`
+* Other code should have tests in `tests/opal_src`
 
 == More on the unit test concept
 
@@ -42,7 +52,7 @@ The idea behind unit tests is to test at the level of the smallest unit that the
 Let's consider each of these points individually
 
 * _test coverage is high_ - if we imagine the execution path following some branch structure, then we get many more possible execution paths for longer code snippets. So maintaining high test coverage becomes very difficult, and we need many more tests to have good test coverage. Thus its a good idea to test the smallest code snippet possible.
-* _tests are quick to run_ - the execution time goes as the (number_of_tests)*(length_of_each_test). Now, we have many more tests to keep a good test coverage, and each test is longer because they are testing bigger code snippets. This means tests are slowwww. You want to actually run the tests, and an essential part of this is making sure they are quick enough. 
+* _tests are quick to run_ - the execution time goes as the (number_of_tests)*(length_of_each_test). Now, we have many more tests to keep a good test coverage, and each test is longer because they are testing bigger code snippets. This means tests are slowwww. You want to actually run the tests, and an essential part of this is making sure they are quick enough.
 * _we get logically separated functions_ - functions that do simple, understandable things are less likely to be buggy than functions that do complicated or difficult things. The process of really testing if a function does what you intended forces us to make code simple and understandable - otherwise the test becomes difficult to write.
 
 Explicitly, unit tests are not intended to test: that code works together in the desired fashion, code integrates properly with external libraries, the load on hardware is not too big, etc. These issues are dealt with in the Regression tests.
