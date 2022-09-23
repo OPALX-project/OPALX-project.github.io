@@ -23,7 +23,7 @@ Then change into the working directory and run the code:
 
 > cd example_1/example_sector_ffa
 
-> /path/to/bin/opal SectorFFAGMagnet
+> /path/to/bin/opal SectorFFAMagnet
 
 > cd ..
 
