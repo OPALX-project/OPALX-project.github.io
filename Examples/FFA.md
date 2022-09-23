@@ -141,6 +141,8 @@ Here is the sort of plot you might see:
 This shows the field in the vertical direction with the trajectory of the closed orbit superimposed. The lattice is a 10 cell triplet lattice, as described in https://arxiv.org/abs/2011.10783.  Note that at present (Nov 2020), RF acceleration is not supported in VFFAs.
 
 # Old version of the examples
+## OPAL 2.4.0
+(Plotting scripts used slightly different paths)
 
 ## OPAL 2.0.0
 [example_1-OPAL2.0.0rc2.tar.gz](uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
