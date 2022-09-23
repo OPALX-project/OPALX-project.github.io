@@ -13,11 +13,9 @@ OPAL can use a fully scaling field model including scaling fringe fields to mode
 
 [example_1-OPAL-2021.1.0.tar.gz](uploads/f905dd68fd6aad863db76009dec93a1f/example_1-OPAL-2021.1.0.tar.gz) (Tested on OPAL-2021.1.0)
 
-[example_1-OPAL2.4.0.tar.gz](uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
-
 To run the example, download the file example.tar.gz and do
 
-> tar -xzf example_1-OPAL2.4.0.tar.gz
+> tar -xzf example_1-OPAL-2021.1.0.tar.gz
 
 Then change into the working directory and run the code:
 
@@ -47,11 +45,9 @@ OPAL can be used to track through a 3D field map. By default interpolation is tr
 
 [example_2-OPAL-2021.1.0.7z](uploads/acdb7876379a2858a091efa84da4a334/example_2-OPAL-2021.1.0.7z) (Tested on OPAL2021.1.0.7z)
 
-[example_2-OPAL2.4.0.7z](uploads/01aa55a6183fda17f608c44867191b6d/example_2-OPAL2.4.0.7z) (Tested on OPAL2.4.0_2)
-
 Due to the size of the field map this example was compressed using 7za. Uncompress using 7za from p7zip package. Then run in the usual way.
 
-> 7za x example_2-OPAL2.4.0.7z
+> 7za x example_2-OPAL-OPAL-2021.1.0.7z
 
 > cd example_2/example_main_ring
 
@@ -79,11 +75,9 @@ OPAL can also model the full acceleration cycle for an FFA. There is an example 
 
 [example_3-OPAL-2021.1.0.tar.gz](uploads/a17febede9a3dfe44548f02439ad7a8c/example_3-OPAL-2021.1.0.tar.gz)
 
-[example_3-OPAL2.4.0.tar.gz](uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
-
 Unpack it and run it like:
 
-> tar -xzf example_3.tar.gz
+> tar -xzf example_3-OPAL-2021.1.0.tar.gz
 
 > cd example_3/example_sector_ffa
 
@@ -118,15 +112,13 @@ It looks like the acceleration worked! There are actually two particle trajector
 
 # Tracking through an analytical vertical FFA field map
 
-OPAL can track through a vertical FFA field, where the orbit moves vertically as the energy increases. This is unlike a conventional hFFA where the orbit moves radially. There is an example of OPAL with a vertical FFA field here (OPAL >2.4.0 only):
+OPAL can track through a vertical FFA field, where the orbit moves vertically as the energy increases. This is unlike a conventional hFFA where the orbit moves radially. There is an example of OPAL with a vertical FFA field here:
 
 [example_4-OPAL-2021.1.0.tar.gz](uploads/fc769ebbc830826c9106b635bf0bb691/example_4-OPAL-2021.1.0.tar.gz)
 
-[example_4-OPAL2.4.0.tar.gz](uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz)
-
 Run it like
 
-> tar -xzf example_4-OPAL2.4.0.tar.gz
+> tar -xzf example_4-OPAL-2021.1.0.tar.gz
 
 > cd example_3/example_sector_ffa
 
@@ -144,15 +136,24 @@ To make plots of the field and orbits
 
 Here is the sort of plot you might see:
 
-![opal_example_4_x_y_bz](uploads/ba134f18f376d84077a69226baad9663/opal_example_4_x_y_bz.png)
+![opal_example_4_x_y_bz](uploads/9dba10cd83c862c40684bb409ebf36b5/opal_example_4_x_y_bz.png)
 
 This shows the field in the vertical direction with the trajectory of the closed orbit superimposed. The lattice is a 10 cell triplet lattice, as described in https://arxiv.org/abs/2011.10783.  Note that at present (Nov 2020), RF acceleration is not supported in VFFAs.
 
 # Old version of the examples
 ## OPAL 2.4.0
-(Plotting scripts used slightly different paths)
+(Between 2021-1.0 and 2.4.0: Plotting scripts used slightly different paths and some minor cosmetic improvements have been made to the plots)
+
+[example_1-OPAL2.4.0.tar.gz](uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
+
+[example_2-OPAL2.4.0.7z](uploads/01aa55a6183fda17f608c44867191b6d/example_2-OPAL2.4.0.7z) (Tested on OPAL2.4.0_2)
+
+[example_3-OPAL2.4.0.tar.gz](uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
+
+[example_4-OPAL2.4.0.tar.gz](uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz)
 
 ## OPAL 2.0.0
+(Between 2.4.0 and 2.0.0: Plotting scripts were updated to use matplotlib. Various changes to the lattices.)
 [example_1-OPAL2.0.0rc2.tar.gz](uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz) (Tested on OPAL2.0.0rc2)
 
 [example_2-OPAL2.0.0rc2.7z](uploads/00207f6567b458dcc026db5685fb696e/example_2-OPAL2.0.0rc2.7z) (Tested on OPAL2.0.0rc2)
