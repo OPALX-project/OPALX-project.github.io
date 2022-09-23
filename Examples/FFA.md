@@ -142,7 +142,7 @@ This shows the field in the vertical direction with the trajectory of the closed
 
 # Old version of the examples
 ## OPAL 2.4.0
-(Between 2021-1.0 and 2.4.0: Plotting scripts used slightly different paths and some minor cosmetic improvements have been made to the plots)
+(Between 2021-1.0 and 2.4.0: Output files took slightly different paths and some minor cosmetic improvements have been made to the plots)
 
 [example_1-OPAL2.4.0.tar.gz](uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
