@@ -12,6 +12,7 @@ The following workflows have been checked with OPAL 2.4.0_2. Note that examples 
 OPAL can use a fully scaling field model including scaling fringe fields to model FFAs analytically. A sample lattice file is available in this example:
 
 [example_1-OPAL-2021.1.0.tar.gz](uploads/f905dd68fd6aad863db76009dec93a1f/example_1-OPAL-2021.1.0.tar.gz) (Tested on OPAL-2021.1.0)
+
 [example_1-OPAL2.4.0.tar.gz](uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
 To run the example, download the file example.tar.gz and do
