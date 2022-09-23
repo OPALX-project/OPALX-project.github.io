@@ -77,6 +77,8 @@ Three sectors are shown, together with the dipole (bz) field in Tesla and a low 
 
 OPAL can also model the full acceleration cycle for an FFA. There is an example FFA with RF active here:
 
+[example_3-OPAL-2021.1.0.tar.gz](uploads/a17febede9a3dfe44548f02439ad7a8c/example_3-OPAL-2021.1.0.tar.gz)
+
 [example_3-OPAL2.4.0.tar.gz](uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz) (Tested on OPAL2.4.0_2)
 
 Unpack it and run it like:
@@ -117,6 +119,8 @@ It looks like the acceleration worked! There are actually two particle trajector
 # Tracking through an analytical vertical FFA field map
 
 OPAL can track through a vertical FFA field, where the orbit moves vertically as the energy increases. This is unlike a conventional hFFA where the orbit moves radially. There is an example of OPAL with a vertical FFA field here (OPAL >2.4.0 only):
+
+[example_4-OPAL-2021.1.0.tar.gz](uploads/fc769ebbc830826c9106b635bf0bb691/example_4-OPAL-2021.1.0.tar.gz)
 
 [example_4-OPAL2.4.0.tar.gz](uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz)
 
