@@ -5,7 +5,7 @@ Examples are provided for tracking FFAs in a number of circumstances:
 3. Tracking through an analytical horizontal FFA field model with RF acceleration
 4. Tracking through an analytical vertical FFA field model
 
-The following workflows have been checked with OPAL-2021.1.0. Note that examples checked against older versions of OPAL, 2.4.0 and 2.0.0 are given at the bottom of the page.
+The following workflows have been checked with OPAL-2021.1.0. Note that examples checked against older versions of OPAL are given at the bottom of the page.
 
 # Tracking through an analytical field model
 
