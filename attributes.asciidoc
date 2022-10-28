@@ -22,3 +22,4 @@
 :macos_md5:             -x86_64-macos.tar.xz.md5[md5]
 
 :macos_arm_pkg:         -arm-macos.tar.xz[tar.xz(M1)]
+:macos_arm_md5:         -arm-macos.tar.xz.md5[md5]
