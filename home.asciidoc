@@ -169,5 +169,6 @@ See also link:postprocessing[Post Processing].
 **Build-, Unit- and {link_regression}[Regression Tests]**
 
 * on {link_opal_base}/master[_OPAL_ development branch]
+* on {link_opal_base}/OPAL-2022.1[_OPAL_ 2022.1 branch]
 * on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 * on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
