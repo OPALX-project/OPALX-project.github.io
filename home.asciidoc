@@ -49,7 +49,7 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 | n.a.
 | {link_manual}/master[HTML], {link_manual}/master/Manual.pdf[PDF]
 | {link_doxydoc}/master[HTML]
-| link:ReleaseNotes/OPAL-2022.1[Wiki]
+| link:ReleaseNotes/OPAL-2023.1[Wiki]
 
 | {link_src}/OPAL-2022.1.0.tar.xz[_OPAL_ 2022.1.0] ({link_src}/OPAL-2022.1.0.tar.xz.md5[md5])
 | {link_pkg}/OPAL-2022.1.0-1{linux_pkg} ({link_pkg}/OPAL-2022.1.0-1{linux_md5})
