@@ -22,12 +22,12 @@ cd "${SRC_DIR}/OPAL"
 git clone https://gitlab.psi.ch/OPAL/src.git
 ----
 
-Select the OPAL branch you want to compile. The current stable branch is `OPAL-2021.1`:
+Select the OPAL branch you want to compile. The current stable branch is `OPAL-2022.1`:
 
 [source,sh]
 ----
 cd "${SRC_DIR}/OPAL/src"
-git checkout OPAL-2021.1
+git checkout OPAL-2022.1
 ----
 
 To checkout the (unstable) development branch run:
