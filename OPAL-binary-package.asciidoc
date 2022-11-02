@@ -6,14 +6,14 @@
 
 :LNK_PKG:  http://amas.web.psi.ch/Downloads/OPAL/package/
 
-:OPAL_VER: 2021.1.0
+:OPAL_VER: 2022.1.0
 
-:OPAL_VER_LINUX: 2021.1
+:OPAL_VER_LINUX: 2022.1
 :OPAL_NVS_LINUX: OPAL-{OPAL_VER_LINUX}
 :OPAL_PKG_LINUX: OPAL-{OPAL_VER_LINUX}-1-x86_64-linux.tar.xz
 :LNK_PKG_LINUX: {LNK_PKG}{OPAL_PKG_LINUX}
 
-:OPAL_VER_MACOS: 2.4.0
+:OPAL_VER_MACOS: 2022.1
 :OPAL_NVS_MACOS: OPAL-{OPAL_VER_MACOS}
 :OPAL_PKG_MACOS: OPAL-{OPAL_VER_MACOS}-1-x86_64-macos.tar.xz
 :LNK_PKG_MACOS: {LNK_PKG}{OPAL_PKG_MACOS}
@@ -45,11 +45,12 @@ tar xf {OPAL_PKG_LINUX}
 ### On macOS
 1. change your working directory to `$PREFIX`
 1. download {LNK_PKG_MACOS}[{OPAL_NVS_MACOS} for macOS]
-1. Un-tar the downloaded file:
+1. Un-tar the downloaded file and remove the quarantine extended attribute:
 +
 [source,sh,subs="attributes"]
 ----
 tar xf {OPAL_PKG_MACOS}
+xattr -dr com.apple.quarantine OPAL-2022.1
 ----
 
 === On Windows
