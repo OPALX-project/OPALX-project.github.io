@@ -1,6 +1,11 @@
 > **Note** This is the ChangeLog for the binary package *not* _OPAL_!
 
 ''''
+*OPAL 2022.1.0-1 - 2022, November 2*
+
+- OPAL 2022.1.0
+- update tool-chain
+
 *OPAL 2021.1.0-1 - 2021, September 16*
 
 - OPAL 2021.1.0
