@@ -107,7 +107,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 
 * link:OPAL-binary-package[installing and running a _OPAL_ binary package].
 * link:OPAL-binary-package-ChangeLog[ChangeLog of the binary packages].
-* link:OPAL-binary-package-old-versions[Obsolete versions].
+* link:OPAL-binary-package-old-versions[Deprecated versions].
 
 === Start with Examples
 
