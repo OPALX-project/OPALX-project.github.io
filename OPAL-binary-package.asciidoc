@@ -45,8 +45,8 @@ tar xf {OPAL_PKG_LINUX}
 ### On macOS
 1. change your working directory to `$PREFIX`
 1. download 
-  * {LNK_PKG_MACOS}[{OPAL_NVS_MACOS} for macOS with Intel CPU]
-  * {LNK_PKG_MACOS}[{OPAL_NVS_MACOS_ARM} for macOS with Apple M1/M2 CPU]
+  * {LNK_PKG_MACOS}[{OPAL_PKG_MACOS} for macOS with Intel CPU]
+  * {LNK_PKG_MACOS}[{OPAL_PKG_MACOS_ARM} for macOS with Apple M1/M2 CPU]
 1. Un-tar the downloaded file and remove the quarantine extended attribute:
 +
 [source,sh,subs="attributes"]
