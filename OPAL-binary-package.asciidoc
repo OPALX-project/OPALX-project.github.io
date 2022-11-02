@@ -63,7 +63,7 @@ You have to use Windows Services for Linux and install the Linux package as docu
 Source the OPAL shell profile. For the time being only sh-like shells - like BASH, ZSH - are supported.
 [source,sh,subs="attributes"]
 ----
-source "$PREFIX/{OPAL_NVS_LINUX}/etc/profile.d/opal.sh"
+source "$PREFIX/{OPAL_VER}/etc/profile.d/opal.sh"
 ----
 Now you are ready to run OPAL (assuming you have an input file `example.in`):
 [source,sh,subs="attributes"]
