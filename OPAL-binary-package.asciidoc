@@ -16,6 +16,7 @@
 :OPAL_VER_MACOS: {OPAL_VER}.0
 :OPAL_NVS_MACOS: OPAL-{OPAL_VER_MACOS}
 :OPAL_PKG_MACOS: OPAL-{OPAL_VER_MACOS}-1-x86_64-macos.tar.xz
+:OPAL_PKG_MACOS_ARM: OPAL-{OPAL_VER_MACOS}-1-arm-macos.tar.xz
 :LNK_PKG_MACOS: {LNK_PKG}{OPAL_PKG_MACOS}
 
 == Overview 
@@ -43,13 +44,15 @@ tar xf {OPAL_PKG_LINUX}
 
 ### On macOS
 1. change your working directory to `$PREFIX`
-1. download {LNK_PKG_MACOS}[{OPAL_NVS_MACOS} for macOS]
+1. download 
+  * {LNK_PKG_MACOS}[{OPAL_NVS_MACOS} for macOS with Intel CPU]
+  * {LNK_PKG_MACOS}[{OPAL_NVS_MACOS_ARM} for macOS with Apple M1/M2 CPU]
 1. Un-tar the downloaded file and remove the quarantine extended attribute:
 +
 [source,sh,subs="attributes"]
 ----
 tar xf {OPAL_PKG_MACOS}
-xattr -dr com.apple.quarantine {OPAL_VER}
+xattr -dr com.apple.quarantine OPAL-{OPAL_VER}
 ----
 
 === On Windows
