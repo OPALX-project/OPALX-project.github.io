@@ -54,12 +54,16 @@ tar xf {OPAL_PKG_LINUX}
 ----
 tar xf {OPAL_PKG_MACOS}
 ----
++
 or
++
 [source,sh,subs="attributes"]
 ----
 tar xf {OPAL_PKG_MACOS_ARM}
 ----
++
 Unset the 'quarantine' attribute:
++
 [source,sh,subs="attributes"]
 ----
 xattr -dr com.apple.quarantine OPAL-{OPAL_VER}
