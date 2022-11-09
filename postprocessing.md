@@ -4,4 +4,4 @@ OPAL writes two kind of data:
 
 For postprocessing we recommend to use the [pyOPALTools](https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home) Python package which contains many tools for pre- and postprocessing, and analysing and plotting output data.
 
-The statistical data can be conveniently plotted with [gnuplot](http://www.gnuplotting.org), as shown in the example section [Cyclotron](Cyclotron).
+The statistical data can be conveniently plotted with [gnuplot](http://www.gnuplotting.org), as shown in the example section [Cyclotron](cyclotron).
