@@ -2,6 +2,14 @@
 
 Clone runOPAL.py  from [here](https://gitlab.psi.ch/OPAL/runOPAL).
 
+Add runOPAL to the PATH and PYTHONPATH environment variables with the correct install folder.
+
+```bash
+
+export PATH=[Install_folder]/runOPAL:$PATH # Points to folder containing "README.md"
+export PYTHONPATH=$PYTHONPATH:[Install_folder]/runOPAL/runOPAL #Points to the folder containing "runOPAL.py" and "PathNameGenerator.py" 
+```
+
 # HowTo Use runOPAL.py
 In order to use *runOPAL.py* you have to provide two
 files, a template file *foo.tmpl*,  and a data file *foo.data*.
