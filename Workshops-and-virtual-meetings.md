@@ -1,3 +1,4 @@
+* [2022, December - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting December 2022)[opal-delveloper-December-1-2022.pdf](uploads/5f10710382ab8be83daf55aa8da2f165/opal-delveloper-December-1-2022.pdf)
 * [2022, June - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting June 2022)
 * [2022, April - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting April 2022)
 * [2022, January - virtual](Workshops-and-virtual-meetings/202201)
