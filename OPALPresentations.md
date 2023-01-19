@@ -10,6 +10,9 @@
 # Papers related to OPAL
 
 1. [***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
+
+1. [*Computational Models for High-Power Cyclotrons and FFAs*,
+ Andreas Adelmann, Chris T. Rogers (2023)](https://arxiv.org/pdf/2301.01460.pdf)
 1. [*Comparison of Multiobjective Optimization Methods for the LCLS-II Photoinjector*, N. Neveu et al. (2022)](https://arxiv.org/pdf/2206.03882.pdf)
 1. [*ALPINE: A set of performance portable plasma physics particle-in-cell mini-apps for exascale computing*, S. Muralikrishnan et al. (2022)](https://arxiv.org/abs/2205.11052)
 1. [*Order-of-magnitude beam current improvement in compact cyclotrons*, D. Winklehner et al. (2022)](https://iopscience.iop.org/article/10.1088/1367-2630/ac5001)
