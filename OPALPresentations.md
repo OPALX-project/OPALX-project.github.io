@@ -55,8 +55,8 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 
 1.  [OPAL Lecture -- Linac Modelling](http://amas.web.psi.ch/people/aadelmann/pub/opal-lectures/opal-lecture-material-1.tgz) (input files etc. 2023)
 
-2.  [OPAL Lecture 2](http://amas.web.psi.ch/people/aadelmann/pub/ffag14/opal-lect-ffag2014-2.pdf) (outdated i.e. 2014)
-3.  [OPAL Lecture 3](http://amas.web.psi.ch/people/aadelmann/pub/ffag14/opal-lect-ffag2014-3.pdf) (outdated i.e. 2014)
+2.  [OPAL Lecture -- Inroduction](http://amas.web.psi.ch/people/aadelmann/pub/opal-lectures/opal-lect-1-2023.pdf) (lecture notes)
+3.  [OPAL Lecture -- OPAL-t](http://amas.web.psi.ch/people/aadelmann/pub/opal-lectures/opal-intro-linac.pdf) (lecture notes)
 4. [Cyclotron Simulations with OPAL](uploads/d899fa38397e0924c3f15883194b9745/opal-intro.pdf) (September 2020)
 
 # OPAL Conference Contributions
