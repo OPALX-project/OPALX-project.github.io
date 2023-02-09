@@ -4,8 +4,7 @@
 
 == Introduction
 
-Compiling _OPAL_ can be quite challenging due to all the required
-libraries. Even if some libraries are available on the system, this
+Compiling _OPAL_ can be quite challenging due to all link:For-Developers/Compile-required-software[the required libraries]. Even if some libraries are available on the system, this
 doesn't mean that they can be used for compiling _OPAL_ due to missing
 features.
 
