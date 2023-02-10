@@ -1,3 +1,4 @@
+* Upcoming [2023.1](ReleaseNotes/OPAL-2023.1)
 * [2022.1](ReleaseNotes/OPAL-2022.1)
 * [2021.1](ReleaseNotes/OPAL-2021.1)
 * [2.4](ReleaseNotes/OPAL-2.4)
