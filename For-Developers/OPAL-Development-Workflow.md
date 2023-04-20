@@ -141,6 +141,8 @@ Open Gitlabs Web-GUI for the  next steps.
 
 After all discussions are closed and the merge request has been approved, you can merge it. Merging **must** be done in Gitlab!
 
+If your merge request includes a significant number of commits, please consider squashing the commits before merging, in order to simplify the commit history of the branch. A very simple way to do it is using a [tool](https://gitlab.psi.ch/help/user/project/merge_requests/squash_and_merge) integrated in GitLab
+
 ---
 
 ## 4. Develop a new OPAL Feature
