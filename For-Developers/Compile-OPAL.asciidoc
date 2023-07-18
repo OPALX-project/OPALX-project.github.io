@@ -13,18 +13,6 @@ features.
 
 '''
 
-=== Loading dependencies of OPAL using the module system of Merlin
-
-If you did not compile the dependencies yourself, you may simply load the pre-installed ones using:
-
-----
-module purge
-module use /afs/psi.ch/project/amas/modulefiles/OPAL
-module load toolchain/master_slurm
-module switch trilinos/13.4.0_slurm
-----
-
-This module list is updated regularly to ensure successful compilation.
 
 == Get the OPAL sources
 
