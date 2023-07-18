@@ -10,6 +10,22 @@ features.
 
 > **NOTE**:  In the code snippets below we use the environment variables `SRC_DIR` and `PREFIX`. Whereby `SRC_DIR` must be set to the directory _OPAL_ will be build in and `PREFIX` to the _OPAL_ installation directory.
 
+
+'''
+
+=== Loading dependencies of OPAL using the module system
+
+If you did not compile the dependencies yourself, you may simply load the pre-installed ones using:
+
+----
+module purge
+module use /afs/psi.ch/project/amas/modulefiles/OPAL
+module load toolchain/master_slurm
+module switch trilinos/13.4.0_slurm
+----
+
+This module list will be updated regularly.
+
 == Get the OPAL sources
 
 Clone the OPAL Git repository
