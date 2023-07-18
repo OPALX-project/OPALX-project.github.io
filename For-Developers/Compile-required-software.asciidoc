@@ -135,7 +135,7 @@ and if whether the version fulfil the requirements.
 
 '''
 
-=== Compiling OPAL on Merlin using module system
+=== Compiling OPAL on Merlin using cmake and the module system
 
 **Loading modules needed for compiling OPAL**
 
