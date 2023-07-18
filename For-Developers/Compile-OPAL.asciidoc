@@ -24,7 +24,7 @@ module load toolchain/master_slurm
 module switch trilinos/13.4.0_slurm
 ----
 
-This module list will be updated regularly.
+This module list is updated regularly to ensure successful compilation.
 
 == Get the OPAL sources
 
