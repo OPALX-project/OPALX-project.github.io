@@ -135,11 +135,11 @@ and if whether the version fulfil the requirements.
 
 '''
 
-=== Compiling OPAL on merlin using module system
+=== Compiling OPAL on Merlin using module system
 
 **Loading modules needed for compiling OPAL**
 
-Simply load the module that contains pre-installed dependencies:
+Simply load the modules that contains pre-installed dependencies:
 ----
 module purge
 module use /afs/psi.ch/project/amas/modulefiles/OPAL
@@ -148,6 +148,7 @@ module switch trilinos/13.4.0_slurm
 ----
 
 **Compiling OPAL using cmake**
+
 Use cmake to create make files in user defined build directory: 
 ----
 mkdir build
