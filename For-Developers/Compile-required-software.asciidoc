@@ -135,35 +135,6 @@ and if whether the version fulfil the requirements.
 
 '''
 
-=== Compiling OPAL on Merlin using cmake and the module system
-
-**Loading modules needed for compiling OPAL**
-
-Simply load the modules that contains pre-installed dependencies:
-----
-module purge
-module use /afs/psi.ch/project/amas/modulefiles/OPAL
-module load toolchain/master_slurm
-module switch trilinos/13.4.0_slurm
-----
-
-**Compiling OPAL using cmake**
-
-Use cmake to create make files in user defined build directory: 
-----
-mkdir build
-cd build
-cmake /path/to/the/cloned/OPAL/directory
-----
-Then, compile OPAL:
-----
-make -j 10
-----
-
-Once complied, you can find the executable opal in build/src/.
-
-'''
-
 == macOS: Using the tool-chain and Macports, Homebrew or ...
 Most of the required packages are available via Macports, Homebrew or
 another package manager. If you want to use them, you should know what
