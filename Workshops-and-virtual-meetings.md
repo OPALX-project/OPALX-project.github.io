@@ -1,4 +1,4 @@
-* [2023, September - virtual] [opal-delveloper-2-2023.pdf](uploads/63f604053c65b98fe0c584be86eab4c3/opal-delveloper-2-2023.pdf)
+* [2023, September - virtual] [opal-delveloper-2-2023.pdf](uploads/63f604053c65b98fe0c584be86eab4c3/opal-delveloper-2-2023.pdf)[OPAL_developer_07_09_23.pdf](uploads/9c6a3c380f98b7c1039be45007449a56/OPAL_developer_07_09_23.pdf)
 * [2023, March - virtual] [opal-delveloper-1-2023.pdf](uploads/72c253e6200bcdb46c18a728e6610bd1/opal-delveloper-1-2023.pdf)
 * [2022, December - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting December 2022)[opal-delveloper-December-1-2022.pdf](uploads/5f10710382ab8be83daf55aa8da2f165/opal-delveloper-December-1-2022.pdf)
 * [2022, June - virtual](Workshops-and-virtual-meetings/OPAL Developer Meeting June 2022)
