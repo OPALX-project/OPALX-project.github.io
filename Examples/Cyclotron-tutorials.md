@@ -1,5 +1,5 @@
 # Goal
-Here we will run the Cyclotron flavour of OPAL (OPAL_cycl) in two distinct modes
+Here we will run the Cyclotron flavour of OPAL (OPAL-cycl) in two distinct modes
 1. Tune Calculation
    * Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
 2. Accelerated orbit mode
@@ -17,7 +17,7 @@ For this project we need input files, that you obtain by clicking on links below
 
 | File | Description |
 | ---- |-----|
-| [cyclotron1.in](Cyclotron/cyclotron1.in) and [cyclotron2.in](Cyclotron/cyclotron2.in) ([cyclotron1.in](Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in](Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
+| [cyclotron1.in](uploads/7697ea84f47c30e9c80c63f58b8505eb/cyclotron1.in) and [cyclotron2.in](uploads/7d4ce0fdf2f5cfaed4921c58d26e7026/cyclotron2.in) ([cyclotron1.in](Cyclotron/1.6/cyclotron1.in) and [cyclotron2.in](Cyclotron/1.6/cyclotron2.in) for 1.6.x) | the OPAL input files |
 | [bfield.dat](Cyclotron/bfield.dat) | magnetic field map |
 | [rffield1.dat](Cyclotron/rffield1.dat) and [rffield2.dat](Cyclotron/rffield2.dat) | rf field maps |
 | [dist1.dat](Cyclotron/dist1.dat) [dist2.dat](Cyclotron/dist2.dat) | the input distributions |
@@ -45,7 +45,7 @@ The result is saved in cyclotron1.pdf and shown below.
 ### Needed files
 | File | Description |
 | ---- |-------|
-| [cyclotronTune-2-1.in](uploads/d608f4e27287cf1a0b9166b50435de23/cyclotronTune-2-1.in) | OPAL input file |
+| [cyclotronTune-2-1.in](uploads/a45407d49ba5b59f9fb1c43d55664b5c/cyclotronTune-2-1.in) | OPAL input file |
 | [bfield.dat](Cyclotron/bfield.dat) | magnetic field map |
 | [plotTunes.py](Cyclotron/plotTunes.py) | python (version 3) plotting script for tune calculation |
 
@@ -60,7 +60,7 @@ OPTION, CLOTUNEONLY =true;
 This tells OPAL to only perform the closed orbit finder and tune calculation.
 
 ```
-Ring: CYCLOTRON, TYPE="RING", CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", FMLOWE=72, FMHIGHE=590;
+RingCycl: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", FMLOWE=72, FMHIGHE=590;
 ```
 
 The minimal and maximal energy for the tune calculation (72 and 590 MeV).
