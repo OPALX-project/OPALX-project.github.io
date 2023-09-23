@@ -1,4 +1,3 @@
-image::images/logo.png[]
 = Object Oriented Parallel Accelerator Library (_OPAL_)
 include::attributes.asciidoc[]
 
