@@ -58,7 +58,7 @@ Some tests execute the main OPAL workflow. Unfortunately, once finished OPAL ten
 
 There exists a set of style tests to check that code is written in a way compatible with the official python style and to perform some static code checks. These checks are executed by doing ``python tests/opal_src/PyOpal/test_pylint.py``. ``test_pylint.py`` looks for python files in subdirectories of ``tests/opal_src/PyOpal`` or python files that are installed in the pyopal install target area.
 
-All of the tests can be run using the test runner, ``python tests/opal_src/PyOpal/test_runner.py``. Note that this does run the pylint tests, which can be slow. To disable pylint execution, pass ``--do_not_run_pylint`` as a command line argument. test_runner.py looks for tests that are in subdirectories of ``tests/opal_src/PyOpal``.
+All of the tests can be run using the test runner, ``python tests/opal_src/PyOpal/test_runner.py``. Note that this does run the pylint tests, which can be slow. To disable pylint execution, pass ``--do_not_run_pylint`` as a command line argument. ``test_runner.py`` looks for tests that are in subdirectories of ``tests/opal_src/PyOpal``.
 
 == More on the unit test concept
 
