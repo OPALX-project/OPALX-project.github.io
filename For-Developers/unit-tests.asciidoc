@@ -16,7 +16,7 @@ link:For%20Developers/CodingStyle[relevant style guides].
 == PyOpal Quick Start
 
 * From the root opal source directory run `cmake -DBUILD_OPAL_PYTHON=1`
-* Don't forget to run `make install` to install python
+* Don't forget to run `make install` to install pyopal library to your install area
 * Either: Run `python tests/opal_src/PyOpal/test_runner.py` to run all the unit tests
 * Or: Run `python tests/opal_src/PyOpal/path/to/a_unit_test.py` to run a specific unit test
 
@@ -56,7 +56,7 @@ Individual tests use the built-in python unittest package. Tests are implemented
 
 Some tests execute the main OPAL workflow. Unfortunately, once finished OPAL tends to leave a lot of things lying about in memory which can cause problems in subsequent tests. In order to combat this, a small wrapper class has been written which wraps some tests in a forked process using os.fork. Details can be found at ``src/PyOpal/PyPython/encapsulated_test_case.py``
 
-There exist set of style tests check that code is written in a way compatible with the official python style and performs some static code checks. These are executed by doing ``python tests/opal_src/PyOpal/test_pylint.py``.
+There exists a set of style tests to check that code is written in a way compatible with the official python style and to perform some static code checks. These checks are executed by doing ``python tests/opal_src/PyOpal/test_pylint.py``.
 
 All of the tests can be run using the test runner, ``python tests/opal_src/PyOpal/test_runner.py``. Note that this does run the pylint tests, which can be slow. To disable pylint execution, pass ``--do_not_run_pylint`` as a command line argument.
 
