@@ -16,6 +16,7 @@ link:For%20Developers/CodingStyle[relevant style guides].
 == PyOpal Quick Start
 
 * From the root opal source directory run `cmake -DBUILD_OPAL_PYTHON=1`
+* Look for the line ```-- PyOpal install location resolved to /path/to/python/site-packages/``` and make sure that ```/path/to/python/site-packages/``` is in your PYTHONPATH
 * Don't forget to run `make install` to install pyopal library to your install area
 * Either: Run `python tests/opal_src/PyOpal/test_runner.py` to run all the unit tests
 * Or: Run `python tests/opal_src/PyOpal/path/to/a_unit_test.py` to run a specific unit test
