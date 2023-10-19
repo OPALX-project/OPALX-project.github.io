@@ -29,5 +29,5 @@ Here, space charge and CSR calculations are turned off
 # Results and Postprocessing
 
 [Results](https://amas.web.psi.ch/wiki/AWAEEXBeamline/EEXbeamline_example.pdf)
-
+A simple Python [script](https://amas.web.psi.ch/wiki/AWAEEXBeamline/Opal_envelope_plot.py) not using pyOPALTools.
 For general post processing, please visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing).
