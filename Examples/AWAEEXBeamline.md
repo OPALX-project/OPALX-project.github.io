@@ -17,8 +17,8 @@ For the AWA drive linac simulation, we need OPAL input deck, and fieldmaps such 
 
 1. Inputfile [input.in](https://amas.web.psi.ch/wiki/AWAEEXBeamline/input.in)
 2. Particle data [partcl.data](https://amas.web.psi.ch/wiki/AWAEEXBeamline/partcl.data)
-2. Tranvserse deflecting cavity (TDC) and dipole magnet field maps: [TDC.dat] and [EEXDIP30cm.opal].
-3. Transverse mask: [TriangularDrive_Witness.pbm]
+2. Tranvserse deflecting cavity (TDC) and dipole magnet field maps: [TDC.dat](https://amas.web.psi.ch/wiki/AWAEEXBeamline/TDC.dat) and [EEXDIP30cm.opal](https://amas.web.psi.ch/wiki/AWAEEXBeamline/EEXDIP30cm.opal).
+3. Transverse mask: [TriangularDrive_Witness.pbm](https://amas.web.psi.ch/wiki/AWAEEXBeamline/TriangularDrive_Witness.pbm)
 
 # Run the AWA drive linac simulation
 Here, space charge and CSR calculations are turned off
