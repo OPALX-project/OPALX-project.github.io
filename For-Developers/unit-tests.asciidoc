@@ -16,6 +16,7 @@ link:For%20Developers/CodingStyle[relevant style guides].
 == PyOpal Quick Start
 
 * From the root opal source directory run `cmake -DBUILD_OPAL_PYTHON=1`
+* Look for the line `-- PyOpal install location resolved to /path/to/python/site-packages/` and make sure that `/path/to/python/site-packages/` is in your `PYTHONPATH`
 * Don't forget to run `make install` to install pyopal library to your install area
 * Either: Run `python tests/opal_src/PyOpal/test_runner.py` to run all the unit tests
 * Or: Run `python tests/opal_src/PyOpal/path/to/a_unit_test.py` to run a specific unit test
@@ -51,6 +52,12 @@ In general:
 == PyOpal tests
 
 Within the tests area are some specific tests for the OPAL python API. These tests are a mixture of unit tests and integration tests (i.e. testing the pyopal workflow), but they are all quick to run. There is also a slower test for code style. Tests are implemented in python.
+
+Tests will only successfully execute if you have built the OPAL python API. This is controlled by setting `BUILD_OPAL_PYTHON` to true at cmake time, by doing something like `cmake -DBUILD_OPAL_PYTHON=1`. It requires dynamic linking of the OPAL libraries which can be fiddly to achieve. The PyOpal install location is determined dynamically at cmake time, look at `src/PyOpal/CMakeLists.txt` for the install path resolution code. Make sure that the install location is in your PYTHONPATH environment variables - look for an output during cmake like:
+```
+-- PyOpal install location resolved to /path/to/python/site-packages/
+```
+to figure out what is the path to include.
 
 Individual tests use the built-in python unittest package. Tests are implemented as instances of ``unittest.TestCase``. Tests should be executable as a standalone test by calling them as scripts from the command line, like ``python tests/opal_src/PyOpal/path/to/a_unit_test.py``.
 
