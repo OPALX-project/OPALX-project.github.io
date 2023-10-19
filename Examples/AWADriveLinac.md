@@ -13,9 +13,9 @@ For the AWA drive linac simulation, we need OPAL input deck, and fieldmaps such 
 
 1. Inputfile [input.in](https://amas.web.psi.ch/wiki/AWADriveLinac/input.in)
 2. Bucking/focusing solenoid, and  matching solenoid field maps: [BF550.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/BF550.T7) and [M440.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/M440.T7).
-3. RF gun field map [GUN.T7]
-4. Drive linac cavity field map [DriveLinac.T7]
-5. Drive linac solenoids (disabled in the input file) [DS4.T7] and [DS5.T7]
+3. RF gun field map [GUN.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/GUN.T7)
+4. Drive linac cavity field map [DriveLinac.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/DriveLinac.T7)
+5. Drive linac solenoids (disabled in the input file) [DS4.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/DS4.T7]) and [DS5.T7]https://amas.web.psi.ch/wiki/AWADriveLinac/DS5.T7)
 # Run the AWA drive linac simulation
 
 Here, grid is set to: MX = 64, MY = 64, MZ = 32
