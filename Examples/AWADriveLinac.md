@@ -12,8 +12,7 @@ case OPAL is on your cluster please check with the administrator how to use. PSI
 For the AWA drive linac simulation, we need OPAL input deck, and fieldmaps such as RF gun, drive linac cavity, bucking/focusing solenoid magnet, and matching solenoid magnet.
 
 1. Inputfile [input.in](https://amas.web.psi.ch/wiki/AWADriveLinac/input.in)
-2. Bucking/focusing solenoid, and  matching solenoid field maps: [BF550.T7 ] and [M440.T7].
-2. Bucking/focusing solenoid, and  matching solenoid field maps: [BF550.T7 ] and [M440.T7].
+2. Bucking/focusing solenoid, and  matching solenoid field maps: [BF550.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/BF550.T7) and [M440.T7](https://amas.web.psi.ch/wiki/AWADriveLinac/M440.T7).
 3. RF gun field map [GUN.T7]
 4. Drive linac cavity field map [DriveLinac.T7]
 5. Drive linac solenoids (disabled in the input file) [DS4.T7] and [DS5.T7]
