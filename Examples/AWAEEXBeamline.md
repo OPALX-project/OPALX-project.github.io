@@ -25,5 +25,8 @@ Here, space charge and CSR calculations are turned off
 
 `opal  input.in | tee input.out`
 
-# Postprocessing
-For postprocessing, please visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing).
+# Results and Postprocessing
+
+[Results](https://amas.web.psi.ch/wiki/AWAEEXBeamline/EEXbeamline_example.pdf)
+
+For general post processing, please visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing).
