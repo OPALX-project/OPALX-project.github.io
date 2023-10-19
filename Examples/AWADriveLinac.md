@@ -1,5 +1,5 @@
 # Drive linac 
-This example describes AWA drive linac beamline which includes RF photocathode injector. The model is based on the [paper](https://napac2022.vrws.de/papers/wexd5.pdf) by S.-Y. Kim et al.. Further benchmarking simulation will be performed using ASTRA code.
+This example describes the AWA drive linac beamline which includes RF photocathode gun and 6 traveling wave linac cavities. The model is based on the [paper](https://napac2022.vrws.de/papers/wexd5.pdf) by S.-Y. Kim et al.. 
 
 # Goal
 Run the AWA drive linac beamline (OPAL_t), and check the beam parameters obtained from the simulation. 
