@@ -13,7 +13,7 @@ If you do not have already access to OPAL, you can visit [the download page](hom
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click [here](OPALATPSI).
 
 # Needed Input Files
-For the AWA drive linac simulation, we need OPAL input deck, and fieldmaps such as RF gun, drive linac cavity, bucking/focusing solenoid magnet, and matching solenoid magnet.
+Since this is separated EEX simulation, you will need 6D phase space information as an input by running the drive linac simulation. Here the initial particle distribution is provided as “partcl.data.” In addition, for this simulation, we need fieldmaps of transverse deflecting cavity (TDC) and dipole magnet.
 
 1. Inputfile [input.in](https://amas.web.psi.ch/wiki/AWAEEXBeamline/input.in)
 2. Particle data [partcl.data](https://amas.web.psi.ch/wiki/AWAEEXBeamline/partcl.data)
