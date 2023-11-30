@@ -20,7 +20,7 @@ Windows:: use Windows Subsystem for Linux (WSL)
 
 Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. 
 
-Build scripts for all required software are available [here](https://gitlab.psi.ch/OPAL/src/-/wikis/For%20Developers/Compile-required-software).
+Build scripts for all required software are available (link:For%20Developers/Compile-required-software[(_OPAL_ build recipes)]).
 
 The list below shows the required software and versions we use to compile _OPAL_.
 
