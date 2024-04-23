@@ -100,7 +100,7 @@ The following table shows the most important options:
 
 | `BUILD_OPAL_PYTHON`
 | enable PyOPAL
-| requires Python 3.0+
+| requires Python 3.0+ and Boost with Python.
 
 |=======
 
