@@ -6,7 +6,7 @@ The following operating systems are supported:
 ** Redhat Enterprise Linux
 ** Suse Leap
 ** Ubuntu
-** ...
+
 * macOS
 * Windows (with the Windows Subsystem for Linux (WSL))
 
