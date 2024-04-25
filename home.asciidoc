@@ -121,7 +121,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 
 === Presentations & Papers
 
-* link:OPALPresentations[OPAL Physics Resources]
+* link:OPAL-References[OPAL Physics Resources]
 
 ---
 
