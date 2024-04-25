@@ -18,7 +18,7 @@
 1. [*Comparison of Multiobjective Optimization Methods for the LCLS-II Photoinjector*, N. Neveu et al. (2023)](https://doi.org/10.1016/j.cpc.2022.108566)
 1. [*Nonlinearly Shaped Pulses in Photoinjectors and Free-Electron Lasers*, N. Neveu et al. (2023)]( https://doi.org/10.48550/arXiv.2306.16590)
 1. [*Performance analysis of indicators of chaos for nonlinear dynamical systems*, A. Bazzani et al. (2023)](https://doi.org/10.1103/PhysRevE.107.064209)
-1. [*Modeling and implementation of vertical excursion FFA in the Zgoubi ray-tracing code*, M. Vanwelde et al. (2023](https://doi.org/10.1016/j.nima.2022.167829)
+1. [*Modeling and implementation of vertical excursion FFA in the Zgoubi ray-tracing code*, M. Vanwelde et al. (2023)](https://doi.org/10.1016/j.nima.2022.167829)
 1. [*Enabling a Multi-Purpose High-Energy Neutron Source Based on High-Current Compact Cyclotrons*, L. Snead et al. (2023](https://doi.org/10.48550/arXiv.2302.09011)
 1. [*Snowmass21 Accelerator Modeling Community White Paper* by the Beam and Accelerator Modeling Interest Group (2022)](https://doi.org/10.48550/arXiv.2203.08335)
 1. [*Scaling and performance portability of the particle-in-cell scheme for plasma physics applications through mini-apps targeting exascale architectures*, S. Muralikrishnan et al. (2022)](https://doi.org/10.48550/arXiv.2205.11052)
