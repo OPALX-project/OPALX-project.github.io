@@ -8,7 +8,7 @@
 
 1. [***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://arxiv.org/abs/1905.06654)
 
-1. [*IsoDAR@Yemilab: Preliminary Design Report -- Volume I: Cyclotron Driver*, D. Winklehner et al. (2024)](| https://doi.org/10.48550/arXiv.2404.06281)
+1. [*IsoDAR@Yemilab: Preliminary Design Report -- Volume I: Cyclotron Driver*, D. Winklehner et al. (2024)](https://doi.org/10.48550/arXiv.2404.06281)
 1. [*Neural Networks as Effective Surrogate Models of Radio-Frequency Quadrupole Particle Accelerator Simulations*, J. Villarreal et al. (2024)](https://doi.org/10.1088/2632-2153/ad3a30)
 1. [*Analyzing beam-gas interactions in an H2+ cyclotron beam*, P. Calvo et al. (2023)](https://doi.org/10.1088/1361-6471/acfe8f)
 1. [*Computational Models for High-Power Cyclotrons and FFAs*,
@@ -31,6 +31,7 @@
 1. [*Eliminating uncertainty of thermal emittance measurement in solenoid scans due to rf and solenoid fields overlap*, L. Zheng et al. (2022)](https://doi.org/10.1016/j.nima.2021.166149)
 1. [*Temporal shaping of narrow-band picosecond pulses via noncolinear sum-frequency mixing of dispersion-controlled pulses* R. Lemons et al. (2022)](https://doi.org/10.1103/PhysRevAccelBeams.25.013401)
 1. [*Benchmarking Collective Effects of Electron Interactions in a Wiggler with OPAL-FEL*, A. Alba et al. (2021)](https://doi.org/10.1016/j.cpc.2022.108475)
+1. [*MinT: A Fast Lightweight Envelope/Monte-Carlo Beam Optics Code for the Proton Beamlines of the Paul Scherrer Institute*, C. Baumgarten (2022)](https://doi.org/10.48550/arXiv.2202.07245)
 1. [*Beam stripping interactions in compact cyclotrons*, P. Calvo et al. (2021)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.090101)
 1. [*Magnetic field analysis of shimmed DECY-13 cyclotron magnet*, W. Taufik et al. (2021)](https://doi.org/10.1063/5.0066254)
 1. [*Global sensitivity analysis on numerical solver parameters of Particle-In-Cell models in particle accelerator systems* M. Frey et al. (2021)](https://www.sciencedirect.com/science/article/pii/S0010465520302770?via%3Dihub)
@@ -78,15 +79,25 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 
 # OPAL Conference Contributions
 
-1. [*PSI Injector II and the 72 MeV Transfer Line: MinT-Simulation vs. Measurements*, C. Baumgarten et al., HB2023, CERN, Geneva](https://doi.org/10.18429/JACoW-HB2023-THBP34)
+1. [*PSI Injector II and the 72 MeV Transfer Line: MinT-Simulation vs. Measurements*, C. Baumgarten et al., HB2023](https://doi.org/10.18429/JACoW-HB2023-THBP34)
 1. [*Injection Into XFELs, a Review of Trends and Challenges*, C. Davut et al. FLS2023](https://doi.org/10.18429/JACoW-FLS2023-TU4P12)
 1. [*Model-independent determination of solenoid offsets in the Sealab Injector*, B. Kuske, IPAC23](https://doi.org/10.18429/JACoW-IPAC2023-WEPL038)
 1. [*Simulation and Analysis of HIMM-IC Beam Dynamics with OPAL*, G. Dou, CYCLOTRONS2022](https://doi.org/10.18429/JACoW-CYCLOTRONS2022-WEAO02)
 1. [*Summary of the Snowmass’21 Workshop on High Power Cyclotrons and FFAs, D. Winklehner et al., CYCLOTRONS2022](https://doi.org/10.18429/JACoW-CYCLOTRONS2022-MOBI01)
+1. [*Benchmarking Simulation for AWA Drive Linac and Emittance Exchange Beamline Using OPAL, GPT, and Impact-T*, S. Kim et al. NAPAC2022](https://doi.org/10.18429/JACoW-NAPAC2022-WEXD5)
+1. [*Integrated Photonics Structure Cathodes for Longitudinally Shaped Bunch Trains*, S. Coleman et al. NAPAC2022](https://doi.org/10.18429/JACoW-NAPAC2022-MOPA50)
+1. [*Model-Based Calibration of Control Parameters at the Argonne Wakefield Accelerator*, I. Sugrue et al. nAPAC2022](https://doi.org/10.18429/JACoW-NAPAC2022-TUPA34)
+1. [*Conceptual Design of the PERLE Injector*, B. Hounsell et al. LINAC2022](https://doi.org/10.18429/JACoW-LINAC2022-THPOJO26)
+1. [*Longitudinal Bunch Shaping Using an X-Band Transverse Deflecting Cavity Powered by Wakefield Power Extractor at Argonne Wakefield Accelerator Facility*, S. Kim et al. IPAC2022](https://doi.org/10.18429/JACoW-IPAC2022-WEOZSP1)
 1. [*High-Current H2+ Beams from a Compact Cyclotron using RFQ Direct Injection*, D. Winklehner et al., IPAC2021](https://doi.org/10.18429/JACoW-IPAC2021-TUXB07) 
+1. [*Status of the Polarized Source and Beam Preparation System at MESA*, S. Friederich et al. IPAC2021](https://doi.org/10.18429/JACoW-IPAC2021-WEPAB063)
+1. [*Optimization of a High Bunch Charge ERL Injection Merger for PERLE*, B. Hounsell et al. IPAC2021](https://doi.org/10.18429/JACoW-IPAC2021-THPAB106)
+1. [*Dispersion Controlled Temporal Shaping of Photoinjector Laser Pulses for Electron Emittance Reduction in X-Ray Free Electron Lasers*, R. Lemons et al. IPAC2021](https://doi.org/10.18429/JACoW-IPAC2021-THPAB060)
 1. [*Recent Developments of the Open Source Code OPAL*, A. Adelmann, CYCLOTRONS2019](https://cyclotrons2019.vrws.de/talks/tha02_talk.pdf)
 1. [*Precise Modelling and Large Scale Multiobjective Optimisation of Cyclotrons*, J. Snuverink et al., CYCLOTRONS2019](https://doi.org/10.18429/JACoW-Cyclotrons2019-THA01)
 1. [*Beam Stripping Interactions Implemented in Cyclotrons with OPAL Simulation Code*, P. Calvo et al., CYCLOTRONS2019](https://doi.org/10.18429/JACoW-Cyclotrons2019-MOP034)
+1. [*Development of a Replacement for the Long Radial Probe in the Ring Cyclotron*, R. Dölling et al. CYCLOTRONS2019](https://doi.org/10.18429/JACoW-Cyclotrons2019-MOP024)
+1. [*Conceptual Design of Central Region for High-Temperature Superconducting Skeleton Cyclotron (HTS-SC)*, H. W. Koay et al. CTCLOTRONS2019](https://doi.org/10.18429/JACoW-Cyclotrons2019-WEC01)
 1. [*Opal Simulations of the PSI Ring Cyclotron and a Design for a Higher Order Mode Flat Top Cavity*, N.J. Pogue et al., IPAC2017](http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf)
 1. [*Optics Development and Trajectory Tuning of bERLinPro at Low Energies*, B. Kuske, M. Abo-Bakr, IPAC2017](http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/mopab033.pdf)
 1. [*Modeling and Optimization of the APS Photo-Injector Using OPAL for high Efficiency FEL Experiments*, C. Hall et al., FEL2017](http://accelconf.web.cern.ch/AccelConf/fel2017/papers/tup022.pdf)
