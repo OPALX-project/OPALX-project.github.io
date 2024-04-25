@@ -1,3 +1,7 @@
+# OPAL Paper
+
+[***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://doi.org/10.48550/arXiv.1905.06654)
+
 # Talks on OPAL
 
 1. [Development of the simulation code OPAL, Snowmass’21](https://indico.mit.edu/event/150/contributions/335/attachments/153/285/OPAL_presentation_Snowmass21_PedroCalvo.pdf)
@@ -5,8 +9,6 @@
 1. [OPAL Introduction (2019)](uploads/07f5d89fe8b24637a1a5106f7530e51f/ffa-19-opal.pdf)
 
 # Papers related to OPAL
-
-1. [***OPAL a Versatile Tool for Charged Particle Accelerator Simulations***, OPAL developer team (2020)](https://doi.org/10.48550/arXiv.1905.06654)
 
 1. [*IsoDAR@Yemilab: Preliminary Design Report -- Volume I: Cyclotron Driver*, D. Winklehner et al. (2024)](https://doi.org/10.48550/arXiv.2404.06281)
 1. [*Neural Networks as Effective Surrogate Models of Radio-Frequency Quadrupole Particle Accelerator Simulations*, J. Villarreal et al. (2024)](https://doi.org/10.1088/2632-2153/ad3a30)
