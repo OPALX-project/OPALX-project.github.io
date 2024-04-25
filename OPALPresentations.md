@@ -30,8 +30,11 @@
 1. [*Optics design of vertical excursion fixed-field alternating gradient accelerators*, S. Machida et al. (2021)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.24.021601)
 1. [*OPAL-MITHRA: Self-consistent Software for Start-to-End Simulation of Undulator-based Facilities*, A. Alba et al. (2020)](https://doi.org/10.1109/IVNC49440.2020.9203404)
 1. [*Machine learning for orders of magnitude speedup in multiobjective optimization of particle accelerator systems*, A. Edelen et al. (2020)](https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.044601)
+1. [*On Nonintrusive Uncertainty Quantication and Surrogate Model Construction in Particle Accelerator Modeling*, A. Adelmann (2019)](https://doi.org/10.1137/16M1061928)
 1. [*Matching of turn pattern measurements for cyclotrons using multiobjective optimization*, M. Frey et al. (2019)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.22.064602)
-1. [*Realistic simulations of a cyclotron spiral inflector within a particle-in-cell framework*, D. Winklehner, et al. (2017)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.20.124201)
+1. [*Realistic simulations of a cyclotron spiral inflector within a particle-in-cell framework*, D. Winklehner et al. (2017)](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.20.124201)
+1. [*The Dynamic Kernel Scheduler—Part 1*, A. Adelmann et al. (2016)](https://doi.org/10.1016/j.cpc.2016.05.013)
+1. [*Cyclotrons and FFAG Accelerators as Drivers for ADS*, L. Calabretta et al. (2015)](https://doi.org/10.1142/S1793626815300054)
 1. [*A Parallel General Purpose Multi-Objective Optimization Framework, with Application to Beam Dynamics*, N. Neveu et al. (2013)](http://arxiv.org/abs/1302.2889)
 1. [*A Fast and Scalable Low Dimensional Solver for Charged Particle Dynamics in large Particle Accelerators*, Y. Ineichen et al. (2013)]( http://dx.doi.org/10.1007/s00450-012-0216-2)
 1. [*A novel adaptive time stepping variant of the Boris-Buneman integrator for the simulation of particle accelerators with space charge*, M. Toggweiler et al. (2012)](http://arxiv.org/abs/1211.3664)
