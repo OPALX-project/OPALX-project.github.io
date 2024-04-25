@@ -64,7 +64,7 @@
 supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 .
 1. Master thesis of Philippe Ganz, [_s-based maps from TPS & Lie-Series applied to Proton-Therapy Gantries_](Reports/thesisGanz.pdf). The work (_OPAL-map_) has been integrated in OPAL 2.0.0.
-1. [_Optimizing the radioisotope production of the novel AMIT superconducting weak focusing cyclotron_, Pedro Calvo, PhD Thesis, UCM-CIEMAT (2021)](https://eprints.ucm.es/id/eprint/65502/1/T42561.pdf).
+1. [_Optimizing the radioisotope production of the novel AMIT superconducting weak focusing cyclotron_, Pedro Calvo, PhD Thesis, UCM-CIEMAT (2021)](https://hdl.handle.net/20.500.14352/11586).
 
 # OPAL lectures
 
