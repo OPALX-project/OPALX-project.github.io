@@ -107,7 +107,7 @@ The following table shows the most important options:
 [NOTE]
 .Trilinos
 ====
-faded
+For compiling Trilinos please see the https://gitlab.psi.ch/OPAL/build-recipes/-/blob/master/220-build-trilinos?ref_type=heads[Trilinos build recipe].
 ====
 
 == Compile and install OPAL
