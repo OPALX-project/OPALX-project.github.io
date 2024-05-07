@@ -96,13 +96,19 @@ The following table shows the most important options:
 
 | `ENABLE_SAAMG_SOLVER`
 | enable SAAMG solver
-| requires trilinos >= 12.x and parmetis >= 4.0.3
+| requires trilinos >= 12.x
 
 | `BUILD_OPAL_PYTHON`
 | enable PyOPAL
 | requires Python 3.0+ and Boost with Python.
 
 |=======
+
+[NOTE]
+.Trilinos
+====
+faded
+====
 
 == Compile and install OPAL
 
