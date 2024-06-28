@@ -33,7 +33,7 @@ The list below shows the required software and versions we use to compile _OPAL_
 | 
 
 | C/C&#43;&#43; Compiler | gcc 10 or Clang 12
-| must support C&#43;&#43; 17 or better. Minimum version for GCC is 8.4.0. If this or a newer version is available on your system, use it. If you want/have to compile GCC yourself, see the instructions below.
+| must support C&#43;&#43; 17 or better. Minimum version for GCC is 9.5.0. If this or a newer version is available on your system, use it. If you want/have to compile GCC yourself, see the instructions below.
 
 | Fortran Compiler | gfortran 10
 | optional, must support Fortan 95 or better.
