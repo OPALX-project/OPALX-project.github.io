@@ -25,12 +25,12 @@ cd "${SRC_DIR}/OPAL"
 git clone https://gitlab.psi.ch/OPAL/src.git
 ----
 
-Select the OPAL branch you want to compile. The current stable branch is `OPAL-2022.1`:
+Select the OPAL branch you want to compile. The current stable branch is `OPAL-2024.1`:
 
 [source,sh]
 ----
 cd "${SRC_DIR}/OPAL/src"
-git checkout OPAL-2022.1
+git checkout OPAL-2024.1
 ----
 
 To checkout the (unstable) development branch run:
@@ -100,7 +100,7 @@ The following table shows the most important options:
 
 | `BUILD_OPAL_PYTHON`
 | enable PyOPAL
-| requires Python 3.0+ and Boost with Python.
+| requires Python 3.0+ and Boost with Python. You have to set `WILL_BUILD_SHARED_LIBRARY=on`.
 
 |=======
 
