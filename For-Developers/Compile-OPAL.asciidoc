@@ -102,6 +102,10 @@ The following table shows the most important options:
 | enable PyOPAL
 | requires Python 3.0+ and Boost with Python. You have to set `WILL_BUILD_SHARED_LIBRARY=on`.
 
+| `WILL_BUILD_SHARED_LIBRARY`
+| build libOPAL as shared library
+| this must be enabled for PyOPAL
+
 |=======
 
 [NOTE]
