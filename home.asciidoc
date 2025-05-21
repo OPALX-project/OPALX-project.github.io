@@ -147,6 +147,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 == Compiling _OPAL-X_
 
 * link:https://hpce.pages.psi.ch/merlin7/opal-x.html[Compile _OPAL-X_ on Merlin7]
+
 ---
 
 == Tools
