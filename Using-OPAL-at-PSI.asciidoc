@@ -5,12 +5,14 @@ At PSI _OPAL_ is available as Pmodule.
 
 = Merlin 6 (to be decommissioned soon) OPAL 2024.1
 
----
+----
 module load gcc/10.4.0 openmpi/4.1.5_slurm OPAL/2024.1.0_slurm
----
+----
 
 = Merlin 7
+t.b.d.
 
+= Does not work anymore 
 
 The easiest way to load an _OPAL_ module is to use the "meta-modules" provided in `/afs/psi.ch/project/amas/modulefiles/OPAL`. Meta-modules are modules loading a couple of other modules. To make the _OPAL_ meta-modules available, run
 ----
