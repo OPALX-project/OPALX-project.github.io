@@ -9,8 +9,13 @@ At PSI _OPAL_ is available as Pmodule.
 module load gcc/10.4.0 openmpi/4.1.5_slurm OPAL/2024.1.0_slurm
 ----
 
-= Merlin 7 (ssh login001.merlin7.psi.ch)
+= Merlin 7 (ssh -Y login001.merlin7.psi.ch)
 ----
 module use Spack unstable
 module load gcc/12.3 cray-mpich/8.1.28-jqv6 opal
+----
+For post processing Gnuplot is available
+----
+module load gnuplot
+xhost +
 ----
