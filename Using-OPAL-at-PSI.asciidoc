@@ -10,7 +10,10 @@ module load gcc/10.4.0 openmpi/4.1.5_slurm OPAL/2024.1.0_slurm
 ----
 
 = Merlin 7
-t.b.d.
+----
+module use Spack unstable
+module load gcc/12.3 cray-mpich/8.1.28-jqv6 opal
+----
 
 = Does not work anymore 
 
