@@ -14,23 +14,3 @@ module load gcc/10.4.0 openmpi/4.1.5_slurm OPAL/2024.1.0_slurm
 module use Spack unstable
 module load gcc/12.3 cray-mpich/8.1.28-jqv6 opal
 ----
-
-= Does not work anymore 
-
-The easiest way to load an _OPAL_ module is to use the "meta-modules" provided in `/afs/psi.ch/project/amas/modulefiles/OPAL`. Meta-modules are modules loading a couple of other modules. To make the _OPAL_ meta-modules available, run
-----
-module use /afs/psi.ch/project/amas/modulefiles/OPAL
-module load toolchain/master_slurm
-module switch trilinos/13.4.0_slurm
-----
-> **NOTE:** For your convenience you can add this line to your shell profile (`.bashrc` for BASH).
-
-To  get a list of all available _OPAL_ module with major version to, you can  use the command `module avail OPAL-2`:
-----
-------------------------- /afs/psi.ch/project/amas/modulefiles/OPAL -------------------------
-
-OPAL-2/2.0.2                    OPAL-2/2.2.1-1_slurm            OPAL-2/2.2.1_slurm
-OPAL-2/2.4.0                    OPAL-2/2.4.0_slurm              OPAL-2/2021.1
-----
-
-> **NOTE:** Modules tagged with `_slurm` can be used on Merlin6 only!
