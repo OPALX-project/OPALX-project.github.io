@@ -3,13 +3,13 @@
 
 https://doi.org/10.48550/arXiv.1905.06654[*_OPAL a Versatile Tool for Charged Particle Accelerator Simulations_*, OPAL developer team (2020)]
 
-= Talks on OPAL
+== Talks on OPAL
 
 . https://indico.mit.edu/event/150/contributions/335/attachments/153/285/OPAL_presentation_Snowmass21_PedroCalvo.pdf[Development of the simulation code OPAL, Snowmass'21]
 . link:uploads/099b6ed392a42ccb207e2b6a52ea99dc/ArnauAlba_OPALretreat_10-06-2021.pdf[Start-to-end Modelling of FELs with OPAL-FEL Full Maxwell Solver]
 . link:uploads/07f5d89fe8b24637a1a5106f7530e51f/ffa-19-opal.pdf[OPAL Introduction (2019)]
 
-= Papers related to OPAL
+== Papers related to OPAL
 
 . https://doi.org/10.48550/arXiv.2404.06281[_IsoDAR@Yemilab: Preliminary Design Report -- Volume I: Cyclotron Driver_, D. Winklehner et al. (2024)]
 . https://doi.org/10.1088/2632-2153/ad3a30[_Neural Networks as Effective Surrogate Models of Radio-Frequency Quadrupole Particle Accelerator Simulations_, J. Villarreal et al. (2024)]
@@ -59,7 +59,7 @@ https://doi.org/10.48550/arXiv.1905.06654[*_OPAL a Versatile Tool for Charged Pa
 . https://doi.org/10.1016/j.jcp.2010.02.022[_A fast parallel poisson solver on irregular domains applied to beam dynamic simulations_, A. Adelmann et al. (2010)]
 . https://doi.org/10.1007/978-3-642-28151-8_7[_Improvements of a fast parallel Poisson solver on irregular domains_, A. Adelmann et al. (2010)]
 
-= Reports and thesis on OPAL
+== Reports and thesis on OPAL
 
 . http://amas.web.psi.ch/people/aadelmann/ETH-Accel-Lecture-1/projectscompleted[AMAS Master and PhD projects]
 . link:Reports/TM-11-13-TrimCoils-Adam_Joho-1974.pdf[Trim coil report (PSI Ring)]
@@ -69,14 +69,14 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 . Master thesis of Philippe Ganz, link:Reports/thesisGanz.pdf[_s-based maps from TPS & Lie-Series applied to Proton-Therapy Gantries_]. The work (_OPAL-map_) has been integrated in OPAL 2.0.0.
 . https://hdl.handle.net/20.500.14352/11586[_Optimizing the radioisotope production of the novel AMIT superconducting weak focusing cyclotron_, Pedro Calvo, PhD Thesis, UCM-CIEMAT (2021)].
 
-= OPAL lectures
+== OPAL lectures
 
 . http://amas.web.psi.ch/people/aadelmann/pub/opal-lectures/opal-lecture-material-1.tgz[OPAL Lecture 2023 -- Linac Modelling] (input files tgz compressed)
 . http://amas.web.psi.ch/people/aadelmann/pub/opal-lectures/opal-lect-1-2023.pdf[OPAL Lecture 2023 -- General Introduction] (lecture notes)
 . http://amas.web.psi.ch/people/aadelmann/pub/opal-lectures/opal-intro-linac.pdf[OPAL Lecture 2023 -- OPAL-t] (lecture notes)
 . link:uploads/d899fa38397e0924c3f15883194b9745/opal-intro.pdf[Cyclotron Simulations with OPAL] (September 2020)
 
-= OPAL Conference Contributions
+== OPAL Conference Contributions
 
 . https://doi.org/10.18429/JACoW-HB2023-THBP34[_PSI Injector II and the 72 MeV Transfer Line: MinT-Simulation vs. Measurements_, C. Baumgarten et al., HB2023]
 . https://doi.org/10.18429/JACoW-FLS2023-TU4P12[_Injection Into XFELs, a Review of Trends and Challenges_, C. Davut et al. FLS2023]
@@ -121,6 +121,6 @@ supervised by Chris Rogers (RAL) and has been integrated in OPAL 2.0.0.
 . https://accelconf.web.cern.ch/HB2008/papers/wga33.pdf[_Numerical Study of Beam Dynamics in High Intensity Cyclotrons Including Neighboring Bunch Effects_, J. Yang et al., HB2008]
  ** https://accelconf.web.cern.ch/HB2008/talks/wga33_talk.pdf[Contributed Talk]
 
-= https://indico.psi.ch/category/223/[PSI BD Palaver Meetings]
+== https://indico.psi.ch/category/223/[PSI BD Palaver Meetings]
 
 . https://indico.psi.ch/event/4996/attachments/8795/11184/Final_Presentation.pdf[_Orbit Matching in Ring cyclotron_, N. Pogue]

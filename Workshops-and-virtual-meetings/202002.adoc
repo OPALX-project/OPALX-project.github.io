@@ -1,7 +1,7 @@
 = SLAC 2020: OPAL Developers Retreat
 :doctype: book
 
-= POSTPONED
+== POSTPONED
 
 [discrete]
 === Dates: TBD, 2022

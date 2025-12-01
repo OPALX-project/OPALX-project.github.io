@@ -1,17 +1,17 @@
+= RF Photo Injector
 :doctype: book
 
+= Introduction
 This example describes a rf-photo injector, as part of the Argonne Wakefield Accelerator (AWA). The model based on the http://vrws.de/napac2016/papers/thpoa46.pdf[paper] by N.R. Neveu et al.,  and benchmarks three codes: GPT, ASTRA and OPAL.
-
-= Goal
 
 Here we will run the rf-photo injector (OPAL_t)
 
-= Preparation
+== Preparation
 
 If you do not have already access to OPAL, you can visit link:home[the download page]. In
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click link:OPALATPSI[here].
 
-= Needed Input Files
+== Needed Input Files
 
 For this project we need input files, that you obtain by clicking on links below:
 
@@ -19,7 +19,7 @@ For this project we need input files, that you obtain by clicking on links below
 . Two solenoid field maps: https://amas.web.psi.ch/wiki/RFphotoinjector/M_440.T7[M_440.T7] and https://amas.web.psi.ch/wiki/RFphotoinjector/BF_550.T7[BF_550.T7]
 . RF gun field map https://amas.web.psi.ch/wiki/RFphotoinjector/DriveGun.T7[DriveGun.T7]
 
-= Run the Photo Injector Simulation
+== Run the Photo Injector Simulation
 
 For this calculation the initial conditions are all set in the input file. Run OPAL with
 

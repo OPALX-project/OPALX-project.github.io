@@ -12,7 +12,7 @@ export PATH=[Install_folder]/runOPAL:$PATH # Points to folder containing "README
 export PYTHONPATH=$PYTHONPATH:[Install_folder]/runOPAL/runOPAL #Points to the folder containing "runOPAL.py" and "PathNameGenerator.py"
 ----
 
-= HowTo Use runOPAL.py
+== HowTo Use runOPAL.py
 
 In order to use _runOPAL.py_ you have to provide two
 files, a template file _foo.tmpl_,  and a data file _foo.data_.
@@ -23,7 +23,7 @@ symbol in the template file will look like *_CHARGE_*.
 
 image::/uploads/65201f411b24ff56fab3384e1368b73e/runopal-1.png[runopal-1]
 
-= Recognized Environment Variables by  _runOPAL.py_
+== Recognized Environment Variables by  _runOPAL.py_
 
 The following environment variables recognized by the _runOPAL.py_:
 
@@ -58,7 +58,7 @@ _QUEUE_ is the queue used for the simulation. Different queues may have differen
 
 _RAM_ contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
 
-= Recognized host names
+== Recognized host names
 
 The following clusters and supercomputers are recognised for which batch jobs are setup automatically:
 
@@ -73,7 +73,7 @@ The following clusters and supercomputers are recognised for which batch jobs ar
 
 Please open an https://gitlab.psi.ch/OPAL/runOPAL/issues[issue] for adding additional clusters.
 
-= This is a snippet of a data and tmpl file (_foo.data_)
+== This is a snippet of a data and tmpl file (_foo.data_)
 
 ----
 Q      -1       # the charge
@@ -87,7 +87,7 @@ The corresponding part of the template (_foo.tmpl_) file would look like:
 
 `+beam1: BEAM, PARTICLE=ELECTRON, pc=P0, NPART=_NPART_, CHARGE=_Q_ ... ;+`
 
-= Running runOPAL.py
+== Running runOPAL.py
 
 You can run the _runOPAL.py_ script without arguments, if the two files (_foo.tmpl_ and _foo.data_) are present, a directory _foo_ will be
 created and all files for the simulation are either copied or linked to that directory. The simulation is then started from this directory
@@ -108,7 +108,7 @@ where also all results are stored. The general syntax of runOPAL.py is
 * _ATTR_ refers to a name in the data file
 * _SCANVALUE_ `start:end:step`, scans a parameter space, e.g., _TFWHM=0.85:0.90:0.01_.
 
-= Example 1: Regular Run
+== Example 1: Regular Run
 
 ----
 dude:foo adelmann$ source setup.sh
@@ -170,7 +170,7 @@ dude:foo adelmann$ ls foo
 foo.in run.sge
 ----
 
-= Example 2: 1D Parameter Scan
+== Example 2: 1D Parameter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050`
 
@@ -186,7 +186,7 @@ dude:foo adelmann$ ls foo_EDES=0.05:0.25:0.05
 fooEDES=0.05    fooEDES=0.1 fooEDES=0.15    fooEDES=0.2 fooEDES=0.25
 ----
 
-= Example 3: 2D Parameter Scan
+== Example 3: 2D Parameter Scan
 
 `runOPAL.py --test EDES=0.050:0.250:0.050 POS1=0.4:0.5:0.01`
 
@@ -207,7 +207,7 @@ fooEDES=0.05POS1=0.43   fooEDES=0.05POS1=0.48   fooEDES=0.15POS1=0.43   fooEDES=
 fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=0.15POS1=0.49   fooEDES=0.1POS1=0.44    fooEDES=0.1POS1=0.49    fooEDES=0.25POS1=0.44   fooEDES=0.25POS1=0.49   fooEDES=0.2POS1=0.44    fooEDES=0.2POS1=0.49
 ----
 
-= Example 4: Optimization Run
+== Example 4: Optimization Run
 
 Optimizer and template _*.tmpl_ files should be located in OPTIMIZER and TEMPLATES directories,
 respectively, while their _*.data_ files should be located in the working directory.
@@ -259,11 +259,11 @@ FIELDMAPDIR    "."
 TEMPLATEDIR    "tmpl"
 ----
 
-= Using the Python interface
+== Using the Python interface
 
 There is a Python class `OpalRunner` that can be used to run OPAL simulations like functions.
 
-== Installation
+=== Installation
 
 Before using the code, you have to install the repo. Clone the repo, `cd` to the repo base directory (the one containing `setup.py`) and run:
 
@@ -279,7 +279,7 @@ If you are a developer and don't want to install the package every time to make 
 pip install -e .
 ----
 
-== Example
+=== Example
 
 A full example can be found in the code below. You can find it, together with the demo config files, in the following archive: link:uploads/b4ad0b980d7190ab536a5d462cd5f966/opalrunner_demo.tar.xz[opalrunner_demo.tar.xz]
 
@@ -350,10 +350,10 @@ ax.set_xlabel('Path length [m]')
 ax.set_ylabel('$\sigma_x$ [m]');
 ----
 
-== Where to put the configurations
+=== Where to put the configurations
 
 There are two options where you can add your variables. The ones that are common to all simulations should be written to the `.data` file. The settings that change between configurations should be columns in the `dvars` DataFrame.
 
-== Low-level access
+=== Low-level access
 
 There is a class `Simulation` that is used by both the script and the OpalRunner. It is more complicated to use, but allows fine-grained control. Please see its docstring and/or use `help(Simulation)`.

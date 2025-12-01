@@ -1,9 +1,10 @@
+= Coding style
 :doctype: book
 :pp: {plus}{plus}
 
 [[_TOC_]]
 
-= 0. Short Introduction
+== 0. Short Introduction
 
 In a huger software project it is good practice to define a coding-style.
 This helps other developers to read your code and improves maintainability.
@@ -24,14 +25,14 @@ The tool `clang-format` is available for most Linux distributions and macOS via 
 
 A good example for a coding-style is the https://www.kernel.org/doc/html/v4.10/process/coding-style.html[Linux coding-style]. It's worth to read.
 
-= 1. Language Standards
+== 1. Language Standards
 
 * C99
 * C{pp}17
 
 '''
 
-= 2. Naming Conventions
+== 2. Naming Conventions
 
 [discrete]
 === 2.1. General notes
@@ -187,7 +188,7 @@ Example:
 
 '''
 
-= 3. Documentation
+== 3. Documentation
 
 [discrete]
 === 3.1. File Header
@@ -335,7 +336,7 @@ Example of detailed code description in Latex
    */
 ----
 
-= 4. Methods and Functions
+== 4. Methods and Functions
 
 [discrete]
 === 4.1. Complexity
@@ -392,7 +393,7 @@ Example:   (from Linux coding style)
 
 '''
 
-= 5. Formatting
+== 5. Formatting
 
 [discrete]
 === 5.1. Indentation
@@ -592,7 +593,7 @@ std::tuple<
 
 '''
 
-= 6. Memory Allocation
+== 6. Memory Allocation
 
 * Use `std::vector` for dynamic arrays
 * Use `std::unique_ptr`/`std::shared_ptr` and `std::make_unique` (once https://gitlab.psi.ch/OPAL/src/-/issues/607[Increase C{pp} Standard to c{pp}17] is implemented) / `std::make_shared` where ever possible.
@@ -600,7 +601,7 @@ std::tuple<
 
 '''
 
-= 7. Error Handling
+== 7. Error Handling
 
 * Always check error conditions and handle them!
 * If we can proceed, it may be enough to print a warning.
@@ -611,7 +612,7 @@ std::tuple<
 
 '''
 
-= 8. References
+== 8. References
 
 http://www.possibility.com/Cpp/CppCodingStandard.html
 

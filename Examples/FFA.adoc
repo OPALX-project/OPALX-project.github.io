@@ -1,5 +1,7 @@
+= FFA
 :doctype: book
 
+== Introduction
 Examples are provided for tracking FFAs in a number of circumstances:
 
 . Tracking through an analytical horizontal FFA field model
@@ -9,7 +11,7 @@ Examples are provided for tracking FFAs in a number of circumstances:
 
 The following workflows have been checked with OPAL-2021.1.0. Note that examples checked against older versions of OPAL are given at the bottom of the page.
 
-= Tracking through an analytical field model
+== Tracking through an analytical field model
 
 OPAL can use a fully scaling field model including scaling fringe fields to model FFAs analytically. A sample lattice file is available in this example:
 
@@ -51,7 +53,7 @@ image::uploads/d61a116b403f8d629befc73a5b815837/opal_example_1_x_y_bz.png[opal_e
 
 Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton trajectory at injection (3 MeV).
 
-= Tracking through an 3D field map
+== Tracking through an 3D field map
 
 OPAL can be used to track through a 3D field map. By default interpolation is trilinear. A sample lattice file is available in this example:
 
@@ -91,7 +93,7 @@ image::uploads/5faa9e46ecaa431dca4e976247af01e0/opal_example_2_x_y_bz.png[opal_e
 
 Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton at injection (11 MeV).
 
-= Tracking through an analytical field map with acceleration
+== Tracking through an analytical field map with acceleration
 
 OPAL can also model the full acceleration cycle for an FFA. There is an example FFA with RF active here:
 
@@ -144,7 +146,7 @@ image::/uploads/8bc6376cb3e365ae2c161480aa1f43b3/t_vs_energy.png[t_vs_energy]
 
 It looks like the acceleration worked! There are actually two particle trajectories shown: the black points show a particle tuned to match the RF reference trajectory, while the blue points show a particle that is offset longitudinally and oscillating around the reference trajectory.
 
-= Tracking through an analytical vertical FFA field map
+== Tracking through an analytical vertical FFA field map
 
 OPAL can track through a vertical FFA field, where the orbit moves vertically as the energy increases. This is unlike a conventional hFFA where the orbit moves radially. There is an example of OPAL with a vertical FFA field here:
 
@@ -184,9 +186,9 @@ image::uploads/9dba10cd83c862c40684bb409ebf36b5/opal_example_4_x_y_bz.png[opal_e
 
 This shows the field in the vertical direction with the trajectory of the closed orbit superimposed. The lattice is a 10 cell triplet lattice, as described in https://arxiv.org/abs/2011.10783.  Note that at present (Nov 2020), RF acceleration is not supported in VFFAs.
 
-= Old version of the examples
+== Old version of the examples
 
-== OPAL 2.4.0
+=== OPAL 2.4.0
 
 (Between 2021-1.0 and 2.4.0: Output files took slightly different paths and some minor cosmetic improvements have been made to the plots)
 
@@ -198,7 +200,7 @@ link:uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz[example
 
 link:uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz[example_4-OPAL2.4.0.tar.gz] (Tested on OPAL2.4.0_2)
 
-== OPAL 2.0.0
+=== OPAL 2.0.0
 
 (Between 2.4.0 and 2.0.0: Plotting scripts were updated to use matplotlib. Various changes to the lattices.)
 link:uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz[example_1-OPAL2.0.0rc2.tar.gz] (Tested on OPAL2.0.0rc2)

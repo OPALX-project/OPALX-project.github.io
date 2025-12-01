@@ -1,3 +1,7 @@
+= Setup build environment at PSI
+
+== Pmodules
+
 The easiest and recommended solution is to use the **Pmodules**
 environment available at PSI. Please link:Pmodules[read this
 wiki-page] if you are not using a PSI Linux distribution or you do not

@@ -1,6 +1,7 @@
-= Goal
+= Cyclotron
 :doctype: book
 
+== Goal
 Here we will run the Cyclotron flavour of OPAL (OPAL-cycl) in two distinct modes
 
 . Tune Calculation
@@ -10,13 +11,13 @@ Here we will run the Cyclotron flavour of OPAL (OPAL-cycl) in two distinct modes
 . 3D space charge calculation (under construction)
 -->
 
-= Preparation
+== Preparation
 
 This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
 If you do not have already access to OPAL, you can visit the download page link:home[the download page]. In
 case OPAL is on your cluster please check with the administrator how to use. PSI user please click link:OPALAtPSI[here].
 
-= Needed Input Files
+== Needed Input Files
 
 For this project we need input files, that you obtain by clicking on links below:
 
@@ -45,7 +46,7 @@ For this project we need input files, that you obtain by clicking on links below
 | plotting scripts for gnuplot
 |===
 
-= Tune Calculation using cyclotron1.in
+== Tune Calculation using cyclotron1.in
 
 [discrete]
 === Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
@@ -111,7 +112,7 @@ The result is saved in `RingTunes.png` and shown below.
 
 image::Cyclotron/RingTunes.png[TunesClosedOrbitFinder]
 
-= Accelerated Orbit Calculation using cyclotron2.in
+== Accelerated Orbit Calculation using cyclotron2.in
 
 [discrete]
 === Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
@@ -154,3 +155,4 @@ and the beam is represented by **1E5** macro particles
 
 **Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;**
 ////
+
