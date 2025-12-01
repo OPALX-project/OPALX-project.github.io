@@ -1,0 +1,57 @@
+name: Publish AsciiDoc to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write       # to deploy to Pages
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Asciidoctor
+        run: |
+          gem install asciidoctor
+
+      - name: Build AsciiDoc
+        run: |
+          mkdir -p build/uploads
+          mkdir -p build/logos
+          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
+          cp -rv uploads/* build/uploads
+          cp -rv logos/* build/logos
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
