@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir -p build/uploads
           mkdir -p build/logos
-          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
+          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build '**/*.adoc'
           cp -rv uploads/* build/uploads
           cp -rv logos/* build/logos
 
