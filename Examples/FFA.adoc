@@ -1,0 +1,208 @@
+:doctype: book
+
+Examples are provided for tracking FFAs in a number of circumstances:
+
+. Tracking through an analytical horizontal FFA field model
+. Tracking through a 3D field map.
+. Tracking through an analytical horizontal FFA field model with RF acceleration
+. Tracking through an analytical vertical FFA field model
+
+The following workflows have been checked with OPAL-2021.1.0. Note that examples checked against older versions of OPAL are given at the bottom of the page.
+
+= Tracking through an analytical field model
+
+OPAL can use a fully scaling field model including scaling fringe fields to model FFAs analytically. A sample lattice file is available in this example:
+
+link:uploads/f905dd68fd6aad863db76009dec93a1f/example_1-OPAL-2021.1.0.tar.gz[example_1-OPAL-2021.1.0.tar.gz] (Tested on OPAL-2021.1.0)
+
+To run the example, download the file example.tar.gz and do
+
+____
+tar -xzf example_1-OPAL-2021.1.0.tar.gz
+____
+
+Then change into the working directory and run the code:
+
+____
+cd example_1/example_sector_ffa
+____
+
+____
+/path/to/bin/opal SectorFFAMagnet
+____
+
+____
+cd ..
+____
+
+If it worked - congratulations, you have run OPAL. You should see a lot of output. There is a sample log file here:
+
+link:/uploads/00e68ff00bd4309eb8d52f9c061c26af/log[log]
+
+OPAL parses the input file, then writes out the position of each field element, then tracks the particle with some debugging output. You can then make some plots:
+
+____
+python example_scripts/plot_orbit.py example_sector_ffa/
+____
+
+The plotting routines require matplotlib and python3. Here is an example of the sort of plots you might see:
+
+image::uploads/d61a116b403f8d629befc73a5b815837/opal_example_1_x_y_bz.png[opal_example_1_x_y_bz]
+
+Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton trajectory at injection (3 MeV).
+
+= Tracking through an 3D field map
+
+OPAL can be used to track through a 3D field map. By default interpolation is trilinear. A sample lattice file is available in this example:
+
+link:uploads/acdb7876379a2858a091efa84da4a334/example_2-OPAL-2021.1.0.7z[example_2-OPAL-2021.1.0.7z] (Tested on OPAL2021.1.0.7z)
+
+Due to the size of the field map this example was compressed using 7za. Uncompress using 7za from p7zip package. Then run in the usual way.
+
+____
+7za x example_2-OPAL-2021.1.0.7z
+____
+
+____
+cd example_2/example_main_ring
+____
+
+____
+/path/to/bin/opal KURNS_ADS_Ring
+____
+
+____
+cd ..
+____
+
+Here is an example log file:
+
+link:uploads/811a1c51ca9ea0ab08b1e9af59ae0467/log[log]
+
+To make plots, again do
+
+____
+python example_scripts/plot_orbit.py example_main_ring/
+____
+
+Here is an example of the sort of plots you might see:
+
+image::uploads/5faa9e46ecaa431dca4e976247af01e0/opal_example_2_x_y_bz.png[opal_example_2_x_y_bz]
+
+Three sectors are shown, together with the dipole (bz) field in Tesla and a low energy proton at injection (11 MeV).
+
+= Tracking through an analytical field map with acceleration
+
+OPAL can also model the full acceleration cycle for an FFA. There is an example FFA with RF active here:
+
+link:uploads/a17febede9a3dfe44548f02439ad7a8c/example_3-OPAL-2021.1.0.tar.gz[example_3-OPAL-2021.1.0.tar.gz] (Tested on OPAL-2021.1.0)
+
+Unpack it and run it like:
+
+____
+tar -xzf example_3-OPAL-2021.1.0.tar.gz
+____
+
+____
+cd example_3/example_sector_ffa
+____
+
+____
+/path/to/bin/opal SectorFFAMagnet
+____
+
+____
+cd ..
+____
+
+Here is an example log file:
+
+link:/uploads/5487034fc64072c77d123983df75ccaa/log[log]
+
+To make plots of the RF field do
+
+____
+python example_scripts/plot_dump_fields.py example_sector_ffa/
+____
+
+and to plot the particle energy with time, do
+
+____
+python example_scripts/plot_output_planes.py example_sector_ffa/
+____
+
+Here are a couple of examples of the sort of plots you might see:
+
+image:/uploads/6d5528136cfc3f4227ea7c4e916e7bcd/cavity_time_dependence_0.png[cavity_time_dependence_0]
+image:/uploads/9d85e281cc0b787565cbce5b94c21670/cavity_time_dependence_5.png[cavity_time_dependence_5]
+
+These two plots show the RF cavity oscillations at injection and after 500 microseconds. Note how the frequency of the RF cavity has increased - this is to match the increased particle revolution frequency (as the particles have accelerated so much).
+
+The particle energy increases with time to match the RF frequency, like:
+
+image::/uploads/8bc6376cb3e365ae2c161480aa1f43b3/t_vs_energy.png[t_vs_energy]
+
+It looks like the acceleration worked! There are actually two particle trajectories shown: the black points show a particle tuned to match the RF reference trajectory, while the blue points show a particle that is offset longitudinally and oscillating around the reference trajectory.
+
+= Tracking through an analytical vertical FFA field map
+
+OPAL can track through a vertical FFA field, where the orbit moves vertically as the energy increases. This is unlike a conventional hFFA where the orbit moves radially. There is an example of OPAL with a vertical FFA field here:
+
+link:uploads/fc769ebbc830826c9106b635bf0bb691/example_4-OPAL-2021.1.0.tar.gz[example_4-OPAL-2021.1.0.tar.gz] (Tested on OPAL-2021.1.0)
+
+Run it like
+
+____
+tar -xzf example_4-OPAL-2021.1.0.tar.gz
+____
+
+____
+cd example_3/example_sector_ffa
+____
+
+____
+/path/to/bin/opal VerticalSectorFFA
+____
+
+____
+cd ..
+____
+
+Here is an example log file:
+
+link:uploads/e57751e4b1a5d3850002af26c56321c9/log[log]
+
+To make plots of the field and orbits
+
+____
+python example_scripts/plot_orbit.py example_vertical_ffa/
+____
+
+Here is the sort of plot you might see:
+
+image::uploads/9dba10cd83c862c40684bb409ebf36b5/opal_example_4_x_y_bz.png[opal_example_4_x_y_bz]
+
+This shows the field in the vertical direction with the trajectory of the closed orbit superimposed. The lattice is a 10 cell triplet lattice, as described in https://arxiv.org/abs/2011.10783.  Note that at present (Nov 2020), RF acceleration is not supported in VFFAs.
+
+= Old version of the examples
+
+== OPAL 2.4.0
+
+(Between 2021-1.0 and 2.4.0: Output files took slightly different paths and some minor cosmetic improvements have been made to the plots)
+
+link:uploads/5d345b982676863c9ffeac274ae189c2/example_1-OPAL2.4.0.tar.gz[example_1-OPAL2.4.0.tar.gz] (Tested on OPAL2.4.0_2)
+
+link:uploads/01aa55a6183fda17f608c44867191b6d/example_2-OPAL2.4.0.7z[example_2-OPAL2.4.0.7z] (Tested on OPAL2.4.0_2)
+
+link:uploads/c1243e5a67b4402c7898c7b18e7b961a/example_3-OPAL2.4.0.tar.gz[example_3-OPAL2.4.0.tar.gz] (Tested on OPAL2.4.0_2)
+
+link:uploads/a984d433c09ffe2fc2c7b1c70dc889fe/example_4-OPAL2.4.0.tar.gz[example_4-OPAL2.4.0.tar.gz] (Tested on OPAL2.4.0_2)
+
+== OPAL 2.0.0
+
+(Between 2.4.0 and 2.0.0: Plotting scripts were updated to use matplotlib. Various changes to the lattices.)
+link:uploads/a8bf57ff99e9e95b7b4bdc99b9c29d9c/example_1-OPAL2.0.0rc2.tar.gz[example_1-OPAL2.0.0rc2.tar.gz] (Tested on OPAL2.0.0rc2)
+
+link:uploads/00207f6567b458dcc026db5685fb696e/example_2-OPAL2.0.0rc2.7z[example_2-OPAL2.0.0rc2.7z] (Tested on OPAL2.0.0rc2)
+
+link:uploads/ffd9fb7728b367535b92f7b1c5fd0c02/example_3-OPAL2.0.0rc2.tar.gz[example_3-OPAL2.0.0rc2.tar.gz] (Tested on OPAL2.0.0rc2)

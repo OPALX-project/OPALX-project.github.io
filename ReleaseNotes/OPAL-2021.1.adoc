@@ -1,0 +1,53 @@
+= Release Notes for https://gitlab.psi.ch/OPAL/src/-/milestones/30[OPAL 2021.1]
+:pp: {plus}{plus}
+
+== https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Bug&milestone_title=OPAL%202021.1[Bugfixes in OPAL 2021.1]
+
+* Opal-T writing of LossDataSink if executed in parallel (#585)
+* Transversely shifted distribution in temporal monitors (#609)
+* Floating point comparisons in BoundaryGeometry (#611, #656)
+* Header of loss output file in ASCII format (#620)
+* Fix for `FROMFILE` Distribution (#622)
+* Get correct output of `+VALUE, OPTION->AUTOPHASE+` (#635)
+* Loss files overwritten for collimators (#636)
+* Fix algorithm for computation of standard deviation (#638)
+* Fix for Sampler (#644)
+* Fix for normal component formula for `OCTUPOLE` element (#653)
+* Fix for element output files (#657)
+
+== https://gitlab.psi.ch/OPAL/src/issues?scope=all&utf8=%E2%9C%93&state=closed&label_name[]=Feature%20request&milestone_title=OPAL%202021.1[New features in OPAL 2021.1]
+
+* New Undulator element with its own FDTD electromagnetic solver, making use of the https://github.com/aryafallahi/mithra[(MITHRA)] library (#535)
+* `LOWENERGYTHR` attribute (in [MeV]) for energy loss calculation by `PARTICLEMATTERINTERACTION` command (#83, #142)
+* Energy loss calculation and beam scattering are available for all light ions (#634)
+* Stopping power at low energy region (#634)
+* `ALPHA` particles are supported in `BEAM` command (#634)
+* `ENABLEVTK` option (default true) to control writing of voxel mesh output (#647)
+* `OUTFN` attribute has been added to Cyclotron and Source elements (#650)
+* Gas stripping is now available for `DEUTERON` beams and `H2P` beams in `AIR` (#665)
+
+== Code improvements
+
+* C{pp} revision to C{pp}17 (#607)
+* Enables extra error checking in the form of precondition assertion (#627)
+* New Attribute type PreDefinedString (string enum) (#654)
+
+== Input file related changes
+
+* `RING` field map has been explicitly added as a cyclotron `TYPE` (#626)
+* `COLLIMATOR` and `DEGRADER` `TYPE` of `PARTICLEMATTERINTERACTION` has been renamed as `SCATTERING` (#633)
+* `BEAMSTRIPPING` element has been renamed as `VACUUM` (#633)
+* Particle masses supported in `BEAM` command are defined as standard constants (#646)
+* Since link:ReleaseNotes/OPAL-2.4[version 2.4] the `DISTRIBUTION` momentum input is changed to momentum (instead of energy). To avoid confusion, this is also made clear in the `DISTRIBUTION` command, `INPUTMOUNITS = EV` is changed to `INPUTMOUNITS = EVOVERC`  (#649)
+* String input only accepted with quotes (#495), `CONST STRING fmap = "fieldmaps/someFM.T7";`
+* Variable names are now accepted for string attributes (#495), `+cav1: RFCavity, FMAPFN=fmap, ...;+`
+* The values of `MB_BINNING` and `AMR_MG_NORM` attributes have been changed (#495, OPAL/documentation/manual#58)
+* `BEAM` energy needs to be explicitly specified, `P0` is no longer used as default (#655)
+
+== Output file related changes
+
+* More information has been added to the HDF5 file written by monitors (#503)
+* The unit of time in loss output file is changed from [ns] to [s] (#640)
+* The header of ASCII loss output has been modified (#650, OPAL/pyOPALTools#99)
+* `DumpFields` and `DumpEMFields` print attributes info in stdout (#651)
+* The units of cyclotron output field map 'eb.out' have been changed to [m] and [deg] (#662)

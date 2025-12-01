@@ -1,0 +1,60 @@
+= Release Notes for https://gitlab.psi.ch/OPAL/src/-/milestones/33[OPAL 2024.1]
+:pp: {plus}{plus}
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Bug&milestone_title=2024.1[Bugfixes in OPAL 2024.1]
+
+* Fix hard coded momentum tolerance (#727)
+* Fix for running FFA in parallel (#747)
+* Fix implementation of trimcoils (#750)
+* Fix segmentation fault due to out of range field lookup (#751)
+* The minimum version of Trilinos is set to >=13.0 (#756)
+* Fix ascii2h5block tool (#763)
+* Fix grid indexes for interpolations (#767)
+* Fix linking problems  with Boost library (#770)
+* Fix division by zero check (#771)
+* Fix masks (#775)
+* Fix multiple-time-stepping integrator (#778)
+* Fix SDDS output file with MPI load balancing information (#779)
+* Fix lost particles from geometry (#781)
+* Fix single particle simulations (#782)
+* Fix monitor memory usage (#792)
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Feature%20request&milestone_title=2024.1[New features in OPAL 2024.1]
+
+* New boost's matrix and vector_t operations (#716)
+* FFA lattice in PyOPAL (#745, #758, #766)
+* New `RINGDEFINITION` attribute (`BEAM_THETAINIT`, default=0.0) to define an angular offset (in [deg]) of the beam relative to the tangent vector, in the x-y plane (#764)
+* Elliptical shape for `DEGRADER` (#786)
+* New element `OUTPUTPLANE` (#793)
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Enhancement&milestone_title=2024.1[Enhancements in OPAL 2024.1]
+
+* Smart pointers for fieldmaps (#744)
+* Improve error message for using protected keywords (#748)
+* Verify correct values for some input parameters (#759, !619)
+* Implement inform from all nodes independently by each object (#760)
+* `MAX_R` and `MIN_R` attributes of `RINGDEFINITION` (#790)
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Cleanup&milestone_title=2024.1[Code improvements]
+
+* Replace deprecated sprintf (#752)
+* Fix variables assigned but not used (#753)
+* Remove deprecated Tpetra functions (#755, #769)
+* Unify methods to check integers (#761)
+* Unify internal units in elements (#762, #773, #787)
+* Use scoped enumerations to overcome string comparison (#772, #776, #783)
+* PyOPAL cmake option (#788, #807)
+* Use C{pp} standard functions instead of Boost (#797, #798, #799)
+
+== Input file related changes
+
+* New `BEAM` attribute (`MOMENTUMTOLERANCE`, default=1e-2) setting a fractional tolerance to deviations in the distribution compared to the reference data at initialization (#764, #765)
+
+== Output file related changes
+
+* Fix HDF5 output write (#785)
+
+== https://gitlab.psi.ch/OPAL/src/-/wikis/home#user-content-start-with-examples[New OPAL Examples to get started]
+
+* AWA https://gitlab.psi.ch/OPAL/src/-/wikis/Examples/AWAEEXBeamline[EXX Beamline] : TCAV
+* AWA https://gitlab.psi.ch/OPAL/src/-/wikis/Examples/AWADriveLinac[Drive Linac] : Traveling Wave Structure

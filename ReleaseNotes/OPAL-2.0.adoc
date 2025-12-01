@@ -1,0 +1,92 @@
+= Release Notes for OPAL 2.0
+
+== Changes in OPAL 2.0.2
+
+* Bugfixes
+ ** Issue #206 Cyclotron elements positioning
+ ** Issue #246 Add protection when all particles are in material
+ ** Issue #247 Collimator geometry check fixed
+ ** Issue #253 Probe, stripper and septum check fixed
+ ** Issue #267 RFCavity applied twice
+ ** Issue #271 Fixed OPAL getting stuck sometimes on multicore
+
+== Changes in OPAL 2.0.1
+
+* Bugfixes
+ ** Issue #235 Optimiser crashes with HDF5
+ ** Issue #243 Collimator lost particle checks
+
+== New features in OPAL 2.0.0
+
+* OPAL-T: 3D placement of elements
+ ** Overlapping fringe fields now supported
+* Integration of optimizer
+* OPAL-Cycl: general trim coils added
+* OPAL-T: A flexible collimator with configurable hole placement (e.g. for multi-slit or pepper-pot) added
+* Method for scalable generation of particle distribution now provided
+* OPAL-T: Normalization of field maps can be switched off
+* Scan option is removed
+* Sample command added
+* OPAL mode for highlighting in emacs added
+* Many more features, for details see the http://amas.web.psi.ch/opal/Documentation/2.0/OPAL_Manual.html[manual]
+
+== Input file related changes
+
+* OPAL-T: Beamlines containing a cathode have to have a `SOURCE` element to indicate this fact.
+* OPAL-T: The design energy of dipoles is now expected in MeV instead of eV
+* The meaning of `OFFSETZ` of the command `DISTRIBUTION` has changed. It now indicates a shift of the particle bunch relative to the reference particle. Use the `ZSTART` attribute of the `TRACK` command to start the simulation at a position `z > 0`
+* The attribute `DISTRIBUTION` of the command `DISTRIBUTION` has been renamed to `TYPE`
+* The attributes `LAT_RINIT` and `BEAM_RINIT` of the element `RINGDEFINITION` have units [m] instead of [mm].
+* OPAL-T: The attribute `ROTATION` of `RBEND` and `SBEND` has been replaced by `PSI` which now can be applied to all elements to rotate them about the reference trajectory
+* OPAL-Cycl: The trim coil description has been changed and trim coils are now a separate element.
+A new recommended description based on a rational function has been added.
+The old description has changed its units for `BMAX` from [kG] to [T] and `SLPTC` has been inverted to [1/mm].
+* OPAL-Cycl: `DUMPFIELDS` and `DUMPEMFIELDS` commands now uses metres and radians as input instead of mm and degrees.
+
+== Output file related changes
+
+* OPAL-Cycl: _-trackOrbit.dat_ file is now in [m] instead of [mm].
+
+== Input file related changes introduced in link:OPAL-1.6[OPAL-1.6]
+
+* The attribute `BFREQ` of the `BEAM` command is now in MHz instead of Hz
+* Input files must have a version tag, for example
++
+----
+  OPTION, VERSION=20000;
+----
++
+indicating version 2.0.x and newer
+
+* OPAL is now fully typed. Each variable has to have a type for example
++
+----
+  REAL Edes=.072;
+  REAL gamma=(Edes+PMASS)/PMASS;
+----
++
+Only *REAL, REAL CONSTANT, REAL VARIABLE, STRING, STRING CONSTANT, BOOL, BOOL CONSTANT* and *REAL VECTOR* are supported
+
+== Installation of the binary package
+
+NOTE: The latest version of the binary package is OPAL 2.0.1-1.
+
+. The package can be installed wherever you want. Let's name this directory `$PREFIX`.
+. change your working directory to `$PREFIX`
+. Un-tar the package
++
+----
+ tar xf OPAL-2.0.1-1-x86_64-linux.tar.xz
+----
+
+. Source the OPAL shell profile. For the time being only sh-like shells are supported.
++
+----
+ source "$PREFIX/OPAL-2.0.1-1/etc/profile.d/opal.sh"
+----
+
+. Now you are ready to run opal, opal converter tools and the visualization tool https://gitlab.psi.ch/OPAL/src/wikis/h5root[H5root].
+
+____
+MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!
+____

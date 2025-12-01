@@ -1,0 +1,154 @@
+= SLAC 2020: OPAL Developers Retreat
+:doctype: book
+
+= POSTPONED
+
+[discrete]
+=== Dates: TBD, 2022
+
+[discrete]
+=== Location: SLAC in Menlo Park, CA.
+
+[discrete]
+=== Logistics
+
+* The recommended hotel is the Stanford Guesthouse, on SLAC's campus:
+https://rde.stanford.edu/hospitality/stanford-guest-house/[Link to Guesthouse]
+* There is a public Stanford Shuttle service to SLAC and campus during the weekdays:
+https://transportation.stanford.edu/marguerite[Link to shuttle schedule]
+* Most activities will be in building 52, 3rd floor, King's River conference room:
+https://vue.slac.stanford.edu/slac-visitor-map[Link to SLAC map]
+* Seminars will take place building 52, 1st floor, in the Mad River conference room.
+* There is ample free parking on site for those driving in (see map).
+
+[discrete]
+=== Important note on the guesthouse:
+
+If there are no spots available online, call and add your name to the waitlist. +
+You might still have a chance at a room on site. +
+Room bookings are in flux because of construction and down time.
+
+[discrete]
+=== Schedule
+
+Following is tentative schedule for the week. This is fluid (will change a little), and new items are welcome.  +
+For all presentations and discussion sections, a zoom link will be available (and posted here soon).
+
+[discrete]
+=== Empty time slots are for coding and group or individual work.
+
+|===
+| Time | Monday,&nbsp; | Tuesday,&nbsp; | Wednesday,&nbsp; | Thursday,&nbsp; | Friday,&nbsp;
+
+| 9&nbsp;am
+| Introduction, organizational stuff, set up workplace +
+ +
+'Remarks on the status and future of OPAL' (Andreas)
+| Presentation Beam Dynamics and LUME at LCLS (Nicole /Chris M.)
+|
+|
+| Stanford Campus Tour?
+
+| 10&nbsp;am
+|
+| SLAC Tour part 1
+|
+|
+| Cantor Art Museum, Cactus Garden, Hoover Tower on Campus?
+
+| 11&nbsp;am
+| Flow over and questions/discussion
+| SLAC Tour part 2
+|
+|
+|
+
+| 12&nbsp;pm
+| Lunch
+| Lunch
+| Lunch
+| Lunch
+| Lunch
+
+| 1&nbsp;pm
+|
+| Review on Git/Gitlab/development workflow +
+- branches vs forks +
+- working with merge requests +
+- code reviews +
+Discussion potential next steps: +
+- detailed simulation of +
+diagnostics +
+- symplectic integrator +
+- Python API
+| Discussion next steps for Exascale: +
+- GPUs +
+-1-1 simulations +
+- Quantum computing? +
+
+|
+|
+
+| 2&nbsp;pm
+|
+|
+|
+|
+|
+
+| 3&nbsp;pm
+|
+| Seminar 'TBD' (Andreas)
+|
+| Seminar 'A Bright Future for Muons' (Chris R.)
+|
+
+| 4&nbsp;pm
+|
+|
+|
+|
+|
+
+| 5&nbsp;pm
+| (open end)
+| (open end)
+| (open end)
+| (open end)
+| (open end)
+|===
+
+[discrete]
+=== On Site Participants
+
+* Andreas Adelmann
+* Achim Gsell
+* Chris Rogers
+* Nicole R Neveu
+* Chris Mayes
+
+[discrete]
+=== Remote Participants
+
+* Matthias Frey
+* Pedro Calvo Portela
+* Christof Metzger-Kraus
+* Jochem Snuverink
+
+[discrete]
+=== Topics up for discussion (round table)
+
+The colleagues in parenthesis are suppose to lead/prepare the discussion.
+
+* Integration of features   (A. Adelmann)
+ ** Matthias Frey's AMR solver
+ ** Pedro Calvo Portela's thesis work
+ ** Envelope tracker (bet)
+ ** Full wave solver (Arnau)
+* pyOPALTools (M. Frey)
+* non-heterogenous architectures (A. Adelmann)
+* Improved TW field map reader (N. Neveu)
+* Status of pyOPAL (Ch. Rogers)
+* OPAL Paper (A. Adelmann)
+* Status of code cleanup (A. Gsell)
+* Stuff https://gitlab.psi.ch/OPAL/src/issues/227[from the last retreats]

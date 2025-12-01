@@ -1,0 +1,156 @@
+= Goal
+:doctype: book
+
+Here we will run the Cyclotron flavour of OPAL (OPAL-cycl) in two distinct modes
+
+. Tune Calculation
+ ** Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
+. Accelerated orbit mode
+<!--
+. 3D space charge calculation (under construction)
+-->
+
+= Preparation
+
+This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
+If you do not have already access to OPAL, you can visit the download page link:home[the download page]. In
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click link:OPALAtPSI[here].
+
+= Needed Input Files
+
+For this project we need input files, that you obtain by clicking on links below:
+
+|===
+| File | Description
+
+| link:uploads/7697ea84f47c30e9c80c63f58b8505eb/cyclotron1.in[cyclotron1.in] and link:uploads/7d4ce0fdf2f5cfaed4921c58d26e7026/cyclotron2.in[cyclotron2.in] (link:Cyclotron/1.6/cyclotron1.in[cyclotron1.in] and link:Cyclotron/1.6/cyclotron2.in[cyclotron2.in] for 1.6.x)
+| the OPAL input files
+
+| link:Cyclotron/bfield.dat[bfield.dat]
+| magnetic field map
+
+| link:Cyclotron/rffield1.dat[rffield1.dat] and link:Cyclotron/rffield2.dat[rffield2.dat]
+| rf field maps
+
+| link:Cyclotron/dist1.dat[dist1.dat] link:Cyclotron/dist2.dat[dist2.dat]
+| the input distributions
+
+| link:Cyclotron/ic.dat[ic.dat]
+| initial conditions for the tune calculation
+
+| link:Cyclotron/refsol.dat[refsol.dat]
+| the reference solution for the tune calculation
+
+| link:Cyclotron/cyclotron1.gpl[cyclotron1.gpl] and link:Cyclotron/cyclotron2.gpl[cyclotron2.gpl] (link:Cyclotron/1.6/cyclotron2.gpl[cyclotron2.gpl] for 1.6.x)
+| plotting scripts for gnuplot
+|===
+
+= Tune Calculation using cyclotron1.in
+
+[discrete]
+=== Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat & refsol.dat
+
+For the tune calculation we need initial conditions (ic):  energy, radius and radial momenta given to us by an other program in the file  ic.dat.
+The Bash script link:Cyclotron/cyclotron1.bash[cyclotron1.bash] will run the tune calculation for all energies specified in ic.dat and store the
+radial and vertical tune values together with reference data.
+Make sure the script has execute permission (`chmod u+x cyclotron1.bash`).
+A comparison can be plotted with http://www.gnuplotting.org[gnuplot], by executing
+
+`gnuplot cyclotron1.gpl`
+
+The result is saved in cyclotron1.pdf and shown below.
+
+image::Cyclotron/cyclotron1.png[tunesFIXPO]
+
+[discrete]
+=== Tune Calculation with OPAL's closed orbit finder (only in OPAL 2.2 and higher)
+
+[discrete]
+=== Needed files
+
+| File | Description |
+| --- |-----|
+| link:uploads/a45407d49ba5b59f9fb1c43d55664b5c/cyclotronTune-2-1.in[cyclotronTune-2-1.in] | OPAL input file |
+| link:Cyclotron/bfield.dat[bfield.dat] | magnetic field map |
+| link:Cyclotron/plotTunes.py[plotTunes.py] | python (version 3) plotting script for tune calculation |
+
+Since version 2.2 OPAL has a closed orbit finder with tune calculation based on Gordon's algorithm.
+
+The important commands in the input file are:
+
+----
+OPTION, CLOTUNEONLY =true;
+----
+
+This tells OPAL to only perform the closed orbit finder and tune calculation.
+
+----
+RingCycl: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", FMLOWE=72, FMHIGHE=590;
+----
+
+The minimal and maximal energy for the tune calculation (72 and 590 MeV).
+
+----
+DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
+        NSTEPS=1440, DENERGY=0.001, MAXSTEPSCO = 100, NSECTORS=8, SECTOR=FALSE;
+----
+
+The matched gauss distribution with parameters for the closed orbit finder
+(energy steps of 0.001 GeV, average the field over 8 sectors and a maximum of 100 steps for the closed orbit finder to converge).
+More information on the matched gauss distribution can be found in the http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#sec.distribution.gaussmatchedtype[Manual].
+
+Run OPAL with
+
+`opal cyclotronTune-2-1.in`
+
+and plot the result from the output file `data/tunes.dat` with
+
+`python3 plotTunes.py`
+
+The result is saved in `RingTunes.png` and shown below.
+
+image::Cyclotron/RingTunes.png[TunesClosedOrbitFinder]
+
+= Accelerated Orbit Calculation using cyclotron2.in
+
+[discrete]
+=== Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat & rffield2.dat
+
+For this calculation the initial conditions are set in the input file. Run OPAL with
+
+`opal cyclotron2.in | tee cyclotron2.out`
+
+where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems.
+
+`gnuplot cyclotron2.gpl`
+
+As in the previous example, the result is saved in cyclotron2.pdf and shown below.
+
+image::Cyclotron/cyclotron2.png[Orbit]
+
+////
+# 3D space charge calculation
+### Under construction
+
+In cyclotron2.in, only the distribution and beam command, together with the field solver needs to be adapted.
+
+Dist1 as defined here
+
+**Dist1:DISTRIBUTION, DISTRIBUTION=GAUSS**
+
+**sigmax=3E-3, sigmapx=1E-5,**
+
+**sigmay=3E-3, sigmapy=1E-5,**
+
+**sigmat=3E-3, sigmapt=1E-5,**
+
+**CORRX = 0,  CORRY =0,  CORRT = 0;**
+
+represents a beam with 3 mm rms. The field solver **Fs1** is the standard open domain FFT solver:
+
+**Fs1:FIELDSOLVER, FSTYPE=FFT, MX=64, MY=64, MT=64, PARFFTX=true, PARFFTY=true, PARFFTT=false,  BCFFTX=open, BCFFTY=open, BCFFTT=open;**
+
+and the beam is represented by **1E5** macro particles
+
+**Beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1E5, BCURRENT=1.0E-6, CHARGE=1.0, BFREQ= f1;**
+////

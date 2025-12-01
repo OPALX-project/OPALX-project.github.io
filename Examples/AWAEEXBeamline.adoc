@@ -1,0 +1,40 @@
+= EEX beamline
+:doctype: book
+
+This example describes AWA emittance exchange (EEX) beamline. The model is based on the https://napac2022.vrws.de/papers/wexd5.pdf[paper] by S.-Y. Kim et al.. For more details on the EEX beamline,
+please find the reference papers;
+
+. M. Cornacchia, P. Emma, Phys. Rev. ST Accel. Beams 5, 084001, 2002 (https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.5.084001)
+. P. Piot, Y.-E Sun, J. G. Power, and M. Rihaoui, Phys. Rev. ST Accel. Beams 14, 022801, 2011 (https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.14.022801)
+. G. Ha et al., Phys. Rev. Lett. 118, 104801, 2017 (https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.104801)
+link:mailto:sykim12@postech.ac.kr[Email] of the provider of the example.
+
+= Goal
+
+Run the EEX linac beamline (OPAL_t), and check the beam parameters obtained from the simulation.
+
+= Preparation
+
+If you do not have already access to OPAL, you can visit link:home[the download page]. In
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click link:OPALATPSI[here].
+
+= Needed Input Files
+
+Since this is separated EEX simulation, you will need 6D phase space information as an input by running the drive linac simulation. Here the initial particle distribution is provided as "`partcl.data.`" In addition, for this simulation, we need fieldmaps of transverse deflecting cavity (TDC) and dipole magnet.
+
+. Inputfile https://amas.web.psi.ch/wiki/AWAEEXBeamline/input.in[input.in]
+. Particle data https://amas.web.psi.ch/wiki/AWAEEXBeamline/partcl.data[partcl.data]
+. Tranvserse deflecting cavity (TDC) and dipole magnet field maps: https://amas.web.psi.ch/wiki/AWAEEXBeamline/TDC.dat[TDC.dat] and https://amas.web.psi.ch/wiki/AWAEEXBeamline/EEXDIP30cm.opal[EEXDIP30cm.opal].
+. Transverse mask: https://amas.web.psi.ch/wiki/AWAEEXBeamline/TriangularDrive_Witness.pbm[TriangularDrive_Witness.pbm]
+
+= Run the AWA drive linac simulation
+
+Here, space charge and CSR calculations are turned off
+
+`opal  input.in | tee input.out`
+
+= Results and Postprocessing
+
+https://amas.web.psi.ch/wiki/AWAEEXBeamline/EEXbeamline_example.pdf[Results]
+A simple Python https://amas.web.psi.ch/wiki/AWAEEXBeamline/Opal_envelope_plot.py[script] not using pyOPALTools.
+For general post processing, please visit https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing[here].

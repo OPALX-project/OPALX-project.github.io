@@ -1,0 +1,151 @@
+= WWW 2021: OPAL Developers Retreat
+
+[discrete]
+=== Dates: 8-10 June 2021
+
+[discrete]
+=== Location: WWW
+
+----
+Join Zoom Meeting
+https://psich.zoom.us/j/65491542005?pwd=NjVnWEtQaHdBQ0JiSTJHRjM0NkpDZz09
+
+Meeting ID: 654 9154 2005
+Passcode: OPAL
+One tap mobile
++19712471195,,65491542005#,,,,*730737# US (Portland)
++12063379723,,65491542005#,,,,*730737# US (Seattle)
+
+Dial by your location
+        +1 971 247 1195 US (Portland)
+        +1 206 337 9723 US (Seattle)
+Meeting ID: 654 9154 2005
+Passcode: 730737
+Find your local number: https://psich.zoom.us/u/cevgYcq2N
+----
+
+[discrete]
+=== Schedule
+
+Following is the schedule for the OPAL workshop. We can adapt it during the workshop according our needs.
+
+*Tuesday, 8 June*
+
+|===
+| Time CEST | Time PST | Who |
+
+| 4:00pm - 4:30pm
+| 7:00am -  7:30am
+| Andreas
+| Introduction, organizational stuff
+
+| 4:30pm - 5:00pm
+| 7:30am -  8:00am
+| Chris
+| PyOPAL status & discussion
+
+| 5:00pm - 6:00pm
+| 8:00am -  9:00am
+| Chris
+| Tutorial PyOPAL Development
+
+| 6:00pm - 7:00pm
+| 9:00am - 10:00am
+| all
+| Release cycle? Versioning? CI/CD? Jenkins? (discussion)
+|===
+
+*Wednesday, 9 June*
+
+|===
+| Time CEST | Time PST | Who |
+
+| 4:00pm - 4:30pm
+| 7:00am -  7:30am
+| Andreas
+| IPPL V 2.0
+
+| 4:30pm - 5:00pm
+| 7:30am -  8:00am
+| Chris
+| Using OPAL to model vFFAs - "relativistic cyclotrons"
+
+| 5:00pm - 6:00pm
+| 8:00am -  9:00am
+| all
+| Release cycle? Versioning? CI/CD? Jenkins? (discussion)
+
+| 6:00pm - 7:00pm
+| 9:00am - 10:00am
+| all
+| Open issues and feature requests in Gitlab (discussion)
+|===
+
+*Thursday, 10 June*
+
+|===
+| Time CEST | Time PST | Who |
+
+| 4:00pm - 4:30pm
+| 7:00am -  7:30am
+| Arnau
+| Start-to-end modelling of FELs with OPAL-FEL full Maxwell solver
+
+| 4:30pm - 5:00pm
+| 7:30am -  8:00am
+| Nicole
+| Beam shaping for the LCLS-II Injector with OPAL-t
+
+| 5:00pm - 6:00pm
+| 8:00am -  9:00am
+| all
+| Define roadmap for new features (discussion)
+
+| 6:00pm - 6:30pm
+| 9:00am -  9:30am
+| all
+| Time to continue discussions on open topics
+
+| 6:30pm - 7:00pm
+| 9:30am - 10:00am
+| all
+| Final round
+|===
+
+////
+### Empty time slots are for coding and group or individual work.
+|   Time  CEST
+ Time PST | Monday | Tuesday | Wednesday | Thursday |
+| :--------- | :--------- | :-------- | :---------- | :----------- | :---------- |
+| 9&nbsp;am | 0&nbsp;am  | - |  |  |  |
+|10&nbsp;am| 1&nbsp;am  | - |  |  |  |
+|11&nbsp;am| 2&nbsp;am  | - |  |  |  |
+|12&nbsp;pm| 3&nbsp;am  | - |Lunch |Lunch |Lunch |
+| 1&nbsp;pm| 4&nbsp;am  | - |  |  |  |
+| 2&nbsp;pm| 5&nbsp;am  | - |  |  |  |
+| 3&nbsp;pm| 6&nbsp;am  | - |  |  |  |
+| 4&nbsp;pm| 7&nbsp;am  | Introduction, organizational stuff<br>'Remarks on the status and future of OPAL' (30 mins; Andreas) <br> PyOPAL status & discussion (30 mins; Chris) | IPPL V 2.0 towards a performant and hardware independent OPAL (30 mins; Andreas)<br> | OPAL paper  (20 mins; Andreas)  |  |
+| 5&nbsp;pm| 8&nbsp;am  | Tutorial OpalPy Development (60 mins; Chris) | Using OPAL to model vFFAs - "relativistic cyclotrons" (30 mins; Chris)  |  | End |
+| 6&nbsp;pm| 9&nbsp;am  |  |  |  |  |
+/
+////
+
+[discrete]
+=== Remote Participants
+
+Achim,
+Andreas,
+Arnau,
+Chris,
+Christof,
+Daniel,
+Jochem,
+Matthias,
+Nicole,
+Pedro,
+Philippe (philippe.piot@gmail.com).
+
+[discrete]
+=== Topics up for discussion (round table)
+
+* https://gitlab.psi.ch/OPAL/src/-/issues/227[Task List]

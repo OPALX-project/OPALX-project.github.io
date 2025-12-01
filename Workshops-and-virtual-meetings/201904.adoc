@@ -1,0 +1,163 @@
+The retreat took place at HZB in Berlin-Adlershof from 1st to 4th of April 2019.
+
+Timetables for train, subway/underground, tram and bus can be found under https://www.bvg.de/en , information about the Adlershof campus under https://www.adlershof.de and restaurants on the campus under https://www.adlershof.de/gastronomie-speiseplaene/menues/, a map of the campus under https://www.adlershof.de/fileadmin/user_upload/downloads/anfahrt-lage/WISTA-Orientierungsplan-Technologiepark-Adlershof.pdf.
+
+link:/uploads/b195865d854d0864b326e30bf4fe3a2c/S_und_U-Bahnnetz_mit_Regionalbahn_Berlin_ABC.jpg[Here is a map of the train and subway/underground network] where I highlighted the train stop Adlershof (in red) as well as the two airports in green. To get from Tegel to Adlershof or from Adlershof to the city center you'll need a ticket AB, from Schönefeld you'll need a ticket BC. These tickets are valid on all public transport vehicles for trips in one direction and within the zones (AB, BC or ABC). Day tickets are valid from the moment you validate it until 3 am the next day. There also exist tickets for 4 or 5 days but they are probably more expensive than buying one for each trip. The tickets can be bought on the platform (train/subway/tram), at the bus driver or on your mobile phone (https://play.google.com/store/apps/details?id=de.bvg.ticket[android] / https://itunes.apple.com/de/app/bvg-tickets/id1232772818?mt=8[apple]). Please remember to validate your ticket on the platform (wine-red boxes)!
+
+=== Schedule
+
+The schedule for the retreat was as follows:
+
+|===
+|  | Monday, 4/1 | Thuesday, 4/2 | Wednesday, 4/3 | Thursday, 4/4
+
+| 9 am - 10 am
+| Introduction, organizational stuff,set up workplace +
+ +
+'Remarks on the status and future of OPAL' (Andy)
+| Individual work
+| Individual work
+| Individual work
+
+| 10 am - 11 am
+| Individual work
+| Individual work
+| Individual work
+| Individual work
+
+| 11 am - 12 pm
+| Presentation Optics & Beam Dynamics Group HZB (Micha /Bettina)
+| Discussion on Git/Gitlab/development workflow +
+- branches vs forks +
+- working with merge requests +
+- code reviews
+| Presentation 'General overview of approach to FFA design and optimisation in OPAL' (Chris)
+| Presentation 'Surrogate Modeling for Charged Particle Accelerator Beam Dynamics' (Nicole)
+
+| 12 pm -  1 pm
+| Lunch
+| Lunch
+| Lunch
+| Lunch
+
+| 1 pm -  2 pm
+| Individual work
+| Individual work
+| Individual work
+| Individual work
+
+| 2 pm -  3 pm
+| Individual work
+| Presentation 'An Update on OPAL - the Open Source Charged Particle Accelerator Simulation Library' in HZB seminar (Andreas)
+| Discussion potential next steps: +
+- detailed simulation of +
+diagnostics +
+- symplectic integrator +
+- Python API
+| Individual work
+
+| 3 pm -  4 pm
+| Individual work
+| Individual work
+| Individual work
+| Individual work
+
+| 4 pm -  5 pm
+| Individual work
+| Individual work
+| Individual work
+| Individual work +
+Final remarks +
+Farewell
+
+| 5 pm -  6 pm
+| Individual work (open end)
+| Individual work (open end)
+| Individual work (open end)
+|
+|===
+
+This schedule isn't completely fixed and can be modified / expanded on request.
+
+=== Participants
+
+* Andreas Adelmann
+* Achim Gsell
+* Jochem Snuverink
+* Chris Rogers
+* Pedro Calvo Portela
+* Nicole R Neveu
+* Michael Abo-Bakr
+* Bettina Kuske
+* Georgios Kourkafas
+* Christof Metzger-Kraus
+* Matthias Frey
+
+=== Closeout session (round table)
+
+Andreas
+
+* paper
+ ** deadline week after IPAC (end of May)
+* GPU / DKS (from Uldis Locans)
+ ** We should decide here if we want to keep it
+ ** Status
+  *** multi GPU implementation is done for multi particle interaction
+  *** CUDA has FFT multi GPU implementation (fixed nr of cards: either 16 or 32)
+ ** regression tests on opal - runner needed
+  *** For a test need to have GPU with CUDA installed
+ ** Advantages
+  *** in paper - will give new users?
+  *** new clusters might have GPU options
+ ** Disadvantages
+  *** new implementation in future?
+  *** extra work / comp. resources
+ ** Responsibility in future?
+  *** Uldis might stay longer at PSI - not sure
+ ** Uldis will fix his code in 2.0 / master
+ ** Decision / Compromise: if Uldis will fix his code and regr. tests will add him to paper and have regression test
+* Quarterly release scheme
+ ** both in stable release and master
+ ** next releases end of April
+* Next workshop?
+ ** HZB can likely host again
+  *** got two talks out of it and potential collaborations
+ ** Nicole could host it at SLAC if people are willing to travel
+ ** Chris could organise something
+  *** in addition to an OPAL-users meeting / tutorial?
+ ** Timeframe: next year April sounds reasonable
+  *** Nicole will have a lot to work on next year
+* Adaptive time step?
+ ** code found again!
+ ** Question: how is time step changed?
+  *** derivative of energy gain at the moment
+  *** but is flexible
+
+Chris
+
+* OPAL-cycl and OPAL-t merge?
+ ** Chris would like to move to OPAL-t
+  *** not using RF Cavity or RF Fields
+ ** TODO list
+  *** element moving over - easy
+  *** cyclotron track
+ ** Need to be tried
+ ** Matthias is the person to ask
+  *** shouldn't do the work though
+
+Jochem
+
+* review MR workflow:
+ ** agreed to set approvers afterwards
+
+Nicole
+
+* python parser?
+ ** not sure yet what solution to choose, to be discussed with Chris Mayes
+
+Achim
+
+* cleanup headers to be done
+
+Andreas: License?
+Achim: yes GPL license added now

@@ -1,0 +1,45 @@
+= Release Notes for https://gitlab.psi.ch/OPAL/src/-/milestones/31[OPAL 2022.1]
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Bug&milestone_title=2022.1[Bugfixes in OPAL 2022.1]
+
+* Fix particle-matter interactions for `CCOLLIMATOR` element (#380, #718)
+* Fix back-track simulations (#675)
+* Fix algorithm for spatial monitors (#682)
+* Fix for output file names for LossDataSink (#685)
+* Fix values assigned to dispersion (#687)
+* Fix description of minimum values in monitor statistics (#689)
+* Fix units in DumpEMFields header (#691)
+* Fix mean longitudinal position in temporal monitor (#698, #706)
+* Fix input momentum between `FROMFILE` distribution type and `BEAM` (#701)
+* Fix particle definition in `BEAM` command (#703)
+* Fix assignation of `BEAM`, `FIELDSOLVER` and `DISTRIBUTION` in `RUN` command (#713)
+* Fix AMR solver (#714, #715)
+* Fix wake function (#734)
+* Fix Trimcoils (#736)
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Feature%20request&milestone_title=2022.1[New features in OPAL 2022.1]
+
+* Python interface for OPAL (#624, #660)
+* New element attribute (`DELETEONTRANSVERSEEXIT`, default true) to disable deletion of particles when exiting transversally (#673)
+* Command-line argument `--help-command` to display the help for opal commands and their attributes (#680)
+* Beam stripping physics in OPAL-t (#684, #724)
+* New option (`COMPUTEPERCENTILES`, default false) to compute percentiles (#693)
+* New end field model using an asymmetric enge function for Scaling FFA magnet (#722, #728)
+* New option (`DUMPBEAMMATRIX`, default false) to write 6D beam (sigma) matrix in statistics output (#729)
+* `P3M` solver (Particle-Particle-Particle-Mesh, #737)
+
+== https://gitlab.psi.ch/OPAL/src/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=Cleanup&milestone_title=2022.1[Code improvements]
+
+* Internal unit conversions (#690, #704)
+* Replace plain enum by scoped enumerations (#694, #708)
+* Remove literal comparison of empty strings (#711)
+
+== Input file related changes
+
+* The properties of heavy ion beams have been redefined (#699)
+* Wake field file format simplified (#735)
+
+== Output file related changes
+
+* Improve standard output (#710)
+* Four additional quantities temperature, Debye length, plasma parameter and RMS number density are available in the stat file for simulations without emission (#737)

@@ -1,0 +1,303 @@
+== April 20, 2020
+
+. <<participants,Participants>>
+. <<agenda-times-in-gmt,Agenda>>
+. <<minutes,Minutes>>
+ .. <<1-news-and-introduction-andreas,News and Introduction - Andreas>>
+ .. <<2-discussion-on-integration-of-features-achim,Discussion on integration of features - Achim>>
+ .. <<3-python-integration-for-opal-chris-rogers,Python integration for OPAL - Chris Rogers>>
+ .. <<4-pyopaltools-matthias,pyOPALTools - Matthias>>
+ .. <<5-sirepo-stephen-webb-and-chris-hall,Sirepo - Stephen Webb and Chris Hall>>
+ .. <<6-open-discussion-andor-buffer,Open discussion and/or buffer>>
+. <<to-dos,To Dos>>
+
+=== Participants
+
+Andreas Adelmann, Pedro Calvo, Dragos Constantin, Matthias Frey, Simon Friederich, Martina Grether, Achim Gsell, Chris Hall, Anastasia Ierides, Christof Kraus, Bettina Kuske, Christopher Mayes, Nicole Neveu, Philippe Piot, Chris Rogers, Ryan Roussel, Jochem Snuverink, Muralikrishnan Sriramkrishnan, Yine Sun, Sebastian Thomas, Stephen Webb, Daniel Winklehner.
+
+=== Agenda (times in GMT):
+
+. 15:30-16:00: News and introduction: Andreas link:uploads/6e90fcafa361eb5a051f25886acf4e7f/opal-mini-retreat-2020.pdf[opal-mini-retreat-2020.pdf]
+. 16:00-16:30: Discussion on integration of features: Achim
+. 16:30-17:00: pyOPAL: Chris R. link:uploads/d95c4a05e71d73c74f5e00568dacdf8e/2020-04-14_pyopal.pdf[2020-04-14_pyopal.pdf]
+. 17:00-17:30: pyOPALTools: Matthias link:uploads/d837c09d2849bad98a72a51d86056c21/pyOPALTools.pdf[pyOPALTools.pdf]
+. 17:30-18:00: Sirepo: Stephen W.
+. 18:00-18:30: Open Discussion/Flow over
+
+=== Minutes
+
+==== 1. News and Introduction - Andreas
+
+Paper reading done by Chris Rogers and Suzy Sheehy. Lots of good comments, paper will be reorganised. Expect new version beginning of June.
+
+To adapt to hardware changes and independence, https://github.com/kokkos/kokkos[Kokkos] integration investigated.
+
+===== Benchmarking
+
+* Christopher Mayes: benchmarking important should be part
+* Andreas: CSR and space charge comparison done by Nicole http://accelconf.web.cern.ch/AccelConf/napac2016/papers/thpoa46.pdf
+* Christopher Mayes: should be done regularly by OPAL
+* Christopher Mayes: standardised output, at LCLS we use openPMD h5 file. should be easy to output for OPAL.
+
+===== Examples
+
+* Bettina: good examples are important
+* Chris Mayes: fully agree. there are regression tests but not the first place one takes a look at.
+* Bettina will share BerlinPRO example
+* Chris Mayes and Nicole will share their examples
+
+Existing examples on the wiki:
+
+* https://gitlab.psi.ch/OPAL/src/wikis/home#start-with-examples
+* https://gitlab.psi.ch/OPAL/src/wikis/RegressionTestExamples
+
+==== 2. Discussion on integration of features - Achim
+
+. new HTML manual at http://amas.web.psi.ch/opal/Documentation/master/OPAL_Manual.html. updated every day
+
+* Bettina: what is the difference between HTML and PDF manual?
+* Achim: no difference, PDF is sometimes a bit out of date since workflow to create is more difficult, will be automatic in the future as well.
+
+. New workflow page discussed: https://gitlab.psi.ch/OPAL/src/wikis/OPAL-Development-Workflow
+
+* Muralikrishnan: I have read that one can mirror automatically the fork repository, how can you automatically merge
+* Achim: yes, you can do this with master, but you still need to pull and push the changes. In my opinion it doesn't make this more your life much easier.
+
+. build recipes updated
+
+Now you always need to source setup.sh.
+Details at https://gitlab.psi.ch/OPAL/build-recipes and https://gitlab.psi.ch/OPAL/src/wikis/For-Developers/Compile-OPAL
+
+==== 3. Python integration for OPAL - Chris Rogers
+
+Five methods possible:
+
+. Text manipulation
+. Python/C API
+. PyBoost
+. Swig
+. Cython
+
+code: https://gitlab.psi.ch/ext-rogers_c/src/tree/master/src/PyOpal
+
+Examples with field lookup, see:
+
+* Python/C example: https://gitlab.psi.ch/ext-rogers_c/src/blob/master/src/PyOpal/PyField.cpp
+* PyBoost: https://gitlab.psi.ch/ext-rogers_c/src/blob/master/src/PyOpal/PyBoostField.cpp
+
+PyBoost is cleaner
+
+* Andreas: Which of these methods would allow us to do everything in Python?
+* Chris Rogers: All of these techniques will let you do everything in python. What one can do is generate a python function, and then write a MAD input.
+That is a fine way of doing things.
+Disadvantage is there are several i/o operations, which hurts if small jobs.
+Could be a first step, and then as a second step you can also do it via binary access with a Python API.
+The user won't notice this change.
+
+===== Multithreading
+
+* Simon Friederich (chat): I thought python supports multithreading, but I am not sure if that is real multithreading.
+* Chris Rogers: Yes supported since 2.7, but I don't know the details.
+For the important things, we will in any case use MPI for fast multithreading, which will do everything correctly.
+
+====== Use cases
+
+* Bettina: my use case, lots of runs with output files, compare output, adjust gun parameters, make new input files. Would your approach help me with this?
+* Chris Rogers: My presentation was quite abstract. Short answer: yes, that is the sort of thing I am trying to address.
+
+====== Sampler
+
+* Bettina: Many of these changes can be elegantly done with the sampler.
+* Nicole: Yes, I think sampler covers scans of basic element parameters. Won't work for the field map example, I think?
+* Bettina: The sampler also works for field maps. I vary gun field maps by including counters in the filenames.
+* Nicole: That would be a nice example to add too.
+
+==== 4. pyOPALTools - Matthias
+
+New Sphinx code documentation at http://amas.web.psi.ch/docs/pyOPALTools/index.html. Jupyter example notebooks included soon, already present in the repository.
+
+* Nicole: would we keep those two tools separate? or would Chris use this library in some way?
+* Chris Rogers: it feels like this is more focused on post-processing, and what I was doing is more focused on the pre-processing.
+* Andreas: I propose to discuss this at the end.
+
+==== 5. Sirepo - Stephen Webb and Chris Hall
+
+sirepo.com wraps simulation code
+
+supported codes
+
+* Elegant
+* PIP codes
+* Zgoubi
+* OPAL
+* for complete list see website https://www.sirepo.com/opal
+
+for access you only need to enter your email address to get a token.
+
+Live demonstration (environment is actually the same for Zgoubi, Elegant, OPAL, Synergia).
+
+* beamline editor
+* calculate twiss
+* make new sub-beamline with shift-clicking, can drag and drop
+* Lattice tab:
+ ** modify elements, click edit, change properties for elements
+ ** you can define variables and add them to elements.
+  *** vary multiple elements with a single variable
+* Source tab
+ ** distribution: option to upload file
+ ** beam
+ ** get input distribution as plot immediately
+* Control panel
+ ** for more difficult parameters (field solver etc.)
+* Output
+ ** get output plots while running
+  *** video also created
+ ** plots adaptable
+  *** downloadable as png or as data
+ ** zip file with all input files
+  *** can rerun locally
+  *** or at https://jupyter.radiasoft.org
+* https://jupyter.radiasoft.org
+ ** jupyterhub environment where one can run OPAL
+ ** Can edit files there
+ ** Sirepo is more for beginner, jupyter is for intermediate-advance
+* Can share the simulation as a link, copy made in your sirepo
+ ** with jupyterlab, you need to share the zip
+* Slack channel if people are interested, happy to invite (see OPAL mailing list)
+* All is brand new up since a month
+* Coming up:
+ ** MadX input for all of the codes
+
+===== Teaching
+
+* Andreas: This would be great for teaching. Tried it last week. If I have a class of students of 10-20 students, how will I do it? 20 jobs simultaneous at the same time is that possible?
+* Stephen Webb: we used it for USPASS
+* Nicole: we used it for USPASS without problems. but we let Sirepo know in advance
+* Stephen: yes that is very helpful, couple of weeks in advance. 20 students, we should be able to accomplish that.
+
+===== Output file
+
+* Nicole: is run.py a python file?
+* Stephen Webb: no, run.py is the normal OPAL input file. We probably need a better name.
+
+===== OPAL-cycl
+
+* Jochem: also for OPAL-cycl?
+* Stephen Webb: no, for now only OPAL-T, but definitely possible, we will need to talk offline if you would like this.
+
+==== 6.Open discussion and/or buffer
+
+===== Python integration
+
+* Andreas: what do we need to do the parser in python?
+* Chris Rogers: you need to define how to call the methods and what you would expose.
+* Andreas: ultimate goal: OPAL complete pythonic, like this:
+
+[,python]
+----
+import pyOPAL as myOPAL
+from opal import load_dataset , filetype
+
+myOPAL.option(PSDUMFREQ=10)
+
+dist   = myOPAL.distribution( ... )
+
+d1     = myOPAL.dirft(L=1.5)
+
+myLine = myOPAL.line()
+
+myLine.add(d1)
+
+...
+
+res = myOPAL.track (myLine,dist, )
+
+
+ds  = load_dataset(ds=res, ftype=filetype.STAT)
+
+plt.figure(figsize=(9, 4))
+plt = ds.plot_profile1D(’time’, ’rms_x’)
+plt.grid(linestyle=’dashed’)
+plt.tight_layout()
+plt.show()
+----
+
+===== Which method
+
+* Nicole: leaning towards a method?
+* Chris Rogers: I would generate an OPAL input file from python. Similar to what Stephen showed.
+and then later, you can gradually change things in the background.
+* Nicole: is this more or less what runOPAL is doing?
+* Andreas: yes.
+* Andreas: just a few functions would be probably be enough to have everything in memory. But I have no feeling how much time it is to do that.
+* Chris Rogers: I would say a month full time. one needs to write a wrapper function for every method
+* Chris : I prefer boost option. but extra dependency. Often problems at linking step.
+* Achim: Linking is issue. Fine on Linux, and mac problems. I would prefer the boost option too.
+
+===== Python input files
+
+* Christopher Mayes: what i want is expert input file, and tweak it. That is how I operate usually. Edit in python would be nice.
+* Nicole: Chris Rogers can you show how you do it?
+* Chris Rogers shows screen: similar solution to runOPAL with template
+* Mayes: so this is a decorated file. So Astra is like this, easy to parse into a giant python dictionary if you know the syntax, tweak and parse it back.
+* Mayes: you don't need to do by hand, you could write a converter.
+* Chris: but then you go the other way
+* Mayes: yes, i want to do both.
+
+===== Python Parser
+
+* Andreas: OPAL parser is an L2 parser (similar to PASCAL), there exist a python parser generator, it should be possible to do that.
+Needs some work since the parser generator is not up to date.
+* Chris Rogers: to summarise, two things discussed:
+ .. Calling OPAL in python natively.
+ .. Generating python input file from OPAL language.
+* Mayes: second is my most common use case
+* Rogers: I was focusing on the first one.
+
+===== Next steps for python integration
+
+* Andreas: next steps?
+* Rogers: I will make a specification document, list of all the functions. What it is going to and what it isn't going to do. Others can see and adapt.
+* Andreas: parser of Mad and OPAL were generated from automatic generated parser, generated very ugly code. I can show Chris Rogers a list of functions.
+* Chris Rogers: how to interface with pyOPALTools?
+* Chris Rogers: I will set up a next meeting for to discuss the document.
+
+===== Sirepo usage
+
+* Andreas: Stephen: do you know a group who is doing science with sirepo?
+* Stephen Webb: It is in use for a dissertation.
+We have had students at Berkeley. Mostly students. We don't have a comprehensive list. But we have seen it in conference list, people are using it.
+
+===== Build scripts
+
+* Nicole: I have a question for Achim on the build scripts: I usually have no problems on cluster. Works well on clusters. But with local boost modules, it often doesn't work. Should I file an issue for that?
+* Achim: yes definitely file an issue.
+
+===== OpenPMD
+
+* Christopher Mayes: OpenPMD h5 files standard. Generalish to add your own stuff. https://github.com/openPMD, extension for beam-physics done by me: https://github.com/ChristopherMayes/openPMD-beamphysics. BMAD is using this.
+* Nicole: could perhaps be implemented as an option in OPAL?
+* Andreas: is it parallel? What is the priority?
+* Achim: yes HDF5, parallel is not a problem.
+* Andreas: add a feature request
+* Christopher Mayes: will do that.
+* Jochem: would a converter script from OPAL h5 file to openPMD be another option?
+* Christopher Mayes: yes, we already have one. shows it, few python lines
+* Jochem: looks easy to add in OPAL
+
+===== Code directory structure
+
+* Dragos: For new developers, it would be good to get an overview of the code directory structure.
+* Jochem: The directory structure is mostly historic, there is Doxygen code documentation available: http://amas.web.psi.ch/docs/opal/master-doxygen/html/
+* Dragos: That has been very helpful in the past already, but an overview of the most common directories would be helpful.
+* Christof: I have created a new wiki page: https://gitlab.psi.ch/OPAL/src/wikis/For-Developers/Most-Used-Directories-in-the-Code
+
+=== To Dos
+
+* [ ] Bettina will share BerlinPRO example
+* [ ] Chris Mayes and Nicole will share their examples
+* [ ] Bettina: add example of using sampler iterating through field maps with number in name
+* [ ] Christopher Mayes: open issue for OpenPMD support
+* [x] Nicole: open issue for boost CMake change (#518)
+* [x] Chris Rogers: write document with specifications (#516)
+* [ ] Chris Rogers will set up a next meeting to discuss the document.

@@ -1,0 +1,37 @@
+= Drive linac
+:doctype: book
+
+This example describes the AWA drive linac beamline which includes RF photocathode gun and 6 standing wave linac cavities. The model is based on the https://napac2022.vrws.de/papers/wexd5.pdf[paper] by S.-Y. Kim et al..
+link:mailto:sykim12@postech.ac.kr[Email] of the corresponding author and provider of the example.
+
+= Goal
+
+Run the AWA drive linac beamline (OPAL_t), and check the beam parameters obtained from the simulation.
+
+= Preparation
+
+If you do not have already access to OPAL, you can visit link:home[the download page]. In
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click link:OPALATPSI[here].
+
+= Needed Input Files
+
+For the AWA drive linac simulation, we need OPAL input deck, and fieldmaps such as RF gun, drive linac cavity, bucking/focusing solenoid magnet, and matching solenoid magnet.
+
+. Inputfile https://amas.web.psi.ch/wiki/AWADriveLinac/input.in[input.in]
+. Bucking/focusing solenoid, and  matching solenoid field maps: https://amas.web.psi.ch/wiki/AWADriveLinac/BF550.T7[BF550.T7] and https://amas.web.psi.ch/wiki/AWADriveLinac/M440.T7[M440.T7].
+. RF gun field map https://amas.web.psi.ch/wiki/AWADriveLinac/GUN.T7[GUN.T7]
+. Drive linac cavity field map https://amas.web.psi.ch/wiki/AWADriveLinac/DriveLinac.T7[DriveLinac.T7]
+. Drive linac solenoids (disabled in the input file) https://amas.web.psi.ch/wiki/AWADriveLinac/DS4.T7][DS4.T7] and https://amas.web.psi.ch/wiki/AWADriveLinac/DS5.T7[DS5.T7]
++
+= Run the AWA drive linac simulation
+
+Here, grid is set to: MX = 64, MY = 64, MZ = 32
+
+`opal  input.in | tee input.out`
+
+= Results and Postprocessing
+
+https://amas.web.psi.ch/wiki/AWADriveLinac/OPAL_Drivelinac_Example.pdf[Results]
+A simple Python https://amas.web.psi.ch/wiki/AWADriveLinac/Opal_beamdist_plot.py[script] not using pyOPALTools.
+
+For general post processing, please visit https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing[here].

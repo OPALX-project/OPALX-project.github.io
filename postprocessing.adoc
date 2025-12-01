@@ -1,0 +1,8 @@
+OPAL writes two kind of data:
+
+* statistical data (.stat) such as rms beam sizes, rms emittances, energy, energy spread and much more, in ASCCI files, following the SDDS convention.
+* phase space particle data is saved in the H5Hut (.h5) format which follows the general HDF5 conventions.
+
+For postprocessing we recommend to use the https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home[pyOPALTools] Python package which contains many tools for pre- and postprocessing, and analysing and plotting output data.
+
+The statistical data can be conveniently plotted with http://www.gnuplotting.org[gnuplot], as shown in the example section link:Examples/cyclotron[Cyclotron].
