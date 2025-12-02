@@ -5,11 +5,11 @@
 :link_mailing_list:     https://psilists.ethz.ch/sympa/subscribe/opal
 :link_pkg:              http://amas.web.psi.ch/Downloads/OPAL/package/
 :link_src:              http://amas.web.psi.ch/Downloads/OPAL/src/
-:link_repo_base:        https://gitlab.psi.ch/OPAL
+
+:link_repo_base:        https://github.com/OPALX-project/OPAL/
 :link_repo:             {link_repo_base}/src
 :link_regression:       {link_repo_base}/regression-tests
 :link_pyOPALTools:      {link_repo_base}/pyOPALTools
-
 :link_issue_tracker:    {link_repo}/issues
 
 :link_opal_base:        http://amas.web.psi.ch/opal
