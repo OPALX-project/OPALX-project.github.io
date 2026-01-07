@@ -26,7 +26,6 @@ The following environment variables recognized by the *runOPAL.py*:
    1. *DISTRIBUTIONS*
    2. *TEMPLATES*
    3. *FIELDMAPS*
-   4. *OPTIMIZER*
    5. *OPAL_EXE_PATH*
    6. *QUEUE*
    7. *RAM*
@@ -35,7 +34,6 @@ The following environment variables recognized by the *runOPAL.py*:
 In Bash parlance:
 
 ```bash
-#export OPTIMIZER=$PWD/tmpl_opt/
 export TEMPLATES=$PWD/tmpl/
 export FIELDMAPS=$PWD/fieldmaps/
 export OPAL_EXE_PATH=/gpfs/home/adelmann/build/opal-1.2.0/src/
@@ -43,31 +41,27 @@ export QUEUE=all.q
 export RAM=8
 ```
 
-Make sure the `OPAL_EXE_PATH` is set correctly. This is automatically done when using modules on Merlin, otherwise you need to set it accordingly. 
+Make sure the `OPAL_EXE_PATH` is set correctly. 
 
-If no OPTIMIZER directory is set, then runOPAL runs regular simulation by default: the *foo.tmpl* file is taken from the TEMPLATES directory and the values are replaced using *foo.data* file in the working directory. If OPTIMIZER directory is set in the environment (and no *--noopt*), runOPAL runs optimization job (see Example 4).
+The field maps from the *FIELDMAPS* directory and the distributions from the *DISTRIBUTIONS* directory are soft linked to the directory where the simulation is executed. 
 
-The field maps from the *FIELDMAPS* directory and the distributions from the *DISTRIBUTIONS* directory are linked to the directory where the simulation is executed. 
+*QUEUE* is the queue used for the simulation. Different queues may have different numbers of nodes, CPU's and GPU's available as well as different run-time limitations.
 
-*QUEUE* is the queue used for the simulation. Different queues may have different numbers of nodes and CPU's available as well as different run-time limitations.
-
-*RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. Instead the number of CPU's will be distributed on as many nodes as needed to fulfil the RAM requirement. Merlin has nodes with 64 and 128 GB of RAM. Each node has 16 CPU's.
-
+*RAM* contains the number of GB of RAM that each CPU will allocate (if not specified, default is 4). If there is not enough memory available on one node, the node will not  be fully loaded. 
+Instead the number of CPU's/GPU's will be distributed on as many nodes as needed to fulfil the RAM requirement.
 
 # Recognized host names
 
 The following clusters and supercomputers are recognised for which batch jobs are setup automatically:
 
-* PSI Merlin cluster
-* ANL Theta
-* ANL Blues
-* ANL Bebop
-* NERSC Cori Haswell
-* NERSC Edison
-* CSCS Piz-Daint
+* PSI Gwendolen cluster
+* CSCS ALPS (comming soon)
+* CSC LUMI (comming soon)
+* Jülich Booster and Jupiter (comming soon)
+* NERSC Pewrlmuter (comming soon)
 * MIT Engaging cluster
 
-Please open an [issue](https://gitlab.psi.ch/OPAL/runOPAL/issues) for adding additional clusters.
+Please open an [issue]([https://gitlab.psi.ch/OPAL/runOPAL/issues) for adding additional clusters.
 
 # This is a snippet of a data and tmpl file (*foo.data*)
 ```
@@ -202,59 +196,9 @@ fooEDES=0.05POS1=0.44   fooEDES=0.05POS1=0.49   fooEDES=0.15POS1=0.44   fooEDES=
 ```
 
 
-# Example 4: Optimization Run
 
-Optimizer and template *\*.tmpl* files should be located in OPTIMIZER and TEMPLATES directories,
-respectively, while their *\*.data* files should be located in the working directory.
-Note that if *--filename* is not specified, runOPAL will try to guess which *.tmpl* file to use as input;
-if OPTIMIZER directory is unknown, runOPAL would attempt regular simulation run.
-More information on optimizer can be found in the [manual](http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#chp.optimiser).
 
-For instance, optimization for RF cavity phases with respect to maximum energy would be organized as follows.
-
-```
-dude:foo nastya$ ls
-cyclotron.data      setenv.sh  tmpl_opt
-cyclotron_opt.data  tmpl
-dude:foo nastya$ ls tmpl/
-cyclotron.tmpl
-dude:foo nastya$ ls tmpl_opt/
-cyclotron_opt.tmpl
-```
-
-Where *cyclotron_opt.tmpl* file sets up the optimization run:
-
-```
-OPTION, ECHO=FALSE;
-OPTION, INFO=TRUE;
-
-phi0:  DVAR, VARIABLE="PHI0",  LOWERBOUND=-180, UPPERBOUND=180; // phase of the first cavity
-theta: DVAR, VARIABLE="THETA", LOWERBOUND=0, UPPERBOUND=45; // angle of between cavities
-
-energy: OBJECTIVE, EXPR="-statVariableAt('energy',600.0)";
-
-opt: OPTIMIZE, INPUT=_INPUT_,
-        OUTPUT="cyclotron_optimized", OUTDIR="results",
-        OBJECTIVES = {energy}, DVARS = {phi0, theta},
-        INITIALPOPULATION=10, NUM_MASTERS=1, NUM_COWORKERS=1,
-        NUM_IND_GEN=10, MAXGENERATIONS=20,
-        SIMTMPDIR="simtmpdir",
-        TEMPLATEDIR=_TEMPLATEDIR_,
-        FIELDMAPDIR=_FIELDMAPDIR_;
-
-QUIT;
-```
-
-And variables set in *cyclotron_opt.data* are:
-
-```
-CORES          8
-INPUT          "tmpl/cyclotron.tmpl"
-FIELDMAPDIR    "."
-TEMPLATEDIR    "tmpl"
-```
-
-# Using the Python interface
+# Using the Python interface (needs to be tested if still working)
 
 There is a Python class `OpalRunner` that can be used to run OPAL simulations like functions.
 
