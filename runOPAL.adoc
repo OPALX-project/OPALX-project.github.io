@@ -1,7 +1,7 @@
 = Obtain runOPAL.py
 :doctype: book
 
-Clone runOPAL.py  from https://gitlab.psi.ch/OPAL/runOPAL[here].
+Clone runOPAL.py  from https://github.com/OPALX-project/runOPAL?tab=readme-ov-file[here].
 
 Add runOPAL to the PATH and PYTHONPATH environment variables with the correct install folder.
 
