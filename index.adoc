@@ -29,7 +29,7 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 ---
 
-## Download, Documentation, Help, Presentations & Papers
+## [red]#Download, Documentation, Help, Presentations & Papers#
 
 [%header,width="80%",cols="2,2,2,2,2,2"]
 |========
@@ -184,3 +184,4 @@ See also link:postprocessing[Post Processing].
 * on {link_opal_base}/OPAL-2022.1[_OPAL_ 2022.1 branch]
 * on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 * on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
+
