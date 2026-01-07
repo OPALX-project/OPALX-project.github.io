@@ -117,7 +117,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 * link:OPAL-binary-package-ChangeLog[ChangeLog of the binary packages].
 * link:OPAL-binary-package-old-versions[Deprecated versions].
 
-=== Start with Examples
+=== [red] Start with Examples
 
 * link:Examples/Cyclotron[Cyclotron]
 * link:Examples/RFPhotoInjector[AWA RF Photo Injector]
@@ -184,5 +184,6 @@ See also link:postprocessing[Post Processing].
 * on {link_opal_base}/OPAL-2022.1[_OPAL_ 2022.1 branch]
 * on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 * on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
+
 
 
