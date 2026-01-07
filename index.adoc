@@ -138,7 +138,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_repo}.git [DIR
 
 * link:Using-OPAL-at-PSI[Using _OPAL_ at PSI]
 
-== Compiling _OPAL_
+== [red] Compiling _OPAL_
 
 * link:For%20Developers/Supported-OS-and-required-Software-to-build-OPAL[Supported OS and required Software to build _OPAL_]
 * link:For%20Developers/Setup-build-environment-at-PSI[Setup build environment at PSI]
@@ -184,6 +184,7 @@ See also link:postprocessing[Post Processing].
 * on {link_opal_base}/OPAL-2022.1[_OPAL_ 2022.1 branch]
 * on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 * on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
+
 
 
 
