@@ -6,7 +6,7 @@
 :link_pkg:              http://amas.web.psi.ch/Downloads/OPAL/package/
 :link_src:              http://amas.web.psi.ch/Downloads/OPAL/src/
 
-:link_repo_base:        https://github.com/OPALX-project/OPAL/
+:link_repo_base:        https://github.com/OPALX-project/OPAL
 :link_repo:             {link_repo_base}/src
 :link_regression:       {link_repo_base}/regression-tests
 :link_pyOPALTools:      {link_repo_base}/pyOPALTools
