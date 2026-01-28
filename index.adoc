@@ -1,6 +1,5 @@
 = Object Oriented Parallel Accelerator Library (_OPAL_)
 
-include::page.attributes[]
 include::attributes.adoc[]
 
 == Introduction
