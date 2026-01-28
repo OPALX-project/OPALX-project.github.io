@@ -3,8 +3,8 @@
 :mail_mailing_list:     opal AT lists.psi.ch
 
 :link_mailing_list:     https://psilists.ethz.ch/sympa/subscribe/opal
-:link_pkg:              http://amas.web.psi.ch/Downloads/OPAL/package/
-:link_src:              http://amas.web.psi.ch/Downloads/OPAL/src/
+:link_pkg:              https://github.com/OPALX-project/OPAL/releases/download
+:link_src:              https://github.com/OPALX-project/OPAL/releases/download
 
 :link_repo_base:        https://github.com/OPALX-project/OPAL
 :link_repo:             {link_repo_base}/src
