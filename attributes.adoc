@@ -5,7 +5,7 @@
 :link_pkg:              https://github.com/OPALX-project/OPAL/releases/download
 :link_src:              https://github.com/OPALX-project/OPAL/releases/download
 
-:link_org		https://github.com/OPALX-project
+:link_org:		https://github.com/OPALX-project
 :link_OPAL_repo:	{link_org}/OPAL
 :link_OPALX_repo:	{link_org}/OPALX
 
@@ -14,9 +14,9 @@
 :link_OPAL_issue_tracker:    {link_OPAL_repo}/issues
 :link_OPALX_issue_tracker:   {link_OPALX_repo}/issues
 
-:link_opal_base:        http://amas.web.psi.ch/opal
-:link_manual:           {link_org}/Manual
-:link_doxydoc:          {link_org/OPAL
+:link_opal_pages:       https://opalx-project.github.io
+:link_manual:           {link_opal_pages}/Manual
+:link_doxydoc:          {link_opal_pages}/OPAL
 
 :linux_pkg:             -x86_64-linux.tar.xz[tar.xz]
 :linux_md5:             -x86_64-linux.tar.xz.md5[md5]
