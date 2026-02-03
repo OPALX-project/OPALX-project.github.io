@@ -30,6 +30,10 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 ## *Download, Documentation, Help, Presentations & Papers*
 
+:link_src_2024-1:  {link_src}/OPAL-2021.1.0/OPAL-2021.1.0
+:link_src_2022-1:  {link_src}/OPAL-2022.1.0/OPAL-2022.1.0
+:link_src_2021-1:  {link_src}/OPAL-2024.1.0/OPAL-2024.1.0
+
 [%header,width="80%",cols="2,2,2,2,2,2"]
 |========
 | Version/ +
@@ -51,17 +55,17 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 | {link_doxydoc}/master[HTML]
 | n.a.
 
-| {link_src}/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz[_OPAL_ 2024.1.0] ({link_src}/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz.md5[md5])
+| {link_src_2024-1}.tar.xz[_OPAL_ 2024.1.0] ({link_src_2024-1}.tar.xz.md5[md5])
 | 
 | 
 |
 | {link_doxydoc}/2024.1[HTML]
 | {link_opal_pages}/OPAL-2024.1[Release notes 2024.1]
 
-| {link_src}/OPAL-2022.1.0.tar.xz[_OPAL_ 2022.1.0] ({link_src}/OPAL-2022.1.0.tar.xz.md5[md5])
-| {link_pkg}OPAL-2022.1.0-1{linux_pkg} ({link_pkg}OPAL-2022.1.0-1{linux_md5})
-| {link_pkg}OPAL-2022.1.0-1{macos_pkg} ({link_pkg}OPAL-2022.1.0-1{macos_md5}) +
-  {link_pkg}OPAL-2022.1.0-1{macos_arm_pkg} ({link_pkg}OPAL-2022.1.0-1{macos_arm_md5})
+| {link_src_2022-1}.tar.xz[_OPAL_ 2022.1.0] ({link_src_2022-1}.tar.xz.md5[md5])
+| {link_src_2022-1}-1{linux_pkg}            ({link_src_2022-1}-1{linux_md5})
+| {link_src_2022-1}-1{macos_pkg}            ({link_src_2022-1}-1{macos_md5}) +
+  {link_src_2022-1}-1{macos_arm_pkg}        ({link_src_2022-1}-1{macos_arm_md5})
 |
 | {link_doxydoc}/2022.1[HTML]
 | {link_opal_pages}/OPAL-2022.1[Release notes 2022.1]
