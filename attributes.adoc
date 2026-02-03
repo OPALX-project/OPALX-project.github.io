@@ -1,54 +1,18 @@
-:OPAL_version:                          2024.1
-
-:branch_OPAL:                           master
-:branch_manual:                         master
-:branch_reg_tests:                      master
-
-:host_git:                              https://gitlab.psi.ch
-:host_amas:                             http://amas.web.psi.ch
-
-:link_manual:                           {host_git}/OPAL/documentation/manual
-:link_manual_src:                       {link_manual}/blob/{branch_manual}
-
-:link_OPAL:                             {host_git}/OPAL/src
-:link_OPAL_wiki:                        {link_OPAL}/wikis
-
-:link_pyOPALTools:                      {host_git}/OPAL/pyOPALTools
-:link_pyOPALTools_wiki:                 {link_pyOPALTools}/wikis
-:link_PSI_Ring:                         {host_git}/AMAS-BDModels/PSI-Ring
-:link_RRI2_0038Y1:                      {link_PSI_Ring}/blob/master/RawData/RRI2-0038Y17.peaks[file].
-
-:link_opt_pilot:                        {host_git}/OPAL/opt-pilot/
-:link_opt_pilot_wiki:                   {link_opt_pilot}/wikis
-
-:link_H5hut:                            {host_git}/H5hut/src
-:link_H5hut_wiki:                       {link_H5hut}/wikis/home
-
-:link_doxygen_doc:                      {host_amas}/opal/CodeDocumentation/{branch_OPAL}
-
-:link_ipac2017:                         http://accelconf.web.cern.ch/AccelConf/ipac2017
-:link_ipac2017_thpab077:                {link_ipac2017}/papers/thpab077.pdf
-
-:link_prab:                             https://journals.aps.org/prab
-:link_prab2019_frey:                    {link_prab}/pdf/10.1103/PhysRevAccelBeams.22.064602
-
-:link_reg_tests:                        {host_git}/OPAL/regression-tests
-:link_reg_tests_src:                    {link_reg_tests}/blob/{branch_reg_tests}/RegressionTests
-:link_regtest_MAP_FODO:                 {link_reg_tests_src}/MAP-FODO
-:link_regtest_LaserEmission_1:          {link_reg_tests_src}/LaserEmission-1
-:link_regtest_RingCyclotronMatched:     {link_reg_tests_src}/RingCyclotronMatched
 
 :mail_mailing_list:     opal AT lists.psi.ch
-
 :link_mailing_list:     https://psilists.ethz.ch/sympa/subscribe/opal
+
 :link_pkg:              https://github.com/OPALX-project/OPAL/releases/download
 :link_src:              https://github.com/OPALX-project/OPAL/releases/download
 
-:link_repo_base:        https://github.com/OPALX-project/OPAL
-:link_repo:             {link_repo_base}/src
-:link_regression:       {link_repo_base}/regression-tests
-:link_pyOPALTools:      {link_repo_base}/pyOPALTools
-:link_issue_tracker:    {link_repo}/issues
+:link_org		https://github.com/OPALX-project
+:link_OPAL_repo:	{link_org}/OPAL
+:link_OPALX_repo:	{link_org}/OPALX
+
+:link_OPAL_regression:       {link_org}/regression-tests
+:link_OPALX_regression:      {link_org}/regression-tests-x
+:link_OPAL_issue_tracker:    {link_OPAL_repo}/issues
+:link_OPALX_issue_tracker:   {link_OPALX_repo}/issues
 
 :link_opal_base:        http://amas.web.psi.ch/opal
 :link_manual:           {link_opal_base}/Documentation
