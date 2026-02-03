@@ -30,7 +30,7 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 https://github.com/OPALX-project/OPAL/releases/download/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz
 
-## [red] *Download, Documentation, Help, Presentations & Papers*
+## *Download, Documentation, Help, Presentations & Papers*
 
 [%header,width="80%",cols="2,2,2,2,2,2"]
 |========
@@ -51,7 +51,7 @@ https://github.com/OPALX-project/OPAL/releases/download/OPAL-2024.1.0/OPAL-2024.
 | n.a.
 | {link_manual}[HTML]
 | {link_doxydoc}/master[HTML]
-| link:ReleaseNotes/OPAL-2023.1[Wiki]
+| n.a.
 
 | {link_src}/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz[_OPAL_ 2024.1.0] ({link_src}/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz.md5[md5])
 | 
