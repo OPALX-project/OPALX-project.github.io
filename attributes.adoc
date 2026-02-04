@@ -17,6 +17,7 @@
 :link_opal_pages:       https://opalx-project.github.io
 :link_manual:           {link_opal_pages}/Manual
 :link_doxydoc:          {link_opal_pages}/OPAL
+:link_pyopaltools:      {link_org}/pyOPALTools
 
 :linux_pkg:             -x86_64-linux.tar.xz[tar.xz]
 :linux_md5:             -x86_64-linux.tar.xz.md5[md5]
