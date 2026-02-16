@@ -1,9 +1,12 @@
-= Object Oriented Parallel Accelerator Library (_OPAL_)
+
+= Object Oriented Parallel Accelerator Library (_OPAL_(X))
 
 include::attributes.adoc[]
+include::stylesheets/Toggle[]
 
 == Introduction
-
+[.feature-opal]
+====
 _OPAL_ (Object Oriented Parallel Accelerator Library) is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
 Using the MAD language with extensions, _OPAL_ can run on a laptop as well as on the largest high performance computing systems.
 _OPAL_ is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
@@ -21,6 +24,12 @@ _OPAL_ comes in the following flavours:
   map tracking (experimental).
 
 The code is managed through the Git distributed version control system. A suite of unit tests have been developed for various parts of _OPAL_, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in Asciidoc. Tools are available to readily convert Asciidoc into formats such as PDF and HTML for display.
+====
+
+[.feature-opalx]
+====
+This is the landing for _OPALX_ {OPALX_version} which is still under heavy development.
+====
 
 Please use the _OPAL_ mailing list {mail_mailing_list} to discuss problems and issues. Subscribe to the {link_mailing_list}[**mailing list**].
 
@@ -28,8 +37,15 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 ---
 
-## *Download, Documentation, Help, Presentations & Papers*
+## *Download of Binaries and Clone of Repository*
+[.feature-opalx]
+====
+not yet avaidable
+====
 
+
+[.feature-opal]
+====
 :link_src_2024-1:  {link_src}/OPAL-2021.1.0/OPAL-2021.1.0
 :link_src_2022-1:  {link_src}/OPAL-2022.1.0/OPAL-2022.1.0
 :link_src_2021-1:  {link_src}/OPAL-2024.1.0/OPAL-2024.1.0
@@ -79,8 +95,6 @@ Please report bugs and feature requests to the {link_issue_tracker}[issue tracke
 
 |========
 
-=== Git repository
-
 Instead of downloading the source tar-ball you can get the _OPAL_ source via Git. Either clone the whole Git repository (~ 2 GB!) with
 [source,sh,subs="attributes"] 
 ----
@@ -93,14 +107,16 @@ or clone a specific branch/tag with
 git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git [DIR]
 ----
 
-=== _OPAL_ binary packages
-
 * link:OPAL-binary-package[installing and running a _OPAL_ binary package].
 * link:OPAL-binary-package-ChangeLog[ChangeLog of the binary packages].
 * link:OPAL-binary-package-old-versions[Deprecated versions].
 
-=== Start with Examples
+====
 
+
+=== Start with Examples
+[.feature-opal]
+====
 * link:Examples/Cyclotron[Cyclotron]
 * link:Examples/RFPhotoInjector[AWA RF Photo Injector]
 * link:Examples/AWAEEXBeamline[AWA EEX Beamline]
@@ -109,12 +125,19 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:Examples/RegressionTestExamples[Examples from regression tests]
 * link:Examples/FFA[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
+====
+
+[.feature-opalx]
+====
+not yet avaidable 
+====
 
 === Presentations & Papers
 
 * link:OPAL-References[OPAL Physics Resources]
 
 ---
+
 
 == Using _OPAL_ at PSI
 
@@ -144,7 +167,13 @@ See also link:postprocessing[Post Processing].
 ---
 
 == OPAL for Developers
+[.feature-opalx]
+====
 
+
+====
+[.feature-opal]
+====
 **Development**
 
 * link:For-Developers/Codingstyle[Coding Style and Conventions]
@@ -166,7 +195,7 @@ See also link:postprocessing[Post Processing].
 * on {link_opal_base}/OPAL-2022.1[_OPAL_ 2022.1 branch]
 * on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
 * on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
-
+====
 
 
 

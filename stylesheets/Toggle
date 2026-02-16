@@ -1,0 +1,57 @@
+++++
+<!-- Toggle bar -->
+<div class="feature-toggle">
+  <span>View:</span>
+  <label>
+    <input type="radio" name="feature-mode" value="opal">
+    <label for="mode-opal">OPAL</label>
+  </label>
+  <label>
+    <input type="radio" name="feature-mode" value="opalx">
+    <label for="mode-opalx">OPALX</label>
+  </label>
+  <label>
+    <input type="radio" name="feature-mode" value="both" checked>
+    Both
+  </label>
+</div>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'feature-mode';
+
+  function setMode(mode) {
+    document.documentElement.setAttribute('data-feature-mode', mode);
+    try {
+      localStorage.setItem(STORAGE_KEY, mode);
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  // initialize mode
+  var saved = null;
+  try {
+    saved = localStorage.getItem(STORAGE_KEY);
+  } catch (e) {}
+  setMode(saved || 'both');
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var current = document.documentElement.getAttribute('data-feature-mode') || 'both';
+    var radios = document.querySelectorAll('.feature-toggle input[name="feature-mode"]');
+    radios.forEach(function (r) {
+      r.checked = (r.value === current);
+      r.addEventListener('change', function (ev) {
+        setMode(ev.target.value);
+      });
+    });
+  });
+})();
+</script>
+++++
+
+:start-opal: +++<div class="feature-opal">+++
+:end-opal: +++</div>+++
+
+:start-opalx: +++<div class="feature-opalx">+++
+:end-opalx: +++</div>+++
