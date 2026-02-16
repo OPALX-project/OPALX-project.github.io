@@ -99,7 +99,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:OPAL-binary-package-ChangeLog[ChangeLog of the binary packages].
 * link:OPAL-binary-package-old-versions[Deprecated versions].
 
-=== [red] Start with Examples
+=== Start with Examples
 
 * link:Examples/Cyclotron[Cyclotron]
 * link:Examples/RFPhotoInjector[AWA RF Photo Injector]
@@ -120,7 +120,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 
 * link:Using-OPAL-at-PSI[Using _OPAL_ at PSI]
 
-== [red] Compiling _OPAL_
+== Compiling _OPAL_
 
 * link:For%20Developers/Supported-OS-and-required-Software-to-build-OPAL[Supported OS and required Software to build _OPAL_]
 * link:For%20Developers/Setup-build-environment-at-PSI[Setup build environment at PSI]
