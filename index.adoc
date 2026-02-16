@@ -139,8 +139,10 @@ not yet avaidable
 ---
 
 
-== Using _OPAL_ at PSI
 
+[.feature-opal]
+=== Using _OPAL_ at PSI
+====
 * link:Using-OPAL-at-PSI[Using _OPAL_ at PSI]
 
 == Compiling _OPAL_
@@ -150,10 +152,16 @@ not yet avaidable
 * link:For%20Developers/Compile-required-software[Compile required software (_OPAL_ build recipes)]
 * link:For%20Developers/Compile-OPAL[Compile _OPAL_]
 * link:For%20Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
+====
 
-== Run and/or compiling _OPAL-X_
+[.feature-opalx]
+====
+== Using _OPALX_ at PSI
 
-* link:https://hpce.pages.psi.ch/merlin7/opal-x.html[Run/compile _OPAL-X_ on Merlin7]
+Run and/or compiling _OPALX_
+* link:https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/[Run/compile _OPALX_ on Merlin7]
+====
+
 
 ---
 
