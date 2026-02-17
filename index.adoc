@@ -1,10 +1,20 @@
-
-= Object Oriented Parallel Accelerator Library (_OPAL_(X))
+= Landing Page of the Object Oriented Parallel Accelerator Library Project
 
 include::attributes.adoc[]
 include::stylesheets/Toggle[]
 
 == Introduction
+
+Maybee the best is to look at link:OPAL-References[papers and presentations] to see the potential  and use cases. At the
+moment no papers etc. are avaidable for _OPALX_ due to the early stage of the project.
+
+Checkout the {link_manual}[manual] for both variants of _OPAL_.
+
+The _OPAL_ mailing list {mail_mailing_list} is used to discuss problems and issues. Subscribe with {link_mailing_list}[**mailing list**].
+
+Please report bugs and feature requests via the {link_mailing_list}[mailing list].
+
+
 [.feature-opal]
 ====
 _OPAL_ (Object Oriented Parallel Accelerator Library) is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
@@ -31,9 +41,6 @@ The code is managed through the Git distributed version control system. A suite 
 This is the landing for _OPALX_ {OPALX_version} which is still under heavy development.
 ====
 
-Please use the _OPAL_ mailing list {mail_mailing_list} to discuss problems and issues. Subscribe to the {link_mailing_list}[**mailing list**].
-
-Please report bugs and feature requests to the {link_issue_tracker}[issue tracker] or to the mailing list.
 
 ---
 
@@ -117,13 +124,13 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 === Start with Examples
 [.feature-opal]
 ====
-* link:Examples/Cyclotron[Cyclotron]
-* link:Examples/RFPhotoInjector[AWA RF Photo Injector]
-* link:Examples/AWAEEXBeamline[AWA EEX Beamline]
-* link:Examples/AWADriveLinac[AWA Drive Linac]
+* link:Cyclotron.html[Cyclotron]
+* link:RFPhotoInjector.html[AWA RF Photo Injector]
+* link:AWAEEXBeamline.html[AWA EEX Beamline]
+* link:AWADriveLinac.html[AWA Drive Linac]
 
-* link:Examples/RegressionTestExamples[Examples from regression tests]
-* link:Examples/FFA[FFA]
+* link:RegressionTestExamples.html[Examples from regression tests]
+* link:FFA.html[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
 ====
 
@@ -132,20 +139,15 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 not yet avaidable 
 ====
 
-=== Presentations & Papers
-
-* link:OPAL-References[OPAL Physics Resources]
-
 ---
 
 
-
-[.feature-opal]
 === Using _OPAL_ at PSI
+[.feature-opal]
 ====
 * link:Using-OPAL-at-PSI[Using _OPAL_ at PSI]
 
-== Compiling _OPAL_
+== Compiling
 
 * link:For%20Developers/Supported-OS-and-required-Software-to-build-OPAL[Supported OS and required Software to build _OPAL_]
 * link:For%20Developers/Setup-build-environment-at-PSI[Setup build environment at PSI]
@@ -156,12 +158,9 @@ not yet avaidable
 
 [.feature-opalx]
 ====
-== Using _OPALX_ at PSI
-
 Run and/or compiling _OPALX_
 * link:https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/[Run/compile _OPALX_ on Merlin7]
 ====
-
 
 ---
 
@@ -174,10 +173,18 @@ See also link:postprocessing[Post Processing].
 
 ---
 
-== OPAL for Developers
+== For Developers
 [.feature-opalx]
 ====
-
+* link:CodingStyle.html[Coding Style]
+* link:File-Format-for-stat-Storage.html[File Format Statistical Output]
+* link:Most-Used-Directories-in-the-Code.html[Guid to Directories]
+* link:OPAL-Development-Workflow.html[Development Workflow]
+* link:unit-tests.html[Unit Tests]
+* link:tech-ideas.html[Ideas]
+* link:https://amas.pages.psi.ch/opal-live-doc/opalx-doxygen/index.html[Doxygen]
+* link:https://github.com/OPALX-project/OPALX[Source Code Repository]
+* link:https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html[Regression Tests] 
 
 ====
 [.feature-opal]
