@@ -47,7 +47,6 @@ jobs:
             -o "$out" \
             "$file"
           done
-          # asciidoctor -a stylesheet="$PWD/stylesheets/readthedocs.css" -d book --destination-dir "$PWD/build" '**/*.adoc'
           cp -rv uploads/* build/uploads
           cp -rv logos/* build/logos
 
