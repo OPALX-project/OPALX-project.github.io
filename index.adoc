@@ -166,22 +166,22 @@ Run and/or compiling _OPALX_
 
 == Tools
 
-* The link:runOPAL[runOPAL] Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.
+* The link:runOPAL.html[runOPAL] Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.
 * The {link_pyopaltools}/[pyOPALTools.md] Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
 See also link:postprocessing[Post Processing].
-* link:OPAL-conversion-utilities[_OPAL_ conversion utilities]
+* link:OPAL-conversion-utilities.html[_OPAL_ conversion utilities]
 
 ---
 
 == For Developers
 [.feature-opalx]
 ====
-* link:CodingStyle.html[Coding Style]
-* link:File-Format-for-stat-Storage.html[File Format Statistical Output]
-* link:Most-Used-Directories-in-the-Code.html[Guid to Directories]
-* link:OPAL-Development-Workflow.html[Development Workflow]
-* link:unit-tests.html[Unit Tests]
-* link:tech-ideas.html[Ideas]
+* link:For-Developers/CodingStyle.html[Coding Style]
+* link:For-Developers/File-Format-for-stat-Storage.html[File Format Statistical Output]
+* link:For-Developers/Most-Used-Directories-in-the-Code.html[Guid to Directories]
+* link:For-Developers/OPAL-Development-Workflow.html[Development Workflow]
+* link:For-Developers/unit-tests.html[Unit Tests]
+* link:For-Developers/tech-ideas.html[Ideas]
 * link:https://amas.pages.psi.ch/opal-live-doc/opalx-doxygen/index.html[Doxygen]
 * link:https://github.com/OPALX-project/OPALX[Source Code Repository]
 * link:https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html[Regression Tests] 
