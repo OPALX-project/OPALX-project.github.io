@@ -124,13 +124,13 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 === Start with Examples
 [.feature-opal]
 ====
-* link:Cyclotron.html[Cyclotron]
-* link:RFPhotoInjector.html[AWA RF Photo Injector]
-* link:AWAEEXBeamline.html[AWA EEX Beamline]
-* link:AWADriveLinac.html[AWA Drive Linac]
+* link:Examples/Cyclotron.html[Cyclotron]
+* link:Examples/RFPhotoInjector.html[AWA RF Photo Injector]
+* link:Examples/AWAEEXBeamline.html[AWA EEX Beamline]
+* link:Examples/AWADriveLinac.html[AWA Drive Linac]
 
-* link:RegressionTestExamples.html[Examples from regression tests]
-* link:FFA.html[FFA]
+* link:Examples/RegressionTestExamples.html[Examples from regression tests]
+* link:Examples/FFA.html[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
 ====
 
