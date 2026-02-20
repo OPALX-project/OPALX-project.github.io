@@ -128,7 +128,6 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:Examples/RFPhotoInjector.html[AWA RF Photo Injector]
 * link:Examples/AWAEEXBeamline.html[AWA EEX Beamline]
 * link:Examples/AWADriveLinac.html[AWA Drive Linac]
-
 * link:Examples/RegressionTestExamples.html[Examples from regression tests]
 * link:Examples/FFA.html[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
@@ -178,7 +177,7 @@ See also link:postprocessing[Post Processing].
 ====
 * link:For-Developers/CodingStyle.html[Coding Style]
 * link:For-Developers/File-Format-for-stat-Storage.html[File Format Statistical Output]
-* link:For-Developers/Most-Used-Directories-in-the-Code.html[Guid to Directories]
+* link:For-Developers/Most-Used-Directories-in-the-Code.html[Guid to Program Structure]
 * link:For-Developers/OPAL-Development-Workflow.html[Development Workflow]
 * link:For-Developers/unit-tests.html[Unit Tests]
 * link:For-Developers/tech-ideas.html[Ideas]
@@ -198,24 +197,12 @@ See also link:postprocessing[Post Processing].
 
 **Documentation**
 
-* {link_doxydoc}/master[_OPAL_ source code documentation]
-* link:For-Developers/ippl_user_guide.pdf[IPPL Documentation]
-* link:For-Developers/Most-Used-Directories-in-the-Code[Most Used Directories in the Code]
-* link:For-Developers/tech-ideas[Technology & Ideas]
-* link:Workshops-and-virtual-meetings[Workshops and virtual meetings]
+* link:https://amas.pages.psi.ch/opal-live-doc/opal-doxygen/index.html[Doxygen]
 
-**Build-, Unit- and {link_regression}[Regression Tests]**
+**Build-, Unit- and Regression Tests**
+The repository for the unit test can be found link:https://github.com/OPALX-project/regression-tests[here].
 
-* on {link_opal_base}/master[_OPAL_ development branch]
-* on {link_opal_base}/OPAL-2022.1[_OPAL_ 2022.1 branch]
-* on {link_opal_base}/OPAL-2021.1[_OPAL_ 2021.1 branch]
-* on {link_opal_base}/OPAL-2.4[_OPAL_ 2.4 branch]
+* link:https://amas.pages.psi.ch/opal-live-doc/opal-regression-test/regressionTests/master/index.html[Regression Tests]
+* link:https://amas.pages.psi.ch/opal-live-doc/opal-regression-test/unitTests/master/index.html[Unit Tests]
+
 ====
-
-
-
-
-
-
-
-
