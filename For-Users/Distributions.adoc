@@ -1,7 +1,7 @@
 = Distributions (_OPALX_)
 :doctype: book
 
-include::../attributes.adoc[]
+include::attributes.adoc[]
 
 This page documents distribution types for _OPALX_ input. Set the distribution type in your input file and configure the required attributes.
 

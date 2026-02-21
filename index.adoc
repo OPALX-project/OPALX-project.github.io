@@ -166,7 +166,7 @@ Run and/or compiling _OPALX_
 == For Users
 [.feature-opalx]
 ====
-* link:For-Users/Distributions[Distributions] (e.g. TYPE=FROMFILE)
+* link:For-Users/Distributions.html[Distributions] (e.g. `TYPE=FROMFILE`)
 ====
 
 ---
