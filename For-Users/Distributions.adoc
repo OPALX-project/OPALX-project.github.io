@@ -31,7 +31,12 @@ x px y py z pz
 
 *Usage*
 
-Set the distribution type to `FROMFILE` and set the attribute `FNAME` to the path of the ASCII file (relative to the input file or absolute).
+Set the distribution type to `FROMFILE` and set the attribute `FNAME` to the path of the ASCII file (relative to the input file or absolute). E.g.:
+----
+Dist1: DISTRIBUTION, TYPE=FROMFILE, 
+    FNAME = "inputdistr.dat";
+----
+Make sure that the number of particles in the input distribution matches the number of expected particles in the `BEAM` element, otherwise you will get a warning.
 
 === Getting a correctly formatted file
 
