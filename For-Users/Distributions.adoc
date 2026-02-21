@@ -2,13 +2,16 @@
 :doctype: book
 
 include::attributes.adoc[]
+include::stylesheets/Toggle[]
 
-This page documents distribution types for _OPALX_ input. Set the distribution type in your input file and configure the required attributes.
+This page documents distribution types for _OPAL(X)_ input. Set the distribution type in your input file and configure the required attributes.
 
 [[_TOC_]]
 
 == FROMFILE distribution
 
+[.feature-opalx]
+====
 The *FROMFILE* distribution loads the initial particle phase space from a plain ASCII file.
 This is useful when importing particles from another code or from a previous _OPAL_/_OPALX_ run (e.g. after converting an HDF5 phase-space dump to ASCII).
 
@@ -97,3 +100,9 @@ if __name__ == "__main__":
 ----
 
 *Usage:* `python h5_to_fromfile_ascii.py <file.h5> [output.txt]`. If `output.txt` is omitted, the output is written to `<basename>_fromfile.txt`.
+====
+
+[.feature-opal]
+====
+TODO. Consider looking at the old manual for that, but it should be the same and if not quite similar.
+====
