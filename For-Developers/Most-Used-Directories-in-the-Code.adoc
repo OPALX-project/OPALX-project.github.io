@@ -1,21 +1,25 @@
 == How to add an Element
 Lets assume you need to add a new element (Interaction Point -- IC) to OPALX. 
 
-1. A good start is adding the documentation first i.e. https://opalx-project.github.io/Manual/
+* A good start is adding the documentation first i.e. https://opalx-project.github.io/Manual/
 
-2. Make a Issue (https://github.com/OPALX-project/OPALX/issues/271) and a Pull request 
+* Make an Issue (https://github.com/OPALX-project/OPALX/issues/271) and a Pull request 
 
-3. ‎src/AbsBeamline: CMakeLists.txt, BeamlineVisitor.{h,cpp}, **Ip**.{h,cpp}, ElementBase.{h,cpp}, SpecificElementVisitor.h‎
+Within 6 steps a new element is added to OPALX. Six new files are created **Ip**.{h,cpp}, **IpRep**.{h,cpp}
+and **OpalIp**.{h,cpp}. A good practice is to search for an element with similar attributes, for the case a 
+*Drift* will do the trick.
 
-4. src/Alogorithms: DefaultVisitor.{h,cpp}, ParallelTracker.{h,cpp}, IndexMap.cpp
+1. ‎src/AbsBeamline: CMakeLists.txt, BeamlineVisitor.{h,cpp}, **Ip**.{h,cpp}, ElementBase.{h,cpp}, SpecificElementVisitor.h‎
 
-5. src/BasciActions: Option.cpp
+2. src/Alogorithms: DefaultVisitor.{h,cpp}, ParallelTracker.{h,cpp}, IndexMap.cpp
 
-6. src/BeamlineCore: CMakeLists.txt, IpRep.{h,cpp}
+3. src/BasciActions: Option.cpp
 
-7. src/Elements: CMakeLists.txt, **OpalIp**.{h,cpp}
+4. src/BeamlineCore: CMakeLists.txt, **IpRep**.{h,cpp}
 
-8. src/OpalConfigure: Configure.cpp
+5. src/Elements: CMakeLists.txt, **OpalIp**.{h,cpp}
+
+6. src/OpalConfigure: Configure.cpp
 
 
 
