@@ -1,3 +1,26 @@
+== How to add an Element
+Lets assume you need to add a new element (Interaction Point -- IC) to OPALX. 
+
+1. A good start is adding the documentation first i.e. https://opalx-project.github.io/Manual/
+
+2. Make a Issue (https://github.com/OPALX-project/OPALX/issues/271) and a Pull request 
+
+3. ‎src/AbsBeamline: CMakeLists.txt, BeamlineVisitor.{h,cpp}, **Ip**.{h,cpp}, ElementBase.{h,cpp}, SpecificElementVisitor.h‎
+
+4. src/Alogorithms: DefaultVisitor.{h,cpp}, ParallelTracker.{h,cpp}, IndexMap.cpp
+
+5. src/BasciActions: Option.cpp
+
+6. src/BeamlineCore: CMakeLists.txt, IpRep.{h,cpp}
+
+7. src/Elements: CMakeLists.txt, **OpalIp**.{h,cpp}
+
+8. src/OpalConfigure: Configure.cpp
+
+
+
+== Most Used Directories
+
 * `src/Algorithms` Opal-cycl tracker, Opal-T tracker
 * `src/Distribution` particle distribution
 * `src/Elements` parser part for the elements
