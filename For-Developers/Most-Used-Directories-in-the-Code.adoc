@@ -6,7 +6,7 @@ Lets assume you need to add a new element (Interaction Point -- IC) to OPALX.
 * Make an Issue (https://github.com/OPALX-project/OPALX/issues/271) and a Pull request 
 
 Within 5 steps a new element is added to OPALX. Six new files are created **Ip**.{h,cpp}, **IpRep**.{h,cpp}
-and **OpalIp**.{h,cpp}. A good practice is to search for an element with similar attributes, for the case a 
+and **OpalIp**.{h,cpp}. A good practice is to search for an element with similar attributes, for this case a 
 *Drift* will do the trick.
 
 1. ‎src/AbsBeamline: CMakeLists.txt, BeamlineVisitor.h, **Ip**.{h,cpp}, ElementBase.{h,cpp}, SpecificElementVisitor.h‎
@@ -19,11 +19,9 @@ and **OpalIp**.{h,cpp}. A good practice is to search for an element with similar
 
 5. src/OpalConfigure: Configure.cpp
 
-
-
 == Most Used Directories
 
-* `src/Algorithms` Opal-cycl tracker, Opal-T tracker
+* `src/Algorithms` ParallelTracker
 * `src/Distribution` particle distribution
 * `src/Elements` parser part for the elements
 * `src/OpalParser` parser
