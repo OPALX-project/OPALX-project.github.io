@@ -253,14 +253,6 @@ This helps map Kokkos bounds check backtraces to source locations.
    export ROCM_DEBUG_AGENT_OPTIONS="--all --save-code-objects"
    srun -n 1 ./your_exe ...
    ```
-
-### Kokkos side
-
-1. Add labels to every important kernel.
-2. Add `Kokkos::fence()` after suspicious launches.
-3. Rebuild with Kokkos debug and bounds checking.
-4. Audit all `View` extents and loop bounds.
-5. Audit mirrors, `subview`s, and any reallocation or resize.
 6. Narrow the problem to a single kernel with fences and labels.
 7. Treat “bug disappears under debug agent” as evidence of a timing sensitive bug, not a fix.
 
