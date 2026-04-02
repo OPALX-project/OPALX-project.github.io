@@ -266,25 +266,3 @@ This helps map Kokkos bounds check backtraces to source locations.
 
 ---
 
-## Main conclusion
-
-The overall picture is:
-
-- The original GPU memory fault was real.
-- Post mortem merged cores often only show the host side abort unless GPU wavefront threads are inspected.
-- ROCr debugging tools can perturb execution enough that a bug disappears.
-- In a Kokkos code base, the most productive next steps are:
-  - enable Kokkos debug bounds checks
-  - add kernel labels
-  - add fences after suspicious kernels
-  - inspect mirror and `View` indexing carefully
-
-The later Kokkos bounds check error strongly suggests that at least one concrete issue is a **one past the end access** on a mirror view.
-
----
-
-## Confidence
-
-- High confidence on the interpretation of the Kokkos bounds error.
-- High confidence on the merged core and ROCgdb workflow.
-- Moderate confidence on the exact original root cause of the GPU fault, because the “debug agent makes it disappear” behavior is consistent with several classes of bugs.
