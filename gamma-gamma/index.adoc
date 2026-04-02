@@ -1,0 +1,18 @@
+= Gamma-Gamma Physics Notes for OPALX
+:toc:
+:toclevels: 3
+:sectnums:
+include::attributes.adoc[]
+include::stylesheets/Toggle[]
+
+This note collects the minimal physics model and benchmarks used while adding
+laser and photon functionality to _OPALX_.
+
+The current document starts with the simplest linear inverse-Compton benchmark:
+an electron beam hit by a laser pulse under a crossing angle of 90 degrees.
+This is the first deterministic unit-test baseline used in the source tree.
+
+
+
+* link:linear-compton-benchmark.html[Linear Compton Benchmarks]
+

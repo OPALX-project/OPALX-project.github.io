@@ -1,0 +1,124 @@
+== Linear Compton Benchmark
+
+=== Scope
+
+We consider a single ultra-relativistic electron with total energy stem:[E_e]
+and rest mass stem:[m_e]. The electron moves along stem:[+\hat z].
+
+The laser is represented by a single photon with wavelength stem:[\lambda_L]
+and propagates along stem:[+\hat x]. This corresponds to a crossing angle of
+stem:[90^\circ] between the beam and the laser.
+
+The benchmark quantity is the energy of the scattered photon emitted in the
+forward electron direction stem:[+\hat z].
+
+=== Units
+
+The present benchmark follows the conventions already used in the OPALX source:
+
+- electron and photon energies are expressed in `GeV`
+- wavelength is expressed in `m`
+- the speed of light stem:[c] and the reduced Planck constant stem:[\hbar] are
+  taken from `Physics.h`
+
+=== Laser Photon Energy
+
+For a laser wavelength stem:[\lambda_L], the photon energy is
+
+[stem]
+++++
+\omega_L = \frac{2 \pi \hbar c}{\lambda_L}.
+++++
+
+This is the same expression used in the current `Laser` helper in OPALX.
+
+=== Exact 90 Degree Kinematics
+
+The incoming electron momentum magnitude is
+
+[stem]
+++++
+p_e = \sqrt{E_e^2 - m_e^2}.
+++++
+
+For the 90 degree crossing geometry, the linear Compton invariant used by the
+first OPALX helper reduces to
+
+[stem]
+++++
+x = \frac{2 E_e \omega_L}{m_e^2}.
+++++
+
+For a photon emitted in the forward electron direction, exact energy-momentum
+conservation gives
+
+[stem]
+++++
+\omega_\gamma' =
+\frac{E_e \, \omega_L}
+     {E_e - p_e + \omega_L}.
+++++
+
+For relativistic electrons the term stem:[E_e - p_e] is numerically small, so
+the equivalent but more stable form is preferred in code and tests:
+
+[stem]
+++++
+\omega_\gamma' =
+\frac{E_e \, \omega_L}
+     {\omega_L + \frac{m_e^2}{E_e + p_e}}.
+++++
+
+=== Relation to CAIN
+
+CAIN evaluates the linear Compton kinematics by boosting the laser photon into
+the electron rest frame, applying the Compton recoil there, and boosting the
+scattered photon back to the laboratory frame.
+
+In the CAIN source this appears in the linear Compton generator `LNCPGN`, where
+the incoming laser photon energy in the electron rest frame is
+
+[stem]
+++++
+\omega_1 = \gamma \, \omega_L \, (1 - \beta \cos \alpha),
+++++
+
+with crossing-angle cosine stem:[\cos \alpha].
+
+For the present benchmark stem:[\cos \alpha = 0], so
+
+[stem]
+++++
+\omega_1 = \gamma \, \omega_L.
+++++
+
+The OPALX helper currently reproduces this linear, fixed-geometry limit and the
+unit test checks it against the independent exact laboratory-frame formula
+above.
+
+=== Current OPALX Status
+
+The current implementation is intentionally narrow:
+
+- the `LASER` element stores the laser wavelength and direction
+- a helper computes the laser photon energy and the simplest linear Compton
+  benchmark quantities
+- a unit test verifies the exact 90 degree forward-scattering result
+
+What is not included yet:
+
+- finite pulse overlap
+- luminosity integration
+- photon bunch population
+- differential spectra beyond the single forward benchmark
+- nonlinear Compton effects
+- Breit-Wheeler pair creation
+
+=== Next Steps
+
+The next natural benchmark is a differential linear Compton spectrum for a
+fixed geometry, either
+
+- against an analytic kernel in the unpolarized limit, or
+- against a CAIN reference case with fixed beam energy, laser wavelength, and
+  crossing angle.
