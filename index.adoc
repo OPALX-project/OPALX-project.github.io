@@ -184,6 +184,7 @@ See also link:postprocessing[Post Processing].
 [.feature-opalx]
 ====
 * link:For-Developers/CodingStyle.html[Coding Style]
+* link:For-Developers/amd-lumi-debug.html[AMD (Lumi) Debug Guide]
 * link:For-Developers/File-Format-for-stat-Storage.html[File Format Statistical Output]
 * link:For-Developers/Most-Used-Directories-in-the-Code.html[Guid to Program Structure]
 * link:For-Developers/OPAL-Development-Workflow.html[Development Workflow]
