@@ -2,7 +2,7 @@
 
 ## Scope
 
-This note summarizes the discussion around debugging GPU memory faults on **LUMI** with **AMD ROCm**, especially when using **Kokkos** rather than writing HIP directly.
+This note summarizes is about debugging on **LUMI** with **AMD ROCm**, especially when using **Kokkos** rather than writing HIP directly.
 
 ---
 
