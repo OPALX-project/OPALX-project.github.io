@@ -1,4 +1,4 @@
-	# AMD LUMI Debug Notes
+# AMD LUMI Debug Notes
 
 ## Scope
 
