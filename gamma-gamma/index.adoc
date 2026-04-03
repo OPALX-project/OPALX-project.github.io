@@ -9,4 +9,5 @@ This note collects the physics model and benchmarks of the
 laser and photon functionality in _OPALX_.
 
 * link:linear-compton-benchmark.html[Linear Compton Benchmark]
+* link:BreitWheeler.html[Breit-Wheeler Theory from CAIN]
 

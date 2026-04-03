@@ -1,0 +1,265 @@
+= Breit-Wheeler Theory
+:toc:
+:toclevels: 3
+:sectnums:
+:stem: latexmath
+:eqnums:
+:docinfo: shared
+
+== Scope
+
+This note describes the minimum Breit-Wheeler physics model needed for the next
+_OPALX_ benchmark. We follow closely the CAIN ansatz i.e. manual and source code.
+
+The goal is not yet a full tracking implementation. The immediate target is a
+host-side Monte Carlo and deterministic benchmark path that reproduces CAIN for
+the process
+
+[latexmath]
+++++
+\gamma + \gamma \rightarrow e^- + e^+ .
+++++
+
+The first benchmark will follow the same strategy as the linear ICS work:
+
+- start from a fixed-geometry, unpolarized, linear process;
+- implement the core event kernel in;
+- validate deterministic and sampled spectra against CAIN;
+- delay bunch population and tracker integration until the kernel is trusted.
+
+
+== CAIN Structure
+
+CAIN separates Breit-Wheeler physics into three layers.
+
+.Input and model selection
+- `LASERQED BREITWHEELER` is parsed in
+  https://github.com/cfruhling2/CAIN/blob/main/src/rdlqed.f[`src/rdlqed.f`].
+- `NPH = 0` selects the linear Breit-Wheeler model.
+- `NPH >= 1` selects the nonlinear model.
+
+.Runtime driver
+- The laser-particle loop is handled by
+  https://github.com/cfruhling2/CAIN/blob/main/src/lsrqedbw.f[`src/lsrqedbw.f`].
+- Local laser geometry and power density are obtained from `LSRGEO`.
+- The linear event generator is `LNBWGN`.
+- The nonlinear event generator is `NLBWGN`.
+- If an event happens, the produced electron and positron are inserted by
+  `LBWEVENT`.
+
+.Event generation
+- Linear Breit-Wheeler:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lnbwgn.f[`src/lnbwgn.f`]
+- Nonlinear Breit-Wheeler:
+  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwgn.f[`src/nlbwgn.f`]
+- Weighted particle insertion:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lbwevent.f[`src/lbwevent.f`]
+
+For the first _OPALX_ benchmark only the linear event kernel is needed.
+
+
+== Linear Breit-Wheeler Kinematics
+
+CAIN's linear generator `LNBWGN` uses two incoming photons:
+
+- a laser photon with energy latexmath:[W_1] and direction latexmath:[\mathbf{n}_1],
+- a high-energy photon with energy latexmath:[W_2] and direction latexmath:[\mathbf{n}_2].
+
+Note: in a collider setup the laser photon is also a high-energy photon.
+
+
+The opening-angle dependence enters through
+
+[latexmath]
+++++
+Z_0 = \mathbf{n}_1 \cdot \mathbf{n}_2 .
+++++
+
+The two-photon invariant used in CAIN is
+
+[latexmath]
+++++
+S_0 = 2 W_1 W_2 (1 - Z_0) .
+\label{eq:bw-cain-s0}
+++++
+
+Pair creation is kinematically allowed only if
+
+[latexmath]
+++++
+S_0 \ge 4 m_e^2 .
+\label{eq:bw-threshold}
+++++
+
+This threshold appears directly in `LNBWGN`:
+
+[source,fortran]
+----
+S0=2*W1*W2*(1-Z0)
+IF (4*M**2.GT.S0) GOTO 900
+----
+
+In a head-on geometry, latexmath:[Z_0 = -1], so the threshold reduces to
+
+[latexmath]
+++++
+W_1 W_2 \ge m_e^2 .
+\label{eq:bw-headon-threshold}
+++++
+
+This is the cleanest geometry for the first benchmark.
+
+
+== Linear Event Variables in CAIN
+
+CAIN constructs the center-of-momentum boost velocity from the two incoming
+photon momenta and then samples the final-state scattering variables in that
+frame.
+
+The code introduces a transformed photon energy latexmath:[W] and several
+auxiliary variables:
+
+[latexmath]
+++++
+W = \gamma W_1 V_R,
+\qquad
+X = \frac{\sqrt{W^2 - m_e^2}}{W},
+\qquad
+X_1 = \frac{m_e^2}{W^2 + W\sqrt{W^2 - m_e^2}} .
+\label{eq:bw-cain-aux}
+++++
+
+The random variable latexmath:[Y] is used to generate the CM scattering angle
+through
+
+[latexmath]
+++++
+\cos\theta = 1 - 2Y .
+\label{eq:bw-cain-costh}
+++++
+
+The resulting Mandelstam-like combinations in the CAIN implementation are
+
+[latexmath]
+++++
+s_m = \frac{2m_e^2}{(1+X)X_1}\left[X(1-2Y)-1\right],
+\qquad
+u_m = -\frac{2m_e^2}{(1+X)X_1}\left[X(1-2Y)+1\right] .
+\label{eq:bw-cain-sm-um}
+++++
+
+CAIN then builds the angular kernel from
+
+[latexmath]
+++++
+\cos\theta_1 = 1 + 2m_e^2\left(\frac{1}{u_m} + \frac{1}{s_m}\right)
+\label{eq:bw-cain-costh1}
+++++
+
+and
+
+[latexmath]
+++++
+D = -\left(\frac{s_m}{u_m} + \frac{u_m}{s_m}\right) .
+\label{eq:bw-cain-d}
+++++
+
+For unpolarized incoming photons, the acceptance weight reduces to the
+unpolarized part of the full CAIN expression.
+
+
+== Polarization Handling in CAIN
+
+`LNBWGN` supports Stokes vectors for both incoming photons and, optionally,
+final-state polarization vectors for the produced electron and positron.
+
+For the first _OPALX_ benchmark, this should be ignored deliberately:
+
+- use unpolarized incoming photons;
+- ignore electron and positron polarization;
+- validate only energy and angle spectra.
+
+This matches the strategy used earlier for linear Compton and keeps the first
+comparison sharply defined.
+
+
+== Nonlinear Breit-Wheeler in CAIN
+
+The nonlinear process is configured by
+
+[source]
+----
+LASERQED BREITWHEELER, NPH = nph, ...
+----
+
+with `NPH >= 1`.
+
+In that case CAIN uses:
+
+- initialization tables from
+  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwst.f[`src/nlbwst.f`]
+- event generation in
+  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwgn.f[`src/nlbwgn.f`]
+
+The main nonlinear variables in CAIN are:
+
+- latexmath:[\xi^2], derived from laser wavelength and power density;
+- latexmath:[\eta], the photon-laser invariant;
+- latexmath:[Q = \eta / (1+\xi^2)].
+
+This is important for the long-term roadmap, but it is not the right first
+benchmark target for _OPALX_. The first implementation should stay with
+`NPH = 0`.
+
+
+== What OPALX Should Match First
+
+The first _OPALX_ Breit-Wheeler benchmark should match the following CAIN
+choices:
+
+- linear process: `LASERQED BREITWHEELER, NPH=0`
+- unpolarized photons
+- fixed geometry
+- weak field: latexmath:[\xi < 0.3]
+- no bunch/tracker integration yet
+
+The natural observables are:
+
+- electron energy spectrum
+- positron energy spectrum
+- electron angle spectrum
+- positron angle spectrum
+- later, the joint latexmath:[E] vs. latexmath:[\theta] distributions
+
+
+== Planned OPALX Validation Path
+
+.Deterministic physics helper
+- add `Physics::LinearBreitWheeler`
+- implement threshold and invariant helpers
+- implement deterministic spectra from the linear kernel
+
+.Host-only sampled event generator
+- fixed seed through `Options::seed`
+- return one sampled electron-positron pair per accepted event
+- no tracker, no photon bunch population, no GPU path yet
+
+.CAIN comparison
+- generate a CAIN reference deck in the same style as the linear-Compton notes
+- compare OPALX and CAIN histograms first in 1D, later in 2D
+
+
+== References
+
+- CAIN source parser:
+  https://github.com/cfruhling2/CAIN/blob/main/src/rdlqed.f[`src/rdlqed.f`]
+- CAIN Breit-Wheeler runtime loop:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lsrqedbw.f[`src/lsrqedbw.f`]
+- CAIN linear Breit-Wheeler generator:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lnbwgn.f[`src/lnbwgn.f`]
+- CAIN nonlinear Breit-Wheeler generator:
+  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwgn.f[`src/nlbwgn.f`]
+- CAIN weighted event insertion:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lbwevent.f[`src/lbwevent.f`]
+- CAIN manual:
+  https://manualzilla.com/doc/5656761/user-s-manual-of-cain[User's Manual of CAIN]
