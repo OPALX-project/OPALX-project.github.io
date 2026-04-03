@@ -256,8 +256,20 @@ The stored histogram and plot references in this directory are
 - `reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv`
 - `reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv`
 - `reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv`
+- `reference-data/cain-linear-compton-90deg-xi029-finite-beam-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-finite-beam-histogram.csv`
+- `reference-data/cain-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv`
+- `reference-data/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv`
+- `reference-data/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv`
 - `reference-data/linear-compton-90deg-xi029-comparison.png`
 - `reference-data/linear-compton-90deg-xi029-theta-comparison.png`
+- `reference-data/linear-compton-90deg-xi029-finite-beam-comparison.png`
+- `reference-data/linear-compton-90deg-xi029-finite-beam-theta-comparison.png`
+- `reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-comparison.png`
+- `reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-theta-comparison.png`
 
 The energy histograms use columns
 
@@ -271,7 +283,7 @@ The angular histograms use columns
 - `density_per_rad`
 - `count`
 
-For the current stored references, the CAIN-to-OPALX agreement is:
+For the current stored single-electron references, the CAIN-to-OPALX agreement is:
 
 - energy spectrum, deterministic: mean difference about `0.5%`, L1 distance about `0.0767`
 - energy spectrum, sampled: mean difference about `0.45%`, L1 distance about `0.0763`
@@ -299,6 +311,66 @@ reconstructed from the photon momentum components as
 
 .Generated weak-field CAIN vs OPALX deterministic and sampled lab-angle overlay
 image::reference-data/linear-compton-90deg-xi029-theta-comparison.png[width=85%]
+
+==== Finite-Beam Benchmark
+
+A second benchmark layer folds the same weak-field linear-Compton model over a
+finite-emittance electron beam sampled in OPALX with `MultiVariateGaussian`.
+The baseline finite-beam parameters are
+
+- `sigma_x = sigma_y = 1 mm`
+- `sigma_z = 0`
+- zero relative energy spread
+- `sigma_{x'} = sigma_{y'} = 1 mrad`
+- geometric emittance about `1e-6 m rad`
+
+The OPALX-side finite-beam benchmark is still a sampled host-side benchmark and
+not a tracked `LASER` interaction. It uses the existing `LinearComptonSpectrumBenchmark`
+executable in finite-beam mode.
+
+For CAIN, a direct comparison with the original tightly focused laser gives too
+few photon events because the `1 mm` beam is much wider than the benchmark laser
+spot. The stored finite-beam CAIN reference therefore uses
+`cain-linear-compton-90deg-finite-beam.i`, which widens the laser footprint while
+keeping the weak-field `xi` fixed. This preserves enough overlap statistics for
+shape comparison of the normalized photon spectra.
+
+For the stored baseline finite-beam references, the CAIN-to-OPALX agreement is:
+
+- finite-beam energy spectrum: mean difference about `0.58%`, L1 distance about `0.0316`
+- finite-beam lab-angle spectrum: mean difference about `0.21%`, L1 distance about `0.0142`
+
+.Generated weak-field finite-beam CAIN vs OPALX energy-spectrum overlay
+image::reference-data/linear-compton-90deg-xi029-finite-beam-comparison.png[width=85%]
+
+.Generated weak-field finite-beam CAIN vs OPALX lab-angle overlay
+image::reference-data/linear-compton-90deg-xi029-finite-beam-theta-comparison.png[width=85%]
+
+==== Finite-Beam Benchmark With Energy Spread
+
+The next benchmark extension keeps the same finite-emittance beam and adds a
+Gaussian relative energy spread
+
+- `sigma_E / E = 1.0e-3`
+
+On the OPALX side this enters the benchmark as a Gaussian spread in total
+particle energy. In the current benchmark implementation this is mapped to the
+longitudinal momentum spread used by `MultiVariateGaussian`, while the laser
+geometry and the weak-field Compton kernel stay unchanged.
+
+The matching CAIN reference is stored in
+`cain-linear-compton-90deg-finite-beam-energy-spread.i`.
+
+For the stored finite-beam energy-spread references, the CAIN-to-OPALX agreement is:
+
+- finite-beam energy-spread energy spectrum: mean difference about `0.57%`, L1 distance about `0.0305`
+- finite-beam energy-spread lab-angle spectrum: mean difference about `0.17%`, L1 distance about `0.0157`
+
+.Generated weak-field finite-beam energy-spread CAIN vs OPALX energy-spectrum overlay
+image::reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-comparison.png[width=85%]
+
+.Generated weak-field finite-beam energy-spread CAIN vs OPALX lab-angle overlay
+image::reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-theta-comparison.png[width=85%]
 
 === Build and Run CAIN
 
@@ -329,8 +401,10 @@ cmake --build build --target cain-download
 cmake --build build --target cain-compile
 ----
 
-The file `cain-linear-compton-90deg.i` is the weak-field reference deck used for
-the CAIN comparisons in this note. The deck writes
+The file `cain-linear-compton-90deg.i` is the single-electron weak-field reference
+deck used for the first CAIN comparisons in this note. The file
+`cain-linear-compton-90deg-finite-beam.i` is the finite-beam variant with a widened
+benchmark laser footprint for usable overlap statistics. The decks write
 
 [source]
 ----
@@ -357,6 +431,14 @@ Each particle record therefore contains
 with energies and momenta stored in `eV`.
 
 The stored energy and angle references can be regenerated with
+
+[source,sh]
+----
+cat cain-linear-compton-90deg.i | /tmp/CAIN-build/cain
+cat cain-linear-compton-90deg-finite-beam.i | /tmp/CAIN-build/cain
+----
+
+For the single-electron benchmark use
 
 [source,sh]
 ----
