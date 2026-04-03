@@ -34,21 +34,7 @@ jobs:
 
       - name: Build AsciiDoc
         run: |
-          mkdir -p build/uploads
-          mkdir -p build/logos
-          find . -name "*.adoc" -print0 | while IFS= read -r -d '' file; 
-          do
-            out="build/${file%.adoc}.html"
-            mkdir -p "$(dirname "$out")"
-            asciidoctor \
-            -a stylesheet="$PWD/stylesheets/readthedocs.css" \
-            -d book \
-            --base-dir "$PWD" \
-            -o "$out" \
-            "$file"
-          done
-          cp -rv uploads/* build/uploads
-          cp -rv logos/* build/logos
+          bash ./build-local.sh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
