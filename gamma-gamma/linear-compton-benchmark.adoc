@@ -1,16 +1,19 @@
+:stem: latexmath
+:docinfo: shared
+
 == Linear Compton Benchmark
 
 === Scope
 
-We consider a single ultra-relativistic electron with total energy stem:[E_e]
-and rest mass stem:[m_e]. The electron moves along stem:[+\hat z].
+We consider a single ultra-relativistic electron with total energy latexmath:[E_e]
+and rest mass latexmath:[m_e]. The electron moves along latexmath:[+\hat z].
 
-The laser is represented by a single photon with wavelength stem:[\lambda_L]
-and propagates along stem:[+\hat x]. This corresponds to a crossing angle of
-stem:[90^\circ] between the beam and the laser.
+The laser is represented by a single photon with wavelength latexmath:[\lambda_L]
+and propagates along latexmath:[+\hat x]. This corresponds to a crossing angle of
+latexmath:[90^\circ] between the beam and the laser.
 
 The benchmark quantity is the energy of the scattered photon emitted in the
-forward electron direction stem:[+\hat z].
+forward electron direction latexmath:[+\hat z].
 
 === Units
 
@@ -18,14 +21,14 @@ The present benchmark follows the conventions already used in the OPALX source:
 
 - electron and photon energies are expressed in `GeV`
 - wavelength is expressed in `m`
-- the speed of light stem:[c] and the reduced Planck constant stem:[\hbar] are
+- the speed of light latexmath:[c] and the reduced Planck constant latexmath:[\hbar] are
   taken from `Physics.h`
 
 === Laser Photon Energy
 
-For a laser wavelength stem:[\lambda_L], the photon energy is
+For a laser wavelength latexmath:[\lambda_L], the photon energy is
 
-[stem]
+[latexmath]
 ++++
 \omega_L = \frac{2 \pi \hbar c}{\lambda_L}.
 ++++
@@ -36,7 +39,7 @@ This is the same expression used in the current `Laser` helper in OPALX.
 
 The incoming electron momentum magnitude is
 
-[stem]
+[latexmath]
 ++++
 p_e = \sqrt{E_e^2 - m_e^2}.
 ++++
@@ -44,7 +47,7 @@ p_e = \sqrt{E_e^2 - m_e^2}.
 For the 90 degree crossing geometry, the linear Compton invariant used by the
 first OPALX helper reduces to
 
-[stem]
+[latexmath]
 ++++
 x = \frac{2 E_e \omega_L}{m_e^2}.
 ++++
@@ -52,17 +55,17 @@ x = \frac{2 E_e \omega_L}{m_e^2}.
 For a photon emitted in the forward electron direction, exact energy-momentum
 conservation gives
 
-[stem]
+[latexmath]
 ++++
 \omega_\gamma' =
 \frac{E_e \, \omega_L}
      {E_e - p_e + \omega_L}.
 ++++
 
-For relativistic electrons the term stem:[E_e - p_e] is numerically small, so
+For relativistic electrons the term latexmath:[E_e - p_e] is numerically small, so
 the equivalent but more stable form is preferred in code and tests:
 
-[stem]
+[latexmath]
 ++++
 \omega_\gamma' =
 \frac{E_e \, \omega_L}
@@ -78,16 +81,16 @@ scattered photon back to the laboratory frame.
 In the CAIN source this appears in the linear Compton generator `LNCPGN`, where
 the incoming laser photon energy in the electron rest frame is
 
-[stem]
+[latexmath]
 ++++
 \omega_1 = \gamma \, \omega_L \, (1 - \beta \cos \alpha),
 ++++
 
-with crossing-angle cosine stem:[\cos \alpha].
+with crossing-angle cosine latexmath:[\cos \alpha].
 
-For the present benchmark stem:[\cos \alpha = 0], so
+For the present benchmark latexmath:[\cos \alpha = 0], so
 
-[stem]
+[latexmath]
 ++++
 \omega_1 = \gamma \, \omega_L.
 ++++
@@ -98,27 +101,290 @@ above.
 
 === Current OPALX Status
 
-The current implementation is intentionally narrow:
+The current implementation is intentionally narrow but now includes a dedicated
+physics helper in `src/Physics/LinearCompton.*`:
 
 - the `LASER` element stores the laser wavelength and direction
-- a helper computes the laser photon energy and the simplest linear Compton
-  benchmark quantities
-- a unit test verifies the exact 90 degree forward-scattering result
+- `Physics::LinearCompton` computes the unpolarized single-electron linear
+  Compton benchmark quantities
+- the `LASER` benchmark methods delegate to `Physics::LinearCompton`
+- unit tests verify the Thomson limit, exact recoil endpoints, spectrum
+  normalization, the exact 90 degree forward-scattering benchmark, and a
+  weak-field CAIN spectrum comparison
 
 What is not included yet:
 
 - finite pulse overlap
 - luminosity integration
 - photon bunch population
-- differential spectra beyond the single forward benchmark
+- polarization dependence
 - nonlinear Compton effects
 - Breit-Wheeler pair creation
 
 === Next Steps
 
-The next natural benchmark is a differential linear Compton spectrum for a
-fixed geometry, either
+The next useful validation and implementation steps are
 
-- against an analytic kernel in the unpolarized limit, or
-- against a CAIN reference case with fixed beam energy, laser wavelength, and
-  crossing angle.
+- add polarized linear Compton support
+- promote the single-electron spectrum helper to photon sampling for future
+  photon-bunch population
+- separate the weak-field benchmark from future nonlinear laser cases
+
+=== Building CAIN
+
+The public CAIN source tree used here is
+`https://github.com/cfruhling2/CAIN`.
+
+For the present macOS / `gfortran` build, three small portability fixes were
+needed in the CAIN source before compilation:
+
+- `src/evufnchar.f`: change `WRITE(TEXT,'(I)')` to `WRITE(TEXT,'(I0)')`
+- `src/transport.f`: change `WRITE(MAGNAM,'(I)')` to `WRITE(MAGNAM,'(I0)')`
+- `src/lsrrdfl.f`: replace the old BOZ character initialization of end-of-line
+  markers with
++
+[source,fortran]
+----
+CHARACTER*1 EOR,EOF
+PARAMETER (EOR=CHAR(10), EOF=CHAR(0))
+----
+
+After those edits, CAIN builds locally with
+
+[source,sh]
+----
+mkdir -p /tmp/CAIN-build
+cd /tmp/CAIN-build
+
+gfortran -c -O2 -std=legacy -ffixed-line-length-none \
+  -fallow-argument-mismatch \
+  -I/tmp/CAIN-src/src/include -J/tmp/CAIN-build \
+  /tmp/CAIN-src/src/module/flchtyp.f \
+  /tmp/CAIN-src/src/module/arraymod.f \
+  /tmp/CAIN-src/src/module/bbcom.f \
+  /tmp/CAIN-src/src/module/bbpkcm.f \
+  /tmp/CAIN-src/src/module/beamcm.f \
+  /tmp/CAIN-src/src/module/lasrdata.f \
+  /tmp/CAIN-src/src/module/lumcom.f \
+  /tmp/CAIN-src/src/module/nlcplptab.f \
+  /tmp/CAIN-src/src/module/beamln.f \
+  /tmp/CAIN-src/src/module/evlmod.f \
+  /tmp/CAIN-src/src/module/matchmod.f \
+  /tmp/CAIN-src/src/module/readmod.f
+
+gfortran -c -O2 -std=legacy -ffixed-line-length-none \
+  -fallow-argument-mismatch \
+  -I/tmp/CAIN-src/src/include -I/tmp/CAIN-build -J/tmp/CAIN-build \
+  /tmp/CAIN-src/src/*.f /tmp/CAIN-src/src/unix/*.f
+
+gfortran -O2 -std=legacy -ffixed-line-length-none \
+  -fallow-argument-mismatch \
+  -I/tmp/CAIN-src/src/include -I/tmp/CAIN-build -J/tmp/CAIN-build \
+  *.o -o cain
+----
+
+=== CAIN Weak-Field Reference Deck
+
+The file `cain-linear-compton-90deg.i` is now the weak-field reference deck
+used for the first OPALX spectrum comparison.
+
+Its benchmark parameters are
+
+- electron total energy: `1 GeV`
+- laser wavelength: `1030 nm`
+- crossing angle: latexmath:[90^\circ]
+- unpolarized laser: `STOKES=(0,0,0)`
+- number of electron macro-particles: `900000`
+- pulse energy: `0.029 J`
+- CAIN weak-field parameter: latexmath:[\xi = 0.2955 < 0.3]
+- resulting CAIN photon yield: about `1.04e4` photons
+
+The deck writes
+
+[source]
+----
+WRITE BEAM, KIND=photon, FILE='cain-linear-compton-90deg-xi029.dat';
+----
+
+The stored weak-field histogram references in this directory are
+
+- `reference-data/cain-linear-compton-90deg-xi029-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-histogram.csv`
+
+These are normalized density histograms with columns
+
+- `center_GeV`
+- `density_per_GeV`
+- `count`
+
+They can be regenerated with
+
+[source,sh]
+----
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
+  --emin 0.0 --emax 0.01 --bins 80 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029.png
+
+/tmp/opalx-laser-build-renamed/unit_tests/Physics/LinearComptonSpectrumBenchmark \
+  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv \
+  --output /tmp/linear-compton-90deg-xi029-comparison.png
+----
+
+=== CAIN Beam File Format
+
+The parser in `plot_cain_beam.py` implements the standard CAIN `WRITE BEAM`
+record layout documented in the CAIN manual:
+
+[source]
+----
+WRITE(*,'(I2,I6,1X,A4,1P12D20.12)')
+     KIND,GEN,NAME,WGT,(TXYS(I),I=0,3),(EP(I),I=0,3),(SPIN(I),I=1,3)
+----
+
+Each particle record therefore contains
+
+- `KIND`, `GEN`, `NAME`
+- `WGT`
+- `T`, `X`, `Y`, `S`
+- `E`, `PX`, `PY`, `PS`
+- `SPIN1`, `SPIN2`, `SPIN3`
+
+with energies and momenta stored in `eV`.
+
+
+=== Unpolarized Differential Kernel
+
+The exact linear Compton spectrum is most compactly written in the electron rest
+frame. Let latexmath:[\omega_1] be the incoming photon energy in that frame and let
+latexmath:[\Theta^*] be the scattering angle between the incoming and outgoing
+photon directions.
+
+The scattered photon energy is
+
+[latexmath]
+++++
+\omega_2(\Theta^*) =
+\frac{\omega_1}
+     {1 + (\omega_1/m_e)(1 - \cos \Theta^*)}.
+++++
+
+The unpolarized Klein-Nishina differential cross section is
+
+[latexmath]
+++++
+\frac{d\sigma}{d\Omega^*}
+= \frac{r_e^2}{2}
+  \left(\frac{\omega_2}{\omega_1}\right)^2
+  \left(
+    \frac{\omega_1}{\omega_2}
+    +
+    \frac{\omega_2}{\omega_1}
+    - \sin^2 \Theta^*
+  \right).
+++++
+
+Integrating over the azimuthal angle and changing variables from
+latexmath:[\cos \Theta^*] to latexmath:[\omega_2] gives the one-dimensional
+energy spectrum in the electron rest frame,
+
+[latexmath]
+++++
+\frac{d\sigma}{d\omega_2}
+= 2\pi \frac{d\sigma}{d\Omega^*} \frac{m_e}{\omega_2^2}.
+++++
+
+Its exact support is
+latexmath:[\omega_2 \in [\omega_1/(1+2\omega_1/m_e),\,\omega_1]].
+
+The exact total Klein-Nishina cross section can be written with
+latexmath:[\kappa = \omega_1/m_e] as
+
+[latexmath]
+++++
+\sigma_{\mathrm{KN}} = 2\pi r_e^2
+\left[
+  \frac{1+\kappa}{\kappa^3}
+  \left(
+    \frac{2\kappa(1+\kappa)}{1+2\kappa} - \ln(1+2\kappa)
+  \right)
+  + \frac{\ln(1+2\kappa)}{2\kappa}
+  - \frac{1+3\kappa}{(1+2\kappa)^2}
+\right].
+++++
+
+For latexmath:[\kappa \ll 1] this approaches the Thomson limit
+
+[latexmath]
+++++
+\sigma_T = \frac{8\pi}{3} r_e^2,
+++++
+
+and the OPALX implementation uses a low-energy expansion around this limit to
+avoid cancellation in the exact closed form.
+
+The current helper and test suite enforce the normalization identity
+
+[latexmath]
+++++
+\int_{\omega_{2,\min}}^{\omega_{2,\max}} \frac{d\sigma}{d\omega_2} \, d\omega_2
+= \sigma_{\mathrm{KN}}.
+++++
+
+=== 90 Degree Crossing in the Electron Rest Frame
+
+For the present benchmark the laboratory crossing angle is latexmath:[90^\circ]. In
+that case the incoming laser photon energy in the electron rest frame is
+
+[latexmath]
+++++
+\omega_1 = \gamma \omega_L,
+++++
+
+because latexmath:[\cos \alpha = 0] in
+
+[latexmath]
+++++
+\omega_1 = \gamma \omega_L (1 - \beta \cos \alpha).
+++++
+
+The incoming laser direction in the electron rest frame is not collinear with
+the electron boost axis. If the outgoing photon is required to be forward in the
+laboratory frame, then its direction in the electron rest frame is along
+latexmath:[+\hat z], while the angle between the incoming and outgoing photons is
+
+[latexmath]
+++++
+\cos \Theta^* = -\beta.
+++++
+
+This gives
+
+[latexmath]
+++++
+\omega_2 =
+\frac{\gamma \omega_L}
+     {1 + (\gamma \omega_L/m_e)(1 + \beta)}.
+++++
+
+Boosting the scattered photon back to the laboratory frame in the forward
+electron direction gives
+
+[latexmath]
+++++
+\omega_\gamma' = \gamma (1 + \beta) \omega_2,
+++++
+
+which is algebraically equivalent to the stable exact laboratory-frame formula
+used in the OPALX unit test,
+
+[latexmath]
+++++
+\omega_\gamma' =
+\frac{E_e \, \omega_L}
+     {\omega_L + \frac{m_e^2}{E_e + p_e}}.
+++++
