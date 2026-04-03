@@ -151,7 +151,7 @@ The current helper and test suite enforce the normalization identity
 = \sigma_{\mathrm{KN}}.
 ++++
 
-==== CAIN Rest-Frame Mapping
+==== Rest-Frame Mapping
 
 CAIN evaluates the linear Compton kinematics by boosting the laser photon into
 the electron rest frame, applying the Compton recoil there, and boosting the
@@ -219,7 +219,7 @@ dedicated physics helper in `src/Physics/LinearCompton.*`:
   and fixed-seed weak-field CAIN energy-spectrum comparisons, and deterministic
   and fixed-seed weak-field CAIN lab-angle comparisons
 
-Code references in the OPALX repository (`laser-element-1`, commit `8f10b4d09`) are
+Code references in the OPALX repository (`laser-element-1`) are
 
 - link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/src/Physics/LinearCompton.h[`src/Physics/LinearCompton.h`]
 - link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/src/Physics/LinearCompton.cpp[`src/Physics/LinearCompton.cpp`]
