@@ -135,53 +135,40 @@ The next useful validation and implementation steps are
 The public CAIN source tree used here is
 `https://github.com/cfruhling2/CAIN`.
 
-For the present macOS / `gfortran` build, three small portability fixes were
-needed in the CAIN source before compilation:
+The directory `cain/` in this note contains a reproducible helper script that
+clones CAIN, applies the small macOS / `gfortran` portability patch set, and
+compiles a local binary.
 
-- `src/evufnchar.f`: change `WRITE(TEXT,'(I)')` to `WRITE(TEXT,'(I0)')`
-- `src/transport.f`: change `WRITE(MAGNAM,'(I)')` to `WRITE(MAGNAM,'(I0)')`
-- `src/lsrrdfl.f`: replace the old BOZ character initialization of end-of-line
-  markers with
-+
-[source,fortran]
-----
-CHARACTER*1 EOR,EOF
-PARAMETER (EOR=CHAR(10), EOF=CHAR(0))
-----
-
-After those edits, CAIN builds locally with
+From `gamma-gamma/cain`, a fresh clone and build is
 
 [source,sh]
 ----
-mkdir -p /tmp/CAIN-build
-cd /tmp/CAIN-build
-
-gfortran -c -O2 -std=legacy -ffixed-line-length-none \
-  -fallow-argument-mismatch \
-  -I/tmp/CAIN-src/src/include -J/tmp/CAIN-build \
-  /tmp/CAIN-src/src/module/flchtyp.f \
-  /tmp/CAIN-src/src/module/arraymod.f \
-  /tmp/CAIN-src/src/module/bbcom.f \
-  /tmp/CAIN-src/src/module/bbpkcm.f \
-  /tmp/CAIN-src/src/module/beamcm.f \
-  /tmp/CAIN-src/src/module/lasrdata.f \
-  /tmp/CAIN-src/src/module/lumcom.f \
-  /tmp/CAIN-src/src/module/nlcplptab.f \
-  /tmp/CAIN-src/src/module/beamln.f \
-  /tmp/CAIN-src/src/module/evlmod.f \
-  /tmp/CAIN-src/src/module/matchmod.f \
-  /tmp/CAIN-src/src/module/readmod.f
-
-gfortran -c -O2 -std=legacy -ffixed-line-length-none \
-  -fallow-argument-mismatch \
-  -I/tmp/CAIN-src/src/include -I/tmp/CAIN-build -J/tmp/CAIN-build \
-  /tmp/CAIN-src/src/*.f /tmp/CAIN-src/src/unix/*.f
-
-gfortran -O2 -std=legacy -ffixed-line-length-none \
-  -fallow-argument-mismatch \
-  -I/tmp/CAIN-src/src/include -I/tmp/CAIN-build -J/tmp/CAIN-build \
-  *.o -o cain
+./build-cain.sh --download
 ----
+
+To recompile an existing local source tree without recloning, use
+
+[source,sh]
+----
+./build-cain.sh --compile
+----
+
+The same workflow is also available through a small CMake wrapper:
+
+[source,sh]
+----
+cmake -S . -B build
+cmake --build build --target cain-download
+cmake --build build --target cain-compile
+----
+
+The script applies the following source-level portability fixes before
+compilation:
+
+- `src/evufnchar.f`: change `WRITE(TEXT,'(I)')` to `WRITE(TEXT,'(I0)')`
+- `src/transport.f`: change `WRITE(MAGNAM,'(I)')` to `WRITE(MAGNAM,'(I0)')`
+- `src/lsrrdfl.f`: replace the old end-of-line marker definition with
+  `PARAMETER (EOR=CHAR(10), EOF=CHAR(0))`
 
 === CAIN Weak-Field Reference Deck
 

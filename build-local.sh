@@ -13,5 +13,11 @@ do
 done
 cp -rv uploads/* build/uploads 2>/dev/null || true
 cp -rv logos/* build/logos 2>/dev/null || true
+find . -type d -name "reference-data" -print0 | while IFS= read -r -d '' dir;
+do
+  target="build/${dir#./}"
+  mkdir -p "$(dirname "$target")"
+  cp -R "$dir" "$(dirname "$target")"
+done
 echo "Build complete. Open build/index.html (or relevant .html) in browser."
 

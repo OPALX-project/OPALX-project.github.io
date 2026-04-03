@@ -39,6 +39,10 @@ The code is managed through the Git distributed version control system. A suite 
 [.feature-opalx]
 ====
 This is the landing for _OPALX_ {OPALX_version} which is still under heavy development.
+
+Useful OPALX-specific notes:
+
+* link:gamma-gamma/index.html[Gamma-Gamma physics notes]
 ====
 
 

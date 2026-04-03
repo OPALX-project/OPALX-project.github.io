@@ -2,3 +2,5 @@
 .DS_Store
 .bundle/
 build/
+CAIN-build
+CAIN-src
