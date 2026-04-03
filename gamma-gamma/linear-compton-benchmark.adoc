@@ -232,8 +232,14 @@ python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
 python3 plot_linear_compton_comparison.py \
   reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
   reference-data/opalx-linear-compton-90deg-xi029-histogram.csv \
-  --output /tmp/linear-compton-90deg-xi029-comparison.png
+  --xi 0.2955 \
+  --cain-sha 54166fda1 \
+  --opalx-sha 4eca92e2b \
+  --output reference-data/linear-compton-90deg-xi029-comparison.png
 ----
+
+.Generated weak-field CAIN vs OPALX spectrum overlay
+image::reference-data/linear-compton-90deg-xi029-comparison.png[width=85%]
 
 === CAIN Beam File Format
 
