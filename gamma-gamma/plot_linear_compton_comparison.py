@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Overlay CAIN and OPALX weak-field linear-Compton spectra."""
+"""Overlay CAIN and OPALX weak-field linear-Compton benchmark histograms."""
 
 from __future__ import annotations
 
@@ -21,13 +21,28 @@ def read_histogram(path: Path):
     return centers, density
 
 
+def labels_for_observable(observable: str):
+    if observable == 'theta':
+        return {
+            'xlabel': r'$\theta_\gamma$ [rad]',
+            'ylabel': r'Normalized density [rad$^{-1}$]',
+            'title': r'Weak-field 90 degree linear-Compton lab-angle spectrum',
+        }
+    return {
+        'xlabel': r'$E_\gamma$ [GeV]',
+        'ylabel': r'Normalized density [GeV$^{-1}$]',
+        'title': r'Weak-field 90 degree linear-Compton spectrum',
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('cain_csv', type=Path)
     parser.add_argument('opalx_csv', type=Path,
-                        help='Deterministic OPALX spectrum CSV')
+                        help='Deterministic OPALX benchmark CSV')
     parser.add_argument('--opalx-mc-csv', type=Path,
-                        help='Optional sampled OPALX spectrum CSV')
+                        help='Optional sampled OPALX benchmark CSV')
+    parser.add_argument('--observable', choices=('energy', 'theta'), default='energy')
     parser.add_argument('--output', type=Path, default=Path('linear-compton-comparison.png'))
     parser.add_argument('--xi', type=float, default=0.2955)
     parser.add_argument('--cain-sha', default='unknown')
@@ -38,6 +53,7 @@ def main() -> int:
 
     cain_centers, cain_density = read_histogram(args.cain_csv)
     opalx_centers, opalx_density = read_histogram(args.opalx_csv)
+    labels = labels_for_observable(args.observable)
 
     fig, axis = plt.subplots(figsize=(7.8, 5.3))
     axis.step(cain_centers, cain_density, where='mid', linewidth=1.8, label='CAIN')
@@ -55,9 +71,9 @@ def main() -> int:
                   linestyle='--',
                   label=label)
 
-    axis.set_xlabel(r'$E_\gamma$ [GeV]')
-    axis.set_ylabel(r'Normalized density [GeV$^{-1}$]')
-    axis.set_title(rf'Weak-field 90 degree linear-Compton spectrum, $\xi={args.xi:.4f}$')
+    axis.set_xlabel(labels['xlabel'])
+    axis.set_ylabel(labels['ylabel'])
+    axis.set_title(labels['title'] + rf', $\xi={args.xi:.4f}$')
     axis.legend()
 
     footer = f'CAIN {args.cain_sha}   OPALX {args.opalx_sha}'

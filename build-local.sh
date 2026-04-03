@@ -19,5 +19,11 @@ do
   mkdir -p "$(dirname "$target")"
   cp -R "$dir" "$(dirname "$target")"
 done
+find . \( -path './build' -o -path './build/*' -o -path './.git' -o -path './.git/*' \) -prune -o   -type f \( -name '*.svg' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.gif' -o -name '*.webp' -o -name '*.pdf' \) -print0 | while IFS= read -r -d '' asset;
+do
+  target="build/${asset#./}"
+  mkdir -p "$(dirname "$target")"
+  cp "$asset" "$target"
+done
 echo "Build complete. Open build/index.html (or relevant .html) in browser."
 

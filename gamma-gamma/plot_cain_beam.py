@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 from dataclasses import dataclass
 from pathlib import Path
+import math
 import re
 
 import matplotlib.pyplot as plt
@@ -78,15 +79,15 @@ def parse_cain_beam(path: Path) -> list[CainParticle]:
     return particles
 
 
-def build_histogram(energies_gev: list[float], weights: list[float], bins: int,
-                    emin: float, emax: float) -> tuple[list[float], list[float], list[float]]:
-    width = (emax - emin) / bins
+def build_histogram(values: list[float], weights: list[float], bins: int,
+                    vmin: float, vmax: float) -> tuple[list[float], list[float], list[float]]:
+    width = (vmax - vmin) / bins
     counts = [0.0] * bins
-    centers = [emin + (i + 0.5) * width for i in range(bins)]
-    for energy, weight in zip(energies_gev, weights):
-        if energy < emin or energy >= emax:
+    centers = [vmin + (i + 0.5) * width for i in range(bins)]
+    for value, weight in zip(values, weights):
+        if value < vmin or value >= vmax:
             continue
-        index = int((energy - emin) / width)
+        index = int((value - vmin) / width)
         if 0 <= index < bins:
             counts[index] += weight
     total = sum(counts)
@@ -95,21 +96,38 @@ def build_histogram(energies_gev: list[float], weights: list[float], bins: int,
 
 
 def write_histogram_csv(path: Path, centers: list[float], density: list[float],
-                        counts: list[float]) -> None:
+                        counts: list[float], observable: str) -> None:
+    if observable == 'theta':
+        header = '# center_rad,density_per_rad,count\n'
+    else:
+        header = '# center_GeV,density_per_GeV,count\n'
+
     with path.open('w') as stream:
-        stream.write('# center_GeV,density_per_GeV,count\n')
+        stream.write(header)
         for center, dens, count in zip(centers, density, counts):
             stream.write(f'{center:.17g},{dens:.17g},{count:.17g}\n')
+
+
+def photon_energy_gev(photon: CainParticle) -> float:
+    return photon.e_ev * 1.0e-9
+
+
+def photon_theta_rad(photon: CainParticle) -> float:
+    transverse = math.hypot(photon.px_evc, photon.py_evc)
+    return math.atan2(transverse, photon.ps_evc)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('beam_file', type=Path, help='CAIN WRITE BEAM output file')
+    parser.add_argument('--observable', choices=('energy', 'theta'), default='energy')
     parser.add_argument('--output', type=Path, default=Path('cain_photon_spectrum.png'))
     parser.add_argument('--csv-output', type=Path, default=None)
     parser.add_argument('--bins', type=int, default=80)
     parser.add_argument('--emin', type=float, default=0.0)
     parser.add_argument('--emax', type=float, default=0.01)
+    parser.add_argument('--tmin', type=float, default=0.0)
+    parser.add_argument('--tmax', type=float, default=0.02)
     args = parser.parse_args()
 
     particles = parse_cain_beam(args.beam_file)
@@ -117,21 +135,31 @@ def main() -> int:
     if not photons:
         raise SystemExit(f'No photons found in {args.beam_file}')
 
-    energies_gev = [particle.e_ev * 1.0e-9 for particle in photons]
     weights = [particle.wgt for particle in photons]
-    centers, density, counts = build_histogram(energies_gev, weights, args.bins, args.emin, args.emax)
+    if args.observable == 'theta':
+        values = [photon_theta_rad(photon) for photon in photons]
+        centers, density, counts = build_histogram(values, weights, args.bins, args.tmin, args.tmax)
+        xlabel = r'$\theta_\gamma$ [rad]'
+        ylabel = r'Normalized density [rad$^{-1}$]'
+        title = 'CAIN photon angular spectrum'
+    else:
+        values = [photon_energy_gev(photon) for photon in photons]
+        centers, density, counts = build_histogram(values, weights, args.bins, args.emin, args.emax)
+        xlabel = r'$E_\gamma$ [GeV]'
+        ylabel = r'Normalized density [GeV$^{-1}$]'
+        title = 'CAIN photon spectrum'
 
     fig, axis = plt.subplots(figsize=(7.0, 4.5))
     axis.step(centers, density, where='mid', linewidth=1.6, label='CAIN')
-    axis.set_xlabel(r'$E_\gamma$ [GeV]')
-    axis.set_ylabel(r'Normalized density [GeV$^{-1}$]')
-    axis.set_title('CAIN photon spectrum')
+    axis.set_xlabel(xlabel)
+    axis.set_ylabel(ylabel)
+    axis.set_title(title)
     axis.legend()
     fig.tight_layout()
     fig.savefig(args.output, dpi=200)
 
     if args.csv_output is not None:
-        write_histogram_csv(args.csv_output, centers, density, counts)
+        write_histogram_csv(args.csv_output, centers, density, counts, args.observable)
 
     return 0
 

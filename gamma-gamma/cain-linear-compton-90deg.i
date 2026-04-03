@@ -6,7 +6,8 @@ HEADER 'Linear Compton 90 degree weak-field benchmark';
 !!   - laser wavelength: 1030 nm
 !!   - crossing angle: 90 degree
 !!   - Xi = 0.2955 (< 0.3)
-!!   - about 1.05e4 photons in the CAIN reference run
+!!   - single-electron geometry: zero emittance and zero bunch length
+!!   - about 1.17e4 photons in the CAIN reference run
 !!
 ALLOCATE MP=1350000;
 
@@ -14,9 +15,9 @@ SET photon=1, electron=2, positron=3,
     mm=1e-3, micron=1e-6, nm=1e-9, psec=1e-12*Cvel;
 
 SET ee=1.0D9, an=9.0D5,
-    sigz=0.01*psec,
+    sigz=0.0,
     betax=1.0*mm, betay=1.0*mm,
-    emitx=1.0D-9, emity=1.0D-9,
+    emitx=0.0, emity=0.0,
     sige=0.0,
     ntcut=3.0;
 
