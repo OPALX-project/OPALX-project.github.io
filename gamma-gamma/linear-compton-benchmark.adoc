@@ -256,6 +256,9 @@ The stored histogram and plot references in this directory are
 - `reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv`
 - `reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv`
 - `reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv`
+- `reference-data/cain-linear-compton-90deg-xi029-joint-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-joint-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-sampled-joint-histogram.csv`
 - `reference-data/cain-linear-compton-90deg-xi029-finite-beam-histogram.csv`
 - `reference-data/opalx-linear-compton-90deg-xi029-finite-beam-histogram.csv`
 - `reference-data/cain-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv`
@@ -266,6 +269,7 @@ The stored histogram and plot references in this directory are
 - `reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv`
 - `reference-data/linear-compton-90deg-xi029-comparison.png`
 - `reference-data/linear-compton-90deg-xi029-theta-comparison.png`
+- `reference-data/linear-compton-90deg-xi029-joint-comparison.png`
 - `reference-data/linear-compton-90deg-xi029-finite-beam-comparison.png`
 - `reference-data/linear-compton-90deg-xi029-finite-beam-theta-comparison.png`
 - `reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-comparison.png`
@@ -281,6 +285,13 @@ The angular histograms use columns
 
 - `center_rad`
 - `density_per_rad`
+- `count`
+
+The joint histograms use columns
+
+- `energy_center_GeV`
+- `theta_center_rad`
+- `density_per_GeV_rad`
 - `count`
 
 For the current stored single-electron references, the CAIN-to-OPALX agreement is:
@@ -311,6 +322,29 @@ reconstructed from the photon momentum components as
 
 .Generated weak-field CAIN vs OPALX deterministic and sampled lab-angle overlay
 image::reference-data/linear-compton-90deg-xi029-theta-comparison.png[width=85%]
+
+==== Joint Energy-Angle Benchmark
+
+The next benchmark step keeps the same weak-field single-electron geometry but
+compares the full two-dimensional laboratory observable
+
+[latexmath]
+++++
+(E_\gamma, 	heta_{\gamma,\mathrm{lab}}).
+++++
+
+This joint distribution is more discriminating than the one-dimensional
+marginals alone, because the energy-angle correlation is set by the same
+Lorentz mapping that connects the rest-frame Klein-Nishina kernel to the
+laboratory frame.
+
+For the stored weak-field joint references, the CAIN-to-OPALX agreement is:
+
+- joint spectrum, deterministic: mean-energy difference about `0.48%`, mean-angle difference about `4.03%`, L1 distance about `0.0849`
+- joint spectrum, sampled: mean-energy difference about `0.44%`, mean-angle difference about `1.21%`, L1 distance about `0.0709`
+
+.Generated weak-field CAIN vs OPALX deterministic and sampled joint energy-angle comparison
+image::reference-data/linear-compton-90deg-xi029-joint-comparison.png[width=100%]
 
 ==== Finite-Beam Benchmark
 
@@ -486,4 +520,209 @@ python3 plot_linear_compton_comparison.py \
   --opalx-sha 34780ad61+local \
   --mc-samples 250000 --mc-seed 13579 \
   --output reference-data/linear-compton-90deg-xi029-theta-comparison.png
+----
+
+
+=== How To Reproduce
+
+The commands below summarize the full workflow used for the stored benchmark
+artifacts in this page. For the common case, the whole workflow can be run with
+
+[source,sh]
+----
+./generate-linear-compton-results.sh --opalx-build /path/to/opalx-build
+----
+
+The remaining subsections show the same steps in expanded form.
+
+==== 1. Build CAIN
+
+From `gamma-gamma/cain`:
+
+[source,sh]
+----
+./build-cain.sh --download
+----
+
+This creates the local CAIN executable at
+`gamma-gamma/cain/CAIN-build/cain`.
+
+==== 2. Build The OPALX Benchmark Executable
+
+In the OPALX build tree, build the standalone benchmark executable:
+
+[source,sh]
+----
+cmake --build /path/to/opalx-build \
+  --target LinearComptonSpectrumBenchmark -j4
+----
+
+The executable is then available as
+`/path/to/opalx-build/unit_tests/Physics/LinearComptonSpectrumBenchmark`.
+
+==== 3. Set Convenient Shell Variables
+
+From the `gamma-gamma` directory:
+
+[source,sh]
+----
+CAIN=./cain/CAIN-build/cain
+OPALX_BENCH=/path/to/opalx-build/unit_tests/Physics/LinearComptonSpectrumBenchmark
+----
+
+==== 4. Generate Single-Electron CAIN Data
+
+[source,sh]
+----
+cat cain-linear-compton-90deg.i | "$CAIN"
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
+  --observable energy --bins 80 --emin 0.0 --emax 0.01 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029.png
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
+  --observable theta --bins 80 --tmin 0.0 --tmax 0.02 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-theta.png
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
+  --observable joint --bins 60 --emin 0.0 --emax 0.01 --tmin 0.0 --tmax 0.02 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-joint-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-joint.png
+----
+
+==== 5. Generate Single-Electron OPALX Data
+
+[source,sh]
+----
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv \
+  --sampled --samples 250000 --seed 13579
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv \
+  --angular
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv \
+  --angular --sampled --samples 250000 --seed 13579
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-joint-histogram.csv \
+  --joint
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-sampled-joint-histogram.csv \
+  --joint --sampled --samples 250000 --seed 13579
+----
+
+==== 6. Run The Single-Electron Analysis Scripts
+
+[source,sh]
+----
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv \
+  --opalx-mc-csv reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv \
+  --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --mc-samples 250000 --mc-seed 13579 \
+  --output reference-data/linear-compton-90deg-xi029-comparison.png
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv \
+  --opalx-mc-csv reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv \
+  --observable theta --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --mc-samples 250000 --mc-seed 13579 \
+  --output reference-data/linear-compton-90deg-xi029-theta-comparison.png
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-joint-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-joint-histogram.csv \
+  --opalx-mc-csv reference-data/opalx-linear-compton-90deg-xi029-sampled-joint-histogram.csv \
+  --observable joint --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --mc-samples 250000 --mc-seed 13579 \
+  --output reference-data/linear-compton-90deg-xi029-joint-comparison.png
+----
+
+==== 7. Generate Finite-Beam CAIN Data
+
+[source,sh]
+----
+cat cain-linear-compton-90deg-finite-beam.i | "$CAIN"
+cat cain-linear-compton-90deg-finite-beam-energy-spread.i | "$CAIN"
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029-finite-beam-wide-laser.dat \
+  --observable energy --bins 80 --emin 0.0 --emax 0.01 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-finite-beam-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-finite-beam.png
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029-finite-beam-wide-laser.dat \
+  --observable theta --bins 80 --tmin 0.0 --tmax 0.02 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-finite-beam-theta.png
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029-finite-beam-energy-spread.dat \
+  --observable energy --bins 80 --emin 0.0 --emax 0.01 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-finite-beam-energy-spread.png
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029-finite-beam-energy-spread.dat \
+  --observable theta --bins 80 --tmin 0.0 --tmax 0.02 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-theta.png
+----
+
+==== 8. Generate Finite-Beam OPALX Data
+
+[source,sh]
+----
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-histogram.csv \
+  --finite-beam --beam-particles 100000 --seed 13579
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv \
+  --finite-beam --angular --beam-particles 100000 --seed 13579
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv \
+  --finite-beam --beam-particles 100000 --beam-relative-energy-spread 0.001 --seed 13579
+
+"$OPALX_BENCH" \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv \
+  --finite-beam --angular --beam-particles 100000 --beam-relative-energy-spread 0.001 --seed 13579
+----
+
+==== 9. Run The Finite-Beam Analysis Scripts
+
+[source,sh]
+----
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-finite-beam-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-histogram.csv \
+  --observable energy --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --output reference-data/linear-compton-90deg-xi029-finite-beam-comparison.png
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv \
+  --observable theta --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --output reference-data/linear-compton-90deg-xi029-finite-beam-theta-comparison.png
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv \
+  --observable energy --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --output reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-comparison.png
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv \
+  --observable theta --xi 0.2955 --cain-sha 54166fda1 --opalx-sha 34780ad61+local \
+  --output reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-theta-comparison.png
 ----
