@@ -24,26 +24,48 @@ def read_histogram(path: Path):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('cain_csv', type=Path)
-    parser.add_argument('opalx_csv', type=Path)
+    parser.add_argument('opalx_csv', type=Path,
+                        help='Deterministic OPALX spectrum CSV')
+    parser.add_argument('--opalx-mc-csv', type=Path,
+                        help='Optional sampled OPALX spectrum CSV')
     parser.add_argument('--output', type=Path, default=Path('linear-compton-comparison.png'))
     parser.add_argument('--xi', type=float, default=0.2955)
     parser.add_argument('--cain-sha', default='unknown')
     parser.add_argument('--opalx-sha', default='unknown')
+    parser.add_argument('--mc-samples', type=int, default=0)
+    parser.add_argument('--mc-seed', type=int, default=0)
     args = parser.parse_args()
 
     cain_centers, cain_density = read_histogram(args.cain_csv)
     opalx_centers, opalx_density = read_histogram(args.opalx_csv)
 
-    fig, axis = plt.subplots(figsize=(7.4, 5.0))
-    axis.step(cain_centers, cain_density, where='mid', linewidth=1.6, label='CAIN')
-    axis.step(opalx_centers, opalx_density, where='mid', linewidth=1.6, label='OPALX')
+    fig, axis = plt.subplots(figsize=(7.8, 5.3))
+    axis.step(cain_centers, cain_density, where='mid', linewidth=1.8, label='CAIN')
+    axis.step(opalx_centers, opalx_density, where='mid', linewidth=1.6, label='OPALX deterministic')
+
+    if args.opalx_mc_csv is not None:
+        mc_centers, mc_density = read_histogram(args.opalx_mc_csv)
+        label = 'OPALX sampled'
+        if args.mc_samples > 0:
+            label += f' ({args.mc_samples} samples)'
+        axis.step(mc_centers,
+                  mc_density,
+                  where='mid',
+                  linewidth=1.4,
+                  linestyle='--',
+                  label=label)
+
     axis.set_xlabel(r'$E_\gamma$ [GeV]')
     axis.set_ylabel(r'Normalized density [GeV$^{-1}$]')
     axis.set_title(rf'Weak-field 90 degree linear-Compton spectrum, $\xi={args.xi:.4f}$')
     axis.legend()
+
+    footer = f'CAIN {args.cain_sha}   OPALX {args.opalx_sha}'
+    if args.opalx_mc_csv is not None and args.mc_seed:
+        footer += f'   MC seed {args.mc_seed}'
     fig.text(0.5,
              0.01,
-             f'CAIN {args.cain_sha}   OPALX {args.opalx_sha}',
+             footer,
              ha='center',
              va='bottom',
              fontsize=9)

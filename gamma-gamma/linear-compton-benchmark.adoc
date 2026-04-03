@@ -109,8 +109,9 @@ physics helper in `src/Physics/LinearCompton.*`:
   Compton benchmark quantities
 - the `LASER` benchmark methods delegate to `Physics::LinearCompton`
 - unit tests verify the Thomson limit, exact recoil endpoints, spectrum
-  normalization, the exact 90 degree forward-scattering benchmark, and a
-  weak-field CAIN spectrum comparison
+  normalization, the exact 90 degree forward-scattering benchmark, a
+  deterministic weak-field CAIN spectrum comparison, and a fixed-seed
+  host-only Monte Carlo spectrum comparison
 
 What is not included yet:
 
@@ -186,6 +187,7 @@ The stored weak-field histogram references in this directory are
 
 - `reference-data/cain-linear-compton-90deg-xi029-histogram.csv`
 - `reference-data/opalx-linear-compton-90deg-xi029-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv`
 
 These are normalized density histograms with columns
 
@@ -214,7 +216,7 @@ python3 plot_linear_compton_comparison.py \
   --output reference-data/linear-compton-90deg-xi029-comparison.png
 ----
 
-.Generated weak-field CAIN vs OPALX spectrum overlay
+.Generated weak-field CAIN vs OPALX deterministic and sampled spectrum overlay
 image::reference-data/linear-compton-90deg-xi029-comparison.png[width=85%]
 
 === CAIN Beam File Format
