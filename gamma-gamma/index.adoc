@@ -15,6 +15,7 @@ This is the first deterministic unit-test baseline used in the source tree.
 * link:linear-compton-benchmark.html[Linear Compton Benchmark]
 * `cain-linear-compton-90deg.i`: CAIN input deck for the fixed 90 degree case
 * `cain/`: reproducible CAIN clone, patch, and build helper
+* `cain/README.adoc`: build notes and local portability fixes
 * `plot_cain_beam.py`: parser, histogram, and plot helper for CAIN `WRITE BEAM` output
 * `plot_linear_compton_comparison.py`: overlay plot for the stored CAIN and OPALX weak-field spectra
 * `reference-data/`: stored weak-field CAIN and OPALX spectrum CSV files

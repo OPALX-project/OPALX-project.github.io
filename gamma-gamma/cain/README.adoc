@@ -1,0 +1,80 @@
+= CAIN Build Helper
+:stem: latexmath
+
+This directory contains the reproducible helper used for the OPALX gamma-gamma
+benchmarks.
+
+The public CAIN source tree used here is
+`https://github.com/cfruhling2/CAIN`.
+
+== Quick Start
+
+From this directory:
+
+[source,sh]
+----
+./build-cain.sh --download
+----
+
+This will:
+
+- remove any existing local `CAIN-src/` and `CAIN-build/` trees
+- clone a fresh CAIN checkout
+- apply the local portability patch set
+- compile the `cain` executable
+
+To rebuild without recloning:
+
+[source,sh]
+----
+./build-cain.sh --compile
+----
+
+== CMake Wrapper
+
+A small CMake wrapper is provided for convenience:
+
+[source,sh]
+----
+cmake -S . -B build
+cmake --build build --target cain-download
+cmake --build build --target cain-compile
+----
+
+== Generated Directories
+
+- `CAIN-src/`: local source checkout
+- `CAIN-build/`: local object/module/build directory
+- `CAIN-build/cain`: compiled executable
+
+Both generated directories are ignored by git.
+
+== Local Portability Fixes
+
+For the current macOS / `gfortran` workflow, the helper applies three source
+patches before compilation:
+
+- `src/evufnchar.f`: `WRITE(TEXT,'(I)')` -> `WRITE(TEXT,'(I0)')`
+- `src/transport.f`: `WRITE(MAGNAM,'(I)')` -> `WRITE(MAGNAM,'(I0)')`
+- `src/lsrrdfl.f`: replace the end-of-line marker definition with a portable
+  `CHAR(10)` / `CHAR(0)` form
+
+The helper handles both upstream `lsrrdfl.f` variants seen so far:
+
+- `PARAMETER (EOR=..., EOF=...)`
+- `CHARACTER*1 EOR/Z'0A'/,EOF/Z'00'/`
+
+== Compiler Flags
+
+The helper currently builds with:
+
+[source,sh]
+----
+-O2 -std=legacy -ffixed-line-length-none -fallow-argument-mismatch
+----
+
+== Notes
+
+This directory is intentionally benchmark-oriented. It is not trying to provide
+an upstream-quality CAIN packaging layer; it only captures the exact clone,
+patch, and compile workflow used to generate the OPALX reference benchmarks.

@@ -135,25 +135,22 @@ The next useful validation and implementation steps are
 The public CAIN source tree used here is
 `https://github.com/cfruhling2/CAIN`.
 
-The directory `cain/` in this note contains a reproducible helper script that
-clones CAIN, applies the small macOS / `gfortran` portability patch set, and
-compiles a local binary.
+The reproducible clone, patch, and compile workflow is stored in
+`gamma-gamma/cain/`:
 
-From `gamma-gamma/cain`, a fresh clone and build is
+- `build-cain.sh`: helper script
+- `CMakeLists.txt`: small wrapper target set
+- `README.adoc`: build notes and portability fixes
+
+From `gamma-gamma/cain`, the two main commands are
 
 [source,sh]
 ----
 ./build-cain.sh --download
-----
-
-To recompile an existing local source tree without recloning, use
-
-[source,sh]
-----
 ./build-cain.sh --compile
 ----
 
-The same workflow is also available through a small CMake wrapper:
+The same helper is also exposed through CMake:
 
 [source,sh]
 ----
@@ -161,14 +158,6 @@ cmake -S . -B build
 cmake --build build --target cain-download
 cmake --build build --target cain-compile
 ----
-
-The script applies the following source-level portability fixes before
-compilation:
-
-- `src/evufnchar.f`: change `WRITE(TEXT,'(I)')` to `WRITE(TEXT,'(I0)')`
-- `src/transport.f`: change `WRITE(MAGNAM,'(I)')` to `WRITE(MAGNAM,'(I0)')`
-- `src/lsrrdfl.f`: replace the old end-of-line marker definition with
-  `PARAMETER (EOR=CHAR(10), EOF=CHAR(0))`
 
 === CAIN Weak-Field Reference Deck
 
