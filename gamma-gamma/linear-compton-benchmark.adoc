@@ -1,4 +1,5 @@
 :stem: latexmath
+:eqnums:
 :docinfo: shared
 
 == Linear Compton Benchmark
@@ -12,22 +13,19 @@ The laser is represented by a single photon with wavelength latexmath:[\lambda_L
 and propagates along latexmath:[+\hat x]. This corresponds to a crossing angle of
 latexmath:[90^\circ] between the beam and the laser.
 
-The benchmark quantity is the energy of the scattered photon emitted in the
-forward electron direction latexmath:[+\hat z].
+The benchmark starts from the simplest fixed-geometry observables:
 
+- the scattered-photon energy in the forward electron direction
+- the scattered-photon polar angle in the laboratory frame relative to the beam
 
 image::ics_90deg_figure.svg[Inverse Compton scattering, width=85%]
 
-=== Units
+The present benchmark follows the conventions used in the OPALX source, electron and photon energies are expressed in `GeV`
+wavelength is expressed in `m`, the speed of light latexmath:[c] and the reduced Planck constant latexmath:[\hbar] are taken from `Physics.h`
 
-The present benchmark follows the conventions already used in the OPALX source:
+=== Physics Models
 
-- electron and photon energies are expressed in `GeV`
-- wavelength is expressed in `m`
-- the speed of light latexmath:[c] and the reduced Planck constant latexmath:[\hbar] are
-  taken from `Physics.h`
-
-=== Laser Photon Energy
+==== Laser Photon Energy
 
 For a laser wavelength latexmath:[\lambda_L], the photon energy is
 
@@ -38,7 +36,7 @@ For a laser wavelength latexmath:[\lambda_L], the photon energy is
 
 This is the same expression used in the current `Laser` helper in OPALX.
 
-=== Exact 90 Degree Kinematics
+==== Exact 90 Degree Kinematics
 
 The incoming electron momentum magnitude is
 
@@ -48,7 +46,7 @@ p_e = \sqrt{E_e^2 - m_e^2}.
 ++++
 
 For the 90 degree crossing geometry, the linear Compton invariant used by the
-first OPALX helper reduces to
+current OPALX helper reduces to
 
 [latexmath]
 ++++
@@ -75,210 +73,7 @@ the equivalent but more stable form is preferred in code and tests:
      {\omega_L + \frac{m_e^2}{E_e + p_e}}.
 ++++
 
-=== Relation to CAIN
-
-CAIN evaluates the linear Compton kinematics by boosting the laser photon into
-the electron rest frame, applying the Compton recoil there, and boosting the
-scattered photon back to the laboratory frame.
-
-In the CAIN source this appears in the linear Compton generator `LNCPGN`, where
-the incoming laser photon energy in the electron rest frame is
-
-[latexmath]
-++++
-\omega_1 = \gamma \, \omega_L \, (1 - \beta \cos \alpha),
-++++
-
-with crossing-angle cosine latexmath:[\cos \alpha].
-
-For the present benchmark latexmath:[\cos \alpha = 0], so
-
-[latexmath]
-++++
-\omega_1 = \gamma \, \omega_L.
-++++
-
-The OPALX helper currently reproduces this linear, fixed-geometry limit and the
-unit test checks it against the independent exact laboratory-frame formula
-above.
-
-=== Current OPALX Status
-
-The current implementation is intentionally narrow but now includes a dedicated
-physics helper in `src/Physics/LinearCompton.*`:
-
-- the `LASER` element stores the laser wavelength and direction
-- `Physics::LinearCompton` computes the unpolarized single-electron linear
-  Compton benchmark quantities
-- the `LASER` benchmark methods delegate to `Physics::LinearCompton`
-- unit tests verify the Thomson limit, exact recoil endpoints, spectrum
-  normalization, the exact 90 degree forward-scattering benchmark, deterministic
-  and fixed-seed weak-field CAIN energy-spectrum comparisons, and deterministic
-  and fixed-seed weak-field CAIN lab-angle comparisons
-
-What is not included yet:
-
-- finite pulse overlap
-- luminosity integration
-- photon bunch population
-- polarization dependence
-- nonlinear Compton effects
-- Breit-Wheeler pair creation
-
-=== Next Steps
-
-The next useful validation and implementation steps are
-
-- connect the validated host-only Compton sampler to photon-bunch population
-- add polarized linear Compton support
-- separate the weak-field benchmark from future nonlinear laser cases
-
-=== Building CAIN
-
-The public CAIN source tree used here is
-`https://github.com/cfruhling2/CAIN`.
-
-The reproducible clone, patch, and compile workflow is stored in
-`gamma-gamma/cain/`:
-
-- `build-cain.sh`: helper script
-- `CMakeLists.txt`: small wrapper target set
-- `README.adoc`: build notes and portability fixes
-
-From `gamma-gamma/cain`, the two main commands are
-
-[source,sh]
-----
-./build-cain.sh --download
-./build-cain.sh --compile
-----
-
-The same helper is also exposed through CMake:
-
-[source,sh]
-----
-cmake -S . -B build
-cmake --build build --target cain-download
-cmake --build build --target cain-compile
-----
-
-=== CAIN Weak-Field Reference Deck
-
-The file `cain-linear-compton-90deg.i` is now the weak-field reference deck
-used for the first OPALX spectrum comparison.
-
-Its benchmark parameters are
-
-- electron total energy: `1 GeV`
-- laser wavelength: `1030 nm`
-- crossing angle: latexmath:[90^\circ]
-- unpolarized laser: `STOKES=(0,0,0)`
-- single-electron geometry on the CAIN side: zero emittance and zero bunch length
-- number of electron macro-particles: `900000`
-- pulse energy: `0.029 J`
-- CAIN weak-field parameter: latexmath:[\xi = 0.2955 < 0.3]
-- resulting CAIN photon yield: about `1.17e4` photons
-
-The deck writes
-
-[source]
-----
-WRITE BEAM, KIND=photon, FILE='cain-linear-compton-90deg-xi029.dat';
-----
-
-The stored weak-field histogram references in this directory are
-
-- `reference-data/cain-linear-compton-90deg-xi029-histogram.csv`
-- `reference-data/opalx-linear-compton-90deg-xi029-histogram.csv`
-- `reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv`
-- `reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv`
-- `reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv`
-- `reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv`
-
-The energy histograms use columns
-
-- `center_GeV`
-- `density_per_GeV`
-- `count`
-
-The angular histograms use columns
-
-- `center_rad`
-- `density_per_rad`
-- `count`
-
-They can be regenerated with
-
-[source,sh]
-----
-python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
-  --emin 0.0 --emax 0.01 --bins 80 \
-  --csv-output reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
-  --output /tmp/cain-linear-compton-90deg-xi029.png
-
-/tmp/opalx-laser-build-renamed/unit_tests/Physics/LinearComptonSpectrumBenchmark \
-  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv
-
-python3 plot_linear_compton_comparison.py \
-  reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
-  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv \
-  --xi 0.2955 \
-  --cain-sha 54166fda1 \
-  --opalx-sha 4eca92e2b \
-  --output reference-data/linear-compton-90deg-xi029-comparison.png
-----
-
-.Generated weak-field CAIN vs OPALX deterministic and sampled spectrum overlay
-image::reference-data/linear-compton-90deg-xi029-comparison.png[width=85%]
-
-=== Lab-Angular Benchmark
-
-The next one-dimensional observable is the scattered-photon polar angle in the
-laboratory frame relative to the incoming electron beam direction,
-
-[latexmath]
-++++
-\theta_{\gamma,\mathrm{lab}} = \arccos(\hat n_\gamma \cdot \hat n_e).
-++++
-
-For the CAIN `WRITE BEAM` output in this benchmark geometry, the same quantity is
-reconstructed from the photon momentum components as
-
-[latexmath]
-++++
-\theta_{\gamma,\mathrm{lab}} = \operatorname{atan2}\left(\sqrt{P_x^2 + P_y^2}, P_s\right).
-++++
-
-To keep the angular comparison tied to the Compton kernel rather than to beam
-optics, the stored CAIN weak-field reference uses zero emittance and zero bunch
-length on the electron side.
-
-.Generated weak-field CAIN vs OPALX deterministic and sampled lab-angle overlay
-image::reference-data/linear-compton-90deg-xi029-theta-comparison.png[width=85%]
-
-=== CAIN Beam File Format
-
-The parser in `plot_cain_beam.py` implements the standard CAIN `WRITE BEAM`
-record layout documented in the CAIN manual:
-
-[source]
-----
-WRITE(*,'(I2,I6,1X,A4,1P12D20.12)')
-     KIND,GEN,NAME,WGT,(TXYS(I),I=0,3),(EP(I),I=0,3),(SPIN(I),I=1,3)
-----
-
-Each particle record therefore contains
-
-- `KIND`, `GEN`, `NAME`
-- `WGT`
-- `T`, `X`, `Y`, `S`
-- `E`, `PX`, `PY`, `PS`
-- `SPIN1`, `SPIN2`, `SPIN3`
-
-with energies and momenta stored in `eV`.
-
-
-=== Unpolarized Differential Kernel
+==== Unpolarized Differential Kernel
 
 The exact linear Compton spectrum is most compactly written in the electron rest
 frame. Let latexmath:[\omega_1] be the incoming photon energy in that frame and let
@@ -356,27 +151,34 @@ The current helper and test suite enforce the normalization identity
 = \sigma_{\mathrm{KN}}.
 ++++
 
-=== 90 Degree Crossing in the Electron Rest Frame
+==== CAIN Rest-Frame Mapping
 
-For the present benchmark the laboratory crossing angle is latexmath:[90^\circ]. In
-that case the incoming laser photon energy in the electron rest frame is
+CAIN evaluates the linear Compton kinematics by boosting the laser photon into
+the electron rest frame, applying the Compton recoil there, and boosting the
+scattered photon back to the laboratory frame.
 
-[latexmath]
-++++
-\omega_1 = \gamma \omega_L,
-++++
-
-because latexmath:[\cos \alpha = 0] in
+In the CAIN source this appears in the linear Compton generator `LNCPGN`, where
+the incoming laser photon energy in the electron rest frame is
 
 [latexmath]
 ++++
-\omega_1 = \gamma \omega_L (1 - \beta \cos \alpha).
+\omega_1 = \gamma \, \omega_L \, (1 - \beta \cos \alpha),
 ++++
 
-The incoming laser direction in the electron rest frame is not collinear with
-the electron boost axis. If the outgoing photon is required to be forward in the
-laboratory frame, then its direction in the electron rest frame is along
-latexmath:[+\hat z], while the angle between the incoming and outgoing photons is
+with crossing-angle cosine latexmath:[\cos \alpha].
+
+For the present benchmark latexmath:[\cos \alpha = 0], so
+
+[latexmath]
+++++
+\omega_1 = \gamma \, \omega_L.
+++++
+
+For the present benchmark the incoming laser direction in the electron rest
+frame is not collinear with the electron boost axis. If the outgoing photon is
+required to be forward in the laboratory frame, then its direction in the
+rest frame is along latexmath:[+\hat z], while the angle between the incoming and
+outgoing photons is
 
 [latexmath]
 ++++
@@ -400,12 +202,206 @@ electron direction gives
 \omega_\gamma' = \gamma (1 + \beta) \omega_2,
 ++++
 
-which is algebraically equivalent to the stable exact laboratory-frame formula
-used in the OPALX unit test,
+which is algebraically equivalent to the stable laboratory-frame formula used in
+the OPALX unit test.
+
+=== Result of Code Comparison
+
+The current implementation is intentionally narrow but already includes a
+dedicated physics helper in `src/Physics/LinearCompton.*`:
+
+- the `LASER` element stores the laser wavelength and direction
+- `Physics::LinearCompton` computes the unpolarized single-electron linear
+  Compton benchmark quantities
+- the `LASER` benchmark methods delegate to `Physics::LinearCompton`
+- unit tests verify the Thomson limit, exact recoil endpoints, spectrum
+  normalization, the exact 90 degree forward-scattering benchmark, deterministic
+  and fixed-seed weak-field CAIN energy-spectrum comparisons, and deterministic
+  and fixed-seed weak-field CAIN lab-angle comparisons
+
+Code references in the OPALX repository (`laser-element-1`, commit `8f10b4d09`) are
+
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/src/Physics/LinearCompton.h[`src/Physics/LinearCompton.h`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/src/Physics/LinearCompton.cpp[`src/Physics/LinearCompton.cpp`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/TestLinearCompton.cpp[`unit_tests/Physics/TestLinearCompton.cpp`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/TestLinearComptonSpectrum.cpp[`unit_tests/Physics/TestLinearComptonSpectrum.cpp`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/LinearComptonSpectrumBenchmark.cpp[`unit_tests/Physics/LinearComptonSpectrumBenchmark.cpp`]
+
+What is not included yet:
+
+- finite pulse overlap
+- luminosity integration
+- photon bunch population
+- polarization dependence
+- nonlinear Compton effects
+- Breit-Wheeler pair creation
+
+The stored weak-field reference uses
+
+- electron total energy: `1 GeV`
+- laser wavelength: `1030 nm`
+- crossing angle: latexmath:[90^\circ]
+- unpolarized laser: `STOKES=(0,0,0)`
+- single-electron geometry on the CAIN side: zero emittance and zero bunch length
+- number of electron macro-particles: `900000`
+- pulse energy: `0.029 J`
+- CAIN weak-field parameter: latexmath:[\xi = 0.2955 < 0.3]
+- resulting CAIN photon yield: about `1.17e4` photons
+
+The stored histogram and plot references in this directory are
+
+- `reference-data/cain-linear-compton-90deg-xi029-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv`
+- `reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv`
+- `reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv`
+- `reference-data/linear-compton-90deg-xi029-comparison.png`
+- `reference-data/linear-compton-90deg-xi029-theta-comparison.png`
+
+The energy histograms use columns
+
+- `center_GeV`
+- `density_per_GeV`
+- `count`
+
+The angular histograms use columns
+
+- `center_rad`
+- `density_per_rad`
+- `count`
+
+For the current stored references, the CAIN-to-OPALX agreement is:
+
+- energy spectrum, deterministic: mean difference about `0.5%`, L1 distance about `0.0767`
+- energy spectrum, sampled: mean difference about `0.45%`, L1 distance about `0.0763`
+- lab-angle spectrum, deterministic: mean difference about `4.0%`, L1 distance about `0.0400`
+- lab-angle spectrum, sampled: mean difference about `1.3%`, L1 distance about `0.0250`
+
+.Generated weak-field CAIN vs OPALX deterministic and sampled energy-spectrum overlay
+image::reference-data/linear-compton-90deg-xi029-comparison.png[width=85%]
+
+The next one-dimensional observable is the scattered-photon polar angle in the
+laboratory frame relative to the incoming electron beam direction,
 
 [latexmath]
 ++++
-\omega_\gamma' =
-\frac{E_e \, \omega_L}
-     {\omega_L + \frac{m_e^2}{E_e + p_e}}.
+\theta_{\gamma,\mathrm{lab}} = \arccos(\hat n_\gamma \cdot \hat n_e).
 ++++
+
+For the CAIN `WRITE BEAM` output in this benchmark geometry, the same quantity is
+reconstructed from the photon momentum components as
+
+[latexmath]
+++++
+\theta_{\gamma,\mathrm{lab}} = \operatorname{atan2}\left(\sqrt{P_x^2 + P_y^2}, P_s\right).
+++++
+
+.Generated weak-field CAIN vs OPALX deterministic and sampled lab-angle overlay
+image::reference-data/linear-compton-90deg-xi029-theta-comparison.png[width=85%]
+
+=== Build and Run CAIN
+
+The public CAIN source tree used here is
+`https://github.com/cfruhling2/CAIN`.
+
+The reproducible clone, patch, and compile workflow is stored in
+`gamma-gamma/cain/`:
+
+- `build-cain.sh`: helper script
+- `CMakeLists.txt`: small wrapper target set
+- `README.adoc`: build notes and portability fixes
+
+From `gamma-gamma/cain`, the two main commands are
+
+[source,sh]
+----
+./build-cain.sh --download
+./build-cain.sh --compile
+----
+
+The same helper is also exposed through CMake:
+
+[source,sh]
+----
+cmake -S . -B build
+cmake --build build --target cain-download
+cmake --build build --target cain-compile
+----
+
+The file `cain-linear-compton-90deg.i` is the weak-field reference deck used for
+the CAIN comparisons in this note. The deck writes
+
+[source]
+----
+WRITE BEAM, KIND=photon, FILE='cain-linear-compton-90deg-xi029.dat';
+----
+
+The parser in `plot_cain_beam.py` implements the standard CAIN `WRITE BEAM`
+record layout documented in the CAIN manual:
+
+[source]
+----
+WRITE(*,'(I2,I6,1X,A4,1P12D20.12)')
+     KIND,GEN,NAME,WGT,(TXYS(I),I=0,3),(EP(I),I=0,3),(SPIN(I),I=1,3)
+----
+
+Each particle record therefore contains
+
+- `KIND`, `GEN`, `NAME`
+- `WGT`
+- `T`, `X`, `Y`, `S`
+- `E`, `PX`, `PY`, `PS`
+- `SPIN1`, `SPIN2`, `SPIN3`
+
+with energies and momenta stored in `eV`.
+
+The stored energy and angle references can be regenerated with
+
+[source,sh]
+----
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
+  --emin 0.0 --emax 0.01 --bins 80 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029.png
+
+python3 plot_cain_beam.py cain-linear-compton-90deg-xi029.dat \
+  --observable theta --tmin 0.0 --tmax 0.02 --bins 80 \
+  --csv-output reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv \
+  --output /tmp/cain-linear-compton-90deg-xi029-theta.png
+
+/tmp/opalx-laser-build-renamed/unit_tests/Physics/LinearComptonSpectrumBenchmark \
+  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv
+
+/tmp/opalx-laser-build-renamed/unit_tests/Physics/LinearComptonSpectrumBenchmark \
+  reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv \
+  --sampled --samples 250000 --seed 13579
+
+/tmp/opalx-laser-build-renamed/unit_tests/Physics/LinearComptonSpectrumBenchmark \
+  reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv --angular
+
+/tmp/opalx-laser-build-renamed/unit_tests/Physics/LinearComptonSpectrumBenchmark \
+  reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv \
+  --angular --sampled --samples 250000 --seed 13579
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-histogram.csv \
+  --opalx-mc-csv reference-data/opalx-linear-compton-90deg-xi029-sampled-histogram.csv \
+  --xi 0.2955 \
+  --cain-sha 54166fda1 \
+  --opalx-sha 34780ad61+local \
+  --mc-samples 250000 --mc-seed 13579 \
+  --output reference-data/linear-compton-90deg-xi029-comparison.png
+
+python3 plot_linear_compton_comparison.py \
+  reference-data/cain-linear-compton-90deg-xi029-theta-histogram.csv \
+  reference-data/opalx-linear-compton-90deg-xi029-theta-histogram.csv \
+  --opalx-mc-csv reference-data/opalx-linear-compton-90deg-xi029-sampled-theta-histogram.csv \
+  --observable theta \
+  --xi 0.2955 \
+  --cain-sha 54166fda1 \
+  --opalx-sha 34780ad61+local \
+  --mc-samples 250000 --mc-seed 13579 \
+  --output reference-data/linear-compton-90deg-xi029-theta-comparison.png
+----
