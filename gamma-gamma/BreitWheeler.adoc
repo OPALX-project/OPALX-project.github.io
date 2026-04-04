@@ -249,6 +249,119 @@ The natural observables are:
 - compare OPALX and CAIN histograms first in 1D, later in 2D
 
 
+
+== Implemented OPALX Benchmark
+
+The current _OPALX_ implementation is a host-only benchmark path in the local
+`git/opalx` checkout. The relevant files are:
+
+- `src/Physics/LinearBreitWheeler.h`
+- `src/Physics/LinearBreitWheeler.cpp`
+- `unit_tests/Physics/TestLinearBreitWheeler.cpp`
+- `unit_tests/Physics/LinearBreitWheelerBenchmarkCommon.h`
+- `unit_tests/Physics/LinearBreitWheelerBenchmark.cpp`
+- `unit_tests/Physics/TestLinearBreitWheelerSpectrum.cpp`
+- `~/git/cain/linear-breit-wheeler-head-on.i`
+- `~/git/cain/generate-linear-breit-wheeler-results.sh`
+
+The benchmark remains deliberately narrow:
+
+- no tracker integration,
+- no bunch population,
+- no polarization,
+- no nonlinear Breit-Wheeler,
+- no GPU path.
+
+The validated observables are now:
+
+- electron energy spectrum,
+- positron energy spectrum,
+- electron angle spectrum,
+- positron angle spectrum,
+- joint latexmath:[E] vs. latexmath:[\theta] spectrum for the electron,
+- joint latexmath:[E] vs. latexmath:[\theta] spectrum for the positron.
+
+
+== Results of Code Comparison
+
+The first CAIN-comparison point uses:
+
+- head-on geometry,
+- latexmath:[E_\gamma = 0.5\,\mathrm{GeV}],
+- latexmath:[\lambda_L = 1\,\mathrm{nm}],
+- linear Breit-Wheeler via `LASERQED BREITWHEELER, NPH=0`,
+- unpolarized photons,
+- weak field with latexmath:[\xi = 0.25].
+
+With the current sampled _OPALX_ benchmark and the stored CAIN references, the
+agreement is already tight.
+
+Electron:
+
+- energy spectrum: mean-energy difference about `0.09%`, latexmath:[L_1] about `0.0179`
+- angle spectrum: mean-angle difference about `0.02%`, latexmath:[L_1] about `0.0176`
+- joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.10%`, mean-angle difference about `0.02%`, latexmath:[L_1] about `0.0281`
+
+Positron:
+
+- energy spectrum: mean-energy difference about `0.10%`, latexmath:[L_1] about `0.0160`
+- angle spectrum: mean-angle difference about `0.08%`, latexmath:[L_1] about `0.0173`
+- joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.10%`, mean-angle difference about `0.08%`, latexmath:[L_1] about `0.0266`
+
+So the present benchmark already supports both 1D and 2D CAIN-backed regression
+coverage for the linear unpolarized kernel.
+
+Electron overlays:
+
+image::reference-data/linear-breit-wheeler-head-on-electron-energy-comparison.png[width=82%]
+
+image::reference-data/linear-breit-wheeler-head-on-electron-theta-comparison.png[width=82%]
+
+image::reference-data/linear-breit-wheeler-head-on-electron-joint-comparison.png[width=100%]
+
+Positron overlays:
+
+image::reference-data/linear-breit-wheeler-head-on-positron-energy-comparison.png[width=82%]
+
+image::reference-data/linear-breit-wheeler-head-on-positron-theta-comparison.png[width=82%]
+
+image::reference-data/linear-breit-wheeler-head-on-positron-joint-comparison.png[width=100%]
+
+
+== Build and Run
+
+The full benchmark workflow is now automated from the shared `~/git/cain` workspace by:
+
+[source,bash]
+----
+cd ~/git/cain
+./generate-linear-breit-wheeler-results.sh \
+  --opalx-build ~/git/opalx/build_openmp
+----
+
+This script:
+
+- runs the CAIN deck `~/git/cain/linear-breit-wheeler-head-on.i`,
+- regenerates the stored CAIN histogram references in `~/git/opalx/unit_tests/Physics/data`,
+- runs the OPALX benchmark executable `LinearBreitWheelerBenchmark`,
+- regenerates the 1D and 2D comparison plots in `~/git/cain/reference-data`.
+
+The script expects:
+
+- a built OPALX benchmark executable in the supplied build directory,
+- a CAIN executable at `~/git/cain/CAIN-build/cain`, unless overridden by `--cain-bin`.
+
+The relevant unit-test targets are:
+
+[source,bash]
+----
+cmake --build ~/git/opalx/build_openmp \
+  --target TestLinearBreitWheeler TestLinearBreitWheelerSpectrum LinearBreitWheelerBenchmark -j4
+
+~/git/opalx/build_openmp/unit_tests/Physics/TestLinearBreitWheeler
+~/git/opalx/build_openmp/unit_tests/Physics/TestLinearBreitWheelerSpectrum
+----
+
 == References
 
 - CAIN source parser:

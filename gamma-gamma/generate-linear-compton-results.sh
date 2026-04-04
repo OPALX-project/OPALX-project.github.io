@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 REFERENCE_DIR="${SCRIPT_DIR}/reference-data"
-CAIN_BIN_DEFAULT="${SCRIPT_DIR}/cain/CAIN-build/cain"
+CAIN_BIN_DEFAULT="${HOME}/git/cain/CAIN-build/cain"
 PLOT_CAIN="${SCRIPT_DIR}/plot_cain_beam.py"
 PLOT_COMPARE="${SCRIPT_DIR}/plot_linear_compton_comparison.py"
 SAMPLES=250000
@@ -61,8 +61,8 @@ infer_cain_sha() {
   if [[ -n "${CAIN_SHA}" ]]; then
     return
   fi
-  if git -C "${SCRIPT_DIR}/cain/CAIN-src" rev-parse --short HEAD >/dev/null 2>&1; then
-    CAIN_SHA=$(git -C "${SCRIPT_DIR}/cain/CAIN-src" rev-parse --short HEAD)
+  if git -C "${HOME}/git/cain/CAIN-src" rev-parse --short HEAD >/dev/null 2>&1; then
+    CAIN_SHA=$(git -C "${HOME}/git/cain/CAIN-src" rev-parse --short HEAD)
   else
     CAIN_SHA="unknown"
   fi
