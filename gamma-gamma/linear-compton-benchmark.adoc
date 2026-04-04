@@ -246,7 +246,7 @@ cd ~/git/OPALX-project.github.io/gamma-gamma
 
 This script:
 
-- runs the CAIN decks `cain-linear-compton-90deg.i`, `cain-linear-compton-90deg-finite-beam.i`, and `cain-linear-compton-90deg-finite-beam-energy-spread.i`,
+- runs the CAIN decks `~/git/cain/cain-linear-compton-90deg.i`, `~/git/cain/cain-linear-compton-90deg-finite-beam.i`, and `~/git/cain/cain-linear-compton-90deg-finite-beam-energy-spread.i`,
 - regenerates the stored CAIN histogram references in `reference-data/`,
 - runs the OPALX benchmark executable `LinearComptonSpectrumBenchmark`,
 - regenerates the published 1D and 2D comparison plots in `reference-data/`.
@@ -254,7 +254,8 @@ This script:
 The script expects:
 
 - a built OPALX benchmark executable in the supplied build directory,
-- a CAIN executable at `~/git/cain/CAIN-build/cain`, unless overridden by `--cain-bin`.
+- a CAIN executable at `~/git/cain/CAIN-build/cain`, unless overridden by `--cain-bin`,
+- the three CAIN decks in `~/git/cain`, unless overridden by `--cain-deck-dir`.
 
 The relevant OPALX build target is:
 

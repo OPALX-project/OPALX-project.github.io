@@ -4,6 +4,8 @@ set -euo pipefail
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 REFERENCE_DIR="${SCRIPT_DIR}/reference-data"
 CAIN_BIN_DEFAULT="${HOME}/git/cain/CAIN-build/cain"
+CAIN_DECK_DIR_DEFAULT="${HOME}/git/cain"
+CAIN_DECK_DIR="${CAIN_DECK_DIR_DEFAULT}"
 PLOT_CAIN="${SCRIPT_DIR}/plot_cain_beam.py"
 PLOT_COMPARE="${SCRIPT_DIR}/plot_linear_compton_comparison.py"
 SAMPLES=250000
@@ -26,6 +28,7 @@ Options:
   --opalx-bench PATH  Full path to LinearComptonSpectrumBenchmark executable
   --opalx-sha SHA     Override OPALX git SHA annotation used in plots
   --cain-bin PATH     Override CAIN executable path
+  --cain-deck-dir DIR  Override CAIN deck directory; defaults to ~/git/cain
   --cain-sha SHA      Override CAIN git SHA annotation used in plots
   --keep-dat          Keep intermediate CAIN WRITE BEAM .dat files
   -h, --help          Show this help message
@@ -70,7 +73,7 @@ infer_cain_sha() {
 
 run_cain_deck() {
   local deck=$1
-  (cd "${SCRIPT_DIR}" && "${CAIN_BIN}" < "${deck}")
+  (cd "${SCRIPT_DIR}" && "${CAIN_BIN}" < "${CAIN_DECK_DIR}/${deck}")
 }
 
 main() {
@@ -92,6 +95,10 @@ main() {
         ;;
       --cain-bin)
         cain_bin=$2
+        shift 2
+        ;;
+      --cain-deck-dir)
+        CAIN_DECK_DIR=$2
         shift 2
         ;;
       --cain-sha)
@@ -125,6 +132,9 @@ main() {
 
   CAIN_BIN="${cain_bin}"
   require_file "${CAIN_BIN}" "CAIN executable"
+  require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg.i" "CAIN single-electron deck"
+  require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg-finite-beam.i" "CAIN finite-beam deck"
+  require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg-finite-beam-energy-spread.i" "CAIN finite-beam energy-spread deck"
   require_file "${OPALX_BENCH}" "OPALX benchmark executable"
   require_file "${PLOT_CAIN}" "CAIN plotting helper"
   require_file "${PLOT_COMPARE}" "comparison plotting helper"
