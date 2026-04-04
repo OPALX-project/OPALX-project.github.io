@@ -212,7 +212,7 @@ benchmark target for _OPALX_. The first implementation should stay with
 `NPH = 0`.
 
 
-== What OPALX Should Match First
+== What OPALX Already Matches
 
 The first _OPALX_ Breit-Wheeler benchmark should match the following CAIN
 choices:
@@ -225,28 +225,28 @@ choices:
 
 The natural observables are:
 
-- electron energy spectrum
-- positron energy spectrum
-- electron angle spectrum
-- positron angle spectrum
+- [*] electron energy spectrum
+- [*] positron energy spectrum
+- [*] electron angle spectrum
+- [*] positron angle spectrum
 - later, the joint latexmath:[E] vs. latexmath:[\theta] distributions
 
 
-== Planned OPALX Validation Path
+== OPALX Validation Path
 
 .Deterministic physics helper
-- add `Physics::LinearBreitWheeler`
-- implement threshold and invariant helpers
-- implement deterministic spectra from the linear kernel
+- [*]  add `Physics::LinearBreitWheeler`
+- [*]  implement threshold and invariant helpers
+- [*]  implement deterministic spectra from the linear kernel
 
 .Host-only sampled event generator
-- fixed seed through `Options::seed`
-- return one sampled electron-positron pair per accepted event
+- [*]  fixed seed through `Options::seed`
+- [*]  return one sampled electron-positron pair per accepted event
 - no tracker, no photon bunch population, no GPU path yet
 
 .CAIN comparison
-- generate a CAIN reference deck in the same style as the linear-Compton notes
-- compare OPALX and CAIN histograms first in 1D, later in 2D
+- [*] generate a CAIN reference deck in the same style as the linear-Compton notes
+- [*] compare OPALX and CAIN histograms first in 1D, later in 2D
 
 
 
@@ -274,12 +274,12 @@ The benchmark remains deliberately narrow:
 
 The validated observables are now:
 
-- electron energy spectrum,
-- positron energy spectrum,
-- electron angle spectrum,
-- positron angle spectrum,
-- joint latexmath:[E] vs. latexmath:[\theta] spectrum for the electron,
-- joint latexmath:[E] vs. latexmath:[\theta] spectrum for the positron.
+- [*] electron energy spectrum,
+- [*] positron energy spectrum,
+- [*] electron angle spectrum,
+- [*] positron angle spectrum,
+- [*] joint latexmath:[E] vs. latexmath:[\theta] spectrum for the electron,
+- [*] joint latexmath:[E] vs. latexmath:[\theta] spectrum for the positron.
 
 
 == Results of Code Comparison
@@ -298,15 +298,15 @@ agreement is already tight.
 
 Electron:
 
-- energy spectrum: mean-energy difference about `0.09%`, latexmath:[L_1] about `0.0179`
-- angle spectrum: mean-angle difference about `0.02%`, latexmath:[L_1] about `0.0176`
-- joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.10%`, mean-angle difference about `0.02%`, latexmath:[L_1] about `0.0281`
+- [*] energy spectrum: mean-energy difference about `0.09%`, latexmath:[L_1] about `0.0179`
+- [*] angle spectrum: mean-angle difference about `0.02%`, latexmath:[L_1] about `0.0176`
+- [*] joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.10%`, mean-angle difference about `0.02%`, latexmath:[L_1] about `0.0281`
 
 Positron:
 
-- energy spectrum: mean-energy difference about `0.10%`, latexmath:[L_1] about `0.0160`
-- angle spectrum: mean-angle difference about `0.08%`, latexmath:[L_1] about `0.0173`
-- joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.10%`, mean-angle difference about `0.08%`, latexmath:[L_1] about `0.0266`
+- [*] energy spectrum: mean-energy difference about `0.10%`, latexmath:[L_1] about `0.0160`
+- [*] angle spectrum: mean-angle difference about `0.08%`, latexmath:[L_1] about `0.0173`
+- [*] joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.10%`, mean-angle difference about `0.08%`, latexmath:[L_1] about `0.0266`
 
 So the present benchmark already supports both 1D and 2D CAIN-backed regression
 coverage for the linear unpolarized kernel.

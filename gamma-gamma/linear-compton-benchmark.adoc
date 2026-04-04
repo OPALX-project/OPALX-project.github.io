@@ -173,11 +173,11 @@ The benchmark remains deliberately narrow:
 
 The validated observables are now:
 
-- photon energy spectrum,
-- photon laboratory polar-angle spectrum,
-- joint latexmath:[E_\gamma] vs. latexmath:[\theta_{\gamma,\mathrm{lab}}] map,
-- finite-beam energy and angle spectra,
-- finite-beam plus energy-spread energy and angle spectra.
+- [*] photon energy spectrum,
+- [*] photon laboratory polar-angle spectrum,
+- [*] joint latexmath:[E_\gamma] vs. latexmath:[\theta_{\gamma,\mathrm{lab}}] map,
+- [*] finite-beam energy and angle spectra,
+- [*] finite-beam plus energy-spread energy and angle spectra.
 
 == Results of Code Comparison
 
@@ -191,19 +191,19 @@ The stored weak-field single-electron reference uses:
 
 Single-electron benchmark agreement:
 
-- energy spectrum, deterministic: mean difference about `0.5%`, latexmath:[L_1] about `0.0767`
-- energy spectrum, sampled: mean difference about `0.45%`, latexmath:[L_1] about `0.0763`
-- lab-angle spectrum, deterministic: mean difference about `4.0%`, latexmath:[L_1] about `0.0400`
-- lab-angle spectrum, sampled: mean difference about `1.3%`, latexmath:[L_1] about `0.0250`
-- joint latexmath:[E_\gamma]--latexmath:[\theta_{\gamma,\mathrm{lab}}] map, deterministic: mean-energy difference about `0.48%`, mean-angle difference about `4.03%`, latexmath:[L_1] about `0.0849`
-- joint latexmath:[E_\gamma]--latexmath:[\theta_{\gamma,\mathrm{lab}}] map, sampled: mean-energy difference about `0.44%`, mean-angle difference about `1.21%`, latexmath:[L_1] about `0.0709`
+- [*] energy spectrum, deterministic: mean difference about `0.5%`, latexmath:[L_1] about `0.0767`
+- [*] energy spectrum, sampled: mean difference about `0.45%`, latexmath:[L_1] about `0.0763`
+- [*] lab-angle spectrum, deterministic: mean difference about `4.0%`, latexmath:[L_1] about `0.0400`
+- [*] lab-angle spectrum, sampled: mean difference about `1.3%`, latexmath:[L_1] about `0.0250`
+- [*] joint latexmath:[E_\gamma]--latexmath:[\theta_{\gamma,\mathrm{lab}}] map, deterministic: mean-energy difference about `0.48%`, mean-angle difference about `4.03%`, latexmath:[L_1] about `0.0849`
+- [*] joint latexmath:[E_\gamma]--latexmath:[\theta_{\gamma,\mathrm{lab}}] map, sampled: mean-energy difference about `0.44%`, mean-angle difference about `1.21%`, latexmath:[L_1] about `0.0709`
 
 Finite-beam benchmark agreement:
 
-- baseline finite beam (`sigma_x = sigma_y = 1 mm`, `sigma_{x'} = sigma_{y'} = 1 mrad`): energy mean difference about `0.58%`, latexmath:[L_1] about `0.0316`
-- baseline finite beam angle spectrum: mean difference about `0.21%`, latexmath:[L_1] about `0.0142`
-- finite beam with relative energy spread `sigma_E / E = 1.0e-3`: energy mean difference about `0.57%`, latexmath:[L_1] about `0.0305`
-- finite beam with relative energy spread `sigma_E / E = 1.0e-3` angle spectrum: mean difference about `0.17%`, latexmath:[L_1] about `0.0157`
+- [*] baseline finite beam (`sigma_x = sigma_y = 1 mm`, `sigma_{x'} = sigma_{y'} = 1 mrad`): energy mean difference about `0.58%`, latexmath:[L_1] about `0.0316`
+- [*] baseline finite beam angle spectrum: mean difference about `0.21%`, latexmath:[L_1] about `0.0142`
+- [*] finite beam with relative energy spread `sigma_E / E = 1.0e-3`: energy mean difference about `0.57%`, latexmath:[L_1] about `0.0305`
+- [*] finite beam with relative energy spread `sigma_E / E = 1.0e-3` angle spectrum: mean difference about `0.17%`, latexmath:[L_1] about `0.0157`
 
 Single-electron overlays:
 
