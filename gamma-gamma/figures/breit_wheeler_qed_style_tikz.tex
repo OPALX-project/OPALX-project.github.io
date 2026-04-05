@@ -1,0 +1,108 @@
+
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage{amsmath}
+\usepackage{newtxtext,newtxmath}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing,decorations.markings,positioning}
+ 
+\begin{document}
+\begin{tikzpicture}[
+  scale=1.0,
+  line cap=round,
+  line join=round,
+  >=Latex,
+  photon/.style={
+    very thick,
+    draw=blue!65!black,
+    decorate,
+    decoration={snake, amplitude=1.6pt, segment length=7.2pt}
+  },
+  photonB/.style={
+    very thick,
+    draw=teal!70!black,
+    decorate,
+    decoration={snake, amplitude=1.6pt, segment length=7.2pt}
+  },
+  fermion/.style={
+    very thick,
+    draw=red!75!black,
+    postaction={decorate},
+    decoration={markings, mark=at position 1. with {\arrow{Latex[length=3mm,width=2mm]}}}
+  },
+  antifermion/.style={
+    very thick,
+    draw=orange!85!black,
+    postaction={decorate},
+    decoration={markings, mark=at position 1. with {\arrow{Latex[length=3mm,width=2mm]}}}
+  },
+  beam/.style={line width=10pt, draw=blue!20, opacity=0.30},
+  beamB/.style={line width=10pt, draw=teal!20, opacity=0.30},
+  pairbeam/.style={line width=8pt, draw=red!15, opacity=0.25},
+  guide/.style={dashed, gray!60, line width=0.7pt}
+]
+
+% Parameters
+\def\alpha{0}
+\def\L{2.45}
+\def\Rarc{0.95}
+
+% Coordinates
+\coordinate (O)  at (0,0);
+\coordinate (G1) at ({-\L*cos(\alpha)},{-\L*sin(\alpha)});
+\coordinate (G2) at ({ \L*cos(\alpha)},{-\L*sin(\alpha)});
+\coordinate (E1) at ({ 1*cos(90)},{ 1*sin(90)});
+\coordinate (P1) at ({-1*cos(90)},{-1*sin(90)});
+
+% Background axis
+\draw[guide] (-5.2,0) -- (5.2,0) node[below right, black] {$x$};
+
+% Soft beam envelopes
+\draw[beam]  ($(G1)!0.98!(O)$) -- ($(G1)!0.10!(O)$);
+\draw[beamB] ($(G2)!0.98!(O)$) -- ($(G2)!0.10!(O)$);
+\draw[pairbeam] ($(O)!0.08!(E1)$) -- ($(O)!0.92!(E1)$);
+\draw[pairbeam] ($(O)!0.08!(P1)$) -- ($(O)!0.92!(P1)$);
+
+% Incoming photons
+\draw[photon]  (G1) -- ($(O)!0.12!(G1)$);
+\draw[very thick, blue!65!black, -{Latex[length=3mm,width=2mm]}] ($(O)!0.12!(G1)$) -- (O);
+
+\draw[photonB] (G2) -- ($(O)!0.12!(G2)$);
+\draw[very thick, teal!70!black, -{Latex[length=3mm,width=2mm]}] ($(O)!0.12!(G2)$) -- (O);
+
+% Interaction region
+\fill[orange!20] (O) circle (0.22);
+\fill (O) circle (1.1pt);
+\draw[orange!75!black, line width=0.9pt] (O) circle (0.16);
+
+% Outgoing pair
+\draw[fermion] (O) -- (E1);
+\draw[antifermion] (O) -- (P1);
+
+% labels
+%\node[font=\bfseries\large] at (0,2.05) {Linear Breit--Wheeler process};
+%\node[gray!70!black] at (0,1.58) {$\gamma+\gamma\rightarrow e^{+}+e^{-}$};
+
+\node[blue!65!black, anchor=north west] at ($(G1)+(0.00,0.0)$) {$\gamma_1\;(\omega_1,\mathbf{k}_1)$};
+
+\node[teal!70!black, anchor=north east] at ($(G2)+(0.00,0.0)$) {$\gamma_2\;(\omega_2,\mathbf{k}_2)$};
+
+\node[red!75!black, anchor=west] at ($(E1)+(0.15,0.02)$) {$e^{-}$};
+\node[orange!85!black, anchor=east] at ($(P1)+(-0.15,-0.02)$) {$e^{+}$};
+
+\node[red!75!black, anchor=west] at (-0.7,0.9) {$\mathbf{p}_{e^-}$};
+\node[orange!85!black, anchor=east] at (1.,-0.92) {$\mathbf{p}_{e^+}$};
+
+% Optional caption-like note
+%\node[
+%  draw=gray!30,
+%  fill=gray!4,
+%  rounded corners=2pt,
+%  align=left,
+%  text width=5.6cm,
+%  anchor=north west,
+%  inner sep=5pt
+%] at (-5.0,-1.55) {\small
+%Schematic geometry for a linear Breit--Wheeler interaction.\\
+%Two photon beams collide at angle $\alpha$ relative to the $x$ axis and create an $e^+e^-$ pair in the interaction region.};
+
+\end{tikzpicture}
+\end{document}

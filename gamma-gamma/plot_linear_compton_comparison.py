@@ -51,31 +51,28 @@ def labels_for_observable(observable: str):
         return {
             'xlabel': r'$\theta_\gamma$ [rad]',
             'ylabel': r'Normalized density [rad$^{-1}$]',
-            'title': r'Weak-field 90 degree linear-Compton lab-angle spectrum',
         }
     if observable == 'joint':
         return {
             'xlabel': r'$\theta_\gamma$ [rad]',
             'ylabel': r'$E_\gamma$ [GeV]',
-            'title': r'Weak-field 90 degree linear-Compton joint spectrum',
             'colorbar': r'Normalized density [GeV$^{-1}$ rad$^{-1}$]',
         }
     return {
         'xlabel': r'$E_\gamma$ [GeV]',
         'ylabel': r'Normalized density [GeV$^{-1}$]',
-        'title': r'Weak-field 90 degree linear-Compton spectrum',
     }
 
 
 def plot_joint(args):
     cain_e, cain_t, cain_data = read_joint_histogram(args.cain_csv)
     opalx_e, opalx_t, opalx_data = read_joint_histogram(args.opalx_csv)
-    panels = [('CAIN', cain_data), ('OPALX deterministic', opalx_data)]
+    panels = [(f'CAIN {args.cain_sha}', cain_data), (f'OPALX det {args.opalx_sha}', opalx_data)]
     if args.opalx_mc_csv is not None:
         mc_e, mc_t, mc_data = read_joint_histogram(args.opalx_mc_csv)
         if not (np.array_equal(cain_e, mc_e) and np.array_equal(cain_t, mc_t)):
             raise RuntimeError('Joint MC histogram grid does not match CAIN grid.')
-        panels.append(('OPALX sampled', mc_data))
+        panels.append((f'OPALX MC {args.opalx_sha}', mc_data))
 
     if not (np.array_equal(cain_e, opalx_e) and np.array_equal(cain_t, opalx_t)):
         raise RuntimeError('Joint deterministic histogram grid does not match CAIN grid.')
@@ -87,7 +84,7 @@ def plot_joint(args):
         axes = [axes]
     images = []
     extent = (cain_t[0], cain_t[-1], cain_e[0], cain_e[-1])
-    for axis, (title, data) in zip(axes, panels):
+    for axis, (panel_label, data) in zip(axes, panels):
         image = axis.imshow(data,
                             origin='lower',
                             aspect='auto',
@@ -95,18 +92,14 @@ def plot_joint(args):
                             interpolation='nearest',
                             vmin=0.0,
                             vmax=vmax)
-        axis.set_title(title)
+        axis.text(0.02, 0.98, panel_label, transform=axis.transAxes,
+                  ha='left', va='top', fontsize=9,
+                  bbox=dict(boxstyle='round,pad=0.25', facecolor='white', alpha=0.85, edgecolor='none'))
         axis.set_xlabel(labels['xlabel'])
         images.append(image)
     axes[0].set_ylabel(labels['ylabel'])
     colorbar = fig.colorbar(images[-1], ax=axes, shrink=0.95)
     colorbar.set_label(labels['colorbar'])
-    fig.suptitle(labels['title'] + rf', $\xi={args.xi:.4f}$')
-    footer = f'CAIN {args.cain_sha}   OPALX {args.opalx_sha}'
-    if args.opalx_mc_csv is not None and args.mc_seed:
-        footer += f'   MC seed {args.mc_seed}'
-    fig.text(0.5, 0.02, footer, ha='center', va='bottom', fontsize=9)
-    fig.tight_layout(rect=(0.0, 0.05, 1.0, 0.95))
     fig.savefig(args.output, dpi=200)
 
 
@@ -135,14 +128,12 @@ def main() -> int:
     labels = labels_for_observable(args.observable)
 
     fig, axis = plt.subplots(figsize=(7.8, 5.3))
-    axis.step(cain_centers, cain_density, where='mid', linewidth=1.8, label='CAIN')
-    axis.step(opalx_centers, opalx_density, where='mid', linewidth=1.6, label='OPALX deterministic')
+    axis.step(cain_centers, cain_density, where='mid', linewidth=1.8, label=f'CAIN {args.cain_sha}')
+    axis.step(opalx_centers, opalx_density, where='mid', linewidth=1.6, label=f'OPALX det {args.opalx_sha}')
 
     if args.opalx_mc_csv is not None:
         mc_centers, mc_density = read_histogram(args.opalx_mc_csv)
-        label = 'OPALX sampled'
-        if args.mc_samples > 0:
-            label += f' ({args.mc_samples} samples)'
+        label = f'OPALX MC {args.opalx_sha}'
         axis.step(mc_centers,
                   mc_density,
                   where='mid',
@@ -152,19 +143,8 @@ def main() -> int:
 
     axis.set_xlabel(labels['xlabel'])
     axis.set_ylabel(labels['ylabel'])
-    axis.set_title(labels['title'] + rf', $\xi={args.xi:.4f}$')
     axis.legend()
-
-    footer = f'CAIN {args.cain_sha}   OPALX {args.opalx_sha}'
-    if args.opalx_mc_csv is not None and args.mc_seed:
-        footer += f'   MC seed {args.mc_seed}'
-    fig.text(0.5,
-             0.01,
-             footer,
-             ha='center',
-             va='bottom',
-             fontsize=9)
-    fig.tight_layout(rect=(0.0, 0.04, 1.0, 1.0))
+    fig.tight_layout()
     fig.savefig(args.output, dpi=200)
     return 0
 

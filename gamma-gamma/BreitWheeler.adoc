@@ -9,7 +9,12 @@
 == Scope
 
 This note describes the minimum Breit-Wheeler physics model needed for the next
-_OPALX_ benchmark. We follow closely the CAIN ansatz i.e. manual and source code.
+_OPALX_ benchmark.
+
+image::breit_wheeler_qed_style_tikz.png[Breit-Wheeler scattering, width=85%] 
+
+
+We follow closely the CAIN ansatz i.e. manual and source code.
 
 The goal is not yet a full tracking implementation. The immediate target is a
 host-side Monte Carlo and deterministic benchmark path that reproduces CAIN for
@@ -28,37 +33,7 @@ The first benchmark will follow the same strategy as the linear ICS work:
 - delay bunch population and tracker integration until the kernel is trusted.
 
 
-== CAIN Structure
-
-CAIN separates Breit-Wheeler physics into three layers.
-
-.Input and model selection
-- `LASERQED BREITWHEELER` is parsed in
-  https://github.com/cfruhling2/CAIN/blob/main/src/rdlqed.f[`src/rdlqed.f`].
-- `NPH = 0` selects the linear Breit-Wheeler model.
-- `NPH >= 1` selects the nonlinear model.
-
-.Runtime driver
-- The laser-particle loop is handled by
-  https://github.com/cfruhling2/CAIN/blob/main/src/lsrqedbw.f[`src/lsrqedbw.f`].
-- Local laser geometry and power density are obtained from `LSRGEO`.
-- The linear event generator is `LNBWGN`.
-- The nonlinear event generator is `NLBWGN`.
-- If an event happens, the produced electron and positron are inserted by
-  `LBWEVENT`.
-
-.Event generation
-- Linear Breit-Wheeler:
-  https://github.com/cfruhling2/CAIN/blob/main/src/lnbwgn.f[`src/lnbwgn.f`]
-- Nonlinear Breit-Wheeler:
-  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwgn.f[`src/nlbwgn.f`]
-- Weighted particle insertion:
-  https://github.com/cfruhling2/CAIN/blob/main/src/lbwevent.f[`src/lbwevent.f`]
-
-For the first _OPALX_ benchmark only the linear event kernel is needed.
-
-
-== Linear Breit-Wheeler Kinematics
+== Linear Breit-Wheeler Kinematics in CAIN
 
 CAIN's linear generator `LNBWGN` uses two incoming photons:
 
@@ -109,8 +84,6 @@ W_1 W_2 \ge m_e^2 .
 
 This is the cleanest geometry for the first benchmark.
 
-
-== Linear Event Variables in CAIN
 
 CAIN constructs the center-of-momentum boost velocity from the two incoming
 photon momenta and then samples the final-state scattering variables in that
@@ -168,70 +141,6 @@ For unpolarized incoming photons, the acceptance weight reduces to the
 unpolarized part of the full CAIN expression.
 
 
-== Polarization Handling in CAIN
-
-`LNBWGN` supports Stokes vectors for both incoming photons and, optionally,
-final-state polarization vectors for the produced electron and positron.
-
-For the first _OPALX_ benchmark, this should be ignored deliberately:
-
-- use unpolarized incoming photons;
-- ignore electron and positron polarization;
-- validate only energy and angle spectra.
-
-This matches the strategy used earlier for linear Compton and keeps the first
-comparison sharply defined.
-
-
-== Nonlinear Breit-Wheeler in CAIN
-
-The nonlinear process is configured by
-
-[source]
-----
-LASERQED BREITWHEELER, NPH = nph, ...
-----
-
-with `NPH >= 1`.
-
-In that case CAIN uses:
-
-- initialization tables from
-  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwst.f[`src/nlbwst.f`]
-- event generation in
-  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwgn.f[`src/nlbwgn.f`]
-
-The main nonlinear variables in CAIN are:
-
-- latexmath:[\xi^2], derived from laser wavelength and power density;
-- latexmath:[\eta], the photon-laser invariant;
-- latexmath:[Q = \eta / (1+\xi^2)].
-
-This is important for the long-term roadmap, but it is not the right first
-benchmark target for _OPALX_. The first implementation should stay with
-`NPH = 0`.
-
-
-== What OPALX Already Matches
-
-The first _OPALX_ Breit-Wheeler benchmark should match the following CAIN
-choices:
-
-- linear process: `LASERQED BREITWHEELER, NPH=0`
-- unpolarized photons
-- fixed geometry
-- weak field: latexmath:[\xi < 0.3]
-- no bunch/tracker integration yet
-
-The natural observables are:
-
-- [*] electron energy spectrum
-- [*] positron energy spectrum
-- [*] electron angle spectrum
-- [*] positron angle spectrum
-- later, the joint latexmath:[E] vs. latexmath:[\theta] distributions
-
-
 == OPALX Validation Path
 
 .Deterministic physics helper
@@ -268,8 +177,6 @@ The benchmark remains deliberately narrow:
 
 - no tracker integration,
 - no bunch population,
-- no polarization,
-- no nonlinear Breit-Wheeler,
 - no GPU path.
 
 The validated observables are now:
@@ -281,19 +188,43 @@ The validated observables are now:
 - [*] joint latexmath:[E] vs. latexmath:[\theta] spectrum for the electron,
 - [*] joint latexmath:[E] vs. latexmath:[\theta] spectrum for the positron.
 
+Finite incoming-photon-beam benchmark:
+
+- [*] electron energy spectrum with Gaussian photon-beam divergence,
+- [*] positron energy spectrum with Gaussian photon-beam divergence,
+- [*] electron angle spectrum with Gaussian photon-beam divergence,
+- [*] positron angle spectrum with Gaussian photon-beam divergence.
+
+The finite-photon-beam extension is still intentionally narrow:
+
+- the high-energy photon beam is sampled only in momentum space,
+- the reference beam axis is the head-on direction,
+- the angular spread is Gaussian with latexmath:[\sigma_{\theta x} = \sigma_{\theta y} = 1\,\mathrm{mrad}],
+- the current published benchmark keeps the photon-beam relative energy spread at zero,
+- there is still no transverse position spread or laser-overlap weighting in the _OPALX_ benchmark path.
+
 
 == Results of Code Comparison
 
-The first CAIN-comparison point uses:
+The current CAIN-backed _OPALX_ benchmark compares the linear unpolarized
+process `LASERQED BREITWHEELER, NPH=0` for a weak-field setup with
+latexmath:[\xi = 0.25]. The benchmark observables are:
+
+- electron energy spectrum,
+- positron energy spectrum,
+- electron angle spectrum,
+- positron angle spectrum,
+- joint latexmath:[E] vs. latexmath:[\theta] maps for electron and positron,
+- and, in the extended benchmark, the same 1D observables for a finite incoming photon beam.
+
+The first fixed-geometry comparison point uses:
 
 - head-on geometry,
 - latexmath:[E_\gamma = 0.5\,\mathrm{GeV}],
 - latexmath:[\lambda_L = 1\,\mathrm{nm}],
-- linear Breit-Wheeler via `LASERQED BREITWHEELER, NPH=0`,
-- unpolarized photons,
-- weak field with latexmath:[\xi = 0.25].
+- unpolarized photons.
 
-With the current sampled _OPALX_ benchmark and the stored CAIN references, the
+With the current _OPALX_ Monte Carlo benchmark and the stored CAIN references, the
 agreement is already tight.
 
 Electron:
@@ -311,21 +242,66 @@ Positron:
 So the present benchmark already supports both 1D and 2D CAIN-backed regression
 coverage for the linear unpolarized kernel.
 
+Finite incoming-photon-beam point:
+
+- head-on reference geometry,
+- latexmath:[E_\gamma = 0.5\,\mathrm{GeV}],
+- latexmath:[\lambda_L = 1\,\mathrm{nm}],
+- Gaussian photon-beam divergence with latexmath:[\sigma_{\theta x} = \sigma_{\theta y} = 1\,\mathrm{mrad}],
+- zero photon-beam energy spread.
+
+Finite-photon-beam agreement:
+
+Electron:
+
+- [*] energy spectrum: mean-energy difference about `0.12%`, latexmath:[L_1] about `0.0536`
+- [*] angle spectrum: mean-angle difference about `2.49%`, latexmath:[L_1] about `0.0784`
+
+Positron:
+
+- [*] energy spectrum: mean-energy difference about `0.13%`, latexmath:[L_1] about `0.0535`
+- [*] angle spectrum: mean-angle difference about `2.89%`, latexmath:[L_1] about `0.0696`
+
+The angle benchmark is intentionally windowed to latexmath:[0 \le \theta \le 6\,\mathrm{mrad}], so the
+stored CAIN angular histograms do not integrate to exactly one inside that clipped range.
+
 Electron overlays:
 
+.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing electron energy spectrum. The plot overlays the CAIN reference histogram and the OPALX Monte Carlo histogram for unpolarized photons at pass:[E<sub>&gamma;</sub>] = 0.5 GeV, pass:[&lambda;<sub>L</sub>] = 1 nm, and pass:[&xi;] = 0.25.
 image::reference-data/linear-breit-wheeler-head-on-electron-energy-comparison.png[width=82%]
 
+.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing electron polar-angle spectrum. The comparison is shown over the window 0 <= pass:[&theta;<sub>e-</sub>] <= 4.5 mrad for the same unpolarized CAIN and OPALX setup.
 image::reference-data/linear-breit-wheeler-head-on-electron-theta-comparison.png[width=82%]
 
+.Fixed-geometry head-on linear Breit-Wheeler joint spectrum for the outgoing electron. The left panel is the CAIN reference and the right panel is the OPALX Monte Carlo pass:[E<sub>e-</sub>] versus pass:[&theta;<sub>e-</sub>] density on the common histogram grid.
 image::reference-data/linear-breit-wheeler-head-on-electron-joint-comparison.png[width=100%]
+
+Finite-photon-beam electron overlays:
+
+.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing electron energy spectrum. The incoming high-energy photon beam has Gaussian angular spread pass:[&sigma;<sub>&theta;x</sub>] = pass:[&sigma;<sub>&theta;y</sub>] = 1 mrad and zero energy spread; the plot overlays CAIN and OPALX Monte Carlo histograms.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-electron-energy-comparison.png[width=82%]
+
+.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing electron polar-angle spectrum. The comparison is shown over the clipped window 0 <= pass:[&theta;<sub>e-</sub>] <= 6 mrad for the Gaussian-divergence photon beam.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-electron-theta-comparison.png[width=82%]
 
 Positron overlays:
 
+.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing positron energy spectrum. The plot overlays the CAIN reference histogram and the OPALX Monte Carlo histogram for unpolarized photons at pass:[E<sub>&gamma;</sub>] = 0.5 GeV, pass:[&lambda;<sub>L</sub>] = 1 nm, and pass:[&xi;] = 0.25.
 image::reference-data/linear-breit-wheeler-head-on-positron-energy-comparison.png[width=82%]
 
+.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing positron polar-angle spectrum. The comparison is shown over the window 0 <= pass:[&theta;<sub>e+</sub>] <= 4.5 mrad for the same unpolarized CAIN and OPALX setup.
 image::reference-data/linear-breit-wheeler-head-on-positron-theta-comparison.png[width=82%]
 
+.Fixed-geometry head-on linear Breit-Wheeler joint spectrum for the outgoing positron. The left panel is the CAIN reference and the right panel is the OPALX Monte Carlo pass:[E<sub>e+</sub>] versus pass:[&theta;<sub>e+</sub>] density on the common histogram grid.
 image::reference-data/linear-breit-wheeler-head-on-positron-joint-comparison.png[width=100%]
+
+Finite-photon-beam positron overlays:
+
+.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing positron energy spectrum. The incoming high-energy photon beam has Gaussian angular spread pass:[&sigma;<sub>&theta;x</sub>] = pass:[&sigma;<sub>&theta;y</sub>] = 1 mrad and zero energy spread; the plot overlays CAIN and OPALX Monte Carlo histograms.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-positron-energy-comparison.png[width=82%]
+
+.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing positron polar-angle spectrum. The comparison is shown over the clipped window 0 <= pass:[&theta;<sub>e+</sub>] <= 6 mrad for the Gaussian-divergence photon beam.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-positron-theta-comparison.png[width=82%]
 
 
 == Build and Run
@@ -376,3 +352,34 @@ cmake --build ~/git/opalx/build_openmp \
   https://github.com/cfruhling2/CAIN/blob/main/src/lbwevent.f[`src/lbwevent.f`]
 - CAIN manual:
   https://manualzilla.com/doc/5656761/user-s-manual-of-cain[User's Manual of CAIN]
+
+[appendix]
+== CAIN Structure
+
+
+CAIN separates Breit-Wheeler physics into three layers.
+
+.Input and model selection
+- `LASERQED BREITWHEELER` is parsed in
+  https://github.com/cfruhling2/CAIN/blob/main/src/rdlqed.f[`src/rdlqed.f`].
+- `NPH = 0` selects the linear Breit-Wheeler model.
+- `NPH >= 1` selects the nonlinear model.
+
+.Runtime driver
+- The laser-particle loop is handled by
+  https://github.com/cfruhling2/CAIN/blob/main/src/lsrqedbw.f[`src/lsrqedbw.f`].
+- Local laser geometry and power density are obtained from `LSRGEO`.
+- The linear event generator is `LNBWGN`.
+- The nonlinear event generator is `NLBWGN`.
+- If an event happens, the produced electron and positron are inserted by
+  `LBWEVENT`.
+
+.Event generation
+- Linear Breit-Wheeler:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lnbwgn.f[`src/lnbwgn.f`]
+- Nonlinear Breit-Wheeler:
+  https://github.com/cfruhling2/CAIN/blob/main/src/nlbwgn.f[`src/nlbwgn.f`]
+- Weighted particle insertion:
+  https://github.com/cfruhling2/CAIN/blob/main/src/lbwevent.f[`src/lbwevent.f`]
+
+For the first _OPALX_ benchmark only the linear event kernel is needed.
