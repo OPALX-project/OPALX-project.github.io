@@ -11,3 +11,17 @@ laser and photon functionality in _OPALX_.
 * link:linear-compton-benchmark.html[Linear Compton Benchmark]
 * link:BreitWheeler.html[Breit-Wheeler Theory from CAIN]
 
+== Full Workflow
+
+The top-level driver [generate-gamma-gamma-results.sh] regenerates the full published gamma-gamma benchmark state. It builds the required OPALX benchmark targets, runs the inverse-Compton and Breit-Wheeler physics tests, calls the shared CAIN helper scripts in `~/git/cain`, and rerenders the physics notes.
+
+Use it when you want to refresh all benchmark figures and note pages in one pass:
+
+[source,bash]
+----
+cd ~/git/OPALX-project.github.io/gamma-gamma
+./generate-gamma-gamma-results.sh --opalx-build ~/git/opalx-laser/build_openmp
+----
+
+The narrower CAIN-side helpers remain useful when only one of the two physics notes needs to be regenerated.
+

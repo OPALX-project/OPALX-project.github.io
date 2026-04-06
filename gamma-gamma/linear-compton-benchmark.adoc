@@ -136,7 +136,8 @@ The current _OPALX_ implementation is the CAIN-validated benchmark path on the
 - link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/TestLinearCompton.cpp[`unit_tests/Physics/TestLinearCompton.cpp`]
 - link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/TestLinearComptonSpectrum.cpp[`unit_tests/Physics/TestLinearComptonSpectrum.cpp`]
 - link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/LinearComptonSpectrumBenchmark.cpp[`unit_tests/Physics/LinearComptonSpectrumBenchmark.cpp`]
-- `~/git/OPALX-project.github.io/gamma-gamma/generate-linear-compton-results.sh`
+- `~/git/OPALX-project.github.io/gamma-gamma/generate-gamma-gamma-results.sh`
+- `~/git/cain/generate-linear-compton-results.sh`
 - `~/git/cain/build-cain.sh`
 
 The benchmark remains deliberately narrow:
@@ -234,12 +235,28 @@ From `~/git/cain`:
 ./build-cain.sh --compile
 ----
 
-The one-shot benchmark workflow for this note is run from the docs tree:
+The preferred one-shot workflow is run from the docs tree:
 
 [source,bash]
 ----
 cd ~/git/OPALX-project.github.io/gamma-gamma
-./generate-linear-compton-results.sh --opalx-build /path/to/opalx-build
+./generate-gamma-gamma-results.sh --opalx-build /path/to/opalx-laser/build_openmp
+----
+
+This top-level driver:
+
+- builds the OPALX gamma-gamma benchmark targets,
+- runs the inverse-Compton and Breit-Wheeler unit/regression suites,
+- regenerates the CAIN and OPALX benchmark data for both notes,
+- republishes the comparison figures, and
+- renders the gamma-gamma note pages.
+
+If only the linear-Compton assets need to be refreshed, use:
+
+[source,bash]
+----
+cd ~/git/cain
+./generate-linear-compton-results.sh --opalx-build /path/to/opalx-laser/build_openmp
 ----
 
 This script:
@@ -259,7 +276,7 @@ The relevant OPALX build target is:
 
 [source,bash]
 ----
-cmake --build /path/to/opalx-build \
+cmake --build /path/to/opalx-laser/build_openmp \
   --target LinearComptonSpectrumBenchmark TestLinearCompton TestLinearComptonSpectrum -j4
 ----
 

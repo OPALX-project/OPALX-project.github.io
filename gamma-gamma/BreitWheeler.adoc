@@ -161,15 +161,16 @@ unpolarized part of the full CAIN expression.
 
 == Implemented OPALX Benchmark
 
-The current _OPALX_ implementation is a host-only benchmark path in the local
-`git/opalx` checkout. The relevant files are:
+The current _OPALX_ implementation lives on the `laser-element-1` branch. The
+relevant files are:
 
-- `src/Physics/LinearBreitWheeler.h`
-- `src/Physics/LinearBreitWheeler.cpp`
-- `unit_tests/Physics/TestLinearBreitWheeler.cpp`
-- `unit_tests/Physics/LinearBreitWheelerBenchmarkCommon.h`
-- `unit_tests/Physics/LinearBreitWheelerBenchmark.cpp`
-- `unit_tests/Physics/TestLinearBreitWheelerSpectrum.cpp`
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/src/Physics/LinearBreitWheeler.h[`src/Physics/LinearBreitWheeler.h`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/src/Physics/LinearBreitWheeler.cpp[`src/Physics/LinearBreitWheeler.cpp`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/TestLinearBreitWheeler.cpp[`unit_tests/Physics/TestLinearBreitWheeler.cpp`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/LinearBreitWheelerBenchmarkCommon.h[`unit_tests/Physics/LinearBreitWheelerBenchmarkCommon.h`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/LinearBreitWheelerBenchmark.cpp[`unit_tests/Physics/LinearBreitWheelerBenchmark.cpp`]
+- link:https://github.com/OPALX-project/OPALX/blob/laser-element-1/unit_tests/Physics/TestLinearBreitWheelerSpectrum.cpp[`unit_tests/Physics/TestLinearBreitWheelerSpectrum.cpp`]
+- `~/git/OPALX-project.github.io/gamma-gamma/generate-gamma-gamma-results.sh`
 - `~/git/cain/linear-breit-wheeler-head-on.i`
 - `~/git/cain/generate-linear-breit-wheeler-results.sh`
 
@@ -432,20 +433,37 @@ image::reference-data/linear-breit-wheeler-overlap-positron-theta-comparison.png
 
 == Build and Run
 
-The full benchmark workflow is now automated from the shared `~/git/cain` workspace by:
+The preferred one-shot workflow is run from the docs tree:
+
+[source,bash]
+----
+cd ~/git/OPALX-project.github.io/gamma-gamma
+./generate-gamma-gamma-results.sh \
+  --opalx-build ~/git/opalx-laser/build_openmp
+----
+
+This top-level driver:
+
+- builds the OPALX gamma-gamma benchmark targets,
+- runs the inverse-Compton and Breit-Wheeler unit/regression suites,
+- regenerates the CAIN and OPALX benchmark data for both notes,
+- republishes the comparison figures, and
+- renders the gamma-gamma note pages.
+
+If only the Breit-Wheeler assets need to be refreshed, use:
 
 [source,bash]
 ----
 cd ~/git/cain
 ./generate-linear-breit-wheeler-results.sh \
-  --opalx-build ~/git/opalx/build_openmp
+  --opalx-build ~/git/opalx-laser/build_openmp
 ----
 
 This script:
 
-- runs the CAIN decks `~/git/cain/linear-breit-wheeler-head-on.i`, `~/git/cain/linear-breit-wheeler-finite-photon-beam.i`, and `~/git/cain/linear-breit-wheeler-finite-photon-beam-energy-spread.i`,
-- regenerates the stored CAIN histogram references in `~/git/opalx/unit_tests/Physics/data`,
-- runs the OPALX benchmark executable `LinearBreitWheelerBenchmark` for fixed-geometry, finite-photon-beam, and finite-photon-beam-plus-energy-spread cases,
+- runs the CAIN decks `~/git/cain/linear-breit-wheeler-head-on.i`, `~/git/cain/linear-breit-wheeler-finite-photon-beam.i`, `~/git/cain/linear-breit-wheeler-finite-photon-beam-energy-spread.i`, and `~/git/cain/linear-breit-wheeler-overlap.i`,
+- regenerates the stored CAIN histogram references in `~/git/opalx-laser/unit_tests/Physics/data`,
+- runs the OPALX benchmark executable `LinearBreitWheelerBenchmark` for fixed-geometry, finite-photon-beam, finite-photon-beam-plus-energy-spread, and overlap cases,
 - regenerates the 1D and 2D comparison plots in `~/git/cain/reference-data`.
 
 The script expects:
@@ -457,11 +475,11 @@ The relevant unit-test targets are:
 
 [source,bash]
 ----
-cmake --build ~/git/opalx/build_openmp \
+cmake --build ~/git/opalx-laser/build_openmp \
   --target TestLinearBreitWheeler TestLinearBreitWheelerSpectrum LinearBreitWheelerBenchmark -j4
 
-~/git/opalx/build_openmp/unit_tests/Physics/TestLinearBreitWheeler
-~/git/opalx/build_openmp/unit_tests/Physics/TestLinearBreitWheelerSpectrum
+~/git/opalx-laser/build_openmp/unit_tests/Physics/TestLinearBreitWheeler
+~/git/opalx-laser/build_openmp/unit_tests/Physics/TestLinearBreitWheelerSpectrum
 ----
 
 == References
