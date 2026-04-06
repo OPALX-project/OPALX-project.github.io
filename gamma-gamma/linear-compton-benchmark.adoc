@@ -28,7 +28,7 @@ The baseline geometry used here is a latexmath:[90^\circ] crossing between a
 `1 GeV` electron beam along latexmath:[\hat z] and a laser photon beam along
 latexmath:[\hat x] with wavelength `1030 nm`.
 
-image::ics_90deg_figure.svg[Inverse Compton scattering, width=85%]
+image::ics_90deg_figure.png[Inverse Compton scattering, width=85%]
 
 == Physics Models
 
