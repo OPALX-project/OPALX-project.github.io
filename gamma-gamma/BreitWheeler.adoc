@@ -203,6 +203,45 @@ The finite-photon-beam extension is still intentionally narrow:
 - the current published benchmark keeps the photon-beam relative energy spread at zero,
 - there is still no transverse position spread or laser-overlap weighting in the _OPALX_ benchmark path.
 
+=== Local Kernel Tests
+
+The current _OPALX_ implementation now exposes the same proposal-coordinate view used
+by the CAIN rejection sampler. Two helper functions are validated directly in the
+unit tests:
+
+- the map from the proposal variable latexmath:[z \in [-1,1]] to the
+  center-of-momentum scattering cosine latexmath:[\cos\theta],
+- the corresponding unpolarized local angular weight in the same proposal
+  coordinate.
+
+This gives a direct check of the differential kernel itself, not only of its
+integrated or sampled consequences. The pointwise tests use an independent
+reference implementation of the CAIN-aligned auxiliary variables
+latexmath:[Y(z)], latexmath:[s_m], latexmath:[u_m], and the local acceptance
+weight.
+
+=== Finite-Photon-Beam Folding Algorithm
+
+For the finite incoming-photon-beam benchmark, _OPALX_ keeps the laser photon
+fixed and samples only the high-energy photon beam. For each event:
+
+. a high-energy photon direction is drawn from a Gaussian angular spread around
+  the head-on reference axis,
+. the photon energy is either kept fixed or, in the extended code path, drawn
+  from a Gaussian relative energy spread,
+. a per-event linear Breit-Wheeler sampling kernel is built from that sampled
+  incoming photon state and the fixed laser photon,
+. the electron-positron event is generated with the same host-side rejection
+  sampler used in the fixed-geometry benchmark,
+. the requested observable is histogrammed and compared to the matching CAIN
+  reference.
+
+The present published finite-photon-beam result validates only the divergence
+broadening. The next benchmark extensions are:
+
+- joint latexmath:[E]--latexmath:[\theta] maps for the finite incoming photon beam,
+- finite-photon-beam benchmarks with nonzero photon-beam relative energy spread.
+
 
 == Results of Code Comparison
 
@@ -256,52 +295,139 @@ Electron:
 
 - [*] energy spectrum: mean-energy difference about `0.12%`, latexmath:[L_1] about `0.0536`
 - [*] angle spectrum: mean-angle difference about `2.49%`, latexmath:[L_1] about `0.0784`
+- [*] joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.11%`, mean-angle difference about `2.77%`, latexmath:[L_1] about `0.4416`
 
 Positron:
 
 - [*] energy spectrum: mean-energy difference about `0.13%`, latexmath:[L_1] about `0.0535`
 - [*] angle spectrum: mean-angle difference about `2.89%`, latexmath:[L_1] about `0.0696`
+- [*] joint latexmath:[E]--latexmath:[\theta] map: mean-energy difference about `0.07%`, mean-angle difference about `2.58%`, latexmath:[L_1] about `0.4230`
 
-The angle benchmark is intentionally windowed to latexmath:[0 \le \theta \le 6\,\mathrm{mrad}], so the
+Finite-photon-beam plus energy-spread agreement:
+
+Electron:
+
+- [*] energy spectrum with photon-beam relative energy spread `1.0e-3`: mean-energy difference about `0.55%`, latexmath:[L_1] about `0.0573`
+- [*] angle spectrum with photon-beam relative energy spread `1.0e-3`: mean-angle difference about `2.36%`, latexmath:[L_1] about `0.0822`
+
+Positron:
+
+- [*] energy spectrum with photon-beam relative energy spread `1.0e-3`: mean-energy difference about `0.55%`, latexmath:[L_1] about `0.0601`
+- [*] angle spectrum with photon-beam relative energy spread `1.0e-3`: mean-angle difference about `2.59%`, latexmath:[L_1] about `0.0721`
+
+The finite-photon-beam angle benchmarks are intentionally windowed to latexmath:[0 \le \theta \le 6\,\mathrm{mrad}], so the
 stored CAIN angular histograms do not integrate to exactly one inside that clipped range.
 
-Electron overlays:
+The fixed-geometry head-on comparisons are shown for the electron in
+<<fig-bw-headon-electron-energy>>, <<fig-bw-headon-electron-theta>>, and
+<<fig-bw-headon-electron-joint>>, and for the positron in
+<<fig-bw-headon-positron-energy>>, <<fig-bw-headon-positron-theta>>, and
+<<fig-bw-headon-positron-joint>>.
 
-.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing electron energy spectrum. The plot overlays the CAIN reference histogram and the OPALX Monte Carlo histogram for unpolarized photons at pass:[E<sub>&gamma;</sub>] = 0.5 GeV, pass:[&lambda;<sub>L</sub>] = 1 nm, and pass:[&xi;] = 0.25.
+The finite-photon-beam comparisons with Gaussian divergence and zero energy
+spread are shown for the electron in <<fig-bw-finite-electron-energy>>,
+<<fig-bw-finite-electron-theta>>, and <<fig-bw-finite-electron-joint>>, and for
+the positron in <<fig-bw-finite-positron-energy>>,
+<<fig-bw-finite-positron-theta>>, and <<fig-bw-finite-positron-joint>>.
+
+The finite-photon-beam plus energy-spread comparisons are shown for the
+electron in <<fig-bw-finite-es-electron-energy>>,
+<<fig-bw-finite-es-electron-theta>>, and <<fig-bw-finite-es-electron-joint>>,
+and for the positron in <<fig-bw-finite-es-positron-energy>>,
+<<fig-bw-finite-es-positron-theta>>, and <<fig-bw-finite-es-positron-joint>>.
+
+The overlap-restricted comparisons are shown for the electron in
+<<fig-bw-overlap-electron-energy>> and <<fig-bw-overlap-electron-theta>>, and
+for the positron in <<fig-bw-overlap-positron-energy>> and
+<<fig-bw-overlap-positron-theta>>.
+
+[[fig-bw-headon-electron-energy]]
+.Fixed-geometry head-on outgoing electron energy spectrum.
 image::reference-data/linear-breit-wheeler-head-on-electron-energy-comparison.png[width=82%]
 
-.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing electron polar-angle spectrum. The comparison is shown over the window 0 <= pass:[&theta;<sub>e-</sub>] <= 4.5 mrad for the same unpolarized CAIN and OPALX setup.
+[[fig-bw-headon-electron-theta]]
+.Fixed-geometry head-on outgoing electron polar-angle spectrum.
 image::reference-data/linear-breit-wheeler-head-on-electron-theta-comparison.png[width=82%]
 
-.Fixed-geometry head-on linear Breit-Wheeler joint spectrum for the outgoing electron. The left panel is the CAIN reference and the right panel is the OPALX Monte Carlo pass:[E<sub>e-</sub>] versus pass:[&theta;<sub>e-</sub>] density on the common histogram grid.
+[[fig-bw-headon-electron-joint]]
+.Fixed-geometry head-on outgoing electron joint pass:[E<sub>e-</sub>]--pass:[&theta;<sub>e-</sub>] spectrum.
 image::reference-data/linear-breit-wheeler-head-on-electron-joint-comparison.png[width=100%]
 
-Finite-photon-beam electron overlays:
-
-.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing electron energy spectrum. The incoming high-energy photon beam has Gaussian angular spread pass:[&sigma;<sub>&theta;x</sub>] = pass:[&sigma;<sub>&theta;y</sub>] = 1 mrad and zero energy spread; the plot overlays CAIN and OPALX Monte Carlo histograms.
+[[fig-bw-finite-electron-energy]]
+.Finite-photon-beam outgoing electron energy spectrum.
 image::reference-data/linear-breit-wheeler-finite-photon-beam-electron-energy-comparison.png[width=82%]
 
-.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing electron polar-angle spectrum. The comparison is shown over the clipped window 0 <= pass:[&theta;<sub>e-</sub>] <= 6 mrad for the Gaussian-divergence photon beam.
+[[fig-bw-finite-electron-theta]]
+.Finite-photon-beam outgoing electron polar-angle spectrum.
 image::reference-data/linear-breit-wheeler-finite-photon-beam-electron-theta-comparison.png[width=82%]
 
-Positron overlays:
+[[fig-bw-finite-electron-joint]]
+.Finite-photon-beam outgoing electron joint pass:[E<sub>e-</sub>]--pass:[&theta;<sub>e-</sub>] spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-electron-joint-comparison.png[width=100%]
 
-.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing positron energy spectrum. The plot overlays the CAIN reference histogram and the OPALX Monte Carlo histogram for unpolarized photons at pass:[E<sub>&gamma;</sub>] = 0.5 GeV, pass:[&lambda;<sub>L</sub>] = 1 nm, and pass:[&xi;] = 0.25.
+[[fig-bw-finite-es-electron-energy]]
+.Finite-photon-beam plus energy-spread outgoing electron energy spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-energy-spread-electron-energy-comparison.png[width=82%]
+
+[[fig-bw-finite-es-electron-theta]]
+.Finite-photon-beam plus energy-spread outgoing electron polar-angle spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-energy-spread-electron-theta-comparison.png[width=82%]
+
+[[fig-bw-finite-es-electron-joint]]
+.Finite-photon-beam plus energy-spread outgoing electron joint pass:[E<sub>e-</sub>]--pass:[&theta;<sub>e-</sub>] spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-energy-spread-electron-joint-comparison.png[width=100%]
+
+[[fig-bw-overlap-electron-energy]]
+.Overlap-restricted outgoing electron energy spectrum.
+image::reference-data/linear-breit-wheeler-overlap-electron-energy-comparison.png[width=82%]
+
+[[fig-bw-overlap-electron-theta]]
+.Overlap-restricted outgoing electron polar-angle spectrum.
+image::reference-data/linear-breit-wheeler-overlap-electron-theta-comparison.png[width=82%]
+
+[[fig-bw-headon-positron-energy]]
+.Fixed-geometry head-on outgoing positron energy spectrum.
 image::reference-data/linear-breit-wheeler-head-on-positron-energy-comparison.png[width=82%]
 
-.Fixed-geometry head-on linear Breit-Wheeler benchmark for the outgoing positron polar-angle spectrum. The comparison is shown over the window 0 <= pass:[&theta;<sub>e+</sub>] <= 4.5 mrad for the same unpolarized CAIN and OPALX setup.
+[[fig-bw-headon-positron-theta]]
+.Fixed-geometry head-on outgoing positron polar-angle spectrum.
 image::reference-data/linear-breit-wheeler-head-on-positron-theta-comparison.png[width=82%]
 
-.Fixed-geometry head-on linear Breit-Wheeler joint spectrum for the outgoing positron. The left panel is the CAIN reference and the right panel is the OPALX Monte Carlo pass:[E<sub>e+</sub>] versus pass:[&theta;<sub>e+</sub>] density on the common histogram grid.
+[[fig-bw-headon-positron-joint]]
+.Fixed-geometry head-on outgoing positron joint pass:[E<sub>e+</sub>]--pass:[&theta;<sub>e+</sub>] spectrum.
 image::reference-data/linear-breit-wheeler-head-on-positron-joint-comparison.png[width=100%]
 
-Finite-photon-beam positron overlays:
-
-.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing positron energy spectrum. The incoming high-energy photon beam has Gaussian angular spread pass:[&sigma;<sub>&theta;x</sub>] = pass:[&sigma;<sub>&theta;y</sub>] = 1 mrad and zero energy spread; the plot overlays CAIN and OPALX Monte Carlo histograms.
+[[fig-bw-finite-positron-energy]]
+.Finite-photon-beam outgoing positron energy spectrum.
 image::reference-data/linear-breit-wheeler-finite-photon-beam-positron-energy-comparison.png[width=82%]
 
-.Finite-photon-beam linear Breit-Wheeler benchmark for the outgoing positron polar-angle spectrum. The comparison is shown over the clipped window 0 <= pass:[&theta;<sub>e+</sub>] <= 6 mrad for the Gaussian-divergence photon beam.
+[[fig-bw-finite-positron-theta]]
+.Finite-photon-beam outgoing positron polar-angle spectrum.
 image::reference-data/linear-breit-wheeler-finite-photon-beam-positron-theta-comparison.png[width=82%]
+
+[[fig-bw-finite-positron-joint]]
+.Finite-photon-beam outgoing positron joint pass:[E<sub>e+</sub>]--pass:[&theta;<sub>e+</sub>] spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-positron-joint-comparison.png[width=100%]
+
+[[fig-bw-finite-es-positron-energy]]
+.Finite-photon-beam plus energy-spread outgoing positron energy spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-energy-spread-positron-energy-comparison.png[width=82%]
+
+[[fig-bw-finite-es-positron-theta]]
+.Finite-photon-beam plus energy-spread outgoing positron polar-angle spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-energy-spread-positron-theta-comparison.png[width=82%]
+
+[[fig-bw-finite-es-positron-joint]]
+.Finite-photon-beam plus energy-spread outgoing positron joint pass:[E<sub>e+</sub>]--pass:[&theta;<sub>e+</sub>] spectrum.
+image::reference-data/linear-breit-wheeler-finite-photon-beam-energy-spread-positron-joint-comparison.png[width=100%]
+
+[[fig-bw-overlap-positron-energy]]
+.Overlap-restricted outgoing positron energy spectrum.
+image::reference-data/linear-breit-wheeler-overlap-positron-energy-comparison.png[width=82%]
+
+[[fig-bw-overlap-positron-theta]]
+.Overlap-restricted outgoing positron polar-angle spectrum.
+image::reference-data/linear-breit-wheeler-overlap-positron-theta-comparison.png[width=82%]
 
 
 == Build and Run
@@ -317,9 +443,9 @@ cd ~/git/cain
 
 This script:
 
-- runs the CAIN deck `~/git/cain/linear-breit-wheeler-head-on.i`,
+- runs the CAIN decks `~/git/cain/linear-breit-wheeler-head-on.i`, `~/git/cain/linear-breit-wheeler-finite-photon-beam.i`, and `~/git/cain/linear-breit-wheeler-finite-photon-beam-energy-spread.i`,
 - regenerates the stored CAIN histogram references in `~/git/opalx/unit_tests/Physics/data`,
-- runs the OPALX benchmark executable `LinearBreitWheelerBenchmark`,
+- runs the OPALX benchmark executable `LinearBreitWheelerBenchmark` for fixed-geometry, finite-photon-beam, and finite-photon-beam-plus-energy-spread cases,
 - regenerates the 1D and 2D comparison plots in `~/git/cain/reference-data`.
 
 The script expects:
