@@ -150,8 +150,9 @@ The validated observables are now:
 - [*] photon energy spectrum,
 - [*] photon laboratory polar-angle spectrum,
 - [*] joint latexmath:[E_\gamma] vs. latexmath:[\theta_{\gamma,\mathrm{lab}}] map,
-- [*] finite-beam energy and angle spectra,
-- [*] finite-beam plus energy-spread energy and angle spectra.
+- [*] finite-beam energy, angle, and joint spectra,
+- [*] finite-beam plus energy-spread energy, angle, and joint spectra,
+- [*] overlap-restricted finite-beam energy and angle spectra.
 
 == Results of Code Comparison
 
@@ -176,8 +177,12 @@ Finite-beam benchmark agreement:
 
 - [*] baseline finite beam (`sigma_x = sigma_y = 1 mm`, `sigma_{x'} = sigma_{y'} = 1 mrad`): energy mean difference about `0.58%`, latexmath:[L_1] about `0.0316`
 - [*] baseline finite beam angle spectrum: mean difference about `0.21%`, latexmath:[L_1] about `0.0142`
+- [*] baseline finite-beam joint latexmath:[E_\gamma]--latexmath:[\theta_{\gamma,\mathrm{lab}}] map: mean-energy difference about `0.58%`, mean-angle difference about `0.11%`, latexmath:[L_1] about `0.0741`
 - [*] finite beam with relative energy spread `sigma_E / E = 1.0e-3`: energy mean difference about `0.57%`, latexmath:[L_1] about `0.0305`
 - [*] finite beam with relative energy spread `sigma_E / E = 1.0e-3` angle spectrum: mean difference about `0.17%`, latexmath:[L_1] about `0.0157`
+- [*] finite beam with relative energy spread `sigma_E / E = 1.0e-3` joint latexmath:[E_\gamma]--latexmath:[\theta_{\gamma,\mathrm{lab}}] map: mean-energy difference about `0.57%`, mean-angle difference about `0.14%`, latexmath:[L_1] about `0.0686`
+- [*] overlap-restricted finite-beam energy spectrum: mean difference about `0.71%`, latexmath:[L_1] about `0.0289`
+- [*] overlap-restricted finite-beam angle spectrum: mean difference about `0.084%`, latexmath:[L_1] about `0.0135`
 
 Single-electron overlays:
 
@@ -192,17 +197,29 @@ image::reference-data/linear-compton-90deg-xi029-joint-comparison.png[width=100%
 
 Finite-beam overlays:
 
-.Finite-beam linear-Compton photon energy spectrum for the benchmark beam with pass:[&sigma;<sub>x</sub>] = pass:[&sigma;<sub>y</sub>] = 1 mm and pass:[&sigma;<sub>x'</sub>] = pass:[&sigma;<sub>y'</sub>] = 1 mrad. The figure compares CAIN and the OPALX deterministic benchmark.
+.Finite-beam linear-Compton photon energy spectrum for the benchmark beam with pass:[&sigma;<sub>x</sub>] = pass:[&sigma;<sub>y</sub>] = 1 mm and pass:[&sigma;<sub>x'</sub>] = pass:[&sigma;<sub>y'</sub>] = 1 mrad. The figure compares CAIN and the OPALX Monte Carlo benchmark.
 image::reference-data/linear-compton-90deg-xi029-finite-beam-comparison.png[width=82%]
 
-.Finite-beam linear-Compton photon laboratory polar-angle spectrum for the same benchmark beam. The figure compares CAIN and the OPALX deterministic benchmark on the common angular histogram grid.
+.Finite-beam linear-Compton photon laboratory polar-angle spectrum for the same benchmark beam. The figure compares CAIN and the OPALX Monte Carlo benchmark on the common angular histogram grid.
 image::reference-data/linear-compton-90deg-xi029-finite-beam-theta-comparison.png[width=82%]
 
-.Finite-beam linear-Compton photon energy spectrum with additional electron-beam relative energy spread pass:[&sigma;<sub>E</sub>/E] = 1e-3. The figure compares CAIN and the OPALX deterministic benchmark.
+.Finite-beam linear-Compton photon energy spectrum with additional electron-beam relative energy spread pass:[&sigma;<sub>E</sub>/E] = 1e-3. The figure compares CAIN and the OPALX Monte Carlo benchmark.
 image::reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-comparison.png[width=82%]
 
-.Finite-beam linear-Compton photon laboratory polar-angle spectrum with additional electron-beam relative energy spread pass:[&sigma;<sub>E</sub>/E] = 1e-3. The figure compares CAIN and the OPALX deterministic benchmark.
+.Finite-beam linear-Compton photon laboratory polar-angle spectrum with additional electron-beam relative energy spread pass:[&sigma;<sub>E</sub>/E] = 1e-3. The figure compares CAIN and the OPALX Monte Carlo benchmark.
 image::reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-theta-comparison.png[width=82%]
+
+.Finite-beam joint linear-Compton photon spectrum for the benchmark beam with pass:[&sigma;<sub>x</sub>] = pass:[&sigma;<sub>y</sub>] = 1 mm and pass:[&sigma;<sub>x'</sub>] = pass:[&sigma;<sub>y'</sub>] = 1 mrad. The panels compare the CAIN reference and the OPALX Monte Carlo pass:[E<sub>&gamma;</sub>] versus pass:[&theta;<sub>&gamma;,lab</sub>] density on the common 2D grid.
+image::reference-data/linear-compton-90deg-xi029-finite-beam-joint-comparison.png[width=100%]
+
+.Finite-beam joint linear-Compton photon spectrum with additional electron-beam relative energy spread pass:[&sigma;<sub>E</sub>/E] = 1e-3. The panels compare the CAIN reference and the OPALX Monte Carlo pass:[E<sub>&gamma;</sub>] versus pass:[&theta;<sub>&gamma;,lab</sub>] density on the common 2D grid.
+image::reference-data/linear-compton-90deg-xi029-finite-beam-energy-spread-joint-comparison.png[width=100%]
+
+.Overlap-restricted finite-beam linear-Compton photon energy spectrum. The benchmark keeps the same finite beam and conditions the interaction on the beam-laser overlap through the benchmark Rayleigh and pulse-length scales. The figure compares CAIN and the OPALX Monte Carlo benchmark.
+image::reference-data/linear-compton-90deg-xi029-finite-beam-overlap-comparison.png[width=82%]
+
+.Overlap-restricted finite-beam linear-Compton photon laboratory polar-angle spectrum for the same overlap-conditioned benchmark. The figure compares CAIN and the OPALX Monte Carlo benchmark on the common angular histogram grid.
+image::reference-data/linear-compton-90deg-xi029-finite-beam-overlap-theta-comparison.png[width=82%]
 
 == Build and Run
 
@@ -227,7 +244,7 @@ cd ~/git/OPALX-project.github.io/gamma-gamma
 
 This script:
 
-- runs the CAIN decks `~/git/cain/cain-linear-compton-90deg.i`, `~/git/cain/cain-linear-compton-90deg-finite-beam.i`, and `~/git/cain/cain-linear-compton-90deg-finite-beam-energy-spread.i`,
+- runs the CAIN decks `~/git/cain/cain-linear-compton-90deg.i`, `~/git/cain/cain-linear-compton-90deg-finite-beam.i`, `~/git/cain/cain-linear-compton-90deg-finite-beam-energy-spread.i`, and `~/git/cain/cain-linear-compton-90deg-finite-beam-overlap.i`,
 - regenerates the stored CAIN histogram references in `reference-data/`,
 - runs the OPALX benchmark executable `LinearComptonSpectrumBenchmark`,
 - regenerates the published 1D and 2D comparison plots in `reference-data/`.
@@ -236,7 +253,7 @@ The script expects:
 
 - a built OPALX benchmark executable in the supplied build directory,
 - a CAIN executable at `~/git/cain/CAIN-build/cain`, unless overridden by `--cain-bin`,
-- the three CAIN decks in `~/git/cain`, unless overridden by `--cain-deck-dir`.
+- the four CAIN decks in `~/git/cain`, unless overridden by `--cain-deck-dir`.
 
 The relevant OPALX build target is:
 

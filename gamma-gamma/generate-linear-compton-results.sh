@@ -135,6 +135,7 @@ main() {
   require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg.i" "CAIN single-electron deck"
   require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg-finite-beam.i" "CAIN finite-beam deck"
   require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg-finite-beam-energy-spread.i" "CAIN finite-beam energy-spread deck"
+  require_file "${CAIN_DECK_DIR}/cain-linear-compton-90deg-finite-beam-overlap.i" "CAIN finite-beam overlap deck"
   require_file "${OPALX_BENCH}" "OPALX benchmark executable"
   require_file "${PLOT_CAIN}" "CAIN plotting helper"
   require_file "${PLOT_COMPARE}" "comparison plotting helper"
@@ -150,6 +151,7 @@ main() {
   run_cain_deck cain-linear-compton-90deg.i
   run_cain_deck cain-linear-compton-90deg-finite-beam.i
   run_cain_deck cain-linear-compton-90deg-finite-beam-energy-spread.i
+  run_cain_deck cain-linear-compton-90deg-finite-beam-overlap.i
 
   echo "[2/6] Extracting CAIN histograms"
   python3 "${PLOT_CAIN}" "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029.dat" \
@@ -172,6 +174,10 @@ main() {
     --observable theta --bins 80 --tmin 0.0 --tmax 0.02 \
     --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv" \
     --output "${TMP_WORKDIR}/cain-linear-compton-90deg-xi029-finite-beam-theta.png"
+  python3 "${PLOT_CAIN}" "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-wide-laser.dat" \
+    --observable joint --bins 60 --emin 0.0 --emax 0.01 --tmin 0.0 --tmax 0.02 \
+    --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-joint-histogram.csv" \
+    --output "${TMP_WORKDIR}/cain-linear-compton-90deg-xi029-finite-beam-joint.png"
   python3 "${PLOT_CAIN}" "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread.dat" \
     --observable energy --bins 80 --emin 0.0 --emax 0.01 \
     --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv" \
@@ -180,6 +186,18 @@ main() {
     --observable theta --bins 80 --tmin 0.0 --tmax 0.02 \
     --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv" \
     --output "${TMP_WORKDIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-theta.png"
+  python3 "${PLOT_CAIN}" "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread.dat" \
+    --observable joint --bins 60 --emin 0.0 --emax 0.01 --tmin 0.0 --tmax 0.02 \
+    --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-joint-histogram.csv" \
+    --output "${TMP_WORKDIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-joint.png"
+  python3 "${PLOT_CAIN}" "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap.dat" \
+    --observable energy --bins 80 --emin 0.0 --emax 0.01 \
+    --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap-histogram.csv" \
+    --output "${TMP_WORKDIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap.png"
+  python3 "${PLOT_CAIN}" "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap.dat" \
+    --observable theta --bins 80 --tmin 0.0 --tmax 0.02 \
+    --csv-output "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap-theta-histogram.csv" \
+    --output "${TMP_WORKDIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap-theta.png"
 
   echo "[3/6] Generating OPALX benchmark histograms"
   "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-histogram.csv"
@@ -197,10 +215,18 @@ main() {
     --finite-beam --beam-particles 100000 --seed "${SEED}"
   "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-theta-histogram.csv" \
     --finite-beam --angular --beam-particles 100000 --seed "${SEED}"
+  "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-joint-histogram.csv" \
+    --finite-beam --joint --beam-particles 100000 --seed "${SEED}"
   "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv" \
     --finite-beam --beam-particles 100000 --beam-relative-energy-spread 0.001 --seed "${SEED}"
   "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv" \
     --finite-beam --angular --beam-particles 100000 --beam-relative-energy-spread 0.001 --seed "${SEED}"
+  "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-joint-histogram.csv" \
+    --finite-beam --joint --beam-particles 100000 --beam-relative-energy-spread 0.001 --seed "${SEED}"
+  "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-overlap-histogram.csv" \
+    --finite-beam --overlap-weighting --beam-particles 100000 --beam-sigma-longitudinal 0.000299792 --laser-rayleigh 12.5 --laser-sigma-t 0.000299792 --seed "${SEED}"
+  "${OPALX_BENCH}" "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-overlap-theta-histogram.csv" \
+    --finite-beam --overlap-weighting --angular --beam-particles 100000 --beam-sigma-longitudinal 0.000299792 --laser-rayleigh 12.5 --laser-sigma-t 0.000299792 --seed "${SEED}"
 
   echo "[4/6] Generating comparison plots"
   python3 "${PLOT_COMPARE}" \
@@ -235,6 +261,11 @@ main() {
     --observable theta --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
     --output "${REFERENCE_DIR}/linear-compton-90deg-xi029-finite-beam-theta-comparison.png"
   python3 "${PLOT_COMPARE}" \
+    "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-joint-histogram.csv" \
+    "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-joint-histogram.csv" \
+    --observable joint --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
+    --output "${REFERENCE_DIR}/linear-compton-90deg-xi029-finite-beam-joint-comparison.png"
+  python3 "${PLOT_COMPARE}" \
     "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv" \
     "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-histogram.csv" \
     --observable energy --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
@@ -244,13 +275,29 @@ main() {
     "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-theta-histogram.csv" \
     --observable theta --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
     --output "${REFERENCE_DIR}/linear-compton-90deg-xi029-finite-beam-energy-spread-theta-comparison.png"
+  python3 "${PLOT_COMPARE}" \
+    "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread-joint-histogram.csv" \
+    "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-energy-spread-joint-histogram.csv" \
+    --observable joint --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
+    --output "${REFERENCE_DIR}/linear-compton-90deg-xi029-finite-beam-energy-spread-joint-comparison.png"
+  python3 "${PLOT_COMPARE}" \
+    "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap-histogram.csv" \
+    "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-overlap-histogram.csv" \
+    --observable energy --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
+    --output "${REFERENCE_DIR}/linear-compton-90deg-xi029-finite-beam-overlap-comparison.png"
+  python3 "${PLOT_COMPARE}" \
+    "${REFERENCE_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap-theta-histogram.csv" \
+    "${REFERENCE_DIR}/opalx-linear-compton-90deg-xi029-finite-beam-overlap-theta-histogram.csv" \
+    --observable theta --xi "${XI}" --cain-sha "${CAIN_SHA}" --opalx-sha "${OPALX_SHA}" \
+    --output "${REFERENCE_DIR}/linear-compton-90deg-xi029-finite-beam-overlap-theta-comparison.png"
 
   echo "[5/6] Cleaning intermediate CAIN output"
   if [[ "${KEEP_DAT}" -eq 0 ]]; then
     rm -f \
       "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029.dat" \
       "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-wide-laser.dat" \
-      "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread.dat"
+      "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-energy-spread.dat" \
+      "${SCRIPT_DIR}/cain-linear-compton-90deg-xi029-finite-beam-overlap.dat"
   fi
 
   echo "[6/6] Done"
