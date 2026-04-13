@@ -152,11 +152,11 @@ not yet avaidable
 
 == Compiling
 
-* link:For%20Developers/Supported-OS-and-required-Software-to-build-OPAL[Supported OS and required Software to build _OPAL_]
-* link:For%20Developers/Setup-build-environment-at-PSI[Setup build environment at PSI]
-* link:For%20Developers/Compile-required-software[Compile required software (_OPAL_ build recipes)]
-* link:For%20Developers/Compile-OPAL[Compile _OPAL_]
-* link:For%20Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
+* link:For-Developers/Supported-OS-and-required-Software-to-build-OPAL[Supported OS and required Software to build _OPAL_]
+* link:For-Developers/Setup-build-environment-at-PSI[Setup build environment at PSI]
+* link:For-Developers/Compile-required-software[Compile required software (_OPAL_ build recipes)]
+* link:For-Developers/Compile-OPAL[Compile _OPAL_]
+* link:For-Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
 ====
 
 [.feature-opalx]
@@ -204,7 +204,7 @@ See also link:postprocessing[Post Processing].
 ====
 **Development**
 
-* link:For-Developers/Codingstyle[Coding Style and Conventions]
+* link:For-Developers/CodingStyle[Coding Style and Conventions]
 * link:For-Developers/unit-tests[Building, executing and writing unit tests]
 * link:For-Developers/OPAL-Development-Workflow[Development workflow, Git and Gitlab usage]
 * link:For-Developers/Release-Procedure[Release Procedure]
