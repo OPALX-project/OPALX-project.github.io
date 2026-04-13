@@ -4,7 +4,7 @@
 
 == Introduction
 
-Compiling _OPAL_ can be quite challenging due to all link:Compile-required-software[the required libraries]. Even if some libraries are available on the system, this
+Compiling _OPAL_ can be quite challenging due to all link:https://github.com/OPALX-project/OPALX-project.github.io/blob/master/For-Developers/Compile-required-software.adoc[the required libraries]. Even if some libraries are available on the system, this
 doesn't mean that they can be used for compiling _OPAL_ due to missing
 features.
 
@@ -22,7 +22,7 @@ Clone the OPAL Git repository
 ----
 mkdir -p "${SRC_DIR}/OPAL"
 cd "${SRC_DIR}/OPAL"
-git clone https://gitlab.psi.ch/OPAL/src.git
+git clone https://github.com/OPALX-project/OPAL.git
 ----
 
 Select the OPAL branch you want to compile. The current stable branch is `OPAL-2024.1`:
@@ -84,7 +84,7 @@ The following table shows the most important options:
 
 | `ENABLE_AMR_MG_SOLVER`
 | enable AMR multigrid solver
-| requires trilinos >= 12.x and AMReX (release 18.07) 
+| requires trilinos >= 13.x and AMReX (release 18.07) 
 
 | `ENABLE_BANDRF`
 | compile BANDRF field conversion scripts
@@ -96,7 +96,7 @@ The following table shows the most important options:
 
 | `ENABLE_SAAMG_SOLVER`
 | enable SAAMG solver
-| requires trilinos >= 12.x
+| requires trilinos >= 13.x
 
 | `BUILD_OPAL_PYTHON`
 | enable PyOPAL
@@ -115,7 +115,7 @@ The following table shows the most important options:
 [NOTE]
 .Trilinos
 ====
-For compiling Trilinos please see the https://gitlab.psi.ch/OPAL/build-recipes/-/blob/master/220-build-trilinos?ref_type=heads[Trilinos build recipe].
+For compiling Trilinos please see the https://github.com/OPALX-project/build-recipes/blob/master/220-build-trilinos[Trilinos build recipe].
 ====
 
 == Compile and install OPAL
