@@ -18,12 +18,7 @@ Run the following command to download the recipes:
 
 [listing]
 --
-git clone git@gitlab.psi.ch:OPAL/build-recipes.git
---
-or
-[listing]
---
-git clone https://gitlab.psi.ch/OPAL/build-recipes.git
+git clone https://github.com/OPALX-project/build-recipes.git
 --
 
 === Setting up the environment
@@ -120,6 +115,10 @@ and if whether the version fulfil the requirements.
 ./090-build-gsl
 ./100-build-h5hut
 ./110-build-boost
+----
+
+**Specific requirements for some OPAL features**
+----
 ./200-build-parmetis
 ./210-build-openblas
 ./220-build-trilinos
