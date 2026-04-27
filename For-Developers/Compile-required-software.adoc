@@ -6,7 +6,9 @@ We provide recipes to build all required software. These recipes can
 be used on Linux,  macOS and Windows Services for Linux. They are
 tested with several Linux distributions including Redhat Enterprise
 Linux 6 & 7, Ubuntu 18, 20 and 21, openSUSE leaf 15, macOS 10.12 - 10.15 as
-well as with the Windows Services for Linux.
+well as with the Windows Services for Linux. Before compiling the required
+software, check the minimum installation requirements
+link:https://github.com/OPALX-project/OPALX-project.github.io/blob/master/For-Developers/Supported-OS-and-required-Software-to-build-OPAL.adoc[here].
 
 == The OPAL Tool-chain Builder
 
@@ -18,12 +20,7 @@ Run the following command to download the recipes:
 
 [listing]
 --
-git clone git@gitlab.psi.ch:OPAL/build-recipes.git
---
-or
-[listing]
---
-git clone https://gitlab.psi.ch/OPAL/build-recipes.git
+git clone https://github.com/OPALX-project/build-recipes.git
 --
 
 === Setting up the environment
@@ -120,6 +117,10 @@ and if whether the version fulfil the requirements.
 ./090-build-gsl
 ./100-build-h5hut
 ./110-build-boost
+----
+
+**Specific requirements for some OPAL features**
+----
 ./200-build-parmetis
 ./210-build-openblas
 ./220-build-trilinos

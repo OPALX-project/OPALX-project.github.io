@@ -13,7 +13,7 @@ The following operating systems are supported:
 
 == Required software
 
-Linux:: the usual standard and development tools like gcc, autotools, cmake, make, lex/flex, yacc/bison, tar, bzip2 ...
+Linux:: the usual standard and development tools like gcc, cmake, make, lex/flex, yacc/bison, tar, bzip2, wget, vim, curl, patch, file, git, autoconf...
 
 macOS:: Xcode, command line tools, for some features Macports or Homebrew
 
@@ -21,7 +21,7 @@ Windows:: use Windows Subsystem for Linux (WSL)
 
 Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying. 
 
-Build scripts for all required software are available link:https://gitlab.psi.ch/OPAL/src/-/wikis/For%20Developers/Compile-required-software[here].
+Build scripts for all required software are available link:https://github.com/OPALX-project/OPALX-project.github.io/blob/master/For-Developers/Compile-required-software.adoc[here].
 
 The list below shows the required software and versions we use to compile _OPAL_.
 
@@ -32,7 +32,7 @@ The list below shows the required software and versions we use to compile _OPAL_
 | cmake | 3.27.8 or newer
 | 
 
-| C/C&#43;&#43; Compiler | gcc 10 or Clang 12
+| C/C&#43;&#43; Compiler | gcc 13 or Clang 12
 | must support C&#43;&#43; 17 or better. Minimum version for GCC is 9.5.0. If this or a newer version is available on your system, use it. If you want/have to compile GCC yourself, see the instructions below.
 
 | Fortran Compiler | gfortran 10
@@ -48,23 +48,23 @@ The list below shows the required software and versions we use to compile _OPAL_
 | hdf5 | 1.10.11
 | A parallel version is required.
 
-| GNU Scientific Library | 2.7
+| GNU Scientific Library | 2.8
 |
 
 | VTK | ?
 | optional: required if you want to compile H5hut with the VTK to H5hut mesh converter.
 
-| H5hut | 2.0.0rc6
+| H5hut | 2.0.0rc7
 | A parallel version is required.
 
-| boost | 1.84.0
-| The following boost libraries are required: `chrono`, `filesystem`,
- `iostreams`, `regex`, `serialization`, `system`, `timer`
+| boost | 1.88.0
+| The following boost libraries are required: `filesystem`,
+ `iostreams`, `serialization`, `system`, `timer`
 
 | ParMETIS | 4.0.3
 | optional: required for OPAL compiled with SAAMG solver.
 
-| OpenBLAS | 0.3.27 or newer
+| OpenBLAS | 0.3.30 or newer
 | optional: required for OPAL compiled with SAAMG solver.
 
 | trilinos | 13.4.0
@@ -109,7 +109,7 @@ For compiling GCC you need:
 | optional: if you want to compile GCC
 
 | GNU MPFR Library
-| 4.2.1
+| 4.2.2
 | optional: if you want to compile GCC
 
 | GNU MPC Library
