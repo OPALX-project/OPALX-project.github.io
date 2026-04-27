@@ -40,9 +40,6 @@ The code is managed through the Git distributed version control system. A suite 
 ====
 This is the landing for _OPALX_ {OPALX_version} which is still under heavy development.
 
-Useful OPALX-specific notes:
-
-* link:gamma-gamma/index.html[Gamma-Gamma physics notes]
 ====
 
 
@@ -187,7 +184,6 @@ See also link:postprocessing[Post Processing].
 == For Developers
 [.feature-opalx]
 ====
-* link:gamma-gamma/index.html[GGPhysics]
 * link:For-Developers/CodingStyle.html[Coding Style]
 * link:For-Developers/amd-lumi-debug.html[AMD (Lumi) Debug Guide]
 * link:For-Developers/File-Format-for-stat-Storage.html[File Format Statistical Output]
