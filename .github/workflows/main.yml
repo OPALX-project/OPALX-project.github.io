@@ -38,6 +38,10 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install Python HTML tooling
+        run: |
+          python3 -m pip install beautifulsoup4
+
       - name: Install Asciidoctor
         run: |
           gem install asciidoctor
