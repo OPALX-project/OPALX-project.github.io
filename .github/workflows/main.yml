@@ -1,4 +1,4 @@
-name: Publish AsciiDoc to GitHub Pages
+name: Publish Website and Quarto Manual
 
 on:
   push:
@@ -23,10 +23,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout Manual
+        uses: actions/checkout@v4
+        with:
+          repository: OPALX-project/Manual
+          ref: master
+          path: Manual-new-src
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install Asciidoctor
         run: |
@@ -35,6 +45,12 @@ jobs:
       - name: Build AsciiDoc
         run: |
           bash ./build-local.sh
+
+      - name: Build Quarto Manual
+        run: |
+          quarto render ./Manual-new-src/quarto --to html
+          mkdir -p build/Manual-new
+          cp -R ./Manual-new-src/quarto/docs-quarto/. ./build/Manual-new/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
