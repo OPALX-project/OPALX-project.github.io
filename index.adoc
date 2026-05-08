@@ -36,21 +36,7 @@ _OPAL_ comes in the following flavours:
 The code is managed through the Git distributed version control system. A suite of unit tests have been developed for various parts of _OPAL_, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in Asciidoc. Tools are available to readily convert Asciidoc into formats such as PDF and HTML for display.
 ====
 
-[.feature-opalx]
-====
-This is the landing for _OPALX_ {OPALX_version} which is still under heavy development.
-
-====
-
-
----
-
 ## *Download of Binaries and Clone of Repository*
-[.feature-opalx]
-====
-not yet avaidable
-====
-
 
 [.feature-opal]
 ====
@@ -134,14 +120,6 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
 ====
 
-[.feature-opalx]
-====
-not yet avaidable 
-====
-
----
-
-
 === Using _OPAL_ at PSI
 [.feature-opal]
 ====
@@ -155,31 +133,6 @@ not yet avaidable
 * link:For-Developers/Compile-OPAL[Compile _OPAL_]
 * link:For-Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
 ====
-
-[.feature-opalx]
-====
-Run and/or compiling _OPALX_
-* link:https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/[Run/compile _OPALX_ on Merlin7]
-====
-
----
-
-== For Users
-[.feature-opalx]
-====
-* link:For-Users/Distributions.html[Distributions] (e.g. `TYPE=FROMFILE`)
-====
-
----
-
-== Tools
-
-* The link:runOPAL.html[runOPAL] Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.
-* The {link_pyopaltools}/[pyOPALTools.md] Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.
-See also link:postprocessing[Post Processing].
-* link:OPAL-conversion-utilities.html[_OPAL_ conversion utilities]
-
----
 
 == For Developers
 [.feature-opalx]
