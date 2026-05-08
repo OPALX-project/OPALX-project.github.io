@@ -6,6 +6,7 @@ This note summarizes is about debugging on **LUMI** with **AMD ROCm**, especiall
 
 ---
 
+
 ## Typical failure
 
 A representative runtime error was:
@@ -253,8 +254,7 @@ This helps map Kokkos bounds check backtraces to source locations.
    export ROCM_DEBUG_AGENT_OPTIONS="--all --save-code-objects"
    srun -n 1 ./your_exe ...
    ```
-6. Narrow the problem to a single kernel with fences and labels.
-7. Treat “bug disappears under debug agent” as evidence of a timing sensitive bug, not a fix.
+7. Narrow the problem to a single kernel with fences and labels.
+8. Treat “bug disappears under debug agent” as evidence of a timing sensitive bug, not a fix.
 
 ---
-

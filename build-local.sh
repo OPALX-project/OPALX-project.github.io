@@ -1,19 +1,21 @@
 #!/bin/bash
 mkdir -p build/uploads build/logos
-find . -name "*.adoc" -print0 | while IFS= read -r -d '' file; 
+find . \( -path './build' -o -path './build/*' -o -path './.git' -o -path './.git/*' \) -prune -o -type f -name "*.adoc" -print0 | while IFS= read -r -d '' file; 
 do
-  out="build/${file%.adoc}.html"
-  mkdir -p "$(dirname "$out")"
-  asciidoctor \
-    -a stylesheet="$PWD/stylesheets/readthedocs.css" \
-    -d book \
-    --base-dir "$PWD" \
-    -o "$out" \
-    "$file"
+    out="build/${file%.adoc}.html"
+    outpdf="build/${file%.adoc}.pdf"
+
+    mkdir -p "$(dirname "$out")"
+    asciidoctor \
+        -a stylesheet="$PWD/stylesheets/readthedocs.css" \
+        -d book \
+        --base-dir "$PWD" \
+        -o "$out" \
+        "$file"
 done
 cp -rv uploads/* build/uploads 2>/dev/null || true
 cp -rv logos/* build/logos 2>/dev/null || true
-find . -type d -name "reference-data" -print0 | while IFS= read -r -d '' dir;
+find . \( -path './build' -o -path './build/*' -o -path './.git' -o -path './.git/*' \) -prune -o -type d -name "reference-data" -print0 | while IFS= read -r -d '' dir;
 do
   target="build/${dir#./}"
   mkdir -p "$(dirname "$target")"
@@ -26,4 +28,3 @@ do
   cp "$asset" "$target"
 done
 echo "Build complete. Open build/index.html (or relevant .html) in browser."
-

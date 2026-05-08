@@ -52,9 +52,9 @@ jobs:
 
       - name: Build Quarto Manual
         run: |
-          quarto render ./Manual-new-src/quarto --to html
+          quarto render ./Manual-new-src --to html
           mkdir -p build/Manual-new
-          cp -R ./Manual-new-src/quarto/docs-quarto/. ./build/Manual-new/
+          cp -R ./Manual-new-src/docs-quarto/. ./build/Manual-new/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
