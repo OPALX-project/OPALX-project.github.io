@@ -6,14 +6,19 @@ include::stylesheets/Toggle[]
 == Introduction
 
 Maybee the best is to look at link:OPAL-References[papers and presentations] to see the potential  and use cases. At the
-moment no papers etc. are avaidable for _OPALX_ due to the early stage of the project.
+moment no papers etc. are avaidable for _OPALX_ due to the early stage of the project. However we aim for compatibility
+so eben if you are only interetsed in OPALX, looking at the publication of OPAL will give you certainly an idea what to
+expect from OPALX. 
 
 Checkout the {link_manual}[manual] for both variants of _OPAL_.
 
-The _OPAL_ mailing list {mail_mailing_list} is used to discuss problems and issues. Subscribe with {link_mailing_list}[**mailing list**].
+The _OPAL_ mailing list {mail_mailing_list} is used to discuss problems and issues regaring OPAL and OPALX. Subscribe with {link_mailing_list}[**mailing list**].
 
 Please report bugs and feature requests via the {link_mailing_list}[mailing list].
-
+[.feature-opalx]
+====
+All information about OPALX can be found at {link_manual}[manual].
+====
 
 [.feature-opal]
 ====
@@ -34,12 +39,9 @@ _OPAL_ comes in the following flavours:
   map tracking (experimental).
 
 The code is managed through the Git distributed version control system. A suite of unit tests have been developed for various parts of _OPAL_, validating each part of the code independently. Unit tests use the google testing framework. System tests validate the overall integration of different elements. Documentation is written in Asciidoc. Tools are available to readily convert Asciidoc into formats such as PDF and HTML for display.
-====
 
 ## *Download of Binaries and Clone of Repository*
 
-[.feature-opal]
-====
 :link_src_2024-1:  {link_src}/OPAL-2021.1.0/OPAL-2021.1.0
 :link_src_2022-1:  {link_src}/OPAL-2022.1.0/OPAL-2022.1.0
 :link_src_2021-1:  {link_src}/OPAL-2024.1.0/OPAL-2024.1.0
@@ -105,12 +107,8 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:OPAL-binary-package-ChangeLog[ChangeLog of the binary packages].
 * link:OPAL-binary-package-old-versions[Deprecated versions].
 
-====
-
 
 === Start with Examples
-[.feature-opal]
-====
 * link:Examples/Cyclotron.html[Cyclotron]
 * link:Examples/RFPhotoInjector.html[AWA RF Photo Injector]
 * link:Examples/AWAEEXBeamline.html[AWA EEX Beamline]
@@ -118,11 +116,9 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:Examples/RegressionTestExamples.html[Examples from regression tests]
 * link:Examples/FFA.html[FFA]
 * {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
-====
 
 === Using _OPAL_ at PSI
-[.feature-opal]
-====
+
 * link:Using-OPAL-at-PSI[Using _OPAL_ at PSI]
 
 == Compiling
@@ -132,25 +128,9 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:For-Developers/Compile-required-software[Compile required software (_OPAL_ build recipes)]
 * link:For-Developers/Compile-OPAL[Compile _OPAL_]
 * link:For-Developers/Compile-OPAL-at-CSCS[Compile _OPAL_ at CSCS]
-====
 
 == For Developers
-[.feature-opalx]
-====
-* link:For-Developers/CodingStyle.html[Coding Style]
-* link:For-Developers/amd-lumi-debug.html[AMD (Lumi) Debug Guide]
-* link:For-Developers/File-Format-for-stat-Storage.html[File Format Statistical Output]
-* link:For-Developers/Most-Used-Directories-in-the-Code.html[Guid to Program Structure]
-* link:For-Developers/OPAL-Development-Workflow.html[Development Workflow]
-* link:For-Developers/unit-tests.html[Unit Tests]
-* link:For-Developers/tech-ideas.html[Ideas]
-* link:https://amas.pages.psi.ch/opal-live-doc/opalx-doxygen/index.html[Doxygen]
-* link:https://github.com/OPALX-project/OPALX[Source Code Repository]
-* link:https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html[Regression Tests] 
 
-====
-[.feature-opal]
-====
 **Development**
 
 * link:For-Developers/CodingStyle[Coding Style and Conventions]
