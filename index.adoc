@@ -1,27 +1,20 @@
 = Landing Page of the Object Oriented Parallel Accelerator Library Project
 
 include::attributes.adoc[]
-include::stylesheets/Toggle[]
 
 == Introduction
 
-Maybee the best is to look at link:OPAL-References[papers and presentations] to see the potential  and use cases. At the
-moment no papers etc. are avaidable for _OPALX_ due to the early stage of the project. However we aim for compatibility
-so eben if you are only interetsed in OPALX, looking at the publication of OPAL will give you certainly an idea what to
-expect from OPALX. 
+The link:OPAL-References[papers and presentations] provide an overview of
+_OPAL_ applications and use cases.
 
-Checkout the {link_manual}[manual] for both variants of _OPAL_.
+Consult the {link_manual}[OPAL manual] for user documentation.
 
-The _OPAL_ mailing list {mail_mailing_list} is used to discuss problems and issues regaring OPAL and OPALX. Subscribe with {link_mailing_list}[**mailing list**].
+The _OPAL_ mailing list {mail_mailing_list} is used to discuss problems and
+issues regarding _OPAL_. Subscribe through the
+{link_mailing_list}[mailing-list page].
 
 Please report bugs and feature requests via the {link_mailing_list}[mailing list].
-[.feature-opalx]
-====
-All information about OPALX can be found at {link_manual}[manual].
-====
 
-[.feature-opal]
-====
 _OPAL_ (Object Oriented Parallel Accelerator Library) is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
 Using the MAD language with extensions, _OPAL_ can run on a laptop as well as on the largest high performance computing systems.
 _OPAL_ is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
@@ -115,7 +108,7 @@ git clone --single-branch --depth 1  --branch BRANCH_OR_TAG {link_OPAL_repo}.git
 * link:Examples/AWADriveLinac.html[AWA Drive Linac]
 * link:Examples/RegressionTestExamples.html[Examples from regression tests]
 * link:Examples/FFA.html[FFA]
-* {link_manual}/{OPAL_VER}/Manual.html#chp.tutorial[Tutorial from Manual]
+* {link_manual}sections/tutorial/[Tutorial from Manual]
 
 === Using _OPAL_ at PSI
 
@@ -147,5 +140,3 @@ The repository for the unit test can be found link:https://github.com/OPALX-proj
 
 * link:https://amas.pages.psi.ch/opal-live-doc/opal-regression-test/regressionTests/master/index.html[Regression Tests]
 * link:https://amas.pages.psi.ch/opal-live-doc/opal-regression-test/unitTests/master/index.html[Unit Tests]
-
-====

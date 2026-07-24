@@ -7,15 +7,12 @@
 
 :link_org:		https://github.com/OPALX-project
 :link_OPAL_repo:	{link_org}/OPAL
-:link_OPALX_repo:	{link_org}/OPALX
 
 :link_OPAL_regression:       {link_org}/regression-tests
-:link_OPALX_regression:      {link_org}/regression-tests-x
 :link_OPAL_issue_tracker:    {link_OPAL_repo}/issues
-:link_OPALX_issue_tracker:   {link_OPALX_repo}/issues
 
 :link_opal_pages:       https://opalx-project.github.io
-:link_manual:           https://opalx-project.github.io/Manual
+:link_manual:           https://opalx-project.github.io/opal-manual/
 :link_doxydoc:          {link_opal_pages}/OPAL
 :link_pyopaltools:      {link_org}/pyOPALTools
 
@@ -26,5 +23,3 @@
 
 :macos_arm_pkg:         -arm-macos.tar.xz[tar.xz(M1)]
 :macos_arm_md5:         -arm-macos.tar.xz.md5[md5]
-
-:OPALX_version:         0.9
